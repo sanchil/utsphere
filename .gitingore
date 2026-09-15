@@ -1,0 +1,39 @@
+## Core LaTeX auxiliary files
+*.aux
+*.fls
+*.idx
+*.ind
+*.lof
+*.log
+*.lot
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+
+## Bibliography auxiliary files (BibTeX / BibLaTeX / Biber)
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+## Build tool auxiliary files (Latexmk / Synctex)
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+
+## Graphics and final output options
+# Un-comment the line below if you want to ignore the final PDF output
+# *.pdf
+
+## Text editor and IDE metadata directories
+.auctex-auto/
+auto/
+

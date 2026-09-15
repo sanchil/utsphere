@@ -1,0 +1,15 @@
+TASK: 1
+
+
+Target file: Pattern_Arithmetic_v14.18.tex
+
+Reference file: Pattern_Arithmetic_Foundation_Sheet.docx
+
+There are some findings listed in the reference file that that the target file needs to comply with.
+
+
+Pattern_Arithmetic_v14.18.tex is a paper documenting a basic unit of truth as a 3 D sphere of unit vectors. Currently it is still developing basic philosophy and ideas so that they may form a
+strong foundation for concepts and mathematical rigor and some use case examples. Please investigate the tex file and see how best the open gaps may be closed.
+
+Gaps listed are A-H.
+Note: Some of the gaps and todos have already been closed.

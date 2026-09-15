@@ -1,0 +1,673 @@
+% 1. Preamble
+\documentclass[12pt, a4paper]{article}
+
+% Import Packages
+\usepackage[utf8]{inputenc}        % Encoding
+\usepackage{amsmath, amssymb}     % Advanced math formulas
+\usepackage{mathtools}           % Math enhancements
+\usepackage{graphicx}            % Image insertion
+\usepackage{hyperref}            % Interactive hyperlinks & PDF bookmarks
+\usepackage{color}               % Color text and backgrounds
+\usepackage{geometry}            % Page geometry
+\usepackage{comment}             % Multi-line comments
+\usepackage{titling}             % Custom title formatting
+
+\geometry{a4paper, margin=1in}
+
+% Custom Command Definitions
+\newcommand{\Sball}{\mathcal{S}}
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+% Hyperref Setup for Clean PDF Links
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={Pattern Arithmetic},
+    pdfauthor={Sandeep Lakshminarayan Chiluveru}
+}
+
+% Metadata & Custom Title Banner
+\pretitle{\begin{center}\Huge\fontfamily{tt}\selectfont ================================================================================\\[0.5em]}
+\posttitle{\\[0.5em] ================================================================================\end{center}}
+
+\title{Pattern Arithmetic: Phase-Colored Geometric Framework for High-Density Information via Unit Probability Spheres}
+\author{Sandeep Lakshminarayan Chiluveru}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% ABSTRACT
+\begin{abstract}
+Ordinary arithmetic treats the integer 1 as a unit of truth: $1=1$ and $1+1=2$. Counting is only one algebra. Colors and musical notes are also units of truth; combining them yields a hue or a chord, not a larger integer. This paper treats a pattern as a higher-order unit and represents one pattern by one state on a unit probability sphere $\mathcal{S} \subset \mathbb{R}^3$, with magnitude $r \in [0, 1]$, direction $(\theta, \phi)$, and internal phase-color $\chi \in [0, 2\pi)$. Pattern Arithmetic is the algebra of such units: identical states do not double after normalization ($A \oplus A = A$), and opposite phases cancel ($A - A = 0$). A second operator $T$ acts by rotation and phase shift, allowing the same ingredients to form different ordered expressions. Words and numbers occupy the same sphere under different encodings and meet in a document by order and typed action, not by blending. The aim is a single bounded register that carries overlapping identities, structural paths, and mixed prose without a discrete grid.
+\end{abstract}
+
+\section{Introduction}
+
+Ordinary arithmetic uses the integer $1$ as a unit of truth.
+The identity $1=1$ says that two tokens are of the same kind.
+The rule $1+1=2$ says that combining two such tokens produces a
+larger quantitative state. That algebra answers the question
+\emph{how many?}
+
+It is not the only algebra. A color and a musical note are also
+units of truth, but their combination does not enlarge a pile.
+Under additive light, red and green yield yellow. Two copies of
+the same yellow, once brightness is normalized, remain yellow.
+Two notes yield a chord, not a larger integer; a tone plus its
+opposite phase yields silence. In each case the word ``add''
+names a different rule, and therefore a different kind of unit.
+
+When the object of interest is a structured whole rather than a
+count, a hue, or a pitch, the natural unit is a \emph{pattern}.
+This paper represents one pattern by one state on a unit
+probability sphere $\mathcal{S} \subset \mathbb{R}^3$:
+\begin{itemize}
+    \item $r \in [0, 1]$ is the strength of the unit, capped so that a state remains a single unit of truth;
+    \item $(\theta, \phi)$ is the direction of the pattern on the sphere;
+    \item $\chi \in [0, 2\pi)$ is an internal phase-color, so two identities may occupy the same direction without overwriting one another.
+\end{itemize}
+Pattern Arithmetic is the algebra of these units. Identical states do not double after normalization ($A \oplus A = A$). Opposite phases cancel ($A - A = 0$). Rotations of the sphere preserve the unit.
+
+A single numerical picture is enough to see the difference from counting. Take two unit states at the same place, one with phase $0^\circ$ (red) and one with phase $120^\circ$ (green). Counting would return $2$. Phase-aware combination returns a single unit whose blended phase is $60^\circ$ (yellow). The same two strengths with opposite phase ($0^\circ$ and $180^\circ$) return the null state, black. Two units of truth become either one new identity or none.
+
+The working order of the paper is not that mix alone. It is a three-step spine:
+\[
+\text{Collapse (bowl)} \;\longrightarrow\; T\text{ (path)} \;\longrightarrow\; \text{Result}.
+\]
+Collecting red and green is not yet yellow, and not yet a poem. Yellow is a later reading of the bowl (paint). A poem is another reading: an ordered path $T$. The same bowl may be read more than one way. Loading is not meaning.
+
+\subsection{The Limitations of Discretized Matrix Grids}
+A discrete matrix grid is the wrong box for such a unit. Traditional matrix representations of continuous state spaces suffer from two severe structural bottlenecks:
+\begin{itemize}
+    \item \textbf{Memory Scaling Bottlenecks:} A voxel cube of resolution $N$ stores $O(N^3)$ cells, growing steeply with resolution.
+    \item \textbf{Signal Identity Destruction:} Mapping multiple overlapping variables to identical spatial coordinates often results in the destructive overwriting of underlying signal identities.
+\end{itemize}
+
+\subsection{The Phase-Colored Unit Probability Sphere Framework}
+To resolve these grid constraints, the sphere is offered as one bounded object that can carry overlapping identities by direction and phase, without enlarging a lattice.
+\begin{itemize}
+    \item \textbf{Spatial Orientation $(\theta, \phi)$:} Defines continuous directional coordinates across the spherical surface.
+    \item \textbf{Magnitude Likelihood ($0 \leq r \leq 1$):} Represents bounded probability density within the sphere.
+    \item \textbf{Internal Color Phase ($\chi \in [0, 2\pi)$):} Serves as an independent phase degree of freedom.
+\end{itemize}
+
+\subsection{Core Contributions \& High-Level Intuition}
+The principal contributions of Pattern Arithmetic are:
+\begin{itemize}
+    \item \textbf{High-Density Superposition:} Storing overlapping state vectors concurrently within a single bounded spatial manifold.
+    \item \textbf{Parameter-Efficient Field Storage:} Eliminating discrete voxel bounds by treating states as continuous probability distributions.
+\end{itemize}
+
+Later sections distinguish a numeric encoding from a lexical encoding on the same sphere, so that a report may carry words and numbers together without forcing them through $\oplus$.
+
+The next section turns these definitions into formal mathematical axioms.
+
+
+\section{Axiomatic Foundations Of Pattern Arithmetic}
+
+\subsection{Process principle: Collapse, path, result}
+\label{subsec:process_principle}
+Pattern Arithmetic proceeds in three named acts, kept separate so that a bowl may grow before it is read:
+\begin{equation}
+    \underbrace{A_1 \oplus A_2 \oplus \cdots \oplus A_n}_{R\ =\ \text{the bowl}}
+    \;\longrightarrow\;
+    T_{w_k}\circ \cdots \circ T_{w_1}(R)
+    \;\longrightarrow\;
+    \text{Result}.
+    \label{eq:pipeline}
+\end{equation}
+Here $\oplus$ \emph{collects}: identical tokens do not double ($A \oplus A = A$), and opposite marks may sit together until a later reading. $T$ is an ordered path, not a mix. The result is whatever that path (or another named reading) makes of $R$ --- a poem, a report, a staged endpoint.
+
+Paint is a side reading of the same bowl, not a second name for $T$:
+\[
+\mathrm{Mix}(\{\mathrm{red},\mathrm{green}\}) = \mathrm{yellow}.
+\]
+One may collect and read in a single gesture; the algebra does not force the merge. This principle is an axiom of \emph{order of acts}, not a new formula for a 4-tuple.
+
+\subsection{Axiom 1: The Normalized Unit Truth State ($\mathcal{S} = 1$)}
+\label{subsec:axiom1}
+To ensure stability across multi-variable operations, every state vector field $\vec{v} = (r, \theta, \phi, \chi)$ on the Unit Probability Sphere $\mathcal{S} \subset \mathbb{R}^3$ represents an immutable unit of truth ($\mathcal{S} = 1$). Global likelihood integrates strictly to unity:
+\begin{equation}
+    \iiint_{\mathcal{S}} P(r, \theta, \phi) \, dV = 1.0
+    \label{eq:unit_truth}
+\end{equation}
+
+\subsection{Axiom 2: The Absolute Null State ($\mathcal{S} = 0$, Black)}
+\label{subsec:axiom_null}
+The state $\mathcal{S} = 0$ defines the absolute lower bound of the state space, corresponding to complete destructive interference, total phase cancellation, or zero-state equilibrium:
+\begin{equation}
+    \norm{\vec{v}} = 0 \quad \forall \; (\theta, \phi, \chi) \implies \mathcal{S} = 0 \quad \text{(Black)}
+    \label{eq:null_state}
+\end{equation}
+Physically and visually, $\mathcal{S} = 0$ represents an empty probability field devoid of active signal energy or directional orientation.
+
+\subsection{Axiom 3: The Infinite Superposition State ($\mathcal{S} = \infty$, White)}
+\label{subsec:axiom_infinite}
+The state $\mathcal{S} = \infty$ defines the theoretical upper bound of maximal entropy, representing total spectral superposition across all continuous orientations $(\theta, \phi)$ and internal color-phase frequencies $\chi \in [0, 2\pi)$:
+\begin{equation}
+    \mathcal{S} = \lim_{N \to \infty} \bigoplus_{i=1}^{N} A_i \implies \mathcal{S} = \infty \quad \text{(White)}
+    \label{eq:infinite_state}
+\end{equation}
+Physically and visually, $\mathcal{S} = \infty$ corresponds to full-spectrum white light, where all possible state vectors co-exist simultaneously without spatial exclusion.
+
+\subsection{Axiom 4: Information Idempotence ($1 \oplus 1 = 1$)}
+\label{subsec:axiom_idempotence}
+Combining identical information states yields no expansion of likelihood volume. Upon intensity normalization:
+\begin{equation}
+    A \oplus A = \frac{A + A}{\norm{A + A}} = A
+    \label{eq:idempotence_formal}
+\end{equation}
+
+\subsection{Axiom 5: Phase-Aware Superposition \& Interference}
+\label{subsec:axiom_interference}
+This rule is a \emph{reading} of a collected bowl (the Mix of the process principle), not the act of loading. The combination of two truth states $A$ and $B$ already in the bowl is governed by relative phase difference $\Delta\chi$:
+\begin{equation}
+    A \pm B = \sqrt{\norm{A}^2 + \norm{B}^2 + 2\norm{A}\norm{B}\cos(\Delta\chi)}
+    \label{eq:interference_formal}
+\end{equation}
+Destructive anti-phase interference ($\Delta\chi = 180^\circ$) collapses composite states directly into the Null State ($A - A = 0$, Black) defined in Axiom~\ref{subsec:axiom_null}.
+
+\subsection{Axiom 6: Rotational Conservation (\texorpdfstring{$\times \mathbf{R}$}{x R})}
+\label{subsec:axiom_rotation}
+Multiplication operates as a Lie group rotation $\mathbf{R} \in \mathrm{SO}(3)$ in continuous spherical space, preserving total truth volume:
+\begin{equation}
+    \norm{\mathbf{R} \cdot A} = \norm{A} = 1.0
+\end{equation}
+
+\section{Transformation Algebra: From Identity to Expression}
+\label{sec:transformation_algebra}
+
+\subsection{Motivation: Two Layers of Meaning}
+\label{subsec:transform_motivation}
+The operators established so far ($\oplus$, $\pm$) answer the question
+\emph{what is this state?} Combining Sky, Sun, and Wind under $\oplus$
+yields a single, order-independent resultant --- a new composite unit
+of truth, a bag of ingredients. This is a \emph{lexical} operation: it mints blended identities, the way
+a palette mints a hue from pigments. Analogies such as ruler-man-king are \emph{not} blends; they are deferred to the offset operator of Section~\ref{sec:analogical_offset}. Blend $\oplus$ does not, and structurally
+cannot, distinguish a poem in which the sun rises through a wind-blown
+sky from a poem in which wind extinguishes a darkening sun --- both
+share the identical resultant
+$R = \text{Sky} \oplus \text{Sun} \oplus \text{Wind}$, since $\oplus$
+is commutative and idempotent by Axiom~\ref{subsec:axiom_idempotence}.
+
+The distinction between these two poems is not a difference in
+\emph{ingredients}; it is a difference in \emph{how one state acts
+upon another, and in what order}. This is a \emph{relational}
+operation, and it requires a second operator, $T$, layered on top of
+$\oplus$: where $\oplus$ builds nouns, $T$ builds sentences. A poem is
+not the resultant $R$ itself, but a specific trajectory traced across
+$\mathcal{S}$ by successive transformations applied to $R$.
+
+\subsection{Formal Definition of the Transformation Operator}
+\label{subsec:transform_definition}
+Rather than introduce $T$ as an unrelated new primitive, it is defined
+using the same rotational machinery already given in
+Axiom~\ref{subsec:axiom_rotation}: every state $w \in \mathcal{S}$
+acts on another state $x \in \mathcal{S}$ by rotating $x$'s direction
+about $w$'s own axis, by an angle proportional to $w$'s strength, while
+additively shifting $x$'s phase by $w$'s phase:
+\begin{equation}
+    T_w(x) \;=\; \Big(r_x,\;\; \mathrm{Rot}_{\hat n(\theta_w,\phi_w)}\!\big(\alpha(r_w)\big)\cdot(\theta_x,\phi_x),\;\; (\chi_x + \chi_w) \bmod 2\pi\Big)
+    \label{eq:transform_def}
+\end{equation}
+where $\hat n(\theta_w,\phi_w)$ is the unit axis defined by $w$'s
+direction, $\mathrm{Rot}_{\hat n}(\alpha) \in \mathrm{SO}(3)$ is the
+rotation of Axiom~\ref{subsec:axiom_rotation} about that axis by angle
+$\alpha$, and $\alpha(r_w) = \pi r_w$ is the simplest monotonic choice
+mapping strength to rotation angle (a full-strength unit, $r_w = 1$,
+rotates by the maximal $180^\circ$). Magnitude $r_x$ is left invariant:
+a transformation reorients and recolors a state, it does not
+strengthen or weaken it --- that remains the role of $\oplus$.
+
+\subsection{Derived Properties}
+\label{subsec:transform_properties}
+The following properties follow from Equation~\eqref{eq:transform_def}
+rather than being separately postulated.
+
+\paragraph{Identity.} If $w = \mathbf{0}$ (the Null State of
+Axiom~\ref{subsec:axiom_null}), then $\alpha(0) = 0$ and the phase
+shift is $0$, so $T_{\mathbf{0}} = \mathrm{id}$.
+
+\paragraph{Invertibility.} Define the inverse state $w^{*} = (r_w, \pi - \theta_w, \phi_w + \pi, -\chi_w \pmod{2\pi})$. 
+Then $T_{w^{*}}\!\big(T_w(x)\big) = x$ for all $x$. Because the magnitude $r_w$ remains strictly positive, reversing the transformation requires rotating by the same angle $\alpha$ around the antipodal axis $-\hat{n}(\pi - \theta_w, \phi_w + \pi)$, while the inverse phase cancels the internal color shift. Every transformation has a well-defined inverse. Note that this is distinct from anti-phase interference ($A - A = 0$, Axiom~\ref{subsec:axiom_null}), which annihilates a state; $T_{w^{*}}$ instead \emph{undoes a transformation} on a state that persists.
+
+\paragraph{Associativity.} Since each $T_w$ is a function
+$\mathcal{S} \to \mathcal{S}$, composition of transformations is
+associative automatically, by the associativity of function
+composition; no additional axiom is required.
+
+\paragraph{Non-commutativity.} Rotations about distinct axes in
+$\mathrm{SO}(3)$ generically do not commute: for $a, b$ with distinct
+directions $(\theta,\phi)$,
+\begin{equation}
+    T_a\big(T_b(x)\big) \;\neq\; T_b\big(T_a(x)\big).
+    \label{eq:noncommute}
+\end{equation}
+This is not an additional assumption; it is inherited directly from
+the well-established non-commutativity of $\mathrm{SO}(3)$, already
+invoked by Axiom~\ref{subsec:axiom_rotation}. It is this property,
+and only this property, that allows two poems built from the same
+resultant $R$ to diverge: order of application is meaningful even
+though the underlying identity is not.
+
+\subsection{Poems as Transformation Trajectories}
+\label{subsec:transform_trajectories}
+A poem $\pi$ built from resultant $R$ and an ordered sequence of
+transforming states $w_1, w_2, \ldots, w_n$ is the trajectory
+\begin{equation}
+    \pi = \big(R;\, w_1, \ldots, w_n\big): \quad
+    R \;\longrightarrow\; T_{w_1}(R) \;\longrightarrow\; T_{w_2}T_{w_1}(R) \;\longrightarrow\; \cdots \;\longrightarrow\; T_{w_n}\cdots T_{w_1}(R).
+    \label{eq:poem_trajectory}
+\end{equation}
+Two poems may share an identical resultant $R$ (the same theme, the
+same ``ingredients'') while tracing entirely different trajectories
+--- this is the formal sense in which many poems arise from the same
+units of truth. Conversely, because rotation composition is
+many-to-one, two distinct trajectories may terminate at the same
+endpoint; a poem's identity is therefore carried by its full path
+through $\mathcal{S}$, not by its final state alone.
+
+\subsection{Worked Numerical Example: Sun, Wind, and Sky}
+\label{subsec:transform_example}
+Let Sky be the state acted upon, with direction
+$(\theta,\phi) = (45^\circ, 45^\circ)$, i.e.\ Cartesian axis
+$(0.500, 0.500, 0.707)$. Let Sun define an axis along
+$(\theta,\phi) = (90^\circ, 0^\circ)$, i.e.\ $(1,0,0)$, with strength
+$r_{\text{Sun}} = 1.0$, giving rotation angle $\alpha_{\text{Sun}} =
+180^\circ$. Let Wind define an axis along $(\theta,\phi) = (90^\circ,
+90^\circ)$, i.e.\ $(0,1,0)$, with strength $r_{\text{Wind}} = 0.7$,
+giving $\alpha_{\text{Wind}} = 126^\circ$.
+
+\emph{Order 1 --- Sun acts first, then Wind} (the sun rising through a
+wind-blown sky):
+\begin{equation}
+    T_{\text{Wind}}\big(T_{\text{Sun}}(\text{Sky})\big) \;\approx\; (-0.866,\, -0.500,\, 0.011)
+\end{equation}
+
+\emph{Order 2 --- Wind acts first, then Sun} (wind extinguishing a
+darkening sun):
+\begin{equation}
+    T_{\text{Sun}}\big(T_{\text{Wind}}(\text{Sky})\big) \;\approx\; (0.278,\, -0.500,\, 0.820)
+\end{equation}
+
+The two endpoints are clearly distinct, confirming
+Equation~\eqref{eq:noncommute}: identical primitives, identical
+resultant $R$, opposite structural readings. Notably, if $\chi_{\text{Sun}}
+= 0^\circ$ and $\chi_{\text{Wind}} = 90^\circ$, the accumulated phase
+shift is $270^\circ$ in \emph{both} orderings, since phase addition is
+commutative. The two poems therefore share the same blended color/mood
+even as their spatial --- structural --- meaning diverges. This
+asymmetry (shared affect, divergent structure) is a direct and
+testable prediction of the model.
+
+\subsection{Scope}
+\label{subsec:transform_scope}
+$T$ is deliberately left unconstrained beyond
+Equation~\eqref{eq:transform_def}: any sequence of any transforming
+states is a formally valid trajectory. Pattern Arithmetic in this form
+supplies the substrate on which expression is built --- the
+combinatorial space of possible trajectories --- and does not yet
+supply a grammar constraining which trajectories are coherent,
+well-formed, or meaningful to a human reader. Whether such constraints
+belong inside this framework (as further axioms on admissible
+sequences of $T$) or outside it (as a learned or externally specified
+grammar layered on top) is left open.
+
+\section{Analogical Arithmetic: The Offset Operator}
+\label{sec:analogical_offset}
+
+The $\oplus$ operator mints composite nouns, and the $T$ operator mints ordered sentences. However, analogical reasoning requires a third, distinct mathematical operation: the offset. By mapping the dictionary onto our framework such that each word is a labeled state on a single shared globe, relationships between concepts are captured by their relative spatial differences.
+
+To assert that ``man is to king as woman is to queen,'' we do not average the vectors (which $\oplus$ handles), nor do we spin one around the other (which $T$ handles). Instead, we extract the relational offset between the first pair and apply it to the target:
+\begin{equation}
+    \text{king} - \text{man} + \text{woman} \approx \text{queen}
+    \label{eq:analogical_offset}
+\end{equation}
+This operation reuses the geometric translation that turned man into king, demonstrating that the algebra handles analogical equivalence through vector differences. It is an analogical reuse of choreography, rather than a blending of paint.
+To visualize this offset on a 2D planar cross-section of $\mathcal{S}$, let $\text{man} = 0^\circ$, $\text{woman} = 90^\circ$, and $\text{king} = 30^\circ$. The translational offset from $\text{man}$ to $\text{king}$ is $+30^\circ$. Applying this exact relational offset to $\text{woman}$ yields $90^\circ + 30^\circ = 120^\circ$, which defines the spatial coordinate for $\text{queen}$.
+
+\section{Encodings, Sorts, and Mixed Documents}
+\label{sec:encodings_sorts}
+
+The unit probability sphere is a single bounded \emph{register}.
+Numbers, words, and colors are not three different globes; they are
+three encodings of a token onto the same globe. A scientific paragraph
+already mixes those alphabets on one page. Pattern Arithmetic may do
+the same, provided each loaded state carries a \emph{sort} and the
+operators respect that sort.
+
+\subsection{Two primary sorts}
+\label{subsec:sorts}
+A state $x\in\mathcal{S}$ is always a 4-tuple
+$(r,\theta,\phi,\chi)$. What the tuple \emph{means} depends on the
+encoding used to write it:
+\begin{itemize}
+    \item \textbf{Numeric sort ($\mathtt{num}$).}
+          The state represents a scalar. One toy encoding stores an
+          integer $n$ on a marked circle as
+          $\chi = 2\pi n/N$ (arithmetic modulo $N$).
+          Another, stereo-style, sends $x\to\pm\infty$ toward the
+          poles so that unbounded reals still occupy the globe.
+    \item \textbf{Lexical sort ($\mathtt{word}$).}
+          The state is a labeled point in a toy dictionary living on
+          the same globe. Similarity is the angle between points
+          (cosine similarity). A bag of words is formed by $\oplus$.
+          A sentence or poem is formed by $T$.
+\end{itemize}
+Schoolbook addition lives only in $\mathtt{num}$ mode:
+\begin{equation}
+    1 + 1 = 2, \qquad 7 + 5 = 12.
+\end{equation}
+Pattern blend lives only in $\mathtt{word}$ (or color) mode:
+\begin{equation}
+    A \oplus A = A.
+\end{equation}
+The two equations may share a sphere. They may not share an operator.
+Pressing $\oplus$ on the encodings of $7$ and $5$ does not yield $12$;
+pressing schoolbook $+$ on $\mathrm{sun}$ and $\mathrm{wind}$ does not
+yield a chord.
+
+\subsection{A document is a sequence, not a blend}
+\label{subsec:document_sequence}
+Words and numbers coexist in reports because a document is an ordered
+tape of tokens, not one mixed arrow. Write a paragraph as a trajectory
+of sorted states
+\begin{equation}
+    \pi = \bigl((x_1,\tau_1),\ldots,(x_m,\tau_m)\bigr),
+    \qquad \tau_i\in\{\mathtt{num},\mathtt{word}\},
+    \label{eq:mixed_document}
+\end{equation}
+exactly as a poem was a trajectory in
+Section~\ref{subsec:transform_trajectories}. The sphere holds one
+current occupant of the register; the paragraph is the history of
+loads and actions.
+
+They may meet in only three honest ways.
+
+\paragraph{Juxtaposition.}
+The default. Tokens sit in order and no algebra is applied between
+them. In ``the sample reached $37.4^\circ\mathrm{C}$ at dawn,'' the
+number $37.4$ is not blended with the word $\mathrm{dawn}$.
+
+\paragraph{Typed action.}
+The operator $T_w(x)$ is allowed across sorts only with an explicit
+output sort. Two useful conventions, which the rest of this paper
+adopts, are:
+\begin{itemize}
+    \item a word acting on a number yields a number-in-context
+          (still $\mathtt{num}$);
+    \item a number acting on a word yields a refined word
+          (still $\mathtt{word}$).
+\end{itemize}
+A number may also set a numeric dial of $T$ --- for example the
+rotation angle $\alpha(r)$ --- because that dial is already a scalar.
+That is how ``wind of $12\,\mathrm{m/s}$'' can strengthen a turn
+without becoming a synonym of $\mathrm{wind}$.
+
+\paragraph{Cast.}
+Rare and named. The map $E_{\mathtt{num}\to\mathtt{word}}(2)=\texttt{two}$
+turns a digit into a spoken numeral; the inverse is parsing. Casts are
+dictionary maps, not $\oplus$.
+
+The illegal meeting is an untyped blend
+\begin{equation}
+    \mathrm{dawn} \oplus 37.4,
+\end{equation}
+which has no meaning until one side is first cast into the other's
+sort.
+
+\subsection{Operator legality}
+\label{subsec:type_table}
+Table~\ref{tab:type_table} records which buttons accept which pairs.
+Here $+$ is schoolbook addition on the numeric encoding, $\oplus$ is
+idempotent blend, $T$ is typed action, and $x-a+b$ is the analogical
+offset of Section~\ref{sec:analogical_offset}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcccc}
+\hline
+Pair & $+$ & $\oplus$ & $T_w(x)$ & $x-a+b$ \\
+\hline
+$(\mathtt{word},\mathtt{word})$ & no & yes & yes & yes \\
+$(\mathtt{num},\mathtt{num})$   & yes & no  & no$^{*}$ & no$^{*}$ \\
+$(\mathtt{word},\mathtt{num})$  & no & no  & typed & no \\
+$(\mathtt{num},\mathtt{word})$  & no & no  & typed & no \\
+\hline
+\end{tabular}
+\caption{Sort discipline on a single sphere.
+$^{*}$Numeric $T$ and numeric offset may be defined later as
+maps of the chosen numeric encoding; they are not the lexical
+operators of Sections~\ref{sec:transformation_algebra}
+and~\ref{sec:analogical_offset}.}
+\label{tab:type_table}
+\end{table}
+
+\subsection{Worked mixed sentence}
+\label{subsec:mixed_sentence}
+Take the report line \emph{Wind of $12\,\mathrm{m/s}$ darkened the sun.}
+The register is used as follows.
+
+\begin{enumerate}
+    \item Load $\mathrm{wind}$, sort $\mathtt{word}$.
+    \item Load $12$, sort $\mathtt{num}$. Juxtapose; do not form
+          $\mathrm{wind}\oplus 12$.
+    \item Load $\mathrm{m/s}$ as a unit-name (lexical qualifier of the
+          number).
+    \item Load $\mathrm{sun}$, sort $\mathtt{word}$.
+    \item Let the number cap a strength,
+          $\sigma(12)\in[0,1]$, and set
+          $r_{\mathrm{wind}}=\sigma(12)$ so that
+          $\alpha=\pi\sigma(12)$ in Equation~\eqref{eq:transform_def}.
+    \item Apply $T_{\mathrm{wind}}(\mathrm{sun})$. Output sort:
+          $\mathtt{word}$.
+\end{enumerate}
+The scalar never became a hue. It turned a dial of an action whose
+actors remained words. That is the same division of labor a printed
+paper already uses: digits set magnitudes; words name what the
+magnitudes belong to.
+
+\subsection{Several lexicons, one concept sphere}
+\label{subsec:shared_lexicons}
+Surface tokens are not meanings. Two dictionaries may write the same
+pair of concepts with unrelated strings:
+\begin{equation}
+    \begin{aligned}
+        L_1&: \quad \texttt{xyz}\mapsto\mathrm{man},\quad
+                    \texttt{qyz}\mapsto\mathrm{woman},\\
+        L_2&: \quad \texttt{fgh}\mapsto\mathrm{man},\quad
+                    \texttt{hgf}\mapsto\mathrm{woman}.
+    \end{aligned}
+    \label{eq:two_lexicons}
+\end{equation}
+In the usual pipeline each lexicon is tokenized, encoded, and
+\emph{embedded separately}. The geometry that makes
+$\mathrm{man}$ near $\mathrm{king}$ is then learned twice, and a
+further alignment step is required before $L_1$ and $L_2$ can share
+an analogy. The token-to-embedding map is doing two jobs at once:
+naming a string, and inventing a place for its meaning.
+
+The unit probability sphere is offered as a shared
+\emph{concept register}, not as a replacement for a lexicon table.
+A token is a surface form. A state on $\mathcal{S}$ is a meaning.
+Each lexicon is only a cast
+\begin{equation}
+    E_{L}(\texttt{token}) = x\in\mathcal{S},
+    \label{eq:lexicon_cast}
+\end{equation}
+the same kind of map as $E_{\mathtt{num}\to\mathtt{word}}$ above.
+Under that discipline both $\texttt{xyz}$ and $\texttt{fgh}$ load the
+\emph{same} state $\mathrm{man}$. The offset
+$\mathrm{king}-\mathrm{man}$ of Section~\ref{sec:analogical_offset}
+is then computed once, on the globe, and reused by every lexicon that
+points at those two points.
+
+Embeddings therefore stay. They do not disappear.
+What changes is that they are no longer private vector spaces, one
+per lexicon. They are embeddings \emph{into the same unit}
+$\mathcal{S}$. Once $E_{L_1}(\texttt{xyz})=E_{L_2}(\texttt{fgh})=\mathrm{man}$,
+the two surface forms occupy one address, and every angle measured
+from that address is the same angle:
+\begin{equation}
+    \angle(\mathrm{man},\mathrm{woman})
+    \;=\;
+    \angle\bigl(E_{L_1}(\texttt{xyz}),\,E_{L_1}(\texttt{qyz})\bigr)
+    \;=\;
+    \angle\bigl(E_{L_2}(\texttt{fgh}),\,E_{L_2}(\texttt{hgf})\bigr).
+    \label{eq:uniform_angles}
+\end{equation}
+The embeddings are uniform: same globe, same points for the same
+concepts, same angles for the same relations. A raw string still
+needs the lexicon map $E_L$. It no longer needs a new geometry.
+
+\subsection{Deferred programme: standardized concept dictionaries}
+\label{subsec:standard_dictionaries}
+The present section only \emph{names} the shared globe. It does not
+build the dictionaries. The later refinement, if the idea is pursued,
+is a pair of catalogues rather than a new operator:
+\begin{itemize}
+    \item one \emph{concept dictionary} --- a stipulated inventory of
+          unit states on $\mathcal{S}$ (or a higher-dimensional
+          analogue), so that $\mathrm{man}$ and $\mathrm{woman}$ have
+          standard addresses and therefore standard angles;
+    \item one \emph{language lexicon} $E_L$ per written or spoken
+          system, sending that language's tokens onto those addresses.
+\end{itemize}
+Standardization of the first catalogue is what makes embeddings
+uniform across English, a cipher, or a second natural language.
+The second catalogue is still a tokenizer-plus-encoding: it is the
+phone book, not the city. Tokens and encodings have already earned
+their keep, so they stay. They only have to work \emph{lighter}:
+look up a standard address instead of inventing one. They disappear as
+\emph{inventors of geometry}. They do not disappear as \emph{names}.
+A world in which every language pointed at the same concept
+dictionary would still print letters on a page; It would no longer need each 
+corpus to learn a private $\mathrm{man}$--$\mathrm{woman}$ angle. 
+That programme is recorded here and left open. It is not an
+axiom, and it is not implied by the existence of $\mathcal{S}$ alone.
+
+\subsection{Scope of the register model}
+\label{subsec:register_scope_final}
+This section claims only that one sphere can \emph{host} both alphabets
+as a workspace, and that several lexicons can point at the same
+workspace through different casts. It does not claim that the two-dimensional surface
+$S^2$ is a realistic embedding space for a full natural-language
+lexicon: a working word embedding typically needs tens or hundreds of
+dimensions. The construction here is a typed register and a toy
+dictionary on one globe. Scaling the lexical encoding is a later
+choice --- a higher-dimensional sphere, a spherical-harmonic field, or
+an external lookup table that writes states into the register. The
+lookup tables $E_L$ may still be learned; the claim is only that they
+should write into one geometry rather than each minting a private one.
+
+\section{A Sketch of Conventions}
+\label{sec:conventions_sketch}
+These notes are a seed for later grammars, not a code to enforce.
+They show one way a typed register \emph{might} be spoken. A later
+grammar --- learned, cultural, or formal --- may replace every line.
+This paper only needs the ground level enough that such a grammar has
+somewhere to stand.
+
+\paragraph{Case does not move the address.}
+The tokens $\texttt{man}$, $\texttt{Man}$, and $\texttt{MAN}$ load the
+same direction $(\theta,\phi)$. Orthography is a doorbell, not a new
+city block.
+
+\paragraph{Language does not move the address.}
+English $\texttt{man}$ and a Polish token for the same concept load the
+same point. Only the lexicon map $E_L$ changes. Language is a
+phone-book tag $L$, not a second angle.
+
+\paragraph{Color is reserved for mood, not for language.}
+Phase $\chi$ is already used as affect in the poem example
+(Section~\ref{subsec:transform_example}). If language or case also
+occupied $\chi$, that example would break. Emphasis may tint $\chi$
+or raise $r$; it should not relocate $\mathrm{man}$ to $\mathrm{king}$.
+
+\paragraph{A bag is not a sentence.}
+$\{\mathrm{sun},\mathrm{wind}\}$ is $\oplus$.
+``Wind darkens the sun'' is $T$. Ingredients and order are different
+verbs.
+
+\paragraph{A numeral is not a word until it is cast.}
+The digit $2$ stays $\mathtt{num}$. The word $\texttt{two}$ is
+$\mathtt{word}$. There is no silent $\oplus$ between them
+(Section~\ref{sec:encodings_sorts}).
+
+A toy row makes the first three conventions visible. Place
+$\mathrm{man}$ at $(\theta,\phi)=(10^\circ,40^\circ)$:
+
+\begin{center}
+\begin{tabular}{llcc}
+Token & $L$ & $(\theta,\phi)$ & $\chi$ (mood only) \\
+\hline
+\texttt{man} & English & $(10^\circ,40^\circ)$ & $0^\circ$ (neutral) \\
+\texttt{Man} & English & $(10^\circ,40^\circ)$ & $0^\circ$ \\
+\texttt{MAN} & English & $(10^\circ,40^\circ)$ & $20^\circ$ (emphasis, optional) \\
+\texttt{man} & Polish  & $(10^\circ,40^\circ)$ & $0^\circ$ \\
+\end{tabular}
+\end{center}
+
+Same block. Different doorbells. Nothing here is binding.
+
+\section{Operational Algebra \& Numerical Demonstration}
+
+\subsection{Vector Addition \& Phase Blending}
+Using Equation~\eqref{eq:interference_formal} from Axiom~\ref{subsec:axiom_interference}, combining Red Vector ($0^\circ$) and Blue Vector ($120^\circ$) at coordinate ($0.6, 0.8$) results in deterministic phase blending ($\chi = 66.6^\circ$).
+
+\subsection{Rotational Transposition (Multiplication) \& Unmixing (Division)}
+\begin{itemize}
+    \item \textbf{Multiplication ($\times$):} State transformation via Lie group rotation matrix $\mathbf{R} \in \mathrm{SO}(3)$.
+    \item \textbf{Division ($\div$):} Deconvolution and signal unmixing via inverse transformation $\mathbf{R}^{-1}$ or anti-phase isolation.
+\end{itemize}
+
+\subsection{Computational Efficiency \& Spectral Compression}
+\begin{itemize}
+    \item Mitigating $O(N^3)$ voxel grid costs using Spherical Harmonics ($Y_l^m$) coefficient arrays $O(L^2)$.
+\end{itemize}
+
+\section{Real-World Physical \& Biological Models}
+\subsection{Forest Ecosystem Dynamics}
+\begin{itemize}
+    \item Modeling flora, fauna, soil, and moisture resource completion via vector addition ($A + B = AB$).
+\end{itemize}
+
+\subsection{Targeted Viral/Pathogen Cancellation (Selective Subtraction)}
+\begin{itemize}
+    \item Isolating disease signatures and applying $180^\circ$ anti-phase mirror vectors to achieve zero-state equilibrium ($A - B = 0$).
+\end{itemize}
+
+\subsection{Atmospheric Storm Systems (Phase Shifts and Shear Turbulence)}
+\begin{itemize}
+    \item In-phase wave coherence vs. minor phase shift ($0.01$) driving localized vortices and trajectory shifts.
+\end{itemize}
+
+\section{Discussion \& Related Work}
+\subsection{Comparison to Quantum Bloch Spheres and Hilbert Spaces}
+\subsection{Integration with machine learning latent embeddings (Cosine Similarity)}
+\subsection{Hardware Realization: Optical Phase Computing vs. Digital GPUs}
+
+\section{Conclusion \& Future Directions}
+
+This paper has sketched a single pipeline: collapse many sorted units
+into one state on a unit probability sphere, then derive results by
+ordered transformation of that state. Embeddings, on this view, are
+not abolished. They are embeddings into one geometry, so that a
+concept such as $\mathrm{man}$ may keep the same angles under every
+lexicon that points at it.
+
+A few spoken conventions are sketched in
+Section~\ref{sec:conventions_sketch} as seed, not statute.
+
+What remains to be built, and is only filed here, is a standardized
+concept dictionary together with per-language lexica $E_L$
+(Section~\ref{subsec:standard_dictionaries}). Until those catalogues
+exist, tokenization and encoding remain the handles by which a
+paragraph finds its points. They may continue; they will only have to
+work lighter. The open bet is that they need not also
+remain the architects of a new space of meanings.
+
+\end{document}
