@@ -1,0 +1,1889 @@
+% 1. Preamble
+\documentclass[12pt, a4paper]{article}
+
+% Import Packages
+\usepackage[utf8]{inputenc}        % Encoding
+\usepackage{amsmath, amssymb}     % Advanced math formulas
+\usepackage{mathtools}           % Math enhancements
+\usepackage{graphicx}            % Image insertion
+\usepackage{hyperref}            % Interactive hyperlinks & PDF bookmarks
+\usepackage{color}               % Color text and backgrounds
+\usepackage{geometry}            % Page geometry
+\usepackage{comment}             % Multi-line comments
+\usepackage{titling}             % Custom title formatting
+
+\geometry{a4paper, margin=1in}
+
+% Custom Command Definitions
+\newcommand{\Sball}{\mathcal{S}}
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+% Hyperref Setup for Clean PDF Links
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={Pattern Arithmetic},
+    pdfauthor={Sandeep Lakshminarayan Chiluveru}
+}
+
+% Metadata & Custom Title Banner
+\pretitle{\begin{center}\Huge\fontfamily{tt}\selectfont ================================================================================\\[0.5em]}
+\posttitle{\\[0.5em] ================================================================================\end{center}}
+
+\title{Pattern Arithmetic: Typed Algebra of Bounded Units on a Phase-Colored Sphere}
+%\title{Pattern Arithmetic: Bounded High-Density Units on a Phase-Colored Sphere}
+%\title{Pattern Arithmetic: Typed Algebra of Units on a Phase-Colored Sphere}
+%\title{Pattern Arithmetic: Phase-Colored Geometric Framework for High-Density Information via Unit Truth Spheres}
+\author{Sandeep Lakshminarayan Chiluveru}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% ABSTRACT
+\begin{abstract}
+Ordinary arithmetic treats the integer 1 as a unit of truth: $1=1$ and $1+1=2$. Counting is only one algebra. Colors and musical notes are also units of truth; combining them yields a hue or a chord, not a larger integer. This paper treats a pattern as a higher-order unit and represents one pattern by one typed point
+$x = (r,\,\hat n,\,\chi,\,\tau)$
+on a unit sphere $\mathcal{S} \subset \mathbb{R}^3$:
+strength $r \in [0, 1]$,
+direction $\hat n \in S^2$ (equivalently $(\theta,\phi)$),
+internal phase-color $\chi \in [0, 2\pi)$,
+and sort $\tau$.
+Pattern Arithmetic is the algebra of such units. It proceeds in three acts --- collapse (the bowl, $\oplus$), transform (the path, $T$), result --- so that gather does not double identical states ($A \oplus A = A$), a gathered unit may be removed ($\{A\} \ominus A = \emptyset$, the empty bowl), and the same ingredients may form different ordered expressions. Anti-phase cancellation to black is a Mix reading, not a gather. Division as unmixing is left open. Words and numbers occupy the same sphere under different encodings and meet in a document by order and typed action, not by blending. The aim is a single bounded register that carries overlapping identities, structural paths, and mixed prose without a discrete grid. The sphere and its operators are one proposed encoding of a narrower claim --- a combination rule should match the unit --- not a theory of language, physics, biology, or computation.
+\end{abstract}
+
+\section{Introduction}
+
+Ordinary arithmetic uses the integer $1$ as a unit of truth.
+The identity $1=1$ says that two tokens are of the same kind.
+The rule $1+1=2$ says that combining two such tokens produces a
+larger quantitative state. That algebra answers the question
+\emph{how many?}
+
+It is not the only algebra. A color and a musical note are also
+units of truth, but their combination does not enlarge a pile.
+Under additive light, red and green yield yellow. Two copies of
+the same yellow, once brightness is normalized, remain yellow.
+Idempotence is a property of $\oplus$ alone: $A\oplus A=A$ always,
+whereas $A\boxplus A$ grows strength to $r'=\min(1,2r)$ at unchanged
+hue, and returns the same yellow only after that normalization
+(Axiom~\ref{subsec:axiom_interference}).
+Two notes yield a chord, not a larger integer; a tone plus its
+opposite phase yields silence. In each case the word ``add''
+names a different rule, and therefore a different kind of unit.
+
+When the object of interest is a structured whole rather than a
+count, a hue, or a pitch, the natural unit is a \emph{pattern}.
+This paper represents one pattern by one typed point on a unit
+sphere $\mathcal{S} \subset \mathbb{R}^3$, not by a field painted over the globe:
+\begin{itemize}
+    \item $r \in [0, 1]$ is the strength of the unit, capped so that a state remains a single unit of truth --- an activation, not a global probability density;
+    \item $\hat n \in S^2$, or equivalently $(\theta, \phi)$, is the direction of the pattern on the sphere;
+    \item $\chi \in [0, 2\pi)$ is an internal phase-color, so two identities may occupy the same direction without overwriting one another;
+    \item $\tau$ is the sort ($\mathtt{word}$, $\mathtt{num}$, $\mathtt{color}$, \ldots): a legality tag, not a fifth geometric angle.
+\end{itemize}
+Pattern Arithmetic is the algebra of these units. Gather does not double identical states ($A \oplus A = A$). A gathered unit may be removed ($\{A\} \ominus A = \emptyset$). Rotations of the sphere preserve the unit. Opposite-phase Mix is a later reading; it is not $\oplus$.
+
+A single numerical picture is enough to see the difference from counting. Take two unit states at the same place, one with phase $0^\circ$ (red) and one with phase $120^\circ$ (green). Counting would return $2$. Phase-aware combination returns a single unit whose blended phase is $60^\circ$ (yellow). That is this paper's color inclusion --- phasor Mix on a toy chart, not CIE or linear RGB (Axiom~\ref{subsec:axiom0_admissibility}, Axiom~\ref{subsec:axiom_interference}). The same two strengths with opposite phase ($0^\circ$ and $180^\circ$) return the null state, black. Two units of truth may become a new identity, a stronger mark of the same identity, or none.
+
+The working order of the paper is not that mix alone. It is a three-step spine:
+\[
+\text{Collapse (bowl)} \;\longrightarrow\; T\text{ (path)} \;\longrightarrow\; \text{Result}.
+\]
+Collecting red and green is not yet yellow, and not yet a poem.
+Yellow is what you get if the later reading is Mix ($\boxplus$).
+Red and green may equally well walk a $T_{\mathrm{poem}}$ path; the
+result need not be yellow --- though a given poem may still arrive
+there. The later act, not the shells, chooses the result. A verse is
+another path.
+Each word of ``Twinkle, twinkle, little star\ldots'' is a unit state
+on the same sphere. Collapse yields the bag of distinct words
+($\texttt{twinkle}$ appears twice in the line and only once in the
+bowl). The poem is the path that walks those states in order,
+including the repeated $\texttt{twinkle}$. The bag is not the song.
+Numericity is not stored by $\oplus$. Two identical units collapse
+to one address; that is the point of $A\oplus A=A$. How many times
+the address is \emph{visited} lives in the path (the tape says
+\texttt{twinkle} twice). How many as a \emph{count} lives in
+$\mathtt{num}$ mode, where $1+1+1+1=4$ and four tokens of $1$ are
+not collapsed. Strength $r$ is a poor substitute for either: a
+second \texttt{twinkle} cannot honestly raise $r$ past $1$, and
+``four ones'' is schoolbook addition, not a fuller unit of truth.
+The same bowl may be read more than one way. Loading is not meaning.
+
+The sphere is the stage. It is not the deepest claim. Strip away
+geometry, phase, rotations, and the language examples, and one
+proposition remains: different kinds of information require different
+notions of combination, and an operation should be read by what
+informational property it \emph{preserves} --- and what it is allowed
+to throw away.
+\[
+1+1=2,
+\qquad
+\mathrm{red}\boxplus\mathrm{green}=\mathrm{yellow},
+\qquad
+A\oplus A=A,
+\qquad
+T_a(T_b(x))\neq T_b(T_a(x)).
+\]
+These are not alternative tricks for the same plus sign. They answer
+different questions:
+
+\begin{center}
+\begin{tabular}{ll}
+Operation & Question \\
+\hline
+$+$ & How many? \\
+$\oplus$ / $\ominus$ & What is present? / what is removed? \\
+$\boxplus$ ($\mathrm{Mix}$) & What composite state results? \\
+$T$ & What happens, and in what order? \\
+offset & What walk is reused? \\
+\end{tabular}
+\end{center}
+
+Division as deconvolution or signal unmixing is not among these
+verbs; it is left open
+(Section~\ref{subsec:division_open}).
+Inverse rotation of $T$ is well-defined. A Mix inverse is not.
+
+A pattern can be treated as one unit. Identity and multiplicity come
+apart: $\oplus$ keeps kind and discards count; the path keeps visits;
+$\mathtt{num}$ keeps quantity. Composition and transformation are
+different verbs. Sorts may share a stage without sharing an operator.
+The geometry that follows is only a language in which those verbs can
+be written. It does not mint the relations; a lexicon or a learning
+rule must still seat $\mathrm{Sun}$ and $\mathrm{Day}$.
+Section~\ref{subsec:claim_scope} keeps that claim narrow.
+
+\subsection{The Limitations of Discretized Matrix Grids}
+A discrete matrix grid is the wrong box for such a unit. Traditional matrix representations of continuous state spaces suffer from two severe structural bottlenecks:
+\begin{itemize}
+    \item \textbf{Memory Scaling Bottlenecks:} A voxel cube of resolution $N$ stores $O(N^3)$ cells, growing steeply with resolution.
+    \item \textbf{Signal Identity Destruction:} Mapping multiple overlapping variables to identical spatial coordinates often results in the destructive overwriting of underlying signal identities.
+\end{itemize}
+
+\subsection{The Phase-Colored Unit Sphere Framework}
+To resolve these grid constraints, the sphere is offered as one bounded object that can carry overlapping identities by direction and phase, without enlarging a lattice.
+\begin{itemize}
+    \item \textbf{Spatial Orientation $\hat n \in S^2$, or $(\theta, \phi)$:} Defines continuous directional coordinates across the spherical surface.
+    \item \textbf{Magnitude ($0 \leq r \leq 1$):} Strength of that one unit, capped so the arrow remains a single unit of truth. An activation, not a density for the whole sphere.
+    \item \textbf{Internal Color Phase ($\chi \in [0, 2\pi)$):} Serves as an independent phase degree of freedom.
+    \item \textbf{Sort $\tau$:} A legality tag ($\mathtt{word}$, $\mathtt{num}$, $\mathtt{color}$, \ldots). It does not move the arrow.
+\end{itemize}
+
+\subsection{Core Contributions \& High-Level Intuition}
+The principal contributions of Pattern Arithmetic are:
+\begin{itemize}
+    \item \textbf{A typed unit:} one atom $x=(r,\hat n,\chi,\tau)$ on a bounded sphere, not a voxel cell and not a global probability field.
+    \item \textbf{Admissibility of sorts (Axiom~0):} a sort earns a geometric $\chi$- or $T$-reading only where a stated map preserves its native combination; most domains do not.
+    \item \textbf{Verbs on that unit:} $\oplus$ collects identities ($A\oplus A=A$); $\boxplus$ reads a composite; $T$ walks an ordered path on one register occupant; offset copies a relation. Schoolbook $+$ is reserved for $\mathtt{num}$.
+\end{itemize}
+
+Later sections distinguish a numeric encoding from a lexical encoding on the same sphere, so that a report may carry words and numbers together without forcing them through $\oplus$.
+
+\subsection{Scope of the claim}
+\label{subsec:claim_scope}
+The actual claim is narrow. Counting ($1+1=2$) is not the only valid
+arithmetic for combining units of information. A combination rule
+should be chosen for what the unit \emph{is} --- a count, a color, a
+direction, a word --- not applied by default because it is the
+arithmetic everyone already knows. The sphere, phase, and the
+operators $\oplus$, $\boxplus$, $T$, and offset are one proposed way
+to make that claim precise and checkable. They are not themselves the
+claim, and they are not offered as a general theory of language,
+physics, biology, or computation.
+The paper does not attempt to compute the governing equations of
+those systems. It attempts to arrive at higher-order realities by
+reading many co-present units of truth --- seated units, whether
+pinned by a lexicon or by a learned map --- through a path. That is a
+computation of \emph{presence, phase, and order}, not a substitute for
+a field equation.
+Storms, forests, a table and chair, and a pathogen cancellation later in the paper
+(Section~\ref{sec:higher_order}) are costumes for the
+$\oplus$-versus-$T$ split: presence versus path. Related-work
+paragraphs (Section~\ref{sec:related}) draw boundaries against
+existing formalisms. None of that is a demonstrated model of weather,
+ecology, or epidemiology, or a replacement for quantum mechanics,
+embeddings, or transformers. A later widening of a costume into a
+domain claim would need its own evidence. It is not an extension of
+the illustration.
+Section~\ref{subsec:axiom0_admissibility} states this limit formally:
+a sort earns a geometric reading only where a structure-preserving
+map into Mix or $T$ exists at a stated fidelity, and most physical
+domains do not offer one.
+
+The next section turns these definitions into formal mathematical axioms.
+
+
+\section{Axiomatic Foundations Of Pattern Arithmetic}
+
+\subsection{Axiom 0: Admissibility of Sorts}
+\label{subsec:axiom0_admissibility}
+The axioms that follow govern how a state $x=(r,\hat n,\chi,\tau)$
+behaves once it sits on $\mathcal{S}$. They say nothing about which
+sorts $\tau$ have earned the right to sit there with a geometric
+reading attached. That prior question is this axiom, and it is
+separate from Table~\ref{tab:type_table} in
+Section~\ref{subsec:type_table}: the table says which
+\emph{operators} two already-admitted sorts may use on each other;
+this axiom says which sorts may claim $\chi$ and $T$ mean something
+about their own domain in the first place.
+
+\paragraph{The test.} A sort $\tau$ has a domain $D_\tau$ and, in the
+world, its own native way of combining two members of that domain,
+written $a \circ_\tau b$ for $a,b \in D_\tau$. Call $\tau$
+\emph{geometrically admissible} if there is a map
+\begin{equation}
+    \varphi_\tau : D_\tau \longrightarrow \mathcal{S}, \qquad
+    \varphi_\tau(a \circ_\tau b) \;\approx\;
+    \boxplus\bigl(\varphi_\tau(a), \varphi_\tau(b)\bigr)
+    \quad \text{or} \quad
+    T_{\varphi_\tau(a)}\bigl(\varphi_\tau(b)\bigr),
+    \label{eq:admissibility}
+\end{equation}
+holding at a stated fidelity (exact, or approximate with the
+approximation named). Equation~\eqref{eq:admissibility} is the
+Tier~1 test. Tier~0 admission, below, does not require it.
+If no such $\varphi_\tau$ exists, $\tau$ is
+\emph{geometrically inadmissible} for Tier~1: it may still occupy a point on
+$\mathcal{S}$, but only under the inert treatment described below,
+never with a claim that $\chi$ or $T$ tracks anything the domain
+itself does.
+
+\paragraph{Three tiers.}
+\begin{itemize}
+    \item \textbf{Tier 0 --- default, unstated.} $\mathtt{word}$ and
+    $\mathtt{num}$ need no admissibility argument because neither
+    makes a physical claim through the geometry. $\mathtt{num}$
+    has an exact, invertible \emph{chart}
+    (Section~\ref{subsec:clock_encoding}): decode, add in
+    $\mathbb{Z}$, encode. That chart is not a Mix or $T$
+    homomorphism --- Mix on it is the clock trap of that same
+    section, which is why Mix on $(\mathtt{num},\mathtt{num})$ is
+    type-refused. $\mathtt{word}$ makes no claim at all --- $T$ on a
+    word is bookkeeping (order, presence), never a statement about
+    linguistic physics. Mix applied to two word-states is inert
+    geometry, not a $\chi$-reading of language. Both are silently
+    admitted at this inert level; nothing further needs to be said
+    to use them.
+
+    \item \textbf{Tier 1 --- explicit inclusion.} A sort earns a
+    genuine $\chi$-reading only by stating its $\varphi_\tau$ and the
+    fidelity it holds at. Musical pitch class is close to exact:
+    octave equivalence makes pitch native to a circle, so $\chi$ for
+    a note is close to literal, not borrowed. Color is close but not
+    unique: additive light mixing is linear in some models and only
+    approximately phasor-like in others, so an inclusion of
+    $\mathtt{color}$ must say \emph{which} reading it means --- Mix
+    under $\boxplus$ and Mix under linear RGB blend are different,
+    non-interchangeable inclusions, and a paper that admits color
+    must pick one and say so. This paper picks phasor Mix on a toy
+    $0^\circ/120^\circ/60^\circ$ chart
+    (Axiom~\ref{subsec:axiom_interference}). It does not pick CIE,
+    and it does not pick linear RGB. A second Tier-1 sort,
+    $\mathtt{chladni}$, is worked in full in
+    Section~\ref{subsec:chladni_inclusion}, where
+    Equation~\eqref{eq:admissibility} is met exactly within a mode
+    and shown unavailable across modes.
+
+    \item \textbf{Inadmissible --- no $\varphi_\tau$ exists.} Some
+    domains have a native combination law with no structure-preserving
+    map to $(\oplus,\boxplus,T,\text{offset})$ at any useful fidelity.
+    A snowflake's native symmetry is the discrete point group
+    $D_{6h}$, and two ice structures meeting is a diffusion-limited
+    accretion process governed by temperature and humidity gradients
+    --- not a continuous rotation in $\mathrm{SO}(3)$. There is no
+    honest $\varphi_{\mathrm{snowflake}}$ satisfying
+    Equation~\eqref{eq:admissibility}. Such a sort is not barred from
+    the register outright: it may still be loaded as a point, but
+    only demoted to the Tier-0 treatment already given to
+    $\mathtt{word}$ --- $T$ used for order or presence only, no
+    $\chi$-reading granted, and no claim that a rotation of its point
+    corresponds to anything the domain does. What is barred is Tier-1
+    status: an inadmissible sort may never be handed a stated
+    $\varphi_\tau$, because none would be true.
+\end{itemize}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{llcc}
+\hline
+Sort & Native law $\circ_\tau$ & Mix/$T$ map? & Tier \\
+\hline
+$\mathtt{num}$   & schoolbook $+$ & no (chart only) & 0 \\
+$\mathtt{word}$  & none claimed & n/a & 0 \\
+$\mathtt{note\text{-}pitch}$ & pitch-class sum & near-exact & 1 \\
+$\mathtt{color}$ & additive light & phasor Mix (here) & 1 \\
+$\mathtt{chladni}$ & modal superposition & exact, within a mode & 1$^{\S}$ \\
+$\mathtt{snowflake}$ & $D_{6h}$ growth & no & T1 no; T0 yes \\
+\hline
+\end{tabular}
+\caption{Admissibility is a property of the sort, decided before
+Table~\ref{tab:type_table}'s operator legality is even asked.
+Equation~\eqref{eq:admissibility} is the Tier~1 test; Tier~0
+admission does not use it. A sort
+absent from this table is undecided, not admitted; treat it as
+inadmissible until a $\varphi_\tau$ is stated.
+$^{\S}$$\mathtt{chladni}$ is admitted at Tier~1 with a stated
+restriction: exact for superposition within one mode, undefined across
+modes (Section~\ref{subsec:chladni_inclusion}).}
+\label{tab:admissibility}
+\end{table}
+
+This axiom is also what gives
+Section~\ref{subsec:claim_scope} teeth. ``Not a general theory of
+physics, biology, or computation'' is not only a promise of
+restraint; it is a consequence of Equation~\eqref{eq:admissibility}
+failing for most physical domains a reader might otherwise expect
+the sphere to cover.
+
+\subsection{Process principle: Collapse, path, result}
+\label{subsec:process_principle}
+Pattern Arithmetic proceeds in three named acts, kept separate so that a bowl may grow before it is read:
+\begin{equation}
+    \underbrace{A_1 \oplus A_2 \oplus \cdots \oplus A_n}_{R\ =\ \text{the bowl}}
+    \;\longrightarrow\;
+    T_{w_k}\circ \cdots \circ T_{w_1}(x)
+    \;\longrightarrow\;
+    \text{Result}.
+    \label{eq:pipeline}
+\end{equation}
+Here $x$ is the register occupant; the $w_i$ are actors, taken from
+the bowl or from the tape. $T$ does not act on the set $R$ as a set.
+$\oplus$ \emph{collects}: identical tokens do not double ($A \oplus A = A$), and opposite marks may sit together until a later reading. $T$ is an ordered path, not a mix. The result is whatever that path (or another named reading) makes of the bowl --- a poem, a report, a staged endpoint.
+
+Paint is Mix ($\boxplus$), a reading of peer states at a common direction, not a $T$:
+\[
+\mathrm{red}\boxplus\mathrm{green} = \mathrm{yellow}.
+\]
+The same pair may take $T_{\mathrm{poem}}$ instead. That result is a
+verse about the two colors, not a hue --- unless the poem itself
+walks back to yellow. Shells do not own a pathway. A verse is another
+path. One bowl, several ways to read it. One may collect
+and read in a single gesture; the algebra does not force the merge.
+This principle is an axiom of \emph{order of acts}, not a new formula
+for a 4-tuple.
+
+\paragraph{Levels are closed.}
+A result may be seated again. Equation~\eqref{eq:pipeline} returns a
+state, and a state may take a seat in a further bowl, so the three
+acts repeat at a higher level: words gather and are walked into a
+line; the line is seated; lines gather and are walked into a verse.
+Two properties hold at every level and are worth stating once. First,
+a unit carries no representation of what it constitutes. A seated word
+does not know the poem, and $T$ leaves $\tau_x$ invariant
+(Section~\ref{subsec:transform_properties}), so being acted upon does
+not change what a unit is. Second, a bowl carries no representation of
+the reading that will be applied to it; that is what \emph{one bowl,
+several ways to read it} means above.
+
+The consequence is a design rule rather than a theorem. Whatever a
+lower unit would have to know about a higher one belongs at the higher
+level and not in the 4-tuple: which units were taken as co-present,
+over what interval, within what region, and under what question. Those
+are constituting facts of a level, not coordinates of an atom, and
+keeping them out is why the atom stays at four coordinates and one
+sort tag while the levels above it may be as elaborate as a problem
+requires. This paper works a single level and states the mechanism for
+the next; it does not carry a multi-level example.
+
+\subsection{Axiom 1: The Normalized Unit Truth State ($r \le 1$)}
+\label{subsec:axiom1}
+A pattern is one typed point, not a field painted over the globe. The working atom is
+\begin{equation}
+    x = (r,\,\hat n,\,\chi,\,\tau),
+    \qquad
+    \begin{aligned}
+    r &\in [0,1],
+    \qquad
+    \hat n \in S^2,\\
+    \chi &\in [0,2\pi),
+    \qquad
+    \tau \in \{\mathtt{word},\,\mathtt{num},\,\mathtt{color},\,\mathtt{note\text{-}pitch},\,\mathtt{chladni},\,\ldots\}.
+    \end{aligned}
+    \label{eq:unit_truth}
+\end{equation}
+Equivalently, $\hat n$ may be written in polar angles $(\theta,\phi)$, so the geometric part of the atom is the 4-tuple $(r,\theta,\phi,\chi)$ used by the operators below. The sort $\tau$ does not move the arrow; it says which buttons may be pressed (Section~\ref{sec:encodings_sorts}). A collection (bowl) is a separate finite set $B=\{x_1,\ldots,x_n\}$ of such atoms. The sphere holds one current occupant of the register; the bowl is who is present.
+
+The cap $r \le 1$ applies to \emph{that} arrow. It is a normalized strength / activation coordinate, not a global probability density and not a demand that all arrows on $\mathcal{S}$ integrate to one. Two states may occupy
+different directions at once; each still carries its own strength
+$r\le 1$. The sphere is the stage. The unit is the vector.
+$r=1$ is a full-strength mark. Nothing in this axiom sums the globe
+into a single global budget. A field of many atoms, if wanted later, is a different object (for example a superposition of Dirac masses at those points), not the atom itself.
+
+\paragraph{How the bound is imposed is a choice.}
+This paper bounds by clipping: Mix returns $r'=\min(1,|z'|)$, so
+$r=1$ is attained whenever a phasor sum reaches unit length. Clipping
+is not injective. Every sum of length one or more returns the same
+$r'$, and agreement past that point is not recorded
+(Section~\ref{subsec:axiom_interference}). An order-preserving
+bijection from $[0,\infty)$ onto $[0,1)$ --- $|z|\mapsto|z|/(1+|z|)$,
+say --- would bound without discarding, since distinct sums would keep
+distinct strengths, and it would leave $z=0\mapsto 0$ and the black of
+Axiom~\ref{subsec:axiom_null} untouched.
+
+The clip is kept here, and the trade is stated rather than argued.
+Under such a bijection $r=1$ becomes a limit and not a value: the
+saturated pole of Axiom~\ref{subsec:axiom_white} would be approached
+and never occupied, and $\alpha=\pi r_w$ would never reach the
+half-turn of Section~\ref{subsec:transform_properties}. Two attained
+poles are worth more to this paper than lossless accumulation, because
+no construction here sums a large bowl. A setting that does --- a
+verdict accumulated from many units, say --- would weigh the same
+trade the other way, and should revisit this line rather than inherit
+it.
+
+\subsection{Axiom 2: The Absolute Null State ($r = 0$, Black)}
+\label{subsec:axiom_null}
+The lower bound of a single unit is vanishing strength:
+\begin{equation}
+    r = 0 \quad \implies \quad x = \mathbf{0}
+    \quad \text{(Black)}.
+    \label{eq:null_state}
+\end{equation}
+Direction and phase are then unused: there is no arrow to point.
+Black is an empty seat, not a field that is zero at every angle.
+
+\subsection{Axiom 3: Saturation (White)}
+\label{subsec:axiom_white}
+White is the upper pole of the same bounded stage. It is not an infinite
+norm. Two readings are allowed; neither leaves the cap $r\le 1$.
+
+\paragraph{White as a colour.}
+A single arrow may take a full-spectrum name (white light as one
+identity). That state is still one 4-tuple with $r\le 1$.
+
+\paragraph{White as a full house.}
+The bowl may be saturated: many directions occupied, many hues present.
+Collecting further distinct shells fills more seats; it does not raise
+any arrow past $r=1$. $\oplus$ does not grow strength. Mix may grow a
+single $r$ until the cap. The stage looks white because the palette is on. The catalogue
+of names is large --- on the order of a 24-bit palette,
+$\sim 16$ million colours per direction --- and may be called
+practically endless. No unit is $r=\infty$.
+\begin{equation}
+    \text{White} \;=\; \text{saturation of the bowl, or a full-spectrum name.}
+    \label{eq:white_state}
+\end{equation}
+Black is empty. White is as full as this construction allows. The
+menu is huge. The arrows stay finite.
+Density in this paper means many identities can share the stage
+without overwrite --- many directions, and many phases per direction
+--- each still capped at $r\le 1$. It does not mean infinite
+information, and it is not a storage theorem against a voxel grid.
+
+\subsection{Axiom 4: Gather and remove ($\oplus$, $\ominus$)}
+\label{subsec:axiom_idempotence}
+$\oplus$ \emph{collects} a unit into the bowl. It does not mix colours
+and it does not turn an arrow. A bowl is a finite subset of
+$\mathcal{S}$, and $\oplus$ is union on such subsets:
+\[
+\oplus:\; 2^{\mathcal{S}}\times 2^{\mathcal{S}}
+\longrightarrow 2^{\mathcal{S}},
+\qquad
+B_1 \oplus B_2 \;=\; B_1 \cup B_2 .
+\]
+A bare state $A$ appearing in an $\oplus$-expression denotes its
+singleton bowl $\{A\}$. With that convention, identical names occupy
+one seat:
+\begin{equation}
+    A \oplus A = A,
+    \qquad\text{that is,}\qquad
+    \{A\}\cup\{A\}=\{A\},
+    \label{eq:idempotence_formal}
+\end{equation}
+while distinct names take separate seats, $A\oplus B=\{A,B\}$, so
+opposite marks may sit together:
+$\{+1\}\oplus\{-1\}=\{+1,-1\}$.
+Idempotence, commutativity and associativity of $\oplus$ are those of
+union, and none of the three needs separate postulation.
+Gather is sort-blind: any two seated units may share a bowl, whatever
+their sorts, since a bowl records presence and presence makes no claim
+about a domain (Table~\ref{tab:type_table}). Sort discipline governs
+what may later be \emph{done} with the bowl, not who may sit in it.
+The bowl is a set of states, not a blended 4-tuple.
+
+$\ominus$ \emph{removes} a unit,
+$\ominus:\,2^{\mathcal{S}}\times\mathcal{S}\to 2^{\mathcal{S}}$.
+Removing the last occupant leaves the empty bowl:
+\begin{equation}
+    \{A\}\ominus A = \emptyset.
+    \label{eq:ominus_empty}
+\end{equation}
+The empty bowl $\emptyset$ and the null state $\mathbf{0}$ of
+Axiom~\ref{subsec:axiom_null} are distinct objects: $\emptyset$ is a
+bowl with no occupant, $\mathbf{0}$ is an occupant with $r=0$. Only
+$\mathbf{0}$ is a state, which is why $T_{\mathbf{0}}$ is defined
+(Section~\ref{subsec:transform_properties}) and $T_{\emptyset}$ is
+not.
+$\ominus$ undoes a gather. It is not anti-phase interference.
+Idempotence then gives the counting-trap
+\begin{equation}
+    A \oplus A \oplus A \oplus A \ominus A = \emptyset
+    \quad\text{(the empty bowl)}.
+    \label{eq:four_a_ominus}
+\end{equation}
+Four gathers of the same name are still one seat; one removal empties
+it. Schoolbook $1+1+1+1-1=3$ lives only in $\mathtt{num}$ mode.
+
+\subsection{Axiom 5: Mix as a reading (\texorpdfstring{$\boxplus$}{boxplus})}
+\label{subsec:axiom_interference}
+A blended 4-tuple appears only when Mix \emph{reads} the bowl.
+Write $\mathrm{Mix}=\boxplus$. Mix is a \emph{phasor} operator: it
+combines $\chi$ among states that already share a direction $\hat n$.
+Direction belongs to $T$ and to the rotations of
+Axiom~\ref{subsec:axiom_rotation}; Mix never moves an arrow onto a new
+axis. Mix of states with differing $\hat n$ is left open
+(Section~\ref{subsec:mix_scattered_open}). The output is
+$(r',\theta',\phi',\chi')$ with $r'\le 1$, or black.
+$T_w$ is a one-argument rotation and phase-shift of an occupant,
+parameterized by an actor $w$. Mix is a combination of
+peer states. It is not a member of the group $T_w$ lives in, and it
+does not compose with $T_w$ the way two ordinary $T$'s do. The two
+give different answers on the same pair: for unit red at $\chi=0^\circ$
+and unit green at $\chi=120^\circ$ sharing a direction,
+$T_{\mathrm{green}}(\mathrm{red})$ shifts phase additively to
+$\chi'=120^\circ$, while $\mathrm{red}\boxplus\mathrm{green}$ takes the
+phasor resultant, $\chi'=60^\circ$. No choice of actor makes $T$
+return $60^\circ$ here, because $T$ adds phase where Mix sums phasors.
+Three further properties separate them: $T_w$ is asymmetric in actor
+and patient while $\boxplus$ is commutative; $T_w$ leaves $r$ invariant
+while $\boxplus$ may grow it to the cap
+(Axiom~\ref{subsec:axiom_white}); and every $T_w$ has an inverse
+$w^{*}$ while $\boxplus$ has none.
+
+Which sorts may read a Mix result as a claim about their own domain is
+settled by Axiom~\ref{subsec:axiom0_admissibility}, not here: Tier~1
+for $\mathtt{color}$ and $\mathtt{note\text{-}pitch}$, inert geometry
+for $\mathtt{word}$, type-refused for $\mathtt{num}$.
+
+\paragraph{Two states at a common direction.}
+Treat strength and phase as a phasor $z=r e^{i\chi}$. Then
+\begin{equation}
+    z' = r_A e^{i\chi_A} + r_B e^{i\chi_B},
+    \qquad
+    r' = \min(1,|z'|),
+    \qquad
+    \chi' = \arg(z'),
+    \label{eq:interference_formal}
+\end{equation}
+and $(\theta',\phi')=(\theta_A,\phi_A)$. If $z'=0$, the result is
+black. Equal unit paints at $0^\circ$ and $120^\circ$ give
+$z'=e^{i\pi/3}$, so
+\[
+(1\angle 0^\circ)\boxplus(1\angle 120^\circ)
+=(1,\,\theta,\,\phi,\,60^\circ)
+\quad\text{(yellow)}.
+\]
+This paper's color inclusion
+(Axiom~\ref{subsec:axiom0_admissibility}, Tier~1) is that phasor Mix
+on a toy $0^\circ/120^\circ/60^\circ$ chart. It is not CIE, and it is
+not linear RGB.
+The unequal pair $r=0.6$ at $0^\circ$ and $r=0.8$ at $120^\circ$
+gives $z'=0.20+0.6928\,i$, hence
+\[
+r'\approx 0.721,\qquad \chi'\approx 73.9^\circ.
+\]
+Equal anti-phase marks, same place, give $z'=0$ (black).
+A state mixed with itself at the same phase is not idempotent:
+$A\boxplus A$ gives $z'=2r e^{i\chi}$, so $r'=\min(1,2r)$.
+Strength grows until the cap clips it. That is distinct from
+$A\oplus A=A$.
+
+\paragraph{Reading a whole bowl.}
+Mix over a bowl $B$ whose members share a direction $\hat n$ is
+defined in one step, not as a fold:
+\begin{equation}
+    \boxplus(B)
+    \;=\;
+    \bigl(\min(1,|z_B|),\;\hat n,\;\arg z_B\bigr),
+    \qquad
+    z_B \;=\; \sum_{x\in B} r_x e^{i\chi_x}.
+    \label{eq:mix_bowl}
+\end{equation}
+The binary $\boxplus$ of Equation~\eqref{eq:interference_formal} is
+the case $|B|=2$. The one-step form is necessary, not stylistic,
+because the cap makes the binary operator non-associative: with
+$A=1\angle 0^\circ$, $B=1\angle 0^\circ$, $C=1\angle 180^\circ$,
+\[
+(A\boxplus B)\boxplus C=\text{black},
+\qquad
+A\boxplus(B\boxplus C)=1\angle 0^\circ ,
+\]
+since $A\boxplus B$ is clipped from $2\angle 0^\circ$ down to
+$1\angle 0^\circ$, and the strength discarded by that clip is exactly
+what $C$ would otherwise have cancelled.
+Equation~\eqref{eq:mix_bowl} on the same three states sums first and
+caps once:
+\[
+z_B = e^{i0}+e^{i0}+e^{i\pi} = 1,
+\qquad
+\boxplus\bigl(\{A,B,C\}\bigr) = (1,\,\hat n,\,0^\circ),
+\]
+one reading, reached without choosing an order. $\boxplus$ is
+commutative,
+and Equation~\eqref{eq:mix_bowl} is order-independent, so a bowl ---
+which carries no order --- has exactly one Mix reading. Iterated
+binary Mix does not, and is not what
+Equation~\eqref{eq:mix_bowl} means. Non-associativity is the price of
+the cap of Axiom~\ref{subsec:axiom1}: without $\min(1,\cdot)$ the
+phasor sum would be ordinary complex addition and associativity would
+be free.
+
+$\oplus$ does not run this rule. Two shells in a bowl have no
+resultant angle until Mix (or a $T$-path) is applied.
+A reading returns a state and leaves the bowl intact: $\boxplus(B)$
+does not consume $B$, and a $T$-path draws actors from a bowl without
+removing them. Only $\ominus$ takes a member out. That is what makes
+one bowl readable more than once --- the same $B$ may yield a Mix
+result and, separately, a walked path.
+Gather is lossless and is undone by $\ominus$; Mix is lossy, since it
+discards both order and any strength above the cap. That is why
+$\ominus$ inverts $\oplus$, $w^{*}$ inverts $T_w$, and nothing inverts
+$\boxplus$.
+
+\paragraph{Saturation and levels.}
+A sum carries no bound of its own; the cap of
+Axiom~\ref{subsec:axiom1} supplies one. A bowl of many agreeing units
+therefore reaches $r'=1$ quickly, and further agreement past that
+point is not recorded. This is worth reading as a remark about levels
+rather than a defect in the cap. A phasor sum is a reading of units
+that stand at one level together, and repeated samples of a single
+unit do not stand at one level; a bowl that saturates early is often a
+level that has been flattened
+(Section~\ref{subsec:process_principle}). Strength does not
+accumulate across levels: a reading returns a state whose $r$ is legal
+by construction --- $\min(1,|z_B|)$ for Mix, and the occupant's own
+$r$ for a path --- and that state is seated afresh at the level above.
+Composition hides the question, since a path over many actors stays in
+$\mathrm{SO}(3)$ and never saturates, so it is Mix rather than the
+walk that makes a flattened level visible. What the cap does not
+supply is a way to average, which needs the count that $\oplus$
+discards (Section~\ref{subsec:axiom_idempotence}); reducing repeated
+samples to one seated unit is therefore work for the level below, not
+for $\boxplus$.
+
+\subsection{A worked Tier-1 inclusion: \texorpdfstring{$\mathtt{chladni}$}{chladni}}
+\label{subsec:chladni_inclusion}
+Color is admitted on a declared toy chart. A second sort is admitted
+here on stronger ground, to show that
+Equation~\eqref{eq:admissibility} can be met exactly rather than
+approximately, and by physics unrelated to either color or language.
+
+\paragraph{Native law.}
+A thin plate driven at one frequency responds as a superposition of
+its eigenmodes $\varphi_j(x,y)$, each carrying a complex amplitude
+$A_j=a_j e^{i\chi_j}$; the visible figure is the nodal set of
+$w=\sum_j A_j\varphi_j$. So $\circ_{\mathtt{chladni}}$ is complex
+addition of mode amplitudes. Two drives on the same mode add as
+complex numbers.
+
+\paragraph{Chart.}
+One state is one mode. Let $\hat n$ carry the mode index under any
+injective map $(m,n)\mapsto(\theta,\phi)$, let $\chi$ be that mode's
+phase, and let $r=a/a_{\max}$ be its amplitude normalized to a
+declared saturation $a_{\max}$.
+
+\paragraph{The map, and where it is exact.}
+Within one mode, $\hat n$ is fixed, and
+\begin{equation}
+    \varphi_{\mathtt{chladni}}(A\circ B)
+    \;=\;
+    \varphi_{\mathtt{chladni}}(A)\;\boxplus\;\varphi_{\mathtt{chladni}}(B)
+    \label{eq:chladni_hom}
+\end{equation}
+holds identically while $|z|\le 1$, because complex addition of
+amplitudes and phasor addition of $(r,\chi)$ are the same operation.
+Nothing is fitted. Note also that the chart's arbitrariness costs
+nothing here: same-mode combination never moves $\hat n$, so
+Equation~\eqref{eq:chladni_hom} places no constraint on the
+mode-to-direction map. Two consequences are physical and immediate.
+Equal amplitudes in anti-phase give $z=0$: the mode is driven to
+silence and its figure disappears, which is
+Equation~\eqref{eq:interference_formal} returning black. Two drives at
+$0^\circ$ and $120^\circ$ give $r=1$ and $\chi'=60^\circ$ --- the same
+arithmetic as $\mathrm{red}\boxplus\mathrm{green}=\mathrm{yellow}$,
+on unrelated physics.
+
+\paragraph{The restriction, which is physical.}
+Across modes the map is not available, and not for want of effort.
+Mode space is not closed under addition: a sum of two distinct modes
+is not a mode, so it cannot be seated as a single state under any
+chart. Cross-mode coexistence is therefore $\oplus$ --- a bowl of
+modes --- and the resulting figure is a reading of that bowl which is
+not $\boxplus$. This is the open question of
+Section~\ref{subsec:mix_scattered_open} met in a concrete domain, and
+it suggests the question may be closed negatively for this sort rather
+than left waiting.
+
+\paragraph{Fidelity claimed, and three limits.}
+Exact in phase and amplitude below saturation, within one mode;
+undefined across modes. Three limits are stated rather than argued
+away. The cap $r\le 1$ is a normalization to a declared $a_{\max}$,
+not a fact of linear plate theory, so
+Equation~\eqref{eq:chladni_hom} clips above saturation, exactly as the
+color inclusion does. Direction is a label here and nothing more,
+so no meaning is claimed for $T$ on a $\mathtt{chladni}$ state:
+rotating a mode index is not an operation the domain performs. And the
+figures most often reproduced are degenerate-mode combinations, which
+fall on the cross-mode side; what is admitted exactly is the simpler
+case, not the famous one.
+\label{subsec:axiom_rotation}
+A rotation $\mathbf{R} \in \mathrm{SO}(3)$ turns the direction $\hat n$ and leaves strength, phase, and sort alone:
+\begin{equation}
+    \mathbf{R}\cdot(r,\,\hat n,\,\chi,\,\tau)
+    \;=\;
+    (r,\,\mathbf{R}\hat n,\,\chi,\,\tau),
+    \qquad
+    \norm{\mathbf{R}\hat n} = \norm{\hat n} = 1.
+\end{equation}
+The unit of truth is preserved because $r$ is not scaled and $\hat n$ stays on $S^2$. This is the geometric engine of $T$, not a second blend.
+
+\section{Transformation Algebra: From Identity to Expression}
+\label{sec:transformation_algebra}
+
+\subsection{Motivation: Two Layers of Meaning}
+\label{subsec:transform_motivation}
+The operators established so far ($\oplus$, $\ominus$) answer the question
+\emph{who is present?} Combining Sky, Sun, and Wind under $\oplus$
+yields one order-independent bowl --- a bag of seats, not a blended
+hue. Paint is Mix ($\boxplus$), a later reading. Analogies such as Sun-Day-Moon are \emph{not} gathers; they are deferred to the offset operator of Section~\ref{sec:analogical_offset}. Gather $\oplus$ does not, and structurally
+cannot, distinguish a poem in which the sun rises through a wind-blown
+sky from a poem in which wind extinguishes a darkening sun --- both
+share the identical bowl
+$R = \text{Sky} \oplus \text{Sun} \oplus \text{Wind}$, since $\oplus$
+is commutative and idempotent by Axiom~\ref{subsec:axiom_idempotence}.
+
+The distinction between these two poems is not a difference in
+\emph{ingredients}; it is a difference in \emph{how one state acts
+upon another, and in what order}. This is a \emph{relational}
+operation, and it requires a second operator, $T$, layered on top of
+$\oplus$: where $\oplus$ builds nouns, $T$ builds sentences. A poem is
+not the bowl $R$ itself, but a specific trajectory traced across
+$\mathcal{S}$ by successive transformations applied to a register occupant.
+
+\subsection{Formal Definition of the Transformation Operator}
+\label{subsec:transform_definition}
+Rather than introduce $T$ as an unrelated new primitive, it is defined
+using the same rotational machinery already given in
+Axiom~\ref{subsec:axiom_rotation}: every state $w \in \mathcal{S}$
+acts on another state $x \in \mathcal{S}$ by rotating $x$'s direction
+about $w$'s own axis, by an angle proportional to $w$'s strength, while
+additively shifting $x$'s phase by $w$'s phase:
+\begin{equation}
+    T_w(x)
+    \;=\;
+    \Bigl(
+        r_x,\;\;
+        \mathrm{Rot}_{\hat n_w}\!\bigl(\alpha(r_w)\bigr)\hat n_x,\;\;
+        (\chi_x + \chi_w) \bmod 2\pi,\;\;
+        \tau_x
+    \Bigr)
+    \label{eq:transform_def}
+\end{equation}
+where $\hat n_w$ is the unit axis of $w$,
+$\mathrm{Rot}_{\hat n}(\alpha) \in \mathrm{SO}(3)$ is the
+rotation of Axiom~\ref{subsec:axiom_rotation} about that axis by angle
+$\alpha$, and $\alpha(r_w) = \pi r_w$ is the simplest monotonic choice
+mapping strength to rotation angle (a full-strength unit, $r_w = 1$,
+rotates by the maximal $180^\circ$). Magnitude $r_x$ and sort $\tau_x$ are left invariant:
+a transformation reorients and recolors a state, it does not
+strengthen or weaken it, and it does not recast it --- those remain
+the roles of Mix (strength) and of an explicit cast (sort).
+
+\subsection{Derived Properties}
+\label{subsec:transform_properties}
+The following properties follow from Equation~\eqref{eq:transform_def}
+rather than being separately postulated.
+
+\paragraph{Identity.} If $w = \mathbf{0}$ (the Null State of
+Axiom~\ref{subsec:axiom_null}), then $\alpha(0) = 0$ and the phase
+shift is $0$, so $T_{\mathbf{0}} = \mathrm{id}$.
+
+\paragraph{Invertibility.}
+The inverse of $T_w$ is not ``the same axis and the same $+\alpha$ again.'' Same axis, same positive angle, repeats the turn. Inverse is $-\alpha$ on the same axis, or $+\alpha$ on the antipodal axis, together with $-\chi_w$. Define
+\begin{equation}
+    w^{*} = \bigl(r_w,\,-\hat n_w,\,-\chi_w \bmod 2\pi,\,\tau_w\bigr),
+\end{equation}
+where $-\hat n_w$ is the antipode $(\pi-\theta_w,\,\phi_w+\pi)$.
+Then $T_{w^{*}}\!\big(T_w(x)\big) = x$ for all $x$. As rotations, only $\alpha=0$ ($r_w=0$) and $\alpha=180^\circ$ ($r_w=1$) equal their own reverse; the inverse state $w^{*}$ is still required so that phase is cancelled too. This undoes a transformation on a state that persists. It is distinct from $\{A\}\ominus A=\emptyset$ (last shell removed, leaving the empty bowl) and from Mix of equal anti-phase marks (a reading into black). Neither of those is an inverse of $T$.
+
+\paragraph{Associativity.} Since each $T_w$ is a function
+$\mathcal{S} \to \mathcal{S}$, composition of transformations is
+associative automatically, by the associativity of function
+composition; no additional axiom is required.
+
+\paragraph{Non-commutativity.} Rotations about distinct axes in
+$\mathrm{SO}(3)$ generically do not commute: for $a, b$ with distinct
+directions $(\theta,\phi)$,
+\begin{equation}
+    T_a\big(T_b(x)\big) \;\neq\; T_b\big(T_a(x)\big).
+    \label{eq:noncommute}
+\end{equation}
+This is not an additional assumption; it is inherited directly from
+the well-established non-commutativity of $\mathrm{SO}(3)$, already
+invoked by Axiom~\ref{subsec:axiom_rotation}. It is this property,
+and only this property, that allows two poems built from the same
+bowl to diverge: order of application is meaningful even
+though the underlying identity is not.
+
+\subsection{Poems as Transformation Trajectories}
+\label{subsec:transform_trajectories}
+A poem $\pi$ built from a register occupant $x$ and an ordered sequence of
+transforming states $w_1, w_2, \ldots, w_n$ (typically drawn from the bowl) is the trajectory
+\begin{equation}
+    \pi = \big(x;\, w_1, \ldots, w_n\big): \quad
+    x \;\longrightarrow\; T_{w_1}(x) \;\longrightarrow\; T_{w_2}T_{w_1}(x) \;\longrightarrow\; \cdots \;\longrightarrow\; T_{w_n}\cdots T_{w_1}(x).
+    \label{eq:poem_trajectory}
+\end{equation}
+Two poems may share an identical bowl (the same theme, the
+same ``ingredients'') while tracing entirely different trajectories
+--- this is the formal sense in which many poems arise from the same
+units of truth. Conversely, because rotation composition is
+many-to-one, two distinct trajectories may terminate at the same
+endpoint; a poem's identity is therefore carried by its full path
+through $\mathcal{S}$, not by its final state alone.
+
+\subsection{Worked Numerical Example: Sun, Wind, and Sky}
+\label{subsec:transform_example}
+Let Sky be the state acted upon, with direction
+$(\theta,\phi) = (45^\circ, 45^\circ)$, i.e.\ Cartesian axis
+$(0.500, 0.500, 0.707)$. Let Sun define an axis along
+$(\theta,\phi) = (90^\circ, 0^\circ)$, i.e.\ $(1,0,0)$, with strength
+$r_{\text{Sun}} = 1.0$, giving rotation angle $\alpha_{\text{Sun}} =
+180^\circ$. Let Wind define an axis along $(\theta,\phi) = (90^\circ,
+90^\circ)$, i.e.\ $(0,1,0)$, with strength $r_{\text{Wind}} = 0.7$,
+giving $\alpha_{\text{Wind}} = 126^\circ$.
+
+\emph{Order 1 --- Sun acts first, then Wind} (the sun rising through a
+wind-blown sky):
+\begin{equation}
+    T_{\text{Wind}}\big(T_{\text{Sun}}(\text{Sky})\big) \;\approx\; (-0.866,\, -0.500,\, 0.011)
+\end{equation}
+
+\emph{Order 2 --- Wind acts first, then Sun} (wind extinguishing a
+darkening sun):
+\begin{equation}
+    T_{\text{Sun}}\big(T_{\text{Wind}}(\text{Sky})\big) \;\approx\; (0.278,\, -0.500,\, 0.820)
+\end{equation}
+
+The two endpoints are clearly distinct, confirming
+Equation~\eqref{eq:noncommute}: identical primitives, identical
+bowl, opposite structural readings. Notably, if $\chi_{\text{Sun}}
+= 0^\circ$ and $\chi_{\text{Wind}} = 90^\circ$, the accumulated phase
+shift is $270^\circ$ in \emph{both} orderings, since phase addition is
+commutative. The two poems therefore share the same blended color/mood
+even as their spatial --- structural --- meaning diverges. This
+asymmetry (shared affect, divergent structure) is a numerical check of
+the algebra, not a theory of verse.
+
+\subsection{Scope}
+\label{subsec:transform_scope}
+$T$ is deliberately left unconstrained beyond
+Equation~\eqref{eq:transform_def}: any sequence of any transforming
+states is a formally valid trajectory. Pattern Arithmetic in this form
+supplies the substrate on which expression is built --- the
+combinatorial space of possible trajectories --- and does not yet
+supply a grammar constraining which trajectories are coherent,
+well-formed, or meaningful to a human reader. Whether such constraints
+belong inside this framework (as further axioms on admissible
+sequences of $T$) or outside it (as a learned or externally specified
+grammar layered on top) is left open.
+
+\section{Analogical Arithmetic: The Offset Operator}
+\label{sec:analogical_offset}
+
+Offset is another verb. It is not $\oplus$ (no gather), not Mix
+(no phasor blend), and not $T$
+(no spin of an actor on a path). It copies a \emph{walk} from one
+seat to another. The landing is a new direction on the same globe.
+A dictionary may later pin a name on that landing. The walk does
+not mint the name.
+
+\subsection{Recipe: logarithm, carry, exponential}
+\label{subsec:offset_logexp}
+Write directions as unit vectors $\hat n\in S^2\subset\mathbb{R}^3$.
+The walk from $p$ to $q$ is the tangent vector
+\begin{equation}
+    \theta = \arccos(\hat p\cdot\hat q),
+    \qquad
+    \log_{\hat p}(\hat q)
+    = \frac{\theta}{\sin\theta}\bigl(\hat q-(\hat p\cdot\hat q)\,\hat p\bigr)
+    \quad (\theta\neq 0),
+    \label{eq:sphere_log}
+\end{equation}
+with $\log_{\hat p}(\hat p)=\mathbf{0}$. Its length is the geodesic
+angle. The reverse map, from a tangent vector $v$ at $p$, is
+\begin{equation}
+    \exp_{\hat p}(v)
+    = \cos\|v\|\,\hat p + \sin\|v\|\,\frac{v}{\|v\|}
+    \quad (v\neq\mathbf{0}),
+    \label{eq:sphere_exp}
+\end{equation}
+and $\exp_{\hat p}(\mathbf{0})=\hat p$. Given three seats
+$m,k,w$ (source, source-image, new start), set
+\begin{equation}
+    v = \log_{\hat n_m}(\hat n_k),
+    \qquad
+    \hat n_{*}
+    = \exp_{\hat n_w}\bigl(\mathrm{transport}_{m\to w}(v)\bigr).
+    \label{eq:analogical_offset}
+\end{equation}
+The carry rotates the tangent vector by the geodesic angle about the
+axis of $m\to w$:
+\begin{equation}
+    \theta_{mw} = \arccos(\hat n_m\cdot\hat n_w),
+    \qquad
+    \hat u
+    = \frac{\hat n_m\times\hat n_w}{\|\hat n_m\times\hat n_w\|}
+    \quad (\hat n_m\neq\pm\hat n_w),
+    \label{eq:transport_axis}
+\end{equation}
+\begin{equation}
+    \mathrm{transport}_{m\to w}(v)
+    = \mathrm{Rot}_{\hat u}(\theta_{mw})\, v
+    = v\cos\theta_{mw}
+      + (\hat u\times v)\sin\theta_{mw}
+      + \hat u\,(\hat u\cdot v)\,(1-\cos\theta_{mw}).
+    \label{eq:transport}
+\end{equation}
+The axis is undefined when $\hat n_m=\pm\hat n_w$.
+Coincident seats ($\hat n_m=\hat n_w$): the carry is $v$ itself.
+Antipodal seats ($\hat n_m=-\hat n_w$): no unique short geodesic;
+that case is a separate convention and is not used below.
+For a first recipe, if $m$ and $w$ are not far, transport may be
+omitted and $v$ used at $w$ as written. That case is crude and
+marked as such. The full recipe is~\eqref{eq:transport}, so the
+heading stays a ground heading.
+
+Strength and colour are not invented by the walk. This paper takes
+\begin{equation}
+    r_{*}=r_w,
+    \qquad
+    \chi_{*}=(\chi_w+\chi_k-\chi_m)\bmod 2\pi,
+    \qquad
+    \tau_{*}=\tau_w.
+    \label{eq:offset_rchi}
+\end{equation}
+The target keeps its $r$ and its sort. The mood increment of the pair
+$m\to k$ is reused. Nothing here uses $\alpha=\pi r$ from $T$.
+With~\eqref{eq:analogical_offset} and~\eqref{eq:offset_rchi} together,
+offset returns a complete state, not a bare direction:
+\[
+\text{offset}:\;\mathcal{S}\times\mathcal{S}\times\mathcal{S}
+\longrightarrow\mathcal{S},
+\qquad
+(m,k,w)\mapsto
+\bigl(r_w,\;\hat n_{*},\;\chi_{*},\;\tau_w\bigr).
+\]
+It is therefore a verb on the same footing as $\oplus$, $\boxplus$ and
+$T$: a landing may be gathered into a bowl, walked from, or used as
+the start seat of a further offset. The question of \emph{whether
+anything is seated there} is separate, and is settled by a dictionary,
+not by the walk. $\tau_{*}=\tau_w$ because the question asked is what
+stands to $w$ as $k$ stands to $m$; the answer is of $w$'s kind. A
+walk copied between sorts would need an explicit cast
+(Section~\ref{sec:encodings_sorts}), which offset does not perform.
+Two seated units keep two strengths. If $\mathrm{Day}$ has $r=0.9$
+and $\mathrm{Night}$ has $r=0.8$, both sit; there is no
+$0.9+0.8=1.7$. That sum is ambient $\mathbb{R}^3$ arithmetic and
+leaves the ball. $\oplus$ gathers the two seats. A later path may
+turn a dial or clip a mix. It does not get to smash two $r$'s into
+one illegal length as the price of seating them.
+
+\subsection{A check on one equator, not a definition}
+\label{subsec:offset_equator}
+Place three arrows in the $xy$-plane:
+\[
+\hat n_m=(1,0,0),\quad
+\hat n_k=\bigl(\tfrac{\sqrt{3}}{2},\tfrac12,0\bigr),\quad
+\hat n_w=(0,1,0)
+\]
+($0^\circ$, $30^\circ$, $90^\circ$). Then
+$\log_{\hat n_m}(\hat n_k)=(0,\pi/6,0)$.
+Here $\theta_{mw}=90^\circ$ and $\hat u=(0,0,1)$, so
+\eqref{eq:transport} is a quarter-turn about $\hat z$ and gives
+$(-\pi/6,0,0)$. The exponential at
+$\hat n_w$ lands at
+\[
+\hat n_{*}=\bigl(-\tfrac12,\,\tfrac{\sqrt{3}}{2},\,0\bigr)
+\quad (120^\circ).
+\]
+On this slice the walk \emph{looks like} $90^\circ+30^\circ=120^\circ$.
+That sum is a protractor check. It is not the operator, and it is
+not a night. If a lexicon writes the names
+$\mathrm{Sun},\mathrm{Day},\mathrm{Moon}$ on the first three seats,
+it may write $\mathrm{Night}$ on the landing: whatever $\mathrm{Sun}$
+is to $\mathrm{Day}$, $\mathrm{Moon}$ is to that fourth place. The
+geometry only promised a fourth pin.
+The same moral as weather: $\mathrm{Day}$ and $\mathrm{Night}$
+are dictionary pins, not sums of luminaries. The step that carries
+$\mathrm{Sun}$ to $\mathrm{Day}$ is a walk, and the walk is what is
+copied; $\oplus$ of those seats does not land on a time of day.
+Whether the two halves really are the same walk depends entirely on
+how a lexicon seated them, which is a dictionary claim and not one
+this paper makes. Offset only copies a walk; a later comparison
+may find the landing \emph{near} an already seated name. It does
+not mint the name.
+
+\subsection{Offset is not $T$}
+\label{subsec:offset_not_T}
+$T_w(x)$ spins an occupant about an axis. Offset plants a new seat
+from three seats. A path does not need~\eqref{eq:analogical_offset}.
+A dictionary act does not need~\eqref{eq:transform_def}. Do not
+encode the walk as a ghost actor whose sole job is to trigger $T$.
+
+The popular ambient sum $\hat n_k-\hat n_m+\hat n_w$ then
+normalize (Recipe~1) is the embedding fluke written as geometry.
+It is recorded as a cheaper cousin, not as a derivation of the
+landing. This paper uses Recipe~2 so the copied step
+stays on the skin of the ball.
+
+\section{Encodings, Sorts, and Mixed Documents}
+\label{sec:encodings_sorts}
+
+The unit sphere is a single bounded \emph{register}.
+Numbers, words, and colors are not three different globes; they are
+three encodings of a token onto the same globe. A scientific paragraph
+already mixes those alphabets on one page. Pattern Arithmetic may do
+the same, provided each loaded state carries a \emph{sort} and the
+operators respect that sort.
+
+\subsection{Two primary sorts}
+\label{subsec:sorts}
+A state $x\in\mathcal{S}$ is the typed atom of
+Axiom~\ref{subsec:axiom1}. What the geometric 4-tuple
+$(r,\theta,\phi,\chi)$ \emph{means} depends on the sort $\tau$ and the
+encoding used to write it:
+\begin{itemize}
+    \item \textbf{Numeric sort ($\mathtt{num}$).}
+          The state represents a scalar. One toy encoding --- the only
+          numeric encoding used in this paper --- stores an
+          integer $n$ on a marked clock as
+          $\chi = 2\pi n/N$ (arithmetic modulo $N$), at a fixed
+          direction, with $r=1$.
+          Another, stereo-style, is recorded as an option: it would
+          send $x\to\pm\infty$ toward the
+          poles so that unbounded reals still occupy the globe. It is
+          not used below.
+    \item \textbf{Lexical sort ($\mathtt{word}$).}
+          The state is a labeled point in a toy dictionary living on
+          the same globe. Similarity is the angle between points
+          (cosine similarity). A bag of words is formed by $\oplus$.
+          A sentence or poem is formed by $T$.
+\end{itemize}
+Schoolbook addition lives only in $\mathtt{num}$ mode.
+Mix as a \emph{domain} reading lives in the Tier-1 sorts of
+Axiom~\ref{subsec:axiom0_admissibility}: $\mathtt{color}$ under this
+paper's phasor inclusion, and $\mathtt{note\text{-}pitch}$, whose
+octave equivalence makes the circle native rather than borrowed.
+The two sorts worked below are $\mathtt{num}$ and $\mathtt{word}$;
+neither takes a domain Mix.
+Two $\mathtt{word}$ states may be mixed as geometry; that is not a
+$\chi$-reading of language. The two equations may share a sphere.
+They may not share an operator.
+
+\subsection{Numeric mode: $7+5=12$ on the clock, and why $\oplus$ is not $12$}
+\label{subsec:clock_encoding}
+Fix $N=24$ and the encoding
+\begin{equation}
+    E_{\mathtt{num}}(k)
+    \;=\;
+    \bigl(r=1,\;\hat n=(1,0,0),\;\chi=2\pi k/24,\;\tau=\mathtt{num}\bigr),
+    \qquad
+    k\in\mathbb{Z}/24\mathbb{Z}.
+    \label{eq:clock_encoding}
+\end{equation}
+Decode is the inverse chart: $k = N\chi/(2\pi)$, an integer hour mark.
+Then $7$ sits at $\chi=105^\circ$, $5$ at $\chi=75^\circ$, and $12$ at
+$\chi=180^\circ$. Schoolbook $+$ is decoded arithmetic:
+\begin{equation}
+    7+5
+    \;=\;
+    E_{\mathtt{num}}^{-1}\bigl(E_{\mathtt{num}}(7)\bigr)
+    +
+    E_{\mathtt{num}}^{-1}\bigl(E_{\mathtt{num}}(5)\bigr)
+    \;=\; 12,
+    \qquad
+    E_{\mathtt{num}}(12)
+    \;=\;
+    (1,\,(1,0,0),\,180^\circ,\,\mathtt{num}).
+\end{equation}
+That is $7+5=12$ as a calculation on $\mathcal{S}$: decode, add in
+$\mathbb{Z}$, encode. Gather is legal on the same pair but answers a
+different question: $7\oplus 5=\{7,5\}$ records which numerals are
+present and is not $12$. If one instead applies Mix
+(Equation~\eqref{eq:interference_formal}) to the same two geometric
+marks, the phasors are
+\begin{equation}
+    z
+    \;=\;
+    e^{i 7\pi/12} + e^{i 5\pi/12}
+    \;=\;
+    2\cos(\pi/12)\,e^{i\pi/2},
+\end{equation}
+so $r'=\min\bigl(1,\,2\cos 15^\circ\bigr)=1$ and $\chi'=90^\circ$.
+The clock would read that mark as hour $6$, not hour $12$.
+A bowl $\{\,E_{\mathtt{num}}(7),\,E_{\mathtt{num}}(5)\,\}$ is two seats,
+still not $12$. This single contrast is why the type table exists:
+$+$ answers \emph{how many}; $\oplus$ and Mix do not.
+
+\subsection{A document is a sequence, not a blend}
+\label{subsec:document_sequence}
+Words and numbers coexist in reports because a document is an ordered
+tape of tokens, not one mixed arrow. Write a paragraph as a sequence
+of typed atoms
+\begin{equation}
+    (x_1,\ldots,x_m),
+    \qquad
+    x_i=(r_i,\,\hat n_i,\,\chi_i,\,\tau_i),
+    \qquad
+    \tau_i\in\{\mathtt{num},\mathtt{word}\},
+    \label{eq:mixed_document}
+\end{equation}
+The sphere holds one current occupant of the register; the paragraph is the history of
+loads and actions. A poem
+(Section~\ref{subsec:transform_trajectories}) is one species of that
+history: a $T$-walk on one occupant. Juxtaposition is another. Mix is
+not.
+
+They may meet in only three honest ways.
+
+\paragraph{Juxtaposition.}
+The default. Tokens sit in order and no algebra is applied between
+them. In ``the sample reached $37.4^\circ\mathrm{C}$ at dawn,'' the
+number $37.4$ is not blended with the word $\mathrm{dawn}$.
+
+\paragraph{Typed action.}
+The operator $T_w(x)$ is allowed across sorts only with an explicit
+output sort. Two useful conventions, which the rest of this paper
+adopts, are:
+\begin{itemize}
+    \item a word acting on a number yields a number-in-context
+          (still $\mathtt{num}$);
+    \item a number acting on a word yields a refined word
+          (still $\mathtt{word}$).
+\end{itemize}
+A number may also set a numeric dial of $T$ --- for example the
+rotation angle $\alpha(r)$ --- because that dial is already a scalar.
+That is how ``wind of $12\,\mathrm{m/s}$'' can strengthen a turn
+without becoming a synonym of $\mathrm{wind}$.
+
+\paragraph{Cast.}
+Rare and named. The map $E_{\mathtt{num}\to\mathtt{word}}(2)=\texttt{two}$
+turns a digit into a spoken numeral; the inverse is parsing. Casts are
+dictionary maps, not $\oplus$.
+
+The illegal meeting is an untyped blend
+\begin{equation}
+    \mathrm{dawn} \oplus 37.4,
+\end{equation}
+which has no meaning until one side is first cast into the other's
+sort.
+
+\subsection{Operator legality}
+\label{subsec:type_table}
+Table~\ref{tab:type_table} records which buttons accept which pairs.
+Here $+$ stands for schoolbook arithmetic on the numeric encoding
+(decode, operate in $\mathbb{Z}$, encode; $+$ is the worked case of
+Section~\ref{subsec:clock_encoding}), $\oplus$ is
+idempotent gather, $\boxplus$ is Mix, $T$ is typed action, and $x-a+b$ is the analogical
+offset of Section~\ref{sec:analogical_offset}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lccccc}
+\hline
+Pair & $+$ & $\oplus$ & $\boxplus$ & $T_w(x)$ & $x-a+b$ \\
+\hline
+$(\mathtt{word},\mathtt{word})$ & no & yes & yes$^{\dagger}$ & yes & yes \\
+$(\mathtt{num},\mathtt{num})$   & yes & yes$^{\ddagger}$ & no  & no$^{*}$ & no$^{*}$ \\
+$(\mathtt{word},\mathtt{num})$  & no & yes$^{\ddagger}$ & no  & typed & no \\
+$(\mathtt{num},\mathtt{word})$  & no & yes$^{\ddagger}$ & no  & typed & no \\
+$(\mathtt{color},\mathtt{color})$ & no & yes & yes & yes & open \\
+$(\mathtt{note\text{-}pitch},\mathtt{note\text{-}pitch})$ & no & yes & yes & yes & open \\
+$(\mathtt{chladni},\mathtt{chladni})$ & no & yes & yes$^{\S}$ & open & open \\
+$(\tau_1,\tau_2)$ any other & no & yes$^{\ddagger}$ & open & open & open \\
+\hline
+\end{tabular}
+\caption{Sort discipline on a single sphere. Every $\boxplus$ entry is
+additionally subject to the place restriction of
+Axiom~\ref{subsec:axiom_interference}: Mix combines $\chi$ at a common
+$\hat n$, and Mix across differing directions is open
+(Section~\ref{subsec:mix_scattered_open}).
+$\mathtt{color}$ and $\mathtt{note\text{-}pitch}$ are the Tier-1 sorts of
+Table~\ref{tab:admissibility}; they gather like any other sort, and
+their Mix is a domain reading rather than inert geometry.
+Mix on $(\mathtt{num},\mathtt{num})$ is the clock trap of
+Section~\ref{subsec:clock_encoding}: it is geometrically defined and
+type-refused. $^{\dagger}$Mix on $(\mathtt{word},\mathtt{word})$ is
+allowed as geometry and carries no linguistic $\chi$-claim
+(Axiom~\ref{subsec:axiom0_admissibility}, Tier~0).
+$^{*}$Numeric $T$ and numeric offset may be defined later as
+maps of the chosen numeric encoding; they are not the lexical
+operators of Sections~\ref{sec:transformation_algebra}
+and~\ref{sec:analogical_offset}. Offset on the Tier-1 sorts is
+untested here and marked open rather than claimed.
+$^{\ddagger}$Gather is sort-blind: the $\oplus$ column is \emph{yes}
+for every pair, including pairs of different sorts and sorts not
+listed here. A bowl records which units are present, and presence
+carries no domain claim, so there is nothing for a sort mismatch to
+corrupt. What gather does \emph{not} do is combine: $2\oplus
+\texttt{two}=\{2,\texttt{two}\}$ is two seats and no cast, and
+$1\oplus 1=\{1\}$ is one seat and not the sum $2$. Counting stays with
+$+$ (Section~\ref{subsec:clock_encoding}). The final row is the
+general rule; a sort seated on the sphere may always be gathered, while
+its other operators wait on
+Axiom~\ref{subsec:axiom0_admissibility}. A sort inadmissible for
+Tier~1, such as $\mathtt{snowflake}$ in
+Table~\ref{tab:admissibility}, still falls under this general row at
+Tier~0: it may be gathered, and its other operators remain open until
+a stated map is given --- the same status Table~\ref{tab:admissibility}
+already grants it, not a stricter one. What has genuinely not been
+done for $\mathtt{snowflake}$, unlike $\mathtt{num}$, $\mathtt{word}$,
+$\mathtt{color}$, or $\mathtt{chladni}$, is the construction of an
+explicit chart; Tier-0 admission is asserted here, not built. A sort
+with \emph{no} row in either table --- one this paper has not
+considered at all --- is undecided in the stronger sense of
+Table~\ref{tab:admissibility}'s closing line, and is not seated until
+one is given.
+$^{\S}$Mix on $(\mathtt{chladni},\mathtt{chladni})$ is a domain
+reading only within one mode, where the place restriction above is
+satisfied automatically; across modes it is undefined rather than
+merely untested (Section~\ref{subsec:chladni_inclusion}). $T$ is
+marked open because direction carries a mode label for this sort and
+no domain meaning is claimed for rotating it.}
+\label{tab:type_table}
+\end{table}
+
+\subsection{Worked mixed sentence}
+\label{subsec:mixed_sentence}
+Take the report line \emph{Wind of $12\,\mathrm{m/s}$ darkened the sun.}
+The register is used as follows.
+
+\begin{enumerate}
+    \item Load $\mathrm{wind}$, sort $\mathtt{word}$.
+    \item Load $12$, sort $\mathtt{num}$. Juxtapose; do not form
+          $\mathrm{wind}\oplus 12$.
+    \item Load $\mathrm{m/s}$ as a unit-name (lexical qualifier of the
+          number).
+    \item Load $\mathrm{sun}$, sort $\mathtt{word}$.
+    \item Let the number cap a strength,
+          $\sigma(12)\in[0,1]$, and set
+          $r_{\mathrm{wind}}=\sigma(12)$ so that
+          $\alpha=\pi\sigma(12)$ in Equation~\eqref{eq:transform_def}.
+    \item Apply $T_{\mathrm{wind}}(\mathrm{sun})$. Output sort:
+          $\mathtt{word}$.
+\end{enumerate}
+The scalar never became a hue. It turned a dial of an action whose
+actors remained words. That is the same division of labor a printed
+paper already uses: digits set magnitudes; words name what the
+magnitudes belong to.
+
+\subsection{Several lexicons, one concept sphere}
+\label{subsec:shared_lexicons}
+Surface tokens are not meanings. Two dictionaries may write the same
+pair of concepts with unrelated strings:
+\begin{equation}
+    \begin{aligned}
+        L_1&: \quad \texttt{xyz}\mapsto\mathrm{man},\quad
+                    \texttt{qyz}\mapsto\mathrm{woman},\\
+        L_2&: \quad \texttt{fgh}\mapsto\mathrm{man},\quad
+                    \texttt{hgf}\mapsto\mathrm{woman}.
+    \end{aligned}
+    \label{eq:two_lexicons}
+\end{equation}
+In the usual pipeline each lexicon is tokenized, encoded, and
+\emph{embedded separately}. The geometry that makes
+$\mathrm{man}$ near $\mathrm{woman}$ is then learned twice, and a
+further alignment step is required before $L_1$ and $L_2$ can share
+an analogy. The token-to-embedding map is doing two jobs at once:
+naming a string, and inventing a place for its meaning.
+
+The unit sphere is offered as a \emph{proposed common coordinate register}, not as a demonstrated universal semantic space and not as a replacement for a lexicon table.
+A token is a surface form. A state on $\mathcal{S}$ is a meaning.
+Each lexicon is only a cast
+\begin{equation}
+    E_{L}(\texttt{token}) = x\in\mathcal{S},
+    \label{eq:lexicon_cast}
+\end{equation}
+the same kind of map as $E_{\mathtt{num}\to\mathtt{word}}$ above.
+Under that discipline both $\texttt{xyz}$ and $\texttt{fgh}$ load the
+\emph{same} state $\mathrm{man}$. The offset
+$\mathrm{Sun}\to\mathrm{Day}$ of Section~\ref{sec:analogical_offset}
+is then computed once, on the globe, and reused by every lexicon that
+points at those two points.
+
+Embeddings therefore stay. They do not disappear.
+What changes is that they are no longer private vector spaces, one
+per lexicon. They are embeddings \emph{into the same unit}
+$\mathcal{S}$. Once $E_{L_1}(\texttt{xyz})=E_{L_2}(\texttt{fgh})=\mathrm{man}$,
+the two surface forms occupy one address, and every angle measured
+from that address is the same angle:
+\begin{equation}
+    \angle(\mathrm{man},\mathrm{woman})
+    \;=\;
+    \angle\bigl(E_{L_1}(\texttt{xyz}),\,E_{L_1}(\texttt{qyz})\bigr)
+    \;=\;
+    \angle\bigl(E_{L_2}(\texttt{fgh}),\,E_{L_2}(\texttt{hgf})\bigr).
+    \label{eq:uniform_angles}
+\end{equation}
+Under that proposal the embeddings would be uniform: same globe, same points for the same
+concepts, same angles for the same relations. A raw string still
+needs the lexicon map $E_L$. It would no longer need a new geometry.
+The algebra does not mint a universal $\mathrm{man}$ point by itself. That is a dictionary programme, not an axiom.
+
+\subsection{Deferred programme: standardized concept dictionaries}
+\label{subsec:standard_dictionaries}
+The present section only \emph{names} the shared globe. It does not
+build the dictionaries, and it does not treat them as part of the
+algebra closed in Axioms~0--6. The later refinement, if the idea is
+pursued, is a pair of catalogues rather than a new operator, and is
+filed under Future Work (Section~\ref{sec:conclusion}):
+\begin{itemize}
+    \item one \emph{concept dictionary} --- a stipulated inventory of
+          unit states on $\mathcal{S}$ (or a higher-dimensional
+          analogue), so that $\mathrm{man}$ and $\mathrm{woman}$ have
+          standard addresses and therefore standard angles;
+    \item one \emph{language lexicon} $E_L$ per written or spoken
+          system, sending that language's tokens onto those addresses;
+    \item learnable paths --- the species of $T$ and the dials inside
+          a given $T$ (angle map, phase map, paint-versus-poem gate)
+          may be fitted from examples. Learning would adjust the path,
+          not the rule that a bowl is collected before it is read.
+          See also Section~\ref{sec:conclusion}.
+\end{itemize}
+Standardization of the first catalogue is what makes embeddings
+uniform across English, a cipher, or a second natural language.
+The second catalogue is still a tokenizer-plus-encoding: it is the
+phone book, not the city. Tokens and encodings have already earned
+their keep, so they stay. They only have to work \emph{lighter}:
+look up a standard address instead of inventing one. They disappear as
+\emph{inventors of geometry}. They do not disappear as \emph{names}.
+A world in which every language pointed at the same concept
+dictionary would still print letters on a page; It would no longer need each 
+corpus to learn a private $\mathrm{man}$--$\mathrm{woman}$ angle. 
+That programme is recorded here and left open. It is not an
+axiom, and it is not implied by the existence of $\mathcal{S}$ alone.
+
+\subsection{Scope of the register model}
+\label{subsec:register_scope_final}
+This section claims only that one sphere can \emph{host} both alphabets
+as a workspace, and that several lexicons can point at the same
+workspace through different casts. It does not claim that the two-dimensional surface
+$S^2$ is a realistic embedding space for a full natural-language
+lexicon: a working word embedding typically needs tens or hundreds of
+dimensions. The construction here is a typed register and a toy
+dictionary on one globe. Scaling the lexical encoding is a later
+choice --- a higher-dimensional sphere, a spherical-harmonic field, or
+an external lookup table that writes states into the register. The
+lookup tables $E_L$ may still be learned; the claim is only that they
+should write into one geometry rather than each minting a private one.
+The unit ball of radius $1$ in $\mathbb{R}^3$ is where the idea is
+taught. The unit sphere in the embedding dimension is where close
+semantics can live. The algebra --- collapse, path, result --- is
+meant to travel with the dimension. It is not meant to replace $768$
+numbers with two angles and hope the library still sorts.
+
+\section{A Sketch of Conventions}
+\label{sec:conventions_sketch}
+These notes are a seed for later grammars, not a code to enforce.
+They show one way a typed register \emph{might} be spoken. A later
+grammar --- learned, cultural, or formal --- may replace every line.
+This paper only needs the ground level enough that such a grammar has
+somewhere to stand.
+
+\paragraph{Case does not move the address.}
+The tokens $\texttt{man}$, $\texttt{Man}$, and $\texttt{MAN}$ load the
+same direction $(\theta,\phi)$. Orthography is a doorbell, not a new
+city block.
+
+\paragraph{Language does not move the address.}
+English $\texttt{man}$ and a Polish token for the same concept load the
+same point. Only the lexicon map $E_L$ changes. Language is a
+phone-book tag $L$, not a second angle.
+
+\paragraph{Color is reserved for mood, not for language.}
+Phase $\chi$ is already used as affect in the poem example
+(Section~\ref{subsec:transform_example}). If language or case also
+occupied $\chi$, that example would break. Emphasis may tint $\chi$
+or raise $r$; it should not relocate $\mathrm{Sun}$ to $\mathrm{Moon}$.
+
+\paragraph{A bag is not a sentence.}
+$\{\mathrm{sun},\mathrm{wind}\}$ is $\oplus$.
+``Wind darkens the sun'' is $T$. Ingredients and order are different
+verbs. How often a unit is used is not a second shell in the bag:
+the path may visit $\texttt{twinkle}$ twice; $\mathtt{num}$ may
+count $1+1+1+1=4$. $\oplus$ will not.
+
+\paragraph{A numeral is not a word until it is cast.}
+The digit $2$ stays $\mathtt{num}$. The word $\texttt{two}$ is
+$\mathtt{word}$. They may share a bowl --- gather is sort-blind ---
+but $2\oplus\texttt{two}=\{2,\texttt{two}\}$ is two seats, not a cast
+and not a sum. Becoming a word requires the explicit
+$E_{\mathtt{num}\to\mathtt{word}}$ of
+Section~\ref{sec:encodings_sorts}, which no gather performs.
+
+A toy row makes the first three conventions visible. Place
+$\mathrm{man}$ at $(\theta,\phi)=(10^\circ,40^\circ)$:
+
+\begin{center}
+\begin{tabular}{llcc}
+Token & $L$ & $(\theta,\phi)$ & $\chi$ (mood only) \\
+\hline
+\texttt{man} & English & $(10^\circ,40^\circ)$ & $0^\circ$ (neutral) \\
+\texttt{Man} & English & $(10^\circ,40^\circ)$ & $0^\circ$ \\
+\texttt{MAN} & English & $(10^\circ,40^\circ)$ & $20^\circ$ (emphasis, optional) \\
+\texttt{man} & Polish  & $(10^\circ,40^\circ)$ & $0^\circ$ \\
+\end{tabular}
+\end{center}
+
+Same block. Different doorbells. Nothing here is binding.
+
+\section{Operational Algebra \& Numerical Demonstration}
+
+\subsection{Mix of two shells}
+Collecting $r=0.6$ at $0^\circ$ with $r=0.8$ at $120^\circ$ (same
+place) yields two shells, not an angle. Applying Mix ($\boxplus$) and
+Equation~\eqref{eq:interference_formal} yields the 4-tuple
+$(r',\theta',\phi',\chi')\approx(0.721,\,\theta,\,\phi,\,73.9^\circ)$.
+The older figure $66.6^\circ$ is withdrawn: Axiom~5 as a length-only
+formula never produced it.
+
+\subsection{Rotational transposition, and what division is not}
+\label{subsec:division_open}
+Rotation is Axiom~\ref{subsec:axiom_rotation}: $\mathbf{R}\in\mathrm{SO}(3)$
+turns $\hat n$. Inverse rotation is well-defined. Division as
+``deconvolution and signal unmixing'' is not defined in this paper and
+is left open.
+
+\subsection{Spectral storage (optional, later)}
+Spherical-harmonic arrays of size $O(L^2)$ may later store a field of
+many atoms. They are not the working atom of
+Axiom~\ref{subsec:axiom1}, and $O(N^3)\to O(L^2)$ is not a theorem of
+Pattern Arithmetic as it stands.
+
+\section{Higher-order systems as bowls and paths}
+\label{sec:higher_order}
+These examples illustrate the $\oplus$-versus-$T$ split with borrowed
+vocabulary. They are costumes
+(Section~\ref{subsec:claim_scope}), not models of weather, ecology,
+or disease.
+Higher-order truths are bowls of basic units read by a path.
+A storm, a forest, or a cancellation is such a reading.
+It is an example of the spine, not a model of the sky, the woods,
+or the clinic. The path defines the higher-order system: the bowl
+only lists who is present.
+
+A vertical pinball table makes the same split visible. Each bumper
+is one seated unit --- a direction and a size \(r\). The set of
+bumpers on the board is the bowl (wind, temperature, humidity,
+pressure). The pockets at the bottom are dictionary pins already
+named \(\mathrm{storm}\) and \(\mathrm{calm}\). Dropping a ball from
+a slot is a path \(T_{\mathrm{weather}}\): the ball meets some
+bumpers, in some order, and each kick depends on that bumper's
+angle and strength. The landing pocket is a comparison after the
+walk. Adding the bumpers together does not \emph{make} a pocket.
+A different slot, or a different order of kicks, is a different
+weather. This is one rough picture of \emph{a} transform path, not
+the mechanics of every $T$, and not a second axiom. A Mix reading ($\boxplus$), and a poem path $T_{\mathrm{poem}}$, need not bounce.
+
+\subsection{Atmospheric storm (costume): one pipeline with numbers}
+\label{subsec:storm_pipeline}
+This is a costume for the spine, not a model of the sky.
+These walks are not weather equations, and they are not forest
+equations. They are still computations: ordered readings of many
+co-present units that can land near a higher-order name already
+seated in a dictionary.
+Four incoming
+states, one bowl, two paths, two endpoints. Every figure below is
+Rodrigues' rotation of $\hat n$ by $\alpha=\pi r$ about the actor's
+axis, with $\chi$ added. A reader can recompute.
+
+\paragraph{1. Input states.}
+\begin{align*}
+\mathrm{Wind}&:
+  \; r=1,\;
+  \hat n=(1,0,0),\;
+  \chi=0^\circ,\;
+  \tau=\mathtt{word},
+  \quad \alpha=180^\circ,\\
+\mathrm{Heat}&:
+  \; r=\tfrac12,\;
+  \hat n=(0,1,0),\;
+  \chi=90^\circ,\;
+  \tau=\mathtt{word},
+  \quad \alpha=90^\circ,\\
+\mathrm{Moisture}&:
+  \; r=\tfrac23,\;
+  \hat n=(0,0,1),\;
+  \chi=45^\circ,\;
+  \tau=\mathtt{word},
+  \quad \alpha=120^\circ,\\
+\mathrm{Eye}&:
+  \; r=1,\;
+  \hat n=\bigl(\tfrac{\sqrt{2}}{2},\,0,\,\tfrac{\sqrt{2}}{2}\bigr),\;
+  \chi=0^\circ,\;
+  \tau=\mathtt{word}.
+\end{align*}
+The eye sits at $(\theta,\phi)=(45^\circ,0^\circ)$.
+
+\paragraph{2. Collapse into the bowl.}
+\begin{equation}
+    R
+    \;=\;
+    \mathrm{Wind}\oplus\mathrm{Heat}\oplus\mathrm{Moisture}\oplus\mathrm{Eye}
+    \;=\;
+    \{\mathrm{Wind},\,\mathrm{Heat},\,\mathrm{Moisture},\,\mathrm{Eye}\}.
+    \label{eq:storm_bowl}
+\end{equation}
+Four distinct names, four seats. A second $\mathrm{Wind}$ would not
+open a fifth. Call this bowl $s(\mathrm{weather})$ if a name helps:
+it is still four pins, not a fifth vector. Mix is a different
+reading and is not the storm.
+In the dictionary, $\mathrm{storm}$ and $\mathrm{calm}$ are
+\emph{other} seated units --- separate doorbells, not sums of
+wind, temperature, humidity, and pressure. Mere $\oplus$ cannot
+reach those pins. $T_{\mathrm{weather}}$ is the path family that
+reads $s(\mathrm{weather})$; $T_{\mathrm{deepen}}$ and
+$T_{\mathrm{clear}}$ below are two such walks. An endpoint may
+fall \emph{near} the storm pin or the calm pin. Nearness is
+comparison after the walk, not addition of the parts.
+
+\paragraph{3. Two trajectory paths.}
+The register occupant is the eye. The other three shells act, in order:
+\begin{equation}
+    T_{\mathrm{deepen}}
+    \;=\;
+    T_{\mathrm{Wind}}\circ T_{\mathrm{Heat}}\circ T_{\mathrm{Moisture}},
+    \qquad
+    T_{\mathrm{clear}}
+    \;=\;
+    T_{\mathrm{Moisture}}\circ T_{\mathrm{Heat}}\circ T_{\mathrm{Wind}}.
+\end{equation}
+
+\emph{Deepen} --- moisture, then heat, then wind:
+\begin{align*}
+T_{\mathrm{Moisture}}(\mathrm{Eye})
+&= \bigl(1,\;(-\tfrac{\sqrt{2}}{4},\,\tfrac{\sqrt{6}}{4},\,\tfrac{\sqrt{2}}{2}),\;45^\circ\bigr),\\
+T_{\mathrm{Heat}}(\cdots)
+&= \bigl(1,\;(\tfrac{\sqrt{2}}{2},\,\tfrac{\sqrt{6}}{4},\,\tfrac{\sqrt{2}}{4}),\;135^\circ\bigr),\\
+T_{\mathrm{Wind}}(\cdots)
+&= \bigl(1,\;(\tfrac{\sqrt{2}}{2},\,-\tfrac{\sqrt{6}}{4},\,-\tfrac{\sqrt{2}}{4}),\;135^\circ\bigr).
+\end{align*}
+
+\emph{Clear} --- wind, then heat, then moisture:
+\begin{align*}
+T_{\mathrm{Wind}}(\mathrm{Eye})
+&= \bigl(1,\;(\tfrac{\sqrt{2}}{2},\,0,\,-\tfrac{\sqrt{2}}{2}),\;0^\circ\bigr),\\
+T_{\mathrm{Heat}}(\cdots)
+&= \bigl(1,\;(-\tfrac{\sqrt{2}}{2},\,0,\,-\tfrac{\sqrt{2}}{2}),\;90^\circ\bigr),\\
+T_{\mathrm{Moisture}}(\cdots)
+&= \bigl(1,\;(\tfrac{\sqrt{2}}{4},\,-\tfrac{\sqrt{6}}{4},\,-\tfrac{\sqrt{2}}{2}),\;135^\circ\bigr).
+\end{align*}
+
+\paragraph{4. Endpoints.}
+$T$ leaves the occupant's strength at $r=1$. Phase addition commutes, so
+both paths end at $\chi=135^\circ$. The directions do not agree:
+\begin{align*}
+T_{\mathrm{deepen}}(\mathrm{Eye}):
+\quad
+\hat n
+&= \bigl(\tfrac{\sqrt{2}}{2},\,-\tfrac{\sqrt{6}}{4},\,-\tfrac{\sqrt{2}}{4}\bigr)
+\approx (0.7071,\,-0.6124,\,-0.3536),\\
+(\theta,\phi)&\approx(110.7^\circ,\,319.1^\circ);\\[0.4em]
+T_{\mathrm{clear}}(\mathrm{Eye}):
+\quad
+\hat n
+&= \bigl(\tfrac{\sqrt{2}}{4},\,-\tfrac{\sqrt{6}}{4},\,-\tfrac{\sqrt{2}}{2}\bigr)
+\approx (0.3536,\,-0.6124,\,-0.7071),\\
+(\theta,\phi)&=(135^\circ,\,300^\circ).
+\end{align*}
+Same bowl, two weathers. The storm is the walk. It is not a fifth pin,
+and it is not a claim about vorticity or shear.
+
+\subsection{Table and chair (costume)}
+\label{subsec:table_chair}
+A table is one seated unit; a chair is another. $\{\mathrm{table},\,\mathrm{chair}\}$
+is their bowl under $\oplus$ --- two names present, order-blind, no
+claim about arrangement. A room is not read from that bowl. It is
+read from a path: $T_{\mathrm{chair}}(\mathrm{table})$, the chair
+acting on the table, is a placement --- pulled up to the table's edge.
+$T_{\mathrm{table}}(\mathrm{chair})$, the same two shells with the
+actor swapped, is a different placement --- the table built around
+a fixed chair. $\oplus$ cannot tell these apart; it only knows both
+are present. $T$ can, because $T$ is not symmetric in its two
+arguments the way $\oplus$ is. As with the storm's pockets, a named
+room --- ``dining nook,'' ``reading corner,'' ``cluttered storage''
+--- is a separate dictionary pin, not a sum of the furniture. An
+endpoint may land near one pin or another; nearness is comparison
+after the walk, exactly as in Section~\ref{subsec:storm_pipeline}.
+This is a costume for the same split table and chair make familiar
+without any physics: two objects merely being present is one
+reality (grocery counting: one bag of grain plus one bag of grain is
+two bags --- schoolbook $+$, not $\oplus$); two objects placed
+in a specific relation is a different reality, and no amount of
+$\oplus$ on the parts reaches it. It is not a model of furniture,
+interior design, or how rooms are actually named.
+
+The furniture case is also where the motivating hypothesis behind
+this whole paper is easiest to say plainly: a path $T_{\mathrm{chair}}$
+that keeps ``chair acts on table'' as one typed, invertible step is a
+shorter thing to learn than the same fact buried inside a flat
+embedding, where the model must first discover, from undifferentiated
+vectors, that arrangement is a different kind of fact than mere
+co-occurrence. Keeping presence ($\oplus$) and path ($T$) as separate
+primitives is a bet that higher-order truths become easier to learn
+because the distinction is built in rather than re-derived from data.
+That bet is stated here as a hypothesis, not a result: no example in
+this paper demonstrates it, and one is deliberately not attempted.
+Section~\ref{subsec:future_work} leaves it open.
+
+\subsection{Forest (costume)}
+Flora, fauna, soil, moisture sit as units. $\oplus$ gathers them into
+one bowl --- four names present, order-blind
+(Axiom~\ref{subsec:axiom_idempotence}).
+There is no $A+B=AB$. A path may read competition or succession.
+The forest-as-system is that reading.
+
+\subsection{Pathogen cancellation (costume)}
+A mark and an equal-strength anti-phase mark gather as two seats in
+one bowl (Axiom~\ref{subsec:axiom_idempotence}); $\oplus$ does not
+cancel them. That bowl may then be \emph{read} by Mix into black
+(Axiom~\ref{subsec:axiom_interference}). That is geometry. It is not
+medicine.
+
+\section{Discussion \& Related Work}
+\label{sec:related}
+
+Each paragraph below states what is reused and what is added. None of
+these citations is a claim of identity. The list is a
+boundary-drawing exercise against formalisms that share a sphere, an
+angle, or a rotation
+(Section~\ref{subsec:claim_scope}). It is not a unification of those
+fields, and it is not a proposal to replace quantum mechanics,
+embeddings, or transformers. Empty headings are omitted.
+
+\paragraph{Bloch sphere.}
+A pure qubit is a point on $S^2$; a mixed qubit lives in the ball.
+Pattern Arithmetic reuses that unit globe. It differs in three
+respects. Strength $r\le 1$ is an activation of one arrow, not a purity
+parameter of a density matrix. Phase $\chi$ is an internal colour of
+that arrow, not a global $U(1)$ that can be quotiented away. There is
+no measurement postulate: Mix may mint a third unit or black; $\oplus$
+only collects. They do not collapse a superposition onto an eigenstate. Related work
+may say: we reuse a unit globe; we do not borrow quantum authority for
+$\oplus$.
+
+\paragraph{Word2vec and cosine embeddings.}
+Lexical similarity as an angle is reused. A bag of words as a
+commutative gather is reused in spirit. What is added is a bounded unit
+($r\le 1$), an explicit collection operator that is idempotent
+($A\oplus A=A$), and an order-dependent path $T$ that cosine addition
+does not supply. Offset is a manifold cousin of the familiar
+$\mathrm{king}-\mathrm{man}+\mathrm{woman}$ arithmetic, not a proof
+that the toy globe is a full lexicon.
+
+\paragraph{Transformers.}
+A transformer occupies the same \emph{slot} as $T$: it is a path
+through seated tokens. It is not the same device. The usual stack is
+\[
+\text{sentence}\to\text{token}\to\text{encode}\to\text{embed}\to\text{transformer}.
+\]
+The stack of this paper is
+\[
+\text{sentence}\to\text{token}\to E_L\to\text{sphere}\to
+\oplus\text{ (bowl) }+\; T\text{ (walk)}.
+\]
+Tokens and encodings stay. The embedding is a cast into one sphere
+(of whatever dimension the lexicon needs). $T_{\mathrm{poem}}$,
+$T_{\mathrm{prose}}$, and $T_{\mathrm{equation}}$ are species of
+walk, not extra nets. A transformer may later fill those walks as a
+learned path. This paper does not claim to replace attention; it
+splits presence from order so that a learned path need not also
+invent the city.
+
+\paragraph{RotatE.}
+Knowledge-graph embeddings that treat a relation as a rotation in a
+complex plane are the nearest neighbour of $T$. Pattern Arithmetic
+extends that idea from $S^1$ (or a product of circles) to
+$\mathrm{SO}(3)$ acting on $S^2$, and pairs the rotation with an
+additive phase $\chi$. It also keeps a separate collapse operator,
+which RotatE does not.
+
+\paragraph{von Mises--Fisher.}
+Directional statistics on the sphere reuse the same stage.
+Those models estimate a density. Pattern Arithmetic does not: the atom
+is a point, $r$ is not a concentration $\kappa$, and $\oplus$, $\boxplus$, $T$, and
+offset are algebraic operations on units, not maximum-likelihood fits.
+
+\paragraph{Riemann sphere.}
+Stereographic compactification of $\mathbb{C}\cup\{\infty\}$ onto $S^2$
+is the natural home of one numeric encoding (unbounded reals toward the
+poles). The algebra of this paper is not the M\"obius group. A clock,
+or a stereo map, is a chart; $+$ in $\mathtt{num}$ mode is decoded
+arithmetic, not a fractional linear map.
+
+\paragraph{$\mathrm{SO}(3)$.}
+The transformation $T$ is a named action of the rotation group, plus a
+phase shift. That is the whole geometric engine of a path. What
+$\mathrm{SO}(3)$ does not supply is the bowl, the cap $r\le 1$, the
+sort $\tau$, or Mix. Non-commutativity of poems is inherited;
+idempotence of $\oplus$ is not.
+
+\paragraph{Spherical harmonics.}
+A later field representation of many arrows could be stored as
+$Y_\ell^m$ coefficients, replacing an $O(N^3)$ voxel cube by an
+$O(L^2)$ spectral array. That is a compression option for a field, not
+a definition of the atom, and it is not claimed as a result here.
+
+\section{Conclusion \& Future Directions}
+\label{sec:conclusion}
+
+The claim of this paper is narrow
+(Section~\ref{subsec:claim_scope}). Counting is not the only
+arithmetic for combining units of information. A combination rule
+should match the unit. The sphere and the operators
+$\oplus$, $\boxplus$, $T$, and offset are one proposed encoding of
+that claim. They are not a general theory of language, physics,
+biology, or computation. The costumes and related-work paragraphs
+are illustrations and boundaries, not domain models.
+
+What was written is a single pipeline: collapse many sorted units
+into a bowl of typed atoms $x=(r,\hat n,\chi,\tau)$ on a unit sphere,
+then derive results by ordered transformation of a register occupant.
+Embeddings, on this view, are
+not abolished. They are embeddings into one proposed common coordinate
+register, so that a
+concept such as $\mathrm{man}$ \emph{may} keep the same angles under every
+lexicon that points at it. That is a design, not a demonstrated
+universal semantic space.
+
+A few spoken conventions are sketched in
+Section~\ref{sec:conventions_sketch} as seed, not statute.
+
+\subsection{Future work}
+\label{subsec:future_work}
+What remains to be built, and is only filed here, is a standardized
+concept dictionary together with per-language lexica $E_L$
+(Section~\ref{subsec:standard_dictionaries}). Until those catalogues
+exist, tokenization and encoding remain the handles by which a
+paragraph finds its points. They may continue; they will only have to
+work lighter. The open bet is that they need not also
+remain the architects of a new space of meanings.
+The algebra closed in this paper does not produce a universal
+$\mathrm{man}$ point by itself. Standardization is sociological and
+empirical; it is not an axiom.
+
+A further deferred question is whether a path $T$ should stay
+hand-specified or carry learnable weights: the angle law
+$\alpha(r)$, a phase map, a gate between Mix ($\boxplus$) and
+$T_{\mathrm{poem}}$, and the lexicon casts $E_L$. The honest
+constraint is structural. If undo-the-poem matters, learning should
+stay inside $\mathrm{SO}(3)$, not collapse $T$ into an arbitrary
+matrix. Weights may change how the shells are thrown. They should
+not let the shells throw themselves.
+
+Left fully open is the hypothesis raised in
+Section~\ref{subsec:table_chair}: that separating presence
+($\oplus$) from path ($T$) as distinct primitives should make
+higher-order truths cheaper to learn than recovering the same
+distinction from undifferentiated vectors. Testing this would need a
+controlled comparison --- a compositional task, a flat-embedding
+baseline, and a $T$-path model, measured on data efficiency rather
+than final accuracy --- and no such comparison is attempted here.
+The table-and-chair and storm costumes motivate the hypothesis; they
+do not test it.
+
+Ambient $\mathbb{R}^3$ makes the expressions
+$\mathcal{S}+(a,b,c)$ and $\mathcal{S}\cdot(a,b,c)$ look legal.
+They are legal as \emph{vector} arithmetic. They are not automatically
+legal as \emph{unit} arithmetic. A state with $r=0.98$ added to
+another with $r=0.98$ along the same direction is $r=1.96$, which
+has left the ball. A scalar $2\cdot(0.98)$ does the same. The unit
+cap $r\in[0,1]$ then forces a choice, to be made later and not
+here: clip (overflow saturates at $1$), project (renormalize
+direction and forget extra strength), or refuse (the operator is
+undefined off the ball). Schoolbook $+$ on the $\mathtt{num}$
+encoding is a different door: decode, add in $\mathbb{R}$, encode
+back if the chart allows. Do not let $\mathbb{R}^3$ addition
+quietly replace $\oplus$, $\boxplus$, or $T$. The embedding
+lives in $\mathbb{R}^3$. The unit lives in the ball.
+As already noted in Section~\ref{subsec:register_scope_final},
+the three-dimensional ball teaches the algebra; close document
+semantics, if pursued, live on a higher-dimensional sphere that
+carries the same verbs.
+
+\paragraph{Open: dimensionality, $S^2 \to S^{N-1}$.} Nothing stated
+above is intrinsically three-dimensional. The magnitude cap
+$r\in[0,1]$ is a property of a vector's length, not of the ambient
+dimension. The log and exponential maps used for the offset operator
+(Equations around~\eqref{eq:sphere_exp}--\eqref{eq:analogical_offset})
+are already Riemannian statements that hold on any $S^{N-1}\subset
+\mathbb{R}^N$, not only $S^2$; $\mathrm{SO}(3)$ generalizes to
+$\mathrm{SO}(N)$, and Axiom~\ref{subsec:axiom_rotation}'s
+associativity and invertibility proofs are group-theoretic facts
+about $\mathrm{SO}(N)$ for any $N$, not facts special to $N=3$. Three
+dimensions were chosen for legibility and hand-checkable worked
+examples, not necessity. Raising $N$ is expected to relieve one
+specific problem: too few directions forcing distinct concepts to
+crowd onto nearby points, a kind of clipping by dimensional scarcity
+rather than by magnitude. It does \emph{not} relieve the separate
+overflow problem discussed just above (clip, project, or refuse when
+$r$ exceeds 1) --- that is a magnitude question and stays open
+regardless of $N$. This generalization is filed as a TODO, not
+claimed here: someone should restate the axioms for general $N$ and
+check that every proof step (invertibility, associativity, the
+transport formula) survives verbatim rather than assuming it does.
+
+\paragraph{Open: Mix across differing directions.}
+\label{subsec:mix_scattered_open}
+Axiom~\ref{subsec:axiom_interference} defines Mix only among states
+that share a direction $\hat n$, where it is phasor combination on
+$\chi$. What Mix should mean for states at different directions is not
+settled here. An earlier draft of this paper carried a provisional
+recipe --- normalize the vector sum $r_A\hat n_A+r_B\hat n_B$ --- and
+it is withdrawn, because it is the only place in the construction
+where $\hat n$ would move by something other than a rotation.
+Everywhere else, direction is the exclusive property of
+$\mathrm{SO}(3)$ (Axiom~\ref{subsec:axiom_rotation}) and of $T$, and a
+blend that slides an arrow between axes is not a rotation. Three
+routes remain open, and this paper picks none of them: refuse Mix
+across directions outright, making the operator partial in place just
+as it is already partial in sort; rotate one state onto the other's
+axis by an explicit, stated $T$ first, so that all blending stays
+phasor blending; or accept a genuine two-stage operator and state
+separately what it preserves. Whichever is chosen, it should be shown
+that the resulting map still respects the cap and does not smuggle
+$\mathrm{SO}(3)$'s job into $\boxplus$.
+
+\paragraph{Open: reducing a path by merging close actors.} Two
+\emph{sequential} actors already compose into one equivalent rotation
+for free --- that is just $\mathrm{SO}(3)$'s (or $\mathrm{SO}(N)$'s)
+closure, already latent in $T$'s associativity. That is not the open
+question. The open question is whether several actors that are
+merely \emph{close} --- by some stated distance on $\mathcal{S}$, not
+identical --- may be replaced by one representative actor before a
+path is walked, trading path length for approximation. This is a
+coarse-graining or clustering step, not composition, and it is not
+defined anywhere in this paper. Two things would need stating before
+it could be trusted: a distance and a merge rule (is the
+representative a $\boxplus$-blend of the close actors, an average
+rotation, or something else), and a bound relating that distance to
+how far the reduced path's endpoint may drift from the unreduced
+path's endpoint. Composition is associative and exact;
+this proposed reduction is neither, and its error, if any, has not
+been characterized.
+A merge of this kind, whatever form it eventually takes, would
+produce an additional, derived actor for a shorter path to use --- it
+would not remove the original close actors from the bowl. The bowl
+under $\oplus$ (Section~\ref{subsec:process_principle}) already keeps
+every distinct seated unit; a reduced actor sits alongside its
+sources, not in place of them, and the unreduced path through the
+original actors remains walkable and exact. Reduction would be a
+second, optional reading of the same bowl, the way Mix and $T$
+already are, not a rewrite of what the bowl holds. Left open.
+
+\end{document}
