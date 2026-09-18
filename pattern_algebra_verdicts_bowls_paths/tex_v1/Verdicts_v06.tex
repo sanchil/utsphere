@@ -1,0 +1,629 @@
+% 1. Preamble
+\documentclass[12pt, a4paper]{article}
+
+% Import Packages
+\usepackage[utf8]{inputenc}        % Encoding
+\usepackage{amsmath, amssymb}     % Advanced math formulas
+\usepackage{mathtools}           % Math enhancements
+\usepackage{graphicx}            % Image insertion
+\usepackage{hyperref}            % Interactive hyperlinks & PDF bookmarks
+\usepackage{color}               % Color text and backgrounds
+\usepackage{geometry}            % Page geometry
+\usepackage{comment}             % Multi-line comments
+\usepackage{titling}             % Custom title formatting
+
+\geometry{a4paper, margin=1in}
+
+% Custom Command Definitions
+\newcommand{\Sball}{\mathcal{S}}
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+% Hyperref Setup for Clean PDF Links
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={Pattern Arithmetic: Verdicts from Bowls and Paths},
+    pdfauthor={Sandeep Lakshminarayan Chiluveru}
+}
+
+% Metadata & Custom Title Banner
+\pretitle{\begin{center}\Huge\fontfamily{tt}\selectfont ================================================================================\\[0.5em]}
+\posttitle{\\[0.5em] ================================================================================\end{center}}
+
+\title{Pattern Arithmetic: Verdicts from Bowls and Paths}
+\author{Sandeep Lakshminarayan Chiluveru}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% ABSTRACT
+\begin{abstract}
+A companion paper, \emph{Pattern Arithmetic: Typed Algebra of Bounded
+Units on a Phase-Colored Sphere}, defines a unit of truth
+$x=(r,\hat n,\chi,\tau)$ on a sphere $\mathcal{S}$ and an algebra over
+such units --- gather ($\oplus$), remove ($\ominus$), mix ($\boxplus$),
+walk ($T$), and offset --- together with an admissibility test that
+decides which sorts $\tau$ may use which operators truthfully. That
+paper builds the algebra and stops at the reading: a bowl of units may
+be mixed or walked, and the result is a state. It does not say how a
+state, or a bowl, becomes a \emph{decision}.
+
+This paper adds the missing step. A shaman, a tribal meteorologist, or
+a market analyst holds a handful of signs and must arrive at one of a
+small number of conclusions --- water or no water, storm or calm, rise
+or fall. We show that the algebra already contains two distinct
+mechanisms for this, corresponding to the two readings the first paper
+leaves undemonstrated: an order-free reading, in which evidence
+accumulates as phasors and a balanced case returns no answer rather
+than a forced one; and an order-dependent reading, in which evidence
+is walked as a sequence of actors to a landing compared against
+seated names. We give a rule --- the \emph{swap test} --- for which
+reading a given body of evidence calls for, and identify four
+components a decision needs beyond what the algebra supplies: a
+comparison rule, a selection rule for which signs enter and in what
+order, a principled abstention, and a place for a lexicon of
+conclusions to be learned rather than declared. This paper is a
+framework: it specifies these four components precisely enough to be
+filled in, and works one example --- the diviner's shells --- by hand.
+It does not report an evaluation against data, and says exactly where
+that evaluation would have to be made.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+
+A shaman throws ten shells and reads a future from them. He may throw
+twenty and read it better, or forty better still --- but unless he
+says so, no one else knows what he saw. The shells are evidence; the
+saying is the verdict. Pattern Arithmetic gives a precise account of
+the shells. It has none, so far, of the saying.
+
+This is deliberate on the first paper's part, not an oversight. That
+paper's discipline was to make the algebra trustworthy before asking
+it to decide anything: an admissibility test that refuses sorts with
+no honest map onto the operators, a type table that says which
+combinations are legal, and a running insistence that a walk's landing
+is compared to a name, never confused with one. Asking that paper to
+also commit to a decision rule would have asked it to defend a claim
+it was not ready to make.
+
+It is ready now. This paper takes the atom, the bowl, and the path as
+given --- cited, not re-derived --- and asks the next question: given
+a bowl of evidence, what is the answer?
+
+\subsection{A human can hold a handful; a machine need not stop
+there}
+A diviner's working memory bounds how many shells, how many birds, how
+many signs can be weighed against one question at once. Nothing in
+the algebra of the first paper imposes that bound. The claim of this
+paper is narrower than it might sound: not that more evidence is
+always better, but that \emph{the mechanism for combining evidence
+does not change shape as the amount of evidence grows} --- the same
+gather, the same two readings, apply to ten shells or ten thousand
+sensor readings. Where that mechanism strains under scale (\S 4.3) is
+stated plainly rather than smoothed over.
+
+\section{What Is Inherited}
+\label{sec:inherited}
+
+We use, without re-deriving, the following from the companion paper.
+Equation and axiom numbers refer to that paper.
+
+\begin{itemize}
+\item The atom $x=(r,\hat n,\chi,\tau)\in\mathcal{S}$, with $r\le 1$ a
+      normalized strength, $\hat n\in S^2$ a direction, $\chi\in[0,2\pi)$
+      a phase, and $\tau$ a sort tag that gates which operators may be
+      truthfully applied (Axiom 1; Axiom 0).
+\item Gather, $\oplus$: union on finite subsets of $\mathcal{S}$,
+      sort-blind, idempotent, lossless, undone by $\ominus$ (Axiom 4).
+\item Mix, $\boxplus$: a phasor reading of a bowl whose members share a
+      direction and a sort,
+      $\boxplus(B)=\bigl(\min(1,|z_B|),\hat n,\arg z_B,\tau\bigr)$
+      with $z_B=\sum_{x\in B} r_x e^{i\chi_x}$; commutative,
+      non-associative, lossy, uninvertible (Axiom 5).
+\item The walk, $T$: an ordered composition
+      $T_{w_n}\circ\cdots\circ T_{w_1}(x)$ of actor-parameterized
+      rotations and phase shifts; non-commutative in general, and
+      many-to-one, so a landing alone does not determine the walk that
+      reached it (Axiom 6; \S3).
+\item \emph{Levels are closed}: a unit carries no representation of
+      what it constitutes, and a bowl carries no representation of the
+      reading that will be applied to it. Whatever a lower unit would
+      need to know about a higher one --- which units were taken as
+      co-present, over what interval, under what question --- is a
+      constituting fact of the higher level, not a coordinate of the
+      atom (companion paper, \S2.2).
+\end{itemize}
+
+Two consequences of level closure matter enough here to restate. First,
+a bowl that saturates under Mix is often a level that has been
+flattened --- repeated samples of one unit, mistaken for many units at
+one level (companion paper, \S2.7). Second, the atom stays a
+four-tuple; grouping criteria such as a time window or a spatial
+radius live outside it, deciding bowl membership before the algebra
+runs rather than riding inside any single unit.
+
+\section{Two Readings of One Bowl}
+\label{sec:two_readings}
+
+Given a bowl $B=\{x_1,\ldots,x_n\}$ of evidence bearing on one
+question, the companion paper currently defines two readings that turn
+$B$ into a single state: phasor Mix and ordered transformation. This is
+not a claim that no other reading could be defined; it is the pair
+that paper supplies today, and the pair this paper uses. We name them
+here because the first paper defines both and demonstrates only one.
+
+\subsection{Reading B: the walk}
+Seat the question as a state $q$. Apply the members of $B$ as actors,
+in some order $\pi$:
+\[
+    \mathrm{land}_\pi(q) \;=\; T_{x_{\pi(n)}}\circ\cdots\circ
+    T_{x_{\pi(1)}}(q).
+\]
+The verdict is the landing, compared against seated names (the storm's
+$\mathrm{calm}$ and $\mathrm{storm}$ pins are an instance of this).
+Order matters by construction: $T_a T_b\neq T_b T_a$ in general, so
+$\mathrm{land}_\pi \neq \mathrm{land}_{\pi'}$ for $\pi\neq\pi'$ is the
+expected case, not a failure. This reading is fully worked in the
+companion paper's storm example, which we do not repeat.
+
+\subsection{Reading A: the phasor sum}
+\label{subsec:reading_a}
+Rotate every member of $B$ onto the question's axis $\hat n_q$ (a
+rotation, which preserves $r$ and $\chi$), then read the whole bowl at
+once:
+\[
+    \boxplus(B) \;=\; \Bigl(\min(1,|z_B|),\ \hat n_q,\ \arg z_B,\ \tau\Bigr),
+    \qquad
+    z_B=\sum_{x\in B} r_x e^{i\chi_x}.
+\]
+Order plays no role: $z_B$ is a sum, and sums do not care about the
+order of their terms. The verdict's \emph{confidence} is $|z_B|$'s
+image under the cap, and its \emph{direction} is $\arg z_B$, read
+against a lexicon of conclusions seated at particular phases (e.g.\
+$\chi=0$ for ``water,'' $\chi=\pi$ for ``no water''). Agreeing evidence
+lengthens the sum; opposing evidence shortens it; evenly opposed
+evidence returns $z_B=0$ --- black, and a principled abstention rather
+than a forced choice (companion paper, Axiom 2).
+
+\subsection{The swap test}
+\label{subsec:swap_test}
+Which reading applies to a given $B$ is decided by one question: does
+exchanging the order in which two members of $B$ arrived change the
+answer?
+\begin{itemize}
+\item If \textbf{no} --- the shells thrown together, ten readings
+      taken at one instant --- $B$ has no order to respect, and
+      Reading A is the correct mechanism. Applying Reading B here
+      manufactures an order-dependence that is not in the evidence.
+\item If \textbf{yes} --- birds fleeing, then a wind shift, then a
+      temperature drop, where the same three signs in a different
+      sequence mean something else --- $B$'s order is itself
+      information, and Reading A would discard it. Reading B is
+      required.
+\end{itemize}
+The two readings are not competing hypotheses about one mechanism;
+they are the correct tool for two different shapes of evidence, and
+the swap test is how a system --- human or otherwise --- tells which
+shape it is holding.
+
+\subsection{The readings compose}
+\label{subsec:readings_compose}
+Nothing prevents using both on one episode. A morning's observations
+may arrive in a meaningful sequence (Reading B over the morning) and
+also include several simultaneous signs at one moment within it
+(Reading A over that moment's bowl, itself one actor in the larger
+walk). This is level closure in practice (\S\ref{sec:inherited}): a
+Reading A verdict is a state, and a state may act as $w$ in a $T$-path,
+exactly as any other seated unit may.
+
+\section{Four Components the Algebra Does Not Supply}
+\label{sec:four_gaps}
+
+Both readings above take a bowl and return a state. Neither, on its
+own, returns a decision a person or a system can act on. Four
+components stand between a state and a verdict, and none of them is
+supplied by $\oplus$, $\boxplus$, $T$, or offset.
+
+\subsection{A comparison rule}
+\label{subsec:comparison_rule}
+The companion paper's storm section says a ball falls \emph{near} the
+$\mathrm{calm}$ pin or the $\mathrm{storm}$ pin, and does not define
+near. A working comparison rule must state, at minimum: which
+coordinates of the landing are read, what metric is used on those
+coordinates, and whether $\tau$ must match exactly or may differ.
+
+Two states are compared only if $\tau_A=\tau_B$; $\tau$ gates
+comparison the same way it gates every other operator. Given that, a
+distance is taken over all three geometric coordinates, each measured
+the way the companion paper already measures it elsewhere rather than
+by naive coordinate subtraction:
+\begin{equation}
+    d(A,B)^2 \;=\;
+    w_r\,(r_A-r_B)^2
+    \;+\;
+    w_{\hat n}\,\arccos(\hat n_A\cdot\hat n_B)^2
+    \;+\;
+    w_\chi\,\bigl(\min(|\chi_A-\chi_B|,\,2\pi-|\chi_A-\chi_B|)\bigr)^2 ,
+    \label{eq:comparison_metric}
+\end{equation}
+using the geodesic distance the offset operator already relies on for
+$\hat n$, and the circular distance a phase requires for $\chi$; $r$
+alone is a bounded line with no wraparound and needs neither
+correction. Raw coordinate subtraction on $\hat n$ or $\chi$ is
+\emph{not} a safe default: two directions or phases near $0$ and near
+$2\pi$ are adjacent on the sphere or the circle but appear maximally
+distant under naive subtraction, and reference atoms placed near a
+natural zero point --- which is common, not rare --- would be
+misjudged systematically rather than occasionally. \emph{Open in this
+paper:} the weights $w_r,w_{\hat n},w_\chi$, meaning how much a
+mismatch in strength, direction, or phase should count against an
+otherwise close match. \S\ref{sec:worked_example} does not need this
+choice made in general: every shell and every reference point there
+already shares $\hat n_q$ by construction, so $w_{\hat n}$ never
+enters, and the verdict is read from $\chi$ (which reference point is
+nearest) with $r$ supplying the null rather than a weighted distance.
+A question with reference atoms at different directions would need
+$w_{\hat n}$ and $w_\chi$ actually chosen against each other, which
+remains open.
+
+\subsection{A selection rule}
+\label{subsec:selection_rule}
+For Reading B, the order $\pi$ that the evidence is applied in is
+handed to the walk; it is not the walk's to choose. A real system must
+decide which signs enter $B$ at all (\S\ref{subsec:comparison_rule}'s
+window and radius criteria, companion paper \S2.2) and, when order
+matters, in what sequence. This selection is itself where most of an
+inference system's actual difficulty lives, and it is entirely outside
+the algebra. \emph{Open in this paper.}
+
+\paragraph{A sequence is a degenerate graph.} A walked path
+$T_{w_n}\circ\cdots\circ T_{w_1}(x)$ is a simple directed path, one
+actor after another with no branching. When $\pi$ is not given in
+advance, the natural structure is not a single path but a tree of
+candidate paths: several possible next actors branch from a shared
+prefix (twinkle, twinkle, then \emph{either} little or something
+else), and choosing a walk means searching that tree rather than
+replaying one. Every edge of the tree is still one application of
+$T$; the tree organizes a search over sequences, it does not add an
+operator. How candidates branch, how a branch is scored before it is
+fully walked, and how the tree is pruned are the actual content of
+this open selection rule, not resolved by naming the structure.
+
+\subsection{A principled null}
+\label{subsec:the_null}
+Reading A supplies one for free: $z_B=0$. Reading B does not. A walk
+always lands somewhere, and a comparison rule (\S\ref{subsec:comparison_rule})
+always returns a nearest pin, however far away it is. A Reading-B
+system therefore needs an explicit distance threshold beyond which the
+verdict is \emph{abstain} rather than \emph{nearest pin regardless}.
+This is a second place, distinct from \S\ref{subsec:comparison_rule},
+where a number must be chosen rather than derived.
+
+\subsection{Learned pins and learned signs}
+\label{subsec:learned_pins}
+The companion paper notes that a lookup $E_L$ may be learned
+(\S5.6) without the units it points into being anything other than
+fixed. The same discipline applies to inference: what is learned is
+narrow. A sign's $(r,\chi)$ for a given question --- how strongly, and
+in which direction, a particular bird's flight bears on ``storm'' ---
+is an $E_L$ entry, learnable from labelled cases. The seated pins
+$\mathrm{storm}$, $\mathrm{calm}$ are likewise $E_L$ entries, and may
+be learned rather than declared. Neither requires learning a
+representation in the sense of an embedding; both are learning one
+small map, per sign, per question. \emph{This is the paper's one
+concrete claim about the learning loop}: it is cheaper than
+representation learning because it is narrow, not because it is
+avoided.
+
+\paragraph{Building a reference atom.}
+\label{par:reference_atom}
+A pin need not be declared; it can be built from witnessed cases the
+same way live evidence is read. For a class $c$ (one storm, one
+drought), let $G_c=\{y_1,\ldots,y_m\}$ be the Reading-A composite of
+each witnessed episode, seated by $E_L$ from that episode's own bowl
+and already rotated onto the question's axis $\hat n_q$
+(\S\ref{subsec:reading_a}). Because every $y_i$ shares $\hat
+n_q$ by construction, $\boxplus(G_c)$ is defined by the
+companion paper's bowl-Mix equation ($\S2.7$) without needing its
+still-open case of Mix across differing directions (its Future Work);
+building a reference atom this way
+never depends on a question that paper leaves unresolved. The
+reference atom for $c$ is $\mathrm{ref}_c=\boxplus(G_c)$.
+
+\paragraph{Coherence, and when to split.}
+The capped strength $r(\mathrm{ref}_c)$ is not a safe coherence
+signal on its own: it saturates at $\min(1,|z_{G_c}|)$, so a tightly
+clustered class and a widely scattered one can both report the
+maximal value once enough witnesses push $|z_{G_c}|$ past $1$, at
+exactly the point where the underlying spread most needs
+distinguishing (\S\ref{par:reference_atom_illustration} makes this
+concrete). The uncapped magnitude alone does not fix this either,
+since it says nothing about how much evidence produced it: $|z_{G_c}|
+= 0.6$ means one thing from a single witness and another from nine
+that largely cancelled.
+
+The correct coherence signal normalizes by both at once --- the
+\emph{mean resultant length}, the standard measure of angular
+concentration for a set of phasors:
+\begin{equation}
+    \bar R_c \;=\; \frac{|z_{G_c}|}{\sum_{y\in G_c} r_y},
+    \qquad
+    z_{G_c} \;=\; \sum_{y\in G_c} r_y e^{i\chi_y},
+    \label{eq:coherence}
+\end{equation}
+using the same uncapped $z_{G_c}$ the companion paper's bowl-Mix
+equation already computes before capping, alongside one further sum,
+$\sum r_y$, tracked once when $G_c$ is assembled and not otherwise
+needed for reading live evidence. $\bar R_c\in[0,1]$: $1$ for
+perfectly aligned witnesses, $0$ for complete cancellation or uniform
+scatter, and --- unlike $r(\mathrm{ref}_c)$ --- unaffected by how many
+witnesses there are or how strong each one is, so a class of nine and
+a class of ninety are judged by the same scale. This is not a new
+invention; $1-\bar R_c$ is the standard circular variance, and the
+same quantity underlies tests (Rayleigh's, for one) of whether a set
+of angles is distinguishable from uniform scatter at all --- a route
+to choosing $\theta$ by a stated significance level rather than by
+feel, not adopted here but available.
+
+Given a coherence threshold $\theta\in(0,1)$ and a minimum
+group size $k_{\min}$ below which a split is not attempted: if
+$\bar R_c\ge\theta$, keep $\mathrm{ref}_c=\boxplus(G_c)$; otherwise, if
+$|G_c|\ge k_{\min}$, partition $G_c$ into sub-groups and recurse on
+each, so that a single label may resolve into several reference atoms
+(a slow-onset and a flash drought, say); otherwise accept
+$\mathrm{ref}_c$ as weak, or fall back to comparing incoming evidence
+against $G_c$'s individual members rather than their compression. How
+$G_c$ is partitioned when a split is warranted is not specified here
+and is left open, as is the choice of $\theta$ itself; $\theta$ must
+be bounded away from $0$, since every singleton group has $\bar
+R_c=1$ trivially and a threshold with no floor never stops splitting.
+Group size strictly decreases at each split, so the recursion
+terminates regardless of $\theta$'s exact value.
+
+\paragraph{This is level closure, applied to references.} A class
+discovered to need splitting is a level-2 object in its own right
+(companion paper, \S2.2): the split is discovered from $G_c$'s own
+internal agreement, not asserted in advance, and each resulting
+sub-reference is exactly as usable --- comparable, walkable, further
+splittable --- as the class it came from. A domain with genuinely
+few witnesses (two droughts, not nine) is not a failure of the
+procedure; $k_{\min}$ says plainly that there is not yet evidence to
+subdivide responsibly, and the honest output is a weaker reference or
+a fall back to individual comparison, not a manufactured split.
+
+\paragraph{Repeated splitting is a tree, and classifying against it
+means descending it.} A label that splits once and then splits again
+within a child produces a tree of reference atoms rooted at the
+original class: $\mathrm{storm}$ at the root, perhaps $\mathrm{slow\
+onset}$ and $\mathrm{flash}$ as children, each itself subject to the
+same $\bar R\ge\theta$ test on its own witnesses. Comparing an
+incoming atom against such a tree is naturally top-down: match against
+the root's siblings first (storm, drought, rain, flood), then, within
+whichever is nearest, descend to its children if it has any, and
+repeat. This is the shape of a classical decision tree, but not its
+mechanism: a decision tree tests a raw coordinate against a learned
+threshold at each node; a node here compares a full state against a
+reference atom by Equation~\eqref{eq:comparison_metric}, using
+operators and a metric the algebra already supplies rather than
+introducing threshold tests as a new primitive. The tree is discovered
+by $\bar R$, level by level, the same way \S\ref{par:reference_atom}
+discovers it, not designed in advance; the comparison rule and the
+null of \S\ref{subsec:comparison_rule} and \S\ref{subsec:the_null}
+apply at every node unchanged.
+
+\paragraph{Illustration.}
+\label{par:reference_atom_illustration}
+Nine witnessed episodes at $r=0.6$ each, at
+$\chi=8^\circ,9^\circ,9^\circ,10^\circ,10^\circ,10^\circ,11^\circ,
+11^\circ,12^\circ$, give $\sum r_y=5.4$ and
+$\mathrm{ref}=(1.00,\hat n_q,10.0^\circ)$: capped $r'=1.00$ and
+$\bar R=0.9998$ agree --- coherent, confidently kept. The same nine
+witnesses spread instead across
+$\chi=-40^\circ,-20^\circ,-10^\circ,0^\circ,10^\circ,20^\circ,
+30^\circ,45^\circ,60^\circ$ give the identical capped $r'=1.00$, since
+$|z_{G_c}|$ still exceeds the cap --- but $\bar R=0.8689$, correctly
+showing this class as less coherent than the first even though the
+capped reading cannot tell them apart. Five witnesses at $\chi=0^\circ$
+and four at $\chi=180^\circ$ --- two real sub-types wearing one
+label --- give capped $r'=0.60$ and $\bar R=0.11$: both signal a
+problem, but $\bar R$ states it as a small fraction of the evidence
+actually agreeing, not merely a moderate reading. A perfectly even
+split, five and five, gives $\bar R=0.00$, the same cancellation that
+gives \S\ref{sec:worked_example} its abstain, now flagging the class
+itself rather than a single reading of it.
+
+\section{Worked Example: The Diviner's Shells}
+\label{sec:worked_example}
+
+We work Reading A in full, since the companion paper never carries a
+phasor reading past two states, and its property demonstration
+(non-associativity, on an anonymous triple) is not a reading of a
+bowl that means something.
+
+Seat the question \emph{will it rain} at $\hat n_q$. Each shell, once
+cast, is read by a diviner (or, later, by a learned $E_L$) as a state
+$(r,\chi)$ at $\hat n_q$: $\chi=0$ favors rain, $\chi=\pi$ favors no
+rain, and intermediate $\chi$ is a hedge. Five casts, each shell
+carrying $r=0.4$ unless noted:
+
+\begin{center}
+\begin{tabular}{lcc}
+\hline
+Cast & reading & interpretation \\
+\hline
+4 shells, all favor rain      & $r=1.00$ at $\chi=0^\circ$   & confident rain \\
+3 favor, 1 against            & $r=0.80$ at $\chi=0^\circ$   & rain, less confident \\
+2 favor, 2 against            & $r=0.00$                     & \textbf{abstain} \\
+4 favor, 2 hedge at $90^\circ$ & $r=1.00$ at $\chi\approx 26.6^\circ$ & rain, hedged direction \\
+12 shells ($r=0.15$ each), all weakly favor    & $r=1.00$ at $\chi=0^\circ$   & confident rain \\
+\hline
+\end{tabular}
+\end{center}
+
+The third row is the case worth dwelling on. Two shells favor rain and
+two oppose it, at equal strength; the phasors cancel exactly, and the
+verdict is black --- not a coin flip, not a default to the majority
+class, but the algebra's own statement that this evidence does not
+decide the question. A system built on a forced classifier (softmax
+over two classes, say) has no way to express this outcome; it must
+output a confident-looking number even when the evidence is silent.
+Reading A's null is not an afterthought fitted onto the algebra; it is
+Axiom 2, doing here exactly what it does for a Mix reading of colour.
+
+The fifth row shows the saturation the companion paper's \S2.7
+discusses: twelve weak, agreeing signs pin at $r=1$ exactly as four
+strong ones do, and the difference between ``moderately confident''
+and ``overwhelmingly confident'' is lost. This is the place where
+\S\ref{subsec:selection_rule}'s selection rule matters most: whether
+those twelve readings are twelve units at one level, or repeated
+samples of one unit that should have been reduced (companion paper,
+Axiom 4) before ever reaching the bowl, is a question this paper does
+not resolve and flags as the clearest candidate for the next.
+
+\emph{Reading B on the same shells} is not worked here. Doing so
+honestly requires an order for the casts, which a physical handful of
+shells thrown at once does not supply --- exactly the case the swap
+test (\S\ref{subsec:swap_test}) assigns to Reading A. A worked Reading
+B example belongs to evidence that genuinely arrives in sequence, and
+the companion paper's storm already provides one.
+
+\section{Level Closure in Practice: Correcting a Path}
+\label{sec:level_closure_practice}
+
+A $T$-path records the sequence of actors applied to it, faithfully,
+by definition (companion paper, Axiom 6). It has no means of knowing
+whether that sequence was the right one --- level closure
+(\S\ref{sec:inherited}) says precisely this: a lower unit carries no
+representation of what it constitutes, and neither the atom nor the
+path can see the higher-level context that would tell it it has erred.
+
+A concrete case: a sequence of observed signs is walked in the order
+observed, but a later sign (or a completed higher-level unit, such as
+the rest of a sentence or the rest of a song) makes that order appear
+wrong --- \emph{twinkle, little, twinkle, star} rather than
+\emph{twinkle, twinkle, little, star}. Correcting this is a level-2
+operation: it requires comparing the recorded path against context the
+path itself does not have access to, and revising the walk
+probabilistically. This paper's position is that the path must
+therefore be \emph{legible} to the level above --- readable as an
+ordered record, not only walkable --- so that a corrector at the next
+level can inspect and revise it. Nothing in the companion paper's
+axioms prevents this; nothing in them provides it either. We flag it
+as the clearest point of contact between this paper's verdicts and a
+learning loop operating above them, and leave the corrector itself
+unspecified.
+
+\section{Prediction}
+\label{sec:prediction}
+
+Everything above compares an atom to a reference built from atoms of
+the \emph{same} concurrent identity: a $\mathrm{storm}$ reference is
+built from patterns that were themselves storms, and a match says what
+the evidence currently resembles. That is classification. Prediction
+--- what is likely to happen, not what this already is --- needs a
+different labelling convention, not a different mechanism.
+
+\subsection{Immediate forecast: relabelling by outcome}
+\label{subsec:immediate_forecast}
+
+Fix a lead time $\Delta$. A \emph{precursor witness} for outcome $c$ is
+a Reading-A composite $y_i$ of the evidence bowl observed at some time
+$t$, labelled not by what it is but by what followed it: $c$ occurred
+at $t+\Delta$. Gathering such witnesses gives a precursor group
+$G_c^{\Delta}$, and everything in \S\ref{par:reference_atom} applies
+unchanged: $\mathrm{ref}_c^{\Delta}=\boxplus(G_c^{\Delta})$, checked for
+coherence by $\bar R_c$ (Equation~\eqref{eq:coherence}) and split if
+$c$ conceals more than one precursor shape, exactly as
+\S\ref{par:reference_atom_illustration} splits $\mathrm{drought}$.
+Forecasting is then comparison against $\{\mathrm{ref}_c^{\Delta}\}$ by
+the ordinary rule of Equation~\eqref{eq:comparison_metric}: the
+nearest precursor reference, within threshold, says what is likely at
+$t+\Delta$. The null of \S\ref{subsec:the_null} applies exactly as
+before --- no close precursor match is an honest \emph{no forecast},
+not a forced one, which matters most exactly where a wrong call is
+costly.
+
+Nothing here is a new equation. The only change from
+\S\ref{subsec:learned_pins} is which witnesses are gathered under a
+label: concurrent identity for classification, a fixed time-shifted
+outcome for this. Two things mark it as a first, crude pass rather
+than a finished one, named so they are not mistaken for settled
+choices: $\Delta$ is fixed and single-valued, so the forecast has one
+horizon and no notion of a nearer or more distant event both being
+plausible; and no forecast carries a horizon-dependent confidence ---
+a match found for $\Delta=10$ minutes and one for $\Delta=10$ days are
+read with the same $\bar R_c$ scale, though the latter should
+plausibly be trusted less for the same coherence value. Both are left
+for iteration, not resolved here.
+
+\subsection{Open: path predictors}
+\label{subsec:path_predictors}
+
+The immediate forecast reads only the endpoint of what happened after
+a precursor; a deeper forecast reads the whole unfolding. Store, per
+witnessed episode, the entire trajectory that followed --- not one
+composite but the ordered sequence of atoms, timestamped as the
+companion paper's step-metadata generalization allows (\S3.3) --- and
+match an
+\emph{observed prefix} of a trajectory now against the opening steps of
+stored trajectories, reading the continuation of the closest match as
+the prediction. This is not a new idea invented for this paper: it is
+the analog method already used in operational forecasting, arrived at
+here from the algebra's own machinery rather than borrowed from it.
+
+It is filed open, not attempted, because it needs two things this
+paper has not built. First, storage of complete historical
+trajectories rather than single compressed reference atoms, a real
+cost the immediate forecast does not pay. Second, and more
+substantial: Equation~\eqref{eq:comparison_metric} compares one state
+to one state, and prefix matching compares a \emph{sequence} of states
+to a sequence, which needs a distance over sequences --- some
+alignment or step-wise accumulation of the single-state metric,
+robust to two episodes unfolding at different paces --- that has not
+been defined. This section marks where that work belongs rather than
+attempting it; the immediate forecast of
+\S\ref{subsec:immediate_forecast} does not depend on it and should not
+wait for it.
+
+\section{Scope and Open Questions}
+\label{sec:scope}
+
+This paper is a framework, in the same sense the companion paper is:
+it specifies mechanism and states honestly what it has not
+demonstrated at scale. \emph{[OPEN --- decide before circulating: does
+this paper stop here, as a specification plus one worked toy example,
+or does it commit to an evaluation against real data (e.g.\ a labelled
+forecasting or forex task) with a stated baseline? The two choices
+imply different remaining sections and different claims in the
+abstract; see the companion paper's own title history for how much
+that choice shapes what a title may honestly claim.]}
+
+Regardless of that choice, the following are stated open rather than
+resolved by this paper:
+
+\begin{itemize}
+\item The comparison rule (\S\ref{subsec:comparison_rule}) is a
+      choice, not a derivation; a different metric may be more honest
+      for a given domain.
+\item The selection rule (\S\ref{subsec:selection_rule}), including
+      how the grouping window of companion-paper \S2.2 is set, is the
+      largest source of real difficulty and is entirely unaddressed
+      here.
+\item The saturation--under--aggregation problem
+      (\S\ref{sec:worked_example}, companion paper \S2.7 and \S2.3) is
+      diagnosed, not solved: whether to route repeated samples through
+      a reduction before the bowl, or revisit the companion paper's
+      Axiom~1 note on an order-preserving bijective bound, is left to
+      whichever setting first needs to aggregate at scale.
+\item The path corrector (\S\ref{sec:level_closure_practice}) is named
+      and not built.
+\item Path predictors (\S\ref{subsec:path_predictors}) are named and
+      not built; the immediate forecast
+      (\S\ref{subsec:immediate_forecast}) does not require them.
+\end{itemize}
+
+\end{document}
