@@ -61,6 +61,41 @@ The buttons are not interchangeable
 
 
 
+A full recap, organized by where each gap actually lives — Verdicts' own documented items, assembly's structural gaps from pure conversation, and the four newest derived-feature blind spots. Sixteen in total, grouped so it's clear what's officially on record versus what's still purely spoken.
+
+**Verdicts' own stated gaps — already itemized in the file itself:**
+
+1. **Comparison weights** ($w_r,w_{\hat n},w_\chi$) — how much a mismatch in strength, direction, or phase should count against an otherwise close match. Never derived, only ever set to the simplest default.
+2. **Selection rule** — which signs enter a bowl, and in what order. Named as the largest single source of real difficulty, entirely unaddressed.
+3. **Saturation-under-aggregation** — whether repeated samples should be reduced before ever reaching a bowl. Diagnosed, not resolved.
+4. **Path corrector** — a level-2 object revising a level-1 walk when later context reveals it was wrong. Named, never built.
+5. **Deep path prediction** — needs a distance *between sequences*, not just between states. Doesn't exist yet.
+6. **Coherence threshold $\theta$ and the split-partition method** — when $\bar R_c$ says split, *how* a class divides into sub-groups was never specified.
+
+**Assembly's structural gaps — pure conversation, nothing written down:**
+
+7. **Dynamics** — position now exists, energy now exists, but nothing computes how position actually *moves* in response to that energy. The molecular-dynamics half was never built, only named.
+8. **Group reconciliation** — how three or more atoms settle into one *consistent* joint configuration when they can't each get their own private optimum. We know the real-world answer (energy minimization, gradient descent) but haven't built it here.
+9. **Identical-atom multiset** — $A$ bonding with an exact copy of itself needs a count, not just a set. Never addressed.
+10. **Symmetric or actor/patient** — whether an assembly bond is mutual or needs a direction, like $T$'s asymmetry. Undecided.
+11. **Multi-vector generalization** — if atomic number becomes real (multiple vectors per atom, multiple simultaneous bonds), the entire $(U_{AB},\kappa_{AB})$ formula needs to become vector-to-vector, not atom-to-atom. Not attempted.
+
+**The four newest, from the derived-features audit — confirmed independent of everything checked against them:**
+
+12. **Polarity** ($\lvert r_A-r_B\rvert$) — whether a pairwise bond is balanced or one-sided. $U_{AB}$ and $\kappa_{AB}$ are both silent on this.
+13. **Heterogeneity** — spread of *strengths* within a group. $\bar R_c$ only ever measures whether *directions* agree.
+14. **True angular dispersion** — distinguishes genuine scatter from a tight two-cluster split. $\bar R_c$ reads zero for both, and so does $z_{G_c}$ — confirmed directly, this one survived every check.
+15. **Path turning-angle variance** — how smooth or erratic a walked sequence is. Nothing currently measures it.
+
+**One deliberately parked, not forgotten:**
+
+16. **Mixing assembly and collapse** — whether the two verbs can combine, and under what circumstances. Set aside on purpose, waiting for both to mature further first.
+
+**What's *not* on this list, worth stating plainly since it took real work to get here:** separation distance, the antipodal degeneracy, and which technique (nearest-centroid vs. nearest-neighbor) to use are all genuinely closed. Sixteen real gaps remain — none of them small, but each one precisely named rather than a vague sense that something's missing.
+
+
+
+
 
 
 
