@@ -1026,10 +1026,18 @@ Heterogeneity &
   Variance of strengths within a group, distinct from $\bar R_c$'s
   directional coherence &
   Named, not built \\
+Internal alignment ($\alpha_{\text{atom}}$) &
+  Strength-weighted mean cosine similarity across an atom's own
+  informational vectors (Equation~\eqref{eq:internal_alignment});
+  signed, so it separates active cancellation from mere
+  non-reinforcement &
+  Verified; adopted in Axiom~V1 \\
 True angular dispersion &
   Distinguishes genuine scatter from a tight two-cluster split,
   which $\bar R_c$ and $z_{G_c}$ both read as zero either way &
-  Named, not built; confirmed as a real, surviving blind spot \\
+  Named, not built; confirmed as a real, surviving blind spot ---
+  tested against $\alpha_{\text{atom}}$ and not closed by it either
+  ($-0.43$ scattered versus $-0.50$ bimodal, too near to separate) \\
 Path turning-angle variance &
   How smooth or erratic a walked sequence is &
   Named, not built \\
@@ -1087,9 +1095,9 @@ V_{\text{derived}}/r$ --- standing in for the atom wherever a single
 vector is required. For $N=1$, $V_{\text{derived}}$ coincides with
 the atom's own vector and nothing changes.
 
-Two scalar metrics follow directly from the same $N$ informational
-vectors, each answering a different question and neither used by
-any other axiom below unless explicitly named:
+Several scalar metrics follow directly from the same $N$
+informational vectors, each answering a different question and none
+used by any other axiom below unless explicitly named:
 \[
 E_{\text{atom}} = \sum_{i=1}^N r_i, \qquad
 \mathcal{V}_{\text{atom}} = \sum_{i=1}^N r_i^3, \qquad
@@ -1113,6 +1121,39 @@ the atom. Earlier drafts of this axiom called $\mathcal{V}_{\text
 retired as misleading, since neither participates in momentum,
 kinetic energy, or any calculation the word ``mass'' would
 ordinarily license.
+
+A fourth metric answers a question the other three cannot. Atom
+coherence above is a ratio of magnitudes and so cannot fall below
+zero: it reads $0$ both for informational vectors that merely fail
+to reinforce and for vectors that actively cancel. The
+strength-weighted mean cosine similarity across all internal pairs
+separates these:
+\begin{equation}
+    \alpha_{\text{atom}} \;=\;
+    \frac{\sum_{i<j} r_i r_j\,(\hat n_i\cdot\hat n_j)}
+         {\sum_{i<j} r_i r_j}.
+    \label{eq:internal_alignment}
+\end{equation}
+Each $\hat n_i\cdot\hat n_j$ is already a cosine similarity, since
+informational vectors are unit-directed; the denominator makes the
+aggregate comparable across atoms of differing $N$ and differing
+strengths, which the unnormalized sum is not --- two atoms with
+near-identical internal arrangement but $N=2$ and $N=5$ give raw
+sums of $+0.72$ and $+0.90$ against normalized values of $+0.995$
+and $+0.998$. $\alpha_{\text{atom}}=+1$ exactly when all
+informational vectors align; it is negative when they genuinely
+oppose, reading $-1/3$ for two opposed pairs. Its floor is not
+$-1$ in general: three or more vectors in three dimensions cannot
+be mutually opposed, so achievable disagreement tightens as $N$
+grows while achievable agreement does not --- the unnormalized sum
+has maximum $\sum_{i<j}r_ir_j$, growing as $N^2$, against a hard
+minimum of $-\tfrac{1}{2}\sum_i r_i^2$, growing only as $N$, which
+follows directly from $\lvert V_{\text{derived}}\rvert^2 =
+\sum_i r_i^2 + 2\sum_{i<j} r_ir_j(\hat n_i\cdot\hat n_j) \ge 0$.
+Agreement compounds; disagreement saturates.
+$\alpha_{\text{atom}}$ is read alongside atom coherence, not in
+place of it: the first asks whether the vectors agree, the second
+how much of their strength survives into one resultant.
 
 \subsection{Axiom V2: External position}
 \label{axiom:v2}
