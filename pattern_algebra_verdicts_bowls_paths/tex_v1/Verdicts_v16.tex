@@ -1025,7 +1025,13 @@ Polarity ($\lvert r_A-r_B\rvert$) &
 Heterogeneity &
   Variance of strengths within a group, distinct from $\bar R_c$'s
   directional coherence &
-  Named, not built \\
+  Named, not built at the bowl level; the atom-level counterpart is
+  now $\sigma_{\text{atom}}$ below \\
+Volume concentration ($\sigma_{\text{atom}}$) &
+  How evenly an atom's volume is spread across its own
+  informational vectors (Equation~\eqref{eq:volume_concentration});
+  $0$ even, $1$ fully concentrated, independent of $N$ &
+  Verified; adopted in Axiom~V1 \\
 Internal alignment ($\alpha_{\text{atom}}$) &
   Strength-weighted mean cosine similarity across an atom's own
   informational vectors (Equation~\eqref{eq:internal_alignment});
@@ -1154,6 +1160,34 @@ Agreement compounds; disagreement saturates.
 $\alpha_{\text{atom}}$ is read alongside atom coherence, not in
 place of it: the first asks whether the vectors agree, the second
 how much of their strength survives into one resultant.
+
+A fifth metric does for magnitude what $\alpha_{\text{atom}}$ does
+for direction. $E_{\text{atom}}$ and $\mathcal{V}_{\text{atom}}$
+both report a total and are silent on how that total is spread: two
+atoms can carry near-identical energy ($2.200$ against $2.150$ in a
+checked case) while one holds it evenly across its vectors and the
+other concentrates most of it in two. Writing $s_i = r_i^3 /
+\mathcal{V}_{\text{atom}}$ for the share of volume held by vector
+$i$:
+\begin{equation}
+    \sigma_{\text{atom}} \;=\;
+    \frac{N^2}{N-1}\cdot\operatorname{Var}(s_1,\ldots,s_N),
+    \qquad N\ge 2,
+    \label{eq:volume_concentration}
+\end{equation}
+with $\sigma_{\text{atom}}=0$ by convention at $N=1$.
+$\sigma_{\text{atom}}=0$ exactly when volume is spread evenly and
+$1$ when a single vector holds all of it, at every $N$ --- verified
+at $N=2,3,4,6,8$ for both extremes. The normalization is what earns
+this form over the simpler candidates: the largest vector's share
+and the Herfindahl index were both tested and rejected, since each
+reads a perfectly even atom as $1/N$ and so slides from $0.5$ to
+$0.125$ as $N$ grows from $2$ to $8$, confounding evenness with
+size. $\mathcal{V}_{\text{atom}}$ rather than $E_{\text{atom}}$
+supplies the shares deliberately: cubing amplifies concentration, so
+a single dominant vector at $r=0.95$ against three at $r=0.2$
+registers a share of $0.973$, where linear strength would report the
+same atom as unremarkable.
 
 \subsection{Axiom V2: External position}
 \label{axiom:v2}
