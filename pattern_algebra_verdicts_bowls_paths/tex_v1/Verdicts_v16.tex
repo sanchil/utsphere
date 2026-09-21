@@ -935,6 +935,13 @@ the path rather than inside it.
       exactly the volume-weighted motion Axiom~V4 excludes on
       stability grounds. The honest, final scope of this question is
       a label describing a bond, not a difference in how it moves.
+\item \textbf{Identical-atom multiset, closed.} $A$ assembling with
+      an exact copy of itself needed a count, not a set --- Axiom~V5
+      supplies it: $\{A,A\}$ collapses under ordinary set equality,
+      $m(A)=2$ does not. Two genuinely separate witnesses sharing an
+      identical tuple are now distinguished by multiplicity rather
+      than lost to it, without any change to Axiom 4 or $\oplus$
+      itself.
 \end{itemize}
 
 \subsection{What remains open}
@@ -982,8 +989,6 @@ the path rather than inside it.
       dynamically move toward it; strongest-with-strongest is that
       stable destination only in the uniform-alignment special case,
       not in general.
-\item \textbf{Identical-atom multiset.} $A$ assembling with an exact
-      copy of itself needs a count, not a set. Unaddressed.
 \end{itemize}
 
 
@@ -1189,6 +1194,37 @@ pair. Axiom~V4 is therefore stated without $\mathcal{V}_{\text
 differential-motion mechanism is not a matter this axiom leaves
 open, since any such mechanism reintroduces the instability
 directly.
+
+\subsection{Axiom V5: Multiplicity}
+\label{axiom:v5}
+A bowl's membership under the companion paper's Axiom 4 is binary:
+an atom is present or absent, since $\oplus$ is defined as ordinary
+set union on a subset of $\mathcal{S}$. Where the number of times a
+value was independently witnessed must itself survive --- not
+merely whether it occurred --- a bowl may additionally be read
+through a multiplicity function:
+\[
+m:\mathcal{S}\to\mathbb{N}_0, \qquad
+m(A) = \text{the number of independent witnesses producing exactly } A.
+\]
+An ordinary bowl is the special case $m(A)\in\{0,1\}$ for every $A$,
+recovering the companion paper's Axiom 4 exactly; nothing about
+$\oplus$ or Axiom 4 is altered, and $m$ is read alongside a bowl,
+never in place of it. Where $m(A)\ge 2$, $A$ is counted that many
+times in every aggregate drawn from the bowl --- $\sum r_i$, $\bar
+R_c$ (Equation~\eqref{eq:coherence}), and any use of Assembly
+(Axiom~V3) that draws on the bowl's members individually. Two atoms
+sharing an identical $(r,\hat n,\chi,\tau)$ tuple, arising from
+genuinely separate witnesses, are distinguished by their
+multiplicity alone, never by any difference in the tuple itself:
+$A$ assembling with an exact copy of itself is simply $m(A)=2$,
+unremarkable once presence and count are kept as separate
+questions. Treating such a pair as the set $\{A,A\}$ is not a
+looser way of saying the same thing; $\{A,A\}=\{A\}$ under ordinary
+set equality, and a second, genuinely distinct witness is silently
+lost --- confirmed directly: an atom of strength $r=0.7$, witnessed
+twice, contributes $0.7$ to $\sum r_i$ if read as a set and the
+correct $1.4$ if read through $m$.
 
 \section{Scope and Open Questions}
 \label{sec:scope}
