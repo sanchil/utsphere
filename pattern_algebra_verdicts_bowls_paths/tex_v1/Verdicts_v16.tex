@@ -1177,198 +1177,109 @@ items.
 \S\ref{sec:assembly_status}'s findings into the same axiomatic form
 the companion paper uses, so the accumulated work has a durable,
 citable shape rather than remaining a scattered set of verified
-claims. They are Verdicts-native --- numbered V1--V4, deliberately
-not continuing the companion paper's own Axiom 0--5, and nothing
-here is proposed for that document. Each has been checked
-numerically, several extensively, within this single sustained
-session; none has had the multi-session settling time every axiom in
-the companion paper received before being written down. Two items
-named in \S\ref{subsec:assembly_open} --- the identical-atom
-multiset, and the full behavioral realization of the actor/patient
-question --- remain genuinely open and are not resolved by anything
-below.
+claims. They were written Verdicts-native --- numbered V1--V4 rather
+than continuing the companion paper's own Axiom 0--5 --- but all
+four have since crossed over: V1's informational vectors and seven
+metrics as the companion paper's own Axiom~7; V2's seats as its
+Enclosure \S~Seats; V3's assembly energy as its Axiom~6; V4's motion
+as its Enclosure \S~Rest. The V-numbering here is kept for this
+paper's own internal cross-references and status tracking, not
+because the material remains Verdicts-only --- what follows is
+restated at the level this paper's own exposition needs, with full
+derivations and worked examples left to the companion paper's own
+versions. Two items named in \S\ref{subsec:assembly_open} --- the
+identical-atom multiset, and the full behavioral realization of the
+actor/patient question --- remain genuinely open and are not
+resolved by anything below.
 
 \subsection{Axiom V1: Informational and derived vectors}
 \label{axiom:v1}
-An atom's informational vectors are $N$ ordinary units of
-Axiom~1 (companion paper), each independently capped at $r\le 1$;
-$N$ is the atom's info number. Alongside them, in the same closure
-unit, at most one \emph{derived} vector may be present:
-\[
-V_{\text{derived}} \;=\; \sum_{i=1}^{N} v_i,
-\]
-the raw, unnormalized sum of the informational vectors, computed
-after and from them, never including itself. $V_{\text{derived}}$ is
-uncapped and is excluded from $N$: it requires no
+An atom's informational vectors are $N$ ordinary units of Axiom~1
+(companion paper), each independently capped at $r\le 1$; $N$ is the
+atom's info number. Alongside them, at most one \emph{derived}
+vector may be present, $V_{\text{derived}}=\sum_{i=1}^N v_i$, the
+raw, unnormalized sum, computed after and never including itself.
+$V_{\text{derived}}$ is uncapped and excluded from $N$, needing no
 $\tau$-justified admissibility of its own, the same status already
-held by $\bar R_c$ and $z_{G_c}$ (companion paper,
-\S\ref{par:reference_atom}, \S\ref{subsec:four_cells}). Its
-magnitude and direction are read as an effective $(r,\hat n)$ pair
---- $r=\lvert V_{\text{derived}}\rvert$, $\hat n =
-V_{\text{derived}}/r$ --- standing in for the atom wherever a single
-vector is required. For $N=1$, $V_{\text{derived}}$ coincides with
-the atom's own vector and nothing changes.
+held by $\bar R_c$ and $z_{G_c}$ (\S\ref{par:reference_atom}). Its
+magnitude and direction read as an effective $(r,\hat n)$ pair, $r =
+\lvert V_{\text{derived}}\rvert$, $\hat n=V_{\text{derived}}/r$,
+standing in for the atom wherever a single vector is required; for
+$N=1$ it coincides with the atom's own vector.
 
-Several scalar metrics follow directly from the same $N$
-informational vectors, each answering a different question and none
-used by any other axiom below unless explicitly named:
+Seven scalar metrics follow from the same $N$ informational vectors,
+each answering a different question, none used elsewhere below
+unless named:
 \[
 S_{\text{atom}} = \sum_{i=1}^N r_i, \qquad
 \mathcal{V}_{\text{atom}} = \sum_{i=1}^N r_i^3, \qquad
-\gamma_{\text{atom}} = \frac{\mathcal{V}_{\text{atom}}}{N}.
+\gamma_{\text{atom}} = \frac{\mathcal{V}_{\text{atom}}}{N},
 \]
-$S_{\text{atom}}$, atom strength, is the correct denominator for
-atom-level coherence, $\lvert V_{\text{derived}}\rvert /
-S_{\text{atom}}$, the structural twin of $\bar R_c$ one level down
---- verified to read $1.0$ for perfectly aligned informational
-vectors and fall smoothly toward $0$ as they scatter.
-$\mathcal{V}_{\text{atom}}$, atom volume, is strictly smaller than
-$S_{\text{atom}}$ whenever any $r_i<1$, a forced consequence of the
-$r\le 1$ cap rather than an assumption: cubing a number below $1$
-always shrinks it, exactly as treating $r$ as a literal radius and
-$r^3$ as the volume it encloses would predict. $\gamma_{\text{atom}}$,
-mean vector volume, is the average per-vector share of that total.
-None of the three is used in Axiom~V4; atom volume, in particular,
-is deliberately excluded from motion (Axiom~V4) and exists here
-purely as a descriptive metric of the atom. Earlier drafts of this
-axiom called $\mathcal{V}_{\text{atom}}$ ``mass,'' $\gamma_{\text
-{atom}}$ ``density,'' and $S_{\text{atom}}$ ``atom energy'' ---
-all three retired as misleading: the first two because neither
-participates in momentum, kinetic energy, or any calculation the
-word ``mass'' would ordinarily license, and the third because a
-genuine notion of energy exists here and is not $S_{\text{atom}}$.
-
-A fourth quantity is not derived from strength by squaring it, but
-stands on its own, the way variance is defined directly rather than
-as squared standard deviation. Writing each informational vector as
-$v_i=r_i\hat n_i$:
+atom strength, volume, and mean vector volume: $S_{\text{atom}}$ is
+the correct denominator for atom-level coherence, $\lvert
+V_{\text{derived}}\rvert/S_{\text{atom}}$; $\mathcal{V}_{\text{atom}}$
+is deliberately excluded from Motion (Axiom~V4) and is a purely
+descriptive metric here. (Earlier drafts called these ``mass,''
+``density,'' and ``atom energy'' --- retired; none behaves as those
+words would license, and a genuine energy notion exists below and
+is not $S_{\text{atom}}$.)
 \begin{equation}
-    \mathcal{E}_{\text{atom}} \;=\; \sum_{i=1}^N r_i^2.
+    \mathcal{E}_{\text{atom}} \;=\; \sum_{i=1}^N r_i^2,
     \label{eq:information_energy}
 \end{equation}
-$\mathcal{E}_{\text{atom}}$ is the combined squared magnitude the
-atom's informational vectors would carry if every pair were mutually
-orthogonal --- confirmed by direct construction, computing
-$\mathcal{E}_{\text{atom}}$ from a set of strengths matches
-$\lvert V_{\text{derived}}\rvert^2$ computed from those same
-strengths placed at mutually orthogonal directions, exactly. This is
-forced, not chosen: an exact identity places $\mathcal{E}_{\text
-{atom}}$ inside the derived vector's own squared magnitude,
-\[
-\lvert V_{\text{derived}}\rvert^2 \;=\; \mathcal{E}_{\text{atom}}
-\;+\; 2\sum_{i<j} r_ir_j(\hat n_i\cdot\hat n_j),
-\]
-verified to six decimal places. The structure matches the variance
-of a sum, $\operatorname{Var}(\sum X_i) = \sum\operatorname{Var}
-(X_i) + 2\sum_{i<j}\operatorname{Cov}(X_i,X_j)$, term for term:
-$r_i^2$ stands where $\operatorname{Var}(X_i)$ stands, each vector's
-own self-contained contribution; $r_ir_j(\hat n_i\cdot\hat n_j)$
-stands where $\operatorname{Cov}(X_i,X_j)$ stands, how two vectors
-relate. $\mathcal{E}_{\text{atom}}$ is the part that remains when
-every cross term vanishes --- the atom's intrinsic energy, prior to
-any question of how its own vectors align. This is distinct from
-bowl energy ($\sum r_i$ across many separate witnesses,
-\S\ref{par:reference_atom}): bowl energy is a sum across atoms,
-$\mathcal{E}_{\text{atom}}$ a sum of squares within one.
-
-A fifth metric answers a question the other four cannot. Atom
-coherence above is a ratio of magnitudes and so cannot fall below
-zero: it reads $0$ both for informational vectors that merely fail
-to reinforce and for vectors that actively cancel. The
-strength-weighted mean cosine similarity across all internal pairs
-separates these:
+information energy, standing on its own rather than derived from
+strength by squaring it, the way variance stands on its own rather
+than as squared standard deviation: the atom's intrinsic energy
+prior to any question of how its own vectors align, distinct from
+bowl energy (a sum across separate witnesses, \S\ref
+{par:reference_atom}).
 \begin{equation}
     \alpha_{\text{atom}} \;=\;
     \frac{\sum_{i<j} r_i r_j\,(\hat n_i\cdot\hat n_j)}
-         {\sum_{i<j} r_i r_j}.
+         {\sum_{i<j} r_i r_j},
     \label{eq:internal_alignment}
 \end{equation}
-Each $\hat n_i\cdot\hat n_j$ is already a cosine similarity, since
-informational vectors are unit-directed; the denominator makes the
-aggregate comparable across atoms of differing $N$ and differing
-strengths, which the unnormalized sum is not --- two atoms with
-near-identical internal arrangement but $N=2$ and $N=5$ give raw
-sums of $+0.72$ and $+0.90$ against normalized values of $+0.995$
-and $+0.998$. $\alpha_{\text{atom}}=+1$ exactly when all
-informational vectors align; it is negative when they genuinely
-oppose, reading $-1/3$ for two opposed pairs. Its floor is not
-$-1$ in general: three or more vectors in three dimensions cannot
-be mutually opposed, so achievable disagreement tightens as $N$
-grows while achievable agreement does not --- the unnormalized sum
-has maximum $\sum_{i<j}r_ir_j$, growing as $N^2$, against a hard
-minimum of $-\tfrac{1}{2}\mathcal{E}_{\text{atom}}$, growing only as
-$N$, which follows directly from $\lvert V_{\text{derived}}\rvert^2
-= \mathcal{E}_{\text{atom}} + 2\sum_{i<j} r_ir_j(\hat n_i\cdot\hat
-n_j) \ge 0$.
-Agreement compounds; disagreement saturates.
-$\alpha_{\text{atom}}$ is read alongside atom coherence, not in
-place of it: the first asks whether the vectors agree, the second
-how much of their strength survives into one resultant.
-
-A sixth metric does for magnitude what $\alpha_{\text{atom}}$ does
-for direction. $S_{\text{atom}}$ and $\mathcal{V}_{\text{atom}}$
-both report a total and are silent on how that total is spread: two
-atoms can carry near-identical strength ($2.200$ against $2.150$ in
-a checked case) while one holds it evenly across its vectors and the
-other concentrates most of it in two. Writing $s_i = r_i^3 /
-\mathcal{V}_{\text{atom}}$ for the share of volume held by vector
-$i$:
+internal alignment, the strength-weighted mean cosine similarity
+across all internal pairs, separating active cancellation
+($\alpha_{\text{atom}}<0$) from mere non-reinforcement, which atom
+coherence's ratio-of-magnitudes cannot: it reads $0$ for both.
 \begin{equation}
     \sigma_{\text{atom}} \;=\;
     \frac{N^2}{N-1}\cdot\operatorname{Var}(s_1,\ldots,s_N),
+    \qquad s_i = \frac{r_i^3}{\mathcal{V}_{\text{atom}}},
     \qquad N\ge 2,
     \label{eq:volume_concentration}
 \end{equation}
-with $\sigma_{\text{atom}}=0$ by convention at $N=1$.
-$\sigma_{\text{atom}}=0$ exactly when volume is spread evenly and
-$1$ when a single vector holds all of it, at every $N$ --- verified
-at $N=2,3,4,6,8$ for both extremes. The normalization is what earns
-this form over the simpler candidates: the largest vector's share
-and the Herfindahl index were both tested and rejected, since each
-reads a perfectly even atom as $1/N$ and so slides from $0.5$ to
-$0.125$ as $N$ grows from $2$ to $8$, confounding evenness with
-size. $\mathcal{V}_{\text{atom}}$ rather than $S_{\text{atom}}$
-supplies the shares deliberately: cubing amplifies concentration, so
-a single dominant vector at $r=0.95$ against three at $r=0.2$
-registers a share of $0.973$, where linear strength would report the
-same atom as unremarkable.
-
-A seventh metric answers a question none of the first six can: not
-how strength or volume is shared among distinct vectors, but whether
-many vectors independently arrive at nearly the same magnitude.
-$\sigma_{\text{atom}}$ is blind to this by construction --- four
-hundred vectors at an identical $r=0.65$ each receive their own tiny
-individual share, indistinguishable to
-Equation~\eqref{eq:volume_concentration} from four hundred vectors
-scattered across the full range; checked directly, a genuinely
-clumped population registered as \emph{more} even
-($\sigma_{\text{atom}}=0.00032$) than a uniform spread of the same
-size ($0.00214$). Fixing this needs a shell width $w$, a named,
-configurable parameter rather than a derived one, defaulting to
-$w=0.1$ --- ten shells spanning $[0,1]$. Binning the $N$
-informational vectors by $\lfloor r_i/w\rfloor$ into $K$ occupied
-shells with populations $n_1,\ldots,n_K$ and $p_k = n_k/N$:
+($\sigma_{\text{atom}}=0$ by convention at $N=1$) volume
+concentration, $0$ when volume is spread evenly and $1$ when a
+single vector holds all of it, at every $N$ --- normalized this way
+specifically so that a perfectly even atom always reads $0$
+regardless of $N$, unlike the largest-share or Herfindahl
+alternatives.
 \begin{equation}
     \sigma_{\text{shell}}(w) \;=\;
     \begin{cases}
         1, & K=1 \\[4pt]
-        \dfrac{K^2}{K-1}\cdot\operatorname{Var}(p_1,\ldots,p_K), & K\ge 2.
+        \dfrac{K^2}{K-1}\cdot\operatorname{Var}(p_1,\ldots,p_K), & K\ge 2,
     \end{cases}
     \label{eq:shell_concentration}
 \end{equation}
-The $K=1$ case is stated separately because the general form has a
-removable singularity there: every vector sharing one shell is
-maximal concentration, not the zero the formula would otherwise
-return. $\sigma_{\text{shell}}=0$ when occupied shells are evenly
-populated, at every $K$ tested; $\sigma_{\text{shell}}=1$ when every
-vector shares one shell. Checked at $w=0.1$ and $w=0.05$: well
-separated shells (as in $10@0.98,\,3@0.3,\,400@0.65$, giving
-$\sigma_{\text{shell}}=0.908$ at either width) are stable to the
-choice, while genuinely uniform populations are not --- occupied
-shell count nearly doubled between the two widths in a checked
-uniform case, though the concentration score itself stayed
-negligible either way. $w$ should be reported alongside
-$\sigma_{\text{shell}}$ whenever it is used.
+shell concentration at width $w$ (default $0.1$, binning by
+$\lfloor r_i/w\rfloor$ into $K$ occupied shells with populations
+$p_k$), closing a blind spot $\sigma_{\text{atom}}$ has by
+construction: many vectors independently arriving near the same
+magnitude are invisible to a per-vector share, which reads a
+genuinely clumped population as more even than a scattered one until
+this is added.
+
+Full derivations, the variance-identity proof behind
+$\mathcal{E}_{\text{atom}}$, worked numerical examples, and the
+verification behind each formula --- the antipodal-pairs case for
+$\alpha_{\text{atom}}$, the Herfindahl rejection for
+$\sigma_{\text{atom}}$, the $K=1$ removable singularity for
+$\sigma_{\text{shell}}$ --- now live in the companion paper's own
+Axiom~7, into which this axiom's content was ported; restated here
+only at the depth this paper's own exposition needs.
 
 \subsection{Axiom V2: External position}
 \label{axiom:v2}
