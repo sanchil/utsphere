@@ -1032,6 +1032,20 @@ Volume concentration ($\sigma_{\text{atom}}$) &
   informational vectors (Equation~\eqref{eq:volume_concentration});
   $0$ even, $1$ fully concentrated, independent of $N$ &
   Verified; adopted in Axiom~V1 \\
+Information energy ($\mathcal{E}_{\text{atom}}$) &
+  Combined squared magnitude of an atom's own informational vectors
+  as if mutually orthogonal (Equation~\eqref{eq:information_energy});
+  defined directly, not as strength squared --- the same relation
+  variance has to standard deviation. Distinct from bowl energy,
+  which sums across witnesses rather than within one atom &
+  Verified; adopted in Axiom~V1 \\
+Shell concentration ($\sigma_{\text{shell}}$) &
+  Whether many vectors independently cluster near the same
+  magnitude (Equation~\eqref{eq:shell_concentration}); a blind spot
+  of $\sigma_{\text{atom}}$, confirmed directly --- a clumped
+  population read as more even than a uniform spread until this was
+  built. Needs a stated shell width $w$ &
+  Verified; adopted in Axiom~V1 \\
 Internal alignment ($\alpha_{\text{atom}}$) &
   Strength-weighted mean cosine similarity across an atom's own
   informational vectors (Equation~\eqref{eq:internal_alignment});
@@ -1105,30 +1119,65 @@ Several scalar metrics follow directly from the same $N$
 informational vectors, each answering a different question and none
 used by any other axiom below unless explicitly named:
 \[
-E_{\text{atom}} = \sum_{i=1}^N r_i, \qquad
+S_{\text{atom}} = \sum_{i=1}^N r_i, \qquad
 \mathcal{V}_{\text{atom}} = \sum_{i=1}^N r_i^3, \qquad
 \gamma_{\text{atom}} = \frac{\mathcal{V}_{\text{atom}}}{N}.
 \]
-$E_{\text{atom}}$ is the correct denominator for atom-level
-coherence, $\lvert V_{\text{derived}}\rvert / E_{\text{atom}}$, the
-structural twin of $\bar R_c$ one level down --- verified to read
-$1.0$ for perfectly aligned informational vectors and fall smoothly
-toward $0$ as they scatter. $\mathcal{V}_{\text{atom}}$, atom
-volume, is strictly smaller than $E_{\text{atom}}$ whenever any
-$r_i<1$, a forced consequence of the $r\le 1$ cap rather than an
-assumption: cubing a number below $1$ always shrinks it, exactly as
-treating $r$ as a literal radius and $r^3$ as the volume it encloses
-would predict. $\gamma_{\text{atom}}$, mean vector volume, is the
-average per-vector share of that total. Neither is used in
-Axiom~V4; atom volume, in particular, is deliberately excluded from
-motion (Axiom~V4) and exists here purely as a descriptive metric of
-the atom. Earlier drafts of this axiom called $\mathcal{V}_{\text
-{atom}}$ ``mass'' and $\gamma_{\text{atom}}$ ``density'' --- both
-retired as misleading, since neither participates in momentum,
-kinetic energy, or any calculation the word ``mass'' would
-ordinarily license.
+$S_{\text{atom}}$, atom strength, is the correct denominator for
+atom-level coherence, $\lvert V_{\text{derived}}\rvert /
+S_{\text{atom}}$, the structural twin of $\bar R_c$ one level down
+--- verified to read $1.0$ for perfectly aligned informational
+vectors and fall smoothly toward $0$ as they scatter.
+$\mathcal{V}_{\text{atom}}$, atom volume, is strictly smaller than
+$S_{\text{atom}}$ whenever any $r_i<1$, a forced consequence of the
+$r\le 1$ cap rather than an assumption: cubing a number below $1$
+always shrinks it, exactly as treating $r$ as a literal radius and
+$r^3$ as the volume it encloses would predict. $\gamma_{\text{atom}}$,
+mean vector volume, is the average per-vector share of that total.
+None of the three is used in Axiom~V4; atom volume, in particular,
+is deliberately excluded from motion (Axiom~V4) and exists here
+purely as a descriptive metric of the atom. Earlier drafts of this
+axiom called $\mathcal{V}_{\text{atom}}$ ``mass,'' $\gamma_{\text
+{atom}}$ ``density,'' and $S_{\text{atom}}$ ``atom energy'' ---
+all three retired as misleading: the first two because neither
+participates in momentum, kinetic energy, or any calculation the
+word ``mass'' would ordinarily license, and the third because a
+genuine notion of energy exists here and is not $S_{\text{atom}}$.
 
-A fourth metric answers a question the other three cannot. Atom
+A fourth quantity is not derived from strength by squaring it, but
+stands on its own, the way variance is defined directly rather than
+as squared standard deviation. Writing each informational vector as
+$v_i=r_i\hat n_i$:
+\begin{equation}
+    \mathcal{E}_{\text{atom}} \;=\; \sum_{i=1}^N r_i^2.
+    \label{eq:information_energy}
+\end{equation}
+$\mathcal{E}_{\text{atom}}$ is the combined squared magnitude the
+atom's informational vectors would carry if every pair were mutually
+orthogonal --- confirmed by direct construction, computing
+$\mathcal{E}_{\text{atom}}$ from a set of strengths matches
+$\lvert V_{\text{derived}}\rvert^2$ computed from those same
+strengths placed at mutually orthogonal directions, exactly. This is
+forced, not chosen: an exact identity places $\mathcal{E}_{\text
+{atom}}$ inside the derived vector's own squared magnitude,
+\[
+\lvert V_{\text{derived}}\rvert^2 \;=\; \mathcal{E}_{\text{atom}}
+\;+\; 2\sum_{i<j} r_ir_j(\hat n_i\cdot\hat n_j),
+\]
+verified to six decimal places. The structure matches the variance
+of a sum, $\operatorname{Var}(\sum X_i) = \sum\operatorname{Var}
+(X_i) + 2\sum_{i<j}\operatorname{Cov}(X_i,X_j)$, term for term:
+$r_i^2$ stands where $\operatorname{Var}(X_i)$ stands, each vector's
+own self-contained contribution; $r_ir_j(\hat n_i\cdot\hat n_j)$
+stands where $\operatorname{Cov}(X_i,X_j)$ stands, how two vectors
+relate. $\mathcal{E}_{\text{atom}}$ is the part that remains when
+every cross term vanishes --- the atom's intrinsic energy, prior to
+any question of how its own vectors align. This is distinct from
+bowl energy ($\sum r_i$ across many separate witnesses,
+\S\ref{par:reference_atom}): bowl energy is a sum across atoms,
+$\mathcal{E}_{\text{atom}}$ a sum of squares within one.
+
+A fifth metric answers a question the other four cannot. Atom
 coherence above is a ratio of magnitudes and so cannot fall below
 zero: it reads $0$ both for informational vectors that merely fail
 to reinforce and for vectors that actively cancel. The
@@ -1153,19 +1202,20 @@ $-1$ in general: three or more vectors in three dimensions cannot
 be mutually opposed, so achievable disagreement tightens as $N$
 grows while achievable agreement does not --- the unnormalized sum
 has maximum $\sum_{i<j}r_ir_j$, growing as $N^2$, against a hard
-minimum of $-\tfrac{1}{2}\sum_i r_i^2$, growing only as $N$, which
-follows directly from $\lvert V_{\text{derived}}\rvert^2 =
-\sum_i r_i^2 + 2\sum_{i<j} r_ir_j(\hat n_i\cdot\hat n_j) \ge 0$.
+minimum of $-\tfrac{1}{2}\mathcal{E}_{\text{atom}}$, growing only as
+$N$, which follows directly from $\lvert V_{\text{derived}}\rvert^2
+= \mathcal{E}_{\text{atom}} + 2\sum_{i<j} r_ir_j(\hat n_i\cdot\hat
+n_j) \ge 0$.
 Agreement compounds; disagreement saturates.
 $\alpha_{\text{atom}}$ is read alongside atom coherence, not in
 place of it: the first asks whether the vectors agree, the second
 how much of their strength survives into one resultant.
 
-A fifth metric does for magnitude what $\alpha_{\text{atom}}$ does
-for direction. $E_{\text{atom}}$ and $\mathcal{V}_{\text{atom}}$
+A sixth metric does for magnitude what $\alpha_{\text{atom}}$ does
+for direction. $S_{\text{atom}}$ and $\mathcal{V}_{\text{atom}}$
 both report a total and are silent on how that total is spread: two
-atoms can carry near-identical energy ($2.200$ against $2.150$ in a
-checked case) while one holds it evenly across its vectors and the
+atoms can carry near-identical strength ($2.200$ against $2.150$ in
+a checked case) while one holds it evenly across its vectors and the
 other concentrates most of it in two. Writing $s_i = r_i^3 /
 \mathcal{V}_{\text{atom}}$ for the share of volume held by vector
 $i$:
@@ -1183,11 +1233,48 @@ this form over the simpler candidates: the largest vector's share
 and the Herfindahl index were both tested and rejected, since each
 reads a perfectly even atom as $1/N$ and so slides from $0.5$ to
 $0.125$ as $N$ grows from $2$ to $8$, confounding evenness with
-size. $\mathcal{V}_{\text{atom}}$ rather than $E_{\text{atom}}$
+size. $\mathcal{V}_{\text{atom}}$ rather than $S_{\text{atom}}$
 supplies the shares deliberately: cubing amplifies concentration, so
 a single dominant vector at $r=0.95$ against three at $r=0.2$
 registers a share of $0.973$, where linear strength would report the
 same atom as unremarkable.
+
+A seventh metric answers a question none of the first six can: not
+how strength or volume is shared among distinct vectors, but whether
+many vectors independently arrive at nearly the same magnitude.
+$\sigma_{\text{atom}}$ is blind to this by construction --- four
+hundred vectors at an identical $r=0.65$ each receive their own tiny
+individual share, indistinguishable to
+Equation~\eqref{eq:volume_concentration} from four hundred vectors
+scattered across the full range; checked directly, a genuinely
+clumped population registered as \emph{more} even
+($\sigma_{\text{atom}}=0.00032$) than a uniform spread of the same
+size ($0.00214$). Fixing this needs a shell width $w$, a named,
+configurable parameter rather than a derived one, defaulting to
+$w=0.1$ --- ten shells spanning $[0,1]$. Binning the $N$
+informational vectors by $\lfloor r_i/w\rfloor$ into $K$ occupied
+shells with populations $n_1,\ldots,n_K$ and $p_k = n_k/N$:
+\begin{equation}
+    \sigma_{\text{shell}}(w) \;=\;
+    \begin{cases}
+        1, & K=1 \\[4pt]
+        \dfrac{K^2}{K-1}\cdot\operatorname{Var}(p_1,\ldots,p_K), & K\ge 2.
+    \end{cases}
+    \label{eq:shell_concentration}
+\end{equation}
+The $K=1$ case is stated separately because the general form has a
+removable singularity there: every vector sharing one shell is
+maximal concentration, not the zero the formula would otherwise
+return. $\sigma_{\text{shell}}=0$ when occupied shells are evenly
+populated, at every $K$ tested; $\sigma_{\text{shell}}=1$ when every
+vector shares one shell. Checked at $w=0.1$ and $w=0.05$: well
+separated shells (as in $10@0.98,\,3@0.3,\,400@0.65$, giving
+$\sigma_{\text{shell}}=0.908$ at either width) are stable to the
+choice, while genuinely uniform populations are not --- occupied
+shell count nearly doubled between the two widths in a checked
+uniform case, though the concentration score itself stayed
+negligible either way. $w$ should be reported alongside
+$\sigma_{\text{shell}}$ whenever it is used.
 
 \subsection{Axiom V2: External position}
 \label{axiom:v2}
