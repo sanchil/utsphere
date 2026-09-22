@@ -475,6 +475,41 @@ discovers it, not designed in advance; the comparison rule and the
 null of \S\ref{subsec:comparison_rule} and \S\ref{subsec:the_null}
 apply at every node unchanged.
 
+\paragraph{Merging groups.} Two witnessed groups of the same $\tau$,
+of any sizes, merge exactly, without revisiting either group's raw
+witnesses: $z_{G_c}$ and $\sum r_y$ are sufficient statistics, in the
+standard sense --- each additive over a disjoint union, so
+\begin{equation}
+    z_{\text{merged}} = z_{G_1} + z_{G_2},
+    \qquad
+    \Bigl(\sum r_y\Bigr)_{\text{merged}}
+    = \Bigl(\sum r_y\Bigr)_{G_1} + \Bigl(\sum r_y\Bigr)_{G_2},
+    \label{eq:sufficient_stat_merge}
+\end{equation}
+give $\bar R_{c,\text{merged}}$ and $\mathrm{ref}_{\text{merged}}$
+identical to recomputing Equation~\eqref{eq:coherence} from the two
+groups' combined raw membership --- checked to full floating-point
+precision on groups of size $5$ and $9$. Group size needs no special
+handling: it is already carried inside $\sum r_y$, so a group of
+$400$ correctly dominates a group of $3$ in the merged result without
+any explicit weighting step. The cost of merging is therefore $O(1)$
+in the number of witnesses, holding only the two summaries rather
+than either group's membership.
+
+Two witnessed groups of \emph{different} $\tau$ do not merge this
+way --- averaging a storm phasor sum against a drought one asserts a
+relationship comparison and Mix both already refuse, since both are
+$\tau$-gated. The companion paper's own Axiom 4 already supplies the
+right mechanism for this case: gather is sort-blind, so the two
+groups combine losslessly into one bowl regardless of sort,
+preserving both types distinctly rather than fusing them; any further
+reading --- $\bar R_c$, $\mathrm{ref}_c$, Equation~\eqref
+{eq:sufficient_stat_merge} --- is then applied separately within each
+$\tau$ present in the combined bowl, exactly as it already is for any
+mixed-sort bowl. Same-sort merging needs a new identity because $\bar
+R_c$ is new to this paper; cross-sort merging needed none, since
+$\oplus$ was never sort-restricted to begin with.
+
 \paragraph{Illustration.}
 \label{par:reference_atom_illustration}
 Nine witnessed episodes at $r=0.6$ each, at
