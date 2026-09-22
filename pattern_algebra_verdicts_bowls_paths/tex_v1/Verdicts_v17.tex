@@ -134,6 +134,11 @@ Equation and axiom numbers refer to that paper.
       both remain intact; external seats $\vec P$ may rest as one
       camp or several. A camp body is measured afterwards; it is not
       a name (companion paper, Axiom~6 and Enclosure).
+\item Informational vectors (companion paper, Axiom~7): an atom may
+      carry $N$ capped arrows and one uncapped derived sum
+      $V_{\mathrm{derived}}$. Coarse assembly and a single-vector
+      comparison use that derived pair. The seven diagnostic
+      scalars of Axiom~7 are not restated here.
 \item \emph{Levels are closed}: a unit carries no representation of
       what it constitutes, and a bowl carries no representation of the
       reading that will be applied to it. Grouping criteria such as a
@@ -304,6 +309,27 @@ nearest) with $r$ supplying the null rather than a weighted distance.
 A question with reference atoms at different directions would need
 $w_{\hat n}$ and $w_\chi$ actually chosen against each other, which
 remains open.
+
+\paragraph{A similarity metric.}
+$d(A,B)$ answers how far apart two atoms are. The same question
+read the other way --- how alike --- is already sitting inside
+Equation~\eqref{eq:comparison_metric}. Direction similarity is the
+dot product the geodesic term computes before $\arccos$ turns it
+into an angle:
+\begin{equation}
+    \mathrm{sim}(A,B) \;=\; \hat n_A\cdot\hat n_B.
+    \label{eq:direction_similarity}
+\end{equation}
+It is bounded in $[-1,1]$ by construction: $+1$ identical
+direction, $0$ orthogonal, $-1$ antipodal. Then
+$\arccos(\mathrm{sim}(A,B))$ recovers the geodesic term exactly.
+This is the narrow, direction-only reading, the same use cosine
+similarity has elsewhere (compare directions, not a
+magnitude-weighted blend). It needs none of
+$w_r,w_{\hat n},w_\chi$, so it is available today while those
+weights stay open. A fuller likeness such as $e^{-d(A,B)}$ would
+fold in strength and phase and would inherit the same open
+weights; it is not adopted here.
 
 \subsection{A selection rule}
 \label{subsec:selection_rule}
