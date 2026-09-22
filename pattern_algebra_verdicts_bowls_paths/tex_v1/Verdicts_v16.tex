@@ -429,6 +429,40 @@ of angles is distinguishable from uniform scatter at all --- a route
 to choosing $\theta$ by a stated significance level rather than by
 feel, not adopted here but available.
 
+\paragraph{The direction is a pointer, not only the magnitude.}
+\label{par:direction_pointer}
+$\bar R_c$ reads the magnitude of $z_{G_c}$; the direction,
+$\chi(\mathrm{ref}_c)=\arg(z_{G_c})$, is a separate claim, and it
+degrades gracefully rather than failing outright as witnesses
+scatter. Simulated against a fixed true direction with $N=8$
+witnesses and increasing angular noise, mean error grows smoothly
+--- $2.8^\circ$ at low scatter, $15.1^\circ$, $29.1^\circ$,
+$50.7^\circ$ at severe scatter --- never a cliff, and continues
+rising toward, not past, $90^\circ$, the expected angle to a
+genuinely random direction, as scatter grows without bound: the mean
+estimate never becomes actively anti-correlated with the truth,
+though any single noisy draw still can be. It also sharpens with
+more witnesses at fixed noise: $N=2$ gives $36.6^\circ$ mean error,
+$N=128$ gives $5.1^\circ$, improving smoothly the way an ordinary
+law-of-large-numbers estimator should. None of this is new either
+--- $\chi(\mathrm{ref}_c)$ is the circular mean direction, the
+direction-side counterpart to $\bar R_c$'s magnitude, both read off
+the same $z_{G_c}$.
+
+The two claims must not be conflated. A low $\bar R_c$ does not make
+$\chi(\mathrm{ref}_c)$ worthless, only uncertain --- a badly
+scattered group can still point roughly toward the truth, the way
+$50.7^\circ$ of mean error is still far closer to the truth than to
+$90^\circ$ of no information. But a single group's plausible-looking
+direction is not, by itself, evidence enough to trust: the same
+noise that produces a small average error also produces individual
+draws that land unusually close to the truth by chance,
+indistinguishable, from one reading alone, from a genuinely coherent
+source. What separates the two is repetition --- several independent
+groups' directions agreeing with each other is exactly the claim
+$\bar R_c$ already tests, applied one level up, over a bowl of
+directions rather than a bowl of witnesses.
+
 Given a coherence threshold $\theta\in(0,1)$ and a minimum
 group size $k_{\min}$ below which a split is not attempted: if
 $\bar R_c\ge\theta$, keep $\mathrm{ref}_c=\boxplus(G_c)$; otherwise, if
