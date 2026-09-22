@@ -303,6 +303,31 @@ A question with reference atoms at different directions would need
 $w_{\hat n}$ and $w_\chi$ actually chosen against each other, which
 remains open.
 
+\paragraph{A similarity metric.} $d(A,B)$ answers how far apart two
+atoms are; the same question read the other way round --- how alike
+--- has never been named, though the raw ingredient has been sitting
+inside Equation~\eqref{eq:comparison_metric} since it was written.
+Direction similarity is exactly the dot product the geodesic term
+already computes, before $\arccos$ turns it into an angle:
+\begin{equation}
+    \mathrm{sim}(A,B) \;=\; \hat n_A\cdot\hat n_B.
+    \label{eq:direction_similarity}
+\end{equation}
+Bounded $[-1,1]$ by construction --- $+1$ identical direction, $0$
+orthogonal, $-1$ antipodal --- and exactly invertible against the
+geodesic term already in use: $\arccos(\mathrm{sim}(A,B))$ recovers
+that term precisely, confirmed to four decimal places across a range
+of directions. This is deliberately the narrow, direction-only
+reading, matching how cosine similarity is ordinarily used elsewhere
+(comparing embedding directions, not a magnitude-weighted blend); it
+needs none of $w_r,w_{\hat n},w_\chi$, so it is available today
+regardless of how that open choice is eventually settled. A fuller
+similarity built from the whole of $d(A,B)$ --- such as $e^{-d(A,B)}$
+--- would answer a related but different question, weighting
+strength and phase alongside direction, and would inherit the same
+open weights $d(A,B)$ itself depends on; left for whichever setting
+first needs that fuller reading rather than adopted here.
+
 \subsection{A selection rule}
 \label{subsec:selection_rule}
 For Reading B, the order $\pi$ that the evidence is applied in is
