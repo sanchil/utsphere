@@ -832,6 +832,62 @@ would catch. Between the two, this is the cheaper, unblocked
 mechanism for the same job; the exemplar-based one is the deeper,
 still-open alternative.
 
+\paragraph{Where this sits against a standard pipeline.} The
+companion paper's own stack (Related Work: Transformers) is
+\[
+\text{sentence}\to\text{token}\to E_L\to\text{sphere}\to
+\oplus\text{ (bowl) }+\;T\text{ (walk)}.
+\]
+This decoder extends that diagram along an axis it does not yet
+have. The diagram's own $T$ assumes its actor given --- one
+witnessed sequence, walked. This mechanism is what supplies a next
+actor when none is given: a policy read from witnessed sequences,
+not a rotation computed from one. It does not stand where $T$
+stands --- nothing above computes $T_w(x)$, as already stated ---
+it stands one step earlier, choosing which $w$ a
+walk hands to $T$ next:
+\[
+\oplus\text{ (bowl)}\ \to\ \text{transition table}\ \to\ T\text{ (walk)},
+\]
+not a fork between two fillers of one slot. Two distinct claims
+follow from adding this step, and they should not be run together.
+\emph{Drop-in address}: wherever a downstream pipeline needs one
+vector per token, $E_L$ can occupy that slot; an atom's $(r,\hat
+n)$, or a listed inner bundle, reads where a learned
+high-dimensional embedding otherwise would. \emph{Same verbs,
+foreign net}: a transformer may still be what computes $T_w(x)$'s
+rotation, or what estimates the transition table feeding it --- two
+different jobs, both unreplaced, each doing what it already does on
+an address this paper supplies rather than one it learns. The claim
+in either case is a shared address and a shared verb set, never that
+one technique outperforms the other on some stated task; nothing
+here has measured that, and nothing here claims to.
+
+The first use asks more of $E_L$ than the second, and the difference
+is worth naming precisely rather than leaving implicit.
+\S\ref{subsec:learned_pins}'s own claim is that entries are
+\emph{learnable}; it is silent on whether two implementations
+learning entries independently are learning the same lexicon at all.
+A genuine drop-in needs more than that: $E_L$ must be one map,
+published once against a stated vocabulary --- a specific word list
+or dictionary edition another system can point at --- not a private
+assignment remade per use. Absent that, ``one spelling, one atom''
+holds within a single run and not across two, and the drop-in use
+quietly collapses into the second: a private notation a transformer
+might still fill, not an address a second system could read. This
+paper does not supply that agreement; it names the requirement so
+the first use is not claimed before it is met.
+
+One admissibility point carries over unchanged, and is worth stating
+for this mechanism specifically rather than left to be assumed.
+Axiom 0's $\mathtt{num}$ discipline --- decode, add in $\mathbb{Z}$,
+encode, never Mix --- governs a sort regardless of which mechanism
+above is reading it: a chain walked or counted over mixed
+$\mathtt{word}$ and $\mathtt{num}$ actors keeps that refusal, and
+does not Mix two numeric tokens merely because both landed in the
+same trained table. Being learned rather than declared exempts
+neither this decoder nor a corpus-trained $T$ from it.
+
 \subsection{Open: path predictors}
 \label{subsec:path_predictors}
 
