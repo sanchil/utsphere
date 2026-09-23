@@ -1,0 +1,188 @@
+% 1. Preamble
+\documentclass[12pt, a4paper]{article}
+
+% Import Packages
+\usepackage[utf8]{inputenc}        % Encoding
+\usepackage{amsmath, amssymb}     % Advanced math formulas
+\usepackage{mathtools}           % Math enhancements
+\usepackage{graphicx}            % Image insertion
+\usepackage{hyperref}            % Interactive hyperlinks & PDF bookmarks
+\usepackage{color}               % Color text and backgrounds
+\usepackage{geometry}            % Page geometry
+\usepackage{comment}             % Multi-line comments
+\usepackage{titling}             % Custom title formatting
+
+\geometry{a4paper, margin=1in}
+
+% Custom Command Definitions
+\newcommand{\Sball}{\mathcal{S}}
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+% Hyperref Setup for Clean PDF Links
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={Pattern Arithmetic: Higher Truths from Assembly},
+    pdfauthor={Sandeep Lakshminarayan Chiluveru}
+}
+
+% Metadata & Custom Title Banner
+\pretitle{\begin{center}\Huge\fontfamily{tt}\selectfont ================================================================================\\[0.5em]}
+\posttitle{\\[0.5em] ================================================================================\end{center}}
+
+\title{Pattern Arithmetic: Higher Truths from Assembly}
+\author{Sandeep Lakshminarayan Chiluveru}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% ABSTRACT
+\begin{abstract}
+This is a second companion paper to \emph{Pattern Arithmetic: Typed
+Algebra of Bounded Units on a Phase-Colored Sphere}, alongside
+\emph{Pattern Arithmetic: Inference from Bowls and Paths}. The first
+defines assembly ($\bowtie$) and an enclosure in which units may
+descend an energy and rest as one camp or several; the second reads
+a bowl of evidence into a verdict, but never asks what a settled
+camp itself is entitled to be. This paper collects what is currently
+known about that question, and it is deliberately small. Two points
+are already closed, as direct consequences of choices the companion
+paper already made rather than of anything built here: the
+actor/patient question, settled at the level of a label rather than
+a difference in motion, and the absence of astrophysical mass
+segregation, a forced consequence of excluding volume from motion.
+One point is genuinely open --- fine-grained multi-vector matching,
+where an atom's own bundle, not its coarse derived vector, decides
+how it bonds. What this paper does not yet do is the harder thing
+its own title promises: say what a frozen camp, read and re-read at
+successive checkpoints, is entitled to be called, and whether that
+naming is itself a higher unit of truth or only a description of
+one. That is stated here as this paper's own direction, not
+answered as its content.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+
+A camp settles. Something froze at a resolution $\eta$, with a body
+$\vec P_{c}$ and a membership --- and the companion paper is
+explicit that the body is a description, measured after the fact,
+never a destination the motion sought. Read again at a finer $\eta$,
+or later in time, the same units may freeze into a different shape,
+or one pile where there were two: a camp is a checkpoint, not a
+fixed thing, and two checkpoints close enough to each other are
+read as the same freeze only by a further, named allowance
+(companion paper, Enclosure). None of this says what a checkpoint
+\emph{is}, in the sense a bowl of evidence becomes a verdict in the
+other companion paper. That is the question this paper exists to
+carry, separately from inference, so that it can grow on its own
+rather than as an appendix to a paper about something else.
+
+What follows is not yet that answer. It is the ground already
+cleared: two questions the companion paper's own axioms settle as a
+side effect, stated here plainly since neither was recorded at the
+time, and one question about how an atom's inner structure governs
+assembly that remains genuinely open. The larger question --- what a
+settled camp, read against known patterns or against its own
+history of checkpoints, is entitled to be named, and whether that
+naming closes into a symbol a higher unit could itself be built
+from --- is named in the abstract and left there. Early exploration
+toward it (reading a settled camp against known references, and
+characterizing when such a reading is trustworthy rather than
+lucky) exists only as worked, unpublished calculation; none of it is
+claimed here as a result.
+
+\section{What Is Inherited}
+\label{sec:inherited}
+
+We use, without re-deriving, the following from the companion
+paper. Equation and axiom numbers refer to that paper.
+
+\begin{itemize}
+\item The atom $x=(r,\hat n,\chi,\tau)\in\mathcal{S}$, with $r\le 1$
+      a normalized strength (Axiom 1).
+\item Assembly, $\bowtie$: two units related while both remain
+      intact, $A\bowtie B=(A,B,\kappa_{AB},U_{AB})$, with
+      $U_{AB}<0$ for nonzero strengths and never repelling
+      (Axiom~6).
+\item The enclosure: external seats $\vec P$ descend the energy
+      $\sum U_{ij}$ without mass or momentum until a stated force
+      threshold $\eta$ is crossed; a configuration below it is a
+      \emph{checkpoint}, not an exact equilibrium, since the pull
+      between any two units of nonzero strength never reaches zero
+      at finite distance (Enclosure, Rest and Camps).
+\item Informational vectors (Axiom~7): an atom may carry $N$ capped
+      arrows and one uncapped derived sum $V_{\mathrm{derived}}$.
+      Coarse assembly runs on the derived pair; the bundle's own
+      arrows are not consulted by $U_{AB}$ unless named explicitly.
+\item \emph{Levels are closed}: a camp carries no representation of
+      what it constitutes, and the enclosure supplies no comparison
+      by which a checkpoint could name itself.
+\end{itemize}
+
+\section{What Assembly Already Settles}
+\label{sec:already_settled}
+
+Two settled points are worth recording plainly, since both follow
+from Axiom~V4's exclusion of $\mathcal{V}_{\text{atom}}$ from motion
+(companion paper, Enclosure \S~Rest) rather than from anything built
+here.
+
+\paragraph{The actor/patient question.} Closed at the level of a
+label: polarity ($\lvert r_A-r_B\rvert$) distinguishes a mutual bond
+from a one-sided one, and no further behavioral mechanism is
+missing --- one was tested directly and found to require exactly
+the volume-weighted motion that exclusion rules out on stability
+grounds, so the honest final scope of this question is a
+description of the bond, not a difference in how it moves.
+
+\paragraph{Mass segregation.} The astrophysical phenomenon ---
+stronger members sinking toward a group's centre --- was named
+early in the companion paper's own development as an expected
+consequence, while its dynamics was still built around a mass-like
+quantity. Once motion settled as excluding $\mathcal{V}_{\text{atom}}$
+entirely, that mechanism no longer applies here, confirmed directly:
+equal force with nothing dividing it gives identical movement
+regardless of strength or volume. The astrophysical phenomenon keeps
+its real name; nothing in this framework currently reproduces it,
+since the quantity that would drive it was deliberately kept out of
+motion.
+
+\section{Open: Fine-Grained Multi-Vector Matching}
+\label{sec:open_matching}
+
+Coarse assembly runs on the derived vector (companion paper,
+Axiom~7), so $U_{AB}$ never needed to generalize; simultaneous
+multi-partner bonding via informational vectors directly remains
+optional, with an unconstrained double sum and an exclusive
+(Hungarian) matching identified as the two candidates. They agree
+whenever alignment quality is roughly uniform across candidates, but
+rank-order pairing can be strictly worse than optimal when strength
+and alignment pull in different directions --- verified with a
+constructed adversarial case ($-1.17$ for rank order versus $-1.68$
+true optimum).
+
+\section{Scope and the Question This Paper Is For}
+\label{sec:scope}
+
+This paper is small on purpose. It records what the companion
+paper's own choices already settle about assembly, once, so that
+neither has to be rediscovered; and it names one open question about
+how an atom's own bundle should govern multi-partner bonding, where
+the coarse derived-vector treatment is known to be incomplete.
+
+What it does not do is name a checkpoint. A frozen camp has a body
+and a membership and, by the companion paper's own accounting,
+nothing else --- no shape, no representation of what produced it,
+no claim on what it should be called. Whether a checkpoint can be
+read against known patterns and trusted, whether a sequence of
+checkpoints under an allowance converges on something worth naming,
+and whether such a naming is a genuine higher unit of truth or only
+a compact description of a lower one --- these are the paper's own
+stated direction, not its content. They are left here, deliberately,
+for the work this paper exists to carry.
+
+\end{document}
