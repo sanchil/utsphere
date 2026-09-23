@@ -1,0 +1,52 @@
+Model Opus 5.5:
+
+Review:
+
+I'll start by checking whether this upload matches the v15_10 already on disk, then audit it rather than relying on memory.Every Mix number and both Sun/Wind/Sky trajectories reproduce to the printed precision. Now the longest worked pipeline — the storm costume — and the offset equator check.All six storm steps and both endpoint coordinates reproduce exactly. Next the offset operator's worked check and the numeric-mode clock.Offset holds both on the printed equator and on 2,000 random off-equator triples. Now the numeric clock, the chladni inclusion, and the Assembly claims.Found one genuine edge case: two black units sitting on the same seat give $0/0$, not the "exactly zero" the text promises. Now the Enclosure's stated guarantees.The upload is byte-identical to the v15_10 we finalized, so this is a review of that version. Rather than read it for tone alone, I recompiled it, re-derived every hand-checkable number, and stress-tested the stated guarantees. Short version: the core is simple and holds up very well; the Enclosure section makes one claim that is not true as written, and the axiom cross-references print the wrong numbers throughout.
+
+## Simplicity
+
+The foundation is genuinely small: one 4-tuple $(r,\hat n,\chi,\tau)$, a cap $r\le1$, and five verbs that each answer a different question (who is present, what composite, what order, what relation copied, how two units relate intact). The "costume, not a model" discipline in the storm, forest, and pathogen sections keeps the examples from overclaiming, which is rare and worth keeping.
+
+The one place simplicity slips is Axiom 7. Axioms 0–6 are laws about what units are and what verbs do; Axiom 7 is mostly seven *measurements* of a bundle. It would read more cleanly as a Definitions section that Axiom 1 points to, leaving the axiom count for the laws. At 36 pages the paper is also well past a single-paper length, as discussed yesterday, though nothing in it reads as padding.
+
+## Consistency
+
+**Axiom references print the wrong numbers.** Headings say "Axiom 0" through "Axiom 7", but all 43 in-text citations render from LaTeX section numbering, so a reader sees "Axiom 2.11" where the heading says "Axiom 7", "Axiom 2.3" for "Axiom 1", and so on. Six of those citations point at "Rotation preserves the unit", which isn't titled as an axiom at all but is cited as "Axiom 2.9". This is the most visible defect in the document and it's purely mechanical to fix.
+
+**The symbol $N$ carries five meanings:** voxel resolution, the clock modulus ($N=24$), Axiom 7's info number, the ambient dimension in "$S^{N-1}$", and $\mathrm{SO}(N)$. The new $N_{\mathrm{dim}}$ is used in some places while the dimensionality paragraph still writes plain $N$ for the same thing.
+
+**One precision gap in higher-dimensional $T$:** the text says the actor "requires $N\ge N_{\mathrm{dim}}-2$", but the construction needs that many *mutually orthogonal* arrows, which Axiom 7 doesn't guarantee a bundle has. The table beside it says "orthonormal"; the sentence should match.
+
+## Reliability
+
+Every hand-checkable claim I recomputed reproduces exactly:
+
+| Claim | Result |
+|---|---|
+| Mix: red ⊞ green, the unequal pair (0.721, 73.9°), non-associativity example, bowl reading | All exact |
+| Clock: $7\oplus5\ne12$, Mix reads hour 6 | Exact |
+| Sun/Wind/Sky, both orders | Exact to 3 decimals |
+| Storm pipeline, all six steps and both $(\theta,\phi)$ endpoints | Exact |
+| Offset equator example | Exact; also preserved tangency, length, and geodesic distance on 2,000 random off-equator triples |
+| Assembly never repels, $U_{AB}=U_{BA}$ | Held on 100,000 random pairs |
+| 4-D actor example | Exact |
+
+Two real problems surfaced:
+
+**The Enclosure's "several camps reach rest" is not true under its own law.** The pull between two units is proportional to $d\,(d^2+\varepsilon^2)^{-5/2}$, which is strictly positive for every $d>0$. So the only exact rest is every nonzero-strength unit on one seat. Separated camps are never at rest; they are approaching slowly. I checked this directly: a pair at $d=60$ still moves each step, and a pair at $d=100$ is "at rest" only because its step drops below the $10^{-9}$ stopping tolerance. The camp count therefore depends on a stopping tolerance or time budget, a third convention alongside $\delta$ and the census cut that the paper doesn't name. It also contradicts the sentence that rest depends only on "the energy and the starting seats".
+
+**A resting camp collapses to a single point.** A 6-member camp settled to within $2\times10^{-8}$ of one seat. That makes the $r$-weighted versus $\lvert V_i\rvert$-weighted body distinction moot at rest: both formulas return the same point (they differed by $1.6\times10^{-9}$). The paragraph explaining how a cancelled unit "barely moves its body" describes a difference that vanishes once the camp has stopped. This matters for tomorrow's topic: if a camp is the candidate higher unit, a rested camp carries no internal geometry. Any higher reading has to come from its members' $(r,\hat n,\chi)$, which is what the shaman simulation already did.
+
+A small edge case: the text says a black unit gives "exactly zero" energy, but two black units on the same seat give $0/0$. Defining $U_{AB}=0$ whenever $r_Ar_B=0$ closes it.
+
+## Repeatability
+
+This is strong wherever the paper prints its inputs: every worked example above can be redone with a calculator or a few lines of code. It is weak in exactly one area, the Enclosure. Three claims there are reported as tested but give a reader nothing to rerun: the $5\times10^{-12}$ step-size agreement doesn't state its starting seats, the 729-fold oscillation result gives no trajectory, and the higher-dimensional checks at 5, 8, and 12 dimensions have no printed case (only the 4-D one is shown). Printing one seed or one small configuration for each would bring the Enclosure up to the standard the rest of the paper already meets.
+
+## Overall
+
+The algebra (units, cap, Gather, Mix, $T$, offset) is simple, internally consistent, and fully reproducible; I found no errors in any worked number. The weaknesses are concentrated in the newest material: the Enclosure's notion of rest, and bookkeeping (axiom numbering, $N$). Would you like me to fix these as v15_11: axiom references, the rest/camp statement with the stopping convention named, the black-pair edge case, the orthogonality wording, and $N$ harmonized?
+
+
+
