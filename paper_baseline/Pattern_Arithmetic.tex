@@ -71,7 +71,7 @@ seat. Units left alone descend an energy until a stated threshold
 freezes them, resting in one camp or several; left longer, all would
 merge into one. Collapse~$\to$~$T$~$\to$~result is
 one pipeline; assemble~$\to$~rest is the other. Division as
-unmixing is left open. Words and numbers occupy the same sphere under different encodings and meet in a document by order and typed action, not by blending. The aim is a single bounded register that carries overlapping identities, structural paths, and mixed prose without a discrete grid. The sphere and its operators are one proposed encoding of a narrower claim --- a combination rule should match the unit --- not a theory of language, physics, biology, or computation.
+unmixing is shown ill-posed for this algebra, not attempted here. Words and numbers occupy the same sphere under different encodings and meet in a document by order and typed action, not by blending. The aim is a single bounded register that carries overlapping identities, structural paths, and mixed prose without a discrete grid. The sphere and its operators are one proposed encoding of a narrower claim --- a combination rule should match the unit --- not a theory of language, physics, biology, or computation.
 \end{abstract}
 
 \section{Introduction}
@@ -208,7 +208,7 @@ $\bowtie$ & How do two units relate while both still sit? \\
 \end{center}
 
 Division as deconvolution or signal unmixing is not among these
-verbs; it is left open
+verbs; shown ill-posed for this algebra, not merely unbuilt
 (Section~\ref{subsec:division_open}).
 Inverse rotation of $T$ is well-defined. A Mix inverse is not.
 
@@ -935,17 +935,29 @@ strongly at equal separation.
 \label{subsec:axiom_v1_metrics}
 The teaching atom of \hyperref[subsec:axiom1]{Axiom~1} is one 4-tuple
 ($N=1$). An atom may also be a \emph{bundle}: $N$ informational
-vectors $v_i=r_i\hat n_i$, each independently an instance of that
-same 4-tuple and each still capped at $r_i\le 1$. $N$ is the atom's
-info number. This is not a second species of unit and not a field
-on the globe. It is several teaching atoms held under one closure. At most one
-further, \emph{derived} vector may sit alongside them in the same
-closure unit:
+vectors $v_i=(r_i,\hat n_i,\chi_i)$, each carrying its own
+phase-color $\chi_i\in[0,2\pi)$ alongside $(r_i,\hat n_i)$ and
+sharing the atom's own sort $\tau$ --- $v_i$ together with that
+shared $\tau$ forming, per vector, the same 4-tuple
+\hyperref[subsec:axiom1]{Axiom~1} states, still capped at $r_i\le
+1$. $N$ is the atom's info
+number. This is not a second species of unit and not a field on the
+globe. It is several teaching atoms held under one closure ---
+distinct phase-colors among them coexist without being forced
+through Mix, the bundle's own instance of two identities occupying
+one direction without overwriting one another
+(\hyperref[subsec:axiom1]{Axiom~1}). At most one further,
+\emph{derived} vector may sit alongside them in the same closure
+unit:
 \[
-V_{\text{derived}} \;=\; \sum_{i=1}^{N} v_i,
+V_{\text{derived}} \;=\; \sum_{i=1}^{N} r_i\hat n_i,
 \]
-the raw, unnormalized sum of the informational vectors, computed
-after and from them, never including itself. $V_{\text{derived}}$ is
+the raw, unnormalized sum of the informational vectors' geometric
+part, computed after and from them, never including itself; $\chi_i$
+does not enter this sum, the same way $\tau$ does not participate in
+$T$'s rotation --- available wherever a per-vector reading is named,
+silent in the seven metrics below, none of which is stated in terms
+of it. $V_{\text{derived}}$ is
 uncapped and excluded from $N$: it needs no $\tau$-justified
 admissibility of its own (\hyperref[subsec:axiom0_admissibility]{Axiom~0}),
 the same status the companion paper\footnote{\emph{Pattern
@@ -2067,8 +2079,32 @@ formula never produced it.
 \label{subsec:division_open}
 Rotation is the rule of \S\ref{subsec:axiom_rotation}: $\mathbf{R}\in\mathrm{SO}(3)$
 turns $\hat n$. Inverse rotation is well-defined. Division as
-``deconvolution and signal unmixing'' is not defined in this paper and
-is left open.
+``deconvolution and signal unmixing'' is not defined in this paper
+and is left open --- shown here to be ill-posed for this algebra
+specifically, not merely unbuilt.
+
+Given only a Mixed result, the bowl that produced it is not merely
+hard to recover; it is not determined by the result at all. The
+introduction's own red-and-green example, $0^\circ$ and $120^\circ$
+at equal strength reaching yellow at $60^\circ$, is one point in an
+infinite family: two components at $10^\circ$ and $100^\circ$,
+correctly weighted, reach the identical phasor sum, to machine
+precision --- verified directly, not merely argued, and neither pair
+is preferred by the result over the other. Assuming a specific
+composition and solving for it does not rescue this. A wrong assumed
+composition still reconstructs the observed result exactly: solving
+for $10^\circ$-and-$100^\circ$ strengths against the true
+red-and-green result returns a residual of $10^{-17}$, indistinguishable
+by any check internal to the algebra from the correct pair's own
+residual of zero. An algebra that states only forced, verified
+identities has no honest place for an operation whose wrong answer
+looks exactly like its right one.
+
+This is deliberately left to inference (companion paper,
+\emph{Pattern Arithmetic: Inference from Bowls and Paths}), where a
+comparison against a witnessed reference is held to a stated
+confidence and may abstain --- a discipline this algebra's own Mix
+does not have available to it, and should not manufacture.
 
 \subsection{Spectral storage (optional, later)}
 Spherical-harmonic arrays of size $O(L^2)$ may later store a field of
