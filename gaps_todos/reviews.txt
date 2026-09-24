@@ -48,5 +48,99 @@ This is strong wherever the paper prints its inputs: every worked example above 
 
 The algebra (units, cap, Gather, Mix, $T$, offset) is simple, internally consistent, and fully reproducible; I found no errors in any worked number. The weaknesses are concentrated in the newest material: the Enclosure's notion of rest, and bookkeeping (axiom numbering, $N$). Would you like me to fix these as v15_11: axiom references, the rest/camp statement with the stopping convention named, the black-pair edge case, the orthogonality wording, and $N$ harmonized?
 
+####################
+SuperGrok:
+
+Opus reviewed **v15_10**. You uploaded **v15_11**, which already took most of that medicine. Below: whether the critique was right, what v15_11 actually fixed, and what still matters if this file is the foundation for higher units.
+
+## Was Opus right about v15_10?
+
+**Yes, on the law.** The pairwise pull \(d(d^2+\varepsilon^2)^{-5/2}\) is never zero at finite distance. Exact rest of two nonempty units is one shared seat. “Several camps at rest” was a stopping artefact. That is a real contradiction with “rest depends only on the energy and the starting seats.”
+
+**Yes, on bookkeeping.** Section-numbered “Axiom 2.11” while the heading says Axiom 7 would have been the first thing a referee marked. Five uses of \(N\) was sloppy. “\(N\ge N_{\mathrm{dim}}-2\)” without orthogonality was incomplete.
+
+**Yes, on the black pair.** Two blacks on one seat are \(0/0\) if you only write the formula.
+
+**Half-yes on Axiom 7.** It is mostly *meters* (seven scalars), not a law about combination. Calling it an axiom inflates the count. It does not break the algebra.
+
+**The numerical audit is a gift.** Mix, clock, Sun/Wind/Sky, storm, offset, 4-D undo all matching is the right standard for a foundation paper. Trust that audit unless you change those equations.
+
+**The camp-collapses-to-a-point remark is the one that matters for “higher units.”** If seats inside a camp fall onto one point, the *seat-body* is not a new pattern. The higher reading lives in the members’ \((r,\hat n,\chi)\), or in a walk over them — exactly the shaman move. Do not let a frozen blob pretend it grew a new inner geometry.
+
+## What v15_11 already fixed
+
+| Critique | v15_11 |
+|---|---|
+| Camps at exact rest | Named as false. Pull always on. Unlimited time → one pile |
+| Stopping convention unnamed | Freeze \(\max_i\|F_i\|<\eta\). \(\eta\) sits with \(\delta\) and the census cut |
+| Abstract / conclusion | “Until a stated threshold freezes them; left longer, all would merge” |
+| Replay | Six printed seats, two groups at 40, four \(\delta\), step counts, bodies |
+| Mass-weighting 729 | Printed pair \((0,0,0)\) vs \((3,0,0)\), 804/3000 increasing steps |
+| Black \(0/0\) | \(U_{AB}=0\) whenever \(r_Ar_B=0\), by definition |
+| Orthogonal actors | “\(N\ge N_{\mathrm{dim}}-2\) necessary but not sufficient; need mutually orthogonal arrows” |
+| Axiom numbers in text | `\hyperref[...]{Axiom~0}` … `Axiom~7` — 37 of them. Rotation is *not* cited as a numbered axiom in those macros |
+| Voxel \(N\) | \(N_{\mathrm{vox}}\) |
+
+So the “please fix as v15_11” list is largely done. Do not re-litigate rest-as-exact-equilibrium.
+
+## My own foundation review
+
+### What should stay frozen
+
+The brick is still small and right:
+
+- teaching atom \((r,\hat n,\chi,\tau)\), \(r\le 1\)
+- five verbs, two pipelines
+- Mix is a reading; \(\oplus\) does not cancel
+- \(T\) takes units (or a cast); high-dim \(T\) needs a freeze-plane the actor can name
+- 3-D is the standard because \(N=1\) can walk
+- costumes are costumes
+- tokens work lighter; a furnished atom as token is a *higher closure*
+
+That is enough to build later papers on. Do not add a sixth verb to “fix” camps.
+
+### The new enclosure law, said as a child would say it
+
+The seats always drift toward friends. Far friends pull very little. If you watch only a short time, you see two piles. If you watch forever, you see one pile. **A camp is a pause you chose**, not a second kind of unit.
+
+That is now consistent. It also means:
+
+- plurality of camps is **resolution-dependent** (\(\eta\))
+- a freeze is as conventional as a pixel size
+- a higher-order “enclosure unit” cannot be “the camp as a point.” It has to be a *reading* of the members (bowl, walk, or Mix), plus maybe the body as a label of *where* that reading was frozen
+
+Write that once near the replay table so tomorrow’s paper does not treat \(\vec P_c\) as a new atom.
+
+### Still slightly loose (not fatal)
+
+1. **Related Work \(\mathrm{SO}(3)\)** still talks as if every \(T\) were an \(\mathrm{SO}(3)\) action. High-dim \(T\) is a simple plane rotation. One clause.
+
+2. **Axiom 7’s status.** For a foundation, I would demote the seven scalars to “derived meters” and keep only: bundle of teaching arrows + uncapped \(V_{\mathrm{derived}}\) + cast rule for \(T\). The meters can stay; they need not wear an axiom number. Optional, not blocking.
+
+3. **Checks at 5, 8, 12** still have no printed case. The 4-D undo is enough. Drop the extra integers or print one more row.
+
+4. **Length.** ~36 pages of unit + enclosure is fat for “the brick.” It is acceptable if Verdicts does not copy any of it. Do not grow this file with more costumes.
+
+5. **Rotation heading.** Still not “Axiom *n*.” That is fine. Keep citing it by section name, as v15_11 does.
+
+### Reliability of v15_11 numbers I can see
+
+The printed replay is internally plausible: same elapsed time \(12.6\) at four steps, two camps \(\{1,2,3\}\) and \(\{4,5,6\}\), bodies near the two starting centroids, weak \(3\times10^{-5}\) drift across the gap, isolated trio on \((\tfrac13,\tfrac13,0)\). I did not rerun the integrator here; Opus’s method (print seats, rerun) is the right one. Keep that configuration immutable.
+
+Bodies of the first camp: \(r\)-weighted vs plain differ by \(2.4\times10^{-8}\) — that *confirms* Opus’s “at freeze, weighting barely matters.” The paper now shows the number; it should also say what it means: **do not hang a theory of higher units on that difference.**
+
+## Verdict for “foundation of higher truths”
+
+| Question | Answer |
+|---|---|
+| Is the unit algebra sound enough to inherit? | Yes |
+| Did Opus find a real law-bug? | Yes — rest. v15_11 closed it by naming freeze |
+| Can a camp be the next unit of truth? | Not as a seat-point. Only as a *reading* of members, frozen at \(\eta\) |
+| What must the next paper not redo? | Axioms 0–6, \(T\), Mix, cap, cast of \(V_{\mathrm{derived}}\) |
+| What must the next paper own? | How a freeze, a bowl, or a walk becomes a *saying* or a *higher name* |
+
+v15_11 is the first version I would treat as the unit-paper baseline: 3-D standard, \(T\) liftable, rest honest, examples replayable. Tighten the \(\mathrm{SO}(3)\) sentence if you like. Do not open a new enclosure theory on this file. Higher closures belong upstairs.
+
+
 
 

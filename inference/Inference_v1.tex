@@ -42,7 +42,10 @@
 % ABSTRACT
 \begin{abstract}
 A companion paper, \emph{Pattern Arithmetic: Typed Algebra of Bounded
-Units on a Phase-Colored Sphere}, defines a unit of truth
+Units on a Phase-Colored Sphere}\footnote{Zenodo,
+\href{https://doi.org/10.5281/zenodo.22924031}{10.5281/zenodo.22924031},
+the concept DOI, which always resolves to the paper's latest
+version.}, defines a unit of truth
 $x=(r,\hat n,\chi,\tau)$ on a sphere $\mathcal{S}$ and an algebra over
 such units --- gather ($\oplus$), remove ($\ominus$), mix ($\boxplus$),
 walk ($T$), offset, and assembly ($\bowtie$) --- together with an
@@ -219,6 +222,10 @@ once:
     \qquad
     z_B=\sum_{x\in B} r_x e^{i\chi_x}.
 \]
+This is the companion paper's own clip, stated here as the teaching
+cap; \S\ref{subsec:bijection_substitution} substitutes the bijection
+wherever this reading is the one actually reported, the shells of
+\S\ref{sec:worked_example} among them.
 Order plays no role: $z_B$ is a sum, and sums do not care about the
 order of their terms. The verdict's \emph{confidence} is $|z_B|$'s
 image under the cap, and its \emph{direction} is $\arg z_B$, read
@@ -697,7 +704,27 @@ honestly requires an order for the casts, which a physical handful of
 shells thrown at once does not supply --- exactly the case the swap
 test (\S\ref{subsec:swap_test}) assigns to Reading A. A worked Reading
 B example belongs to evidence that genuinely arrives in sequence, and
-the companion paper's storm already provides one.
+the companion paper's storm already provides one. A smaller one,
+native to this paper, is still worth having: three actors show the
+same point without the storm's six steps.
+
+Seat two actors, $\mathrm{twinkle}$ with axis $\hat n=(1,0,0)$ and
+strength $r=0.5$ (a quarter turn, $\alpha=90^\circ$), and
+$\mathrm{little}$ with axis $\hat n=(0,1,0)$, the same strength.
+Start the occupant at the north pole, $x_0=(0,0,1)$. Applying
+$\mathrm{twinkle}$ first sends it to $(0,-1,0)$, a point that now
+lies exactly on $\mathrm{little}$'s own axis, so $\mathrm{little}$
+turns it nowhere further: $\mathrm{twinkle}$ then $\mathrm{little}$
+lands at $(0,-1,0)$. Applying $\mathrm{little}$ first sends $x_0$ to
+$(1,0,0)$, exactly on $\mathrm{twinkle}$'s own axis this time:
+$\mathrm{little}$ then $\mathrm{twinkle}$ lands at $(1,0,0)$. Two
+different pins, $(\theta,\phi)=(90^\circ,270^\circ)$ against
+$(90^\circ,0^\circ)$, from the same two actors --- order the only
+thing that changed. This is the companion paper's own
+non-commutativity (\S3.2) made concrete at three steps rather than
+argued in the abstract, and each half of it is a single rotation a
+reader can check without software: the second step, in both orders,
+is a vector rotating about itself.
 
 \section{Level Closure in Practice: Correcting a Path}
 \label{sec:level_closure_practice}
