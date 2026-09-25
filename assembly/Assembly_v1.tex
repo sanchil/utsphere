@@ -185,7 +185,190 @@ a compact description of a lower one --- these are the paper's own
 stated direction, not its content. They are left here, deliberately,
 for the work this paper exists to carry.
 
-\section*{Aside: A Note Parked Here for the Companion Paper}
+\section*{Development Notes: Ideas in Progress}
+\addcontentsline{toc}{section}{Development Notes: Ideas in Progress}
+
+What follows is a working record, not a finished section of this
+paper. Each item is tagged by status --- \textbf{[Settled]},
+\textbf{[Verified]}, \textbf{[Proposed]}, or \textbf{[Open]} --- so a
+later pass can tell at a glance what is actually established, what
+is argued but unbuilt, and what has been tried and genuinely not
+yet solved, without re-deriving that distinction from scratch.
+Nothing here is claimed as this paper's content; it is the material
+its later sections would be built from, once built.
+
+\subsection*{Structure and organization}
+
+\textbf{[Proposed.]} Assembly as a layer beneath Inference, not a
+peer to it: Inference reads whatever atoms already exist; Assembly
+asks what happens when atoms relate to each other before anything
+is read. A camp is not evidence, by the companion paper's own words
+--- its body is ``measured afterwards\ldots a description rather
+than a destination'' --- and this paper's own abstract already names
+camp-naming as unanswered here, not in Inference. The layering is
+implicit in language already sitting in both documents; stating it
+as the organizing structure is what is new. Not yet written into
+the Introduction.
+
+\textbf{[Proposed.]} An eight-part restructuring built around that
+layering: a reframed Introduction stating the one-directional
+dependency; \emph{What a Camp Is}, an axiom-like core of invariant
+camp properties; \emph{Two Modes --- Free and Directed Assembly};
+\emph{Representing a Camp}; \emph{Structural Diagnostics}; the
+existing inherited and open-question sections unchanged; a closing
+statement rewritten around the layering. Two of eight sections need
+no work; the other six, including the entire axiom-like core, are
+still only conversation.
+
+\textbf{[Proposed.]} Assembly's own closure axioms should carry
+their own numbering, not continue the companion paper's --- justified
+by that paper's own Axiom~0 discipline: a snowflake's native law is
+recorded as refused a map onto the sphere rather than forced into
+$\mathrm{SO}(3)$, because a system of axioms built for one kind of
+question should not silently claim authority over a different kind
+by mere continuation of its own numbering. Closure is that kind of
+different question relative to the companion paper's atom-level
+axioms.
+
+\textbf{[Settled.]} The test for what actually earns axiom status
+here --- forced (no freedom, like $\pi$), genuinely invented but
+low-stakes (a normalization, like $r\le1$), or a real structural
+choice (a different choice produces a different theory) --- is
+already written into this paper, below, as the parked aside for the
+companion paper's Thesis. Not repeated here.
+
+\textbf{[Proposed.]} A first candidate that passes that test: what a
+freeze keeps and what it discards. The companion paper says a
+camp's body is a description, not a destination, and that a camp is
+a checkpoint, not a destination, but never formalizes exactly what
+survives a freeze versus what does not. Not derivable from the
+companion paper's own axioms; not yet drafted as a formal statement.
+
+\subsection*{Representing a camp}
+
+\textbf{[Verified.]} Resultant versus dominant-vector representation,
+tested on identical seats and bundles: $16.0\%$ of contested pairs
+disagree ($120/749$ across 15 trials) on who ends up grouped with
+whom, depending solely on which representation is used.
+
+\textbf{[Verified.]} With strength made genuinely irrespective ---
+removed not just from the pull's magnitude but from which vectors
+get compared at all --- the two candidates already named in this
+paper's own open question behave very differently. The unconstrained
+double sum collapses to a single undifferentiated group in every
+trial tested, confirmed not a settling-parameter artifact by a
+same-population sanity check against the ordinary single-vector case.
+Hungarian best-match survives with real, differentiated structure
+(3--5 groups per trial, genuine size variation). Between this
+paper's own two candidates, one of them is now shown not to work for
+this case.
+
+\textbf{[Proposed, untested.]} Centrality, treating $U_{AB}$ as a
+weighted graph and reading a camp's most central member, as a fourth
+candidate. Not yet tested at all.
+
+\subsection*{Structural diagnostics}
+
+\textbf{[Verified.]} Graph community detection is not a faster
+substitute for physical settling. Tested properly, with distance
+included in the edge weights after an initial pass without it was
+caught as an unfair comparison: $69.7\%$ of contested pairs disagree,
+and community detection consistently finds fewer, larger groups than
+settling does. Diagnosis: settling captures the dynamic, cascading
+resolution of competing pulls over time; a one-shot graph read of
+the starting configuration cannot see that resolution happening.
+
+\textbf{[Proposed, untested.]} Hierarchical clustering as the formal
+version of a sentence the companion paper already states in words:
+``a finer $\eta$ runs longer and may see groups merge that a coarser
+one froze apart.'' That is a dendrogram, described in prose, never
+built.
+
+\subsection*{The query/selection border case}
+
+\textbf{[Verified.]} A query matching two named vectors while
+excluding a third produces a genuinely non-transitive relation ---
+global transitivity checked directly at exactly zero, with individual
+components confirmed to be chains rather than cliques (one
+three-member component held only 2 of its 3 possible internal edges).
+This is not a camp in this paper's sense; it is a sparse,
+bridge-like network, closer to what sociology calls weak ties or
+structural holes.
+
+\textbf{[Flagged, unresolved.]} This looks structurally closer to
+Inference's own open selection rule --- who enters, under what
+condition --- than to Assembly's job of settling a membership once
+given. Which paper should own it is not decided.
+
+\subsection*{Systems as atoms}
+
+\textbf{[Settled.]} Vocabulary: \emph{camp seat} for a camp's spatial
+displacement (extending the companion paper's own existing ``seat''
+register) versus \emph{camp signature} for its effective
+informational reading (checked clean of collisions across all three
+documents). These were previously, silently, one conflated vector.
+
+\textbf{[Verified.]} Never-repels survives the jump to the system
+level: checked directly on system-level pairs, minimum pairwise
+coefficient positive ($\approx4.4\times10^{-7}$), nothing negative
+anywhere.
+
+\textbf{[Verified.]} The clip-versus-bijection choice matters again
+at the system level, not only at the evidence level: the identical
+16 camps produce 13 systems under the Hill bijection and 11 under
+the naive clip, with different groupings, not merely different
+counts.
+
+\textbf{[Verified --- the hypothesis's central test.]} Treating
+settled camps as new, system-level atoms produces genuinely different
+behavior from simply widening the grouping radius on the original
+atoms. Two-level construction: largest system holds $32\%$ of all
+atoms ($16/50$). Naive coarsening of the same population at a
+comparable scale: $94\%$ ($47/50$), a near-total collapse. Camps
+compressing into a signature before the next level's dynamics run is
+not equivalent to loosening the same single-level process.
+
+\subsection*{Stability at the system level --- the open frontier}
+
+\textbf{[Open, actively unsolved.]} Pure radial attraction with
+nothing to counteract it trends toward full collapse --- matching the
+companion paper's own stated Enclosure behavior, ``left longer, all
+would merge into one,'' and matching why naive coarsening above jumps
+almost directly to one giant group.
+
+Checked against real astrophysics rather than assumed: globular
+clusters do sometimes merge, but genuine mergers cluster around
+specific circumstances --- early galactic epochs, dense environments,
+close tidal encounters --- not a generic, ongoing process. Most
+clusters, once in stable orbits, persist for billions of years
+without merging. The stabilizing mechanism in every such case is
+orbital motion: angular momentum.
+
+\textbf{[Tension identified, not resolved.]} Real angular momentum
+needs mass ($L=r\times mv$) and inertia, motion that persists between
+moments rather than being reset by the current force alone. This
+paper's own motion is deliberately mass-free --- the reason mass
+segregation does not reproduce here, already a settled point above
+--- and deliberately overdamped, velocity set directly by force with
+no memory of the step before. A literal transplant of angular
+momentum would undo both of those deliberate choices at once.
+
+\textbf{[Tested, did not work; problem remains open.]} A proxy
+attempt: a tangential force built from each atom's own $\hat n$,
+already present and otherwise unused for force direction, added to
+the radial pull. The first check looked promising --- the largest
+group shrank from $97.5\%$ to $7.5\%$ of the population as the
+tangential term strengthened. A second, independent check showed why
+that was misleading: the system was not settling at all at the
+stronger values, only still moving (last-step size $\approx0.40$--$0.44$,
+against $\approx0.0003$ for the undisturbed case). An overdamped
+system has nothing to damp a tangential force the way real inertia
+damps orbital perturbation, so the raw proxy trades collapse for
+motion that never settles, rather than producing anything stable.
+The fix needs a genuine damping mechanism, not yet designed. This is
+the most current, least resolved thread in this record.
+
+
 \addcontentsline{toc}{section}{Aside: A Note Parked Here for the Companion Paper}
 
 This belongs beside \emph{Pattern Arithmetic}'s own Thesis, not
