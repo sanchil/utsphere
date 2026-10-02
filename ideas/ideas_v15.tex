@@ -1,0 +1,147 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+
+\title{Ideas Parked --- Not Yet Merged (v15)}
+\author{Staging document; each entry marks its eventual destination}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent Two conversations produced one finding, not two. A
+density/energy pair built from the same per-vector quantity
+($S_{\text{atom}}$ and $\mathcal{E}_{\text{atom}}$, both sums of
+$r_i$ transformed) turned out to be forced into a one-directional
+bound. A second pair, density redefined as bare count and energy
+redefined as a shell-weighted strength distribution, turned out to
+have no relationship at all, in either direction. This entry states
+the rule both results are instances of, gives a reusable test for
+any future pair of atom-level metrics, and sketches where the
+distinction might actually matter --- all of it exploratory, none
+of it adopted.
+
+\section{The rule}
+
+Call a metric on a Collapsed atom \emph{separable} if it is a sum
+over the atom's own vectors of some fixed per-vector function:
+$M=\sum_{i=1}^N f(r_i)$. Every metric discussed so far is of this
+form, including the ones that do not look it: $N$ itself is
+$\sum_i 1$, the constant function.
+
+\paragraph{The test.} For two separable metrics $M_1=\sum f(r_i)$
+and $M_2=\sum g(r_i)$: if $f(r)\le g(r)$ for every $r\in[0,1]$, then
+$M_1\le M_2$ for every atom, with no exceptions --- summing a
+pointwise inequality preserves it. If neither $f\le g$ nor $f\ge g$
+holds everywhere on $[0,1]$ --- if the two functions cross --- no
+such bound exists in either direction, and the two metrics are free
+to move independently, as far apart as the atom's own vectors allow.
+
+\paragraph{Checked against both findings on file.} $S_{\text{atom}}$
+and $\mathcal{E}_{\text{atom}}$ use $f(r)=r$ and $g(r)=r^2$; checked
+directly, $r^2\le r$ holds across all of $[0,1]$, so
+$\mathcal{E}_{\text{atom}}\le S_{\text{atom}}$ is forced, matching
+the identity already found. $N$ and the shell-weighted energy
+sketch use $f(r)=1$ and $g(r)=\lfloor r/w\rfloor\cdot r$; checked
+directly, neither $f\le g$ nor $f\ge g$ holds on all of $[0,1]$ (the
+constant function sits below $g$ near $r=1$ and above it near
+$r=0$), so no bound exists, matching the unbounded result already
+found. One test, both results, no coincidence.
+
+\paragraph{Why this is worth having as a standing test.} Any future
+proposal for a new atom-level metric can be checked against every
+metric already on file in one step --- write both as $f$ and $g$ on
+$[0,1]$, check whether the two curves cross --- rather than
+re-running numerical trials each time a new pair is proposed. A
+crossing means the pair is informative together (two independent
+readings of the atom); no crossing means one is redundant given the
+other, except for the gap between them, which is its own quantity
+(below).
+
+\section{The gap, where one exists, is itself a quantity}
+
+Where a bound holds, $M_2-M_1=\sum\bigl(g(r_i)-f(r_i)\bigr)$ is not
+nothing --- it is a separable metric in its own right, built from the
+per-vector function $g-f$. For $S_{\text{atom}}-\mathcal{E}_{\text{atom}}$,
+that function is $r-r^2$, maximized at $r=0.5$ and zero at both
+$r=0$ and $r=1$ (already found). The general pattern: wherever two
+metrics are forced into a bound, the slack between them measures
+something like efficiency --- how much of one quantity a vector
+contributes without contributing a matching share of the other ---
+and is itself worth naming once a specific bounded pair is adopted,
+not only in this one case.
+
+\section{Where this might be used, if any of it is adopted}
+
+None of this is proposed as settled; each is a direction worth
+testing, not a result.
+
+\paragraph{A minimal, non-redundant reporting set.} With seven
+metrics already on file and at least two more count-based ones
+proposed, not all of them are worth reporting side by side. The test
+above sorts the existing inventory into two kinds: pairs that are
+bounded (reporting both is partly redundant --- the gap is the real
+second number) and pairs that are free (reporting both is two
+genuinely independent readings). A table applying the test to every
+pair already in the inventory --- $S_{\text{atom}}$,
+$\mathcal{V}_{\text{atom}}$, $\gamma_{\text{atom}}$,
+$\mathcal{E}_{\text{atom}}$, $N$, $D$ --- would say, once, which
+combinations are worth stating together.
+
+\paragraph{A two-axis placement for comparing atoms.} Where a pair is
+free (density and shell-energy, as checked here), plotting a
+population of Collapsed atoms on those two axes is a meaningful
+scatter, not a degenerate one --- nothing forces the points onto or
+under a curve the way a bounded pair would. Where a pair is bounded
+instead ($S_{\text{atom}}$ against $\mathcal{E}_{\text{atom}}$),
+the same plot is still informative, but differently: every atom
+must fall on or below the line $\mathcal{E}=S$, and \emph{how far
+below} is the efficiency reading from Section~2, not a free
+coordinate.
+
+\paragraph{A possible reading for Inference's own evidence
+questions, offered cautiously.} The common split in evidence
+aggregation --- many weak signals versus one strong one --- is
+roughly what a free density/energy pair would distinguish: an atom
+that is dense but low-energy under the shell reading looks like many
+weak contributions; one that is light but high-energy looks like a
+single strong one. This is an analogy to be tested against
+Inference's own existing reference-atom mechanism, not a replacement
+for it --- it may turn out to duplicate a distinction that mechanism
+already makes some other way, which would need checking before
+anything is built on it.
+
+\paragraph{A post-hoc description of Assembly's frozen camps, not a
+new input to them.} Section~5 of ideas\_v13 closed the question of
+feeding any density- or mass-like weighting into Assembly's own
+motion step, on direct, tested evidence that it breaks monotonic
+convergence. That finding is not reopened here. What is not closed:
+describing a camp's own resulting density and energy, once frozen,
+as a label attached after the fact --- characterizing what rest
+produced, rather than steering how it got there. Whether this
+descriptive label would be useful for anything downstream is not
+examined here.
+
+\paragraph{A check on construction, not a claim about meaning.} If a
+later paper's pipeline is expected, empirically, to produce atoms
+within some typical density/energy relationship, an atom that falls
+far outside it --- for a free pair, there is no ``outside''; for a
+bounded pair, violating the bound at all would be impossible by
+construction and would indicate an error in how the atom was built,
+not a new kind of atom. This is a debugging use, not an analytical
+one, but worth keeping in mind precisely because a bounded pair
+makes some configurations provably unreachable rather than merely
+unlikely.
+
+\section{Status}
+
+The rule and its test are checked and stand on their own,
+independent of any naming question. The four uses above are
+genuinely speculative, offered as directions worth trying rather
+than conclusions --- in particular, the Inference analogy needs
+checking against that paper's own machinery before it is anything
+more than a resemblance, and the debugging use depends on a bounded
+pair actually being adopted into the formal inventory first.
+
+\end{document}

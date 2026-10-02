@@ -1,0 +1,229 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+
+\title{Ideas Parked --- Not Yet Merged (v13)}
+\author{Staging document; each entry marks its eventual destination}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent This version parks a single, connected question: what
+physics-flavored names, if any, the atom-level quantities of
+Axiom~7 should carry. It is prompted by three things in one
+conversation --- a proposed atomic-number/mass-number reading of $N$
+and a new count $D$, a proposed ``information density,'' and a
+proposed use of density for inertia in Assembly --- and by what
+checking each against the current paper turned up: two physics names
+were already tried here once and deliberately retired, and an
+inertia-like weighting was already tested directly in Assembly's own
+motion equation and found to break it. Nothing below is adopted.
+The paper is left exactly as \texttt{PA\_ReWrite\_V15\_27.tex} has
+it; this file is the weighing the next version, if one is written,
+should start from.
+
+\section{The full inventory, exactly as it now stands}
+
+Seven scalar metrics follow from one Collapsed atom's $N$ vectors.
+Quoted precisely, not reconstructed from memory:
+
+\begin{center}
+\begin{tabular}{lll}
+Quantity & Formula & Current name \\
+\hline
+$S_{\text{atom}}$ & $\sum_i r_i$ & atom strength \\
+$\mathcal{V}_{\text{atom}}$ & $\sum_i r_i^3$ & atom volume \\
+$\gamma_{\text{atom}}$ & $\mathcal{V}_{\text{atom}}/N$ & mean vector volume \\
+$\mathcal{E}_{\text{atom}}$ & $\sum_i r_i^2$ & informational (intrinsic) energy \\
+$\alpha_{\text{atom}}$ & $\sum_{i<j} r_ir_j(\hat n_i\!\cdot\!\hat n_j)\big/\sum_{i<j}r_ir_j$ & atom coherence \\
+$\sigma_{\text{atom}}$ & $\frac{N^2}{N-1}\operatorname{Var}(s_1,\ldots,s_N)$, $s_i=r_i^3/\mathcal{V}_{\text{atom}}$ & volume concentration \\
+$\sigma_{\text{shell}}(w)$ & shell-binned version of the same idea & shell concentration \\
+\end{tabular}
+\end{center}
+
+Three of these once carried different names, retired by the paper's
+own earlier draft, in the paper's own words: \emph{``Earlier drafts
+called $\mathcal{V}_{\text{atom}}$ `mass,' $\gamma_{\text{atom}}$
+`density,' and $S_{\text{atom}}$ `atom energy' --- all three retired
+as misleading: the first two because neither participates in
+momentum, kinetic energy, or any calculation the word `mass' would
+ordinarily license, and the third because a genuine notion of energy
+exists below and is not $S_{\text{atom}}$.''} That genuine notion is
+$\mathcal{E}_{\text{atom}}$, and its name was \emph{kept}, not
+retired --- the one case where a physics word survived contact with
+the paper's own scrutiny.
+
+\paragraph{Why $\mathcal{E}_{\text{atom}}$'s name survived and the
+other three did not.} This is the load-bearing fact for everything
+below. $\mathcal{E}_{\text{atom}}=\sum r_i^2$ is not merely called
+energy because it resembles one; it is tied to another, independently
+defined quantity by an exact, verified identity:
+\[
+\lvert V_{\text{derived}}\rvert^2 \;=\; \mathcal{E}_{\text{atom}} \;+\;
+2\sum_{i<j} r_ir_j(\hat n_i\cdot\hat n_j),
+\]
+matching $\operatorname{Var}(\sum X_i)=\sum\operatorname{Var}(X_i)+2\sum_{i<j}\operatorname{Cov}(X_i,X_j)$
+term for term, verified to six decimal places. $\mathcal{V}_{\text{atom}}$,
+$\gamma_{\text{atom}}$, and $S_{\text{atom}}$-as-energy had no such
+identity; they were evocative without being earned, and the paper's
+own retraction says so almost in those words (``neither participates
+in\ldots any calculation the word would ordinarily license'').
+
+\paragraph{The rule this suggests, stated plainly.} A physics name
+for a quantity in this paper should be kept only when the quantity is
+shown to participate in something provable --- an exact identity or
+a forced structural correspondence to another already-established
+quantity --- not merely when it resembles, in isolation, what a
+physicist or chemist would call by that name. This is not a new rule
+invented for this entry; it is the rule the paper has already applied
+once, the hard way, and this entry only makes it explicit so the next
+naming decision does not have to relearn it.
+
+\section{$N$ and $D$: the mass-number / atomic-number reading,
+weighed against that rule}
+
+The most recent merged version of the paper
+(\texttt{PA\_ReWrite\_V15\_27.tex}, Process principle: Collapse)
+already states, as settled content, a count $D=\lvert
+A_1\uplus\cdots\uplus A_n\rvert$, the number of value-distinct
+vectors among a Collapsed atom's $N$, with $D\le N$ exact and
+$N-D$ precisely the repeat count. This is offered there under a
+hedged chemistry analogy --- $N$ as mass number, $D$ as atomic
+number --- with the hedge that the analogy ``should not be pushed
+further... a neutron is a genuinely different particle from a
+proton, not a repeated one.''
+
+\paragraph{Checked against the rule above: this one earns it.}
+Unlike the retired $S_{\text{atom}}$/$\mathcal{V}_{\text{atom}}$/
+$\gamma_{\text{atom}}$ names, $D$ is not merely evocative. It is
+forced to equal $\lvert A_1\uplus\cdots\uplus A_n\rvert$ by $\uplus$'s
+own already-proven idempotence ($A\uplus A=A$) --- an exact identity
+connecting a Collapse-side quantity to a Bundle-side one, the same
+shape of justification that kept $\mathcal{E}_{\text{atom}}$'s name.
+$N=D+(N-D)$ is also exact, mirroring $A=Z+(\text{neutrons})$
+structurally, not just by resemblance. On the standard stated above,
+$N$/$D$'s analogy names have a stronger claim to survive than
+$S_{\text{atom}}$, $\mathcal{V}_{\text{atom}}$, or $\gamma_{\text{atom}}$
+ever did, and about as strong a claim as $\mathcal{E}_{\text{atom}}$'s
+own.
+
+\paragraph{Where the analogy still falls short of $\mathcal{E}_{\text{atom}}$'s.}
+$\mathcal{E}_{\text{atom}}$'s identity connects it to a quantity used
+elsewhere in the algebra ($V_{\text{derived}}$, which feeds $T$'s
+higher-dimensional actor). $D$'s identity connects it to Bundle's
+count, which is correct and exact but is not yet shown to feed
+anything further --- no computation in the paper currently reads $D$
+off a Collapsed atom the way $T$ reads $V_{\text{derived}}$. The
+name is earned in the narrow, structural sense; it has not yet been
+shown useful in the broader sense $\mathcal{E}_{\text{atom}}$ has.
+Worth tracking as a distinction, not a disqualification.
+
+\section{``Information density'': why it does not yet pick out
+anything}
+
+Proposed this round: an information density, ``the sum total of
+centers and vectors in an atom,'' possibly weighted by total strength
+alone. Checked against what the phrase could mean:
+
+\begin{itemize}
+\item If it means $N$ (total count): already named, already has an
+analogy (mass number), adds nothing new under a new word.
+\item If it means $D+(N-D)$: this is $N$ again, exactly, by
+arithmetic; same conclusion.
+\item If it means $S_{\text{atom}}=\sum r_i$ (``weighted by total
+strength''): already named (atom strength), and its one-time
+``energy'' name is the specific one the paper's own retraction
+explains, since the genuine energy quantity is $\mathcal{E}_{\text{atom}}$
+and is not $S_{\text{atom}}$.
+\item If it means $S_{\text{atom}}/N$ (mean strength, uncubed): this
+is the one candidate not already named anywhere in the current
+inventory. It is $\gamma_{\text{atom}}$'s un-cubed sibling --- where
+$\gamma_{\text{atom}}=\mathcal{V}_{\text{atom}}/N$ averages the
+cubed, volume-flavored quantity, $S_{\text{atom}}/N$ would average
+the raw one. Not yet shown to participate in anything the way
+$\mathcal{E}_{\text{atom}}$ or $D$ do; a candidate for future
+scrutiny, not a name ready to adopt.
+\end{itemize}
+
+\paragraph{Why ``density'' specifically should stay retired regardless
+of which formula is meant.} The word was already tried, for
+$\gamma_{\text{atom}}$, and retired by the paper's own earlier draft
+for the same reason mass was: it does not participate in anything a
+physical density would license. Reusing the same retired word for a
+different formula does not un-retire it; it repeats the mistake
+under new cover. If $S_{\text{atom}}/N$ turns out, on future
+scrutiny, to earn a name by the rule in Section~1, it should earn
+its own, not the one already spent.
+
+\section{Inertia in Assembly: closed, not open}
+
+This is the one item in this entry that is not a naming question at
+all, and should not be filed as one. The current paper states,
+directly, in the Enclosure's own motion section: \emph{``There is no
+mass term and no momentum carried between steps. This is deliberate
+rather than an omission. A unit carries no inertia, so it cannot
+overshoot\ldots Weighting each step by a mass-like quantity was
+tested and produces oscillation rather than rest, precisely where
+the weighting is most extreme --- a ninefold difference in strength
+gives a $729$-fold weighting under a cubed reading, and a
+demonstrably non-monotonic trajectory.''}
+
+$9^3=729$ is exactly the cubed-strength weighting any
+``density''-as-$\mathcal{V}_{\text{atom}}$-flavored quantity would
+reintroduce if used to weight Assembly's motion step. This has
+already been run, not merely anticipated, and the result was a
+specific, named failure (oscillation against a proven monotonic
+baseline), not an inconclusive one. Proposing a density metric for
+future use in Assembly inertia should not be filed as an open
+question needing a decision; it should be filed as a question this
+project has already asked and already answered, in the negative,
+with a number attached. Any future descriptive density-like metric
+is welcome to exist the way $S_{\text{atom}}$, $\mathcal{V}_{\text{atom}}$,
+and $\gamma_{\text{atom}}$ already do --- as a pure descriptive
+quantity that does not feed Motion --- but not as a candidate for
+inertia specifically.
+
+\section{Weighing the options, and a recommendation}
+
+Combinations actually available, not an exhaustive list of words:
+
+\begin{center}
+\begin{tabular}{p{4.3cm}p{8.3cm}}
+Option & Assessment \\
+\hline
+Keep $N$/$D$ as mass number/atomic number, as currently merged &
+Earns its name by the Section~1 rule; the weaker of the two
+justifications ($\mathcal{E}_{\text{atom}}$'s own use elsewhere is
+stronger than $D$'s, which is proven but not yet used downstream).
+Lowest-risk of the live options. \\
+Retire the $N$/$D$ chemistry analogy entirely, keep $D$ and $N$ as
+bare math & Loses a pedagogically useful hook for no structural
+reason, since $D$ does earn its name under the paper's own rule.
+Overcorrects. \\
+Define $S_{\text{atom}}/N$ as a new, named quantity & Mathematically
+available and not yet claimed by anything, but not yet shown to earn
+a name the way $\mathcal{E}_{\text{atom}}$ or $D$ did. Premature until
+that scrutiny is done. \\
+Reuse ``density'' for any of the above & Not recommended under any
+reading; the word is already spent and reusing it does not change
+that. \\
+Pursue inertia in Assembly via any density-flavored metric & Closed,
+not live; already tested, already failed, with a specific number
+on file. \\
+\end{tabular}
+\end{center}
+
+\textbf{What stands up, by this accounting:} keep $N$/$D$ as
+mass-number/atomic-number, exactly as currently merged, on the
+strength of the earned, not evocative, identity behind $D$. Leave
+``density'' retired. Leave Assembly's motion equation untouched, and
+treat inertia there as answered rather than open. The one genuinely
+undecided item is whether $S_{\text{atom}}/N$ is worth naming at
+all; park it rather than name it, pending the same kind of scrutiny
+$\mathcal{E}_{\text{atom}}$ and $D$ already passed and
+$S_{\text{atom}}$/$\mathcal{V}_{\text{atom}}$/$\gamma_{\text{atom}}$
+already failed.
+
+\end{document}

@@ -1,0 +1,134 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+
+\title{Ideas Parked --- Not Yet Merged (v12)}
+\author{Staging document; each entry marks its eventual destination}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent v11 compared the paper against this staging document and
+found gaps, stale symbols, and one naming collision. This version is
+a different kind of check, requested separately: a full internal
+audit of \texttt{PA\_ReWrite\_V15\_22.tex} against itself --- every
+cross-reference individually verified, every use of the new verb
+names checked for drift, and the document read for whether it still
+reads as one cohesive statement now that Collapse carries full,
+axiom-level standing. Everything found was fixable directly in the
+paper, not a conceptual gap needing to be parked; the fixes are
+recorded here for the historical trail, and the result is
+\texttt{PA\_ReWrite\_V15\_23.tex}.
+
+\section{Link audit: clean, one structural note}
+
+Every label in the document (96) and every reference usage (198
+individual call sites, not just unique labels) was checked --- not
+only that each resolves, which the compiler already guarantees, but
+that the target's own content actually matches the claim the
+surrounding sentence makes about it. Zero mismatches found. Zero
+orphaned references, zero duplicate labels.
+
+One structural note, not a defect: \texttt{eq:lexicon\_cast} is used
+in Section~3.1 (Bundle, path, result) before it is defined in
+Section~6 (Several lexicons, one concept sphere) --- a genuine
+forward reference, correctly resolving to the right equation, just
+pointing ahead of where it is stated. Checked against the original
+source: this forward reference predates the terminology rewrite and
+the Section~2/3 restructuring entirely: this exact sentence, in this
+exact relative position, forward-references the same concept in the
+un-rewritten paper. Not introduced by anything done here; not a
+broken link; recorded only so it is not mistaken for a side effect
+of the restructuring later.
+
+\section{Terminology sweep: two stragglers found and fixed}
+
+Beyond what earlier passes already caught (the systematic Collapse
+noun/verb fix, the Five-to-Six-verbs correction, the Table~2 column):
+
+\begin{itemize}
+\item \textbf{One more ``a Collapse'' noun-phrase}, missed in the
+earlier sweep, sitting in the Abstract itself: ``anti-phase
+cancellation to black is that reading, not a Bundle or a Collapse.''
+Same ambiguity as the six instances fixed before --- a reader could
+read ``a Collapse'' as Axiom~7's structure rather than the verb.
+Corrected to ``not what Bundle or Collapse would do,'' preserving
+the parallel contrast without the noun-phrase risk.
+\item \textbf{One retired verb still active}, in the Forest costume:
+``$\uplus$ gathers them into one bowl.'' ``Gather'' was retired as
+Bundle's name specifically to stop being used as the verb describing
+this operator's own action; this instance described exactly that
+action with exactly that retired verb. Corrected to ``$\uplus$
+Bundles them.''
+\end{itemize}
+
+Confirmed zero remaining instances, checked directly: ``Gather''/
+``gather'' (any case), ``MixMerge,'' the old $\oplus$/$\ominus$
+assignment, any bare noun-phrase use of ``Collapse.'' The verb
+inventory is now used consistently in every one of its roughly 50
+occurrences across the document, not merely in the sections
+originally rewritten.
+
+\section{Cohesion: the document's own summaries of itself, checked
+against what it now contains}
+
+This is the one real category of finding --- not a conceptual gap,
+but the document's own self-description trailing behind its own
+content. Collapse has a full section, a proven non-idempotence
+result, a column in the operator-legality table, and a place in the
+verb-count headline. Three separate places where the paper
+summarizes ``what this does,'' written or last touched before
+Collapse reached that standing, still described only two ways of
+combining units where the current paper has three:
+
+\begin{itemize}
+\item The Abstract's own pipeline sentence --- ``Bundle~$\to$~$T$~$\to$~result
+is one pipeline; assemble~$\to$~rest is the other'' --- silently
+omitted Collapse. Added: ``Collapse its count-preserving alternative
+when every contribution must survive intact.''
+\item The Conclusion's closing summary --- ``What was written is two
+pipelines on the same unit'' --- described Bundle$\to T$ and Assembly
+only. Added the same Collapse clause at the equivalent point.
+\item The Scope-of-the-claim paragraph, a third occurrence of
+materially the same two-way summary (``through a path... or by
+letting external seats rest under assembly''), had the identical gap.
+Fixed the same way, for consistency with the two above.
+\end{itemize}
+
+One further cohesion gap, different in kind: the section that
+actually \emph{proves} UnMix's impossibility (``Rotational
+transposition, and what division is not'') never once says the word
+``UnMix'' in its own text --- it is reachable from UnMix's own
+section by a forward reference, but carries nothing pointing back. A
+reader arriving at the proof directly, rather than by reading
+linearly from the verb table, would have no way to know this is the
+same fact. Added the name and symbol directly into the proof
+section's opening sentence.
+
+Last, Future Work's own roundup of open items --- three named
+paragraphs, each starting ``Open:'' --- did not include Collapse's
+own already-stated open question (Collapse across differing sorts,
+fully stated where Collapse itself is defined) even though the other
+three open items from elsewhere in the paper are all gathered there.
+Added a short fourth paragraph, pointing back to the full statement
+rather than repeating it, so the roundup does not silently omit it.
+
+\section{What this review did not find}
+
+No new conceptual gap, beyond the three already filed in
+Section~4 of v11 (Collapse across differing sorts, Collapse as $T$'s
+actor, Assembly's silence on Collapse). This pass was looking for a
+different failure mode --- the document disagreeing with itself,
+not the document being silent on a question --- and on that
+specific question, the answer is that it does not, once the five
+fixes above are applied. No internal contradiction was found between
+any two stated properties of Bundle, Remove, Collapse, UnCollapse,
+Mix, or UnMix; no axiom's content was found to assume a Collapse
+behavior inconsistent with the one actually proven; no section
+written before the terminology rewrite was found using a retired
+term to make an active claim, beyond the two instances in
+Section~2 above.
+
+\end{document}
