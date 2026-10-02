@@ -1,0 +1,165 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+
+\title{Ideas Parked --- Not Yet Merged (v16)}
+\author{Staging document; each entry marks its eventual destination}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent Two documents, read together: an external-style review of
+\texttt{Pattern\_Arithmetic\_v15\_21.tex} across simplicity,
+consistency, and reproducibility, and a response proposing a
+concrete two-paper split. Before parking either, the review's
+checkable claims were verified directly against the current paper
+rather than taken on faith --- every specific number, every claim
+about where a term is or isn't used, checked and reported below.
+Nothing here is adopted; this is the full record for a future
+decision.
+
+\section{The review, verified}
+
+\paragraph{Every worked number checked, all exact matches.}
+Sun-then-Wind $(-0.866,-0.500,0.011)$, Wind-then-Sun
+$(0.278,-0.500,0.820)$, the $0.6\angle0^\circ$/$0.8\angle120^\circ$
+Mix result $r'\approx0.721$ at $73.9^\circ$, the equator offset at
+$120^\circ$, and the enclosure freeze step counts ($628$ at
+$\delta=0.02$, $1261$ at $\delta=0.01$) all appear in the current
+paper exactly as the review states them. Not approximately ---
+checked character for character where the paper prints them.
+
+\paragraph{``Axiom~7 reads as a second paper lodged inside the
+first'' --- checked, and true without qualification.} Every
+occurrence of $S_{\text{atom}}$, $\mathcal{V}_{\text{atom}}$,
+$\gamma_{\text{atom}}$, $\mathcal{E}_{\text{atom}}$,
+$\alpha_{\text{atom}}$, and $\sigma_{\text{atom}}$ in the current
+paper --- $22$ occurrences total --- falls strictly inside Axiom~7's
+own subsection. Not one appears in Bundle, Mix, $T$, or offset's own
+treatment anywhere else in the document. The review's claim is not
+an impression; it is a count.
+
+\paragraph{``White is used twice'' --- checked, and the paper already
+says so in its own words.} Axiom~3 states, as its own equation:
+``White $=$ saturation of the bowl, or a full-spectrum name.'' Two
+senses, acknowledged in the text itself, exactly as the review
+reports --- not a hidden overload the review discovered, but one the
+paper already names and moves past.
+
+\paragraph{The ``checked directly'' precision claims --- present,
+and genuinely without a reproducibility path.} The inversion-error
+table ($1.1\times10^{-16}$ at several dimensions, $5.6\times10^{-17}$
+at others), the UnMix residual of $10^{-17}$, and the
+``verified to six decimal places'' line for the
+$\mathcal{E}_{\text{atom}}$ identity are all present in the current
+text, stated as results. No supplementary code, configuration file,
+or appendix exists anywhere in the document or its outputs. A reader
+has exactly what the review says: the printed number, and the
+formula it came from, with the orientation convention for
+higher-dimensional cases left to be reconstructed.
+
+\paragraph{The technical consistency claims --- checked, all hold.}
+$A\uplus A\uplus A\uplus A\setminus A=\emptyset$ appears verbatim.
+Mix's non-associativity under the cap is stated directly: ``the cap
+makes the binary operator non-associative.'' Both match the review's
+description exactly.
+
+\paragraph{What this verification adds.} Not a correction --- every
+claim checked came back accurate. What it adds is that the review's
+recommendations now rest on confirmed facts about the current paper,
+not on an impression of an earlier or different one. The ``cut
+Axiom~7'' recommendation in particular is now a verified count
+($22$ uses, $0$ outside Axiom~7), not a stylistic judgment to weigh
+against a competing stylistic judgment.
+
+\section{The two-paper split, as proposed}
+
+\paragraph{The cut.} Paper 1 (the typed algebra): the 4-tuple,
+Axiom~0, Bundle and Remove, Mix and the refusal across directions,
+Collapse and UnCollapse, $T$, offset, the sort table, and the UnMix
+argument. Its sentence: a combination rule should match the unit, and
+these verbs preserve different things. Paper 2 (assembly and the
+enclosure): the assembly signature, the energy, seats, the freeze,
+camps and bodies, and the printed six-unit replay. Its sentence: two
+units can be related without being fused, and seats left under that
+pull freeze into camps only at a stated threshold.
+
+\paragraph{Where Axiom~7's metrics and the costumes go: neither
+paper.} Collapse needs only the counted list of vectors ($N$ and the
+vectors themselves), not the seven derived statistics. The enclosure
+needs only $r$ and, optionally, a resultant weight. The storm,
+forest, table-and-chair, and pathogen costumes restate $\uplus$
+versus $T$ and are required for neither paper's own argument.
+
+\paragraph{What must travel, specifically, or an idea breaks.} Four
+items, stated as requirements rather than suggestions:
+\begin{itemize}
+\item Paper 2 needs roughly two pages of shared preamble from Paper 1
+--- the 4-tuple, the fact that nothing in $(r,\hat n,\chi,\tau)$
+says where a unit sits, and the repulsion-free bracket
+$3+\hat n_A\cdot\hat n_B\in[2,4]$ --- cited, not rebuilt.
+\item Paper 1 should state Assembly as a signature only: both units
+survive, the new object is a contact and an energy that asks for a
+seat. The full $U_{AB}$ formula, which depends on $d_{AB}$, belongs
+in Paper 2, since the current text already says the verb is
+incomplete until the enclosure exists; leaving a half-defined
+$U_{AB}$ in Paper~1 is named as the one genuine risk to the split.
+\item $\mathtt{chladni}$ stays in Paper~1. It is the evidence that
+Mix across directions is refused, not a result about plates, and the
+type table exists because of it.
+\item The higher-dimensional form of $T$ stays in Paper~1, with
+offset's plane transport alongside it. Neither depends on seats.
+\end{itemize}
+
+\paragraph{What the split costs, named directly rather than
+minimized.} A reader of Paper~2 will not see why Mix is
+non-associative; a reader of Paper~1 will not see a camp freeze.
+This is called a loss of juxtaposition, not of either idea: each
+example already stands on its own printed numbers (verified above)
+without the other half present for rhetorical support.
+
+\paragraph{The two wrong ways to make this cut, named explicitly as
+a warning.} Splitting at Axiom~7's position in the document, or
+moving Collapse to Paper~2 because it comes later in the text,
+separates a verb from the unit it acts on --- a structural mistake,
+not a simplification. Splitting off related work or the costumes is
+a deletion, correctly identified as not the same operation as
+writing a second paper.
+
+\paragraph{The condition for the split to work.} Paper~1 ends by
+naming the seat it refuses to supply; Paper~2 begins from that
+refusal. The cut is by question, not by length.
+
+\section{Where this connects to the metrics already parked
+(ideas\_v13--v15)}
+
+Not noted in either source document, since neither had the other's
+context: the ``cut Axiom~7's metrics'' recommendation and the
+mass/density/energy naming question already under discussion are the
+same material viewed from two directions. ideas\_v13 asked which of
+$S_{\text{atom}}$, $\mathcal{V}_{\text{atom}}$, $\gamma_{\text{atom}}$,
+$\mathcal{E}_{\text{atom}}$ earn a physics name; this review asks
+whether the whole catalogue earns a place in \emph{this} paper at
+all, given that none of the four verbs actually reads from it. The
+$D$/$N$ pair added to the Collapse section since (mass-number/
+atomic-number) is unaffected either way: it already depends only on
+the counted list of vectors, which --- per the split proposal
+above --- is exactly what travels with Collapse regardless of where
+the seven-metric catalogue ends up. If the split is ever adopted, the
+open naming questions from ideas\_v13--v15 would need to be
+re-homed wherever $\mathcal{E}_{\text{atom}}$ and its siblings
+land, or shelved as belonging to neither paper's own argument, the
+same way the costumes are described here.
+
+\section{Status}
+
+Nothing in this entry is adopted. The review's factual claims are
+now independently verified rather than merely asserted; the split
+proposal is recorded in full, including its own stated risk (a
+half-defined $U_{AB}$ left in Paper~1) and its own stated conditions
+for success. The connection to ideas\_v13--v15 is new, surfaced
+here for the first time, and is itself undecided.
+
+\end{document}

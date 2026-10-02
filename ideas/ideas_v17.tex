@@ -1,0 +1,190 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+
+\title{Ideas Parked --- Not Yet Merged (v17)}
+\author{Staging document; each entry marks its eventual destination}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent A full resolution to Gap~2 of ideas\_v1 --- ``Location as
+a sort,'' the open item that survived untouched through sixteen
+staging versions while Gap~1 was closed. Worked out and verified
+over several turns; recorded here as one connected entry rather than
+scattered across the conversation that produced it.
+
+\textbf{Blocking condition, stated before anything else in this
+file: this resolution cannot be merged into Paper~1 on its own.} It
+depends on the meta-vector taxonomy itself --- information vectors
+versus meta vectors, as a formal distinction sitting on top of
+Axiom~7 --- being imported first, as its own prior step. That
+taxonomy is already destined for Paper~1 (ideas\_v11), but is not
+yet merged there. Everything below is a specification of what goes
+\emph{into} that taxonomy once it exists, not a thing that can be
+written into the current paper by itself.
+
+\section{Gap~2, restated from source}
+
+ideas\_v1's own words, unedited: \emph{``Location as a sort --- a
+third candidate. The existing paragraph names two candidates and
+adopts neither. A third was tested here: dedicate separate, disjoint
+dimensions to content, to time, and to location, rather than letting
+any of them share an axis.''} Verified there: two shifts through
+disjoint dimensions commute exactly; content stays recoverable after
+both. Left open there, in its own words: \emph{``The encoding itself
+--- what specific rotation a given time value or location corresponds
+to --- is not stated anywhere. The geometry now supports it cleanly;
+the mapping does not exist yet.''} That is the specific gap this
+entry closes.
+
+\section{The architectural decision: meta vector, not sort}
+
+Tested against the paper's own existing distinction, not decided by
+preference. The cap $r\le1$ encodes strength of \emph{content} ---
+how activated a claim is. Location and time are not gradable claims;
+they are coordinates describing where or when content applies.
+Checked against the current paper directly: this is the same line
+already drawn for Assembly's own seat, word for word --- \emph{``A
+seat is external bookkeeping --- a place a unit occupies, carrying
+no meaning and entering no chart. A location sort would be a unit in
+its own right\ldots and would have to pass Axiom~0 on its own
+terms.''} Meta vector is the seat-shaped answer; sort is the
+full-unit-shaped one. Time has its own independent precedent
+pointing the same way: the existing time-bucket metadata is already
+described as \emph{``a fact about how a particular walk was
+assembled, not a property its occupant carries into the next
+one''} --- meta in spirit, already, before this entry names it so
+formally.
+
+The cost, named rather than hidden: a sort gets Mix, Bundle, and $T$
+for free once admitted; a meta vector does not, and needs its own
+grouping mechanism instead. That mechanism is already sketched,
+separately, destined for Inference (ideas\_v11): querying several
+atoms' meta vectors, confirming they sit close, promoting one shared
+value up to the group.
+
+\section{Location: one vector, verified}
+
+Standard $(\theta,\phi)$ from latitude and longitude, the same
+structure $\hat n$ already has, with zero adaptation needed: latitude
+is bounded $[-90^\circ,90^\circ]$, matching $\theta$'s own bounded
+range exactly; longitude is cyclic $[-180^\circ,180^\circ)$, matching
+$\phi$ exactly. Verified directly on real coordinates --- London
+$(51.5^\circ\text{N},0.1^\circ\text{W})\to(0.6225,-0.0011,0.7826)$,
+Tokyo $(35.7^\circ\text{N},139.7^\circ\text{E})\to
+(-0.6194,0.5252,0.5835)$, Sydney
+$(33.9^\circ\text{S},151.2^\circ\text{E})\to
+(-0.7273,0.3999,-0.5577)$ --- all unit norm to six decimal places,
+all distinct. Ready as stated; no open question remains here.
+
+\section{Time: the obvious encoding fails, verified precisely; the
+fix does not}
+
+\paragraph{The naive mapping (hour on $\theta$, minute on $\phi$)
+was tested, not assumed, and broke in two distinct ways.} First, a
+pole collapse: at hour$=0$, every minute value lands at the
+identical point $(0,0,1)$, since $\theta=0$ is a pole and every
+$\phi$ is degenerate there. Second, and worse: $11\!:\!59$ and
+$0\!:\!00$, one minute apart, land at Euclidean distance
+$\approx1.9\overline{9}$ --- antipodal, the maximum possible
+separation on the sphere --- because $\theta$ was never built to
+wrap, and sweeping hour across $[0,\pi]$ treats the end of the cycle
+as the opposite pole from its start rather than its neighbor.
+
+\paragraph{The fix stays inside existing machinery and was verified
+to work.} Put minute on $\phi$ (already cyclic) and hour on $\chi$
+(the atom's own existing phase coordinate, also already cyclic),
+holding $\theta$ fixed at the equator so neither hand ever touches a
+pole. Verified: $11\!:\!59$ and $0\!:\!00$ now land $6^\circ$ apart
+in minute and under $1^\circ$ apart in hour, both hands fully
+independent. $\theta$, freed from a job it was never suited for, sits
+unused --- available for a third hand (seconds) if ever wanted, which
+would make this a structurally exact match for a standard three-hand
+analog clock: two coordinates already on the atom, one still spare.
+
+\section{Timestamp: a register, not a scalar, scaled to $N$}
+
+Not one timestamp per atom --- one per contributing vector. A simple
+atom ($N=1$) carries one; a Collapsed atom carries $N$, since
+different contributions can genuinely have been born at different
+moments, and Collapse's whole design principle is keeping every
+contribution rather than averaging it away. This costs nothing new
+to keep synchronized: UnCollapse already removes exactly one
+contribution, $N\to N-1$ (checked directly against the current
+paper's own stated rule), so the same operation removes that
+contribution's timestamp alongside it, automatically.
+
+\section{Age: derived, never stored, and cannot correctly be
+otherwise}
+
+$\text{age}=\text{now}-\text{timestamp}$, computed on demand, the
+same shape as $V_{\text{derived}}$ and Axiom~7's seven metrics ---
+all read from stored data, none independently stored themselves.
+This is not a convenience; a stored age would be wrong the instant
+time passed, so deriving it is the only version that is ever
+actually correct. ``Now'' itself is external context the formal
+system assumes rather than defines --- the same status the paper
+already gives lexicon standardization: \emph{``sociological and
+empirical; it is not an axiom.''}
+
+\section{Expiry: a second, genuinely new register --- not derivable,
+unlike age}
+
+Raised one turn after timestamp, under the same phrase (``time
+period'') age had already used --- flagged and separated here so the
+phrase does not carry two meanings going forward: \textbf{age} is
+how old, derived; \textbf{expiry} is when a contribution stops being
+valid, and unlike age, it cannot be computed from timestamp alone.
+No universal rule maps birth-time to shelf-life --- different
+contributions to one Collapsed atom plausibly expire at different
+rates (three sensor readings --- humidity, pressure, windspeed ---
+collapsed together need not go stale together). Expiry is therefore
+genuinely new information, requiring its own register, same length
+as the timestamp register, shrinking in lockstep with it under the
+same $N\to N-1$ UnCollapse rule. It yields its own derived check, the
+same shape as age: $\text{now}<\text{expiry}_i$, computed per vector,
+never stored.
+
+\paragraph{Left deliberately open.} Whether Mix or Collapse should
+automatically skip expired contributions, or whether validity
+filtering is a separate reading applied before either operator runs,
+is a real design decision and is not answered here.
+
+\section{Two caveats, kept honest rather than smoothed over}
+
+Timestamps help disambiguate the degenerate UnCollapse case (two
+contributions sharing identical $(r,\hat n,\chi)$) most of the time,
+but are not a guaranteed substitute for the dedicated $id$ field
+from ideas\_v9: two contributions ingested in the same batch could
+share both content and birth time, and only a construction-guaranteed
+$id$ --- not a timestamp --- would still separate them.
+
+\section{Inventory, and where each piece actually lands}
+
+Five meta-vector purposes now specified: $V_{\text{derived}}$ and
+link vectors (already named, ideas\_v11), location, the timestamp
+register, and the expiry register. Per ideas\_v11's own existing
+split, confirmed unchanged by anything here: the taxonomy,
+$V_{\text{derived}}$, location, timestamp, and expiry are all
+\emph{defined} in Paper~1; link vectors are destined for Paper~2
+(Assembly); the grouping mechanism that actually \emph{uses}
+location and the time registers is destined for Inference. This
+entry adds specification to the first category. It does not change
+the other two.
+
+\section{Status}
+
+Mathematically complete and verified: the architectural decision,
+both encodings, the register structure, and the age/expiry split.
+Not mergeable into Paper~1 as a standalone edit, for the reason
+stated at the top of this file --- the meta-vector taxonomy itself
+has to land first. One design question is left deliberately
+unresolved (expired-contribution filtering). Gap~2 is, for the first
+time since ideas\_v1, fully specified rather than open; it is not
+yet closed in the paper, and should not be marked so until the
+taxonomy it depends on is merged.
+
+\end{document}
