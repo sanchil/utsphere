@@ -1,0 +1,760 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+
+\title{Ideas Parked --- Not Yet Merged (v10)}
+\author{Staging document; each entry marks its eventual destination}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent This document holds ideas discussed against Pattern Arithmetic
+v15\_19, Inference, and Assembly, none of which have been written into
+any of those three files yet. Each entry states its status and its
+intended destination. Nothing here is settled; the point of this file
+is to let that be true without leaving Paper 1 mid-edit.
+v5 added one scribble: an identity handle on an atom as a meta field,
+for an honest ``uncollapse'' that looks up a kept bowl rather than
+inverting Mix. v6 added two: a sphere-packing bound relevant to the
+path-reduction item's distance requirement, and a new theoretical
+problem --- merging every atom in a unit space to one representative
+--- which splits the same way the $\tau_{\text{weather}}$ correction
+already did. v7 added one scribble: a scoping refinement to Route~1 of
+Gap~1. v8 added a proposed terminology realignment --- Collapse,
+UnCollapse, Bundle, MixMerge, UnMix --- together with a precise cost
+assessment of merging it into Paper 1, flagging $\ominus$ as a direct
+symbol collision with the existing Axiom~4. v9 resolved that
+collision and one more, with checked, collision-free symbols for
+Bundle and UnCollapse. v10 settles the full verb inventory: a final
+symbol reassignment ($\ominus$ moves to UnCollapse, Remove takes
+$\setminus$), Bundle's idempotence confirmed as already proven under
+its old name, Collapse's idempotence resolved as genuinely different
+from Bundle's (count-preserving, $N\to N{+}1$ per self-collapse,
+$N\to N{-}1$ per UnCollapse), and the reasoning for why --- the same
+evidence-count failure that motivated the Hill form elsewhere. This
+is the version ready to be drafted into
+\texttt{PA\_ReWrite\_V15\_19.tex}.
+
+\section{Destined for Pattern Arithmetic (still formally open ---
+but a leading resolution candidate has emerged, with a citation)}
+
+\paragraph{Mix across differing directions.} The paragraph's own text
+still reads ``left open.'' Nothing here changes that text. What
+changed is that the paper already contains a worked, concrete instance
+of this exact question, in a section not previously connected to it.
+
+\textbf{[Found: the paper already answers this question once, for one
+sort, and points toward a general answer.]} The $\mathtt{chladni}$
+inclusion states, word for word: ``Across modes the map is not
+available, and not for want of effort. Mode space is not closed under
+addition... Cross-mode coexistence is therefore $\oplus$ --- a bowl of
+modes --- and the resulting figure is a reading of that bowl which is
+not $\boxplus$. This is the open question of
+[the differing-directions open item] met in a concrete domain,
+and it suggests the question may be closed negatively for this sort
+rather than left waiting.'' This is a citation, not a new argument ---
+the paper's own words, in a section that was not previously read as
+bearing on Gap~1 directly.
+
+\textbf{[Why this converges with everything else worked through in
+this project, not just chladni.]} Once Mix is read as ``resolve
+several reports on one shared question into a verdict'' (argued in
+v2/v3, carried forward below unchanged), refusing across-direction
+combination stops looking like a gap and starts looking like the
+correct behavior of an operator that was never asked that question in
+the first place. And every practical workaround that actually worked
+in this project was already living on the $\oplus$ side of precisely
+this line, independently: bowls holding separate weather channels,
+per-channel similarity scoring, the candlestick summary for
+reference-atom building, Assembly's own camp-to-system Hill bijection.
+None of them ever needed Mix to cross a direction. All four arrived,
+separately, at ``keep it in a bowl, read it there'' --- which the
+chladni section had already stated as a formal result.
+
+\textbf{[Status: a leading candidate, not yet a decision.]} This
+supports Route 1 (refuse outright, from the three already on file)
+over Route 2 (rotate first) or Route 3 (two-stage operator) as the
+likely resolution, with a real citation behind it rather than
+preference. Writing this into Paper 1 would mean editing the
+``Open: Mix across differing directions'' paragraph to state the
+refusal explicitly, citing the chladni section as precedent. Not done
+here, on request --- parked, ready, pending a decision to merge.
+
+\textbf{[Carried forward unchanged: the reading argued in v2/v3.]} Mix
+is not ``multiple vectors becoming one vector.'' It takes several
+reports already agreed to answer one shared question and returns a
+verdict about that question. The shared $\hat n$ is the precondition
+that makes ``these answer the same thing'' true, not a boundary
+condition on a more general operator. Supporting evidence: same-
+direction opposite-phase cancellation to black (principled
+contradiction-handling, not a fabricated compromise); unmixing's
+proven ill-posedness, with metamerism as independent real-world
+precedent; the paper's own opening line, ``two notes yield a chord,
+not a larger integer... the word `add' names a different rule.''
+
+\textbf{[Carried forward unchanged: the ``we mix all the time''
+challenge, resolved.]} Sugar in tea is one dial, never needed
+differing directions. Red plus green additively sits ``at the same
+place'' in the paper's own words --- already inside Mix's settled
+domain. Paint-layer flattening is confirmed, across every source
+checked, as destructive and irreversible, matching unmixing exactly;
+compositing unflattened layers is $\oplus$, not $\boxplus$, which is
+why ``unmerge them later'' was always possible. Representing a whole
+painting as one vector remains Gap 1 itself, not a counterexample to
+it.
+
+\textbf{[Carried forward unchanged: the two-part split, now read as
+one part likely answered.]} Embedding validity --- does geometric
+closeness on a shared sphere track real semantic agreement at all ---
+was the harder, prior question, true for hue by deliberate
+construction, unstated for an arbitrary sphere of concepts. Given the
+chladni precedent above, the likely answer for sorts where this was
+never stated is that no valid embedding needs constructing, because
+cross-direction combination is refused before the embedding question
+would even matter.
+
+\textbf{[Carried forward unchanged: still confirmed not to help.]}
+Magnitude self-bounding near opposition does not license the
+direction that comes with it. The Hill form and Assembly's Hill
+bijection both fix magnitude only, verified twice, never direction.
+
+\section{A correction, recorded so it is not repeated}
+
+\paragraph{$\tau_{\text{weather}}$ names two different problems, and
+only one of them is Gap~1.} Raised once as a proposed admissible sort
+for combining different weather concepts (rain, drought) across
+directions --- that question is genuinely Gap~1, and the discussion
+above bears on it. Raised a second time, later, meaning something
+narrower: given several already closely-aligned vectors within one
+bounded region, how to arrive at a single representative atom, using
+the Hill form. That second question does not invoke $\boxplus$ across
+differing directions at all --- it is Assembly's already-verified
+system-promotion mechanism (16 camps to 13 systems under the Hill
+bijection), recognized in a new setting, not a Paper~1 admissibility
+question. The two were briefly conflated in this project; recorded
+here so the same conflation is not repeated. Assembly's version needs
+nothing further; Gap~1's version is addressed in Section~1 above.
+
+\section{Destined for Pattern Arithmetic (advances an existing open item)}
+
+\paragraph{Location as a sort --- a third candidate.} The existing
+paragraph names two candidates and adopts neither. A third was tested
+here: dedicate separate, disjoint dimensions to content, to time, and
+to location, rather than letting any of them share an axis.
+
+\textbf{[Verified.]} Two shifts acting through disjoint content
+dimensions commute exactly (checked numerically, not approximately:
+time-then-location and location-then-time landed on the identical
+point to full floating-point precision). Two shifts forced to share a
+single content dimension do not commute, confirming the disjointness
+is what matters, not rotation itself.
+
+\textbf{[Verified.]} Content stays recoverable after both shifts:
+projecting back onto the content dimensions alone reproduced the
+original direction closely, while the time-axis and location-axis
+each carried a clean, separately-readable amount of shift, with
+nothing blended between them.
+
+\textbf{[Open, unchanged.]} The encoding itself --- what specific
+rotation a given time value or location corresponds to --- is not
+stated anywhere. The geometry now supports it cleanly; the mapping
+does not exist yet.
+
+This is real, checkable content, not yet written as an addition to
+the existing paragraph.
+
+\section{Destined for Pattern Arithmetic (open item stays open, unchanged)}
+
+\paragraph{Reducing a path by merging close actors.} The existing
+paragraph asks for three things: a stated distance, a merge rule, and
+a bound on how far a reduced path's endpoint may drift from the
+unreduced one. Discussion here supplied a distance (see below) and
+partially addressed the merge rule, but only for magnitude, not for
+direction --- and direction is the harder half this item is actually
+about.
+
+\textbf{[Verified.]} Switching the strength calculation from the
+companion paper's clip to Inference's already-established Hill form,
+$r'=|z|/(K+|z|)$, changes nothing about the resulting direction
+$\chi'=\arg(z)$. Checked directly on two constructed sequences with
+identical content and opposite order: both gave the same angle under
+either formula. The Hill substitution fixes evidence-count blindness
+in strength; it does not touch the order-blindness this open item is
+actually asking about.
+
+\textbf{[New: a candidate grounding for the stated distance,
+item~(1) of the three things required.]} How many actors can be
+mutually distinguishable --- separated by at least some angle
+$\theta_{\min}$ --- on $\mathcal{S}$ at all is a real, named problem
+(spherical codes, the Tammes problem), not an arbitrary choice to
+make. Exact optimal counts are known only for small $N$; a standard
+approximate bound, treating each point as owning a non-overlapping
+cap of half-angle $\theta_{\min}/2$, gives
+\[
+N_{\max} \;\approx\; \frac{4\pi}{2\pi\bigl(1-\cos(\theta_{\min}/2)\bigr)}
+\;=\; \frac{2}{1-\cos(\theta_{\min}/2)}.
+\]
+Computed for illustration:
+\begin{center}
+\begin{tabular}{rr}
+$\theta_{\min}$ & approx.\ max.\ distinct points \\
+\hline
+$1°$   & $52{,}525$ \\
+$5°$   & $2{,}101$ \\
+$10°$  & $526$ \\
+$30°$  & $59$ \\
+$60°$  & $15$ \\
+$90°$  & $7$ \\
+$120°$ & $4$ \\
+\end{tabular}
+\end{center}
+This is an approximation, not an exact extremal result, but it is a
+real, checkable mathematical object rather than a guess: naming a
+$\theta_{\min}$ for ``close enough to merge'' directly bounds how many
+genuinely distinct actors can exist near each other at all, which
+bears on item~(3), the drift bound, as well as item~(1).
+
+\textbf{[Open, unchanged.]} No merge rule for direction exists. No
+drift bound exists for either magnitude or direction. This item
+remains exactly as open as it was before this discussion, now with
+the magnitude half more precisely separated from the direction half,
+and a real candidate supplied for the distance half specifically.
+
+\section{Destined for Inference (new mechanism)}
+
+\paragraph{Candlestick summary: a richer merge rule for reference-atom
+building.} Not a resolution of the Paper 1 item above --- a different
+question. Paper 1's open item is about \emph{walking}: can a shortened
+path still be walked to roughly the same endpoint. This is about
+\emph{reading}: how to summarize a group of atoms for comparison
+against a reference atom, which is Inference's own established
+business (its reference-atom section), not $T$'s.
+
+\textbf{[Verified.]} Open/close/high/low, computed the way a trading
+candle is, distinguishes exactly the case flat Mix could not. Two
+sequences, identical content, opposite order --- naive Mix gave the
+identical angle ($47.5°$) for both. The candle's open and close swapped
+between them ($20°\!\to\!160°$ versus $160°\!\to\!20°$), correctly
+reading one as ending badly and the other as ending well. High and low
+stayed identical for both, correctly capturing that only the
+\emph{range} was shared, not the \emph{direction of travel}.
+
+\textbf{[Settled, matches existing machinery.]} The scope rule ---
+every atom belongs to exactly one time unit, no overlap between
+buckets --- is not new; it is precisely the discrete-time-bucket
+metadata already defined on a walk's own steps in the companion paper.
+
+\textbf{[Open.]} This gives Inference a genuinely better reference-atom
+merge rule than flat Mix. It is not proposed as a fix for Paper 1's
+walking-specific open item, which remains untouched above. Whether
+open/close/high/low itself needs a coherence check analogous to
+$\bar R_c$ has not been considered.
+
+\section{Destined for Inference (naming caution, not yet a mechanism)}
+
+\paragraph{``Inference Mandelbrot'' is not Assembly's Mandelbrot, and
+should not share its name.} Assembly's multi-zoom promotes an
+unordered thing (a settled camp) and is fully handled by the Hill
+bijection already verified there. Whatever would promote an
+\emph{ordered} thing (a walked path, a movie, a time series) into one
+higher-level atom is a different, harder problem --- it is the
+direction half of the path-reduction item above, restated from a
+different angle. \textbf{[Naming flag only.]} If this is ever built,
+it wants its own name; reusing ``Mandelbrot'' for it would be the same
+kind of collision already caught and corrected for ``collapse,''
+``singularity,'' and the quantum swap test.
+
+\section{Destined across three papers (new, split by piece)}
+
+\paragraph{Meta vectors: a second kind of vector alongside information
+vectors.} Proposed: an information atom may carry two distinct kinds
+of vector. Information vectors are Axiom 7's bundle $v_i$'s, capped at
+$r_i\le1$, potentially several sorts $\tau$ across a whole record.
+Meta vectors describe the atom rather than being part of its content
+--- three named so far: $V_{\text{derived}}$, link vectors (pointers
+between atoms, one- or two-directional), and a timestamp vector.
+Explicitly left open whether more meta-vector types are needed. Meta
+vectors are not capped at 1, and grouping several atoms' meta vectors
+together on like terms is proposed as a distinct mechanism for
+building higher structures. This is one idea that lands in three
+different places once traced to where each piece actually belongs.
+
+\textbf{[Destined for Pattern Arithmetic.]} The taxonomy itself ---
+information vectors versus meta vectors as a formal, named distinction
+sitting on top of Axiom 7 --- is structural, the same kind of addition
+Axiom 7 itself was. $V_{\text{derived}}$ already lives there. A
+timestamp vector, if adopted, would be a third, genuinely different
+treatment of time from the two already on file above: distinct from
+the discrete-bucket metadata already defined on a walk's own step, and
+distinct from the dedicated-axis encoding in the location-as-a-sort
+entry. Not yet clear whether more than one of the three should
+coexist, or which.
+
+\textbf{[Destined for Assembly.]} Link vectors specifically. This is
+the mechanism the shelf's own neighbour-graph note was already naming
+without a concrete form: ``a data structure on seats after rest, not
+$T$.'' Grouping link vectors on like terms is collecting edges into a
+graph, not merging them --- gathering, in the $\oplus$ sense --- so
+it carries none of the open questions below it.
+
+\textbf{[Destined for Inference.]} The grouping mechanism itself:
+querying several atoms' meta vectors, confirming they sit close
+together, and promoting one shared meta-vector up to the group as a
+whole. This is the space-time gating idea from earlier discussion,
+generalized into a standing principle. Timestamp and location get
+\emph{used} here; they are only \emph{defined} in Pattern Arithmetic
+above.
+
+\textbf{[Verified, carried forward as a caveat rather than a new
+finding.]} Combining several atoms' $V_{\text{derived}}$'s stays safe
+only under the constraint the original already carries: auxiliary,
+never promoted to a trusted, walkable atom on its own. Checked
+directly that neither Inference's Hill form nor Assembly's Hill
+bijection touches this constraint --- both fix magnitude only, never
+direction --- so grouping $V_{\text{derived}}$'s inherits that same
+limit rather than escaping it.
+
+\textbf{[Note added here.]} Link vectors were separately discussed as
+one possible mechanism for a limited, honest form of ``uncollapse'':
+not inverting Mix (still impossible, unaffected by anything here),
+but keeping an explicit, external pointer from a collapsed atom back
+to the bowl that produced it, created at collapse time, before the
+bowl itself might otherwise be discarded. This is navigation via a
+kept record, not reconstruction from the collapsed result --- the
+distinction the white-light/prism discussion turned on, confirmed
+there to matter.
+
+\section{Destined across three papers (scribble, v5)}
+
+\paragraph{Identity handle as a meta field, for honest uncollapse.}
+An information atom may carry one more meta quantity: an opaque
+identity $id$, assigned before any gather or Mix, and kept on the
+atom afterwards. The scribble that prompted this note called it a
+``meta vector'' with $\tau_{id}$ equal to that identity. Fine-tuning
+below refuses $\tau_{id}$ as a sort and keeps $id$ as a \emph{field},
+in the same shelf as timestamp, mint-location, and link pointers
+already named in the meta-vector entry.
+
+\textbf{[What it is for.]} Mix remains irreversible (Paper 1 v1.1).
+``Uncollapse'' here does not reconstruct ingredients from a yellow.
+It means: at collapse time, write a pointer from the resulting atom
+(or from the register occupant after a walk) back to the bowl that
+produced it, and keep that bowl under the same $id$ (or a pair
+$result\_id \leftrightarrow bowl\_id$). Later, given the result, look
+the bowl up. Navigation by a kept record, not inversion. This is the
+same distinction already recorded under link vectors and the
+white-light / prism discussion.
+
+\textbf{[Viability --- what works.]}
+An opaque handle is the right shape. It does not need to live on
+$\mathcal{S}$, does not need $r\le 1$, and does not need a direction.
+A string or integer key is enough. Creating the pointer \emph{before}
+the bowl is discarded is the whole trick; after discard there is
+nothing to uncollapse. Links already named that graph; $id$ is the
+node name those edges need. Assembly can own the edge table
+(neighbour / parent-bowl). Paper 1 only needs the taxonomy: $id$ is
+meta, not a unit of truth. Inference may use $id$ to re-open a bowl
+and run a second reading.
+
+\textbf{[Viability --- what to refuse now.]}
+Do not mint $\tau_{id}$. $\tau$ is the legality tag of an information
+vector. An identity is not a pattern and must not appear in the type
+table. Do not encode $id$ as an angle on the sphere; colliding two
+ids geometrically would be a false Mix. Do not claim that
+$\{A\}\ominus A$ or $T^{-1}$ plus $id$ inverts $\boxplus$. Gather
+still satisfies $A\oplus A=A$: two tokens of the same pin share one
+address and, if they are the same \emph{instance}, one $id$; two
+distinct instances of the same pin (two physical chairs) need two
+ids and are not collapsed by $\oplus$ unless the lexicon says they
+are the same state. That instance-versus-kind cut is the fine-tuning
+this scribble does not finish.
+
+\textbf{[Tiny picture.]}
+Bowl $B=\{\mathrm{red},\mathrm{green}\}$, $id_B=\#17$.
+Mix reads yellow, $id_Y=\#18$, meta link $\#18\to\#17$.
+Uncollapse($\#18$) returns $B$, still red and green, still two atoms.
+The yellow is not pulled apart. The prism was kept on the shelf.
+
+\textbf{[Status.]} Scribble. Destined: taxonomy to Paper 1 (meta
+shelf, next to $V_{\mathrm{derived}}$); the pointer table to
+Assembly; lookup-and-reread to Inference. Not merged. Fine-tune
+later: who assigns ids, instance vs kind under $A\oplus A=A$, and
+whether one atom may keep a stack of parent-bowl ids after several
+collapses.
+
+\section{A theoretical problem, split the same way Section~2 already
+split one --- new, v6}
+
+\paragraph{Can every atom in a unit space, across all labels and
+types, be merged to one representative atom?} Posed precisely: a
+bounded region holds many already-settled atoms, of possibly
+\emph{differing} sorts $\tau$, not just differing content within one
+sort. Can the whole collection become one representative for that
+region? Framed, as requested, with both a theoretical and a practical
+answer in view, the way the sphere-packing question above was.
+
+\textbf{[Solved --- but only for the restricted case, which is
+Section~2's correction in general form.]} When every atom in the
+region shares one sort (or, more precisely, one already-admitted
+$\varphi_\tau$ direction-family), this is exactly
+Assembly's already-verified system-promotion mechanism: many close
+atoms, one representative, via the Hill bijection rather than the
+naive clip, because Hill preserves evidence-count where the clip
+saturates and loses it. Sixteen camps correctly became thirteen
+systems on this basis, not eleven. ``A lot of random atoms'' changes
+nothing here --- randomness in position or content is fine, provided
+the sort is shared. This is Section~2's $\tau_{\text{weather}}$
+correction, restated as the general pattern it always was: random
+instances of one $\tau$, closely aligned, merge cleanly.
+
+\textbf{[Still open --- this is Gap~1, not a second result.]} ``Across
+all labels and types,'' taken literally, names the harder case: atoms
+of genuinely \emph{different} sorts in the same region. This is not
+solved by Hill's equation or the bijection. Confirmed twice already
+in this project: both Inference's Hill form and Assembly's Hill
+bijection fix magnitude saturation only, and neither touches direction
+or sort. Merging across genuinely different sorts into one atom is
+precisely Gap~1 (Section~1), for which a leading candidate (refuse
+outright, per the $\mathtt{chladni}$ precedent) exists but has not
+been written into Paper~1.
+
+\textbf{[Theoretical versus practical, for the cross-type half
+specifically.]} The sphere-packing question above had a well-defined
+continuous quantity (point count) that a practical approximation could
+meaningfully estimate. This question's open half does not: there is no
+stated $\varphi_\tau$ for combining across sorts to approximate in the
+first place. A random or approximate merge rule cannot stand in for a
+merge rule that has not been defined --- this is an admissibility gap,
+not a precision gap, and the two should not be read as the same kind
+of ``open'' question.
+
+\textbf{[So, precisely, correcting the framing in which this was
+posed.]} ``We solved it using bijection and Hill's equation'' is true
+for same-sort regions, and is a real, verified, reusable result ---
+but it is not yet true for atoms spanning genuinely different types,
+which remains exactly Gap~1, unresolved by anything checked so far.
+The two cases should be kept as separate claims, the same way
+Section~2 already separated them once for $\tau_{\text{weather}}$
+specifically; this entry generalizes that same correction rather than
+adding a new one.
+
+\section{Destined for Pattern Arithmetic (scribble, v7 --- a scoping
+refinement to Route~1 of Gap~1)}
+
+\paragraph{``Refuse outright'' is a claim about $\boxplus$, not a
+permanent bar on ever combining unlike sorts by any mechanism.}
+Raised as a caution on Section~1's leading candidate: likely that only
+like-typed atoms will ever practically need merging, but unwise to
+state Route~1 in a way that forecloses future, explicitly-justified
+mechanisms for binding unlike sorts, should a practical need for one
+arise.
+
+\textbf{[The distinction that matters.]} Route~1 was always a claim
+about $\boxplus$ specifically --- that this particular operator, as
+defined, was never asked the cross-direction question and correctly
+declines to answer it. It was never a claim that no mechanism, under
+any name, could ever combine unlike sorts. Conflating the two would
+overclaim something the evidence never supported.
+
+\textbf{[Why this is not a new principle, but a confirmation of one
+already load-bearing in the paper.]} Axiom~0 is already built this
+way: ``a sort absent from this table is undecided, not admitted;
+treat it as inadmissible until a $\varphi_\tau$ is stated.''
+Inadmissible \emph{now}, for lack of a stated proof --- not
+inadmissible forever, by declaration. $\mathtt{chladni}$ is the
+existing demonstration: admitted later, on stated grounds, not
+pre-emptively barred. Even $\mathtt{chladni}$'s own hedge on
+cross-mode combination, the strongest evidence behind Route~1, uses
+``may be closed negatively... rather than left waiting'' --- a
+leaning, not a verdict.
+
+\textbf{[How Route~1 should actually be worded, if merged.]} Not:
+``$\boxplus$ refuses states at differing directions, full stop.''
+Better: ``$\boxplus$, as currently defined, refuses states at
+differing directions; a cross-sort reading remains possible in
+principle, as its own stated mechanism, admitted on its own terms the
+way any new capability is --- not as a modification of $\boxplus$
+itself.'' This keeps the refusal honest about what has actually been
+shown without overclaiming permanence the evidence does not support.
+
+\textbf{[Status.]} Scribble. A scoping note on Section~1's existing
+entry, not a new result and not yet written into that section's own
+text. ``Probably rare'' (practical likelihood) and ``permanently
+barred'' (structural impossibility) are different claims; only the
+first has support, and Route~1's eventual wording should reflect only
+that one.
+
+\section{Destined for Pattern Arithmetic (scribble, v8 --- proposed
+terminology realignment, with cost assessment, not merged)}
+
+\paragraph{Proposed: Collapse, UnCollapse, Bundle, MixMerge, UnMix.}
+A full realignment of five terms, proposed together:
+\begin{itemize}
+\item \textbf{Collapse} ($\oplus$) --- one atom, one origin, several
+      internal vectors.
+\item \textbf{UnCollapse} ($\ominus$) --- subtract one atom's vectors
+      from another; not previously discussed in depth.
+\item \textbf{Bundle} --- a bowl/set, many atoms, kept separate,
+      separate origins.
+\item \textbf{MixMerge} ($\boxplus$) --- one new atom, fused.
+\item \textbf{UnMix} --- not possible.
+\end{itemize}
+This reassigns Collapse and Bundle relative to the reading settled
+two exchanges earlier in this project (Collapse $=\oplus=$ the bowl,
+confirmed three times directly from source text and from the bowl's
+own definition as a separate finite set). The proposal here reverses
+that assignment. Recorded as a deliberate choice to evaluate, not
+adopted, and not written into Paper~1.
+
+\textbf{[Blocking: a direct symbol collision.]} $\ominus$ is not
+available for UnCollapse. It already carries its own formal axiom:
+``Axiom 4: Gather and remove ($\oplus$, $\ominus$)... $\ominus$
+undoes a gather. It is not anti-phase interference.'' Two
+incompatible operators cannot share one symbol in the same document.
+A different symbol is needed before UnCollapse can be merged under
+any sequencing; this is not a matter of care in editing, the symbol
+itself is already spoken for.
+
+\textbf{[Instance counts, checked directly against the source.]}
+\begin{center}
+\begin{tabular}{llcl}
+Term & Current meaning & Count & Title usage \\
+\hline
+Collapse & $\oplus$'s bowl-forming act & 14 & Yes --- a subsection
+title \\
+Mix / $\boxplus$ & fused, single output & 77 / 50 & Yes --- Axiom~5's
+own title \\
+Bundle & one atom, $N$ internal vectors & 10 & No \\
+Bowl & a set of separate atoms & 80 & No, used throughout \\
+\end{tabular}
+\end{center}
+
+\textbf{[Cost, per piece.]}
+\begin{itemize}
+\item \emph{Collapse as one atom:} high cost, and a reversal rather
+      than a rename. The ``Process principle: Collapse, path,
+      result'' subsection's own stated reasoning --- ``collapse is
+      the act that discards the order and count of that sequence...
+      $R=$ the bowl'' --- would need rewriting, not relabeling: its
+      current logic explains why collapse yields a set, and that
+      explanation would need to become its own opposite.
+\item \emph{Bundle as bowl:} high cost. Collides with Bundle's own
+      existing, different meaning (Axiom~7's $N$-vectors-in-one-atom).
+      Bowl already carries 80 instances of its own, separate meaning;
+      this is a reconciliation of two already-distinct, already-used
+      terms, not an added synonym.
+\item \emph{MixMerge, rename only, same underlying behavior:}
+      moderate cost, mechanical. 77 instances is substantial, but
+      nothing about $\boxplus$'s actual behavior changes --- risk is
+      missed instances or inconsistent phrasing, not logical
+      breakage.
+\item \emph{UnMix, named but still impossible:} low cost. The concept
+      is already stated (``division as unmixing is shown ill-posed'')
+      --- this mostly formalizes an existing result with a name and a
+      symbol, once a free symbol is chosen.
+\end{itemize}
+
+\textbf{[Overall, honest verdict.]} The $\ominus$ collision is a hard
+blocker, independent of sequencing, and needs resolving before
+anything else proceeds. Past that, Collapse-reversal and
+Bundle-reassignment are the expensive, high-risk pair, each touching
+foundational, load-bearing text and interacting with one another.
+MixMerge and UnMix are comparatively cheap and could move first,
+independently, as a lower-risk starting point if this is pursued.
+
+\textbf{[Status.]} Scribble. Cost assessed, not adopted. No change
+made to v15\_19. Awaiting a decision on sequencing, and a replacement
+symbol for UnCollapse, before any part of this could be merged.
+
+\section{Destined for Pattern Arithmetic (scribble, v9 --- symbol
+resolution for Bundle and UnCollapse, plus when ids are actually
+needed)}
+
+\paragraph{Bundle gets a symbol and becomes a verb.}
+\[
+\text{Bundle}:\quad A_1 \uplus A_2 \uplus \cdots \uplus A_n
+\;\longrightarrow\; B \qquad (\text{many atoms, kept separate}).
+\]
+Checked clean against the source: $\uplus$ (multiset union) does not
+appear anywhere in Paper~1. The choice is principled, not arbitrary
+--- $\uplus$'s standard mathematical meaning, combine while
+preserving separate membership, is exactly Bundle's job. Worth being
+precise about what this move actually is: with $\oplus$ reassigned to
+Collapse under the v8 scheme, Bundle-as-verb takes over the role
+Paper~1's own $\oplus$ currently performs (the bowl-forming act,
+nothing merged, nothing lost). Not a new mechanism --- a new name and
+symbol for an existing one, freed up because the old symbol moved.
+
+\paragraph{UnCollapse gets a symbol.} $\circleddash$, also checked
+clean against the source. Visually related to $\ominus$, so the
+family resemblance between Collapse/UnCollapse reads correctly, while
+remaining a genuinely distinct symbol --- no collision with Axiom~4's
+own $\ominus$.
+
+\textbf{[Precisely when ids are needed for UnCollapse, and when they
+are not.]} Collapse, under this scheme, is lossless by construction:
+every $v_i$ stays individually intact inside the resulting atom.
+Splitting it back apart is \emph{already} structurally possible
+without ids whenever every incoming vector has a distinct
+$(r_i,\hat n_i,\chi_i,\tau_i)$ --- the bundle's own listing already
+carries everything needed.
+
+Ids earn their place in exactly one case: two \emph{distinct} source
+atoms that happen to share identical values. Without an id, the two
+resulting entries inside the bundle are indistinguishable from each
+other --- UnCollapse would return the right values, with no way to
+confirm whether this was genuinely two separate instances that
+happened to match, or something else that produced the same numbers.
+This is the same instance-versus-kind distinction already on file
+from the v5 scribble: ``two distinct instances of the same pin...
+need two ids.''
+
+So, stated precisely rather than as a blanket claim: UnCollapse is
+value-exact with or without ids. What ids add is identity-exact
+recovery --- confirmation that what comes back out is traceably the
+same atom that went in, not merely one with matching numbers. For the
+ordinary, all-distinct case, this guarantee is free. For the
+degenerate, duplicate-value case, it does not exist without an id.
+That is the honest scope of ``may become a possibility with ids'' ---
+a fix for one specific, real ambiguity, not a general precondition for
+UnCollapse to work at all.
+
+\textbf{[Status.]} Scribble. Two symbol collisions from v8 are now
+resolved (Bundle: $\uplus$; UnCollapse: $\circleddash$). The
+Collapse-reversal and Bundle-reassignment costs noted in v8 are
+unchanged by this --- resolving the symbols does not reduce the cost
+of rewriting the foundational passages that currently use these terms
+the other way. Not written into v15\_19.
+
+
+
+
+
+\section{Destined for Pattern Arithmetic (scribble, v10 --- the full
+verb inventory settled, ready to draft)}
+
+\paragraph{Final symbol assignment, reasoned rather than aesthetic.}
+Proposed: $\ominus$ moves from Remove to UnCollapse; Remove takes
+$\setminus$ instead. Not merely a preference --- $\oplus$ and
+$\ominus$ are a matched shape-family by standing convention (same
+circle, opposite sign), and that pairing belonged to Gather/Remove
+only while $\oplus$ meant Gather. Now that $\oplus$ means Collapse,
+the natural partner follows it: $\oplus$/$\ominus$ as Collapse/
+UnCollapse restores the convention rather than breaking it. $\uplus$
+(Bundle) never had a natural circled-minus partner; $\setminus$, set
+difference, fits it better and matches Bundle's own description as
+practically a set operation. Checked clean against the source: zero
+instances of \texttt{\textbackslash setminus} anywhere in Paper~1.
+
+\textbf{Final table:}
+\begin{center}
+\begin{tabular}{llll}
+Verb & Symbol & Produces & Status \\
+\hline
+Bundle & $\uplus$ & bowl, atoms kept separate & Settled \\
+Remove & $\setminus$ & undoes Bundle & Settled (was $\ominus$) \\
+Collapse & $\oplus$ & one atom, count-preserving & Settled, this entry \\
+UnCollapse & $\ominus$ & removes one contribution & Settled, this entry \\
+MixMerge & $\boxplus$ & one atom, fused & Settled (rename only) \\
+UnMix & $\boxminus$ & --- & Proven impossible, Section~7.2 \\
+\end{tabular}
+\end{center}
+
+\paragraph{Bundle's idempotence: confirmed, already proven, nothing
+new.} $A\uplus A=A$. Not a new claim --- stated, word for word, under
+the retiring name: ``$\oplus$ collects: identical tokens do not
+double ($A\oplus A=A$)... $\{A\}\cup\{A\}=\{A\}$.'' Ordinary set
+theory already backs this; a set never had a duplicate-counting
+mechanism to begin with, so $\{A_1,A_1\}$ and $\{A_1\}$ were never
+different objects. Confirmed by direct derivation from the ``asleep
+on the key'' case: many accidental repeats of one atom, Bundled,
+still return the same single bowl entry.
+
+\textbf{[Settled, carried forward, no change needed at merge.]}
+
+\paragraph{Collapse's idempotence: resolved as genuinely different
+from Bundle's, after real back-and-forth.} $A\ \text{Collapse}\ A \ne
+A$ in general. Reached by three convergent arguments, not one:
+
+\begin{enumerate}
+\item \emph{Information-loss.} Collapse's own stated purpose is that
+no information is lost. If $A\ \text{Collapse}\ A=A$, the second
+contribution is discarded exactly the way Bundle already discards
+duplicates --- which would make Collapse behave identically to
+Bundle in this one case, undercutting the reason the two needed to be
+separate verbs.
+\item \emph{Algebraic contradiction.} If $A\ \text{Collapse}\ A=A$,
+then UnCollapsing one $A$ back out must return the other $A$, giving
+$A\ \text{UnCollapse}\ A=A$ --- which directly contradicts
+$A\ \text{UnCollapse}\ A=0$ (the atom-level analogue of
+$\{A\}\ominus A=\emptyset$, independently solid). Both cannot hold
+unless $A=0$.
+\item \emph{The evidence-count parallel.} This is the same shape of
+failure that motivated fixing Mix's cap with the Hill form: if exact
+duplicates are silently discarded, two independent contributions that
+happen to agree exactly become indistinguishable from one
+contribution stated once --- precisely the count-blindness that was
+expensive to fix once already, now reappearing in a different verb.
+\end{enumerate}
+
+\textbf{[One self-correction recorded honestly.]} An early argument
+for this conclusion leaned on $T_w\circ T_w\neq T_w$ (repeated visits
+in a path are genuine, separate steps) as a direct analogy. That
+analogy was flagged and partly withdrawn: a path's repeated visits
+are sequential, temporally separate events, while Collapse's multiple
+contributions are simultaneous and co-present --- not obviously the
+same kind of multiplicity. The three arguments above do not depend on
+that analogy and are treated as the actual basis for the conclusion.
+
+\paragraph{Where $N$ lives, and why nothing new needs storing.} $N$
+is not a new field. Axiom~7 already defines it as the length of the
+bundle's own $v_i$ list --- ``$N$ is the atom's info number.'' If
+duplicates are not discarded, $N$ is simply however many entries
+remain; the count was never anything other than a property of the
+list itself. $A\ \text{Collapse}\ A$ gives $N=2$: two entries, both
+reading $A$'s own $(r,\hat n,\chi)$ identically. Shorthand notation
+for this case, proposed and worth keeping: $A^{\langle N\rangle}$ for
+$N$ identical copies, layered on top of the general bundle notation
+rather than replacing it.
+
+\textbf{[UnCollapse's algebra, now fully consistent.]}
+\[
+A\ \text{UnCollapse}\ A = 0 \quad (N=1\text{ case, matches }\{A\}\ominus A=\emptyset);
+\qquad N \to N-1 \text{ per removal, in general.}
+\]
+$A^{\langle 2\rangle}\ \text{UnCollapse}\ A = A^{\langle 1\rangle} = A$
+holds correctly --- specifically because $2-1=1$, not because of any
+general collapsing-to-bare-$A$ rule. No remaining contradiction
+anywhere in the chain.
+
+\paragraph{What this leaves genuinely open, not resolved here.} The
+$\tau$ case --- $A\ \text{Collapse}\ B$ where $A$ and $B$ share
+magnitude and position but differ in sort --- is not handled by
+$\chi$: $\chi$'s confirmed job is disambiguating multiple things at
+one shared direction, nothing about sort, and current Axiom~7
+requires every vector in one bundle to share the atom's single
+$\tau$. Handling genuinely different-$\tau$ contributions needs the
+per-vector $\tau_i$ extension flagged several entries back as not yet
+adopted. Not solved by anything in this entry.
+
+\textbf{[Status.]} Scribble, now settled enough to draft. This
+closes the verb-inventory work carried across v8--v10. Next step is
+\texttt{PA\_ReWrite\_V15\_19.tex} itself, not another ideas version.
+
+
+
+\section{Considered and found to need nothing filed}
+
+For completeness: the reference-atom and precursor-witness mechanism,
+the bundle-vector / uncapped $V_{\text{derived}}$ distinction from
+Mix, the $\pi=(x;w_1,\ldots,w_n)$ poem trajectory, and the precise
+definition of $\chi$ as internal phase-color (already stated in
+Axiom 1: ``two identities may occupy the same direction without
+overwriting one another'') were all discussed at length and all
+turned out to already be fully present in Inference and Paper 1
+respectively. Nothing from those threads is parked here, since there
+was nothing left unresolved to park.
+
+\end{document}
