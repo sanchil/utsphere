@@ -1,0 +1,14 @@
+https://en.wikipedia.org/wiki/A%E1%B9%A3%E1%B9%AD%C4%81dhy%C4%81y%C4%AB
+
+Pāṇini’s Aṣṭādhyāyī (composed around the 5th to 4th century BCE) functions as an algorithmic and mathematical engine for language rather than a traditional descriptive book. It treats grammar like a formal system of equations, variables, and logical operations.
+Core Mechanisms of the "Arithmetic of Grammar"
+• Approximately 4,000 Sūtras (Rules): Pāṇini compressed the entire morphology, phonology, and syntax of Sanskrit into about 3,983 to 4,000 aphoristic rules. These act like program functions or mathematical formulas.
+• Metalanguage and Variables (Śiva Sūtras): He grouped sounds into shorthand sound clusters using the Śiva Sūtras, which function identically to variables or arrays in computer code.
+• Anubandhas (Data Tagging): He attached silent, non-pronounced marker letters (anubandhas) to roots and suffixes. These tags do not appear in the final spoken word, but they dictate how the root behaves mathematically during transformations (like a hidden data attribute).
+• Adhikāra (Rule Inheritance / Scope): Rules in the Aṣṭādhyāyī cascade downwards (adhikāra) from a parent rule to all subsequent child rules until a boundary condition or exception stops them—mirroring object-oriented class inheritance.
+• Paribhāṣā (Meta-Rules & Conflict Resolution): When two or more grammatical rules compete or conflict for the same word construction, Pāṇini built a logical priority and exception system (such as the famous resolution on right-hand side vs. hierarchical rule application) to ensure zero ambiguity.
+Why It Resembles Computation
+Modern linguists and computer scientists (including Noam Chomsky and early computational lexicographers) have likened the Aṣṭādhyāyī to a Turing machine or a generative grammar engine. Instead of just listing words, it acts as a "root-and-suffix language machine": you input a root and a set of grammatical operators, run the rules sequentially, and it deterministically outputs a grammatically valid Sanskrit word or sentence.
+Would you like to explore how a specific grammatical derivation or Sūtra conflict (like the Vipratiṣedha principle) operates step-by-step?
+
+
