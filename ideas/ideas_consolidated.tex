@@ -4,7 +4,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 
-\title{Ideas Register --- Consolidated, v1 to v19}
+\title{Ideas Register --- Consolidated, v1 to v20}
 \author{One file for every parked idea, with its current status}
 \date{}
 
@@ -24,7 +24,7 @@ discussions. Each status was checked by searching the current paper,
 elsewhere --- the \texttt{Assembly\_v1.tex} and
 \texttt{Inference\_v1.tex} copies on hand (which may be older than
 your working copies; if so, the ``not filed'' marks below should be
-rechecked against yours). Entries from v19 onward are appended here; v19 is the first.
+rechecked against yours). Entries from v19 onward are appended here; v19 and v20 are the first two.
 
 \paragraph{Status vocabulary.}
 \textbf{CLOSED} --- resolved and merged into the paper.
@@ -132,11 +132,16 @@ R34 & Sphere-packing bound for the ``stated distance'' & v6 & Inference & \textb
 R35 & Coherence check for the candlestick & v1 & Inference & \textbf{OPEN} --- never considered \\[4pt]
 
 \multicolumn{5}{@{}l}{\textit{Open --- atom structure (v19)}} \\*
-R36 & Pure and mixed atoms: cores; per-vector $\tau_i$ as the general form; Mona Lisa as test case; derived quantities per sort & v19 & Paper 1 & \textbf{OPEN} --- broadens R20 \\
+R36 & Pure and mixed atoms: cores; per-vector $\tau_i$ as the general form; Mona Lisa as test case; direction-based derived quantities per sort & v19 & Paper 1 & \textbf{OPEN} --- broadens R20 \\
 R37 & Collapse of multi-vector contributions (not fixed at one vector each) & v19 & Paper 1 & \textbf{RESOLVED, NOT MERGED} --- paper still says one vector per contribution \\
 R38 & $N$ as number of cores; $Q$ as number of vectors (resolves the collision with $N$ as vector count in Axiom 7) & v19 & Paper 1 & \textbf{DECIDED} --- $N$ cores, $Q$ vectors; paper edits wait for the merge \\
 R39 & Collapsed atom as a counted bowl; commuting test & v19 & Paper 1 & \textbf{OPEN} --- test not yet run \\
-R40 & $T$ asymmetry: a bowl is not an actor; a Collapsed atom needs a cast & v19 & Paper 1 & \textbf{OPEN} --- relates to R21 \\
+R40 & $T$ asymmetry: a bowl is not an actor; a Collapsed atom needs a cast & v19 & Paper 1 & \textbf{OPEN} --- relates to R21 \\[4pt]
+
+\multicolumn{5}{@{}l}{\textit{Open --- energy and effective counts (v20)}} \\*
+R41 & Energy from strength, vector count and direction: $\mathcal E=S^2/Q+Q\,\mathrm{Var}(r)$; $S^2/Q\le\mathcal E\le S$; $|V|^2=(1-\alpha)\mathcal E+\alpha S^2$ & v20 & Paper 1 & \textbf{PARKED} --- identities verified, not in paper; $\mathcal E$ keeps ``energy,'' $\mathcal V$ keeps ``volume'' \\
+R42 & Effective vector count $Q_{\mathrm{eff}}=S^2/\mathcal E$; overlap with $\sigma_{\text{atom}}$ & v20 & Paper 1 & \textbf{OPEN} --- candidate; keep it, $\sigma_{\text{atom}}$, both, or neither \\
+R43 & Strength-only metrics per sort and for the whole; effective number of sorts $1/\sum w_s^2$; pooling ratio & v20 & Paper 1 & \textbf{OPEN} --- needs one stated convention \\
 \end{longtable}
 \normalsize
 
@@ -412,8 +417,9 @@ region are facts of a level, not coordinates of an atom.
 merges, no new type is minted. Relations within a sort are as before;
 across sorts they exist only under a stated rule (Axiom~0's
 ``undecided, not admitted,'' applied to Collapse). So derived
-quantities are computed per sort, and cross-sort ones are undefined
-until a rule exists.
+quantities that use direction are computed per sort, and cross-sort ones
+are undefined until a rule exists. (Refined in v20: strength-only
+quantities may also be given for the whole atom.)
 \item \emph{Cores.} A core is a unit inside an atom, usually one
 $\tau$ (a pure type) but free to hold several --- words and numbers
 together --- as typical, not as a rule. The general form is
@@ -454,6 +460,89 @@ the path carries it, and a bowl is a good surface for displaying one).
 \end{itemize}
 \emph{Status: R36--R40; R20 and R21 cross-referenced.}
 
+
+\subsection*{v20 --- energy from strength, counts, and direction; effective counts}
+Started from a recollection that energy is $\sum r^3$. The paper's
+energy is $\mathcal E=\sum r^2$; $\sum r^3$ is the atom's volume,
+formerly ``mass.'' Nothing needs renaming, and $\sum r^3$ keeps a
+geometric reading (strength as a radius, as in Assembly's softening
+length).
+
+\textbf{Energy from strength, vector count $Q$, and direction already
+exists in $\mathcal E$.} Three exact relations, verified on 20{,}000
+random atoms (errors near $10^{-14}$, no violations), with
+$S=\sum r_i$:
+\begin{itemize}
+\item $\mathcal E=S^2/Q+Q\,\mathrm{Var}(r)$: an evenly spread floor,
+set by $S$ and $Q$ alone, plus concentration.
+\item $S^2/Q\le\mathcal E\le S$.
+\item $|V_{\text{derived}}|^2=(1-\alpha)\mathcal E+\alpha S^2$: the
+resultant's energy, blending the incoherent baseline with the fully
+aligned value, weighted by the paper's coherence $\alpha$.
+\end{itemize}
+Which works better: the floor $S^2/Q$ cannot tell an even atom from a
+concentrated one (both give $1.000$ at $S=2$, $Q=4$, where $\mathcal E$
+gives $1.000$ against $1.810$). $\mathcal V=\sum r^3$ separates them even
+more sharply ($0.500$ against $1.715$) but has no identity tying it to
+anything beyond the radius reading. So $\mathcal E$ is the energy and
+$\mathcal V$ stays volume. Cores $N$ enter through the same
+variance-of-a-sum algebra applied per core (plain algebra, not run
+separately) and through the ratios $Q/N$ and $S/N$. The mean strength
+$S/Q$, the parked candidate from v13 (then written $S/N$), is the centre
+of the variance decomposition and keeps a plain name.
+
+\textbf{Effective vector count} $Q_{\mathrm{eff}}=S^2/\mathcal E$
+(the participation ratio in physics, the effective sample size in
+statistics).
+\begin{itemize}
+\item $Q$ counts vectors and $Q_{\mathrm{eff}}$ counts those that matter:
+100 vectors at $0.05$ give $100$; one vector at $0.9$ plus 99 at
+$0.001$ give $1.23$.
+\item The largest vector carries at least $1/Q_{\mathrm{eff}}$ of the
+strength (50{,}000 random atoms, no violations).
+\item Scale-free: halving every $r$ leaves it unchanged ($2.2099$ both).
+\item With direction: $|V|^2/S^2=\alpha+(1-\alpha)/Q_{\mathrm{eff}}$
+(error near $7\times10^{-16}$), so two dimensionless numbers fix the
+resultant's size.
+\item Limits: it re-expresses $S$ and $\mathcal E$, adding no
+information, and ignores direction.
+\item Overlap: $\sigma_{\text{atom}}=(Q/Q_{\mathrm{eff},\mathcal V}-1)/(Q-1)$,
+where $Q_{\mathrm{eff},\mathcal V}$ is the effective count of the
+\emph{cubed} shares (error near $10^{-15}$). So $\sigma_{\text{atom}}$
+is already this family, and $Q_{\mathrm{eff}}$ is its plain-strength
+sibling, the one tied by identity to $\mathcal E$ and $|V|^2$. Whether
+to keep both, one, or neither is undecided.
+\end{itemize}
+
+\textbf{Per sort and for the whole.} The per-sort rule belongs to
+quantities that use direction ($V_{\text{derived}}$, $\alpha$,
+$|V|^2$), since sums and dot products of directions across sorts mean
+nothing. Strength-only quantities ($S$, $\mathcal E$, $\mathcal V$,
+$Q_{\mathrm{eff}}$, the $\sigma$'s) can be given per sort and for the
+whole, on one stated convention: each sort's $r$ is normalized to its
+own declared saturation (the paper's $r=a/a_{\max}$), and whole-atom
+figures treat fraction of own saturation as a common scale. With
+$w_s$ the share of total strength held by sort $s$:
+\begin{itemize}
+\item Pooling ratio $\sum_sQ_{\mathrm{eff},s}/Q_{\mathrm{eff,whole}}\ge1$
+(Cauchy--Schwarz; no violations in 30{,}000 atoms), with equality
+exactly when every sort has the same strength-weighted mean strength
+$\mathcal E_s/S_s$. It measures imbalance between sorts: two vectors at
+$0.9$ against ten at $0.1$ give $2.63$.
+\item Exact decomposition:
+$1/Q_{\mathrm{eff,whole}}=\sum_sw_s^2/Q_{\mathrm{eff},s}$ (error near
+$2\times10^{-16}$). In the symmetric case it multiplies: three sorts of
+four vectors at $0.5$ give $12=3\times4$.
+\item Effective number of sorts $1/\sum_sw_s^2$ answers ``is this atom
+really mixed?'' more readably than the ratio: for 50 color vectors at
+$0.5$, 3 word vectors at $0.5$, and 10 stroke vectors at $0.3$,
+$Q_{\mathrm{eff}}$ is $50$, $3$, $10$ per sort, $61.5$ for the whole,
+and the effective number of sorts is $1.37$. Three sorts are present but
+the atom reads as about $1.4$, because color carries $85\%$ of the
+strength.
+\end{itemize}
+\emph{Status: R41--R43; the v19 per-sort line is refined above.}
+
 \section{Merged directly, without an ideas entry}
 
 These went straight into the paper at your direction and are already
@@ -477,7 +566,7 @@ contributions) at the same time or defer it explicitly. If R38 is
 adopted, v17's ``per vector'' registers should read ``per core.''
 \item \textbf{Decide the scope questions (R27, R28)}: Axiom~7's
 metrics and the costumes, and whether to split. These also decide
-whether R12 and R25 still matter for Paper~1.
+whether R12, R25, and R41--R43 still matter for Paper~1.
 \item \textbf{The atom's structure (R20--R22, R36--R40).} The word
 is settled (R38: $N$ cores, $Q$ vectors). Decide the general atom form --- cores,
 per-vector $\tau_i$, contribution size free (R36, R37) --- which
