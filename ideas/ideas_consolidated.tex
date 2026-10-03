@@ -4,7 +4,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 
-\title{Ideas Register --- Consolidated, v1 to v20}
+\title{Ideas Register --- Consolidated, v1 to v22}
 \author{One file for every parked idea, with its current status}
 \date{}
 
@@ -20,11 +20,13 @@ where it stands now.
 
 \textbf{How status was determined.} Not from memory of the
 discussions. Each status was checked by searching the current paper,
-\texttt{Pattern\_Arithmetic\_v15\_22.tex}, and --- for items destined
+\texttt{Pattern\_Arithmetic\_v15\_24.tex} (v15\_24 differs from v15\_22
+only in the atom-structure passages, so earlier checks stand), and
+--- for items destined
 elsewhere --- the \texttt{Assembly\_v1.tex} and
 \texttt{Inference\_v1.tex} copies on hand (which may be older than
 your working copies; if so, the ``not filed'' marks below should be
-rechecked against yours). Entries from v19 onward are appended here; v19 and v20 are the first two.
+rechecked against yours). Entries from v19 onward are appended here; v19 to v22 are the first four.
 
 \paragraph{Status vocabulary.}
 \textbf{CLOSED} --- resolved and merged into the paper.
@@ -118,7 +120,7 @@ R22 & Assembly and Collapse: relation & v11 & Papers 1, 2 & \textbf{OPEN} --- Ax
 R23 & Shell-indexed energy & v14 & Paper 1 & \textbf{OPEN} --- undefined \\
 R24 & Antipodal ($\hat n$ against $-\hat n$) cancellation & v14 & Paper 1 & \textbf{OPEN} --- special case of closed R1 \\
 R25 & Separable-metric pointwise test & v15 & Paper 1 & \textbf{PARKED} --- verified; value depends on R27 \\
-R26 & Route-1 scoping clause (refusal is about $\boxplus$ only) & v7 & Paper 1 & \textbf{PARTLY MERGED} --- one sentence not carried \\
+R26 & Route-1 scoping clause (refusal is about $\boxplus$ only) & v7 & Paper 1 & \textbf{PARTLY MERGED} --- one sentence not carried; closure wording ``already demonstrated \ldots correct behavior'' overstates (v22) \\
 R27 & Axiom 7 metric catalogue and costumes: cut or move? & v16 & Paper 1 & \textbf{OPEN} --- undecided \\
 R28 & Two-paper split & v16 & Papers 1, 2 & \textbf{OPEN} --- undecided \\
 R29 & Review's presentational items & v16 & Papers 1, 2 & \textbf{OPEN} --- not acted on \\[4pt]
@@ -133,14 +135,15 @@ R35 & Coherence check for the candlestick & v1 & Inference & \textbf{OPEN} --- n
 
 \multicolumn{5}{@{}l}{\textit{Open --- atom structure (v19)}} \\*
 R36 & Pure and mixed atoms: cores; per-vector $\tau_i$ as the general form; Mona Lisa as test case; direction-based derived quantities per sort & v19 & Paper 1 & \textbf{OPEN} --- broadens R20 \\
-R37 & Collapse of multi-vector contributions (not fixed at one vector each) & v19 & Paper 1 & \textbf{RESOLVED, NOT MERGED} --- paper still says one vector per contribution \\
-R38 & $N$ as number of cores; $Q$ as number of vectors (resolves the collision with $N$ as vector count in Axiom 7) & v19 & Paper 1 & \textbf{DECIDED} --- $N$ cores, $Q$ vectors; paper edits wait for the merge \\
+R37 & Collapse of multi-vector contributions (not fixed at one vector each) & v19 & Paper 1 & \textbf{CLOSED} --- cores of any size, kept distinct under Collapse; merged in v15\_24 \\
+R38 & $N$ as number of cores; $Q$ as number of vectors (resolves the collision with $N$ as vector count in Axiom 7) & v19 & Paper 1 & \textbf{CLOSED} --- $N$ cores, $Q$ vectors; merged in v15\_23 \\
 R39 & Collapsed atom as a counted bowl; commuting test & v19 & Paper 1 & \textbf{OPEN} --- test not yet run \\
-R40 & $T$ asymmetry: a bowl is not an actor; a Collapsed atom needs a cast & v19 & Paper 1 & \textbf{OPEN} --- relates to R21 \\[4pt]
+R40 & $T$ asymmetry: a bowl is not an actor; a Collapsed atom needs a cast & v19 & Paper 1 & \textbf{OPEN} --- relates to R21 \\
+R44 & Empty atom: black is $N=1$, $Q=0$; empty core under Collapse; zero-strength vector is not an arrow; conventions at $Q<2$ & v22 & Paper 1 & \textbf{CLOSED} --- merged in v15\_24; ``info number'' label moved to $Q$ (confirm) \\[4pt]
 
 \multicolumn{5}{@{}l}{\textit{Open --- energy and effective counts (v20)}} \\*
 R41 & Energy from strength, vector count and direction: $\mathcal E=S^2/Q+Q\,\mathrm{Var}(r)$; $S^2/Q\le\mathcal E\le S$; $|V|^2=(1-\alpha)\mathcal E+\alpha S^2$ & v20 & Paper 1 & \textbf{PARKED} --- identities verified, not in paper; $\mathcal E$ keeps ``energy,'' $\mathcal V$ keeps ``volume'' \\
-R42 & Effective vector count $Q_{\mathrm{eff}}=S^2/\mathcal E$; overlap with $\sigma_{\text{atom}}$ & v20 & Paper 1 & \textbf{OPEN} --- candidate; keep it, $\sigma_{\text{atom}}$, both, or neither \\
+R42 & Effective vector count $Q_{\mathrm{eff}}=S^2/\mathcal E$; overlap with $\sigma_{\text{atom}}$ & v20 & Paper 1 & \textbf{CLOSED} --- merged in v15\_23 as a re-expression, not an eighth metric; both it and $\sigma_{\text{atom}}$ kept \\
 R43 & Strength-only metrics per sort and for the whole; effective number of sorts $1/\sum w_s^2$; pooling ratio & v20 & Paper 1 & \textbf{OPEN} --- needs one stated convention \\
 \end{longtable}
 \normalsize
@@ -543,6 +546,135 @@ strength.
 \end{itemize}
 \emph{Status: R41--R43; the v19 per-sort line is refined above.}
 
+
+\subsection*{v21 --- merging $N$, $Q$, and $Q_{\mathrm{eff}}$ into the paper}
+Merged into \texttt{Pattern\_Arithmetic\_v15\_23.tex}. Before any edit,
+all 62 standalone uses of $N$ were audited and classified, since a
+blind replacement would also have hit $N_{\mathrm{dim}}$ and
+$N_{\mathrm{vox}}$.
+
+\textbf{What went in.} ``Core'' is defined once, at Axiom~7's opening:
+$N$ counts cores (the atom's info number) and $Q$ counts informational
+vectors, with $Q\ge N$. Every formula that runs over vectors takes $Q$:
+the $V_{\text{derived}}$ sum, $S$, $\mathcal V$, $\gamma$, $\mathcal E$,
+the coherence and concentration discussions, $\sigma_{\text{atom}}$,
+$\sigma_{\text{shell}}$, the higher-dimensional actor condition
+$Q\ge N_{\mathrm{dim}}-2$, and the closing teaching-object sentence. The
+Collapse, UnCollapse and $D/N$ text keeps $N$ and now says ``cores,''
+and UnCollapse states that $Q$ falls by the removed core's vector
+count. $Q_{\mathrm{eff}}$ is defined at the end of Axiom~7 as a
+re-expression of $S$ and $\mathcal E$, with its range, its
+scale-freeness, the largest-vector bound, the count-versus-evenness
+distinction, and its exact relation to $\sigma_{\text{atom}}$.
+
+\textbf{Found along the way.} The audit turned up more than the rename:
+\begin{itemize}
+\item $N$ was also the clock modulus in the numeric-sort definition,
+while the later clock section already used $M=24$. The general form now
+uses $M$.
+\item ``Core'' was already in the paper twice: the heading ``Core
+Contributions'' (now ``Principal Contributions'') and ``no core, no
+halo'' in the enclosure (now ``no dense center, no halo'').
+\item A stray noun use, ``the actor's Collapse,'' survived every
+earlier terminology sweep because the search pattern missed
+possessives. It now reads ``Collapsed atom.''
+\item $\sigma_{\text{atom}}$ is exactly the normalized Herfindahl index
+of the cubed shares, $(QH-1)/(Q-1)$, and the paper had already
+rejected the unnormalized index for reading an even atom as $1/Q$. This
+is why $Q_{\mathrm{eff}}$ is described as a \emph{count}, with
+$Q_{\mathrm{eff}}/Q$ as the size-free form. It sharpens v20, which
+called the two overlapping: they are the same construction on different
+shares.
+\end{itemize}
+
+\textbf{Deliberately not merged.} Mixed sorts, per-vector $\tau_i$
+(R36; R20 stays open and the Collapse section still requires a shared
+sort); collapsing atoms that already hold several cores, now stated in
+the paper as not defined; the per-core registers (R14, R15); and the
+other R41 identities.
+
+\textbf{Checks.} The 18 numbered equations before Process Principles
+are identical to v15\_22's after mapping $Q$ back to $N$, so the math
+changed only by the symbol. Zero errors, zero undefined references, and
+the same five overfull warnings as before. One choice to confirm: the
+label ``info number'' was attached to $N$.
+\emph{Status: R38 and R42 closed; R37 partly merged.}
+
+
+\subsection*{v22 --- cores of any size, the empty atom, and a review of v15\_23}
+Merged into \texttt{Pattern\_Arithmetic\_v15\_24.tex}. The trigger was an
+external critique of v15\_23, checked claim by claim against the text
+before anything changed. (The v21 entry above reached this file only
+now; it describes v15\_23, which this entry supersedes where they
+differ.)
+
+\textbf{The critique, as it came out.}
+\begin{itemize}
+\item \emph{Confirmed.} No example separated $N$ from $Q$ and, stronger
+than the critique said, no construction in the paper could produce
+$Q>N$: the lexicon cast seats single points, and collapsing
+multi-vector atoms was ``not defined here.'' The UnCollapse
+well-definedness paragraph and Table~2's footnote still spoke of
+vectors where cores were meant. $D$ was undefined for multi-vector cores:
+with $A=\{0.8,0.4\}$ and $B=\{0.6\}$, Collapse$(A,B,A)$ has $D=2$ read as
+a bowl and $D=3$ read as distinct vectors.
+\item \emph{Half right.} The nucleon analogy: nucleon $=$ core was the
+intended mapping, but the sentence did not say so.
+\item \emph{Not valid.} That clipping is narrated as a finding: the paper
+has a heading ``How the bound is imposed is a choice.''
+\item \emph{Valid, and my wording.} The Mix-refusal closure calls refusal
+``already demonstrated, in a concrete domain, to be the correct
+behavior,'' which overstates what $\mathtt{chladni}$ shows. Recorded
+against R26.
+\item \emph{Missed by the critique, found in the check.} The five-fold
+cone sentence was ambiguous: ``the same half-angle'' reproduces the
+printed $7.14$ and $0.988$ only at half-angle $5.7^\circ$, while the
+pair-centred reading gives $7.203$ and $0.997$. Also, $n$ and $N$ both
+named the operand count, and $Q_{\mathrm{eff}}$ was undefined at $S=0$.
+\end{itemize}
+
+\textbf{Process note.} The v21 audit searched for $N$ and not for the word
+``vector,'' so passages that never contain $N$ were invisible to it.
+This round searched for both.
+
+\textbf{Rulings applied.} $Q\ge N$ is the usual case but not a rule, and
+$N=Q=1$ is the teaching atom, one state among several. An atom may hold
+no vector at all: the empty atom is black, one seat and no arrow,
+$N=1$, $Q=0$, which is Axiom~2's own wording. Three consequences were
+confirmed: black is a counted contribution under Collapse ($A\oplus0$
+adds a core and no vectors, so $0\oplus0\ne0$); Collapse keeps cores
+distinct ($N=\sum_iN_i$, $Q=\sum_iQ_i$), which answers flatten against
+nest; and UnCollapse at $N=1$ leaves black, the one exception to
+$N\to N-1$.
+
+\textbf{What changed in the paper.} Axiom~7's opening restated around
+cores; a sentence in Axiom~2; the Collapse definition; non-idempotence
+stated for every $A$, black included, with $A^{\langle k\rangle}$
+replacing $A^{\langle N\rangle}$; a paragraph on silent contributions;
+$D$ defined by core identity (two cores are one value exactly when
+$\uplus$ would seat them together, and empty cores coincide); a handle
+per core; the analogy wording; Table~2's footnote; two summary
+sentences; the cone's half-angle; $Q_{\mathrm{eff}}$ stated for
+$S>0$; an ``empty atom'' paragraph of conventions; and a worked count,
+$N=3$, $Q=5$, $D=2$, with UnCollapse leaving $N=2$, $Q=3$ and a silent
+contribution giving $N=4$, $D=3$, $Q=5$. The count is given in counts
+only: a first draft quoted strengths and put the seven metrics outside
+Axiom~7, undoing the isolation the review verified, so it was reverted.
+
+\textbf{Two consequences applied that were not discussed, to confirm.}
+First, the label ``info number'' now goes with $Q$, since $Q$ counts the
+information and adding an empty core does not change it; v21 had
+attached it to $N$. Second, informational vectors are positive,
+$0<r_i\le1$: a vector of strength zero is black and not an arrow, so it
+is the empty core and does not count in $Q$. This follows from Axiom~2
+and avoids a zero-strength vector counting in $Q$ while black does not.
+
+\textbf{Checks.} All 49 numbered equations are identical to v15\_23's;
+zero errors and undefined references; the same five overfull warnings as
+before; the seven metrics and $Q_{\mathrm{eff}}$ occur zero times outside
+Axiom~7.
+\emph{Status: R37 closed; R44 closed; R26 extended.}
+
 \section{Merged directly, without an ideas entry}
 
 These went straight into the paper at your direction and are already
@@ -568,9 +700,10 @@ adopted, v17's ``per vector'' registers should read ``per core.''
 metrics and the costumes, and whether to split. These also decide
 whether R12, R25, and R41--R43 still matter for Paper~1.
 \item \textbf{The atom's structure (R20--R22, R36--R40).} The word
-is settled (R38: $N$ cores, $Q$ vectors). Decide the general atom form --- cores,
-per-vector $\tau_i$, contribution size free (R36, R37) --- which
-closes R20 in the same step. R21 and R22 can each be closed by a
+is settled (R38), and cores of any size, the empty atom, and
+Collapse keeping cores distinct are merged (R37, R44; v15\_24). What
+remains is mixed sorts, per-vector $\tau_i$ (R36), which closes R20 in
+the same step. R21 and R22 can each be closed by a
 sentence, whether a stated refusal or a stated rule, and the commuting
 test (R39, R40) can then be run.
 \item \textbf{Package the Inference-bound items (R17, R30--R35)}
