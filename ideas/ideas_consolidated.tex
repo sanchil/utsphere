@@ -4,7 +4,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 
-\title{Ideas Register --- Consolidated, v1 to v18}
+\title{Ideas Register --- Consolidated, v1 to v19}
 \author{One file for every parked idea, with its current status}
 \date{}
 
@@ -24,8 +24,7 @@ discussions. Each status was checked by searching the current paper,
 elsewhere --- the \texttt{Assembly\_v1.tex} and
 \texttt{Inference\_v1.tex} copies on hand (which may be older than
 your working copies; if so, the ``not filed'' marks below should be
-rechecked against yours). New ideas append to this file as v19
-onward.
+rechecked against yours). Entries from v19 onward are appended here; v19 is the first.
 
 \paragraph{Status vocabulary.}
 \textbf{CLOSED} --- resolved and merged into the paper.
@@ -111,8 +110,8 @@ R18 & Identity handle / Mix-provenance link & v5, v11 & Papers 1, 2, Inf. & \tex
 R19 & Should Mix/Collapse skip expired contributions? & v17 & Paper 1; Inf. & \textbf{OPEN} --- deliberately unanswered \\[4pt]
 
 \multicolumn{5}{@{}l}{\textit{Open --- Collapse}} \\*
-R20 & Collapse across differing sorts (per-vector $\tau_i$) & v10, v11 & Paper 1 & \textbf{OPEN} --- stated in paper \\
-R21 & Collapse as $T$'s actor & v11 & Paper 1 & \textbf{OPEN} --- ``not claimed'' in Axiom 7 \\
+R20 & Collapse across differing sorts (per-vector $\tau_i$) & v10, v11 & Paper 1 & \textbf{OPEN} --- stated in paper; broadened by R36 \\
+R21 & Collapse as $T$'s actor & v11 & Paper 1 & \textbf{OPEN} --- ``not claimed'' in Axiom 7; see R40 \\
 R22 & Assembly and Collapse: relation & v11 & Papers 1, 2 & \textbf{OPEN} --- Axiom 6 silent \\[4pt]
 
 \multicolumn{5}{@{}l}{\textit{Open --- metrics, scope, presentation}} \\*
@@ -130,7 +129,14 @@ R31 & ``Inference Mandelbrot'' naming flag & v1 & Inference & \textbf{OPEN} --- 
 R32 & Technique selection for reduction (average, centroids, shape-preserving) & v18 & Inference & \textbf{OPEN} --- specified; not filed \\
 R33 & Douglas--Peucker adapted to the sphere & v18 & Inference & \textbf{OPEN} --- the one unbuilt piece \\
 R34 & Sphere-packing bound for the ``stated distance'' & v6 & Inference & \textbf{OPEN} --- not filed anywhere \\
-R35 & Coherence check for the candlestick & v1 & Inference & \textbf{OPEN} --- never considered \\
+R35 & Coherence check for the candlestick & v1 & Inference & \textbf{OPEN} --- never considered \\[4pt]
+
+\multicolumn{5}{@{}l}{\textit{Open --- atom structure (v19)}} \\*
+R36 & Pure and mixed atoms: cores; per-vector $\tau_i$ as the general form; Mona Lisa as test case; derived quantities per sort & v19 & Paper 1 & \textbf{OPEN} --- broadens R20 \\
+R37 & Collapse of multi-vector contributions (not fixed at one vector each) & v19 & Paper 1 & \textbf{RESOLVED, NOT MERGED} --- paper still says one vector per contribution \\
+R38 & $N$ as number of cores, and its collision with $N$ as vector count in Axiom 7 & v19 & Paper 1 & \textbf{OPEN} --- settle the word first \\
+R39 & Collapsed atom as a counted bowl; commuting test & v19 & Paper 1 & \textbf{OPEN} --- test not yet run \\
+R40 & $T$ asymmetry: a bowl is not an actor; a Collapsed atom needs a cast & v19 & Paper 1 & \textbf{OPEN} --- relates to R21 \\
 \end{longtable}
 \normalsize
 
@@ -380,6 +386,70 @@ is the drift bound Gap~3 asked for. Paper~1 was narrowed to the
 non-consumption guarantee. \emph{Status: R6 closed (redirected);
 R32, R33 open for Inference.}
 
+
+\subsection*{v19 --- pure and mixed atoms, cores, and Collapse against a bowl}
+Prompted by a hypothetical: could the Mona Lisa be held in one atom?
+``One atom'' can mean three things. \emph{A name}: a single seated
+point, like ``storm,'' which the paper calls a doorbell --- it carries
+none of the content. \emph{A bowl}: already legal for mixed sorts,
+since Bundle is sort-blind. \emph{A Collapsed atom} holding colors,
+words, and strokes, which needs mixed sorts inside one atom. This is
+the example v3 left unresolved (``a whole painting as a single
+vector'' was Gap~1 restated). With Gap~1 closed, a single
+\emph{vector} is refused, while one atom of many vectors stays
+available. What stands in the way of the third meaning: mixed sorts
+(R20, widened to R36); where each contribution sits on the canvas ---
+a location per contribution, the same kind of register as v17's but
+not yet specified per contribution; derived quantities across sorts;
+and relations, since the paper ``does not mint the relations'' and,
+by its own design rule, which units were co-present and within what
+region are facts of a level, not coordinates of an atom.
+
+\pagebreak[4]
+\textbf{Rulings given in the discussion, none yet in the paper.}\par\nopagebreak
+\begin{itemize}
+\item \emph{Collapse juxtaposes.} Positions do not change, nothing
+merges, no new type is minted. Relations within a sort are as before;
+across sorts they exist only under a stated rule (Axiom~0's
+``undecided, not admitted,'' applied to Collapse). So derived
+quantities are computed per sort, and cross-sort ones are undefined
+until a rule exists.
+\item \emph{Cores.} A core is a unit inside an atom, usually one
+$\tau$ (a pure type) but free to hold several --- words and numbers
+together --- as typical, not as a rule. The general form is
+per-vector $\tau_i$, with ``core'' a grouping. ``Core'' appears in
+the paper only in the ``Core Contributions'' heading and in ``no
+core, no halo'' in the enclosure, so it needs one defined sense.
+\item \emph{Collapse is not fixed at one vector per contribution.}
+This settles the question the paper was silent on: whether collapsing
+already-multi-vector atoms flattens or nests. The Collapse text still
+says ``one vector per contribution.''
+\item \emph{$N$ is the number of cores.} This keeps UnCollapse's
+$N\to N-1$, keeps $D$ a bowl size (distinct cores), and keeps the v17
+registers at length $N$, so those registers are per core, not per
+vector. The cost is a word collision: $N$ is currently the vector
+count in Axiom~7, in $\gamma_{\text{atom}}=\mathcal V_{\text{atom}}/N$
+and in $\sigma_{\text{atom}}$'s $N^2/(N-1)$. Those need their own
+vector count, or $N$ needs a new name; settle this first.
+\item \emph{A Collapsed atom matches a counted bowl.} They are
+identical exactly when nothing repeats ($D=N$), and $N-D$ is the gap.
+The paper's bowl is a set, and its own counting equation shows the
+difference: $A\uplus A\uplus A\uplus A\setminus A=\emptyset$, while
+$A\oplus A\oplus A\oplus A\ominus A=A^{\langle3\rangle}$ (by the
+UnCollapse rule). Operations should work on both; recorded as a
+commuting test --- a pack/unpack map between the two, with every
+operation required to agree across it. Sum-style quantities
+($S$, $\mathcal E$, $V_{\text{derived}}$) agree only on a counted
+bowl. $T$ is asymmetric today: it ``does not act on the set $R$ as a
+set,'' and a Collapsed atom can act only once a cast is named.
+\item \emph{Two distinct ways of arranging and viewing vectors.}
+They differ in multiplicity (set against counted), in handle (a
+Collapsed atom is one unit that can sit in a bowl or at a lexicon
+pin; a bowl is a collection), and in sequence (neither stores order;
+the path carries it, and a bowl is a good surface for displaying one).
+\end{itemize}
+\emph{Status: R36--R40; R20 and R21 cross-referenced.}
+
 \section{Merged directly, without an ideas entry}
 
 These went straight into the paper at your direction and are already
@@ -399,13 +469,17 @@ It unblocks R14, which closes Gap~2 and gives location, the
 timestamp and expiry registers, and $V_{\text{derived}}$ a home.
 \item \textbf{Then merge the v17 resolution (R14)}, replacing the
 paper's ``Open: location as a sort'' paragraph. Decide R19 (expired
-contributions) at the same time or defer it explicitly.
+contributions) at the same time or defer it explicitly. If R38 is
+adopted, v17's ``per vector'' registers should read ``per core.''
 \item \textbf{Decide the scope questions (R27, R28)}: Axiom~7's
 metrics and the costumes, and whether to split. These also decide
 whether R12 and R25 still matter for Paper~1.
-\item \textbf{Collapse's three small gaps (R20--R22)}, any of which
-can be closed by a sentence if you prefer a stated refusal to a
-silence.
+\item \textbf{The atom's structure (R20--R22, R36--R40).} Settle
+the word $N$ first (R38). Then decide the general atom form --- cores,
+per-vector $\tau_i$, contribution size free (R36, R37) --- which
+closes R20 in the same step. R21 and R22 can each be closed by a
+sentence, whether a stated refusal or a stated rule, and the commuting
+test (R39, R40) can then be run.
 \item \textbf{Package the Inference-bound items (R17, R30--R35)}
 as one coherent addition to the Inference paper: the candlestick,
 the technique-selection argument, the spherical Douglas--Peucker
