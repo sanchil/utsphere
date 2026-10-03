@@ -134,7 +134,7 @@ R35 & Coherence check for the candlestick & v1 & Inference & \textbf{OPEN} --- n
 \multicolumn{5}{@{}l}{\textit{Open --- atom structure (v19)}} \\*
 R36 & Pure and mixed atoms: cores; per-vector $\tau_i$ as the general form; Mona Lisa as test case; derived quantities per sort & v19 & Paper 1 & \textbf{OPEN} --- broadens R20 \\
 R37 & Collapse of multi-vector contributions (not fixed at one vector each) & v19 & Paper 1 & \textbf{RESOLVED, NOT MERGED} --- paper still says one vector per contribution \\
-R38 & $N$ as number of cores, and its collision with $N$ as vector count in Axiom 7 & v19 & Paper 1 & \textbf{OPEN} --- settle the word first \\
+R38 & $N$ as number of cores; $Q$ as number of vectors (resolves the collision with $N$ as vector count in Axiom 7) & v19 & Paper 1 & \textbf{DECIDED} --- $N$ cores, $Q$ vectors; paper edits wait for the merge \\
 R39 & Collapsed atom as a counted bowl; commuting test & v19 & Paper 1 & \textbf{OPEN} --- test not yet run \\
 R40 & $T$ asymmetry: a bowl is not an actor; a Collapsed atom needs a cast & v19 & Paper 1 & \textbf{OPEN} --- relates to R21 \\
 \end{longtable}
@@ -429,8 +429,12 @@ $N\to N-1$, keeps $D$ a bowl size (distinct cores), and keeps the v17
 registers at length $N$, so those registers are per core, not per
 vector. The cost is a word collision: $N$ is currently the vector
 count in Axiom~7, in $\gamma_{\text{atom}}=\mathcal V_{\text{atom}}/N$
-and in $\sigma_{\text{atom}}$'s $N^2/(N-1)$. Those need their own
-vector count, or $N$ needs a new name; settle this first.
+and in $\sigma_{\text{atom}}$'s $N^2/(N-1)$. \emph{Decided:} $N$ counts cores and $Q$ counts vectors. All seven
+Axiom~7 metrics run over vectors, so they take $Q$; the $D/N$
+paragraph and the UnCollapse text keep $N$ and change ``vectors'' to
+``cores.'' To settle at the merge: the sentence that defines $N$ as the
+atom's count of informational vectors, and where the label ``info
+number'' goes.
 \item \emph{A Collapsed atom matches a counted bowl.} They are
 identical exactly when nothing repeats ($D=N$), and $N-D$ is the gap.
 The paper's bowl is a set, and its own counting equation shows the
@@ -474,8 +478,8 @@ adopted, v17's ``per vector'' registers should read ``per core.''
 \item \textbf{Decide the scope questions (R27, R28)}: Axiom~7's
 metrics and the costumes, and whether to split. These also decide
 whether R12 and R25 still matter for Paper~1.
-\item \textbf{The atom's structure (R20--R22, R36--R40).} Settle
-the word $N$ first (R38). Then decide the general atom form --- cores,
+\item \textbf{The atom's structure (R20--R22, R36--R40).} The word
+is settled (R38: $N$ cores, $Q$ vectors). Decide the general atom form --- cores,
 per-vector $\tau_i$, contribution size free (R36, R37) --- which
 closes R20 in the same step. R21 and R22 can each be closed by a
 sentence, whether a stated refusal or a stated rule, and the commuting
