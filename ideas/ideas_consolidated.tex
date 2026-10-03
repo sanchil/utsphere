@@ -4,7 +4,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 
-\title{Ideas Register --- Consolidated, v1 to v22}
+\title{Ideas Register --- Consolidated, v1 to v23}
 \author{One file for every parked idea, with its current status}
 \date{}
 
@@ -26,7 +26,7 @@ only in the atom-structure passages, so earlier checks stand), and
 elsewhere --- the \texttt{Assembly\_v1.tex} and
 \texttt{Inference\_v1.tex} copies on hand (which may be older than
 your working copies; if so, the ``not filed'' marks below should be
-rechecked against yours). Entries from v19 onward are appended here; v19 to v22 are the first four.
+rechecked against yours). Entries from v19 onward are appended here; v19 to v23 are the first five.
 
 \paragraph{Status vocabulary.}
 \textbf{CLOSED} --- resolved and merged into the paper.
@@ -103,13 +103,14 @@ R13 & ``uncollapse'' (v5) collides with UnCollapse & v11 & ideas & \textbf{DECID
 
 \multicolumn{5}{@{}l}{\textit{Resolved but not merged, and its prerequisite}} \\*
 R14 & Gap 2: location and time as meta vectors; registers; age derived & v1, v17 & Paper 1 & \textbf{RESOLVED, NOT MERGED} --- blocked on R15 \\
-R15 & Meta-vector taxonomy; $V_{\text{derived}}$ & v2 & Paper 1 & \textbf{OPEN} --- not in paper; prerequisite for R14 \\[4pt]
+R15 & Meta-vector taxonomy; $V_{\text{derived}}$ & v2, v23 & Paper 1 & \textbf{OPEN} --- specified in v23; settle R45 before importing; prerequisite for R14 \\[4pt]
 
 \multicolumn{5}{@{}l}{\textit{Open --- meta vectors}} \\*
 R16 & Link vectors & v2 & Paper 2 & \textbf{OPEN} --- not filed \\
 R17 & Meta-vector grouping (promote a shared one) & v2 & Inference & \textbf{OPEN} --- not filed \\
 R18 & Identity handle / Mix-provenance link & v5, v11 & Papers 1, 2, Inf. & \textbf{OPEN} --- paper has ``proposed, not adopted'' only \\
-R19 & Should Mix/Collapse skip expired contributions? & v17 & Paper 1; Inf. & \textbf{OPEN} --- deliberately unanswered \\[4pt]
+R19 & Should Mix/Collapse skip expired contributions? & v17 & Paper 1; Inf. & \textbf{OPEN} --- deliberately unanswered \\
+R45 & Meta-vector design questions G1--G10 (v23): label identity, the level rule, mutation and links, vocabulary, timestamp encoding, sentinels, granularity, comparison per kind & v23 & Paper 1 & \textbf{OPEN} --- settle before importing R15 \\[4pt]
 
 \multicolumn{5}{@{}l}{\textit{Open --- Collapse}} \\*
 R20 & Collapse across differing sorts (per-vector $\tau_i$) & v10, v11 & Paper 1 & \textbf{OPEN} --- stated in paper; broadened by R36 \\
@@ -675,6 +676,101 @@ before; the seven metrics and $Q_{\mathrm{eff}}$ occur zero times outside
 Axiom~7.
 \emph{Status: R37 closed; R44 closed; R26 extended.}
 
+
+\subsection*{v23 --- meta vectors as specified, and what to settle before importing them}
+Specification as given, parked here and not yet in the paper:
+\begin{itemize}
+\item Meta vectors are labels on coaches; information vectors are the
+content in the coaches. Meta vectors are not capped at $1$.
+\item Well-known ones: $V_{\text{derived}}$ (the sum of the vectors),
+$V_{\text{timestamp}}$, $V_{\text{expiry}}$ ($0$ meaning no expiry),
+$V_{\text{lastmodify}}$, $V_{\text{location}}$, and $V_{\text{link}}$
+(forward, backward, bidirectional).
+\item They give information atoms kinds that help group them for
+specific tasks; the applications named are typing and sorting.
+\item They can build data structures in Assembly (sequences, graphs,
+layered clusters) and in Inference.
+\item They are part of information atoms. Some change with content and
+some do not.
+\end{itemize}
+Review of that specification against the paper's own text, with the
+demonstrations run. Nothing in the paper changed.
+
+\textbf{Conflicts with text already in the paper.}
+\begin{itemize}
+\item \emph{G1, label identity.} $\uplus$, $D$ and UnCollapse compare
+content. If a timestamp joins an atom's identity, every atom is unique by
+birth time: three contributions $A$, $B$, $A$ give $D=2$ by content and
+$D=3$ with timestamps, so $N-D$ is always $0$ and $A\uplus A\ne A$.
+Equality must be content-only, and a rule is needed for which labels
+survive when $\uplus$ merges two atoms of equal content.
+\item \emph{G2, the level rule.} \S3.1 says ``a unit carries no
+representation of what it constitutes. A seated word does not know the
+poem,'' and that which units were co-present, over what interval, and
+within what region are ``constituting facts of a level, not coordinates
+of an atom,'' which is ``why the atom stays at four coordinates and one
+sort tag.'' Time, place and links sit against this. A candidate
+resolution: labels ride beside the four coordinates, as $V_{\text{derived}}$
+already does, and a link may point to sources or peers but not up to what
+the atom constitutes, since a word's forward link to its poem would break
+the rule. The sentence needs rewording either way.
+\item \emph{G3, the derived-vector limit.} Axiom~7 says ``at most one
+further, derived vector may sit alongside them.'' A family of labels
+contradicts it. Reword to at most one derived-from-content vector (one per
+sort once R36 lands), with recorded labels separate, all excluded from $N$
+and $Q$, and the seven metrics and $V_{\text{derived}}$ ranging over
+informational vectors only. $V_{\text{derived}}=\sum r_i\hat n_i$ with
+$\chi$ excluded, which ``the sum of the vectors'' abbreviates.
+\item \emph{G4, mutation.} The paper has no in-place change: its verbs
+act ``alongside, not in place of,'' and Collapse produces an additional
+atom. $V_{\text{lastmodify}}$ and forward or bidirectional links assume an
+atom that persists through change, which is the identity handle (R18,
+not adopted). With immutable atoms only backward links are free, since a
+newer atom can point to older sources, which is the provenance reasoning
+the Collapse section already makes; $V_{\text{lastmodify}}$ then equals
+the newer atom's $V_{\text{timestamp}}$. One world must be chosen.
+\item \emph{G5, vocabulary.} ``Typed'' is in the paper's title, and
+type/typed occur $21$ times and sort $88$ times. Meta vectors giving
+atoms ``types,'' and ``sorting'' them, collide with $\tau$. Use another
+word for the kind (label or class) and ``order'' or ``rank'' for the verb.
+\end{itemize}
+
+\textbf{Gotchas in the logic.}
+\begin{itemize}
+\item \emph{G6, timestamp encoding.} v17's clock-face vector gives the
+identical vector for now, one day ago, and one week ago (checked), so age
+and expiry cannot be read from it. They need an absolute, non-cyclic
+time. This answers the earlier ``one component or two'': an absolute
+scalar for age and expiry, and optionally the clock-face vector for
+grouping by time of day.
+\item \emph{G7, sentinels.} ``Expiry $0$ means none'' reads as already
+expired under $\text{now}<\text{expiry}$ (checked), and a location of
+$(0,0)$ is a real place. The paper's own idiom is that black is an empty
+seat, so ``no expiry'' is the absence of $V_{\text{expiry}}$, and absence
+is not zero.
+\item \emph{G8, granularity and propagation.} Coach may mean atom or
+core. Timestamp, expiry and link are per core (the R38 registers), while
+$V_{\text{derived}}$ is per atom, and per sort once R36 lands. A Collapse
+result is a new atom whose own birth differs from its cores' births, so
+there are two time notions. Each verb also needs a stated rule for the
+labels of its result; the proposal is that a result is new with its own
+birth, core labels travel with their cores under Collapse, and links
+record provenance.
+\item \emph{G9, grouping needs a comparison per kind.} Sphere distance
+for location, cyclic distance for the clock, equality for identifiers,
+graph distance for links: no common metric, so each kind needs a stated
+rule, the analogue of Axiom~0 for labels. Links are identifiers and not
+coordinates, and calling labels vectors invites arithmetic; no verb acts
+on a label, as none acts on the seat $\vec P$.
+\item \emph{G10, two sources of structure.} Links declare structure,
+while Assembly's energy produces camps from geometry and a seat; keep them
+distinct. Link use belongs to Paper~2 (R16) and the taxonomy to Paper~1.
+Links held in labels can also carry order past $\uplus$, so state that
+$\uplus$ does not read labels, which keeps ``order comes from outside''
+true of what $\uplus$ reads.
+\end{itemize}
+\emph{Status: R15 specified; R45 open.}
+
 \section{Merged directly, without an ideas entry}
 
 These went straight into the paper at your direction and are already
@@ -689,8 +785,9 @@ bridges them; and the $N$/$D$ addition (filed afterwards as R5).
 \section{What remains, in dependency order}
 
 \begin{enumerate}
-\item \textbf{Import the meta-vector taxonomy into Paper~1 (R15).}
-It unblocks R14, which closes Gap~2 and gives location, the
+\item \textbf{Import the meta-vector taxonomy into Paper~1 (R15),
+after settling the design questions in R45} (G1, G2 and G4 first, since
+the rest depend on them). It unblocks R14, which closes Gap~2 and gives location, the
 timestamp and expiry registers, and $V_{\text{derived}}$ a home.
 \item \textbf{Then merge the v17 resolution (R14)}, replacing the
 paper's ``Open: location as a sort'' paragraph. Decide R19 (expired
