@@ -4,7 +4,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 
-\title{Ideas Register --- Consolidated, v1 to v23}
+\title{Ideas Register --- Consolidated, v1 to v25}
 \author{One file for every parked idea, with its current status}
 \date{}
 
@@ -26,7 +26,7 @@ only in the atom-structure passages, so earlier checks stand), and
 elsewhere --- the \texttt{Assembly\_v1.tex} and
 \texttt{Inference\_v1.tex} copies on hand (which may be older than
 your working copies; if so, the ``not filed'' marks below should be
-rechecked against yours). Entries from v19 onward are appended here; v19 to v23 are the first five.
+rechecked against yours). Entries from v19 onward are appended here; v19 to v25 are the first seven.
 
 \paragraph{Status vocabulary.}
 \textbf{CLOSED} --- resolved and merged into the paper.
@@ -109,13 +109,13 @@ R15 & Meta-vector taxonomy; $V_{\text{derived}}$ & v2, v23 & Paper 1 & \textbf{O
 R16 & Link vectors & v2 & Paper 2 & \textbf{OPEN} --- not filed \\
 R17 & Meta-vector grouping (promote a shared one) & v2 & Inference & \textbf{OPEN} --- not filed \\
 R18 & Identity handle / Mix-provenance link & v5, v11 & Papers 1, 2, Inf. & \textbf{OPEN} --- paper has ``proposed, not adopted'' only \\
-R19 & Should Mix/Collapse skip expired contributions? & v17 & Paper 1; Inf. & \textbf{OPEN} --- deliberately unanswered \\
-R45 & Meta-vector design questions G1--G10 (v23): label identity, the level rule, mutation and links, vocabulary, timestamp encoding, sentinels, granularity, comparison per kind & v23 & Paper 1 & \textbf{OPEN} --- settle before importing R15 \\[4pt]
+R19 & Should Mix/Collapse skip expired contributions? & v17 & Paper 1; Inf. & \textbf{OPEN} --- deliberately unanswered; v24 proposes filtering by UnCollapse \\
+R45 & Meta-vector design questions G1--G14 (v23, v24): label identity, the level rule, mutation and links, vocabulary, timestamp encoding, sentinels, granularity, comparison per kind, core multiplicity, guidance & v23, v24 & Paper 1 & \textbf{OPEN} --- G1, G2, G4, G7, G8 settled in v24; G11, G13 confirmed, G12 refined, G14 revised in v25 \\[4pt]
 
 \multicolumn{5}{@{}l}{\textit{Open --- Collapse}} \\*
 R20 & Collapse across differing sorts (per-vector $\tau_i$) & v10, v11 & Paper 1 & \textbf{OPEN} --- stated in paper; broadened by R36 \\
 R21 & Collapse as $T$'s actor & v11 & Paper 1 & \textbf{OPEN} --- ``not claimed'' in Axiom 7; see R40 \\
-R22 & Assembly and Collapse: relation & v11 & Papers 1, 2 & \textbf{OPEN} --- Axiom 6 silent \\[4pt]
+R22 & Assembly and Collapse: relation & v11 & Papers 1, 2 & \textbf{OPEN} --- Axiom 6 silent; candidate in v25 \\[4pt]
 
 \multicolumn{5}{@{}l}{\textit{Open --- metrics, scope, presentation}} \\*
 R23 & Shell-indexed energy & v14 & Paper 1 & \textbf{OPEN} --- undefined \\
@@ -771,6 +771,156 @@ true of what $\uplus$ reads.
 \end{itemize}
 \emph{Status: R15 specified; R45 open.}
 
+
+\subsection*{v24 --- rulings on the meta-vector questions}
+Rulings given:
+\begin{itemize}
+\item Drop $V_{\text{lastmodify}}$. Atoms are immutable and change only
+through Collapse and UnCollapse.
+\item Meta vectors are not part of $D$.
+\item Meta vectors link to other things mostly by criteria on other meta
+vectors and never by content. Words are never linked to a poem: the words
+do not know the poem, the path knows it.
+\item The absence of $V_{\text{expiry}}$ means no expiry.
+\item Coach means atom, very loosely. Information atoms and meta vectors
+share the same cores, a core being a single point whose weight varies with
+the $N$ count; $V_{\text{derived}}$ has a magnitude and a direction that
+help in higher dimensions.
+\item Meta vectors help guide information atoms in higher dimensions, a
+useful attribute in Assembly and Inference.
+\end{itemize}
+
+\textbf{What each ruling settles, checked against the paper.}
+\begin{itemize}
+\item \emph{G1, label identity.} Equality is content-only: two cores
+coincide when they hold the same vectors, and labels do not enter $D$, so
+they do not enter $\uplus$'s equality or UnCollapse's value-exactness
+either. What $\uplus$ does with the labels of merged atoms remains (G14).
+\item \emph{G2, the level rule.} It stands unchanged. Links run from label
+to label, and a link never carries membership in a larger whole, which is
+the paper's own rule that a seated word does not know the poem.
+\item \emph{G4, mutation.} Immutable atoms make backward links the free
+ones, and $V_{\text{lastmodify}}$ is dropped. One wording consequence: the
+paper says UnCollapse ``removes one core from a Collapsed atom,'' which
+reads as mutation. It returns a new atom without that core and leaves the
+original unchanged, a one-line fix at import.
+\item \emph{G7, sentinels.} Absence is not zero, and the rule extends to
+every label. Validity is then: valid exactly when $V_{\text{expiry}}$ is
+absent or $\text{now}<V_{\text{expiry}}$.
+\item \emph{G8, granularity.} Shared cores make labels per core, matching
+the R38 registers. $V_{\text{derived}}$ exists per core and per atom, and
+the atom's is exactly the sum of its cores', since
+$\sum_i r_i\hat n_i$ regroups by core.
+\end{itemize}
+
+\textbf{New points the rulings raise.}
+\begin{itemize}
+\item \emph{G11, a core as a point with weight.} A multi-vector core
+spans several directions, so the single point is its $V_{\text{derived}}$,
+not its content. The weight at a point is the multiplicity $m(c)$, the
+number of equal cores there, with $N=\sum_cm(c)$, $D$ the number of
+distinct cores, and $N-D=\sum_c(m(c)-1)$. Call it multiplicity, not
+density, which R12 retired, and keep it a property of the atom's list and
+not of the core: a core does not know its siblings.
+\item \emph{G12, $V_{\text{derived}}$ as a guide.} The paper already says
+operators needing one pair read the derived sum as a weight or a
+direction, and that beyond three dimensions it cannot be $T$'s actor,
+which needs $N_{\mathrm{dim}}-2$ orthonormal arrows. So guidance means
+read-only roles: a representative weight or direction, a seat, grouping.
+Its reliability is atom coherence, $|V_{\text{derived}}|/S_{\text{atom}}$,
+which is $0$ for an equal antipodal pair although $S>0$, leaving the
+direction undefined. The verified third candidate of v1, disjoint
+dimensions, which commute exactly and keep content recoverable, is the
+available mechanism for labels to occupy their own dimensions without
+disturbing content.
+\item \emph{G13, links.} Links based on label criteria are derived at read
+time. Only backward provenance, identity-based since the identifier is
+itself a label (R18), is stored at birth. Forward and bidirectional are
+views from a reverse index, and the three $V_{\text{link}}$ names become
+view directions.
+\item \emph{G14, $\uplus$ and labels.} $\uplus$ discards order and count,
+so it naturally discards per-copy labels too, while Collapse keeps every
+copy with its labels, which is the per-core register. This is the proposed
+default and is unconfirmed. It also resolves R19 by proposal: filtering by
+expiry is UnCollapse of the expired cores, a selection by label criterion,
+so Mix and Collapse need not know about expiry.
+\end{itemize}
+The paper already holds two meta vectors without the name: $V_{\text{derived}}$
+and the seat $\vec P$, which is uncapped, sits outside the four-tuple, and
+enters $d_{AB}=|\vec P_B-\vec P_A|$. Importing the taxonomy therefore
+mostly names what is there, and $V_{\text{location}}$ may turn out to be
+the seat.
+
+Still open before import: the wording of the derived-vector limit (G3),
+the word for the kind (G5), the timestamp as an absolute scalar with an
+optional clock-face vector (G6, unconfirmed), the comparison rule per kind
+(G9), and the two sources of structure (G10).
+\emph{Status: G1, G2, G4, G7, G8 settled; G11--G14 proposed.}
+
+
+\subsection*{v25 --- confirmations, a check of the assembly claim, and bowls keeping labels}
+\begin{itemize}
+\item \emph{G11.} Confirmed: the word is multiplicity, used loosely.
+\item \emph{G13.} The first part is confirmed: links by label criteria
+are derived at read time. The second part is accepted on this
+explanation: an immutable older atom cannot be edited to record a later
+one, so it never stores a forward pointer. ``What was $A$ used in?'' is
+answered by searching for atoms whose backward link names $A$, and that
+search result is the forward view.
+\item \emph{G12, refined and checked.} $V_{\text{derived}}$ is the sum of
+an atom's vectors, with a magnitude and a direction that assist it in
+higher dimensions, and the stated expectation is that atoms mostly
+assemble with others of similar magnitude and direction. Checked against
+the assembly energy $U_{AB}=-\tfrac{r_Ar_B}{2}(3+\hat n_A\!\cdot\!\hat n_B)
+/(d_{AB}^2+\varepsilon_{AB}^2)^{3/2}$, $\varepsilon_{AB}=r_A+r_B$:
+\begin{itemize}
+\item \emph{Direction: supported.} Aligned pairs pull exactly twice as
+strongly as opposed ones at every separation (ratio $2.000$ at $d=0$,
+$0.5$, $1$, $3$), and in a random population of $300$ atoms the best
+partner averages $12^\circ$ to $19^\circ$ away against about $90^\circ$
+for a random partner.
+\item \emph{Magnitude: conditional.} For an atom of $r=0.60$ the best
+partner has $r=0.30$ at contact ($d=0$), $0.42$ at $d=0.5$, $0.69$ at
+$d=1$, and $1.00$ at $d=3$. Only at fixed total strength do balanced
+pairs win, with $|U|$ at $d=1$ of $0.1768$ for $(0.5,0.5)$, $0.1485$ for
+$(0.7,0.3)$ and $0.0636$ for $(0.9,0.1)$. In the population the best
+partner's strength gap is smaller than a random partner's at $d=0$ and
+$d=1$ ($0.27$ and $0.24$ against $0.32$) and larger at $d=5$ ($0.42$
+against $0.31$).
+\end{itemize}
+So direction is a clean grouping rule, while magnitude is a weight whose
+effect depends on separation relative to the units' own extents. Two
+cautions: $|V_{\text{derived}}|$ is uncapped and grows with $Q$ and with
+multiplicity, so a many-vector atom is heavy in the product and in
+$\varepsilon_{AB}$; and the direction is undefined at cancellation, where
+atom coherence is $0$. This is a candidate for R22: read an atom's single
+$(r,\hat n)$ from $V_{\text{derived}}$, which the paper already allows
+for operators that need one pair.
+\item \emph{G14, revised.} A bowl may keep labels as well, since labels
+only identify the nature of atoms and $\uplus$ has no reason to read them;
+they stay available to anything that wishes to. Consequence: $\uplus$
+still discards count in what it reads, and content-level quantities see
+one seat, but if per-copy labels ride along, count survives in them
+whenever the labels differ. The pack and unpack map between a bowl and a
+Collapsed atom (R39) is then lossless exactly when per-copy labels are
+distinct, for instance identifiers. Bowl and Collapse stay nearly
+identical but not the same: repeats enter a Collapsed atom's content, so
+$S$, $\mathcal{E}$ and $V_{\text{derived}}$ see them, and they do not
+enter a bowl's. Proposed default, unconfirmed: labels carried on a seat of
+equal content merge as a set, equal values coinciding and distinct ones
+both kept.
+\item \emph{G5, G6, defaults proposed.} The paper already uses ``label''
+in the sense meant (``direction is a label here,'' ``a label on the
+relation''), so the individual meta vector is a label and atoms are
+grouped by their labels, with no new noun and no ``type''; ``ordering''
+replaces ``sorting.'' If a noun is wanted, ``category'' has zero uses in
+the paper, against ``class'' with four and ``kind'' with ten. The
+timestamp is an absolute scalar for age and expiry, with the clock-face
+vector optional for grouping by time of day.
+\end{itemize}
+\emph{Status: G11, G13 confirmed; G12 refined; G14 revised; G5, G6
+defaults proposed; import awaiting go-ahead.}
+
 \section{Merged directly, without an ideas entry}
 
 These went straight into the paper at your direction and are already
@@ -786,8 +936,10 @@ bridges them; and the $N$/$D$ addition (filed afterwards as R5).
 
 \begin{enumerate}
 \item \textbf{Import the meta-vector taxonomy into Paper~1 (R15),
-after settling the design questions in R45} (G1, G2 and G4 first, since
-the rest depend on them). It unblocks R14, which closes Gap~2 and gives location, the
+after settling what remains in R45} (G3, G5, G6, G9 and G10 remain;
+G1, G2, G4, G7 and G8 were settled in v24, and G11 to G14 were
+confirmed or revised in v25). It
+unblocks R14, which closes Gap~2 and gives location, the
 timestamp and expiry registers, and $V_{\text{derived}}$ a home.
 \item \textbf{Then merge the v17 resolution (R14)}, replacing the
 paper's ``Open: location as a sort'' paragraph. Decide R19 (expired
