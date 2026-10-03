@@ -1,0 +1,419 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{longtable,array}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+
+\title{Ideas Register --- Consolidated, v1 to v18}
+\author{One file for every parked idea, with its current status}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent This file replaces \texttt{ideas\_v1} through
+\texttt{ideas\_v18}. Versions 1--11 were cumulative (each carried the
+previous forward) and 12--18 were separate additions, so the same
+idea often appeared in several files at different stages. Here each
+idea appears once, with where it came from, where it is destined, and
+where it stands now.
+
+\textbf{How status was determined.} Not from memory of the
+discussions. Each status was checked by searching the current paper,
+\texttt{Pattern\_Arithmetic\_v15\_22.tex}, and --- for items destined
+elsewhere --- the \texttt{Assembly\_v1.tex} and
+\texttt{Inference\_v1.tex} copies on hand (which may be older than
+your working copies; if so, the ``not filed'' marks below should be
+rechecked against yours). New ideas append to this file as v19
+onward.
+
+\paragraph{Status vocabulary.}
+\textbf{CLOSED} --- resolved and merged into the paper.
+\textbf{CLOSED (redirected)} --- determined not to be the paper's
+question; destination named.
+\textbf{RESOLVED, NOT MERGED} --- fully worked out but waiting on a
+prerequisite.
+\textbf{DECIDED} --- a ruling recorded; nothing to merge.
+\textbf{PARTLY MERGED} --- some of it is in the paper.
+\textbf{OPEN} --- still unresolved or unfiled.
+\textbf{PARKED} --- verified but with no current home.
+
+\section{The gaps of ideas v1, as they now stand}
+
+Honest summary first, since this is what prompted the consolidation:
+
+\begin{center}
+\begin{tabular}{p{4.2cm}p{10.4cm}}
+Gap & Status \\
+\hline
+\textbf{Gap 1} --- Mix across differing directions &
+\textbf{CLOSED} in \texttt{v15\_21}: refused, on the $\mathtt{chladni}$
+evidence, with Bundle and Collapse remaining available. One small
+residual (R26 below). \\[4pt]
+\textbf{Gap 2} --- Location as a sort &
+\textbf{RESOLVED, NOT CLOSED.} Fully worked out in v17 (meta vector;
+both encodings verified). It cannot honestly be marked closed in the
+paper yet: it depends on the meta-vector taxonomy being imported into
+Paper~1 first, and that taxonomy is not in the paper at all (zero
+occurrences). The paper's own ``Open: location as a sort'' paragraph
+is therefore still correct as written. \\[4pt]
+\textbf{Gap 3} --- Reducing a path by merging close actors &
+\textbf{CLOSED for Paper~1} in \texttt{v15\_22} (narrowed to the
+algebraic guarantee); the technique question is \textbf{redirected to
+Inference} and is not yet filed there. \\
+\end{tabular}
+\end{center}
+
+The two remaining items from v1 are both Inference-destined and
+neither is filed: the candlestick summary (verified, mechanism
+works) and the ``Inference Mandelbrot'' naming flag.
+
+\textbf{The single most useful next step} is importing the
+meta-vector taxonomy into Paper~1 (R15). It is the prerequisite for
+closing Gap~2, and it gives a home to location, the two time
+registers, and $V_{\text{derived}}$ at once.
+
+\section{Register}
+
+\small
+\setlength{\tabcolsep}{4pt}
+\newcolumntype{R}[1]{>{\raggedright\arraybackslash}p{#1}}
+\begin{longtable}{@{}l R{4.9cm} R{1.5cm} R{2.3cm} R{4.4cm}@{}}
+ID & Item & Origin & Destination & Status \\
+\hline
+\endhead
+
+\multicolumn{5}{@{}l}{\textit{Closed}} \\*
+R1 & Mix across differing directions (Gap 1) & v1, v3--v4, v7 & Paper 1 & \textbf{CLOSED} --- refused; v15\_21 \\
+R2 & Terminology realignment: Bundle/Remove, Collapse/UnCollapse, Mix/UnMix & v8--v10 & Paper 1 & \textbf{CLOSED} --- merged; v15\_20 \\
+R3 & Symbols $\uplus,\setminus,\oplus,\ominus,\boxplus,\boxminus$ & v9--v10 & Paper 1 & \textbf{CLOSED} --- merged ($\circleddash$ superseded) \\
+R4 & Collapse non-idempotent; $N$ = list length; $A^{\langle N\rangle}$; UnCollapse algebra & v10 & Paper 1 & \textbf{CLOSED} --- merged \\
+R5 & Distinct count $D$ against total $N$ & v13 & Paper 1 & \textbf{CLOSED} --- merged; v15\_20 \\
+R6 & Reducing a path (Gap 3): algebraic guarantee only & v1, v6, v18 & Paper 1 & \textbf{CLOSED (redirected)} --- v15\_22 \\
+R7 & $\tau_{\text{weather}}$ conflation & v4 & --- & \textbf{CLOSED} --- correction recorded \\
+R8 & Same-sort region merge vs cross-sort & v6 & Assembly; Paper 1 & \textbf{CLOSED} --- same-sort solved in Assembly; cross-sort is R1 \\
+R9 & Internal link, terminology, cohesion audit & v12 & Paper 1 & \textbf{CLOSED} --- fixes in v15\_23, carried forward \\
+R10 & Stale status lines and symbols in v1--v10 & v11 & ideas & \textbf{CLOSED} --- superseded by this file \\
+R11 & Inertia in Assembly via a mass-like weighting & v13 & Paper 2 & \textbf{CLOSED} --- tested; fails \\[4pt]
+
+\multicolumn{5}{@{}l}{\textit{Decided}} \\*
+R12 & Physics names for atom metrics & v13 & Paper 1 & \textbf{DECIDED} --- keep $\mathcal{E}$; $N$/$D$ earned; ``density'' stays retired; $S/N$ parked \\
+R13 & ``uncollapse'' (v5) collides with UnCollapse & v11 & ideas & \textbf{DECIDED} --- call it Mix-provenance link \\[4pt]
+
+\multicolumn{5}{@{}l}{\textit{Resolved but not merged, and its prerequisite}} \\*
+R14 & Gap 2: location and time as meta vectors; registers; age derived & v1, v17 & Paper 1 & \textbf{RESOLVED, NOT MERGED} --- blocked on R15 \\
+R15 & Meta-vector taxonomy; $V_{\text{derived}}$ & v2 & Paper 1 & \textbf{OPEN} --- not in paper; prerequisite for R14 \\[4pt]
+
+\multicolumn{5}{@{}l}{\textit{Open --- meta vectors}} \\*
+R16 & Link vectors & v2 & Paper 2 & \textbf{OPEN} --- not filed \\
+R17 & Meta-vector grouping (promote a shared one) & v2 & Inference & \textbf{OPEN} --- not filed \\
+R18 & Identity handle / Mix-provenance link & v5, v11 & Papers 1, 2, Inf. & \textbf{OPEN} --- paper has ``proposed, not adopted'' only \\
+R19 & Should Mix/Collapse skip expired contributions? & v17 & Paper 1; Inf. & \textbf{OPEN} --- deliberately unanswered \\[4pt]
+
+\multicolumn{5}{@{}l}{\textit{Open --- Collapse}} \\*
+R20 & Collapse across differing sorts (per-vector $\tau_i$) & v10, v11 & Paper 1 & \textbf{OPEN} --- stated in paper \\
+R21 & Collapse as $T$'s actor & v11 & Paper 1 & \textbf{OPEN} --- ``not claimed'' in Axiom 7 \\
+R22 & Assembly and Collapse: relation & v11 & Papers 1, 2 & \textbf{OPEN} --- Axiom 6 silent \\[4pt]
+
+\multicolumn{5}{@{}l}{\textit{Open --- metrics, scope, presentation}} \\*
+R23 & Shell-indexed energy & v14 & Paper 1 & \textbf{OPEN} --- undefined \\
+R24 & Antipodal ($\hat n$ against $-\hat n$) cancellation & v14 & Paper 1 & \textbf{OPEN} --- special case of closed R1 \\
+R25 & Separable-metric pointwise test & v15 & Paper 1 & \textbf{PARKED} --- verified; value depends on R27 \\
+R26 & Route-1 scoping clause (refusal is about $\boxplus$ only) & v7 & Paper 1 & \textbf{PARTLY MERGED} --- one sentence not carried \\
+R27 & Axiom 7 metric catalogue and costumes: cut or move? & v16 & Paper 1 & \textbf{OPEN} --- undecided \\
+R28 & Two-paper split & v16 & Papers 1, 2 & \textbf{OPEN} --- undecided \\
+R29 & Review's presentational items & v16 & Papers 1, 2 & \textbf{OPEN} --- not acted on \\[4pt]
+
+\multicolumn{5}{@{}l}{\textit{Open --- Inference-bound}} \\*
+R30 & Candlestick summary & v1 & Inference & \textbf{OPEN} --- verified; not filed \\
+R31 & ``Inference Mandelbrot'' naming flag & v1 & Inference & \textbf{OPEN} --- flag only \\
+R32 & Technique selection for reduction (average, centroids, shape-preserving) & v18 & Inference & \textbf{OPEN} --- specified; not filed \\
+R33 & Douglas--Peucker adapted to the sphere & v18 & Inference & \textbf{OPEN} --- the one unbuilt piece \\
+R34 & Sphere-packing bound for the ``stated distance'' & v6 & Inference & \textbf{OPEN} --- not filed anywhere \\
+R35 & Coherence check for the candlestick & v1 & Inference & \textbf{OPEN} --- never considered \\
+\end{longtable}
+\normalsize
+
+\section{The entries, by version}
+
+\subsection*{v1 --- the three gaps and two Inference items}
+\textbf{Gap 1} (Mix across differing directions): Axiom~5 defines Mix
+only at a shared $\hat n$; a provisional vector-sum recipe had been
+tried and withdrawn. \emph{Status: R1, closed.}
+\textbf{Gap 2} (location as a sort): a third candidate was tested ---
+disjoint dimensions for content, time, and location. Verified: two
+shifts through disjoint dimensions commute exactly (to full
+floating-point precision), and content stays recoverable by
+projection; shifts forced onto one shared dimension do not commute.
+Left open: the encoding itself. \emph{Status: R14, resolved in v17.}
+\textbf{Gap 3} (reducing a path): needed a distance, a merge rule,
+and a drift bound. Verified that swapping the clip for the Hill form
+$r'=|z|/(K+|z|)$ changes the strength but not $\chi'=\arg(z)$.
+\emph{Status: R6, closed (redirected).}
+\textbf{Candlestick summary}: open/close/high/low distinguishes two
+sequences of identical content in opposite order that naive Mix cannot
+--- Mix gave the same $47.5^\circ$ for both; the candle's open and
+close swapped ($20^\circ\!\to\!160^\circ$ against
+$160^\circ\!\to\!20^\circ$) while high and low stayed equal.
+\emph{Status: R30, 0 occurrences in \texttt{Inference\_v1}.}
+\textbf{``Inference Mandelbrot''}: an ordered-thing promotion is a
+different problem from Assembly's Hill-bijection promotion of
+unordered camps, and needs its own name. \emph{Status: R31.}
+The ``considered and found to need nothing filed'' list (reference
+atoms, precursor-witness relabeling, the $\pi=(x;w_1,\dots,w_n)$
+trajectory, $\chi$ as internal phase-color) was rechecked in v11
+against the current paper: all present, nothing to file. \emph{Closed.}
+
+\subsection*{v2 --- meta vectors, split across three papers}
+Proposed: besides information vectors (capped, $r_i\le1$), an atom
+may carry meta vectors describing it rather than being part of its
+content: $V_{\text{derived}}$, link vectors, a timestamp vector.
+Meta vectors are not capped. Split by destination: the taxonomy and
+$V_{\text{derived}}$ to Paper~1; link vectors to Assembly; the
+grouping mechanism (query nearby meta vectors, promote one shared
+value) to Inference. Verified caveat: grouping $V_{\text{derived}}$
+inherits the Hill form's limit --- both fix magnitude only, never
+direction. \emph{Status: R15--R17. The paper has zero occurrences of
+``meta vector''; \texttt{Assembly\_v1} has zero of ``link vector.''}
+
+\subsection*{v3 --- Gap 1, characterized}
+Argued reading: Mix takes several reports already agreed to answer
+one shared question and returns a verdict about it; the shared
+$\hat n$ is what makes that true. Notably, v3 already stated that in
+Mix's domain \emph{``$\hat n$ itself was never plural; only $\chi$
+ever varied''} --- the very distinction that had to be rediscovered
+during the Gap~3 discussion (v18) before it stopped causing
+confusion. Four ``we mix all the time'' counterexamples were checked
+and dissolved (sugar in tea is one dial; red plus green is already
+same-$\hat n$; paint compositing is a bowl and flattening is
+destructive and irreversible --- matching UnMix's impossibility). The
+one unresolved example, a whole painting as one vector, is Gap~1
+itself. The open question split in two: \emph{embedding validity}
+(does closeness on a shared sphere track semantic agreement?) and the
+\emph{merge rule}. \emph{Status: superseded by R1's closure --- Mix
+refuses, so neither sub-question needs an answer for Mix.}
+
+\subsection*{v4 --- the $\tau_{\text{weather}}$ correction; Gap 1 ``ready to close''}
+$\tau_{\text{weather}}$ had named two different problems: combining
+different weather concepts across directions (Gap~1), and reducing
+closely aligned same-sort atoms to one representative, which is
+Assembly's already-verified Hill-bijection mechanism (16 camps to
+13 systems). The $\mathtt{chladni}$ section was found to already
+contain the evidence for Gap~1 (``cross-mode coexistence is
+therefore $\uplus$''). \emph{Status: R7 closed; the $\mathtt{chladni}$
+evidence is what the Gap~1 closure rests on.}
+
+\subsection*{v5 --- identity handle}
+An opaque $id$ meta field, assigned before Bundle or Mix and kept
+after, so a result can point back to the bowl that produced it
+(bowl $\{\text{red},\text{green}\}$ is $\#17$; Mix gives yellow
+$\#18$ with a link $\#18\to\#17$). Refuse $\tau_{id}$ as a sort; keep
+$id$ as a field. Navigation by a kept record, not inversion of Mix.
+Renamed in v11 ``Mix-provenance link'' because the original word
+``uncollapse'' collides with the formal UnCollapse operator.
+\emph{Status: R13 decided; R18 open --- the paper mentions $id_i$
+once, as ``proposed, not adopted,'' in UnCollapse's well-definedness
+paragraph.}
+
+\subsection*{v6 --- sphere-packing bound; merging a whole region}
+For Gap~3's ``stated distance'': the number of mutually
+distinguishable points at separation $\theta_{\min}$ is roughly
+$2/(1-\cos(\theta_{\min}/2))$ --- about $52{,}525$ at $1^\circ$,
+$2{,}101$ at $5^\circ$, $526$ at $10^\circ$, $59$ at $30^\circ$, $15$
+at $60^\circ$, $7$ at $90^\circ$, $4$ at $120^\circ$. Merging a
+whole region to one representative splits: same-sort is solved
+(Hill bijection) and cross-sort is Gap~1. \emph{Status: R8 closed;
+the bound itself is R34, filed nowhere.}
+
+\subsection*{v7 --- scoping of Route 1}
+``Refuse outright'' should be worded as a claim about $\boxplus$,
+not a permanent bar on any future, separately admitted mechanism ---
+the same ``undecided, not admitted'' logic Axiom~0 already uses.
+\emph{Status: R26, partly merged.} Checked against the Gap~1
+closure: the closure is scoped to Mix and keeps $\uplus$ and
+$\oplus$ available, which honours the point. What was not carried is
+the one explicit sentence that a separately admitted mechanism is not
+barred, and the closure calls the other two routes ``withdrawn,''
+slightly stronger than v7 intended. An optional one-sentence fix.
+
+\subsection*{v8, v9, v10 --- terminology and verb inventory}
+v8 proposed the Collapse/UnCollapse/Bundle/Mix/UnMix realignment and
+flagged a hard symbol collision ($\ominus$ was Remove). v9 chose
+$\uplus$ for Bundle and $\circleddash$ for UnCollapse, and scoped
+ids to the one case that needs them: duplicate-valued contributions
+in UnCollapse. v10 revised the symbols --- $\ominus$ to UnCollapse,
+Remove to $\setminus$ --- settled Bundle's idempotence
+($A\uplus A=A$, already proven), and showed Collapse is
+\emph{not} idempotent by three convergent arguments (information
+loss; an algebraic contradiction with $A\ \text{UnCollapse}\ A=0$;
+the same evidence-count blindness the Hill form was built to fix).
+$N$ is simply the length of the vector list; $A^{\langle N\rangle}$
+abbreviates $N$ identical copies; UnCollapse sends $N\to N-1$.
+\emph{Status: R2--R4 closed, all merged. MixMerge was later reverted
+to Mix at your request; $\circleddash$ appears zero times in the
+paper. The per-vector $\tau_i$ question that v10 left open is R20.}
+
+\subsection*{v11 --- review of v10 against the paper}
+Status lines of v8--v10 corrected (the realignment was merged); stale
+$\oplus$/$\ominus$ readings in earlier text fixed, including one
+sentence that had become \emph{false} (``Gather still satisfies
+$A\oplus A=A$'' reads wrongly once $\oplus$ means Collapse); the
+``uncollapse'' collision resolved by renaming. Three gaps opened by
+giving Collapse axiom-level standing: R20 (across sorts), R21 (as an
+actor for $T$), R22 (no stated relation to Assembly --- Axiom~6
+mentions Collapse zero times, so this one is silence rather than a
+stated omission). One new route recorded: Collapse losslessly first,
+then define a reading --- the seed of what v18 developed.
+\emph{Status: R10, R13 closed or decided; R20--R22 open.}
+
+\subsection*{v12 --- internal audit}
+96 labels and 198 reference call-sites checked, each against what
+its sentence claims; zero mismatches. Two stragglers fixed (an
+Abstract ``a Collapse'' noun phrase; a Forest-costume ``gathers'').
+Four cohesion fixes where the paper's own summaries omitted Collapse,
+and the UnMix proof section now names UnMix. No new conceptual gap.
+\emph{Status: R9 closed; fixes are in the current paper.}
+
+\subsection*{v13 --- naming the atom metrics}
+Seven metrics, quoted precisely. Earlier drafts had called
+$\mathcal{V}_{\text{atom}}$ ``mass,'' $\gamma_{\text{atom}}$
+``density,'' and $S_{\text{atom}}$ ``atom energy,'' and retired all
+three; only $\mathcal{E}_{\text{atom}}=\sum r_i^2$ kept ``energy,''
+because it is tied by an exact identity to
+$|V_{\text{derived}}|^2=\mathcal{E}_{\text{atom}}+2\sum_{i<j}r_ir_j(\hat n_i\!\cdot\!\hat n_j)$
+(variance-of-a-sum structure, verified to six decimals). The rule:
+a physics name is kept only if the quantity participates in something
+provable. $D=|A_1\uplus\cdots\uplus A_n|$ passes (forced by $\uplus$'s
+idempotence), so $N$ and $D$ keep the mass-number/atomic-number
+analogy; ``density'' stays retired; $S_{\text{atom}}/N$ is parked
+rather than named. Inertia in Assembly is closed: a mass-like
+weighting was already tested in the motion equation --- a ninefold
+strength gap gives a $729$-fold weight and a non-monotonic
+trajectory.
+\emph{Added in conversation after v15, not previously filed:} asked
+whether either of the two metrics survives, the answer was that
+energy already does ($\mathcal{E}_{\text{atom}}$, earned) while no
+candidate for density does --- $S_{\text{atom}}$ already has a name,
+$N$ is a count rather than a ratio, and the one ratio with the right
+shape, $\gamma_{\text{atom}}$, is the one already rejected.
+\emph{Status: R5 closed; R11 closed; R12 decided.}
+
+\subsection*{v14 --- three rough sketches}
+\emph{Density} restated: nothing new, closed by reference to v13.
+\emph{Energy as shell distribution}: partly already true of
+$\mathcal{E}_{\text{atom}}$ --- for fixed total strength $S=2.0$,
+four vectors give $\mathcal{E}=1.0$ spread evenly and $1.81$
+concentrated toward the extremes (and $\sigma_{\text{atom}}$ goes
+$0\to0.333$) --- but $\sigma_{\text{atom}}$ is blind to \emph{which
+side} the concentration is on, and no shell-indexed quantity exists.
+\emph{Matter/antimatter}: antipodal cancellation ($\hat n$ against
+$-\hat n$), a second kind of opposition beside the existing
+same-direction opposite-phase cancellation. With Gap~1 now closed by
+refusal, this would be a deliberate special-case exception, parallel
+to the existing one; what the rule would produce, and whether it
+needs equal strength, is undecided.
+\emph{Status: R23, R24 open.}
+
+\subsection*{v15 --- when two metrics constrain each other}
+For separable metrics $M_1=\sum f(r_i)$ and $M_2=\sum g(r_i)$: if
+$f\le g$ everywhere on $[0,1]$ then $M_1\le M_2$ for every atom;
+if the curves cross there is no bound. Verified against both cases
+(it forces $\mathcal{E}\le S$ because $r^2\le r$; it forces nothing
+for $N$ against a shell-weighted energy). Where a bound holds, the
+gap is itself a metric ($r-r^2$, largest at $r=0.5$). Possible uses
+(a non-redundant reporting set, a two-axis placement, a debugging
+check, a post-hoc label for Assembly's camps) are speculative.
+\emph{Status: R25, parked; it matters mainly if R27 keeps the
+metrics.}
+
+\subsection*{v16 --- external review and the two-paper split}
+Every checkable claim in the review was verified: the worked
+numbers (e.g.\ $r'\approx0.721$ at $73.9^\circ$; freeze at $628$ and
+$1261$ steps), that all 22 occurrences of the six Axiom~7 metrics sit
+inside Axiom~7 and none in Bundle/Mix/$T$/offset, that ``white'' is
+used in two senses (the paper already says so in Axiom~3), and that
+the ``checked directly'' precision claims have no supplement.
+The proposal: Paper~1 is the typed algebra, Paper~2 is assembly and
+the enclosure, the Axiom~7 catalogue and the costumes go in neither;
+Paper~1 states Assembly as a signature only and ends by naming the
+seat it refuses to supply; cut by question, not by length.
+\emph{Not itemized when v16 was filed, but in the review and still
+pending (R29):} state the clip, the Mix refusal, and the assembly
+energy as stipulated choices in one place rather than narrated as
+discoveries; print the enclosure gradient; provide a supplement for
+the ``checked directly'' claims; and stop calling the enclosure a
+``law'' in the same voice as $\mathrm{SO}(3)$ while it still needs
+$\delta$, $\eta$, the census cut, and $\varepsilon_{\text{allow}}$.
+\emph{Status: R27, R28, R29 open and undecided.}
+
+\subsection*{v17 --- Gap 2 resolved}
+Meta vector, not sort, tested against the cap: $r\le1$ encodes
+strength of content, while location and time are coordinates. This is
+the line the paper already draws for Assembly's seat. Location is
+one vector via standard $(\theta,\phi)$ from latitude and longitude
+(London $\to(0.6225,-0.0011,0.7826)$, Tokyo
+$\to(-0.6194,0.5252,0.5835)$, Sydney $\to(-0.7273,0.3999,-0.5577)$).
+Time on $(\theta,\phi)$ fails: at hour $0$ every minute lands on
+$(0,0,1)$, and $11{:}59$ and $0{:}00$ land about $2$ apart
+(antipodal). The fix: minute on $\phi$, hour on $\chi$, $\theta$
+fixed at the equator ($6^\circ$ and under $1^\circ$ apart for the
+same pair). Timestamp is a register of length $N$, kept in step with
+UnCollapse; age is derived ($\text{now}-\text{timestamp}$), never
+stored; expiry is a second register because it cannot be derived;
+timestamps help but do not guarantee disambiguation the way an $id$
+would. \textbf{Blocking:} cannot be merged until R15 is.
+\emph{Status: R14, R19.}
+
+\subsection*{v18 --- Gap 3 closed for Paper 1}
+Corrected an earlier confusion ($\chi$ is phase at a shared direction,
+not $\hat n$; Gap~1's refusal did not apply). The real issue is
+order-blindness: merging three actors in either order gives the same
+result. A path's commitment to order comes from outside the algebra
+--- Bundle discards order, and choosing $T$ over a bowl is the
+declaration that order matters. So averaging 10{,}000 temperature
+readings is bowl-plus-Mix and loses nothing. Three techniques answer
+three different questions: averaging cannot tell a spike from a flat
+line; centroids give identical results for a sequence and its reverse
+(clustering is blind to position); shape-preserving reduction keeps
+real points at their positions --- Douglas--Peucker, whose tolerance
+is the drift bound Gap~3 asked for. Paper~1 was narrowed to the
+non-consumption guarantee. \emph{Status: R6 closed (redirected);
+R32, R33 open for Inference.}
+
+\section{Merged directly, without an ideas entry}
+
+These went straight into the paper at your direction and are already
+in \texttt{Pattern\_\allowbreak Arithmetic\_\allowbreak v15\_\allowbreak 22.tex}: the Pāṇini expansion
+(pratyāhāra and vipratiṣedha as structural parallels, with the
+Ingerman 1967 attribution of ``Pāṇini--Backus form'' and the
+oversimplification caveat); the paragraph on summing separate
+realities; the quantum-mechanics/general-relativity paragraph,
+deliberately hedged so that it does not claim Pattern Arithmetic
+bridges them; and the $N$/$D$ addition (filed afterwards as R5).
+
+\section{What remains, in dependency order}
+
+\begin{enumerate}
+\item \textbf{Import the meta-vector taxonomy into Paper~1 (R15).}
+It unblocks R14, which closes Gap~2 and gives location, the
+timestamp and expiry registers, and $V_{\text{derived}}$ a home.
+\item \textbf{Then merge the v17 resolution (R14)}, replacing the
+paper's ``Open: location as a sort'' paragraph. Decide R19 (expired
+contributions) at the same time or defer it explicitly.
+\item \textbf{Decide the scope questions (R27, R28)}: Axiom~7's
+metrics and the costumes, and whether to split. These also decide
+whether R12 and R25 still matter for Paper~1.
+\item \textbf{Collapse's three small gaps (R20--R22)}, any of which
+can be closed by a sentence if you prefer a stated refusal to a
+silence.
+\item \textbf{Package the Inference-bound items (R17, R30--R35)}
+as one coherent addition to the Inference paper: the candlestick,
+the technique-selection argument, the spherical Douglas--Peucker
+adaptation, the sphere-packing distance, and meta-vector grouping.
+\item \textbf{Small residuals}: the one-sentence R26 clause, the
+review's presentational items (R29), shell-indexed energy (R23), the
+antipodal special case (R24), and whether $S_{\text{atom}}/N$ earns a
+name.
+\end{enumerate}
+
+\end{document}
