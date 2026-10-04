@@ -4,7 +4,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 
-\title{Ideas Register --- Consolidated, v1 to v34}
+\title{Ideas Register --- Consolidated, v1 to v35}
 \author{One file for every parked idea, with its current status}
 \date{}
 
@@ -27,7 +27,7 @@ earlier checks stand), and
 elsewhere --- the \texttt{Assembly\_v1.tex} and
 \texttt{Inference\_v1.tex} copies on hand (which may be older than
 your working copies; if so, the ``not filed'' marks below should be
-rechecked against yours). Entries from v19 onward are appended here; v19 to v34 are the first sixteen.
+rechecked against yours). Entries from v19 onward are appended here; v19 to v35 are the first seventeen.
 
 \paragraph{Status vocabulary.}
 \textbf{CLOSED} --- resolved and merged into the paper.
@@ -121,8 +121,9 @@ R54 & Review of v15\_28, mechanical consistency fixes: stale ``not a sixth verb'
 R55 & The bowl as a holder of $V_{\text{derived}}$, the metrics and meta vectors: one statement over a holder & v32 & Paper 1 & \textbf{OPEN} --- atoms only today \\
 R56 & Terminology: the fifth to seventh metrics are unnamed and $\mathcal{E}$ is named only in passing; multi-sense words (cast $\times3$, shell $\times2$, energy $\times2$, density); populations behind ``$2.200$ against $2.150$'' & v33 & Paper 1 & \textbf{OPEN} --- found while building the glossary \\
 R57 & A use-agnostic contract: what the algebra promises (determinism, closure, persistence of sources, non-interference of cores, immutable atoms) and what any use must supply (seats, a reading time, comparison rules, conventions) & v34 & Paper 1 & \textbf{OPEN} \\
-R58 & Placement is external: no rule lets an atom derive its own seat from meta vectors or $V_{\text{derived}}$; the assembly descent gathers at the plain mean of the seats and sorts by content only at a scale hidden from any census cut & v34 & Assembly paper (Paper 1 states the limit) & \textbf{OPEN} \\
-R59 & Non-interference as a stated property: operations on one core never alter another; derived quantities per sort once mixed sorts are admitted (joins R36 and R50) & v34 & Paper 1 & \textbf{OPEN} \\[4pt]
+R58 & Placement is external: no rule lets an atom derive its own seat from meta vectors or $V_{\text{derived}}$; the assembly descent gathers at the plain mean of the seats and sorts by content only at a scale hidden from any census cut & v34 & Assembly paper (Paper 1 stays silent, v35) & \textbf{OPEN} \\
+R59 & Non-interference as a stated property: operations on one core never alter another; derived quantities per sort once mixed sorts are admitted (joins R36 and R50) & v34 & Paper 1 & \textbf{OPEN} \\
+R60 & Inference-bound: one observed step leaves the actor underdetermined (a circle of axes, strength from $s/\pi$ to $1$, phase identified); chance of explaining a step is the tolerance cap's area fraction, amplified by bowl size; success must be judged against that baseline & v35 & Inference & \textbf{PARKED} --- joins R17, R30--R35 \\[4pt]
 
 \multicolumn{5}{@{}l}{\textit{Open --- Collapse}} \\*
 R20 & Collapse across differing sorts (per-vector $\tau_i$) & v10, v11 & Paper 1 & \textbf{OPEN} --- stated in paper; broadened by R36 \\
@@ -1448,6 +1449,55 @@ algebra neither supplies nor needs, and carry the gravitation story, its limits
 included, to the Assembly paper, which also owns whether \emph{never repels}
 survives a goal of separating kinds (R58).
 \emph{Status: R57--R59 open.}
+
+
+\subsection*{v35 --- the division of responsibility, and what Inference has to guess}
+Stated: Paper~1 should be unaware of how atoms place themselves and gather by
+content; that is the responsibility of Assembly, a higher-truth paper, while
+Inference sits closer to applications, through walks, paths, processes and
+transformers. If an atom contains the \emph{Principia}, it is very unlikely to
+output Shakespeare; paths aimed at the \emph{Principia} (prediction,
+classification) will be more successful probabilistically. A trade with noise
+and some buy and sell signals should be classified or predicted by paths. Paths,
+transformers and processes are formulas that must be guessed probabilistically,
+since a ``Twinkle Twinkle'' path is not always readily available.
+
+\textbf{A nuance, and a retraction of my own suggestion.} Paper~1 is not
+unaware of gathering: Axiom~6 and \S10 give the pair energy and the gathering
+of \emph{given} seats. It is unaware of \emph{content-driven placement}, which is
+the right division. v34's suggestion that Paper~1 state the content-sorting limit,
+and carry a sentence that placement is an external map, is therefore withdrawn:
+Paper~1 stays silent, and the finding goes to the Assembly paper (R58). Axiom~6
+and \S10 remain the one place Paper~1 touches Assembly's territory, so whether they
+stay is the R28 split decision.
+
+\textbf{What Paper~1 owes Inference.} A deterministic, replayable forward map
+(given the reading time), closure (a result may be seated again), an inverse
+for $T$, and composition of sequential actors into one. All are already there.
+Anything more would be a use leaking into the algebra.
+
+\textbf{Why a path has to be guessed (probes in
+\texttt{inference\_probe\_v15\_28.py}, three dimensions).}
+\begin{itemize}
+\item \emph{One step does not identify its actor.} For a step $x\to y$ at
+angle $s$, every axis perpendicular to $x-y$ turns $x$ onto $y$ exactly
+(largest error $5\times10^{-15}$ over $20{,}000$ pairs), with strength
+anywhere from $s/\pi$ (axis $x\times y$) up to $1$ (a half turn about
+$x+y$); for $61^\circ$, from $0.338$ to $1.000$. The phase \emph{is}
+identified, $\chi_w=\chi_y-\chi_x$. The bowl's own actors are the candidates
+that shrink the circle to finitely many, which is what ``paths drawn from a
+bowl'' means.
+\item \emph{Chance explains a step more often than it seems.} For steps
+between arbitrary states, a random actor explains one to within $\rho$ with
+probability equal to the cap's area fraction, $(1-\cos\rho)/2$, whatever the
+strengths: $0.03\%$ at $2^\circ$, $0.19\%$ at $5^\circ$, $0.77\%$ at $10^\circ$.
+A bowl of $100$ random actors explains a step to $10^\circ$ in $54\%$ of cases by
+chance alone. A path counts as more successful only against that baseline,
+which grows with bowl size and tolerance.
+\end{itemize}
+The probabilities themselves, the prior over actors, are Inference's, and
+nothing in Paper~1 supplies them. \emph{Status: R60 parked for Inference; R58
+now owned by Assembly.}
 
 \section{Merged directly, without an ideas entry}
 
