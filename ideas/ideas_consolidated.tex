@@ -4,7 +4,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 
-\title{Ideas Register --- Consolidated, v1 to v28}
+\title{Ideas Register --- Consolidated, v1 to v29}
 \author{One file for every parked idea, with its current status}
 \date{}
 
@@ -20,14 +20,14 @@ where it stands now.
 
 \textbf{How status was determined.} Not from memory of the
 discussions. Each status was checked by searching the current paper,
-\texttt{Pattern\_Arithmetic\_v15\_27.tex} (v15\_27 differs from v15\_22
+\texttt{Pattern\_Arithmetic\_v15\_28.tex} (v15\_28 differs from v15\_22
 only in the atom-structure passages and the meta-vector subsection, so
 earlier checks stand), and
 --- for items destined
 elsewhere --- the \texttt{Assembly\_v1.tex} and
 \texttt{Inference\_v1.tex} copies on hand (which may be older than
 your working copies; if so, the ``not filed'' marks below should be
-rechecked against yours). Entries from v19 onward are appended here; v19 to v28 are the first ten.
+rechecked against yours). Entries from v19 onward are appended here; v19 to v29 are the first eleven.
 
 \paragraph{Status vocabulary.}
 \textbf{CLOSED} --- resolved and merged into the paper.
@@ -109,7 +109,7 @@ R17 & Meta-vector grouping (promote a shared one) & v2 & Inference & \textbf{OPE
 R18 & Identity handle / Mix-provenance link & v5, v11 & Papers 1, 2, Inf. & \textbf{OPEN} --- still ``proposed, not adopted''; $V_{\text{link}}$ now names targets by identifier \\
 R19 & Should Mix/Collapse skip expired contributions? & v17 & Paper 1; Inf. & \textbf{PARTLY MERGED} --- validity rule merged (v15\_25); filtering by UnCollapse not merged \\
 R45 & Meta-vector design questions G1--G14 (v23, v24): label identity, the level rule, mutation and links, vocabulary, timestamp encoding, sentinels, granularity, comparison per kind, core multiplicity, guidance & v23, v24 & Paper 1 & \textbf{CLOSED} --- merged in v15\_25, with the closure-unit sentence, the identity wording and the granularity fixed in v15\_26; G11 and G14's merge default not merged \\
-R46 & Scalar meta vectors as vectors in planes; a registry of recommended planes (non-normative) & v27 & Paper 1 (Future Work catalogue) & \textbf{PARTLY MERGED} --- form (scalar on a designated axis, no other constraint) and the catalogue entry merged in v15\_27; the catalogue itself not populated \\
+R46 & Scalar meta vectors as vectors in planes; a registry of recommended planes (non-normative) & v27 & Paper 1 (Future Work catalogue) & \textbf{PARTLY MERGED} --- form (scalar on a designated axis, no other constraint) and the catalogue entry merged in v15\_27 and corrected in v15\_28; the catalogue itself not populated \\
 R47 & Expiry as read-time exclusion: determinism, counts, hierarchy, links to expired atoms & v27 & Paper 1 & \textbf{CLOSED} --- merged in v15\_27 \\
 R48 & Two-level meta vectors: a result's own new timestamp beside its cores' & v27 & Paper 1 & \textbf{PARTLY MERGED} --- timestamp, link and expiry merged (v15\_26, v15\_27); atom-level location not \\
 R49 & ``Never lose identity'': value, individual, handle; Mix and UnMix & v27 & Paper 1 & \textbf{CLOSED} --- merged in v15\_27; Bundle reading to confirm \\[4pt]
@@ -1117,6 +1117,49 @@ zero errors and undefined references; the same five overfull warnings; and
 the seven metrics are absent outside Axiom~7, the meta-vector subsection
 using none of them.
 \emph{Status: R47, R49 closed; R46 and R48 partly merged.}
+
+
+\subsection*{v29 --- a rigid turn carries the meta vectors; two corrections to v15\_27}
+Ruling: a meta vector's axis shares the atom's cores. Turn an atom and all
+of its vectors, information and meta, turn with it, $V_{\text{derived}}$
+included. Meta vectors are labels on the coach and move with it; relative
+positions and distances are kept, so the meaning does not change.
+
+\textbf{Checked.} Turning an atom as a whole, the same rotation on every
+direction and the same phase shift on every phase, gives a
+$V_{\text{derived}}$ equal to the turned $V_{\text{derived}}$.
+$|V_{\text{derived}}|$, $S$, $\mathcal{E}$, $\alpha$, every pairwise angle
+and every phase difference are unchanged, and only the direction of
+$V_{\text{derived}}$ changes. For a scalar placed on an axis of the same
+ambient space as the content, rotating the whole space preserves distances
+but changes the value, a timestamp coordinate going from $1.7600$ to
+$-0.6797$; rotating only the content axes leaves it at $1.7600$. So the
+reading adopted is that a scalar meta vector is a coordinate in the atom's
+own frame, carried unchanged, while $V_{\text{derived}}$ turns with the
+content.
+
+\textbf{Two corrections to my v15\_27 text.} First, it said a meta vector
+lives in its own space or in axes disjoint from the content's, so that no
+rotation touches it. That is wrong for $V_{\text{derived}}$, which lives
+in the stage and turns with the content. Second, it said every verb leaves
+a meta vector alone, but Assembly reads $V_{\text{derived}}$ and the seat.
+The text now says no verb changes one or takes one as an operand, though a
+verb may read one.
+
+\textbf{A caution carried into the wording.} Distances between a content
+vector and a scalar axis mix units, a unit direction against a time, so
+preservation is claimed only among the information vectors and
+$V_{\text{derived}}$.
+
+\textbf{Not yet defined elsewhere in the paper.} Turning a whole atom.
+$T$ acts on one occupant, so the text defines the turn as the same
+rotation and phase shift applied to each vector. It sits beside R21 and
+R40.
+
+\textbf{Checks.} All 49 numbered equations are identical to v15\_27's;
+zero errors and undefined references; the same five overfull warnings; and
+the seven metrics are absent outside Axiom~7 and from the subsection.
+\emph{Status: R46's form corrected.}
 
 \section{Merged directly, without an ideas entry}
 
