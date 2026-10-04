@@ -5,7 +5,7 @@ Recomputes numerical claims the paper prints, from the inputs the paper prints, 
 PASS / FAIL / NOTE / UNDERSPECIFIED / SENSITIVE for each. Nothing is fitted to the paper.
 Run:  python3 reproduce_v15_28.py          (needs only numpy; about a minute)
 
-Covered: Axiom 7 identities and examples, the Mix example, Sun-Wind-Sky, the four-dimensional
+Covered: Axiom 7 identities and examples, the best-partner example of Section 2.11, the Mix example, Sun-Wind-Sky, the four-dimensional
 actor, the unmixing pair, the storm costume, the offset equator, the beyond-3-D table, and the
 full enclosure replay (steps to freeze, bodies, weighted pair).
 Not covered: the chladni numbers, the numeric clock, Tables 2 and 3, the literature claims, and
@@ -217,6 +217,14 @@ RESULTS.append(("Enclosure", "pair divided by r^3: exact count of increasing ste
                 f"computed {min(spread_counts)} to {max(spread_counts)} depending only on operation order or a 1e-12..1e-6 nudge"))
 check("Enclosure", "pair divided by r^3: separation increases on hundreds of steps; plain run on none", [1, 0],
       [int(min(spread_counts) >= 500 or min(spread_counts) >= 0.2*3000), inc_a], [0, 0], "qualitative claim holds in every variant")
+
+
+# ---------------------------------------------------------------- Section 2.11: the best partner depends on separation
+def Uint(rA, rB, d, c=1.0): return -(rA*rB/2)*(3+c)/(d**2+(rA+rB)**2)**1.5
+rb = np.linspace(0.001, 1, 100000)
+best0 = rb[np.argmin(Uint(0.6, rb, 0.0))]; best3 = rb[np.argmin(Uint(0.6, rb, 3.0))]
+check("Meta vectors, 'what they are for'", "best partner of r=0.60 at contact, and at separation 3", [0.30, 1.0], [best0, best3], [0.002, 1e-9],
+      "at contact 0.30 (weaker); at separation 3 the strongest available")
 
 if __name__ == "__main__":
     for sec, claim, printed, comp, status, note in RESULTS:

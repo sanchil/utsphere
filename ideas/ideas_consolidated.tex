@@ -4,7 +4,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 
-\title{Ideas Register --- Consolidated, v1 to v32}
+\title{Ideas Register --- Consolidated, v1 to v33}
 \author{One file for every parked idea, with its current status}
 \date{}
 
@@ -27,7 +27,7 @@ earlier checks stand), and
 elsewhere --- the \texttt{Assembly\_v1.tex} and
 \texttt{Inference\_v1.tex} copies on hand (which may be older than
 your working copies; if so, the ``not filed'' marks below should be
-rechecked against yours). Entries from v19 onward are appended here; v19 to v32 are the first fourteen.
+rechecked against yours). Entries from v19 onward are appended here; v19 to v33 are the first fifteen.
 
 \paragraph{Status vocabulary.}
 \textbf{CLOSED} --- resolved and merged into the paper.
@@ -118,7 +118,8 @@ R51 & The Mona Lisa as the test case for mixed-sort cores (R36): one core per ca
 R52 & Colour positioned by $V_{\text{derived}}$: colour must be addressed by direction, not phase; locator is direction plus atom coherence; $|V|$ measures size & v31 & Paper 1 & \textbf{OPEN} --- convention to settle \\
 R53 & Review of v15\_28, reproducibility exceptions: $\sigma_{\text{atom}}$ populations not printed; the 804-of-3000 count is rounding-sensitive; shell binning at floating-point edges; ``checked directly'' claims without inputs & v32 & Paper 1 & \textbf{OPEN} --- supplement delivered; text fixes pending \\
 R54 & Review of v15\_28, mechanical consistency fixes: stale ``not a sixth verb''; Table~1 says ``contribution'' for UnCollapse; title banner overflows; a drafting-history sentence in Axiom~7; ``mass'' wording in the enclosure & v32 & Paper 1 & \textbf{OPEN} --- v15\_29 \\
-R55 & The bowl as a holder of $V_{\text{derived}}$, the metrics and meta vectors: one statement over a holder & v32 & Paper 1 & \textbf{OPEN} --- atoms only today \\[4pt]
+R55 & The bowl as a holder of $V_{\text{derived}}$, the metrics and meta vectors: one statement over a holder & v32 & Paper 1 & \textbf{OPEN} --- atoms only today \\
+R56 & Terminology: the fifth to seventh metrics are unnamed and $\mathcal{E}$ is named only in passing; multi-sense words (cast $\times3$, shell $\times2$, energy $\times2$, density); populations behind ``$2.200$ against $2.150$'' & v33 & Paper 1 & \textbf{OPEN} --- found while building the glossary \\[4pt]
 
 \multicolumn{5}{@{}l}{\textit{Open --- Collapse}} \\*
 R20 & Collapse across differing sorts (per-vector $\tau_i$) & v10, v11 & Paper 1 & \textbf{OPEN} --- stated in paper; broadened by R36 \\
@@ -1343,6 +1344,39 @@ catalogue, $Q_{\mathrm{eff}}$ and the empty-atom conventions out; keep the
 definition and rules of meta vectors and move the detail of the recorded
 kinds to Inference and Assembly; remove the drafting-history sentence.
 \emph{Status: supplement delivered; R53--R55 open.}
+
+
+\subsection*{v33 --- the quick reference rebuilt for v15\_28; terminology findings}
+\texttt{Pattern\_Arithmetic\_QuickReference} was rebuilt (.md, .tex, .pdf; 11
+pages) from v15\_28: a one-page statement of the thesis, then the verbs, the
+axioms, the counts, the metrics, meta vectors, named quantities, sorts,
+dimensions, printed numbers, conventions, open items, a document map and a
+91-term A--Z index. Checks: every cited section and equation number resolves
+against the paper; every glossary term has a search key found in the paper;
+the 16 markdown tables are well formed; and the numbers table is reproduced by
+\texttt{reproduce\_v15\_28.py} ($37$ of $40$ checks pass; the other three are
+the noted exceptions, now including the best-partner example of
+\S2.11).
+
+\textbf{Terminology findings from building the glossary.}
+\begin{itemize}
+\item The paper names five of its metrics (atom strength, atom volume, mean
+vector volume, atom coherence, effective vector count) and calls
+$\mathcal{E}_{\text{atom}}$ ``the atom's intrinsic energy'' only in passing.
+$\alpha_{\text{atom}}$, $\sigma_{\text{atom}}$ and $\sigma_{\text{shell}}$ are
+its fifth to seventh metrics, described but not named; ``internal alignment''
+survives only in an equation label. The reference marks them unnamed.
+\item ``Cast'' has three senses (the lexicon cast $E_L$, the sort cast, and the
+cast of an uncapped sum into $[0,1]$ for $T$'s actor); ``shell'' has two (a
+strength bin, and one phased identity in Mix); ``energy'' has two
+($\mathcal{E}$ and $U_{AB}$); and ``density'' is defined in Axiom~3 although
+it is retired as a metric name. Table~1 reserves each verb name against
+informal reuse; these nouns are not held to the same rule.
+\item The comparison of ``$2.200$ against $2.150$'' cannot be reproduced
+either, since its populations are not printed, alongside the
+$\sigma_{\text{atom}}$ comparison of R53.
+\end{itemize}
+\emph{Status: R56 open.}
 
 \section{Merged directly, without an ideas entry}
 
