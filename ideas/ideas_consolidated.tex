@@ -4,7 +4,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 
-\title{Ideas Register --- Consolidated, v1 to v27}
+\title{Ideas Register --- Consolidated, v1 to v28}
 \author{One file for every parked idea, with its current status}
 \date{}
 
@@ -20,14 +20,14 @@ where it stands now.
 
 \textbf{How status was determined.} Not from memory of the
 discussions. Each status was checked by searching the current paper,
-\texttt{Pattern\_Arithmetic\_v15\_26.tex} (v15\_26 differs from v15\_22
+\texttt{Pattern\_Arithmetic\_v15\_27.tex} (v15\_27 differs from v15\_22
 only in the atom-structure passages and the meta-vector subsection, so
 earlier checks stand), and
 --- for items destined
 elsewhere --- the \texttt{Assembly\_v1.tex} and
 \texttt{Inference\_v1.tex} copies on hand (which may be older than
 your working copies; if so, the ``not filed'' marks below should be
-rechecked against yours). Entries from v19 onward are appended here; v19 to v27 are the first nine.
+rechecked against yours). Entries from v19 onward are appended here; v19 to v28 are the first ten.
 
 \paragraph{Status vocabulary.}
 \textbf{CLOSED} --- resolved and merged into the paper.
@@ -109,10 +109,10 @@ R17 & Meta-vector grouping (promote a shared one) & v2 & Inference & \textbf{OPE
 R18 & Identity handle / Mix-provenance link & v5, v11 & Papers 1, 2, Inf. & \textbf{OPEN} --- still ``proposed, not adopted''; $V_{\text{link}}$ now names targets by identifier \\
 R19 & Should Mix/Collapse skip expired contributions? & v17 & Paper 1; Inf. & \textbf{PARTLY MERGED} --- validity rule merged (v15\_25); filtering by UnCollapse not merged \\
 R45 & Meta-vector design questions G1--G14 (v23, v24): label identity, the level rule, mutation and links, vocabulary, timestamp encoding, sentinels, granularity, comparison per kind, core multiplicity, guidance & v23, v24 & Paper 1 & \textbf{CLOSED} --- merged in v15\_25, with the closure-unit sentence, the identity wording and the granularity fixed in v15\_26; G11 and G14's merge default not merged \\
-R46 & Scalar meta vectors as vectors in planes; a registry of recommended planes (non-normative) & v27 & Paper 1 (Future Work catalogue) & \textbf{OPEN} --- ruled in principle; home and form to settle \\
-R47 & Expiry as read-time exclusion: determinism, counts, hierarchy, links to expired atoms & v27 & Paper 1 & \textbf{OPEN} --- ruled; semantics to settle \\
-R48 & Two-level meta vectors: a result's own new timestamp beside its cores' & v27 & Paper 1 & \textbf{PARTLY MERGED} --- timestamp and link merged in v15\_26; atom-level expiry and location not \\
-R49 & ``Never lose identity'': value, individual, handle; Mix and UnMix & v27 & Paper 1 & \textbf{OPEN} --- wording to settle \\[4pt]
+R46 & Scalar meta vectors as vectors in planes; a registry of recommended planes (non-normative) & v27 & Paper 1 (Future Work catalogue) & \textbf{PARTLY MERGED} --- form (scalar on a designated axis, no other constraint) and the catalogue entry merged in v15\_27; the catalogue itself not populated \\
+R47 & Expiry as read-time exclusion: determinism, counts, hierarchy, links to expired atoms & v27 & Paper 1 & \textbf{CLOSED} --- merged in v15\_27 \\
+R48 & Two-level meta vectors: a result's own new timestamp beside its cores' & v27 & Paper 1 & \textbf{PARTLY MERGED} --- timestamp, link and expiry merged (v15\_26, v15\_27); atom-level location not \\
+R49 & ``Never lose identity'': value, individual, handle; Mix and UnMix & v27 & Paper 1 & \textbf{CLOSED} --- merged in v15\_27; Bundle reading to confirm \\[4pt]
 
 \multicolumn{5}{@{}l}{\textit{Open --- Collapse}} \\*
 R20 & Collapse across differing sorts (per-vector $\tau_i$) & v10, v11 & Paper 1 & \textbf{OPEN} --- stated in paper; broadened by R36 \\
@@ -1069,6 +1069,55 @@ contradict its own UnMix proof.
 \end{itemize}
 \emph{Status: fixes 1--3 merged; R46, R47, R49 open; R48 partly merged.}
 
+
+\subsection*{v28 --- expiry, identity and the scalar convention merged}
+Merged into \texttt{Pattern\_Arithmetic\_v15\_27.tex}, on the rulings that
+expiry follows the proposal, that UnMix stays impossible, and that scalars
+live on designated axes with no other constraint on meta vectors.
+
+\textbf{What went in.}
+\begin{itemize}
+\item \emph{Form (R46).} A meta vector is a vector with no constraint on
+its form. A scalar one takes a designated axis of its own space, uncapped,
+so that vector distance is the difference of values, and uses a plane or
+more where a kind needs more information. It lives in its own space or in
+axes disjoint from the content's, so that no verb that rotates content
+touches it; that is a requirement of ``no verb acts on a meta vector,''
+not a constraint on shape. Which axis suits which kind is a
+recommendation: a meta-vector catalogue beside the dictionaries in the
+deferred-catalogues subsection, which now says ``a set of catalogues, with
+learnable paths beside them'' where it said ``a pair.''
+\item \emph{Expiry (R47).} Everything is read at a time $t$, by default
+now, and the determinism sentence now says so. A core is valid at $t$ when
+$t$ is earlier than every expiry it carries. An atom's own expiry applies
+to every core in it, and a contribution's expiry is carried onto each of
+its cores at Collapse, beside their own. An expired core contributes no
+vectors and reads as a black core. $N$ and $D$ are counts of the stored
+atom and do not change with $t$; $Q$, $V_{\text{derived}}$, the metrics and
+every process read only the valid cores. Expiry is a reading, not an edit,
+and backward links stay readable.
+\item \emph{Identity (R49).} The individual persists under Collapse,
+Bundle and Mix, as persistence and not recovery; UnMix stays impossible.
+\end{itemize}
+
+\textbf{Two wording choices to confirm.} First, $D$ is a stored count and
+does not follow $t$: were it to, all expired cores would coincide as one
+black value and $D$ would shrink as cores expire. Second, under Bundle the
+information content of value-equal individuals shares a seat by
+definition, so what persists of the individuals is their meta vectors;
+the ruling that information vectors never lose identity can only mean
+this, since $A\uplus A=A$.
+
+\textbf{A consequence noted.} A core can now carry several expiries, its
+own and inherited ones, so the bullet's ``$V_{\text{expiry}}$, per core''
+reads as each expiry the core carries.
+
+\textbf{Checks.} All 49 numbered equations are identical to v15\_26's;
+zero errors and undefined references; the same five overfull warnings; and
+the seven metrics are absent outside Axiom~7, the meta-vector subsection
+using none of them.
+\emph{Status: R47, R49 closed; R46 and R48 partly merged.}
+
 \section{Merged directly, without an ideas entry}
 
 These went straight into the paper at your direction and are already
@@ -1086,8 +1135,7 @@ bridges them; and the $N$/$D$ addition (filed afterwards as R5).
 \item \textbf{Done in v15\_25:} the meta-vector taxonomy and the v17
 resolution (R15, R14, R45), which closed Gap~2. What remains of that
 cluster: R19's filtering by UnCollapse, the label-merging default of G14,
-and R46--R49 (v27), of which the expiry semantics (R47) and the identity
-wording (R49) matter first.
+and populating the meta-vector catalogue (R46).
 \item \textbf{Decide the scope questions (R27, R28)}: Axiom~7's
 metrics and the costumes, and whether to split. These also decide
 whether R12, R25, and R41--R43 still matter for Paper~1.
