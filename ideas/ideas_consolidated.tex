@@ -4,7 +4,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 
-\title{Ideas Register --- Consolidated, v1 to v29}
+\title{Ideas Register --- Consolidated, v1 to v30}
 \author{One file for every parked idea, with its current status}
 \date{}
 
@@ -27,7 +27,7 @@ earlier checks stand), and
 elsewhere --- the \texttt{Assembly\_v1.tex} and
 \texttt{Inference\_v1.tex} copies on hand (which may be older than
 your working copies; if so, the ``not filed'' marks below should be
-rechecked against yours). Entries from v19 onward are appended here; v19 to v29 are the first eleven.
+rechecked against yours). Entries from v19 onward are appended here; v19 to v30 are the first twelve.
 
 \paragraph{Status vocabulary.}
 \textbf{CLOSED} --- resolved and merged into the paper.
@@ -112,7 +112,8 @@ R45 & Meta-vector design questions G1--G14 (v23, v24): label identity, the level
 R46 & Scalar meta vectors as vectors in planes; a registry of recommended planes (non-normative) & v27 & Paper 1 (Future Work catalogue) & \textbf{PARTLY MERGED} --- form (scalar on a designated axis, no other constraint) and the catalogue entry merged in v15\_27 and corrected in v15\_28; the catalogue itself not populated \\
 R47 & Expiry as read-time exclusion: determinism, counts, hierarchy, links to expired atoms & v27 & Paper 1 & \textbf{CLOSED} --- merged in v15\_27 \\
 R48 & Two-level meta vectors: a result's own new timestamp beside its cores' & v27 & Paper 1 & \textbf{PARTLY MERGED} --- timestamp, link and expiry merged (v15\_26, v15\_27); atom-level location not \\
-R49 & ``Never lose identity'': value, individual, handle; Mix and UnMix & v27 & Paper 1 & \textbf{CLOSED} --- merged in v15\_27; Bundle reading to confirm \\[4pt]
+R49 & ``Never lose identity'': value, individual, handle; Mix and UnMix & v27 & Paper 1 & \textbf{CLOSED} --- merged in v15\_27; Bundle reading to confirm \\
+R50 & Meta-vector consistency obligations: labels of results of $T$, offset, Remove and Assembly; fixed conventions (time standard, axis and unit per scalar kind); per-sort $V_{\text{derived}}$ & v30 & Paper 1 & \textbf{OPEN} --- consistency only; meaning is left to use \\[4pt]
 
 \multicolumn{5}{@{}l}{\textit{Open --- Collapse}} \\*
 R20 & Collapse across differing sorts (per-vector $\tau_i$) & v10, v11 & Paper 1 & \textbf{OPEN} --- stated in paper; broadened by R36 \\
@@ -1160,6 +1161,53 @@ R40.
 zero errors and undefined references; the same five overfull warnings; and
 the seven metrics are absent outside Axiom~7 and from the subsection.
 \emph{Status: R46's form corrected.}
+
+
+\subsection*{v30 --- meta vectors need to be consistent, not meaningful}
+Principle given: meta vectors are properties put to use mainly in Inference
+and Assembly. They need only be consistent and mathematically accurate.
+They need not make sense by themselves, as a word need not make sense by
+existing; their use is extracted by context and by the path, poem or prose.
+
+\textbf{How it sits with the paper.} It is the paper's own stance applied to
+labels: a seated word does not know the poem, and the algebra ``does not
+mint the relations.'' It also explains why meta vectors need no Axiom~0
+admissibility, since nothing in the algebra reads them for meaning.
+
+\textbf{What it changes in my earlier assessment.} I counted the lack of a
+worked example for timestamp, expiry, location and link as a maturity gap.
+Under this principle the test is consistency and accuracy, and the uses
+belong to Assembly and Inference, so the remaining obligations concern
+consistency only.
+
+\textbf{What it does not remove.} ``Need not make sense'' does not mean
+``may be underdetermined.'' A comparison across mixed units depends on the
+unit chosen. Take $A$ at $0^\circ$ with time $0$, $B$ at $10^\circ$ with
+time $3000$\,s, and $C$ at $60^\circ$ with time $100$\,s. The nearest
+neighbour of $A$ is $C$ with time in seconds ($100.0$ against $3000.0$) and
+$B$ with time in hours ($0.851$ against $1.000$) or in days. So any use
+that compares across kinds must state its comparison rule and unit. That is
+the work of the catalogue (R46) and of the comparison per kind: the vector
+need not make sense, but its convention must be fixed.
+
+\textbf{Remaining consistency obligations (R50).}
+\begin{itemize}
+\item The labels of a result of $T$, offset, Remove and Assembly, which the
+paper states only for Collapse, Bundle and Mix. In particular, whether a
+turned atom, being a new atom, gets its own new timestamp and backward
+link as a Collapse result does, while its cores keep theirs.
+\item Conventions that fix values: the time standard (UTC, resolution) and
+the axis and unit of each scalar kind.
+\item $V_{\text{derived}}$ per sort once mixed sorts are admitted (R36).
+\end{itemize}
+
+\textbf{Proposed, not merged.} One sentence for Section~2.11: ``A meta
+vector need not mean anything by itself. It must be well defined,
+consistent, and mathematically accurate; what it is good for is extracted
+by the context or the path that reads it, as a word's use is.'' If R28
+splits the paper, the ``What they are for'' paragraph moves with Assembly
+and Inference.
+\emph{Status: principle recorded; R50 open.}
 
 \section{Merged directly, without an ideas entry}
 
