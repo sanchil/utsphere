@@ -4,7 +4,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 
-\title{Ideas Register --- Consolidated, v1 to v30}
+\title{Ideas Register --- Consolidated, v1 to v32}
 \author{One file for every parked idea, with its current status}
 \date{}
 
@@ -27,7 +27,7 @@ earlier checks stand), and
 elsewhere --- the \texttt{Assembly\_v1.tex} and
 \texttt{Inference\_v1.tex} copies on hand (which may be older than
 your working copies; if so, the ``not filed'' marks below should be
-rechecked against yours). Entries from v19 onward are appended here; v19 to v30 are the first twelve.
+rechecked against yours). Entries from v19 onward are appended here; v19 to v32 are the first fourteen.
 
 \paragraph{Status vocabulary.}
 \textbf{CLOSED} --- resolved and merged into the paper.
@@ -113,7 +113,12 @@ R46 & Scalar meta vectors as vectors in planes; a registry of recommended planes
 R47 & Expiry as read-time exclusion: determinism, counts, hierarchy, links to expired atoms & v27 & Paper 1 & \textbf{CLOSED} --- merged in v15\_27 \\
 R48 & Two-level meta vectors: a result's own new timestamp beside its cores' & v27 & Paper 1 & \textbf{PARTLY MERGED} --- timestamp, link and expiry merged (v15\_26, v15\_27); atom-level location not \\
 R49 & ``Never lose identity'': value, individual, handle; Mix and UnMix & v27 & Paper 1 & \textbf{CLOSED} --- merged in v15\_27; Bundle reading to confirm \\
-R50 & Meta-vector consistency obligations: labels of results of $T$, offset, Remove and Assembly; fixed conventions (time standard, axis and unit per scalar kind); per-sort $V_{\text{derived}}$ & v30 & Paper 1 & \textbf{OPEN} --- consistency only; meaning is left to use \\[4pt]
+R50 & Meta-vector consistency obligations: labels of results of $T$, offset, Remove and Assembly; fixed conventions (time standard, axis and unit per scalar kind); per-sort $V_{\text{derived}}$ & v30 & Paper 1 & \textbf{OPEN} --- consistency only; meaning is left to use \\
+R51 & The Mona Lisa as the test case for mixed-sort cores (R36): one core per canvas point; a bowl of single-sort atoms aligned by position labels today; standards per sort; a planar position kind in the catalogue & v31 & Paper 1 & \textbf{OPEN} --- answered in principle; adoption of R36 pending \\
+R52 & Colour positioned by $V_{\text{derived}}$: colour must be addressed by direction, not phase; locator is direction plus atom coherence; $|V|$ measures size & v31 & Paper 1 & \textbf{OPEN} --- convention to settle \\
+R53 & Review of v15\_28, reproducibility exceptions: $\sigma_{\text{atom}}$ populations not printed; the 804-of-3000 count is rounding-sensitive; shell binning at floating-point edges; ``checked directly'' claims without inputs & v32 & Paper 1 & \textbf{OPEN} --- supplement delivered; text fixes pending \\
+R54 & Review of v15\_28, mechanical consistency fixes: stale ``not a sixth verb''; Table~1 says ``contribution'' for UnCollapse; title banner overflows; a drafting-history sentence in Axiom~7; ``mass'' wording in the enclosure & v32 & Paper 1 & \textbf{OPEN} --- v15\_29 \\
+R55 & The bowl as a holder of $V_{\text{derived}}$, the metrics and meta vectors: one statement over a holder & v32 & Paper 1 & \textbf{OPEN} --- atoms only today \\[4pt]
 
 \multicolumn{5}{@{}l}{\textit{Open --- Collapse}} \\*
 R20 & Collapse across differing sorts (per-vector $\tau_i$) & v10, v11 & Paper 1 & \textbf{OPEN} --- stated in paper; broadened by R36 \\
@@ -1208,6 +1213,136 @@ by the context or the path that reads it, as a word's use is.'' If R28
 splits the paper, the ``What they are for'' paragraph moves with Assembly
 and Inference.
 \emph{Status: principle recorded; R50 open.}
+
+
+\subsection*{v31 --- the Mona Lisa again, and colour as a position}
+Question: can an information atom hold an accurate, complete
+representation of the Mona Lisa, as a Collapsed atom of several pure types
+(colours, brush strokes, hues), each backed by a standard, the standards
+being recommendations and not constraints?
+
+\textbf{Answer, with a stand-in tested} (a $32\times32$ image and a
+stroke-direction field, not the painting).
+\begin{itemize}
+\item \emph{Capacity.} No limit on $N$ or $Q$ was found in the paper, and
+cores may be any size.
+\item \emph{Fidelity.} Lossless relative to a standard and a precision.
+One core per canvas position ($N=1024$) round-tripped: the 8-bit colours
+exactly, the stroke directions to $1.1\times10^{-16}$ rad, and a black
+pixel as $r=0$, which is Axiom~2's empty seat. ``Complete'' can only mean
+complete relative to the standards, since no finite standard exhausts a
+physical painting.
+\item \emph{Sense.} Not stored: a path, or a lexicon pin, reads it.
+\item \emph{How it is held.} A core is a point, so one core per position,
+each carrying its position as a meta vector. The Form paragraph allows a
+plane, but $V_{\text{location}}$ as defined is geographic, so a canvas
+position is another kind in the catalogue. Today the paper supports one
+atom per sort in a bowl, aligned by position labels, which is the link
+rule: criteria on other meta vectors, not content. Pairing by label was
+$1024/1024$ correct and pairing by order alone $0/1024$. One atom of
+several sorts needs mixed-sort cores (R36), and the Mona Lisa is the test
+case for adopting it.
+\item \emph{Standards.} A sort's standard attaches through the catalogue.
+If one sort has several standards, sRGB or P3, someone must say which, and
+decoding needs it; it might be recorded as a meta vector.
+\item \emph{Cautions.} $V_{\text{derived}}$ is a summary and not a
+representation, and the pixels must never be Mixed, since Mix fuses values
+and UnMix is impossible whereas Collapse keeps every core.
+\end{itemize}
+
+\textbf{Colour as a position (ruling).} $V_{\text{derived}}$ of colour
+positions an atom in a higher space, so summaries of like colours or shades
+fall in the same region. Checked:
+\begin{itemize}
+\item It works only if colour is carried by direction.
+$V_{\text{derived}}=\sum r_i\hat n_i$ excludes $\chi$, so in the paper's
+phase-colour convention, red ($\chi=0^\circ$) and green
+($\chi=120^\circ$) at one direction have identical $V_{\text{derived}}$.
+The colour standard must put colour in $\hat n$, while phase colour stays
+for Mix arithmetic, so the paper has two colour roles to keep apart.
+\item With colour carried by direction (RGB direction, strength as
+brightness), dark and light red share a direction ($0.00^\circ$), a near
+red is $1.31^\circ$ away, and green is $71.02^\circ$ away.
+\item It is many-to-one. Fifty red with fifty green, and one hundred
+uniform yellow, share the direction $(0.707,0.707,0)$, with atom coherence
+$|V|/S$ of $0.707$ and $1.000$. The locator is therefore direction plus
+coherence.
+\item $|V_{\text{derived}}|$ scales with the number of cores ($0.519$,
+$51.877$, $5187.748$ for $1$, $100$, $10000$ identical colours), so it
+measures size and not colour. Position by direction and normalized
+magnitudes. This also feeds the earlier caution that an uncapped $|V|$ is
+heavy in the Assembly energy.
+\end{itemize}
+\emph{Status: R51, R52 open.}
+
+
+\subsection*{v32 --- review of v15\_28: simplicity, consistency, repeatability, reproducibility}
+Method: v15\_28 was compiled and audited, then 39 numerical claims were
+recomputed from the inputs the paper prints, with a script delivered as
+\texttt{reproduce\_v15\_28.py}, the supplement R29 asked for.
+
+\textbf{Reproducibility: 36 pass, 0 fail, 3 noted.} Passing: the Axiom~7
+identity and examples, the Mix example, Sun--Wind--Sky, the
+four-dimensional actor, the unmixing pair, the storm costume (both paths,
+endpoints and angles), the offset equator, the beyond-3-D order gaps
+($0.683$ to $0.331$), and the full enclosure replay: steps to freeze $628$,
+$1261$, $2526$, $6320$ exactly, the bodies, the four runs agreeing to
+$1.97\times10^{-7}$, the $r$-weighted body $2.4\times10^{-8}$ from the
+plain one, and the pair falling from $3$ to $1.80$. The three exceptions:
+\begin{itemize}
+\item $\sigma_{\text{atom}}$ clumped $0.00032$ against uniform $0.00214$:
+the populations are not printed. A uniform spread over $(0,1]$ gives
+$0.0032$, and the printed $0.00214$ is close to a uniform spread over
+$(0.2,1]$ ($0.0021$). The populations should be printed.
+\item The $804$ of $3000$ steps on which the separation increases is
+rounding-sensitive: $830$ to $855$ for algebraically equal orderings of the
+same arithmetic or a $10^{-12}$ nudge to the start. The qualitative claim
+is robust, hundreds of increases against none, and dividing by $r$ instead
+of $r^3$ gives none. It should be stated as a range or as more than a
+quarter of the steps.
+\item $\lfloor0.3/0.1\rfloor$ is $2$ in floating point, so shell edges are
+ambiguous; the printed populations are unaffected. Bins should be defined
+in exact arithmetic or with a tolerance.
+\end{itemize}
+Claims of ``checked directly'' without inputs: the naive alternative that
+borrows the axis from $x$ is not defined, and neither are the ``uniform
+case'' of shell counts or the values of $K$ tested.
+
+\textbf{Consistency findings.}
+\begin{itemize}
+\item ``Not a sixth verb'' (the introduction) is stale: the paper has six.
+\item Table~1's UnCollapse row and caption say ``contribution'' where
+\S3.4 returns an atom without one core.
+\item The title banner of equals signs overflows the margin ($979$\,pt
+overfull) and is clipped at the page edge.
+\item Axiom~7 carries a drafting-history sentence (``Earlier drafts called
+$\ldots$ mass, density, atom energy''); the reasoning can stay as a plain
+statement.
+\item The enclosure's ``mass-weighting'' and ``mass-like quantity''
+reintroduce the word Axiom~7 retires for the $r^3$ quantity.
+\item $30$ of $97$ labels are never referenced, which is cosmetic.
+\item R26 is still open: the Mix-refusal closure says ``already
+demonstrated $\ldots$ correct behavior.''
+\item The bowl: $V_{\text{derived}}$, the metrics, and expiry are defined
+for atoms only, and a bowl may carry meta vectors in one sentence. The
+quantities depend only on the multiset of vectors, so one statement over a
+holder would serve both. With no repeats ($D=N$) an atom and a bowl
+coincide; with repeats they differ by multiplicity, for example
+$A\oplus B\oplus A$ with $A=\{0.8,0.4\}$ and $B=\{0.6\}$ has $S=3.0$,
+$\mathcal{E}=1.96$, while the bowl $\{A,B\}$ has $S=1.8$,
+$\mathcal{E}=1.16$.
+\end{itemize}
+
+\textbf{Simplicity.} About $19{,}600$ words and $48$ pages, up from $45$ at
+v15\_21. Axiom~7 (about $1{,}650$ words) and Section~2.11 (about $1{,}370$)
+together are about $15\%$ of the text, and nothing in the paper reads the
+seven metrics or the recorded meta vectors; the costumes are about $4\%$ and
+the enclosure about $8\%$. The spine, the verb table and the three
+equations, is intact. Candidate trims, tied to R27 and R28: move the metric
+catalogue, $Q_{\mathrm{eff}}$ and the empty-atom conventions out; keep the
+definition and rules of meta vectors and move the detail of the recorded
+kinds to Inference and Assembly; remove the drafting-history sentence.
+\emph{Status: supplement delivered; R53--R55 open.}
 
 \section{Merged directly, without an ideas entry}
 
