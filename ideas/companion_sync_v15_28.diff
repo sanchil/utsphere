@@ -1,0 +1,434 @@
+--- Assembly_v1.tex
++++ Assembly_v2.tex
+@@ -1 +1,3 @@
++% Assembly_v2: synced to Pattern_Arithmetic_v15_28 (verb names, atom structure, section and axiom
++% pointers, meta vectors). Changes are listed in companion_sync_v15_28.md.
+ % 1. Preamble
+@@ -57,4 +59,3 @@
+ One point is genuinely open --- fine-grained multi-vector matching,
+-where an atom's own bundle, not its coarse derived vector, decides
+-how it bonds. What this paper does not yet do is the harder thing
++where an atom's own informational vectors, not its coarse derived vector, decide how it bonds. What this paper does not yet do is the harder thing
+ its own title promises: say what a frozen camp, read and re-read at
+@@ -77,3 +78,3 @@
+ read as the same freeze only by a further, named allowance
+-(companion paper, Enclosure). None of this says what a checkpoint
++(companion paper, \S10.3). None of this says what a checkpoint
+ \emph{is}, in the sense a bowl of evidence becomes a verdict in the
+@@ -108,4 +109,3 @@
+       intact, $A\bowtie B=(A,B,\kappa_{AB},U_{AB})$, with
+-      $U_{AB}<0$ for nonzero strengths and never repelling
+-      (Axiom~6).
++      $U_{AB}<0$ for nonzero strengths and never repelling (Axiom~6, \S2.9).
+ \item The enclosure: external seats $\vec P$ descend the energy
+@@ -115,7 +115,20 @@
+       between any two units of nonzero strength never reaches zero
+-      at finite distance (Enclosure, Rest and Camps).
+-\item Informational vectors (Axiom~7): an atom may carry $N$ capped
+-      arrows and one uncapped derived sum $V_{\mathrm{derived}}$.
+-      Coarse assembly runs on the derived pair; the bundle's own
+-      arrows are not consulted by $U_{AB}$ unless named explicitly.
++      at finite distance (\S10.1--10.3); two checkpoints are read as the same freeze only under a
++      named allowance $\epsilon_{\text{allow}}$ (\S10.3).
++\item Informational vectors (Axiom~7, \S2.10): an atom holds $Q$
++      capped informational vectors in $N$ cores, of which $D\le N$ are
++      distinct, and one uncapped derived sum $V_{\mathrm{derived}}$.
++      Coarse assembly runs on the derived pair; the atom's own
++      vectors are not consulted by $U_{AB}$ unless named explicitly.
++\item Collapse, $\oplus$, and UnCollapse, $\ominus$ (\S3.3--3.4):
++      several atoms combined into one with every core kept,
++      $N=\sum N_i$ and $Q=\sum Q_i$; not idempotent,
++      $A\oplus A=A^{\langle 2\rangle}$; $\ominus$ returns the atom
++      without one core.
++\item Meta vectors (\S2.11): values that describe an atom beside its
++      content and are no part of what it says --- the seat $\vec P$
++      and $V_{\mathrm{derived}}$ among them, with a timestamp, an
++      expiry, a location and a link. They are uncapped, counted in
++      neither $N$ nor $Q$, and changed by no verb; Assembly reads
++      $V_{\mathrm{derived}}$ and the seat.
+ \item \emph{Levels are closed}: a camp carries no representation of
+@@ -129,4 +142,3 @@
+ Two settled points are worth recording plainly, since both follow
+-from Axiom~V4's exclusion of $\mathcal{V}_{\text{atom}}$ from motion
+-(companion paper, Enclosure \S~Rest) rather than from anything built
++from Axiom~7's exclusion of $\mathcal{V}_{\text{atom}}$ from motion (companion paper, \S2.10 and \S10.2) rather than from anything built
+ here.
+@@ -150,4 +162,4 @@
+ its real name; nothing in this framework currently reproduces it,
+-since the quantity that would drive it was deliberately kept out of
+-motion.
++since the quantity that would drive it was deliberately kept out of motion. The companion paper
++now says the same of its own enclosure: no sorting of members by strength (\S10.5).
+ 
+@@ -173,3 +185,3 @@
+ neither has to be rediscovered; and it names one open question about
+-how an atom's own bundle should govern multi-partner bonding, where
++how an atom's own informational vectors should govern multi-partner bonding, where
+ the coarse derived-vector treatment is known to be incomplete.
+@@ -249,3 +261,3 @@
+ \textbf{[Verified.]} Resultant versus dominant-vector representation,
+-tested on identical seats and bundles: $16.0\%$ of contested pairs
++tested on identical seats and multi-vector atoms: $16.0\%$ of contested pairs
+ disagree ($120/749$ across 15 trials) on who ends up grouped with
+@@ -317,4 +329,3 @@
+ at the system level, not only at the evidence level: the identical
+-16 camps produce 13 systems under the Hill bijection and 11 under
+-the naive clip, with different groupings, not merely different
++16 camps produce 13 systems under the Hill bijection (Inference paper, \S2.1) and 11 under the naive clip, with different groupings, not merely different
+ counts.
+@@ -327,4 +338,12 @@
+ comparable scale: $94\%$ ($47/50$), a near-total collapse. Camps
+-compressing into a signature before the next level's dynamics run is
+-not equivalent to loosening the same single-level process.
++compressing into a signature before the next level's dynamics run is not equivalent to loosening the same single-level process.
++
++\textbf{[Added in the sync to v15\_28; for the author's review.]} The
++companion paper now has a verb for several atoms becoming one:
++Collapse, $\oplus$ (\S3.3), which keeps every core, $N=\sum N_i$, and
++discards nothing. A camp read as a system-level atom would then be a
++Collapsed atom, and its $V_{\mathrm{derived}}$ the sum of its members'
++sums. Whether that matches the camp signature used in the tests above
++is not checked here; those tests promoted camps by their own
++construction.
+ 
+@@ -392,3 +411,3 @@
+ cranks at once. Film: one atom per frame is a lexicon choice,
+-$\oplus$ is the cast, the movie is the ordered visits, $T_{24}$ is a
++$\uplus$ is the cast ($\oplus$ if repeated frames must be counted), the movie is the ordered visits, $T_{24}$ is a
+ metronome, and a projector walks the reel without Mixing it. A camp
+@@ -415,4 +434,4 @@
+ same verbs returning only after a clump is named as a pin. Two
+-clouds do not cancel by sitting: sitting is still $\oplus$, and
+-cancelling is Mix on a shared axis or $\ominus$. There is no
++clouds do not cancel by sitting: sitting is still $\uplus$ ($\oplus$ where the count must be kept), and cancelling is Mix on a shared axis,
++or taking a member out with $\setminus$ (a core, with $\ominus$). There is no
+ annihilation operator. Information against anti-information is
+@@ -450,5 +469,5 @@
+ 
+-This belongs beside \emph{Pattern Arithmetic}'s own Thesis, not
+-here --- that paper is frozen for now, so it is held in this one
+-until it migrates.
++This belongs beside \emph{Pattern Arithmetic}'s own Thesis, not here. Two of the three notes below have since
++migrated into that paper's Introduction (v15\_28, \S1) --- what arithmetic is \emph{for}, and precedent --- and
++are kept here for the record. The first, on what earns axiom status, has not, and is held here until it does.
+ 
+@@ -471,4 +490,3 @@
+ by having no alternative to compare against. $r\le1$ fails it by
+-mattering only as a scale. Mix as phasor summation, or Gather's
+-idempotence, pass it --- a different choice there is a different
++mattering only as a scale. Mix as phasor summation, or Bundle's idempotence, pass it --- a different choice there is a different
+ algebra, not the same one in different clothes. This is the
+@@ -479,3 +497,3 @@
+ 
+-\paragraph{A second note, on what arithmetic is for.} Also belongs
++\paragraph{A second note, on what arithmetic is for.} \emph{[Now in the companion paper's \S1, v15\_28.]} Also belongs
+ beside the companion paper's Thesis --- restating it from a different
+@@ -492,3 +510,3 @@
+ 
+-\paragraph{A third note, on precedent.} Also belongs beside the
++\paragraph{A third note, on precedent.} \emph{[Now in the companion paper's \S1, v15\_28.]} Also belongs beside the
+ companion paper's Thesis. Pattern Arithmetic is not a new technique
+@@ -515,4 +533,3 @@
+       as the weakest): four to six lines after the statement that
+-      counting is one arithmetic. Kinship of habit, not identity
+-      with $\oplus$.
++      counting is one arithmetic. Kinship of habit, not identity with $\uplus$.
+ \item Pin is not seat: two lines where $\bowtie$ first needs
+@@ -529,2 +546,4 @@
+ \end{itemize}
++Status at v15\_28: the first item is in the companion paper's \S1; the borrowed-pictures point is partly in its
++\S10.5; the pin-against-seat and level-closure comments are not yet there.
+ Not even as a comment: $T_{24}$, film, neighbour graphs,
+--- Inference_v1.tex
++++ Inference_v2.tex
+@@ -1 +1,3 @@
++% Inference_v2: synced to Pattern_Arithmetic_v15_28 (verb names, atom structure, section and axiom
++% pointers, Mix refusal, multiplicity). Changes are listed in companion_sync_v15_28.md.
+ % 1. Preamble
+@@ -49,4 +51,4 @@
+ $x=(r,\hat n,\chi,\tau)$ on a sphere $\mathcal{S}$ and an algebra over
+-such units --- gather ($\oplus$), remove ($\ominus$), mix ($\boxplus$),
+-walk ($T$), offset, and assembly ($\bowtie$) --- together with an
++such units --- bundle ($\uplus$), collapse ($\oplus$), mix ($\boxplus$), walk ($T$), offset, and assembly ($\bowtie$),
++with remove ($\setminus$) and uncollapse ($\ominus$) taking one member or core back --- together with an
+ admissibility test and an enclosure of external seats. That paper
+@@ -106,5 +108,4 @@
+ always better, but that \emph{the mechanism for combining evidence
+-does not change shape as the amount of evidence grows} --- the same
+-gather, the same two readings, apply to ten shells or ten thousand
+-sensor readings. Where that mechanism strains under scale (\S 4.3) is
++does not change shape as the amount of evidence grows} --- the same Bundle, the same two readings, apply to ten shells or ten thousand
++sensor readings. Where that mechanism strains under scale (\S\ref{sec:worked_example}) is
+ stated plainly rather than smoothed over.
+@@ -122,4 +123,9 @@
+       truthfully applied (Axiom 1; Axiom 0).
+-\item Gather, $\oplus$: union on finite subsets of $\mathcal{S}$,
+-      sort-blind, idempotent, lossless, undone by $\ominus$ (Axiom 4).
++\item Bundle, $\uplus$: union on finite subsets of $\mathcal{S}$,
++      sort-blind, idempotent, lossless, undone by Remove, $\setminus$
++      (Axiom 4, \S2.5).
++\item Collapse, $\oplus$: several atoms combined into one with every
++      core kept, $N=\sum N_i$ and $Q=\sum Q_i$; not idempotent,
++      $A\oplus A=A^{\langle 2\rangle}$; undone one core at a time by
++      UnCollapse, $\ominus$ (\S3.3--3.4).
+ \item Mix, $\boxplus$: a phasor reading of a bowl whose members share a
+@@ -128,3 +134,3 @@
+       with $z_B=\sum_{x\in B} r_x e^{i\chi_x}$; commutative,
+-      non-associative, lossy, uninvertible (Axiom 5).
++      non-associative, lossy, uninvertible (Axiom 5, \S2.6), and refused across differing directions (\S2.7).
+ \item The walk, $T$: an ordered composition
+@@ -133,3 +139,3 @@
+       many-to-one, so a landing alone does not determine the walk that
+-      reached it (companion paper, transformation algebra).
++      reached it (companion paper, \S4.2--4.3; a poem's identity is carried by its full path, \S4.5).
+ \item Assembly $\bowtie$ and the enclosure: two units related while
+@@ -137,12 +143,16 @@
+       camp or several. A camp body is measured afterwards; it is not
+-      a name (companion paper, Axiom~6 and Enclosure).
+-\item Informational vectors (companion paper, Axiom~7): an atom may
+-      carry $N$ capped arrows and one uncapped derived sum
+-      $V_{\mathrm{derived}}$. Coarse assembly and a single-vector
+-      comparison use that derived pair. The seven diagnostic
+-      scalars of Axiom~7 are not restated here.
++      a name (companion paper, Axiom~6, \S2.9, and the Enclosure, \S10).
++\item Informational vectors (companion paper, Axiom~7, \S2.10): an
++      atom holds $Q$ capped informational vectors in $N$ cores, and one
++      uncapped derived sum $V_{\mathrm{derived}}$. Coarse assembly and
++      a single-vector comparison use that derived pair. The seven
++      diagnostic scalars of Axiom~7 are not restated here.
++\item Meta vectors (companion paper, \S2.11): values that describe an
++      atom beside its content --- a timestamp, an expiry, a place, a
++      link, the derived sum, the seat --- uncapped, counted in neither
++      $N$ nor $Q$, and no coordinate of the atom.
+ \item \emph{Levels are closed}: a unit carries no representation of
+       what it constitutes, and a bowl carries no representation of the
+-      reading that will be applied to it. Grouping criteria such as a
+-      time window live outside the 4-tuple.
++      reading that will be applied to it. Grouping criteria such as a time window live outside the 4-tuple (\S3.1), though a window may be read
++      from a timestamp meta vector (\S2.11).
+ \end{itemize}
+@@ -152,3 +162,3 @@
+ flattened --- repeated samples of one unit, mistaken for many units at
+-one level (companion paper, \S2.7). Second, the atom stays a
++one level (companion paper, \S2.6 and \S3.1). Second, the atom stays a
+ four-tuple; grouping criteria such as a time window or a spatial
+@@ -161,7 +171,7 @@
+ The companion paper's Axiom 1 names its clip, $r'=\min(1,|z|)$, as a
+-choice, and names an order-preserving bijection as the alternative a
+-setting that aggregates at scale should weigh --- naming this paper's
+-own use as exactly such a setting, rather than leaving that
+-identification for the reader to make. This paper takes that
+-invitation: wherever a strength is reported from a phasor sum for
++choice, gives an order-preserving bijection, $|z|\mapsto|z|/(1+|z|)$,
++as the alternative, and says that a setting that accumulates a
++verdict from many units would weigh the same trade the other way and
++should revisit the line rather than inherit it. This paper is such a
++setting, and takes that invitation: wherever a strength is reported from a phasor sum for
+ reading purposes (Reading A's own verdict, and a reference atom's own
+@@ -172,4 +182,3 @@
+ \end{equation}
+-the $K$-calibrated case of the general Hill form $x^n/(K^n+x^n)$ at
+-$n=1$, for the companion paper's clip. $K$ is chosen per domain, not
++the $K$-calibrated case of the general Hill form $x^n/(K^n+x^n)$ at $n=1$, for the companion paper's clip; $K=1$ gives the example that paper names. $K$ is chosen per domain, not
+ fixed here: it sets where the half-confidence point sits on the scale
+@@ -224,4 +233,4 @@
+ \]
+-This is the companion paper's own clip, stated here as the teaching
+-cap; \S\ref{subsec:bijection_substitution} substitutes the bijection
++Rotating first keeps to the companion paper's refusal of Mix across differing directions (\S2.7): Mix is
++applied only at one direction. The cap is the companion paper's own clip, stated here as the teaching cap; \S\ref{subsec:bijection_substitution} substitutes the bijection
+ wherever this reading is the one actually reported, the shells of
+@@ -273,4 +282,3 @@
+ own, returns a decision a person or a system can act on. Four
+-components stand between a state and a verdict, and none of them is
+-supplied by $\oplus$, $\boxplus$, $T$, or offset.
++components stand between a state and a verdict, and none of them is supplied by $\uplus$, $\oplus$, $\boxplus$, $T$, or offset.
+ 
+@@ -344,3 +352,3 @@
+ decide which signs enter $B$ at all (\S\ref{subsec:comparison_rule}'s
+-window and radius criteria, companion paper \S2.2) and, when order
++window and radius criteria, companion paper \S3.1) and, when order
+ matters, in what sequence. This selection is itself where most of an
+@@ -375,3 +383,3 @@
+ The companion paper notes that a lookup $E_L$ may be learned
+-(\S5.6) without the units it points into being anything other than
++(\S6.6) without the units it points into being anything other than
+ fixed. The same discipline applies to inference: what is learned is
+@@ -395,8 +403,10 @@
+ and already rotated onto the question's axis $\hat n_q$
+-(\S\ref{subsec:reading_a}). Because every $y_i$ shares $\hat
++(\S\ref{subsec:reading_a}), and held as a Collapsed atom, one core per
++episode, so that identical witnesses are each counted
++(\S\ref{subsec:multiplicity_reading}). Because every $y_i$ shares $\hat
+ n_q$ by construction, $\boxplus(G_c)$ is defined by the
+-companion paper's bowl-Mix equation ($\S2.7$) without needing its
+-still-open case of Mix across differing directions (its Future Work);
+-building a reference atom this way
+-never depends on a question that paper leaves unresolved. The
++companion paper's bowl-Mix equation (\S2.6, Equation 9), summed over the
++cores of $G_c$, without needing Mix across differing directions, which
++that paper refuses (\S2.7); building a reference atom this way never
++depends on a case that paper declines. The
+ reference atom for $c$ is $\mathrm{ref}_c=\boxplus(G_c)$, its strength
+@@ -411,3 +421,3 @@
+ collapsed state to another; it does not, and by construction cannot,
+-recover the composition of either (companion paper, \S7.2, where
++recover the composition of either (companion paper, \S8.2 and \S3.2, where
+ this is shown to be ill-posed for the algebra itself, not merely
+@@ -504,3 +514,3 @@
+ discovered to need splitting is a level-2 object in its own right
+-(companion paper, \S2.2): the split is discovered from $G_c$'s own
++(companion paper, \S3.1): the split is discovered from $G_c$'s own
+ internal agreement, not asserted in advance, and each resulting
+@@ -558,3 +568,3 @@
+ $\tau$-gated. The companion paper's own Axiom 4 already supplies the
+-right mechanism for this case: gather is sort-blind, so the two
++right mechanism for this case: Bundle is sort-blind, so the two
+ groups combine losslessly into one bowl regardless of sort,
+@@ -565,4 +575,3 @@
+ mixed-sort bowl. Same-sort merging needs a new identity because $\bar
+-R_c$ is new to this paper; cross-sort merging needed none, since
+-$\oplus$ was never sort-restricted to begin with.
++R_c$ is new to this paper; cross-sort merging needed none, since $\uplus$ was never sort-restricted to begin with.
+ 
+@@ -615,5 +624,4 @@
+ their own sequences of actors, generally land nine different places.
+-Compressing those landings via $\boxplus$ would need exactly the
+-companion paper's still-open case of Mix across differing directions
+-(its Future Work), or a combination rule for rotations this algebra
++Compressing those landings via $\boxplus$ would need Mix across differing
++directions, which the companion paper refuses (\S2.7), or a combination rule for rotations this algebra
+ does not currently define --- averaging rotations is a real, known
+@@ -649,5 +657,6 @@
+ $\mathrm{ref}_c$ stands in for several Reading-A composites, needs
+-either the cross-direction Mix question resolved or an explicit
+-rotation-averaging operator adopted and justified on its own terms.
+-Both are left for iteration.
++an explicit rotation-averaging operator, or another stated reduction
++rule, adopted and justified on its own terms: the companion paper
++refuses Mix across differing directions (\S2.7) and hands the reduction
++of a path to Inference (\S12.1). It is left for iteration.
+ 
+@@ -664,4 +673,5 @@
+ $(r,\chi)$ at $\hat n_q$: $\chi=0$ favors rain, $\chi=\pi$ favors no
+-rain, and intermediate $\chi$ is a hedge. Five casts, each shell
+-carrying $r=0.4$ unless noted:
++rain, and intermediate $\chi$ is a hedge. Five casts, each shell carrying $r=0.4$ unless noted. Shells with the same reading are held in a
++Collapsed atom, one core per shell, so that each is counted (\S\ref{subsec:multiplicity_reading}); in a
++bowl they would share a seat:
+ 
+@@ -691,4 +701,3 @@
+ 
+-The fifth row shows the saturation the companion paper's \S2.7
+-discusses: twelve weak, agreeing signs pin at $r=1$ exactly as four
++The fifth row shows the saturation the companion paper's \S2.6 discusses: twelve weak, agreeing signs pin at $r=1$ exactly as four
+ strong ones do, and the difference between ``moderately confident''
+@@ -697,4 +706,3 @@
+ those twelve readings are twelve units at one level, or repeated
+-samples of one unit that should have been reduced (companion paper,
+-Axiom 4) before ever reaching the bowl, is a question this paper does
++samples of one unit that should have been reduced (companion paper, Axiom 4, which seats identical states once) before ever reaching the bowl, is a question this paper does
+ not resolve and flags as the clearest candidate for the next.
+@@ -736,3 +744,3 @@
+ thing that changed. This is the companion paper's own
+-non-commutativity (\S3.2) made concrete at three steps rather than
++non-commutativity (\S4.3) made concrete at three steps rather than
+ argued in the abstract, and each half of it is a single rotation a
+@@ -745,3 +753,3 @@
+ A $T$-path records the sequence of actors applied to it, faithfully,
+-by definition (companion paper, Axiom 6). It has no means of knowing
++by definition (companion paper, \S4.5). It has no means of knowing
+ whether that sequence was the right one --- level closure
+@@ -783,3 +791,3 @@
+ $t$, labelled not by what it is but by what followed it: $c$ occurred
+-at $t+\Delta$. Gathering such witnesses gives a precursor group
++at $t+\Delta$. Collecting such witnesses gives a precursor group
+ $G_c^{\Delta}$, and everything in \S\ref{par:reference_atom} applies
+@@ -798,4 +806,3 @@
+ Nothing here is a new equation. The only change from
+-\S\ref{subsec:learned_pins} is which witnesses are gathered under a
+-label: concurrent identity for classification, a fixed time-shifted
++\S\ref{subsec:learned_pins} is which witnesses are collected under a label: concurrent identity for classification, a fixed time-shifted
+ outcome for this. Two things mark it as a first, crude pass rather
+@@ -825,3 +832,3 @@
+ sequence of actors $(w_1,\ldots,w_n)$ (companion paper's
+-pipeline equation, \S2.2), count how often each actor is followed
++pipeline equation, \S3.1, Equation 19), count how often each actor is followed
+ by each other across every witnessed path:
+@@ -875,6 +882,6 @@
+ \paragraph{Where this sits against a standard pipeline.} The
+-companion paper's own stack (Related Work: Transformers) is
++companion paper's own stack (\S11, Transformers) is
+ \[
+ \text{sentence}\to\text{token}\to E_L\to\text{sphere}\to
+-\oplus\text{ (bowl) }+\;T\text{ (walk)}.
++\uplus\text{ (bowl) }+\;T\text{ (walk)}.
+ \]
+@@ -889,3 +896,3 @@
+ \[
+-\oplus\text{ (bowl)}\ \to\ \text{transition table}\ \to\ T\text{ (walk)},
++\uplus\text{ (bowl)}\ \to\ \text{transition table}\ \to\ T\text{ (walk)},
+ \]
+@@ -895,3 +902,3 @@
+ vector per token, $E_L$ can occupy that slot; an atom's $(r,\hat
+-n)$, or a listed inner bundle, reads where a learned
++n)$, or a listed set of its informational vectors, reads where a learned
+ high-dimensional embedding otherwise would. \emph{Same verbs,
+@@ -937,3 +944,3 @@
+ composite but the ordered sequence of atoms, timestamped as the
+-companion paper's step-metadata generalization allows (\S3.3) --- and
++companion paper's step-metadata generalization allows (\S4.5) --- and
+ match an
+@@ -1035,6 +1042,6 @@
+ 
+-The companion paper now states a fifth verb, assembly ($\bowtie$),
++The companion paper now states a sixth verb, assembly ($\bowtie$),
+ and an enclosure in which external seats $\vec P$ may descend an
+ energy until they rest as one camp or several
+-(companion paper, Axiom~6 and the Enclosure section). Those
++(companion paper, \S2.9 and \S10). Those
+ constructions are cited, not repeated. A camp body is not a verdict.
+@@ -1042,4 +1049,4 @@
+ \S\ref{subsec:comparison_rule} against a seated pin. Rotate-then-Mix
+-in Reading~A is a convention of this paper: it does not close the
+-companion's open question of Mix across differing directions. What
++in Reading~A is a convention of this paper: it keeps to the companion paper's refusal of Mix across differing directions (\S2.7): members are
++brought to one direction before Mix is applied. What
+ assembly itself settles, and what it leaves open, is no longer
+@@ -1049,11 +1056,18 @@
+ 
+-\subsection{Multiplicity as a reading, not a rewrite of $\oplus$}
++\subsection{Multiplicity: counted by Collapse, read here, not a change to Bundle}
+ \label{subsec:multiplicity_reading}
+-The companion paper's $\oplus$ is set union: $A\oplus A=A$. When
+-inference must keep how many independent witnesses produced the same
+-tuple, this paper reads a bowl through a multiplicity
+-$m:\mathcal{S}\to\mathbb{N}_0$ alongside the set, never in place of
+-it. $m(A)=2$ is two witnesses of one unit, not a second seat and not
+-a change to Axiom~4. Aggregates that need count --- $\sum r$,
+-$\bar R_c$ --- use $m$. Presence questions continue to use $\oplus$.
++The companion paper's Bundle is set union: $A\uplus A=A$ (Axiom~4). Its
++Collapse is count-preserving: $A\oplus A=A^{\langle 2\rangle}$
++(\S3.3). When inference must keep how many independent witnesses
++produced the same tuple, the witnesses are held in a Collapsed atom,
++one core each, and this paper reads a multiplicity $m(A)$ as the
++number of cores whose value is $A$; for single-vector cores,
++$\sum_A m(A)=N$, and the number of $A$ with $m(A)>0$ is $D$.
++$m(A)=2$ is two witnesses of one unit, not a second seat and not a
++change to Axiom~4. Aggregates that need count --- $\sum r$, $z$,
++$\bar R_c$ --- sum over cores, each counted. Presence questions
++continue to use Bundle. The companion paper defines Mix over a bowl,
++a set, in which identical members count once; summing a Collapsed
++atom's cores with their counts is a reading this paper adds, not a
++change to Mix's definition.
+ 
+@@ -1070,7 +1084,5 @@
+       (\S\ref{subsec:comparison_rule}).
+-\item The selection rule (\S\ref{subsec:selection_rule}), including
+-      the companion paper's grouping window.
++\item The selection rule (\S\ref{subsec:selection_rule}), including the grouping window of the companion paper's \S3.1.
+ \item Saturation under aggregation (\S\ref{sec:worked_example}):
+-      whether to reduce repeated samples before the bowl, or rely on
+-      the bijection of \S\ref{subsec:bijection_substitution}.
++      whether to reduce repeated samples before the bowl, count them (Collapse), or rely on the bijection of \S\ref{subsec:bijection_substitution}.
+ \item The path corrector (\S\ref{sec:level_closure_practice}).

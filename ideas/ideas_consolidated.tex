@@ -4,7 +4,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 
-\title{Ideas Register --- Consolidated, v1 to v36}
+\title{Ideas Register --- Consolidated, v1 to v37}
 \author{One file for every parked idea, with its current status}
 \date{}
 
@@ -27,7 +27,7 @@ earlier checks stand), and
 elsewhere --- the \texttt{Assembly\_v1.tex} and
 \texttt{Inference\_v1.tex} copies on hand (which may be older than
 your working copies; if so, the ``not filed'' marks below should be
-rechecked against yours). Entries from v19 onward are appended here; v19 to v36 are the first eighteen.
+rechecked against yours). Entries from v19 onward are appended here; v19 to v37 are the first nineteen.
 
 \paragraph{Status vocabulary.}
 \textbf{CLOSED} --- resolved and merged into the paper.
@@ -124,7 +124,8 @@ R57 & A use-agnostic contract: what the algebra promises (determinism, closure, 
 R58 & Placement is external: no rule lets an atom derive its own seat from meta vectors or $V_{\text{derived}}$; the assembly descent gathers at the plain mean of the seats and sorts by content only at a scale hidden from any census cut & v34 & Assembly paper (Paper 1 stays silent, v35) & \textbf{OPEN} \\
 R59 & Non-interference as a stated property: operations on one core never alter another; derived quantities per sort once mixed sorts are admitted (joins R36 and R50) & v34 & Paper 1 & \textbf{OPEN} \\
 R60 & Inference-bound: one observed step leaves the actor underdetermined (a circle of axes, strength from $s/\pi$ to $1$, phase identified); chance of explaining a step is the tolerance cap's area fraction, amplified by bowl size; success must be judged against that baseline & v35 & Inference & \textbf{PARKED} --- joins R17, R30--R35 \\
-R61 & Cut sheet for moving Axiom~6's pair energy and \S10 to Assembly: what moves, what must be rewritten, the choice for the verb $\bowtie$ (a bare relation stays, or it leaves), and the citations in the companion drafts & v36 & Paper 1 / Assembly & \textbf{OPEN} --- awaiting the $\bowtie$ choice \\[4pt]
+R61 & Cut sheet for moving Axiom~6's pair energy and \S10 to Assembly: what moves, what must be rewritten, the choice for the verb $\bowtie$ (a bare relation stays, or it leaves), and the citations in the companion drafts & v36 & Paper 1 / Assembly & \textbf{OPEN} --- awaiting the $\bowtie$ choice \\
+R62 & Counted Mix: Inference sums a Collapsed atom's cores with their counts, but Paper~1 defines Mix over a bowl, a set in which identical members count once; no Mix reading of a Collapsed atom is stated & v37 & Paper 1 / Inference & \textbf{OPEN} --- stated in Inference v2 \S8.1 as a reading it adds \\[4pt]
 
 \multicolumn{5}{@{}l}{\textit{Open --- Collapse}} \\*
 R20 & Collapse across differing sorts (per-vector $\tau_i$) & v10, v11 & Paper 1 & \textbf{OPEN} --- stated in paper; broadened by R36 \\
@@ -1548,6 +1549,38 @@ and supplied by Assembly: six verbs and the sixth question kept, at the price of
 a verb whose substance lives elsewhere. My lean is (B), as the smaller change
 that keeps Paper~1 self-consistent; the choice is the author's.
 \emph{Status: R61 open.}
+
+
+\subsection*{v37 --- the companion papers brought up to v15\_28}
+\texttt{Assembly\_v1} and \texttt{Inference\_v1} were compared with v15\_28 and
+updated as \texttt{Assembly\_v2} and \texttt{Inference\_v2} ($20$ and $44$
+edits; $0$ errors and $0$ undefined references in each; a log and a full diff
+are in \texttt{companion\_sync\_v15\_28.md} and \texttt{.diff}). The drift was
+of four kinds: the verb names (Gather $\oplus$ and Remove $\ominus$ are now
+Bundle $\uplus$, Remove $\setminus$, Collapse $\oplus$, UnCollapse $\ominus$);
+the atom (``$N$ capped arrows'' and ``bundle'' are now $Q$ vectors in $N$
+cores); the section pointers (eleven in Inference alone, one of them wrong
+inside Inference itself); and two statements of fact. First, Mix across
+differing directions is no longer ``open'': Paper~1 refuses it (\S2.7), and four
+passages in Inference said otherwise. Second, Inference's multiplicity
+subsection argued that counting witnesses needs a separate function because
+$\oplus$ was set union; Paper~1 now counts through Collapse, so that
+subsection was rewritten and the shells' table and the reference-atom
+construction now say their groups are Collapsed atoms.
+
+\textbf{One finding for Paper~1 (R62).} Inference needs Mix over a counted
+group, but Paper~1 defines Mix over a bowl, a set in which identical members
+count once; it states no Mix reading of a Collapsed atom. Inference v2 says so
+and adds the reading as its own. Whether Paper~1 should define it is the
+author's choice.
+
+\textbf{Checked.} Inference's numbers that depend on Paper~1 (the walk
+examples, the pin distances, the mean resultant lengths, the $K=0.2$
+strengths and the transition counts) reproduce; its direction-error
+simulation cannot, since its noise model and seed are not stated. Assembly's
+development-note results were not re-run. If R61 moves Axiom~6 and \S10 to
+Assembly, the pointers to both in the two companions must be redirected again.
+\emph{Status: R62 open.}
 
 \section{Merged directly, without an ideas entry}
 

@@ -1,0 +1,553 @@
+% Assembly_v2: synced to Pattern_Arithmetic_v15_28 (verb names, atom structure, section and axiom
+% pointers, meta vectors). Changes are listed in companion_sync_v15_28.md.
+% 1. Preamble
+\documentclass[12pt, a4paper]{article}
+
+% Import Packages
+\usepackage[utf8]{inputenc}        % Encoding
+\usepackage{amsmath, amssymb}     % Advanced math formulas
+\usepackage{mathtools}           % Math enhancements
+\usepackage{graphicx}            % Image insertion
+\usepackage{hyperref}            % Interactive hyperlinks & PDF bookmarks
+\usepackage{color}               % Color text and backgrounds
+\usepackage{geometry}            % Page geometry
+\usepackage{comment}             % Multi-line comments
+\usepackage{titling}             % Custom title formatting
+
+\geometry{a4paper, margin=1in}
+
+% Custom Command Definitions
+\newcommand{\Sball}{\mathcal{S}}
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+% Hyperref Setup for Clean PDF Links
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={Pattern Arithmetic: Higher Truths from Assembly},
+    pdfauthor={Sandeep Lakshminarayan Chiluveru}
+}
+
+% Metadata & Custom Title Banner
+\pretitle{\begin{center}\Huge\fontfamily{tt}\selectfont ================================================================================\\[0.5em]}
+\posttitle{\\[0.5em] ================================================================================\end{center}}
+
+\title{Pattern Arithmetic: Higher Truths from Assembly}
+\author{Sandeep Lakshminarayan Chiluveru}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% ABSTRACT
+\begin{abstract}
+This is a second companion paper to \emph{Pattern Arithmetic: Typed
+Algebra of Bounded Units on a Phase-Colored Sphere}, alongside
+\emph{Pattern Arithmetic: Inference from Bowls and Paths}. The first
+defines assembly ($\bowtie$) and an enclosure in which units may
+descend an energy and rest as one camp or several; the second reads
+a bowl of evidence into a verdict, but never asks what a settled
+camp itself is entitled to be. This paper collects what is currently
+known about that question, and it is deliberately small. Two points
+are already closed, as direct consequences of choices the companion
+paper already made rather than of anything built here: the
+actor/patient question, settled at the level of a label rather than
+a difference in motion, and the absence of astrophysical mass
+segregation, a forced consequence of excluding volume from motion.
+One point is genuinely open --- fine-grained multi-vector matching,
+where an atom's own informational vectors, not its coarse derived vector, decide how it bonds. What this paper does not yet do is the harder thing
+its own title promises: say what a frozen camp, read and re-read at
+successive checkpoints, is entitled to be called, and whether that
+naming is itself a higher unit of truth or only a description of
+one. That is stated here as this paper's own direction, not
+answered as its content.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+
+A camp settles. Something froze at a resolution $\eta$, with a body
+$\vec P_{c}$ and a membership --- and the companion paper is
+explicit that the body is a description, measured after the fact,
+never a destination the motion sought. Read again at a finer $\eta$,
+or later in time, the same units may freeze into a different shape,
+or one pile where there were two: a camp is a checkpoint, not a
+fixed thing, and two checkpoints close enough to each other are
+read as the same freeze only by a further, named allowance
+(companion paper, \S10.3). None of this says what a checkpoint
+\emph{is}, in the sense a bowl of evidence becomes a verdict in the
+other companion paper. That is the question this paper exists to
+carry, separately from inference, so that it can grow on its own
+rather than as an appendix to a paper about something else.
+
+What follows is not yet that answer. It is the ground already
+cleared: two questions the companion paper's own axioms settle as a
+side effect, stated here plainly since neither was recorded at the
+time, and one question about how an atom's inner structure governs
+assembly that remains genuinely open. The larger question --- what a
+settled camp, read against known patterns or against its own
+history of checkpoints, is entitled to be named, and whether that
+naming closes into a symbol a higher unit could itself be built
+from --- is named in the abstract and left there. Early exploration
+toward it (reading a settled camp against known references, and
+characterizing when such a reading is trustworthy rather than
+lucky) exists only as worked, unpublished calculation; none of it is
+claimed here as a result.
+
+\section{What Is Inherited}
+\label{sec:inherited}
+
+We use, without re-deriving, the following from the companion
+paper. Equation and axiom numbers refer to that paper.
+
+\begin{itemize}
+\item The atom $x=(r,\hat n,\chi,\tau)\in\mathcal{S}$, with $r\le 1$
+      a normalized strength (Axiom 1).
+\item Assembly, $\bowtie$: two units related while both remain
+      intact, $A\bowtie B=(A,B,\kappa_{AB},U_{AB})$, with
+      $U_{AB}<0$ for nonzero strengths and never repelling (Axiom~6, \S2.9).
+\item The enclosure: external seats $\vec P$ descend the energy
+      $\sum U_{ij}$ without mass or momentum until a stated force
+      threshold $\eta$ is crossed; a configuration below it is a
+      \emph{checkpoint}, not an exact equilibrium, since the pull
+      between any two units of nonzero strength never reaches zero
+      at finite distance (\S10.1--10.3); two checkpoints are read as the same freeze only under a
+      named allowance $\epsilon_{\text{allow}}$ (\S10.3).
+\item Informational vectors (Axiom~7, \S2.10): an atom holds $Q$
+      capped informational vectors in $N$ cores, of which $D\le N$ are
+      distinct, and one uncapped derived sum $V_{\mathrm{derived}}$.
+      Coarse assembly runs on the derived pair; the atom's own
+      vectors are not consulted by $U_{AB}$ unless named explicitly.
+\item Collapse, $\oplus$, and UnCollapse, $\ominus$ (\S3.3--3.4):
+      several atoms combined into one with every core kept,
+      $N=\sum N_i$ and $Q=\sum Q_i$; not idempotent,
+      $A\oplus A=A^{\langle 2\rangle}$; $\ominus$ returns the atom
+      without one core.
+\item Meta vectors (\S2.11): values that describe an atom beside its
+      content and are no part of what it says --- the seat $\vec P$
+      and $V_{\mathrm{derived}}$ among them, with a timestamp, an
+      expiry, a location and a link. They are uncapped, counted in
+      neither $N$ nor $Q$, and changed by no verb; Assembly reads
+      $V_{\mathrm{derived}}$ and the seat.
+\item \emph{Levels are closed}: a camp carries no representation of
+      what it constitutes, and the enclosure supplies no comparison
+      by which a checkpoint could name itself.
+\end{itemize}
+
+\section{What Assembly Already Settles}
+\label{sec:already_settled}
+
+Two settled points are worth recording plainly, since both follow
+from Axiom~7's exclusion of $\mathcal{V}_{\text{atom}}$ from motion (companion paper, \S2.10 and \S10.2) rather than from anything built
+here.
+
+\paragraph{The actor/patient question.} Closed at the level of a
+label: polarity ($\lvert r_A-r_B\rvert$) distinguishes a mutual bond
+from a one-sided one, and no further behavioral mechanism is
+missing --- one was tested directly and found to require exactly
+the volume-weighted motion that exclusion rules out on stability
+grounds, so the honest final scope of this question is a
+description of the bond, not a difference in how it moves.
+
+\paragraph{Mass segregation.} The astrophysical phenomenon ---
+stronger members sinking toward a group's centre --- was named
+early in the companion paper's own development as an expected
+consequence, while its dynamics was still built around a mass-like
+quantity. Once motion settled as excluding $\mathcal{V}_{\text{atom}}$
+entirely, that mechanism no longer applies here, confirmed directly:
+equal force with nothing dividing it gives identical movement
+regardless of strength or volume. The astrophysical phenomenon keeps
+its real name; nothing in this framework currently reproduces it,
+since the quantity that would drive it was deliberately kept out of motion. The companion paper
+now says the same of its own enclosure: no sorting of members by strength (\S10.5).
+
+\section{Open: Fine-Grained Multi-Vector Matching}
+\label{sec:open_matching}
+
+Coarse assembly runs on the derived vector (companion paper,
+Axiom~7), so $U_{AB}$ never needed to generalize; simultaneous
+multi-partner bonding via informational vectors directly remains
+optional, with an unconstrained double sum and an exclusive
+(Hungarian) matching identified as the two candidates. They agree
+whenever alignment quality is roughly uniform across candidates, but
+rank-order pairing can be strictly worse than optimal when strength
+and alignment pull in different directions --- verified with a
+constructed adversarial case ($-1.17$ for rank order versus $-1.68$
+true optimum).
+
+\section{Scope and the Question This Paper Is For}
+\label{sec:scope}
+
+This paper is small on purpose. It records what the companion
+paper's own choices already settle about assembly, once, so that
+neither has to be rediscovered; and it names one open question about
+how an atom's own informational vectors should govern multi-partner bonding, where
+the coarse derived-vector treatment is known to be incomplete.
+
+What it does not do is name a checkpoint. A frozen camp has a body
+and a membership and, by the companion paper's own accounting,
+nothing else --- no shape, no representation of what produced it,
+no claim on what it should be called. Whether a checkpoint can be
+read against known patterns and trusted, whether a sequence of
+checkpoints under an allowance converges on something worth naming,
+and whether such a naming is a genuine higher unit of truth or only
+a compact description of a lower one --- these are the paper's own
+stated direction, not its content. They are left here, deliberately,
+for the work this paper exists to carry.
+
+\section*{Development Notes: Ideas in Progress}
+\addcontentsline{toc}{section}{Development Notes: Ideas in Progress}
+
+What follows is a working record, not a finished section of this
+paper. Each item is tagged by status --- \textbf{[Settled]},
+\textbf{[Verified]}, \textbf{[Proposed]}, or \textbf{[Open]} --- so a
+later pass can tell at a glance what is actually established, what
+is argued but unbuilt, and what has been tried and genuinely not
+yet solved, without re-deriving that distinction from scratch.
+Nothing here is claimed as this paper's content; it is the material
+its later sections would be built from, once built.
+
+\subsection*{Structure and organization}
+
+\textbf{[Proposed.]} Assembly as a layer beneath Inference, not a
+peer to it: Inference reads whatever atoms already exist; Assembly
+asks what happens when atoms relate to each other before anything
+is read. A camp is not evidence, by the companion paper's own words
+--- its body is ``measured afterwards\ldots a description rather
+than a destination'' --- and this paper's own abstract already names
+camp-naming as unanswered here, not in Inference. The layering is
+implicit in language already sitting in both documents; stating it
+as the organizing structure is what is new. Not yet written into
+the Introduction.
+
+\textbf{[Proposed.]} An eight-part restructuring built around that
+layering: a reframed Introduction stating the one-directional
+dependency; \emph{What a Camp Is}, an axiom-like core of invariant
+camp properties; \emph{Two Modes --- Free and Directed Assembly};
+\emph{Representing a Camp}; \emph{Structural Diagnostics}; the
+existing inherited and open-question sections unchanged; a closing
+statement rewritten around the layering. Two of eight sections need
+no work; the other six, including the entire axiom-like core, are
+still only conversation.
+
+\textbf{[Proposed.]} Assembly's own closure axioms should carry
+their own numbering, not continue the companion paper's --- justified
+by that paper's own Axiom~0 discipline: a snowflake's native law is
+recorded as refused a map onto the sphere rather than forced into
+$\mathrm{SO}(3)$, because a system of axioms built for one kind of
+question should not silently claim authority over a different kind
+by mere continuation of its own numbering. Closure is that kind of
+different question relative to the companion paper's atom-level
+axioms.
+
+\textbf{[Settled.]} The test for what actually earns axiom status
+here --- forced (no freedom, like $\pi$), genuinely invented but
+low-stakes (a normalization, like $r\le1$), or a real structural
+choice (a different choice produces a different theory) --- is
+already written into this paper, below, as the parked aside for the
+companion paper's Thesis. Not repeated here.
+
+\textbf{[Proposed.]} A first candidate that passes that test: what a
+freeze keeps and what it discards. The companion paper says a
+camp's body is a description, not a destination, and that a camp is
+a checkpoint, not a destination, but never formalizes exactly what
+survives a freeze versus what does not. Not derivable from the
+companion paper's own axioms; not yet drafted as a formal statement.
+
+\subsection*{Representing a camp}
+
+\textbf{[Verified.]} Resultant versus dominant-vector representation,
+tested on identical seats and multi-vector atoms: $16.0\%$ of contested pairs
+disagree ($120/749$ across 15 trials) on who ends up grouped with
+whom, depending solely on which representation is used.
+
+\textbf{[Verified.]} With strength made genuinely irrespective ---
+removed not just from the pull's magnitude but from which vectors
+get compared at all --- the two candidates already named in this
+paper's own open question behave very differently. The unconstrained
+double sum collapses to a single undifferentiated group in every
+trial tested, confirmed not a settling-parameter artifact by a
+same-population sanity check against the ordinary single-vector case.
+Hungarian best-match survives with real, differentiated structure
+(3--5 groups per trial, genuine size variation). Between this
+paper's own two candidates, one of them is now shown not to work for
+this case.
+
+\textbf{[Proposed, untested.]} Centrality, treating $U_{AB}$ as a
+weighted graph and reading a camp's most central member, as a fourth
+candidate. Not yet tested at all.
+
+\subsection*{Structural diagnostics}
+
+\textbf{[Verified.]} Graph community detection is not a faster
+substitute for physical settling. Tested properly, with distance
+included in the edge weights after an initial pass without it was
+caught as an unfair comparison: $69.7\%$ of contested pairs disagree,
+and community detection consistently finds fewer, larger groups than
+settling does. Diagnosis: settling captures the dynamic, cascading
+resolution of competing pulls over time; a one-shot graph read of
+the starting configuration cannot see that resolution happening.
+
+\textbf{[Proposed, untested.]} Hierarchical clustering as the formal
+version of a sentence the companion paper already states in words:
+``a finer $\eta$ runs longer and may see groups merge that a coarser
+one froze apart.'' That is a dendrogram, described in prose, never
+built.
+
+\subsection*{The query/selection border case}
+
+\textbf{[Verified.]} A query matching two named vectors while
+excluding a third produces a genuinely non-transitive relation ---
+global transitivity checked directly at exactly zero, with individual
+components confirmed to be chains rather than cliques (one
+three-member component held only 2 of its 3 possible internal edges).
+This is not a camp in this paper's sense; it is a sparse,
+bridge-like network, closer to what sociology calls weak ties or
+structural holes.
+
+\textbf{[Flagged, unresolved.]} This looks structurally closer to
+Inference's own open selection rule --- who enters, under what
+condition --- than to Assembly's job of settling a membership once
+given. Which paper should own it is not decided.
+
+\subsection*{Systems as atoms}
+
+\textbf{[Settled.]} Vocabulary: \emph{camp seat} for a camp's spatial
+displacement (extending the companion paper's own existing ``seat''
+register) versus \emph{camp signature} for its effective
+informational reading (checked clean of collisions across all three
+documents). These were previously, silently, one conflated vector.
+
+\textbf{[Verified.]} Never-repels survives the jump to the system
+level: checked directly on system-level pairs, minimum pairwise
+coefficient positive ($\approx4.4\times10^{-7}$), nothing negative
+anywhere.
+
+\textbf{[Verified.]} The clip-versus-bijection choice matters again
+at the system level, not only at the evidence level: the identical
+16 camps produce 13 systems under the Hill bijection (Inference paper, \S2.1) and 11 under the naive clip, with different groupings, not merely different
+counts.
+
+\textbf{[Verified --- the hypothesis's central test.]} Treating
+settled camps as new, system-level atoms produces genuinely different
+behavior from simply widening the grouping radius on the original
+atoms. Two-level construction: largest system holds $32\%$ of all
+atoms ($16/50$). Naive coarsening of the same population at a
+comparable scale: $94\%$ ($47/50$), a near-total collapse. Camps
+compressing into a signature before the next level's dynamics run is not equivalent to loosening the same single-level process.
+
+\textbf{[Added in the sync to v15\_28; for the author's review.]} The
+companion paper now has a verb for several atoms becoming one:
+Collapse, $\oplus$ (\S3.3), which keeps every core, $N=\sum N_i$, and
+discards nothing. A camp read as a system-level atom would then be a
+Collapsed atom, and its $V_{\mathrm{derived}}$ the sum of its members'
+sums. Whether that matches the camp signature used in the tests above
+is not checked here; those tests promoted camps by their own
+construction.
+
+\subsection*{Stability at the system level --- the open frontier}
+
+\textbf{[Open, actively unsolved.]} Pure radial attraction with
+nothing to counteract it trends toward full collapse --- matching the
+companion paper's own stated Enclosure behavior, ``left longer, all
+would merge into one,'' and matching why naive coarsening above jumps
+almost directly to one giant group.
+
+Checked against real astrophysics rather than assumed: globular
+clusters do sometimes merge, but genuine mergers cluster around
+specific circumstances --- early galactic epochs, dense environments,
+close tidal encounters --- not a generic, ongoing process. Most
+clusters, once in stable orbits, persist for billions of years
+without merging. The stabilizing mechanism in every such case is
+orbital motion: angular momentum.
+
+\textbf{[Tension identified, not resolved.]} Real angular momentum
+needs mass ($L=r\times mv$) and inertia, motion that persists between
+moments rather than being reset by the current force alone. This
+paper's own motion is deliberately mass-free --- the reason mass
+segregation does not reproduce here, already a settled point above
+--- and deliberately overdamped, velocity set directly by force with
+no memory of the step before. A literal transplant of angular
+momentum would undo both of those deliberate choices at once.
+
+\textbf{[Tested, did not work; problem remains open.]} A proxy
+attempt: a tangential force built from each atom's own $\hat n$,
+already present and otherwise unused for force direction, added to
+the radial pull. The first check looked promising --- the largest
+group shrank from $97.5\%$ to $7.5\%$ of the population as the
+tangential term strengthened. A second, independent check showed why
+that was misleading: the system was not settling at all at the
+stronger values, only still moving (last-step size $\approx0.40$--$0.44$,
+against $\approx0.0003$ for the undisturbed case). An overdamped
+system has nothing to damp a tangential force the way real inertia
+damps orbital perturbation, so the raw proxy trades collapse for
+motion that never settles, rather than producing anything stable.
+The fix needs a genuine damping mechanism, not yet designed. This is
+the most current, least resolved thread in this record.
+
+
+
+\subsection*{Filed from the shelf: destinations and status}
+
+Three destinations only: the unit paper (comments, never new axioms),
+Inference (saying: bowls, tapes), and this paper (sitting: shapes,
+naming later). A \emph{comment} is one or two sentences sharpening a
+claim already in the unit paper; anything needing a new operator or
+a worked camp is not a comment.
+
+\textbf{[Settled.]} The rule that sorts every new thought: presence is
+not order; sitting is not saying; a name is later than a camp;
+pictures borrowed, laws not. A sentence that wants one verb that
+sits, walks and names is not ready.
+
+\textbf{[Proposed, Inference.]} The swap test stays the fork: order
+changes the verdict, walk; otherwise Mix. A paper tape or piano roll
+is a picture of $T$: holes are pins, the crank is cadence, two holes
+named alike are two visits. Both senses of the axis, $T$ and
+$T^{-1}$, become play and rewind. One bowl may feed two walks,
+$T_{\mathrm{poem}}$ and $T_{\mathrm{tune}}$: two tapes, not many
+cranks at once. Film: one atom per frame is a lexicon choice,
+$\uplus$ is the cast ($\oplus$ if repeated frames must be counted), the movie is the ordered visits, $T_{24}$ is a
+metronome, and a projector walks the reel without Mixing it. A camp
+may suggest a tape; walking it is still Inference. Attractors used
+to call up, down, hold or the next frame are comparisons to pins
+after a walk or a Mix, with the right to abstain: a costume, not a
+market model. Still open there: comparison weights, the selection
+rule, and one clean sequential numerical example.
+
+\textbf{[Flagged, undecided.]} The quantum SWAP test, the standard
+overlap-estimation circuit, is a different thing from Inference's
+swap test, and the shared name is the same trap as ``collapse'' and
+``singularity'' were. A related-work sentence marking the boundary
+helps, but a renamed test (an order test, say) may serve better. Any
+citation added there needs to be checked, not recalled.
+
+\textbf{[Proposed, this paper.]} Clouds, chains and candle-files are
+shapes of rest under one $U$; a chain or procession is a skinny
+cloud. A neighbour graph (``next'') is a data structure on seats
+after rest, not $T$. A query, policy or stimulus may reweight the
+pull or pick a subgraph; walking the subgraph is Inference. Solid,
+liquid and gas are a costume for how free the seats are, and
+multi-zoom is a costume for coarse against fine $\eta$, with the
+same verbs returning only after a clump is named as a pin. Two
+clouds do not cancel by sitting: sitting is still $\uplus$ ($\oplus$ where the count must be kept), and cancelling is Mix on a shared axis,
+or taking a member out with $\setminus$ (a core, with $\ominus$). There is no
+annihilation operator. Information against anti-information is
+opposite $\chi$ on the same pin, Mix to black, not two gases
+consuming each other; it is separate from the alignment-offset
+repulsion tested earlier, which acts on opposed $\hat n$, not
+opposed $\chi$. A seat becomes a pin only if promoted, and whether
+it may be is this paper's own question. A second learning layer
+comes only after a name exists.
+
+\textbf{[Reconciliation, against this record's tests.]} Two lines of
+the shelf were written against the base enclosure and should be read
+with the tests above. First, ``no repulsion'' is true of the
+enclosure, but the Bounded attractor tested here needs an added
+short-range repulsion at each pair's own scale, so it is an Assembly
+extension, not something the unit paper already says. Second, ``no
+cycle attractor without a new term in $U$'' understates it:
+first-order descent of any potential has no periodic orbits, since
+the potential strictly decreases along every non-resting path, so no
+term in $U$ can give a Cyclic attractor. It needed a persistent
+velocity state with radial-only damping; the one non-potential
+alternative tried, a tangential force, did not settle. Separately,
+the systems-as-atoms test promoted camps mechanically to atoms; the
+entitlement to a name remains open.
+
+\textbf{[Proposed.]} Order of writing. The unit paper: optionally a
+few sentences (the habit, pin against seat, same verbs after
+naming), with a new version only if those sentences are actually in
+the PDF, never for clouds. Inference next: tape, film, the camp
+suggesting a tape, the boundary sentence. This paper when ready:
+shapes, neighbour graph, freeze vocabulary, the promotion question.
+
+\section*{Aside: Notes Parked Here for the Companion Paper}
+\addcontentsline{toc}{section}{Aside: Notes Parked Here for the Companion Paper}
+
+This belongs beside \emph{Pattern Arithmetic}'s own Thesis, not here. Two of the three notes below have since
+migrated into that paper's Introduction (v15\_28, \S1) --- what arithmetic is \emph{for}, and precedent --- and
+are kept here for the record. The first, on what earns axiom status, has not, and is held here until it does.
+
+Not every axiom is earned the same way. Some are forced: $\pi$
+($3.14159265\ldots$) and $e$ ($2.71828182\ldots$) carry no freedom at
+all, falling out of their own definitions identically regardless of
+who does the deriving --- discovered, not invented, in the strongest
+sense available. Some are genuinely invented, the way physics' free
+parameters are: the fine-structure constant, the particle masses,
+Planck's constant's numerical value --- structure discovered,
+specific value measured, with no known reason it could not have come
+out otherwise. And some, like the companion paper's own $r\le1$, are
+neither: a normalization, a choice of scale, cheap to invent because
+no structural weight rides on the specific number --- rescale it and
+nothing about the theory's shape changes.
+
+The test that actually sorts these, worth stating plainly: not
+whether a rule was discovered or invented, but whether a different
+choice would have produced a different theory. $\pi$ fails this test
+by having no alternative to compare against. $r\le1$ fails it by
+mattering only as a scale. Mix as phasor summation, or Bundle's idempotence, pass it --- a different choice there is a different
+algebra, not the same one in different clothes. This is the
+reasoning underneath the companion paper's own
+line, that it ``states its own rules as axioms rather than
+discovering them''; it is the same standard this paper's own closure
+axioms, wherever they are eventually stated, should be held to.
+
+\paragraph{A second note, on what arithmetic is for.} \emph{[Now in the companion paper's \S1, v15\_28.]} Also belongs
+beside the companion paper's Thesis --- restating it from a different
+angle rather than adding a new claim to it. The companion paper's own
+Thesis states what an arithmetic \emph{is}, structurally: a unit of
+truth and a small set of rules by which such units combine, obeyed
+consistently. This restates the same thing from what it is
+\emph{for}: not the numeric operations themselves, but the discipline
+of reaching a conclusion, a truth, or a reality by at least one
+method that is consistent, reliable, and repeatable --- numbers being
+one way of doing that, never the only one. Structure and purpose,
+the same claim seen from two directions; both belong together
+wherever the Thesis is eventually restated.
+
+\paragraph{A third note, on precedent.} \emph{[Now in the companion paper's \S1, v15\_28.]} Also belongs beside the
+companion paper's Thesis. Pattern Arithmetic is not a new technique
+--- people have been using instances of it, unnamed, for a long
+time. P\={a}\d{n}ini's grammar, the rule system generating the whole
+of Sanskrit's valid word-forms from a fixed set of roots and
+operations, has already been called mathematics by some
+commentators, though only weakly --- a genuine, historical instance
+of a domain supplying units and a small, consistent set of
+combination rules, exactly as the Thesis describes. Chemistry is a
+second, richer instance, its own combination rule already the
+subject of this paper's own testing above. A third, deliberately the
+weakest case: placing a chair at a table is also an instance, since
+it can be done in one particular way, repeatedly, arriving at the
+same result each time --- the Thesis's own bar for what counts, met
+even by something this trivial.
+
+
+\paragraph{A fourth note, on what the unit paper may say.} Anything
+headed there is a comment, not an axiom, operator or worked camp.
+Candidates, each a label on the existing brick:
+\begin{itemize}
+\item The habit is old (P\={a}\d{n}ini, chemistry, table and chair
+      as the weakest): four to six lines after the statement that
+      counting is one arithmetic. Kinship of habit, not identity with $\uplus$.
+\item Pin is not seat: two lines where $\bowtie$ first needs
+      something outside the 4-tuple. A pin is an address on
+      $\mathcal{S}$; a seat is $\vec P$ on the tray.
+\item Levels stay closed until a camp is named: one line added to
+      the existing ``Levels are closed'' paragraph, that the same
+      verbs return only after promotion to a new 4-tuple.
+\item Ideas borrowed, statutes not: one line in the claim-scope
+      subsection pointing at solid, liquid, gas and multi-zoom as
+      pictures.
+\item Mix still has no inverse: already in the published version,
+      not reopened.
+\end{itemize}
+Status at v15\_28: the first item is in the companion paper's \S1; the borrowed-pictures point is partly in its
+\S10.5; the pin-against-seat and level-closure comments are not yet there.
+Not even as a comment: $T_{24}$, film, neighbour graphs,
+anti-information clouds, attractors for trades, learning loops, the
+quantum swap test.
+
+\end{document}
