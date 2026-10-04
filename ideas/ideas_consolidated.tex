@@ -4,7 +4,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 
-\title{Ideas Register --- Consolidated, v1 to v25}
+\title{Ideas Register --- Consolidated, v1 to v27}
 \author{One file for every parked idea, with its current status}
 \date{}
 
@@ -20,13 +20,14 @@ where it stands now.
 
 \textbf{How status was determined.} Not from memory of the
 discussions. Each status was checked by searching the current paper,
-\texttt{Pattern\_Arithmetic\_v15\_24.tex} (v15\_24 differs from v15\_22
-only in the atom-structure passages, so earlier checks stand), and
+\texttt{Pattern\_Arithmetic\_v15\_26.tex} (v15\_26 differs from v15\_22
+only in the atom-structure passages and the meta-vector subsection, so
+earlier checks stand), and
 --- for items destined
 elsewhere --- the \texttt{Assembly\_v1.tex} and
 \texttt{Inference\_v1.tex} copies on hand (which may be older than
 your working copies; if so, the ``not filed'' marks below should be
-rechecked against yours). Entries from v19 onward are appended here; v19 to v25 are the first seven.
+rechecked against yours). Entries from v19 onward are appended here; v19 to v27 are the first nine.
 
 \paragraph{Status vocabulary.}
 \textbf{CLOSED} --- resolved and merged into the paper.
@@ -52,12 +53,9 @@ Gap & Status \\
 evidence, with Bundle and Collapse remaining available. One small
 residual (R26 below). \\[4pt]
 \textbf{Gap 2} --- Location as a sort &
-\textbf{RESOLVED, NOT CLOSED.} Fully worked out in v17 (meta vector;
-both encodings verified). It cannot honestly be marked closed in the
-paper yet: it depends on the meta-vector taxonomy being imported into
-Paper~1 first, and that taxonomy is not in the paper at all (zero
-occurrences). The paper's own ``Open: location as a sort'' paragraph
-is therefore still correct as written. \\[4pt]
+\textbf{CLOSED} in \texttt{v15\_25}: location is a meta vector, not a
+sort, by the cap test and the seat precedent. The taxonomy it waited on
+is now Section~2.11, and the open paragraph is removed. \\[4pt]
 \textbf{Gap 3} --- Reducing a path by merging close actors &
 \textbf{CLOSED for Paper~1} in \texttt{v15\_22} (narrowed to the
 algebraic guarantee); the technique question is \textbf{redirected to
@@ -69,10 +67,10 @@ The two remaining items from v1 are both Inference-destined and
 neither is filed: the candlestick summary (verified, mechanism
 works) and the ``Inference Mandelbrot'' naming flag.
 
-\textbf{The single most useful next step} is importing the
-meta-vector taxonomy into Paper~1 (R15). It is the prerequisite for
-closing Gap~2, and it gives a home to location, the two time
-registers, and $V_{\text{derived}}$ at once.
+\textbf{The single most useful next step} is now the scope decision
+(R27, R28): whether Axiom~7's metric catalogue and the costumes stay in
+Paper~1, and whether the paper splits. It also decides which of R12, R25
+and R41--R43 still matter.
 
 \section{Register}
 
@@ -102,20 +100,24 @@ R12 & Physics names for atom metrics & v13 & Paper 1 & \textbf{DECIDED} --- keep
 R13 & ``uncollapse'' (v5) collides with UnCollapse & v11 & ideas & \textbf{DECIDED} --- call it Mix-provenance link \\[4pt]
 
 \multicolumn{5}{@{}l}{\textit{Resolved but not merged, and its prerequisite}} \\*
-R14 & Gap 2: location and time as meta vectors; registers; age derived & v1, v17 & Paper 1 & \textbf{RESOLVED, NOT MERGED} --- blocked on R15 \\
-R15 & Meta-vector taxonomy; $V_{\text{derived}}$ & v2, v23 & Paper 1 & \textbf{OPEN} --- specified in v23; settle R45 before importing; prerequisite for R14 \\[4pt]
+R14 & Gap 2: location and time as meta vectors; registers; age derived & v1, v17 & Paper 1 & \textbf{CLOSED} --- merged in v15\_25 \\
+R15 & Meta-vector taxonomy; $V_{\text{derived}}$ & v2, v23 & Paper 1 & \textbf{CLOSED} --- merged in v15\_25 as Section~2.11 \\[4pt]
 
 \multicolumn{5}{@{}l}{\textit{Open --- meta vectors}} \\*
-R16 & Link vectors & v2 & Paper 2 & \textbf{OPEN} --- not filed \\
+R16 & Link vectors & v2 & Paper 2 & \textbf{PARTLY MERGED} --- $V_{\text{link}}$ defined in Paper 1 (v15\_25); structures built from links left to Assembly and Inference \\
 R17 & Meta-vector grouping (promote a shared one) & v2 & Inference & \textbf{OPEN} --- not filed \\
-R18 & Identity handle / Mix-provenance link & v5, v11 & Papers 1, 2, Inf. & \textbf{OPEN} --- paper has ``proposed, not adopted'' only \\
-R19 & Should Mix/Collapse skip expired contributions? & v17 & Paper 1; Inf. & \textbf{OPEN} --- deliberately unanswered; v24 proposes filtering by UnCollapse \\
-R45 & Meta-vector design questions G1--G14 (v23, v24): label identity, the level rule, mutation and links, vocabulary, timestamp encoding, sentinels, granularity, comparison per kind, core multiplicity, guidance & v23, v24 & Paper 1 & \textbf{OPEN} --- G1, G2, G4, G7, G8 settled in v24; G11, G13 confirmed, G12 refined, G14 revised in v25 \\[4pt]
+R18 & Identity handle / Mix-provenance link & v5, v11 & Papers 1, 2, Inf. & \textbf{OPEN} --- still ``proposed, not adopted''; $V_{\text{link}}$ now names targets by identifier \\
+R19 & Should Mix/Collapse skip expired contributions? & v17 & Paper 1; Inf. & \textbf{PARTLY MERGED} --- validity rule merged (v15\_25); filtering by UnCollapse not merged \\
+R45 & Meta-vector design questions G1--G14 (v23, v24): label identity, the level rule, mutation and links, vocabulary, timestamp encoding, sentinels, granularity, comparison per kind, core multiplicity, guidance & v23, v24 & Paper 1 & \textbf{CLOSED} --- merged in v15\_25, with the closure-unit sentence, the identity wording and the granularity fixed in v15\_26; G11 and G14's merge default not merged \\
+R46 & Scalar meta vectors as vectors in planes; a registry of recommended planes (non-normative) & v27 & Paper 1 (Future Work catalogue) & \textbf{OPEN} --- ruled in principle; home and form to settle \\
+R47 & Expiry as read-time exclusion: determinism, counts, hierarchy, links to expired atoms & v27 & Paper 1 & \textbf{OPEN} --- ruled; semantics to settle \\
+R48 & Two-level meta vectors: a result's own new timestamp beside its cores' & v27 & Paper 1 & \textbf{PARTLY MERGED} --- timestamp and link merged in v15\_26; atom-level expiry and location not \\
+R49 & ``Never lose identity'': value, individual, handle; Mix and UnMix & v27 & Paper 1 & \textbf{OPEN} --- wording to settle \\[4pt]
 
 \multicolumn{5}{@{}l}{\textit{Open --- Collapse}} \\*
 R20 & Collapse across differing sorts (per-vector $\tau_i$) & v10, v11 & Paper 1 & \textbf{OPEN} --- stated in paper; broadened by R36 \\
 R21 & Collapse as $T$'s actor & v11 & Paper 1 & \textbf{OPEN} --- ``not claimed'' in Axiom 7; see R40 \\
-R22 & Assembly and Collapse: relation & v11 & Papers 1, 2 & \textbf{OPEN} --- Axiom 6 silent; candidate in v25 \\[4pt]
+R22 & Assembly and Collapse: relation & v11 & Papers 1, 2 & \textbf{CLOSED} --- Axiom 7 already says $V_{\text{derived}}$ stands in for the atom in Assembly; Axiom 6 does not repeat it (corrected v26) \\[4pt]
 
 \multicolumn{5}{@{}l}{\textit{Open --- metrics, scope, presentation}} \\*
 R23 & Shell-indexed energy & v14 & Paper 1 & \textbf{OPEN} --- undefined \\
@@ -921,6 +923,152 @@ vector optional for grouping by time of day.
 \emph{Status: G11, G13 confirmed; G12 refined; G14 revised; G5, G6
 defaults proposed; import awaiting go-ahead.}
 
+
+\subsection*{v26 --- meta vectors imported into the paper}
+Merged into \texttt{Pattern\_Arithmetic\_v15\_25.tex} as
+Section~2.11, after Axiom~7. The term is ``meta vector,'' which had no
+prior use in the paper, where ``meta'' occurred only in ``meta-rule''
+and in the metadata on a walk's steps. ``Label'' stays a plain word: it
+has seven loose uses, which reserving it would have forced rewording.
+
+\textbf{What went in.} A meta vector is not capped, not informational,
+counted in neither $N$ nor $Q$, outside the seven metrics, $D$ and every
+verb, with no $\tau$-justified admissibility of its own and no place among
+the coordinates; it rides with the cores it describes. Two were already in
+the paper unnamed: $V_{\text{derived}}$, per core and per atom with the
+atom's the sum of its cores', and the seat $\vec P$. The recorded ones:
+$V_{\text{timestamp}}$ as an absolute time with age derived and a clock-face
+vector optional (the hour on $\theta$ fails, as v17 showed);
+$V_{\text{expiry}}$, whose absence means none and which is valid exactly
+when absent or $\text{now}<V_{\text{expiry}}$; $V_{\text{location}}$, a point
+on a sphere and not a sort, by the cap test and the seat precedent; and
+$V_{\text{link}}$, naming targets by another atom's meta vector and never by
+content, stored backward only, with forward and bidirectional as views.
+Absence is not zero. Atoms are not edited, so there is no last-modified
+vector. Equality ignores meta vectors ($A,B,A$ gives $D=2$ by content and
+$3$ with timestamps). They group atoms read-only, with a comparison per
+kind; direction is the cleaner assembly rule and magnitude a weight; links
+declare structure while the energy produces it from geometry; and order
+carried in meta vectors passes $\uplus$, which does not read them.
+
+\textbf{Supporting edits.} Axiom~7's derived-vector limit reworded; the
+level rule of \S3.1 notes that a meta vector records a fact about the atom
+itself and never what it belongs to; the Assembly paragraph names the seat
+as a meta vector; Collapse says each core keeps its meta vectors; the counts
+and $D$ exclude them; UnCollapse now ``returns a Collapsed atom without one
+core, leaving the original unchanged'' where it said ``removes one core
+from''; the identity handle is named as a meta vector; and the open item on
+location as a sort is removed, since the subsection settles it.
+
+\textbf{A correction found along the way.} R22 had been recorded as
+``Axiom~6 silent,'' but Axiom~7 already says that $V_{\text{derived}}$'s
+magnitude and direction stand in for the atom wherever a weight or a
+direction is required, naming Assembly's $r_Ar_B$ and a camp body's
+alignment. R22 is closed in substance, and v25's ``candidate for R22''
+described what the paper already says. The cost that $|V_{\text{derived}}|$
+is uncapped, and so heavy in the product and in the softening length,
+follows from that existing sentence and not from this import.
+
+\textbf{Checks.} All 49 numbered equations are identical to v15\_24's;
+zero errors and undefined references; the same five overfull warnings; and
+the seven metrics and $Q_{\mathrm{eff}}$ occur nowhere outside Axiom~7, the
+new subsection using none of them.
+
+\textbf{Not merged.} G11 (multiplicity as a name), the merge-as-set default
+of G14, R19's filtering by UnCollapse, a per-sort $V_{\text{derived}}$
+(R36), and the question of an atom-level birth time distinct from its
+cores' births.
+\emph{Status: R14, R15, R22, R45 closed; R16, R19 partly merged.}
+
+
+\subsection*{v27 --- rulings on form, expiry, Collapse and identity; fixes 1 to 3 merged}
+Rulings given:
+\begin{itemize}
+\item Meta vectors are always vectors. Where one must act as a scalar it
+may exist in $\mathbb{R}^2$, and standard planes (horizontal and vertical)
+are wanted as recommendations for the various scalar vectors, with a
+registry for scalars as the idea.
+\item $V_{\text{derived}}$ always rests on information-content strength.
+If an atom has an expiry, all its meta vectors become meaningless and it
+no longer takes part in any process. If an inner atom of a larger
+Collapsed atom expires, all its information and meta vectors stop
+participating.
+\item A larger Collapsed atom collects all its inner atoms' information
+vectors at standard position and their meta vectors. $V_{\text{derived}}$
+is recalculated over the denser content. The result has a new timestamp
+vector and also holds the timestamps linked to each core. Neither
+information vectors nor meta vectors ever lose identity, under Collapse,
+Bundle or Mix.
+\item Meta vectors are per core and, like information atoms, do not lose
+identity. If an atom expires, all its information and meta vectors stop
+contributing.
+\end{itemize}
+
+\textbf{Merged in v15\_26, the three fixes asked for.}
+The ``at most one'' derived vector in Axiom~7 now reads one per core and
+one for the atom, the atom's being the sum of its cores'; the section's
+``part of identity'' now says ``part of the value,'' and separates value
+from the identity handle, which tells sources apart; and granularity is
+stated for location and link as well, with a paragraph on where meta
+vectors are held, including a Collapse result's own new timestamp and
+backward link beside its cores'. That last paragraph also answers the open
+question of an atom's birth against its cores' births.
+
+\textbf{What the rulings raise, checked.}
+\begin{itemize}
+\item \emph{R46, planes and a registry.} A registry fits as a further
+catalogue in the paper's deferred-catalogues subsection, which already
+holds the concept dictionary and the lexicon as recorded and left open, not
+an axiom; it says ``a pair of catalogues'' but lists three items, the
+third not a catalogue. Recommendations only, as standardization of the
+lexicon is. On geometry: two planes inside a $3$-D stage always share a
+line (checked on $20{,}000$ random pairs), so ``horizontal and vertical''
+planes cannot be disjoint there. Disjoint planes need extra dimensions
+($N_{\mathrm{dim}}\ge3+2k$ for $k$ planes; coordinate planes $(x_1,x_2)$
+and $(x_3,x_4)$ in $\mathbb{R}^4$ meet only at the origin), which is the
+mechanism of v1's third candidate, shifts commuting exactly with content.
+Or each plane is a separate space attached to the core, needing no ambient
+dimensions. Within a plane, a scalar on one axis keeps vector distance
+equal to the difference ($0.500$ for values $0.5$ apart). A polar form,
+radius as absolute time and angle as time of day, packs both components
+into one vector but breaks that: for times $24$, $12$ and $0.5$ hours apart
+the distances are $24.000$, $2012.000$ and $130.840$, so age must be read
+from the radial part. Suggested convention: the scalar on the plane's
+first axis, a cyclic companion as the angle if wanted, and planes named by
+role (a time plane, a place plane), with horizontal and vertical a drawing
+convention only.
+\item \emph{R47, expiry as read-time exclusion.} Excluding expired cores
+from $V_{\text{derived}}$, the metrics and every process makes derived
+quantities functions of content and of time. The paper says every law is
+deterministic, the same starting units giving the same result, so
+processes need an explicit time argument $t$, defaulting to now. The
+counts need a rule: stored $N$ and $Q$ against active ones. A proposal that
+reuses what exists: an expired core reads as black, counted in $N$ and
+absent from $Q$, $S$ and $V_{\text{derived}}$, which is the silent-contribution
+rule. An atom-level expiry silences all its cores; an inner atom's expiry
+must reach its cores after Collapse keeps them distinct, so either it is
+copied to each core at Collapse or the grouping is kept, the minimal
+reading being to copy it down at birth. A link to an expired atom is
+lineage and not participation, and the proposal is that provenance stays
+readable. The atom itself never changes: exclusion is a read.
+\item \emph{R48, two levels.} A Collapse result carries its own new
+timestamp and its cores' own, so meta vectors exist at both levels. Open:
+whether the atom level also has expiry and location, and how validity nests.
+\item \emph{R49, ``never lose identity.''} The word now has three senses:
+value (equal content), individual (this thing with its own meta vectors),
+and handle (an identifier). The ruling means that individuals persist.
+Collapse keeps cores inside the result. Bundle keeps individuals as meta
+vectors at the seat: value-equal ones share a seat, count is discarded as
+content and survives in the labels when they differ. Mix leaves its sources
+unconsumed, since it is a reading, while the result fuses their values;
+UnMix stays impossible, as the paper proves the sources are not determined
+by the result. So ``never lose identity'' cannot mean recoverable from the
+result. It means persistence of the sources, named by the result's
+backward links, and the paper should say so to avoid appearing to
+contradict its own UnMix proof.
+\end{itemize}
+\emph{Status: fixes 1--3 merged; R46, R47, R49 open; R48 partly merged.}
+
 \section{Merged directly, without an ideas entry}
 
 These went straight into the paper at your direction and are already
@@ -935,16 +1083,11 @@ bridges them; and the $N$/$D$ addition (filed afterwards as R5).
 \section{What remains, in dependency order}
 
 \begin{enumerate}
-\item \textbf{Import the meta-vector taxonomy into Paper~1 (R15),
-after settling what remains in R45} (G3, G5, G6, G9 and G10 remain;
-G1, G2, G4, G7 and G8 were settled in v24, and G11 to G14 were
-confirmed or revised in v25). It
-unblocks R14, which closes Gap~2 and gives location, the
-timestamp and expiry registers, and $V_{\text{derived}}$ a home.
-\item \textbf{Then merge the v17 resolution (R14)}, replacing the
-paper's ``Open: location as a sort'' paragraph. Decide R19 (expired
-contributions) at the same time or defer it explicitly. If R38 is
-adopted, v17's ``per vector'' registers should read ``per core.''
+\item \textbf{Done in v15\_25:} the meta-vector taxonomy and the v17
+resolution (R15, R14, R45), which closed Gap~2. What remains of that
+cluster: R19's filtering by UnCollapse, the label-merging default of G14,
+and R46--R49 (v27), of which the expiry semantics (R47) and the identity
+wording (R49) matter first.
 \item \textbf{Decide the scope questions (R27, R28)}: Axiom~7's
 metrics and the costumes, and whether to split. These also decide
 whether R12, R25, and R41--R43 still matter for Paper~1.
@@ -952,9 +1095,9 @@ whether R12, R25, and R41--R43 still matter for Paper~1.
 is settled (R38), and cores of any size, the empty atom, and
 Collapse keeping cores distinct are merged (R37, R44; v15\_24). What
 remains is mixed sorts, per-vector $\tau_i$ (R36), which closes R20 in
-the same step. R21 and R22 can each be closed by a
-sentence, whether a stated refusal or a stated rule, and the commuting
-test (R39, R40) can then be run.
+the same step. R21 can be closed by a
+sentence, whether a stated refusal or a stated rule (R22 is closed in
+substance), and the commuting test (R39, R40) can then be run.
 \item \textbf{Package the Inference-bound items (R17, R30--R35)}
 as one coherent addition to the Inference paper: the candlestick,
 the technique-selection argument, the spherical Douglas--Peucker
