@@ -4,7 +4,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 
-\title{Ideas Register --- Consolidated, v1 to v35}
+\title{Ideas Register --- Consolidated, v1 to v36}
 \author{One file for every parked idea, with its current status}
 \date{}
 
@@ -27,7 +27,7 @@ earlier checks stand), and
 elsewhere --- the \texttt{Assembly\_v1.tex} and
 \texttt{Inference\_v1.tex} copies on hand (which may be older than
 your working copies; if so, the ``not filed'' marks below should be
-rechecked against yours). Entries from v19 onward are appended here; v19 to v35 are the first seventeen.
+rechecked against yours). Entries from v19 onward are appended here; v19 to v36 are the first eighteen.
 
 \paragraph{Status vocabulary.}
 \textbf{CLOSED} --- resolved and merged into the paper.
@@ -123,7 +123,8 @@ R56 & Terminology: the fifth to seventh metrics are unnamed and $\mathcal{E}$ is
 R57 & A use-agnostic contract: what the algebra promises (determinism, closure, persistence of sources, non-interference of cores, immutable atoms) and what any use must supply (seats, a reading time, comparison rules, conventions) & v34 & Paper 1 & \textbf{OPEN} \\
 R58 & Placement is external: no rule lets an atom derive its own seat from meta vectors or $V_{\text{derived}}$; the assembly descent gathers at the plain mean of the seats and sorts by content only at a scale hidden from any census cut & v34 & Assembly paper (Paper 1 stays silent, v35) & \textbf{OPEN} \\
 R59 & Non-interference as a stated property: operations on one core never alter another; derived quantities per sort once mixed sorts are admitted (joins R36 and R50) & v34 & Paper 1 & \textbf{OPEN} \\
-R60 & Inference-bound: one observed step leaves the actor underdetermined (a circle of axes, strength from $s/\pi$ to $1$, phase identified); chance of explaining a step is the tolerance cap's area fraction, amplified by bowl size; success must be judged against that baseline & v35 & Inference & \textbf{PARKED} --- joins R17, R30--R35 \\[4pt]
+R60 & Inference-bound: one observed step leaves the actor underdetermined (a circle of axes, strength from $s/\pi$ to $1$, phase identified); chance of explaining a step is the tolerance cap's area fraction, amplified by bowl size; success must be judged against that baseline & v35 & Inference & \textbf{PARKED} --- joins R17, R30--R35 \\
+R61 & Cut sheet for moving Axiom~6's pair energy and \S10 to Assembly: what moves, what must be rewritten, the choice for the verb $\bowtie$ (a bare relation stays, or it leaves), and the citations in the companion drafts & v36 & Paper 1 / Assembly & \textbf{OPEN} --- awaiting the $\bowtie$ choice \\[4pt]
 
 \multicolumn{5}{@{}l}{\textit{Open --- Collapse}} \\*
 R20 & Collapse across differing sorts (per-vector $\tau_i$) & v10, v11 & Paper 1 & \textbf{OPEN} --- stated in paper; broadened by R36 \\
@@ -1498,6 +1499,55 @@ which grows with bowl size and tolerance.
 The probabilities themselves, the prior over actors, are Inference's, and
 nothing in Paper~1 supplies them. \emph{Status: R60 parked for Inference; R58
 now owned by Assembly.}
+
+
+\subsection*{v36 --- energy stays with the atom; its use is Assembly's}
+Ruling: energy is a measure of \emph{information energy} and belongs with the
+atom. Its use in becoming molecules and matter is Assembly's task. This partly
+settles R28: the interaction energy $U_{AB}$ and what is built on it leave
+Paper~1, while $\mathcal{E}_{\text{atom}}$ and the other atom-level measures stay
+in Axiom~7. It also removes the second sense of ``energy'' recorded under R56,
+since $\mathcal{E}$ would be the only one left.
+
+\textbf{A check that supports the split.} $U_{AB}=-C_{AB}\,g(d)$ with a coupling
+$C_{AB}=\tfrac12 r_Ar_B(3+\hat n_A\!\cdot\!\hat n_B)$ and a kernel
+$g=(d^2+\varepsilon_{AB}^2)^{-3/2}$ whose softening $\varepsilon_{AB}=r_A+r_B$
+also comes from the atoms; only $d$ comes from outside. At contact the energy
+therefore depends on the atoms alone, but it is not a well-behaved atom
+property: for two aligned atoms of equal strength $r$ it is $-(3+1)/(16r)$,
+which is $-0.278$ at $r=0.9$, $-25.0$ at $r=0.01$ and $-250$ at $r=0.001$,
+and it jumps to exactly $0$ at black. $\mathcal{E}_{\text{atom}}$ is bounded and
+continuous at zero. So the atom keeps $\mathcal{E}$; the meaning of a pair
+energy is fixed only by seats and a process, which is use.
+
+\textbf{Cut sheet (nothing in the paper has been changed).}
+\begin{itemize}
+\item \emph{Moves to Assembly:} Axiom~6 (about $500$ words: the signature, $U_{AB}$,
+$\kappa_{AB}$, polarity, ``never repels''); all of \S10 (about $1{,}600$ words:
+seats, rest and freeze, camps and bodies, checkpoint, $\epsilon_{\text{allow}}$,
+the replayable configuration); equations $12$--$14$ and $46$--$49$ (seven of
+$49$); the enclosure checks of \texttt{reproduce\_v15\_28.py} and
+\texttt{assembly\_probe\_v15\_28.py}.
+\item \emph{Needs rewriting in Paper~1:} the abstract (the verb count and the
+descent sentence); the introduction, where the thesis's second half rests on the
+enclosure ``in miniature'' and the mitochondrion example illustrates Assembly,
+so that Paper~1 would hold no instance of settling toward stability; Table~1 and
+``six verbs''; the axiom numbering; \S2.11 (the seat and ``$V_{\text{derived}}$
+guides assembly''); the conclusion; and the quick reference.
+\item \emph{Outside Paper~1:} as uploaded, \texttt{Assembly\_v1} cites Axiom~6
+once and mentions the enclosure ten times and camps or checkpoints forty times,
+and \texttt{Inference\_v1} cites Axiom~6 three times and the enclosure five
+times. Their definitions would have to be absorbed by Assembly, about $2{,}100$
+words onto a draft of about $4{,}000$, and their citations redirected.
+\end{itemize}
+
+\textbf{The one real choice: the verb $\bowtie$.} (A) It leaves entirely:
+five verbs, and either Axiom~7 is renumbered or the slot is reserved. (B) It
+stays as a bare relation, $A\bowtie B=(A,B,\kappa_{AB})$, with its energy named
+and supplied by Assembly: six verbs and the sixth question kept, at the price of
+a verb whose substance lives elsewhere. My lean is (B), as the smaller change
+that keeps Paper~1 self-consistent; the choice is the author's.
+\emph{Status: R61 open.}
 
 \section{Merged directly, without an ideas entry}
 
