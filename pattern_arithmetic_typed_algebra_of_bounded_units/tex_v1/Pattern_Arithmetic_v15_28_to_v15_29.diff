@@ -1,0 +1,99 @@
+--- Pattern_Arithmetic_v15_28.tex
++++ Pattern_Arithmetic_v15_29.tex
+@@ -28,8 +28,8 @@
+ }
+ 
+ % Metadata & Custom Title Banner
+-\pretitle{\begin{center}\Huge\fontfamily{tt}\selectfont ================================================================================\\[0.5em]}
+-\posttitle{\\[0.5em] ================================================================================\end{center}}
++\pretitle{\begin{center}\hbox to\linewidth{\leaders\hbox{\normalfont\ttfamily\normalsize =}\hfill}\par\vspace{0.5em}\Huge}
++\posttitle{\par\vspace{0.5em}\hbox to\linewidth{\leaders\hbox{\normalfont\ttfamily\normalsize =}\hfill}\end{center}}
+ 
+ \title{Pattern Arithmetic: Typed Algebra of Bounded Units on a Phase-Colored Sphere}
+ %\title{Pattern Arithmetic: Bounded High-Density Units on a Phase-Colored Sphere}
+@@ -119,7 +119,7 @@
+ such a result on another unit. This paper supplies the unit and the
+ verbs. It does not, by itself, issue a verdict: a bowl may be mixed,
+ walked, or assembled and brought to rest. Saying what that state
+-means is a later reading, not a sixth verb here.
++means is a later reading, not a seventh verb here.
+ 
+ The technique is not new. Wherever a domain already treats something
+ as one unit and combines those units under a small repeatable rule,
+@@ -274,7 +274,7 @@
+ \hline
+ $+$ & How many? \\
+ $\uplus$ / $\setminus$ (Bundle / Remove) & What is present? / what is removed? \\
+-$\oplus$ / $\ominus$ (Collapse / UnCollapse) & What is combined, with nothing discarded? / what contribution is taken back? \\
++$\oplus$ / $\ominus$ (Collapse / UnCollapse) & What is combined, with nothing discarded? / what core is taken back? \\
+ $\boxplus$ ($\mathrm{Mix}$) & What composite state results? \\
+ $\boxminus$ ($\mathrm{UnMix}$) & Not possible: a Mixed result does not determine its sources (Section~\ref{subsec:process_principle_unmix}). \\
+ $T$ (Transform) & What happens, and in what order? \\
+@@ -287,7 +287,7 @@
+ a meaning here, it is not reused elsewhere in this paper for an
+ unrelated or informal sense. Three verbs --- Bundle, Collapse, and
+ Mix --- have a named counterpart; only two of those, Remove and
+-UnCollapse, actually take a contribution back. Mix's own
++UnCollapse, actually take one member or core back. Mix's own
+ counterpart, UnMix, is proven impossible rather than simply
+ unbuilt.}
+ \label{tab:verb_inventory}
+@@ -1113,13 +1113,13 @@
+ $\gamma_{\text{atom}}$, mean vector volume, is the average per-vector
+ share of that total. None of the three participates in Motion; atom
+ volume, in particular, is deliberately excluded from it and exists
+-here purely as a descriptive metric of the atom. Earlier drafts
+-called $\mathcal{V}_{\text{atom}}$ ``mass,'' $\gamma_{\text{atom}}$
+-``density,'' and $S_{\text{atom}}$ ``atom energy'' --- all three
+-retired as misleading: the first two because neither participates in
+-momentum, kinetic energy, or any calculation the word ``mass'' would
+-ordinarily license, and the third because a genuine notion of energy
+-exists below and is not $S_{\text{atom}}$.
++here purely as a descriptive metric of the atom. The names ``mass,''
++``density,'' and ``atom energy'' are deliberately not used for
++$\mathcal{V}_{\text{atom}}$, $\gamma_{\text{atom}}$, and
++$S_{\text{atom}}$ respectively: the first two because neither
++participates in momentum, kinetic energy, or any calculation the word
++``mass'' would ordinarily license, and the third because a genuine
++notion of energy exists below and is not $S_{\text{atom}}$.
+ 
+ A fourth quantity is not derived from strength by squaring it, but
+ stands on its own, the way variance is defined directly rather than
+@@ -1450,8 +1450,7 @@
+ structure is produced and undone: the pipeline that chains Bundle
+ and Transform into a single process, and the process-level
+ counterpart of each combining verb --- Mix and Collapse alike ---
+-including the two cases, UnCollapse and UnMix, where taking a
+-contribution back is, respectively, defined and proven impossible.
++including the two cases, UnCollapse and UnMix, where taking a part back is, respectively, defined and proven impossible.
+ 
+ \subsection{Process principle: Bundle, path, result}
+ \label{subsec:process_principle}
+@@ -1951,7 +1950,7 @@
+ multiplicity (Section~\ref{subsec:axiom_idempotence}).
+ 
+ A step of the trajectory may carry more than the bare actor:
+-$\pi=\bigl((x;w_1,m_1),\ldots,(w_n,m_n)\bigr)$ for some label $m_i$ ---
++$\pi=\bigl((x;w_1,m_1),\allowbreak\ldots,\allowbreak(w_n,m_n)\bigr)$ for some label $m_i$ ---
+ a discrete time bucket, say. This changes nothing about the atom: $m_i$
+ is metadata on the walk, not a coordinate of any $x$ or $w_i$, and
+ Equation~\eqref{eq:poem_trajectory} runs exactly as before on the
+@@ -2933,8 +2932,7 @@
+ There is no mass term and no momentum carried between steps. This
+ is deliberate rather than an omission. A unit carries no inertia, so
+ it cannot overshoot: an isolated pair closes distance monotonically
+-and never exceeds its own starting separation. Weighting each step
+-by a mass-like quantity was tested and produces oscillation rather
++and never exceeds its own starting separation. Weighting each step by a volume-like quantity was tested and produces oscillation rather
+ than rest, precisely where the weighting is most extreme --- a
+ ninefold difference in strength gives a $729$-fold weighting under a
+ cubed reading, and a demonstrably non-monotonic trajectory against
+@@ -3109,7 +3107,7 @@
+ literal sense: the two remain forty apart only because their mutual
+ pull fell below $\eta$ before they could close the distance.
+ 
+-The mass-weighting comparison of \S\ref{subsec:enclosure_rest} is
++The volume-weighting comparison of \S\ref{subsec:enclosure_rest} is
+ replayed on a printed pair: $r=0.9$ at $(0,0,0)$ and $r=0.1$ at
+ $(3,0,0)$, both with $\hat n=(1,0,0)$, $\delta=0.02$, $3000$ steps.
+ Under Equation~\eqref{eq:enclosure_motion} the separation never
