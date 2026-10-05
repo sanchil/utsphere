@@ -4,7 +4,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 
-\title{Ideas Register --- Consolidated, v1 to v38}
+\title{Ideas Register --- Consolidated, v1 to v39}
 \author{One file for every parked idea, with its current status}
 \date{}
 
@@ -27,7 +27,7 @@ earlier checks stand), and
 elsewhere --- the \texttt{Assembly\_v1.tex} and
 \texttt{Inference\_v1.tex} copies on hand (which may be older than
 your working copies; if so, the ``not filed'' marks below should be
-rechecked against yours). Entries from v19 onward are appended here; v19 to v38 are the first twenty.
+rechecked against yours). Entries from v19 onward are appended here; v19 to v39 are the first twenty-one.
 
 \paragraph{Status vocabulary.}
 \textbf{CLOSED} --- resolved and merged into the paper.
@@ -125,7 +125,12 @@ R58 & Placement is external: no rule lets an atom derive its own seat from meta 
 R59 & Non-interference as a stated property: operations on one core never alter another; derived quantities per sort once mixed sorts are admitted (joins R36 and R50) & v34 & Paper 1 & \textbf{OPEN} --- narrowed in v38: whole-atom meta vectors are readings of the cores, never inputs to them; one sentence needed \\
 R60 & Inference-bound: one observed step leaves the actor underdetermined (a circle of axes, strength from $s/\pi$ to $1$, phase identified); chance of explaining a step is the tolerance cap's area fraction, amplified by bowl size; success must be judged against that baseline & v35 & Inference & \textbf{PARKED} --- joins R17, R30--R35 \\
 R61 & Cut sheet for moving Axiom~6's pair energy and \S10 to Assembly: what moves, what must be rewritten, the choice for the verb $\bowtie$ (a bare relation stays, or it leaves), and the citations in the companion drafts & v36 & Paper 1 / Assembly & \textbf{OPEN} --- awaiting the $\bowtie$ choice \\
-R62 & Counted Mix: Inference sums a Collapsed atom's cores with their counts, but Paper~1 defines Mix over a bowl, a set in which identical members count once; no Mix reading of a Collapsed atom is stated & v37 & Paper 1 / Inference & \textbf{OPEN} --- stated in Inference v2 \S8.1 as a reading it adds \\[4pt]
+R62 & Counted Mix: Inference sums a Collapsed atom's cores with their counts, but Paper~1 defines Mix over a bowl, a set in which identical members count once; no Mix reading of a Collapsed atom is stated & v37 & Paper 1 / Inference & \textbf{OPEN} --- stated in Inference v2 \S8.1 as a reading it adds \\
+R63 & Two outside readings of v15\_28, sentence-level fixes: ``lossless'' for Collapse (three places) becomes value-lossless, with provenance only through R18; the softening length is ``derived, not chosen'' but is a convention (reading $r$ as a radius); ``cannot overshoot'' (see R65); ``all seats meet at one point'' is observed, not proved; Mix refusal is ``the correct behavior'' (R26); the heading ``Rotation preserves the unit'' conflates norm preservation with a chosen action & v39 & Paper 1 (the enclosure ones follow \S10) & \textbf{OPEN} --- v15\_29 \\
+R64 & Notation: binary Mix and the one-step bowl reading share the symbol $\boxplus$; use $M(B)$ for the bowl reading and keep $\boxplus$ for the binary case & v39 & Paper 1 & \textbf{OPEN} --- v15\_29 \\
+R65 & Enclosure step size: there is no universal $\delta$; the stable explicit step scales as $r^3$ ($\delta_{\text{crit}}=5.333\,r^3$ for an aligned equal-strength pair near contact); the printed replay is safe, the sentence is not & v39 & Paper 1 / Assembly & \textbf{OPEN} --- verified; text pending \\
+R66 & A one-page structure statement (the state space $X$, the operators, and which properties each has), defining ``arithmetic'' as that structure; an optional metric clause for Axiom~0's ``named approximation''; UnMix as a non-injectivity theorem & v39 & Paper 1 & \textbf{OPEN} --- v15\_29, one page at most \\
+R67 & Inference experiment: the same bowl in different orders against a flat embedding and a transformer (sample efficiency, inverse accuracy); the common register as a testable hypothesis (separate encoders per type with typed operators against independent spaces) & v39 & Inference & \textbf{PARKED} --- later paper \\[4pt]
 
 \multicolumn{5}{@{}l}{\textit{Open --- Collapse}} \\*
 R20 & Collapse across differing sorts (per-vector $\tau_i$) & v10, v11 & Paper 1 & \textbf{DECIDED} --- v38: closes with R36; not yet in the paper \\
@@ -1634,6 +1639,48 @@ Future Work item; the quick reference; and one sentence in \S2.11 saying the
 whole-atom $V_{\text{derived}}$ is over all cores whatever their sorts.
 \emph{Status: R20, R36, R51 decided and not yet in the paper; R39, R43, R59
 narrowed; R62 open.}
+
+
+\subsection*{v39 --- two outside readings of v15\_28, triaged}
+Two documents were examined: a critique of v15\_28 (a scorecard, a revision plan, a three-paper split) and a response to it. The authors agreed the
+paper will be split eventually, and that a quest for perfection can hurt the effort; points worth keeping are scribbled here
+and nothing in the paper has been changed.
+
+\textbf{Verified against the text.}
+\begin{itemize}
+\item All six sentences the response says are still in v15\_28 are there: ``lossless'' for Collapse (three places),
+``derived, not chosen,'' ``cannot overshoot,'' ``all seats of nonzero strength meet at one point,'' ``the correct behavior''
+for Mix refusal, and the heading ``Rotation preserves the unit.''
+\item Table~1 first appears on page $5$ of $48$, and $1{,}472$ of the introduction's $2{,}184$ words ($11\%$ of the paper)
+come before it. Costumes are $4.1\%$ of the text, so the claim that dropping them and their disclaimers saves $20$--$30\%$ does not hold.
+\end{itemize}
+
+\textbf{Where the readings over- or misread.}
+\begin{itemize}
+\item The thesis says ``\emph{Wherever} a domain supplies a unit of truth,'' not ``every domain,'' so the objection that the paper claims every
+domain has a binary combination law misreads it; and it already defines the unit as ``the smallest thing it treats as one,'' which is the definition
+the critique proposes.
+\item Axiom~0 already reads ``at a stated fidelity (exact, or approximate with the approximation named),'' which is the fix the response proposes. Only a
+named metric is missing.
+\item \S2.8's body already separates the norm ($\lVert\mathbf R\hat n\rVert=1$, an equation) from the chosen action (leaving $r$, $\chi$, $\tau$ alone);
+only the heading and the closing sentence conflate them.
+\item The scores are not measurements. The revision list is the useful part.
+\end{itemize}
+
+\textbf{A finding neither reading had (R65).} The paper says a unit ``cannot overshoot: an isolated pair closes distance monotonically
+and never exceeds its own starting separation.'' That holds for the continuous flow, not for the update used. For an aligned pair of equal strength
+$r$, explicit Euler is stable near contact only for $\delta<5.333\,r^3$. At the printed $\delta=0.02$, a pair with $r=0.1$ increases its separation on $18{,}140$ of $40{,}000$ steps, and a pair with
+$r=0.05$ bounces out to $1.67$ from a start of $0.50$. The printed six-unit replay is safe (largest stiffness $2.268$, stable below $\delta=0.88$), so the replay stands and the sentence does not. A
+corrected sentence would say the flow carries no inertia, and that the Euler step closes monotonically only below a critical step that scales as $r^3$, so no
+single $\delta$ suits every strength.
+
+\textbf{A conflict with a ruling.} The critique would rename $\mathcal E_{\text{atom}}$ ``self term'' to avoid a physics objection. The ruling is that
+information energy belongs with the atom. Keep the name; add one line that $\lvert V\rvert^2=\mathcal E+2\sum r_ir_j\cos$ has a variance-like decomposition and that ``energy'' here is that
+and nothing more.
+
+\textbf{A triage rule against perfectionism.} v15\_29 takes only: the sentences that are false as written (R63, R65), the $M(B)$ notation (R64), and one structure
+statement (R66). Everything else, the metric purge (R27), the three-paper cut (R28, R61), Offset's demotion and the usefulness question (R67), is deferred.
+\emph{Status: R63--R66 open for v15\_29; R67 parked for Inference.}
 
 \section{Merged directly, without an ideas entry}
 
