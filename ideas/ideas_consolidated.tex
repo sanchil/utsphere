@@ -4,7 +4,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 
-\title{Ideas Register --- Consolidated, v1 to v50}
+\title{Ideas Register --- Consolidated, v1 to v52}
 \author{One file for every parked idea, with its current status}
 \date{}
 
@@ -20,14 +20,14 @@ where it stands now.
 
 \textbf{How status was determined.} Not from memory of the
 discussions. Each status was checked by searching the current paper,
-\texttt{Pattern\_Arithmetic\_v15\_29.tex} (v15\_29 is v15\_28 with cosmetic changes only; v15\_28 differs from v15\_22
+\texttt{Pattern\_Arithmetic\_v15\_30.tex} (v15\_30 adds the UnCollapse cluster to v15\_29, which is v15\_28 with cosmetic changes only; v15\_28 differs from v15\_22
 only in the atom-structure passages and the meta-vector subsection, so
 earlier checks stand), and
 --- for items destined
 elsewhere --- the \texttt{Assembly\_v1.tex} and
 \texttt{Inference\_v1.tex} copies on hand (which may be older than
 your working copies; if so, the ``not filed'' marks below should be
-rechecked against yours). Entries from v19 onward are appended here; v19 to v50 are the first thirty-two.
+rechecked against yours). Entries from v19 onward are appended here; v19 to v52 are the first thirty-four.
 
 \paragraph{Status vocabulary.}
 \textbf{CLOSED} --- resolved and merged into the paper.
@@ -106,15 +106,15 @@ R15 & Meta-vector taxonomy; $V_{\text{derived}}$ & v2, v23 & Paper 1 & \textbf{C
 \multicolumn{5}{@{}l}{\textit{Open --- meta vectors}} \\*
 R16 & Link vectors & v2 & Paper 2 & \textbf{PARTLY MERGED} --- $V_{\text{link}}$ defined in Paper 1 (v15\_25); structures built from links left to Assembly and Inference \\
 R17 & Meta-vector grouping (promote a shared one) & v2 & Inference & \textbf{OPEN} --- not filed \\
-R18 & Identity handle / Mix-provenance link & v5, v11 & Papers 1, 2, Inf. & \textbf{DECIDED} --- v46: the identity key is a tuple of existing meta vectors, no new kind; not yet in the paper \\
-R19 & Should Mix/Collapse skip expired contributions? & v17 & Paper 1; Inf. & \textbf{DECIDED} --- v47: expired cores are noise; they and their vectors may be removed, by UnCollapse selected by expiry; until removed they read as black; not yet in the paper \\
+R18 & Identity handle / Mix-provenance link & v5, v11 & Papers 1, 2, Inf. & \textbf{CLOSED} --- merged in v15\_30 (v52) \\
+R19 & Should Mix/Collapse skip expired contributions? & v17 & Paper 1; Inf. & \textbf{CLOSED} --- merged in v15\_30 (v52) \\
 R45 & Meta-vector design questions G1--G14 (v23, v24): label identity, the level rule, mutation and links, vocabulary, timestamp encoding, sentinels, granularity, comparison per kind, core multiplicity, guidance & v23, v24 & Paper 1 & \textbf{CLOSED} --- merged in v15\_25, with the closure-unit sentence, the identity wording and the granularity fixed in v15\_26; G11 and G14's merge default not merged \\
 R46 & Scalar meta vectors as vectors in planes; a registry of recommended planes (non-normative) & v27 & Paper 1 (Future Work catalogue) & \textbf{PARTLY MERGED} --- form (scalar on a designated axis, no other constraint) and the catalogue entry merged in v15\_27 and corrected in v15\_28; the catalogue itself not populated; v47: it now also carries the time standard and the axis and unit per scalar kind, moved from R50 \\
 R47 & Expiry as read-time exclusion: determinism, counts, hierarchy, links to expired atoms & v27 & Paper 1 & \textbf{CLOSED} --- merged in v15\_27 \\
 R48 & Two-level meta vectors: a result's own new timestamp beside its cores' & v27 & Paper 1 & \textbf{PARTLY MERGED} --- timestamp, link and expiry merged (v15\_26, v15\_27); atom-level location not \\
 R49 & ``Never lose identity'': value, individual, handle; Mix and UnMix & v27 & Paper 1 & \textbf{CLOSED} --- merged in v15\_27; Bundle reading to confirm \\
-R50 & Meta-vector consistency obligations: labels of results of $T$, offset, Remove and Assembly; fixed conventions (time standard, axis and unit per scalar kind); per-sort $V_{\text{derived}}$ & v30 & Paper 1 & \textbf{DECIDED} --- v47: every result is a new atom with its own new timestamp and a backward link naming its operands, and surviving cores keep theirs; the conventions move to R46; not yet in the paper \\
-R51 & The Mona Lisa as the test case for mixed-sort cores (R36): one core per canvas point; a bowl of single-sort atoms aligned by position labels today; standards per sort; a planar position kind in the catalogue & v31 & Paper 1 & \textbf{DECIDED} --- answered by the R36 ruling (v38); text pending \\
+R50 & Meta-vector consistency obligations: labels of results of $T$, offset, Remove and Assembly; fixed conventions (time standard, axis and unit per scalar kind); per-sort $V_{\text{derived}}$ & v30 & Paper 1 & \textbf{CLOSED} --- merged in v15\_30 (v52) \\
+R51 & The Mona Lisa as the test case for mixed-sort cores (R36): one core per canvas point; a bowl of single-sort atoms aligned by position labels today; standards per sort; a planar position kind in the catalogue & v31 & Paper 1 & \textbf{CLOSED} --- merged in v15\_30 (v52) \\
 R52 & Colour positioned by $V_{\text{derived}}$: colour must be addressed by direction, not phase; locator is direction plus atom coherence; $|V|$ measures size & v31 & Paper 1 & \textbf{OPEN} --- convention to settle \\
 R53 & Review of v15\_28, reproducibility exceptions: $\sigma_{\text{atom}}$ populations not printed; the 804-of-3000 count is rounding-sensitive; shell binning at floating-point edges; ``checked directly'' claims without inputs & v32 & Paper 1 & \textbf{OPEN} --- supplement delivered; text fixes pending \\
 R54 & Review of v15\_28, mechanical consistency fixes: stale ``not a sixth verb''; Table~1 says ``contribution'' for UnCollapse; title banner overflows; a drafting-history sentence in Axiom~7; ``mass'' wording in the enclosure & v32 & Paper 1 & \textbf{CLOSED} --- v40: done in v15\_29 \\
@@ -122,19 +122,19 @@ R55 & The bowl as a holder of $V_{\text{derived}}$, the metrics and meta vectors
 R56 & Terminology: the fifth to seventh metrics are unnamed and $\mathcal{E}$ is named only in passing; multi-sense words (cast $\times3$, shell $\times2$, energy $\times2$, density); populations behind ``$2.200$ against $2.150$''; the name for the granularity of UnCollapse is decided: grain (v50) & v33, v49, v50 & Paper 1 & \textbf{OPEN} --- found while building the glossary \\
 R57 & A use-agnostic contract: what the algebra promises (determinism, closure, persistence of sources, non-interference of cores, immutable atoms) and what any use must supply (seats, a reading time, comparison rules, conventions) & v34 & Paper 1 & \textbf{OPEN} \\
 R58 & Placement is external: no rule lets an atom derive its own seat from meta vectors or $V_{\text{derived}}$; the assembly descent gathers at the plain mean of the seats and sorts by content only at a scale hidden from any census cut & v34 & Assembly paper (Paper 1 stays silent, v35) & \textbf{OPEN} \\
-R59 & Non-interference as a stated property: operations on one core never alter another; derived quantities per sort once mixed sorts are admitted (joins R36 and R50) & v34 & Paper 1 & \textbf{DECIDED} --- v46: follows from the containment invariant; not yet in the paper \\
+R59 & Non-interference as a stated property: operations on one core never alter another; derived quantities per sort once mixed sorts are admitted (joins R36 and R50) & v34 & Paper 1 & \textbf{CLOSED} --- merged in v15\_30 (v52) \\
 R60 & Inference-bound: one observed step leaves the actor underdetermined (a circle of axes, strength from $s/\pi$ to $1$, phase identified); chance of explaining a step is the tolerance cap's area fraction, amplified by bowl size; success must be judged against that baseline & v35 & Inference & \textbf{PARKED} --- joins R17, R30--R35 \\
 R61 & Cut sheet for moving Axiom~6's pair energy and \S10 to Assembly: what moves, what must be rewritten, the choice for the verb $\bowtie$ (a bare relation stays, or it leaves), and the citations in the companion drafts & v36 & Paper 1 / Assembly & \textbf{OPEN} --- awaiting the $\bowtie$ choice \\
 R62 & Counted Mix: Inference sums a Collapsed atom's cores with their counts, but Paper~1 defines Mix over a bowl, a set in which identical members count once; no Mix reading of a Collapsed atom is stated & v37 & Paper 1 / Inference & \textbf{OPEN} --- stated in Inference v2 \S8.1 as a reading it adds \\
-R63 & Two outside readings of v15\_28, sentence-level fixes: ``lossless'' for Collapse (three places) keeps ``lossless'' with a clause: every vector, every count and each core's own meta vectors survive (v43, v46); the softening length is ``derived, not chosen'' but is a convention (reading $r$ as a radius); ``cannot overshoot'' (see R65); ``all seats meet at one point'' is provable for the continuous flow and should state its conditions (v42); Mix refusal is ``the correct behavior'' (R26); the heading ``Rotation preserves the unit'' conflates norm preservation with a chosen action & v39 & Paper 1 (the enclosure ones follow \S10) & \textbf{OPEN} --- not in v15\_29; first in the one-at-a-time queue (v40) \\
+R63 & Two outside readings of v15\_28, sentence-level fixes: ``lossless'' for Collapse (three places) keeps ``lossless'' with a clause: every vector, every count and each core's own meta vectors survive (v43, v46); the softening length is ``derived, not chosen'' but is a convention (reading $r$ as a radius); ``cannot overshoot'' (see R65); ``all seats meet at one point'' is provable for the continuous flow and should state its conditions (v42); Mix refusal is ``the correct behavior'' (R26); the heading ``Rotation preserves the unit'' conflates norm preservation with a chosen action & v39 & Paper 1 (the enclosure ones follow \S10) & \textbf{OPEN} --- item 1 merged in v15\_30 (v52); the softening length, ``cannot overshoot,'' ``meet at one point,'' ``correct behavior'' and the heading remain \\
 R64 & Notation: binary Mix and the one-step bowl reading share the symbol $\boxplus$; use $M(B)$ for the bowl reading and keep $\boxplus$ for the binary case & v39 & Paper 1 & \textbf{OPEN} --- not in v15\_29; first in the one-at-a-time queue (v40) \\
 R65 & Enclosure step size: there is no universal $\delta$; the stable explicit step scales as $r^3$ ($\delta_{\text{crit}}=5.333\,r^3$ for an aligned equal-strength pair near contact); the printed replay is safe, the sentence is not & v39 & Paper 1 / Assembly & \textbf{OPEN} --- verified; text pending \\
 R66 & A one-page structure statement (the state space $X$, the operators, and which properties each has), defining ``arithmetic'' as that structure; an optional metric clause for Axiom~0's ``named approximation''; UnMix as a non-injectivity theorem & v39 & Paper 1 & \textbf{OPEN} --- one page at most; queued (v40) \\
 R67 & Inference experiment: the same bowl in different orders against a flat embedding and a transformer (sample efficiency, inverse accuracy); the common register as a testable hypothesis (separate encoders per type with typed operators against independent spaces) & v39 & Inference & \textbf{PARKED} --- later paper \\
-R68 & Equality: where it is defined (a short paragraph beside ``equality ignores meta vectors'' in \S2.11), a stricter ``same individual'' test that also compares meta vectors, the measured-readings caveat as a hint only, with the techniques left to later papers, and the granularity of UnCollapse, which is fixed at seating (v48) & v47, v48 & Paper 1 & \textbf{OPEN} --- one paragraph \\[4pt]
+R68 & Equality: where it is defined (a short paragraph beside ``equality ignores meta vectors'' in \S2.11), a stricter ``same individual'' test that also compares meta vectors, the measured-readings caveat as a hint only, with the techniques left to later papers, and the granularity of UnCollapse, which is fixed at seating (v48) & v47, v48 & Paper 1 & \textbf{CLOSED} --- merged in v15\_30 (v52): the equality paragraph, the hints and grain \\[4pt]
 
 \multicolumn{5}{@{}l}{\textit{Open --- Collapse}} \\*
-R20 & Collapse across differing sorts (per-vector $\tau_i$) & v10, v11 & Paper 1 & \textbf{DECIDED} --- v38: closes with R36; not yet in the paper \\
+R20 & Collapse across differing sorts (per-vector $\tau_i$) & v10, v11 & Paper 1 & \textbf{CLOSED} --- merged in v15\_30 (v52) \\
 R21 & Collapse as $T$'s actor & v11 & Paper 1 & \textbf{OPEN} --- ``not claimed'' in Axiom 7; see R40 \\
 R22 & Assembly and Collapse: relation & v11 & Papers 1, 2 & \textbf{CLOSED} --- Axiom 7 already says $V_{\text{derived}}$ stands in for the atom in Assembly; Axiom 6 does not repeat it (corrected v26) \\[4pt]
 
@@ -156,7 +156,7 @@ R34 & Sphere-packing bound for the ``stated distance'' & v6 & Inference & \textb
 R35 & Coherence check for the candlestick & v1 & Inference & \textbf{OPEN} --- never considered \\[4pt]
 
 \multicolumn{5}{@{}l}{\textit{Open --- atom structure (v19)}} \\*
-R36 & Pure and mixed atoms: cores; per-vector $\tau_i$ as the general form; Mona Lisa as test case; derived quantities (per sort in v19, superseded in v38: the whole atom and each constituent) & v19, v38 & Paper 1 & \textbf{DECIDED} --- v38: mixed sorts admitted; not yet in the paper \\
+R36 & Pure and mixed atoms: cores; per-vector $\tau_i$ as the general form; Mona Lisa as test case; derived quantities (per sort in v19, superseded in v38: the whole atom and each constituent) & v19, v38 & Paper 1 & \textbf{CLOSED} --- merged in v15\_30 (v52) \\
 R37 & Collapse of multi-vector contributions (not fixed at one vector each) & v19 & Paper 1 & \textbf{CLOSED} --- cores of any size, kept distinct under Collapse; merged in v15\_24 \\
 R38 & $N$ as number of cores; $Q$ as number of vectors (resolves the collision with $N$ as vector count in Axiom 7) & v19 & Paper 1 & \textbf{CLOSED} --- $N$ cores, $Q$ vectors; merged in v15\_23 \\
 R39 & Collapsed atom as a counted bowl; commuting test & v19 & Paper 1 & \textbf{OPEN} --- v46: commuting test run and passed for the counted bowl; the set bowl differs exactly where a block repeats; what remains is the Mix fork (R62) \\
@@ -166,7 +166,7 @@ R44 & Empty atom: black is $N=1$, $Q=0$; empty core under Collapse; zero-strengt
 \multicolumn{5}{@{}l}{\textit{Open --- energy and effective counts (v20)}} \\*
 R41 & Energy from strength, vector count and direction: $\mathcal E=S^2/Q+Q\,\mathrm{Var}(r)$; $S^2/Q\le\mathcal E\le S$; $|V|^2=(1-\alpha)\mathcal E+\alpha S^2$ & v20 & Paper 1 & \textbf{PARKED} --- identities verified, not in paper; $\mathcal E$ keeps ``energy,'' $\mathcal V$ keeps ``volume'' \\
 R42 & Effective vector count $Q_{\mathrm{eff}}=S^2/\mathcal E$; overlap with $\sigma_{\text{atom}}$ & v20 & Paper 1 & \textbf{CLOSED} --- merged in v15\_23 as a re-expression, not an eighth metric; both it and $\sigma_{\text{atom}}$ kept \\
-R43 & Strength-only metrics per sort and for the whole; effective number of sorts $1/\sum w_s^2$; pooling ratio & v20 & Paper 1 & \textbf{DECIDED} --- v47: metrics apply to all the vectors in an atom, whichever core holds them; a sub-atom is another atom with its own metrics; the extras (effective number of sorts, pooling ratio) are not adopted; not yet in the paper \\
+R43 & Strength-only metrics per sort and for the whole; effective number of sorts $1/\sum w_s^2$; pooling ratio & v20 & Paper 1 & \textbf{CLOSED} --- merged in v15\_30 (v52) \\
 \end{longtable}
 \normalsize
 
@@ -1953,6 +1953,38 @@ core with its vectors; naming the core by identity key, with local position as t
 
 \textbf{On approval.} R18, R19, R20, R36, R43, R50, R51, R59 and R68 close, and R63's first item with them; the open Paper~1 count falls from $20$ to $19$ (R68; the others are already decided). R56 keeps its other naming questions.
 \emph{Status: draft awaiting approval; nothing released; no row closed.}
+
+
+\subsection*{v51 --- identity and containment in the meta-vectors section}
+Asked: a few words on the identity and containment meta vectors in \S2.11. The draft now has a paragraph, \emph{Identity and containment}, and the draft stays at $24$ changes, $49$ pages and about $810$ words more than v15\_29, with the same checks passing.
+
+\textbf{How the two are classed.} Identity is a meta vector: a core's identity key is the tuple of its sort, its source link and its timestamp, all already carried, and it never enters equality. Containment is \emph{not} a meta vector: the containment vector records which core holds which vector, which is the grouping itself, so equality compares it and meta vectors never enter equality.
+The reason is that two atoms with the same vectors, $N=2$ and $Q=3$, grouped differently are different atoms under UnCollapse (v43): were containment a meta vector, equality would ignore it and call them equal. The identity can be dropped and UnCollapse still works by position; the grouping cannot be dropped without making a different atom.
+
+\textbf{If containment were to be called a meta vector anyway,} the sentence ``equality ignores meta vectors'' would need an exception for it, and $N$, $D$ and UnCollapse would depend on a meta vector. That is possible but less clean; the choice is the author's.
+\emph{Status: draft updated; awaiting approval; nothing released; no row closed.}
+
+
+\subsection*{v52 --- v15\_30 released; nine rows closed}
+\texttt{Pattern\_Arithmetic\_v15\_30} is v15\_29 with the UnCollapse cluster merged: $24$ changes, $49$ pages against $48$, about $810$ words more. Compiles with no errors or undefined references; all $49$ equations identical; no existing label renumbered, one added; the only overfull boxes are the two of about $1$\,pt that
+were already there. The reproduction script still passes $37$ of $40$ checks. Neither companion paper has a statement the release makes stale. The Quick Reference was refreshed: $46$ cited sections and $30$ cited equations resolve against v15\_30, all $95$ glossary terms are found in its text, and no stale phrase is left.
+
+\textbf{Closed, each verified by finding its sentence in the released text} ($12$ checks, all passing): R18 (the identity key is a tuple of existing meta vectors), R19 (expired cores are noise and may be removed), R20, R36 and R51 (each vector carries its own sort; Collapse across sorts is stated; Table~3 reads \emph{yes}),
+R43 (the metrics read all vectors whichever core holds each), R50 (every result is a new atom with its own timestamp and link), R59 (no verb moves a vector between cores), and R68 (two equality tests, equality exact, measured readings made comparable at seating, grain).
+R63 keeps its other items open and has item~1 merged; R46 stays partly merged, now carrying the time standard and the axis and unit per kind; R56 keeps its other naming questions, ``grain'' being settled.
+
+\textbf{Counts.} Closed rows $22\to31$. Open rows linked to Paper~1 $20\to19$. Decided and awaiting a merge $10\to2$ (R12, R13). Partly merged and linked to Paper~1: R26, R46, R48; parked: R25, R41.
+
+\textbf{The $19$ open rows, by effort.}
+\begin{itemize}
+\item Sentence fixes, no decision: R63 (five items left), R64, R65, R66, R53, R29.
+\item A one-line decision: R23, R24, R21, R40.
+\item The Mix-with-counts ruling: R39, R62, R55.
+\item One ruling each: R52, R56, R57.
+\item The split itself, deferred to after v1.2: R27, R28, R61.
+\end{itemize}
+Of the partly merged, R48 is one sentence under the v38 ruling and R26 folds into R63.
+\emph{Status: v15\_30 released; the next item is the sentence fixes, beginning with R63.}
 
 \section{Merged directly, without an ideas entry}
 
