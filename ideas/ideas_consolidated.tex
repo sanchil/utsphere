@@ -4,7 +4,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 
-\title{Ideas Register --- Consolidated, v1 to v41}
+\title{Ideas Register --- Consolidated, v1 to v46}
 \author{One file for every parked idea, with its current status}
 \date{}
 
@@ -27,7 +27,7 @@ earlier checks stand), and
 elsewhere --- the \texttt{Assembly\_v1.tex} and
 \texttt{Inference\_v1.tex} copies on hand (which may be older than
 your working copies; if so, the ``not filed'' marks below should be
-rechecked against yours). Entries from v19 onward are appended here; v19 to v41 are the first twenty-three.
+rechecked against yours). Entries from v19 onward are appended here; v19 to v46 are the first twenty-eight.
 
 \paragraph{Status vocabulary.}
 \textbf{CLOSED} --- resolved and merged into the paper.
@@ -106,14 +106,14 @@ R15 & Meta-vector taxonomy; $V_{\text{derived}}$ & v2, v23 & Paper 1 & \textbf{C
 \multicolumn{5}{@{}l}{\textit{Open --- meta vectors}} \\*
 R16 & Link vectors & v2 & Paper 2 & \textbf{PARTLY MERGED} --- $V_{\text{link}}$ defined in Paper 1 (v15\_25); structures built from links left to Assembly and Inference \\
 R17 & Meta-vector grouping (promote a shared one) & v2 & Inference & \textbf{OPEN} --- not filed \\
-R18 & Identity handle / Mix-provenance link & v5, v11 & Papers 1, 2, Inf. & \textbf{OPEN} --- still ``proposed, not adopted''; $V_{\text{link}}$ now names targets by identifier \\
-R19 & Should Mix/Collapse skip expired contributions? & v17 & Paper 1; Inf. & \textbf{PARTLY MERGED} --- validity rule merged (v15\_25); filtering by UnCollapse not merged \\
+R18 & Identity handle / Mix-provenance link & v5, v11 & Papers 1, 2, Inf. & \textbf{DECIDED} --- v46: the identity key is a tuple of existing meta vectors, no new kind; not yet in the paper \\
+R19 & Should Mix/Collapse skip expired contributions? & v17 & Paper 1; Inf. & \textbf{PARTLY MERGED} --- validity rule merged (v15\_25); v46: filtering by UnCollapse is now well-defined; awaiting a yes to the v18 default \\
 R45 & Meta-vector design questions G1--G14 (v23, v24): label identity, the level rule, mutation and links, vocabulary, timestamp encoding, sentinels, granularity, comparison per kind, core multiplicity, guidance & v23, v24 & Paper 1 & \textbf{CLOSED} --- merged in v15\_25, with the closure-unit sentence, the identity wording and the granularity fixed in v15\_26; G11 and G14's merge default not merged \\
 R46 & Scalar meta vectors as vectors in planes; a registry of recommended planes (non-normative) & v27 & Paper 1 (Future Work catalogue) & \textbf{PARTLY MERGED} --- form (scalar on a designated axis, no other constraint) and the catalogue entry merged in v15\_27 and corrected in v15\_28; the catalogue itself not populated \\
 R47 & Expiry as read-time exclusion: determinism, counts, hierarchy, links to expired atoms & v27 & Paper 1 & \textbf{CLOSED} --- merged in v15\_27 \\
 R48 & Two-level meta vectors: a result's own new timestamp beside its cores' & v27 & Paper 1 & \textbf{PARTLY MERGED} --- timestamp, link and expiry merged (v15\_26, v15\_27); atom-level location not \\
 R49 & ``Never lose identity'': value, individual, handle; Mix and UnMix & v27 & Paper 1 & \textbf{CLOSED} --- merged in v15\_27; Bundle reading to confirm \\
-R50 & Meta-vector consistency obligations: labels of results of $T$, offset, Remove and Assembly; fixed conventions (time standard, axis and unit per scalar kind); per-sort $V_{\text{derived}}$ & v30 & Paper 1 & \textbf{OPEN} --- consistency only; meaning is left to use \\
+R50 & Meta-vector consistency obligations: labels of results of $T$, offset, Remove and Assembly; fixed conventions (time standard, axis and unit per scalar kind); per-sort $V_{\text{derived}}$ & v30 & Paper 1 & \textbf{OPEN} --- v46: narrowed to the labels of results of $T$, offset, Remove and Assembly and the conventions; per-sort $V_{\text{derived}}$ is superseded \\
 R51 & The Mona Lisa as the test case for mixed-sort cores (R36): one core per canvas point; a bowl of single-sort atoms aligned by position labels today; standards per sort; a planar position kind in the catalogue & v31 & Paper 1 & \textbf{DECIDED} --- answered by the R36 ruling (v38); text pending \\
 R52 & Colour positioned by $V_{\text{derived}}$: colour must be addressed by direction, not phase; locator is direction plus atom coherence; $|V|$ measures size & v31 & Paper 1 & \textbf{OPEN} --- convention to settle \\
 R53 & Review of v15\_28, reproducibility exceptions: $\sigma_{\text{atom}}$ populations not printed; the 804-of-3000 count is rounding-sensitive; shell binning at floating-point edges; ``checked directly'' claims without inputs & v32 & Paper 1 & \textbf{OPEN} --- supplement delivered; text fixes pending \\
@@ -122,11 +122,11 @@ R55 & The bowl as a holder of $V_{\text{derived}}$, the metrics and meta vectors
 R56 & Terminology: the fifth to seventh metrics are unnamed and $\mathcal{E}$ is named only in passing; multi-sense words (cast $\times3$, shell $\times2$, energy $\times2$, density); populations behind ``$2.200$ against $2.150$'' & v33 & Paper 1 & \textbf{OPEN} --- found while building the glossary \\
 R57 & A use-agnostic contract: what the algebra promises (determinism, closure, persistence of sources, non-interference of cores, immutable atoms) and what any use must supply (seats, a reading time, comparison rules, conventions) & v34 & Paper 1 & \textbf{OPEN} \\
 R58 & Placement is external: no rule lets an atom derive its own seat from meta vectors or $V_{\text{derived}}$; the assembly descent gathers at the plain mean of the seats and sorts by content only at a scale hidden from any census cut & v34 & Assembly paper (Paper 1 stays silent, v35) & \textbf{OPEN} \\
-R59 & Non-interference as a stated property: operations on one core never alter another; derived quantities per sort once mixed sorts are admitted (joins R36 and R50) & v34 & Paper 1 & \textbf{OPEN} --- narrowed in v38: whole-atom meta vectors are readings of the cores, never inputs to them; one sentence needed \\
+R59 & Non-interference as a stated property: operations on one core never alter another; derived quantities per sort once mixed sorts are admitted (joins R36 and R50) & v34 & Paper 1 & \textbf{DECIDED} --- v46: follows from the containment invariant; not yet in the paper \\
 R60 & Inference-bound: one observed step leaves the actor underdetermined (a circle of axes, strength from $s/\pi$ to $1$, phase identified); chance of explaining a step is the tolerance cap's area fraction, amplified by bowl size; success must be judged against that baseline & v35 & Inference & \textbf{PARKED} --- joins R17, R30--R35 \\
 R61 & Cut sheet for moving Axiom~6's pair energy and \S10 to Assembly: what moves, what must be rewritten, the choice for the verb $\bowtie$ (a bare relation stays, or it leaves), and the citations in the companion drafts & v36 & Paper 1 / Assembly & \textbf{OPEN} --- awaiting the $\bowtie$ choice \\
 R62 & Counted Mix: Inference sums a Collapsed atom's cores with their counts, but Paper~1 defines Mix over a bowl, a set in which identical members count once; no Mix reading of a Collapsed atom is stated & v37 & Paper 1 / Inference & \textbf{OPEN} --- stated in Inference v2 \S8.1 as a reading it adds \\
-R63 & Two outside readings of v15\_28, sentence-level fixes: ``lossless'' for Collapse (three places) becomes value-lossless, with provenance only through R18; the softening length is ``derived, not chosen'' but is a convention (reading $r$ as a radius); ``cannot overshoot'' (see R65); ``all seats meet at one point'' is observed, not proved; Mix refusal is ``the correct behavior'' (R26); the heading ``Rotation preserves the unit'' conflates norm preservation with a chosen action & v39 & Paper 1 (the enclosure ones follow \S10) & \textbf{OPEN} --- not in v15\_29; first in the one-at-a-time queue (v40) \\
+R63 & Two outside readings of v15\_28, sentence-level fixes: ``lossless'' for Collapse (three places) keeps ``lossless'' with a clause: every vector, every count and each core's own meta vectors survive (v43, v46); the softening length is ``derived, not chosen'' but is a convention (reading $r$ as a radius); ``cannot overshoot'' (see R65); ``all seats meet at one point'' is provable for the continuous flow and should state its conditions (v42); Mix refusal is ``the correct behavior'' (R26); the heading ``Rotation preserves the unit'' conflates norm preservation with a chosen action & v39 & Paper 1 (the enclosure ones follow \S10) & \textbf{OPEN} --- not in v15\_29; first in the one-at-a-time queue (v40) \\
 R64 & Notation: binary Mix and the one-step bowl reading share the symbol $\boxplus$; use $M(B)$ for the bowl reading and keep $\boxplus$ for the binary case & v39 & Paper 1 & \textbf{OPEN} --- not in v15\_29; first in the one-at-a-time queue (v40) \\
 R65 & Enclosure step size: there is no universal $\delta$; the stable explicit step scales as $r^3$ ($\delta_{\text{crit}}=5.333\,r^3$ for an aligned equal-strength pair near contact); the printed replay is safe, the sentence is not & v39 & Paper 1 / Assembly & \textbf{OPEN} --- verified; text pending \\
 R66 & A one-page structure statement (the state space $X$, the operators, and which properties each has), defining ``arithmetic'' as that structure; an optional metric clause for Axiom~0's ``named approximation''; UnMix as a non-injectivity theorem & v39 & Paper 1 & \textbf{OPEN} --- one page at most; queued (v40) \\
@@ -158,14 +158,14 @@ R35 & Coherence check for the candlestick & v1 & Inference & \textbf{OPEN} --- n
 R36 & Pure and mixed atoms: cores; per-vector $\tau_i$ as the general form; Mona Lisa as test case; derived quantities (per sort in v19, superseded in v38: the whole atom and each constituent) & v19, v38 & Paper 1 & \textbf{DECIDED} --- v38: mixed sorts admitted; not yet in the paper \\
 R37 & Collapse of multi-vector contributions (not fixed at one vector each) & v19 & Paper 1 & \textbf{CLOSED} --- cores of any size, kept distinct under Collapse; merged in v15\_24 \\
 R38 & $N$ as number of cores; $Q$ as number of vectors (resolves the collision with $N$ as vector count in Axiom 7) & v19 & Paper 1 & \textbf{CLOSED} --- $N$ cores, $Q$ vectors; merged in v15\_23 \\
-R39 & Collapsed atom as a counted bowl; commuting test & v19 & Paper 1 & \textbf{OPEN} --- v38: the bowl is a representation of a Collapsed atom; exact for the counted bowl, and the set-bowl differs by $N-D$ repeats \\
+R39 & Collapsed atom as a counted bowl; commuting test & v19 & Paper 1 & \textbf{OPEN} --- v46: commuting test run and passed for the counted bowl; the set bowl differs exactly where a block repeats; what remains is the Mix fork (R62) \\
 R40 & $T$ asymmetry: a bowl is not an actor; a Collapsed atom needs a cast & v19 & Paper 1 & \textbf{OPEN} --- relates to R21 \\
 R44 & Empty atom: black is $N=1$, $Q=0$; empty core under Collapse; zero-strength vector is not an arrow; conventions at $Q<2$ & v22 & Paper 1 & \textbf{CLOSED} --- merged in v15\_24; ``info number'' label moved to $Q$ (confirm) \\[4pt]
 
 \multicolumn{5}{@{}l}{\textit{Open --- energy and effective counts (v20)}} \\*
 R41 & Energy from strength, vector count and direction: $\mathcal E=S^2/Q+Q\,\mathrm{Var}(r)$; $S^2/Q\le\mathcal E\le S$; $|V|^2=(1-\alpha)\mathcal E+\alpha S^2$ & v20 & Paper 1 & \textbf{PARKED} --- identities verified, not in paper; $\mathcal E$ keeps ``energy,'' $\mathcal V$ keeps ``volume'' \\
 R42 & Effective vector count $Q_{\mathrm{eff}}=S^2/\mathcal E$; overlap with $\sigma_{\text{atom}}$ & v20 & Paper 1 & \textbf{CLOSED} --- merged in v15\_23 as a re-expression, not an eighth metric; both it and $\sigma_{\text{atom}}$ kept \\
-R43 & Strength-only metrics per sort and for the whole; effective number of sorts $1/\sum w_s^2$; pooling ratio & v20 & Paper 1 & \textbf{OPEN} --- narrowed in v38: do the seven metrics follow $V_{\text{derived}}$'s two levels, the whole atom and each constituent? \\
+R43 & Strength-only metrics per sort and for the whole; effective number of sorts $1/\sum w_s^2$; pooling ratio & v20 & Paper 1 & \textbf{OPEN} --- v46: with a key selecting any sub-atom, the answer is ``yes, for the whole atom and any sub-atom''; awaiting a yes \\
 \end{longtable}
 \normalsize
 
@@ -1747,6 +1747,132 @@ passages), no deliberation needed.
 \textbf{Projected count.} Tier~1 takes $23\to17$; Tier~2 takes it to $12$; Tier~3 takes it to $3$, which are the deferred split items.
 New text should go in as paragraphs of existing sections so that no section or equation number moves.
 \emph{Status: sorted; nothing in the paper changed.}
+
+
+\subsection*{v42 --- R63 elaborated; one of its six items is stronger than ``observed''}
+R63 is six sentences in the paper that say more than they can support, or run two things together. None changes a formula or a number.
+\begin{enumerate}
+\item \emph{``Lossless'' for Collapse (three places).} Collapse is value-lossless: every vector and count survives. Which source was which is carried by the sources
+themselves, which persist and are named by the result's backward link, and is recoverable from the result alone only with an identity handle (R18). One of the three,
+in the Mix-refusal paragraph, also says ``Collapse's only requirement is a shared sort,'' which the mixed-sort merge (R20, R36) will change, so it should be edited once.
+\item \emph{The softening length is ``derived, not chosen.''} $r$ is defined as strength, not as a radius. Reading it as a radius, and taking the contact distance to be
+$r_A+r_B$, is a modelling convention; Axiom~7 reads volume the same way. The sentence should say ``a convention that reads $r$ as a radius.''
+\item \emph{``Cannot overshoot''} (R65): true of the flow, false of the Euler step for weak pairs at the printed $\delta$.
+\item \emph{``All seats meet at one point.''} The critique asked for conditions. It is provable for the continuous flow with a finite population of fixed, nonzero strengths: the pair
+force is $-c_{ij}(P_i-P_j)$ with $c_{ij}>0$, so a point on the edge of the cloud is always pulled inward and no support value $\max_i u\!\cdot\!P_i$ can increase; the only configuration with
+no net force is a single point, and the plain mean is conserved. Checked: $21.6$ million support-value comparisons showed no increase, and $40$ of $40$ random populations came to rest, every one collapsed
+(extent at most $1.9\times10^{-9}$). Meeting is asymptotic, not in finite time, and for the Euler step it is observed, not proved.
+\item \emph{Mix refusal is ``the correct behavior'' (R26).} The \texttt{chladni} case shows Mix across modes is undefined, which supports refusing; it does not demonstrate that
+refusal is correct in general. The next sentence already keeps the other verbs available.
+\item \emph{The heading ``Rotation preserves the unit.''} $\lVert\mathbf R\hat n\rVert=\lVert\hat n\rVert=1$ is a theorem; leaving $r$, $\chi$, $\tau$ alone is the action chosen. The heading
+and the sentence after the equation run them together.
+\end{enumerate}
+Items 3 and 4 are in \S10 and follow it if it moves. \emph{Status: R63 explained; item 4 is now ``state the conditions with a one-line argument'' rather than ``label as observed.''}
+
+
+\subsection*{v43 --- what a clean UnCollapse needs, worked through the meter example (proposed, unconfirmed)}
+Setting: three meters, one sort each (humidity, pressure, wind), one reading a minute for ten minutes. Each reading is an atom of one vector with its own meta vectors (a timestamp, a source link,
+its sort). Collapsing each series gives an atom of ten cores; collapsing the three gives one atom of thirty cores and three sorts. Question: what does UnCollapse need to work on that atom alone?
+
+\textbf{What v15\_29 already says.} Collapse keeps ``each core exactly as its source held it and none merged with another,'' and each core keeps the meta vectors it was born with.
+So a vector's link to its core is inherited, and the ten-minute humidity atom is ten cores of one vector ($N=10$, $Q=10$), not one core of ten vectors ($N=1$, $Q=10$). UnCollapse
+removes a core, so the granularity of a core is the granularity of what can be taken back. UnCollapse names the core by value, or by passing the source; ties between equal-valued
+cores need an identity handle, ``proposed, not adopted'' (R18).
+
+\textbf{Tested on a nested model} (a vector inside exactly one core; a core with its own meta vectors; an atom a multiset of cores). Humidity: $N=10$, $Q=10$, $D=7$ (the value $0.55$ occurs three times, $0.58$ twice, so three repeats);
+all three: $N=30$, $Q=30$, $D=21$.
+\begin{itemize}
+\item With a key read from existing meta vectors (sort, source, timestamp), UnCollapse from the thirty-core atom alone takes the ten humidity cores out one at a time, each key matching exactly one core, and the result equals the Collapse
+of the other twenty sources, values and meta vectors included.
+\item $V_{\text{derived}}$ of the humidity constituent, read by selecting the humidity cores, equals that of the ten-minute atom before it was collapsed in; the whole is the sum of the three. So a constituent's value can be
+read from the result alone, without the sources persisting (the open point 1 of v38).
+\item Counts do not fix the partition: two atoms with the same bag of vectors, $N=2$ and $Q=3$, differ in which vector shares a core, and UnCollapse of the same core leaves different atoms. Containment must be the definition, not the counts.
+\item Naming a core by value alone is ambiguous exactly where timestamps differ: removing ``the $0.55$'' has three possible results, one as values and three once meta vectors count.
+\item True duplicates (same content, same meta vectors) are interchangeable: $A\oplus A$ with identical meta vectors, removing either core gives the same atom, equal to $A$.
+\end{itemize}
+
+\textbf{Gaps, as they appear.} (1) The atom is defined by counts, not as a collection of cores each a collection of vectors. (2) UnCollapse takes a value or a source, not a key carried in the core. (3) Two notions of equality are needed and the
+paper has one in force: value (content only, for $\uplus$ and $D$) and individual (content with meta vectors); the key must never enter value equality. (4) A contribution of several cores can be taken back, or its
+$V_{\text{derived}}$ read, only if each core carries its origin; for single-core contributions the sort and timestamp suffice. (5) UnCollapse removes one core, so a series is repeated UnCollapse, or a selector applied until it matches nothing (R19's expiry filter is one case).
+(6) A core holding vectors of several sorts cannot be split by any verb; a per-sort reading of it is a filter, not an UnCollapse.
+
+\textbf{A correction to R63, item 1.} I proposed that Collapse is only value-lossless and that provenance needs R18. Because each core keeps its own meta vectors, Collapse preserves identity to the extent sources differ in them; what remains is only
+the case of indistinguishable duplicates, which are interchangeable. So the sentence can keep ``lossless'' with a clause: every vector, every count, and each core's own meta vectors survive.
+
+\textbf{Proposal for a ruling.} Atom defined as a collection of cores, each a collection of vectors with its meta vectors; the identity key is a tuple of existing meta vectors (sort, source link, timestamp), no new kind; UnCollapse takes a key, and a series is
+repeated UnCollapse; true duplicates are interchangeable. If accepted: R18 narrows to stating the key, R19 and R48 follow, and R63 item 1 takes the wording above.
+\emph{Status: discussion; nothing in the paper or any row changed.}
+
+
+\subsection*{v44 --- where the vector-to-core link is stored (proposed, unconfirmed)}
+Question: a vector is a bare reading; the identity, timestamp and source belong to the core. In an UnCollapse, which vectors go with the core removed? v43 said the link is
+inherited; it did not say what stores it, and v15\_29 does not either.
+
+\textbf{Answer.} The link is the grouping itself. It is made once, when a reading is seated as an atom (the seating step puts the reading inside a new core together with that core's meta vectors), and it is
+carried afterwards by containment: Collapse keeps ``each core exactly as its source held it,'' so no verb ever moves a vector from one core to another. A core is taken out together with its vectors.
+It can be stored in two equivalent ways: nested (the core record holds its vectors) or flat with a core index on every vector. Checked on the meter example: converting between them returns the identical atom, and UnCollapsing the ten humidity cores
+gives the same result in both.
+
+\textbf{How much it carries.} Drop the link but keep the vectors and the cores' timestamps, and $27{,}653{,}197{,}824{,}000{,}000$ assignments of readings to minutes remain consistent
+(about $54.6$ bits: $302{,}400$ for humidity, $25{,}200$ for pressure, $3{,}628{,}800$ for wind). They differ only in which reading happened at which minute. The link is the time series, so it is part of the atom's value and
+equality, not decoration. This is also why counts ($N$, $Q$, $D$) cannot stand in for it (v43).
+
+\textbf{Why containment and not a label on each vector.} A per-vector core index would be a vector-level meta vector, which the paper deliberately does not have, and it would need an id that stays unique and consistent; containment needs none.
+
+\textbf{Added to the proposal of v43.} One sentence in Axiom~7, ``a vector exists only inside a core, and no verb moves a vector from one core to another,'' and the same invariant stated in \S3.3 beside ``each core exactly as its source held it.''
+\emph{Status: discussion; nothing in the paper or any row changed.}
+
+
+\subsection*{v45 --- the containment vector (proposed, unconfirmed)}
+Proposal given: picture a core as a point $(0,0)$ with the readings stemming out of it like electrons round a nucleus; merging two cores still leaves one $(0,0)$, with $N=2$ and two readings that
+really belong to different cores. Every atom has an identity vector and a \emph{containment vector} listing the readings it holds, mapping each reading to a core identity. The picture is a railway coach tagged with
+meta vectors, loaded with boxes of readings tagged with their own; UnCollapse unloads a box.
+
+\textbf{Formulation.} An atom is its readings $V=(v_1,\ldots,v_Q)$, a containment vector $c=(c_1,\ldots,c_Q)$ in which $c_i$ names the core holding reading $i$, and per-core meta vectors $M$ (identity, timestamp, source).
+$Q=\lvert V\rvert$, $N$ is the number of cores, $D$ the number of distinct blocks by content. All readings stem from one origin, so geometry cannot see membership; $c$ is the only place it is recorded, and
+$V_{\text{derived}}$ is blind to it by construction. Collapse concatenates the readings and shifts the core indices of the second atom; UnCollapse deletes one core and every reading whose entry names it, then renumbers.
+
+\textbf{Tested} ($3000$ random sequences; cores of one to three readings; readings from $\{0.5,0.55,0.6\}$ so equal readings are common). The containment vector stayed valid after every Collapse. Removing the cores of $b$ from $a\oplus b$ by \emph{local index} recovered $a$
+exactly, readings, grouping and meta vectors, in $3000$ of $3000$. Removing them by \emph{identity key alone} recovered $a$ in $2015$ of $3000$; keys were forced to collide in about half the trials, and where two cores shared a key the
+key was right in $397$ of $1382$. So the identity vector names a core, and works as far as names are unique; the containment vector is the guarantee.
+
+\textbf{Three points to settle.}
+\begin{enumerate}
+\item \emph{Containment is content, not an ordinary meta vector.} Equality ignores meta vectors, but two atoms with the same readings and different containment ($N=2$ against $N=1$, or the two atoms of v43) behave differently under UnCollapse,
+$N$ and $D$. So equality of atoms includes containment and ignores meta vectors; identity, timestamp and source stay meta.
+\item \emph{Store it once.} Either the box holds its readings or the atom holds readings and $c$; the ``list of every reading the atom holds'' is then a derived reading, like $V_{\text{derived}}$, never a second stored copy that could disagree.
+\item \emph{Core indices are local.} $c$ points at a core's position in the atom, renumbered at each Collapse and UnCollapse, and not at the identity key, which need not be unique; true duplicates share a key and have different positions.
+\end{enumerate}
+
+\textbf{Wording proposed.} For Axiom~7: ``An atom is its readings together with a containment vector naming, for each reading, the core that holds it; a vector exists only inside a core, and no verb moves a vector from one core to another. Equality of atoms includes
+containment and ignores meta vectors.'' For UnCollapse: ``it takes out one core with every reading the containment vector assigns to it.''
+\emph{Status: discussion; nothing in the paper or any row changed.}
+
+
+\subsection*{v46 --- the UnCollapse ruling, and what it settles}
+Accepted: (1) the atom is a collection of cores, each a collection of vectors with its meta vectors; (2) the identity key is a tuple of existing meta vectors, with no new kind;
+(3) UnCollapse takes a key; (4) true duplicates are interchangeable. Taken with v44 and v45: a vector exists only inside a core and no verb moves it to another; equality includes containment and ignores meta vectors;
+containment is stored once and core indices are local.
+
+\textbf{One refinement of point 3.} A key names a core only as far as keys are unique. The identity key should identify a core up to true duplicates, which seating is responsible for providing; where two cores with different content cannot be told apart by their meta vectors, UnCollapse takes the
+local position. v45's test is why: removal by key alone recovered the original in $2015$ of $3000$ forced-collision trials, by local index in $3000$ of $3000$.
+
+\textbf{Tested here: R39's commuting test.} Over $4000$ random pairs of atoms, Collapse commutes with the counted union of blocks and, once counts are forgotten, with Bundle, in $4000$ of $4000$; UnCollapse of one core commutes with removing one copy from the counted bowl in $4000$ of $4000$. Against Remove on the paper's set
+bowl it holds in every case where the removed block was unique ($1625$ cases, no failures) and fails in all $2375$ cases where it had a repeat, because Remove empties the seat and UnCollapse leaves the other copy. So the bowl is exactly a representation of a Collapsed atom with the counts forgotten.
+
+\textbf{What the ruling settles.}
+\begin{itemize}
+\item \emph{R18, decided}: the identity handle is a tuple of existing meta vectors (sort, source link, timestamp).
+\item \emph{R59, decided}: operations on one core never alter another, because no verb moves a vector between cores and UnCollapse removes a core with its readings.
+\item \emph{R63 item 1}: Collapse keeps ``lossless,'' with the clause that every vector, count and each core's own meta vectors survive; the v39 plan to say ``value-lossless'' is withdrawn.
+\item \emph{R20, R36, R51} (decided, to merge): a constituent's $V_{\text{derived}}$ is read from the result alone by selecting its cores, so v38's open point on this is closed; the merge text now includes containment.
+\item \emph{R39} narrowed to the Mix fork, which is R62 and R55; the ruling does not decide it.
+\end{itemize}
+\textbf{What it makes ready, awaiting a yes.} R19: expired cores are dropped by UnCollapse selected by their expiry (a series is repeated UnCollapse), so Mix and Collapse need not know about expiry; this is the v18 default, still unconfirmed.
+R43: every metric is a function of a set of vectors, so it is read for the whole atom and for any sub-atom a key selects, which is the answer recommended in v41. R50: a general rule, ``every result is a new atom with its own new $V_{\text{timestamp}}$ and a backward
+$V_{\text{link}}$ naming its operands, and the cores that survive keep theirs,'' which Collapse and UnCollapse already follow and $T$, offset, Remove and Assembly have not been asked.
+\textbf{Not settled by it:} R21, R40 (a Collapsed atom as the actor of $T$), R62, R55, R52, R56, R57, R66, R53, R29, R64, R65.
+\emph{Status: R18 and R59 decided, R39 narrowed; R19, R43, R50 ready for a yes. Nothing in the paper changed.}
 
 \section{Merged directly, without an ideas entry}
 
