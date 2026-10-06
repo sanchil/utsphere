@@ -4,7 +4,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 
-\title{Ideas Register --- Consolidated, v1 to v46}
+\title{Ideas Register --- Consolidated, v1 to v50}
 \author{One file for every parked idea, with its current status}
 \date{}
 
@@ -27,7 +27,7 @@ earlier checks stand), and
 elsewhere --- the \texttt{Assembly\_v1.tex} and
 \texttt{Inference\_v1.tex} copies on hand (which may be older than
 your working copies; if so, the ``not filed'' marks below should be
-rechecked against yours). Entries from v19 onward are appended here; v19 to v46 are the first twenty-eight.
+rechecked against yours). Entries from v19 onward are appended here; v19 to v50 are the first thirty-two.
 
 \paragraph{Status vocabulary.}
 \textbf{CLOSED} --- resolved and merged into the paper.
@@ -107,19 +107,19 @@ R15 & Meta-vector taxonomy; $V_{\text{derived}}$ & v2, v23 & Paper 1 & \textbf{C
 R16 & Link vectors & v2 & Paper 2 & \textbf{PARTLY MERGED} --- $V_{\text{link}}$ defined in Paper 1 (v15\_25); structures built from links left to Assembly and Inference \\
 R17 & Meta-vector grouping (promote a shared one) & v2 & Inference & \textbf{OPEN} --- not filed \\
 R18 & Identity handle / Mix-provenance link & v5, v11 & Papers 1, 2, Inf. & \textbf{DECIDED} --- v46: the identity key is a tuple of existing meta vectors, no new kind; not yet in the paper \\
-R19 & Should Mix/Collapse skip expired contributions? & v17 & Paper 1; Inf. & \textbf{PARTLY MERGED} --- validity rule merged (v15\_25); v46: filtering by UnCollapse is now well-defined; awaiting a yes to the v18 default \\
+R19 & Should Mix/Collapse skip expired contributions? & v17 & Paper 1; Inf. & \textbf{DECIDED} --- v47: expired cores are noise; they and their vectors may be removed, by UnCollapse selected by expiry; until removed they read as black; not yet in the paper \\
 R45 & Meta-vector design questions G1--G14 (v23, v24): label identity, the level rule, mutation and links, vocabulary, timestamp encoding, sentinels, granularity, comparison per kind, core multiplicity, guidance & v23, v24 & Paper 1 & \textbf{CLOSED} --- merged in v15\_25, with the closure-unit sentence, the identity wording and the granularity fixed in v15\_26; G11 and G14's merge default not merged \\
-R46 & Scalar meta vectors as vectors in planes; a registry of recommended planes (non-normative) & v27 & Paper 1 (Future Work catalogue) & \textbf{PARTLY MERGED} --- form (scalar on a designated axis, no other constraint) and the catalogue entry merged in v15\_27 and corrected in v15\_28; the catalogue itself not populated \\
+R46 & Scalar meta vectors as vectors in planes; a registry of recommended planes (non-normative) & v27 & Paper 1 (Future Work catalogue) & \textbf{PARTLY MERGED} --- form (scalar on a designated axis, no other constraint) and the catalogue entry merged in v15\_27 and corrected in v15\_28; the catalogue itself not populated; v47: it now also carries the time standard and the axis and unit per scalar kind, moved from R50 \\
 R47 & Expiry as read-time exclusion: determinism, counts, hierarchy, links to expired atoms & v27 & Paper 1 & \textbf{CLOSED} --- merged in v15\_27 \\
 R48 & Two-level meta vectors: a result's own new timestamp beside its cores' & v27 & Paper 1 & \textbf{PARTLY MERGED} --- timestamp, link and expiry merged (v15\_26, v15\_27); atom-level location not \\
 R49 & ``Never lose identity'': value, individual, handle; Mix and UnMix & v27 & Paper 1 & \textbf{CLOSED} --- merged in v15\_27; Bundle reading to confirm \\
-R50 & Meta-vector consistency obligations: labels of results of $T$, offset, Remove and Assembly; fixed conventions (time standard, axis and unit per scalar kind); per-sort $V_{\text{derived}}$ & v30 & Paper 1 & \textbf{OPEN} --- v46: narrowed to the labels of results of $T$, offset, Remove and Assembly and the conventions; per-sort $V_{\text{derived}}$ is superseded \\
+R50 & Meta-vector consistency obligations: labels of results of $T$, offset, Remove and Assembly; fixed conventions (time standard, axis and unit per scalar kind); per-sort $V_{\text{derived}}$ & v30 & Paper 1 & \textbf{DECIDED} --- v47: every result is a new atom with its own new timestamp and a backward link naming its operands, and surviving cores keep theirs; the conventions move to R46; not yet in the paper \\
 R51 & The Mona Lisa as the test case for mixed-sort cores (R36): one core per canvas point; a bowl of single-sort atoms aligned by position labels today; standards per sort; a planar position kind in the catalogue & v31 & Paper 1 & \textbf{DECIDED} --- answered by the R36 ruling (v38); text pending \\
 R52 & Colour positioned by $V_{\text{derived}}$: colour must be addressed by direction, not phase; locator is direction plus atom coherence; $|V|$ measures size & v31 & Paper 1 & \textbf{OPEN} --- convention to settle \\
 R53 & Review of v15\_28, reproducibility exceptions: $\sigma_{\text{atom}}$ populations not printed; the 804-of-3000 count is rounding-sensitive; shell binning at floating-point edges; ``checked directly'' claims without inputs & v32 & Paper 1 & \textbf{OPEN} --- supplement delivered; text fixes pending \\
 R54 & Review of v15\_28, mechanical consistency fixes: stale ``not a sixth verb''; Table~1 says ``contribution'' for UnCollapse; title banner overflows; a drafting-history sentence in Axiom~7; ``mass'' wording in the enclosure & v32 & Paper 1 & \textbf{CLOSED} --- v40: done in v15\_29 \\
 R55 & The bowl as a holder of $V_{\text{derived}}$, the metrics and meta vectors: one statement over a holder & v32 & Paper 1 & \textbf{OPEN} --- atoms only today \\
-R56 & Terminology: the fifth to seventh metrics are unnamed and $\mathcal{E}$ is named only in passing; multi-sense words (cast $\times3$, shell $\times2$, energy $\times2$, density); populations behind ``$2.200$ against $2.150$'' & v33 & Paper 1 & \textbf{OPEN} --- found while building the glossary \\
+R56 & Terminology: the fifth to seventh metrics are unnamed and $\mathcal{E}$ is named only in passing; multi-sense words (cast $\times3$, shell $\times2$, energy $\times2$, density); populations behind ``$2.200$ against $2.150$''; the name for the granularity of UnCollapse is decided: grain (v50) & v33, v49, v50 & Paper 1 & \textbf{OPEN} --- found while building the glossary \\
 R57 & A use-agnostic contract: what the algebra promises (determinism, closure, persistence of sources, non-interference of cores, immutable atoms) and what any use must supply (seats, a reading time, comparison rules, conventions) & v34 & Paper 1 & \textbf{OPEN} \\
 R58 & Placement is external: no rule lets an atom derive its own seat from meta vectors or $V_{\text{derived}}$; the assembly descent gathers at the plain mean of the seats and sorts by content only at a scale hidden from any census cut & v34 & Assembly paper (Paper 1 stays silent, v35) & \textbf{OPEN} \\
 R59 & Non-interference as a stated property: operations on one core never alter another; derived quantities per sort once mixed sorts are admitted (joins R36 and R50) & v34 & Paper 1 & \textbf{DECIDED} --- v46: follows from the containment invariant; not yet in the paper \\
@@ -130,7 +130,8 @@ R63 & Two outside readings of v15\_28, sentence-level fixes: ``lossless'' for Co
 R64 & Notation: binary Mix and the one-step bowl reading share the symbol $\boxplus$; use $M(B)$ for the bowl reading and keep $\boxplus$ for the binary case & v39 & Paper 1 & \textbf{OPEN} --- not in v15\_29; first in the one-at-a-time queue (v40) \\
 R65 & Enclosure step size: there is no universal $\delta$; the stable explicit step scales as $r^3$ ($\delta_{\text{crit}}=5.333\,r^3$ for an aligned equal-strength pair near contact); the printed replay is safe, the sentence is not & v39 & Paper 1 / Assembly & \textbf{OPEN} --- verified; text pending \\
 R66 & A one-page structure statement (the state space $X$, the operators, and which properties each has), defining ``arithmetic'' as that structure; an optional metric clause for Axiom~0's ``named approximation''; UnMix as a non-injectivity theorem & v39 & Paper 1 & \textbf{OPEN} --- one page at most; queued (v40) \\
-R67 & Inference experiment: the same bowl in different orders against a flat embedding and a transformer (sample efficiency, inverse accuracy); the common register as a testable hypothesis (separate encoders per type with typed operators against independent spaces) & v39 & Inference & \textbf{PARKED} --- later paper \\[4pt]
+R67 & Inference experiment: the same bowl in different orders against a flat embedding and a transformer (sample efficiency, inverse accuracy); the common register as a testable hypothesis (separate encoders per type with typed operators against independent spaces) & v39 & Inference & \textbf{PARKED} --- later paper \\
+R68 & Equality: where it is defined (a short paragraph beside ``equality ignores meta vectors'' in \S2.11), a stricter ``same individual'' test that also compares meta vectors, the measured-readings caveat as a hint only, with the techniques left to later papers, and the granularity of UnCollapse, which is fixed at seating (v48) & v47, v48 & Paper 1 & \textbf{OPEN} --- one paragraph \\[4pt]
 
 \multicolumn{5}{@{}l}{\textit{Open --- Collapse}} \\*
 R20 & Collapse across differing sorts (per-vector $\tau_i$) & v10, v11 & Paper 1 & \textbf{DECIDED} --- v38: closes with R36; not yet in the paper \\
@@ -165,7 +166,7 @@ R44 & Empty atom: black is $N=1$, $Q=0$; empty core under Collapse; zero-strengt
 \multicolumn{5}{@{}l}{\textit{Open --- energy and effective counts (v20)}} \\*
 R41 & Energy from strength, vector count and direction: $\mathcal E=S^2/Q+Q\,\mathrm{Var}(r)$; $S^2/Q\le\mathcal E\le S$; $|V|^2=(1-\alpha)\mathcal E+\alpha S^2$ & v20 & Paper 1 & \textbf{PARKED} --- identities verified, not in paper; $\mathcal E$ keeps ``energy,'' $\mathcal V$ keeps ``volume'' \\
 R42 & Effective vector count $Q_{\mathrm{eff}}=S^2/\mathcal E$; overlap with $\sigma_{\text{atom}}$ & v20 & Paper 1 & \textbf{CLOSED} --- merged in v15\_23 as a re-expression, not an eighth metric; both it and $\sigma_{\text{atom}}$ kept \\
-R43 & Strength-only metrics per sort and for the whole; effective number of sorts $1/\sum w_s^2$; pooling ratio & v20 & Paper 1 & \textbf{OPEN} --- v46: with a key selecting any sub-atom, the answer is ``yes, for the whole atom and any sub-atom''; awaiting a yes \\
+R43 & Strength-only metrics per sort and for the whole; effective number of sorts $1/\sum w_s^2$; pooling ratio & v20 & Paper 1 & \textbf{DECIDED} --- v47: metrics apply to all the vectors in an atom, whichever core holds them; a sub-atom is another atom with its own metrics; the extras (effective number of sorts, pooling ratio) are not adopted; not yet in the paper \\
 \end{longtable}
 \normalsize
 
@@ -1873,6 +1874,85 @@ R43: every metric is a function of a set of vectors, so it is read for the whole
 $V_{\text{link}}$ naming its operands, and the cores that survive keep theirs,'' which Collapse and UnCollapse already follow and $T$, offset, Remove and Assembly have not been asked.
 \textbf{Not settled by it:} R21, R40 (a Collapsed atom as the actor of $T$), R62, R55, R52, R56, R57, R66, R53, R29, R64, R65.
 \emph{Status: R18 and R59 decided, R39 narrowed; R19, R43, R50 ready for a yes. Nothing in the paper changed.}
+
+
+\subsection*{v47 --- local position explained; rulings on expiry, metrics, result labels; equality opened}
+\textbf{Wording adopted.} ``A vector is held by exactly one core, as a nucleus holds its electrons; no verb moves a vector from one core to another,'' replacing ``exists only inside a core.''
+
+\textbf{Local position.} A key is the name painted on a core and travels with it; a \emph{position} is the core's place in the list of cores of this one atom, counting from $0$. The containment vector holds positions: $c_i$ is the position of the core that holds reading $i$.
+Collapse keeps the first atom's positions and shifts the second's by the number of cores in the first. UnCollapse of position $k$ deletes the readings with $c_i=k$ and the core, and subtracts one from every position above $k$. Worked example: $H$ has three
+cores and four readings, $c=(0,1,1,2)$, the core at position $1$ holding two readings; $P$ has two cores. In $H\oplus P$, $P$'s cores sit at positions $3$ and $4$; UnCollapse of position $1$ removes both its readings, and positions $2,3,4$ become $1,2,3$. A position is unique inside its atom
+and means nothing outside it, so it is not stored anywhere else. It is needed only when a key matches several cores with different content: with two cores keyed $(\text{humidity},H,0)$ holding $0.55$ and $0.58$, the key matches positions $0$ and $2$ and cannot say which should leave; position $2$ can.
+
+\textbf{Equality.} Two tests, as $==$ differs from ``is'' in a program: \emph{equal}, comparing readings and containment and ignoring meta vectors (what $\uplus$, $D$ and UnCollapse already use), and \emph{the same individual}, which also requires the meta vectors to agree. Equality is used by $A\uplus A=A$,
+by $D$ and by UnCollapse, so it belongs in Paper~1; it is stated only in passing in \S2.11. A caveat to settle (R68): exact equality of measured, real-valued readings makes $N-D$ equal $0$ on real data, so seating should round readings to a stated resolution, as the shell width and $\epsilon_{\text{allow}}$ already do for their own comparisons.
+
+\textbf{Rulings.}
+\begin{itemize}
+\item \emph{R19, decided}: expired cores are noise, and they and the vectors they hold may be removed, by UnCollapse selected by expiry, repeated. Until removed they read as black at the reading time, as v15\_25 says; removal gives a new atom, so $N$ and $D$ then fall in that atom and no atom is edited.
+\item \emph{R43, decided}: metrics apply to all the vectors inside an atom whichever core holds them; they ignore containment. A sub-atom is another atom and has its own. The effective number of sorts and the pooling ratio are not adopted.
+\item \emph{R50, decided}: every result is a new atom with its own new timestamp and a backward link naming its operands; the cores that survive keep theirs. The conventions (time standard; axis and unit per scalar kind) move to R46.
+\item \emph{R18, R59, R63 item 1, R20, R36, R51, R39}: as in v46, agreed.
+\end{itemize}
+\textbf{Count.} Open Paper~1 rows: $21$ before; R43 and R50 decided, R68 opened: $20$. R19 moves from partly merged to decided. The decided rows are all awaiting a merge into the paper.
+\emph{Status: the UnCollapse cluster is decided; its wording is ready to be drafted for the paper.}
+
+
+\subsection*{v48 --- the granularity of UnCollapse}
+Stated: R19 and R50 yes; R43, metrics apply to all the vectors inside an atom whichever core holds them (recorded in v47). On equality, the caveat is true for a single reading in a single core ($N=D$): exact
+equality on measured readings creates noise, the techniques belong to later papers, and Paper~1 should leave enough hints. A ten-minute information atom will be a single core, $N=1$ and not $N=10$: the
+meta vector information is melted away and the window is the unit. The unit of time can be decided by the path $T$ chosen. It should be possible to drop the meta vectors; UnCollapse can then act only at the granularity of ten minutes. The granularity of an UnCollapse is therefore a consideration of its own.
+
+\textbf{Reading.} This needs no new verb. It is seating again, which the paper already has under ``levels are closed'': a result may be seated as a new atom at the next level, and grouping criteria such as a window live outside the 4-tuple. A core may hold any number of readings, and the seating chooses how many.
+Collapse of ten one-reading atoms gives $N=10$; the window seated directly gives $N=1$; both are legitimate atoms and they differ in how finely UnCollapse can act.
+
+\textbf{Principle.} The granularity of UnCollapse is the partition of cores of the atom it is applied to. It is fixed at seating. Coarsening is seating again from the readings, which is many-to-one and lossy; refining is not possible for any verb, and needs the finer atom, if it is kept, or new readings.
+
+\textbf{Tested on the meter example.}
+\begin{itemize}
+\item Melting ten one-reading cores into one ten-reading core leaves $S$, $\mathcal V$, $\gamma$, $\mathcal E$, $\alpha$, $\sigma_{\text{atom}}$, $Q_{\text{eff}}$ and $V_{\text{derived}}$ identical, and changes only the counts that see containment: $(N,D,Q)$ goes from $(10,7,10)$ to $(1,1,10)$.
+This agrees with the R43 ruling that metrics ignore containment.
+\item With every meta vector dropped, UnCollapse by position still works (four removals leave $N=6$, $Q=6$); by key it cannot, since no key exists. Position needs no meta vector.
+\item On the melted atom UnCollapse can only take the whole window out, leaving the black atom.
+\item Melting is many-to-one: $302{,}400$ different ten-core atoms with the same readings and different minutes melt to the same one-core atom.
+\end{itemize}
+
+\textbf{Hints for Paper~1, not techniques.} (a) A core may hold any number of readings, one for fine UnCollapse or a window for coarse, and the seating chooses. (b) Equality is exact; measured readings are made comparable at seating, by rounding to a stated resolution or by seating a window as one core;
+the techniques belong to later papers. (c) Dropping meta vectors costs the key but not UnCollapse by position. Granularity is also a use's choice, so it belongs in the contract of R57.
+\emph{Status: R68 widened to carry these hints; open count unchanged at $20$; nothing in the paper changed.}
+
+
+\subsection*{v49 --- a name for the granularity of UnCollapse (options; nothing chosen)}
+Asked: a better term than ``granularity,'' which carries meaning only in the context of UnCollapse. What needs a name is the partition of an atom's readings into cores, which fixes the smallest piece UnCollapse can take back.
+
+\textbf{Checked in v15\_29.} Free: ``granularity'' ($0$ hits), ``partition'' ($0$), ``seam'' ($0$), ``divisible'' ($0$), ``cleavage'' ($0$). Taken: ``resolution'' ($7$, for $\eta$ and the voxel cube), ``level'' ($25$, ``levels are closed''), ``span'' ($5$, the plane two seats span), ``scale'' ($3$).
+Already in use as an informal pair: ``finer'' and ``coarser'' for $\eta$ and $\delta$ ($3$ hits each), and ``coarse-graining step'' for path reduction. ``Grain'' appears twice as a bag of grain in the introduction's grocery example and once in ``coarse-graining.''
+
+\textbf{Options.}
+\begin{itemize}
+\item \emph{Grain} (leading). The grain of an atom is the partition of its readings into cores: fine if each core holds one reading, coarse if it holds a window. ``UnCollapse acts along the grain: it takes back a core and nothing smaller. Grain is fixed when the atom is
+seated; it can be made coarser by seating again, and no verb can make it finer.'' Short, concrete, and splitting follows the grain; it matches the paper's ``finer/coarser'' and ``coarse-graining.'' Generic outside this context.
+\item \emph{Seam}. An atom comes apart at its seams, the boundaries between its cores. ``UnCollapse opens one seam and takes back the core; seams can be closed by seating again and no verb reopens them.'' The only option that means nothing except coming apart; its comparatives are awkward
+(``fewer seams'') and it is unusual.
+\item \emph{Core size}, no new word. ``UnCollapse takes back a core, so the smallest piece it can take back is the size of a core, and the seating chooses it.'' Exact, but ``size'' is generic ($8$ hits) and it describes one core, not the atom.
+\item \emph{Partition}, for the formal sentence. Exact and its comparatives are standard (finer, coarser, refinement); dry as a name in prose. It can define ``grain.''
+\end{itemize}
+\textbf{Leaning.} ``Grain,'' defined as the partition of an atom's readings into cores. Avoid ``resolution,'' ``level,'' ``span'' and ``scale,'' which the paper already uses.
+\emph{Status: options recorded under R56; nothing chosen, nothing in the paper changed.}
+
+
+\subsection*{v50 --- ``grain'' chosen; the UnCollapse cluster drafted for the paper}
+Decision: the granularity of UnCollapse is called \emph{grain}, defined as the partition of an atom's vectors into cores.
+
+\textbf{The draft} (\texttt{Pattern\_Arithmetic\_v15\_30\_DRAFT}, with a change list and a diff against v15\_29; v15\_29 is unchanged and nothing is released) carries the decided wording in $24$ changes at these sites: Axiom~7 (each vector carries its own sort; a vector is held by exactly one
+core and no verb moves it; the containment vector; $V_{\text{derived}}$ and the metrics read every vector), \S3.3 (Collapse keeps every vector in its core and takes any sorts; what Collapse keeps; the consequence of the counts; grain; ``Open: Collapse across differing sorts'' replaced), \S3.4 (UnCollapse takes the
+core with its vectors; naming the core by identity key, with local position as the fallback; a series is repeated UnCollapse), \S2.11 (every result is a new atom; the identity key; expired cores are noise and may be removed; equality in two tests; $V_{\text{link}}$ names by the identity key), Table~3 and its footnote
+(Collapse is \emph{yes} for every pair), the Mix-refusal paragraph, and the Future Work list.
+
+\textbf{Checked by compiling the draft.} Zero errors and undefined references; $49$ pages against $48$ and about $700$ words more; all $49$ equations identical; no existing label renumbered, one added; no new overfull box. Neither companion paper has a statement the draft makes stale. The quick reference needs a refresh after release.
+
+\textbf{On approval.} R18, R19, R20, R36, R43, R50, R51, R59 and R68 close, and R63's first item with them; the open Paper~1 count falls from $20$ to $19$ (R68; the others are already decided). R56 keeps its other naming questions.
+\emph{Status: draft awaiting approval; nothing released; no row closed.}
 
 \section{Merged directly, without an ideas entry}
 
