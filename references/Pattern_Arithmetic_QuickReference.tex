@@ -60,7 +60,7 @@
 \endhead
 \textbf{Bundle} $\uplus$ & What is present? & Union on bowls: $B_1\uplus B_2=B_1\cup B_2$. Idempotent, commutative, associative; \textbf{sort-blind}; discards order and count. $A\uplus A=A$; $A\uplus B=\{A,B\}$. & \textbf{Remove} $\setminus$: $\{A\}\setminus A=\emptyset$ (empty bowl $\neq$ black $\mathbf 0$). & §2.5, eq. 5–7 \\
 \textbf{Collapse} $\oplus$ & What is combined, with nothing discarded? & Keeps every core of every operand, merges none: $N=\sum N_i$, $Q=\sum Q_i$. \textbf{Not} idempotent: $A\oplus A=A^{\langle2\rangle}$. Any sorts: each vector carries its own $\tau_i$. Every vector stays in the core that held it; each core keeps its meta vectors. & \textbf{UnCollapse} $\ominus$: takes out one core with every vector it holds, named by an identity key (or by local position when a key matches cores of different content); $N\to N-1$ ($N\ge2$); at $N=1$ leaves black; $Q$ falls by that core's vector count. Acts along the atom's grain. & §3.3, §3.4 \\
-\textbf{Mix} $\boxplus$ & What composite state results? & Phasor sum at a shared $\hat n$: $z'=\sum r_ie^{i\chi_i}$, $r'=\min(1,\lvert z'\rvert)$, $\chi'=\arg z'$; $\tau'=\tau$; black if $z'=0$. Over a bowl, one step: $\mathrm{Mix}(B)$, written so it is not read as a fold of $\boxplus$; $z_B=\sum_{x\in B}r_xe^{i\chi_x}$. Over a Collapsed atom the same sum runs over every vector, so repeats add; over a set bowl they count once. Lossy; commutative; binary form non-associative under the cap. \textbf{Refused} across differing $\hat n$. & \textbf{UnMix} $\boxminus$: \textbf{impossible} as an inverse of the reading — a Mixed result does not determine its sources. Where the sources were kept, taking one back is Remove or UnCollapse. & §2.6, eq. 8–9; §3.2; §8.2 \\
+\textbf{Mix} $\boxplus$ & What composite state results? & Phasor sum at a shared $\hat n$: $z'=\sum r_ie^{i\chi_i}$, $r'=\min(1,\lvert z'\rvert)$, $\chi'=\arg z'$; $\tau'=\tau$; black if $z'=0$. Over a bowl, one step: $\mathrm{Mix}(B)$, written so it is not read as a fold of $\boxplus$; $z_B=\sum_{x\in B}r_xe^{i\chi_x}$. Over a Collapsed atom the same sum runs over every vector, so repeats add; over a set bowl they count once. Lossy; commutative; binary form non-associative under the cap. \textbf{Refused} across differing $\hat n$. & \textbf{UnMix} $\boxminus$: \textbf{impossible} as an inverse of the reading — a Mixed result does not determine its sources. Where the sources were kept, taking one back is Remove or UnCollapse. & §2.6, eq. 8–9; §3.2; §7.2 \\
 \textbf{Transform} $T$ & What happens, and in what order? & $T_w(x)=\bigl(r_x,\ \mathrm{Rot}_{\hat n_w}(\alpha(r_w))\,\hat n_x,\ (\chi_x+\chi_w)\bmod2\pi,\ \tau_x\bigr)$, $\alpha(r_w)=\pi r_w$. Leaves $r_x,\tau_x$ alone. $T_{\mathbf0}=\mathrm{id}$; composition associative; $T_aT_b\neq T_bT_a$. & Inverse actor $w^*=(r_w,-\hat n_w,-\chi_w\bmod2\pi,\tau_w)$, so $T_{w^*}T_w=\mathrm{id}$. & §4.2–4.3, eq. 20, 22 \\
 \textbf{Offset} & What walk is reused? & $v=\log_{\hat n_m}(\hat n_k)$; $\hat n_*=\exp_{\hat n_w}\bigl(\mathrm{transport}_{m\to w}(v)\bigr)$; $r_*=r_w$, $\chi_*=(\chi_w+\chi_k-\chi_m)\bmod2\pi$, $\tau_*=\tau_w$. Copies a walk; does not mint the name. Not $T$. & — & §5.1, eq. 29–35 \\
 \textbf{Assembly} $\bowtie$ & How do two units relate while both still sit? & $A\bowtie B=(A,B,\kappa_{AB},U_{AB})$. Both operands survive unchanged; nothing is fused. $U_{AB}<0$ always: the bracket $3+\hat n_A\!\cdot\!\hat n_B$ stays in $[2,4]$. & — & §2.9, eq. 12–14 \\
@@ -112,7 +112,7 @@ $\tau$ & $\{\mathtt{word},\mathtt{num},\mathtt{color},$ $\mathtt{note\text{-}pit
 \textbf{identity key} & A core's name: the tuple of meta vectors it already carries (sort, source link, timestamp); no new kind; never enters equality. \\
 \textbf{local position} & A core's place in its atom's list of cores, from $0$; unique inside the atom, meaningless outside. Collapse shifts the second atom's positions by the first's $N$; UnCollapse lowers positions above the one removed. The fallback when a key matches cores of different content. \\
 $N$ & Number of \textbf{cores}. A count of the stored atom: does not change with the reading time $t$. \\
-$Q$ & Number of informational \textbf{vectors} — “the atom's info number”. $Q\ge N$ is usual, not a rule. Read over the cores valid at $t$. \\
+$Q$ & Number of informational \textbf{vectors}. $Q\ge N$ is usual, not a rule. Read over the cores valid at $t$. \\
 $D$ & Number of \textbf{distinct cores} among the $N$: two cores coincide exactly when $\uplus$ would seat them together (content only; empty cores coincide; meta vectors never enter). $D\le N$, equality iff every core is distinct. Stored count. \\
 $N-D$ & How many times some core repeated. \\
 $A^{\langle k\rangle}$ & $k$ identical copies of $A$; has $kN_A$ cores. $A\oplus A=A^{\langle2\rangle}$. \\
@@ -149,7 +149,7 @@ $Q_{\text{eff}}$ & $\mathcal{I}_{\mathrm{str}}^2/\mathcal{I}_{\mathrm{en}}$ & \t
 \midrule
 \endhead
 $V_{\text{derived}}$ & per core and per atom & Sum of the informational vectors, recomputed whenever the content is. Already in the paper (Axiom 7). \\
-seat $\vec P$ & per unit or bowl & External position in unbounded Euclidean space; enters only $d_{AB}=\lvert\vec P_B-\vec P_A\rvert$ (§10.1). Already in the paper. \\
+seat $\vec P$ & per unit or bowl & External position in unbounded Euclidean space; enters only $d_{AB}=\lvert\vec P_B-\vec P_A\rvert$ (§9.1). Already in the paper. \\
 $V_{\text{timestamp}}$ & per core & When the core was born, an \textbf{absolute} (non-cyclic) time, so age $=t-V_{\text{timestamp}}$ is derived, never stored. An optional clock-face vector (minute on $\phi$, hour on $\chi$, $\theta$ at the equator) groups by time of day but cannot replace it. A Collapse result also gets its own new timestamp. \\
 $V_{\text{expiry}}$ & per core & When the core stops being valid. \textbf{Absence means no expiry.} Valid at $t$ iff $t$ is earlier than every expiry it carries. \\
 $V_{\text{location}}$ & per core, and per atom where a use supplies one & A point on a sphere (latitude as polar angle, longitude as azimuth). Not a sort: a place is a coordinate, not a claim with a strength. \\
@@ -164,7 +164,7 @@ $V_{\text{container}}$ & per vector & The containment vector: one entry per vect
 \textbf{Rule} & \textbf{Statement} \\
 \midrule
 \endhead
-\textbf{Form} & Always vectors, with no constraint on form. A scalar meta vector takes a designated axis of its core and carries its value as the coordinate there (uncapped), so vector distance is the difference of values; more coordinates (a plane or more) where a kind needs them. Which axis suits which kind is a recommendation (a catalogue, §6.7), not an axiom. \\
+\textbf{Form} & Always vectors, with no constraint on form. A scalar meta vector takes a designated axis of its core and carries its value as the coordinate there (uncapped), so vector distance is the difference of values; more coordinates (a plane or more) where a kind needs them. Which axis suits which kind is a recommendation (a catalogue, §6.5), not an axiom. \\
 \textbf{Turning} & Turn an atom as a whole (same rotation and phase shift on each vector): $V_{\text{derived}}$ turns with it; scalar meta vectors are carried unchanged; angles, magnitudes and distances among the information vectors and $V_{\text{derived}}$ are preserved. \\
 \textbf{Atoms are not edited} & An atom is a value. Change is Collapse or UnCollapse, each returning a new atom; recorded meta vectors never change after birth. There is no “last modified”. \\
 \textbf{Equality} & Two tests. \emph{Equal}: the same vectors in the same grouping; meta vectors never enter (what $\uplus$, $D$ and UnCollapse use). \emph{The same individual}: equal, and the meta vectors agree too ($==$ against “is”). Equality is exact; measured readings are made comparable when they are seated. Were the timestamp part of the value, $N-D$ would always be $0$ and $A\uplus A=A$ would never apply. \\
@@ -187,15 +187,15 @@ $U_{AB}$ & $-\dfrac{r_Ar_B}{2}\cdot\dfrac{3+\hat n_A\cdot\hat n_B}{(d_{AB}^2+\va
 $\varepsilon_{AB}$ & $r_A+r_B$ & §2.9 & Softening length: a convention that reads $r$ as a radius. \\
 $\kappa_{AB}$ & $\hat n_A+\hat n_B$ (unnormalized; eq. 14) & §2.9 & Contact point; defined at every angle, $=\mathbf0$ at antipodal. Its magnitude falls from $2$ to $0$. \\
 polarity & $\lvert r_A-r_B\rvert$ & §2.9 & Labels a bond as balanced or lopsided; does not change what the relation does. \\
-$d_{AB}$, $\hat r_{AB}$ & $\lvert\vec P_B-\vec P_A\rvert$, $(\vec P_B-\vec P_A)/d_{AB}$ (eq. 46) & §10.1 & Separation and separation axis; no axis derived from orientation is used. \\
+$d_{AB}$, $\hat r_{AB}$ & $\lvert\vec P_B-\vec P_A\rvert$, $(\vec P_B-\vec P_A)/d_{AB}$ (eq. 44) & §9.1 & Separation and separation axis; no axis derived from orientation is used. \\
 $\alpha(r_w)$ & $\pi r_w$ & §4.2 & Strength to rotation angle; $r_w=1$ gives $180^\circ$. \\
 $z_B$ & $\sum_{x\in B}r_xe^{i\chi_x}$; $\mathrm{Mix}(B)=(\min(1,\lvert z_B\rvert),\hat n,\arg z_B,\tau)$ (eq. 9) & §2.6 & Mix's one-step bowl reading; the reason binary Mix is non-associative under the cap. \\
 $\log_{\hat p}$, $\exp_{\hat p}$ & $\frac{\theta}{\sin\theta}(\hat q-(\hat p\cdot\hat q)\hat p)$; $\cos\lVert v\rVert\,\hat p+\sin\lVert v\rVert\,v/\lVert v\rVert$ (eq. 29–30) & §5.1 & Walk from $p$ to $q$ as a tangent vector, and back. \\
 transport & $\mathrm{Rot}_{\hat u}(\theta_{mw})\,v$, $\hat u=\hat n_m\times\hat n_w/\lVert\cdot\rVert$ (eq. 32–33); general $N_{\mathrm{dim}}$: a rotation within the plane the two seats span (eq. 35) & §5.1 & Carries the walk from seat $m$ to seat $w$. The two seats name the turning plane, so no Collapse is needed. Exactly the cross-product form at $N_{\mathrm{dim}}=3$. \\
-$F_i$ & $-\nabla_{\vec P_i}\sum_{j\neq i}U_{ij}$; step $\vec P_i\leftarrow\vec P_i+\delta F_i$ (eq. 47) & §10.2 & Force on a seated unit, descended with no mass and no momentum. \\
-freeze at resolution $\eta$ & $\max_i\lvert F_i\rvert<\eta$ (eq. 48) & §10.2 & A stated checkpoint, not exact rest: the pull is positive at every finite separation, so left longer every configuration drifts toward one pile (proved for the continuous flow with a finite population of fixed strengths; observed for the Euler step). \\
-camp, body $\vec P_{c,k}$ & $\dfrac{\sum_{i\in G_k}r_i\vec P_i}{\sum_{i\in G_k}r_i}$ (eq. 49) & §10.3 & A frozen group and its strength-weighted centre, read \emph{after} motion. A system of camps is the \emph{set} of bodies, never one grand average. \\
-$\epsilon_{\text{allow}}$ & named, not derived & §10.3 & Checkpoints whose bodies differ by less are read as the same freeze. \\
+$F_i$ & $-\nabla_{\vec P_i}\sum_{j\neq i}U_{ij}$; step $\vec P_i\leftarrow\vec P_i+\delta F_i$ (eq. 45) & §9.2 & Force on a seated unit, descended with no mass and no momentum. \\
+freeze at resolution $\eta$ & $\max_i\lvert F_i\rvert<\eta$ (eq. 46) & §9.2 & A stated checkpoint, not exact rest: the pull is positive at every finite separation, so left longer every configuration drifts toward one pile (proved for the continuous flow with a finite population of fixed strengths; observed for the Euler step). \\
+camp, body $\vec P_{c,k}$ & $\dfrac{\sum_{i\in G_k}r_i\vec P_i}{\sum_{i\in G_k}r_i}$ (eq. 47) & §9.3 & A frozen group and its strength-weighted centre, read \emph{after} motion. A system of camps is the \emph{set} of bodies, never one grand average. \\
+$\epsilon_{\text{allow}}$ & named, not derived & §9.3 & Checkpoints whose bodies differ by less are read as the same freeze. \\
 \bottomrule
 \end{longtable}}
 \section*{7 · Sorts, tiers, and who may do what}
@@ -250,23 +250,23 @@ A teaching atom ($Q=1$) is a legal actor **only at $N_{\mathrm{dim}}=3$**; beyon
 \midrule
 \endhead
 $(1\angle0^\circ)\boxplus(1\angle120^\circ)$ (red, green) & $1\angle60^\circ$, yellow & §2.6 \\
-$0.6\angle0^\circ\boxplus0.8\angle120^\circ$ & $r'\approx0.721$, $\chi'\approx73.9^\circ$ & §2.6, §8.1 \\
+$0.6\angle0^\circ\boxplus0.8\angle120^\circ$ & $r'\approx0.721$, $\chi'\approx73.9^\circ$ & §2.6, §7.1 \\
 $A\boxplus A$ & $r'=\min(1,2r)$ — not idempotent & §2.6 \\
 $A=B=1\angle0^\circ$, $C=1\angle180^\circ$ (by hand) & $(A\boxplus B)\boxplus C=$ black, $A\boxplus(B\boxplus C)=1\angle0^\circ$; one-step $z_B=1$ & §2.6 \\
 Clock, $M=24$: $7+5$ and Mix of the two marks & $12$ (decode, add, encode); Mix gives $\chi'=90^\circ$, hour $6$ & §6.2 \\
 Sun, Wind, Sky ($r_{\text{Sun}}=1$, $r_{\text{Wind}}=0.7$) & Sun then Wind $(-0.866,-0.500,0.011)$; Wind then Sun $(0.278,-0.500,0.820)$; $\alpha_{\text{Wind}}=126^\circ$ & §4.6 \\
 Four-dimensional actor, $r_w=0.5$ & $T_w(\hat n_x)=(\tfrac12,\tfrac12,0,\tfrac1{\sqrt2})$, recovered by $w^*$ & §4.7 \\
 Order gap, $N_{\mathrm{dim}}=4,5,8,12,20,50$ & $0.683,\ 0.688,\ 0.649,\ 0.584,\ 0.489,\ 0.331$ & §4.4 \\
-Storm: Deepen / Clear endpoints & $(0.7071,-0.6124,-0.3536)$, $(110.7^\circ,319.1^\circ)$ / $(0.3536,-0.6124,-0.7071)$, $(135^\circ,300^\circ)$; both $\chi=135^\circ$ & §9.1 \\
+Storm: Deepen / Clear endpoints & $(0.7071,-0.6124,-0.3536)$, $(110.7^\circ,319.1^\circ)$ / $(0.3536,-0.6124,-0.7071)$, $(135^\circ,300^\circ)$; both $\chi=135^\circ$ & §8.1 \\
 Offset on an equator ($0^\circ,30^\circ,90^\circ$) & lands at $(-\tfrac12,\tfrac{\sqrt3}2,0)$, $120^\circ$ — a protractor check, not the operator & §5.2 \\
-Unmixing: $0^\circ/120^\circ$ against $10^\circ/100^\circ$ & same phasor sum (weights $0.643$, $0.766$); residual at rounding level & §8.2 \\
+Unmixing: $0^\circ/120^\circ$ against $10^\circ/100^\circ$ & same phasor sum (weights $0.643$, $0.766$); residual at rounding level & §7.2 \\
 Alignment, $r=0.85$, pairs $5.7^\circ$ apart & $Q=2$: raw $0.72$, $\alpha=0.995$; $Q=5$ on a cone of half-angle $5.7^\circ$: $7.14$, $0.988$ & §2.10 \\
 Three aligned at $r=0.5$ & $\lvert V\rvert=1.5$, a turn of $270^\circ$ as $T$'s actor, read as it is; $51.877\to337.9^\circ$, $5187.748\to314.6^\circ$ & §2.10 \\
 Dominant vector $0.95$ against three at $0.2$ & volume share $0.973$ & §2.10 \\
 Best partner for an atom of $r=0.60$ (Assembly energy) & at contact $r_B=0.30$; at separation $3$ the strongest available ($1.0$) & §2.11 \\
 $\mathcal{I}_{\mathrm{scon}}$: $10@0.98$, $3@0.3$, $400@0.65$ & $0.908$ at $w=0.1$ and $w=0.05$ & §2.10 \\
-Enclosure, six printed units, $\eta=10^{-5}$ & $628,\ 1261,\ 2526,\ 6320$ steps at $\delta=0.02,\ 0.01,\ 0.005,\ 0.002$; two camps $\{1,2,3\}$, $\{4,5,6\}$; bodies $(0.33336,0.33333,0)$, $(40.33330,0.33333,0)$; runs agree to $2\times10^{-7}$; $r$-weighted and plain bodies differ by $2.4\times10^{-8}$ & §10.4 \\
-Enclosure, pair $r=0.9$, $r=0.1$, $\delta=0.02$ & separation never increases, $3\to1.80$; dividing each step by $r^3$ (a $729$-fold weighting) makes it oscillate & §10.4 \\
+Enclosure, six printed units, $\eta=10^{-5}$ & $628,\ 1261,\ 2526,\ 6320$ steps at $\delta=0.02,\ 0.01,\ 0.005,\ 0.002$; two camps $\{1,2,3\}$, $\{4,5,6\}$; bodies $(0.33336,0.33333,0)$, $(40.33330,0.33333,0)$; runs agree to $2\times10^{-7}$; $r$-weighted and plain bodies differ by $2.4\times10^{-8}$ & §9.4 \\
+Enclosure, pair $r=0.9$, $r=0.1$, $\delta=0.02$ & separation never increases, $3\to1.80$; dividing each step by $r^3$ (a $729$-fold weighting) makes it oscillate & §9.4 \\
 \bottomrule
 \end{longtable}}
 \textbf{What reproduces, and what is sensitive:} every printed number is recomputed by \texttt{reproduce\_v15\_41.py} from its printed inputs. One count, the number of steps on which the weighted pair's separation increases, depends on rounding and is printed as a range ($830$ to $855$ of $3000$). Shell bins are defined in exact arithmetic, because $\lfloor0.3/0.1\rfloor$ is $2$ in floating point.
@@ -283,9 +283,9 @@ orientation of $F^\perp$ & Which direction counts as $+\alpha$ beyond three dime
 toy colour chart & Phasor Mix on $0^\circ/120^\circ/60^\circ$; neither CIE nor linear RGB. & §2.1, §2.6 \\
 numeric chart & $\chi=2\pi k/M$, $M=24$, at a fixed direction with $r=1$. & §6.1–6.2 \\
 shell width $w$ & Default $0.1$ (ten shells on $[0,1]$); reported with $\mathcal{I}_{\mathrm{scon}}$. & §2.10 \\
-$\eta$, $\delta$, census cut, $\epsilon_{\text{allow}}$ & Freeze threshold; step size; how camps are counted; when two checkpoints are the same freeze. The enclosure's four measurement conventions. & §10.2–10.3 \\
+$\eta$, $\delta$, census cut, $\epsilon_{\text{allow}}$ & Freeze threshold; step size; how camps are counted; when two checkpoints are the same freeze. The enclosure's four measurement conventions. & §9.2–10.3 \\
 reading time $t$ & Default now; fixing it keeps every law deterministic. “Now” is external context, as the lexicon is. & §1.4, §2.11 \\
-standard dictionaries and the meta-vector catalogue & Recommendations, recorded and left open; not axioms. & §6.7 \\
+the meta-vector catalogue (standard dictionaries moved to Inference) & Recommendations, recorded and left open; not axioms. & §6.5; Inference §8.3 \\
 \bottomrule
 \end{longtable}}
 \section*{11 · Stated open, or not claimed}
@@ -295,8 +295,8 @@ standard dictionaries and the meta-vector catalogue & Recommendations, recorded 
 \midrule
 \endhead
 Collapsed atom as the actor of $T$ & $V_{\text{derived}}$ acts as it is (angle mod $360^\circ$); a worked example is not claimed here. A bowl is not an actor: $T$ takes one unit. & §2.10 \\
-Reducing a path by merging close actors & Sequential actors already compose into one rotation for free (closure). Replacing merely \emph{close} actors is a different operation, coarse-graining, whose shape only is stated: it yields an additional derived actor \emph{beside} its sources and removes none. Which merge rule, and what drift bound, belongs to Inference. & §12.1 \\
-Dimensionality & The sphere $S^2$ is where the idea is taught; embedding-scale dimensions are a later choice. & §6.8, §12.1 \\
+Reducing a path by merging close actors & Sequential actors already compose into one rotation for free (closure). Replacing merely \emph{close} actors is a different operation, coarse-graining, whose shape only is stated: it yields an additional derived actor \emph{beside} its sources and removes none. Which merge rule, and what drift bound, belongs to Inference. & §11.1 \\
+Dimensionality & The sphere $S^2$ is where the idea is taught; embedding-scale dimensions are a later choice. & Inference §8.4, §11.1 \\
 Offset on Tier-1 sorts; antipodal offset & Untested here; antipodal seats have no unique short geodesic and that convention is not used. & §5.1, §6.4 \\
 A relation across sorts & No rule stated at all (a colour with a charge; a chord with a valence bond); Collapse only holds them side by side and claims none. & §1, §2.1, §3.3 \\
 Verdicts & Saying what a resting state \emph{means} is a later reading, not a verb here. & §1 \\
@@ -330,7 +330,7 @@ Verdicts & Saying what a resting state \emph{means} is a later reading, not a ve
 \textbf{Actor} $w$ & The unit that acts in $T_w(x)$: supplies axis, strength (→ angle) and phase. Beyond three dimensions it must supply $N_{\mathrm{dim}}-2$ orthonormal arrows. & §4.2, §4.4 \\
 \textbf{Admissible} (geometrically) & A sort with a stated map $\varphi_\tau$ at a stated fidelity (Tier 1). Absent from the table = undecided, not admitted. & §2.1, eq. 1 \\
 \textbf{Age} & $t-V_{\text{timestamp}}$; derived, never stored (a stored age is wrong once time passes). & §2.11 \\
-\textbf{Allowance} $\epsilon_{\text{allow}}$ & Checkpoints whose bodies differ by less are read as one freeze; a named convention. & §10.3 \\
+\textbf{Allowance} $\epsilon_{\text{allow}}$ & Checkpoints whose bodies differ by less are read as one freeze; a named convention. & §9.3 \\
 \textbf{Arithmetic} (of a domain) & A unit of truth plus a small set of rules for combining such units, obeyed consistently. & §1 \\
 \textbf{Arithmetic} (this paper's sense) & A unit, the operations on it, and the properties each operation is stated and checked to have. & §1.4 \\
 \textbf{Assembly} $\bowtie$ & Relates two intact units by $(\kappa_{AB},U_{AB})$ without fusing them. & §2.9 \\
@@ -338,44 +338,44 @@ Verdicts & Saying what a resting state \emph{means} is a later reading, not a ve
 \textbf{Atom coherence} & $\lvert V_{\text{derived}}\rvert/\mathcal{I}_{\mathrm{str}}$. With the direction of $V_{\text{derived}}$ it is a colour's locator: colour lives in $\hat n$, phase is kept for mixing, and $\lvert V_{\text{derived}}\rvert$ measures size, not colour. & §2.10 \\
 \textbf{Axis} ($\hat n_w$, fixed part $F$) & The line (3-D) or subspace of dimension $N_{\mathrm{dim}}-2$ that $T$ leaves fixed. & §4.4 \\
 \textbf{Black} $\mathbf0$ & $r=0$: an empty seat; $N=1$, $Q=0$; $T_{\mathbf0}=\mathrm{id}$; the identity of nothing else. Distinct from the empty bowl $\emptyset$. & §2.3, §2.5 \\
-\textbf{Body} $\vec P_{c,k}$ & A frozen camp's strength-weighted centre, measured afterwards by an observer; a description, not a destination. & §10.3, eq. 49 \\
+\textbf{Body} $\vec P_{c,k}$ & A frozen camp's strength-weighted centre, measured afterwards by an observer; a description, not a destination. & §9.3, eq. 47 \\
 \textbf{Bowl} & A finite set of seated units: who is present. No order, no reading, no representation of the reading to come. May carry meta vectors; $\uplus$ does not read them. & §2.2, §2.5, §3.1 \\
 \textbf{Bundle} $\uplus$ & Union on bowls; idempotent; sort-blind. & §2.5 \\
-\textbf{Camp} & A separated group frozen at resolution $\eta$; their number is whatever the law, the seats and $\eta$ produce. & §10.3 \\
-\textbf{Cast} (two uses) & (a) lexicon cast $E_L$: token to state (eq. 42); (b) sort cast, e.g. $E_{\mathtt{num}\to\mathtt{word}}$ (§6.3). Normalizing $V_{\text{derived}}$ into $[0,1]$, to seat it as a unit or read atom coherence, is a normalization, not a cast (§2.10). & §6.6, §6.3, §2.10 \\
-\textbf{Census cut} & The stated separation (or chain of short links) used to count camps; a convention. & §10.3 \\
+\textbf{Camp} & A separated group frozen at resolution $\eta$; their number is whatever the law, the seats and $\eta$ produce. & §9.3 \\
+\textbf{Cast} (two uses) & (a) lexicon cast $E_L$: token to state (eq. 40); (b) sort cast, e.g. $E_{\mathtt{num}\to\mathtt{word}}$ (§6.3). Normalizing $V_{\text{derived}}$ into $[0,1]$, to seat it as a unit or read atom coherence, is a normalization, not a cast (§2.10). & §6.3, §2.10; Inference §8.2 \\
+\textbf{Census cut} & The stated separation (or chain of short links) used to count camps; a convention. & §9.3 \\
 \textbf{Chart} & An exact, invertible encoding (e.g. \texttt{num}); not a Mix or $T$ homomorphism. & §2.1, §6.2 \\
-\textbf{Checkpoint} & One freeze read at some $\eta$ after some time; not a destination. & §10.3 \\
+\textbf{Checkpoint} & One freeze read at some $\eta$ after some time; not a destination. & §9.3 \\
 \textbf{Clip} & $r'=\min(1,\lvert z\rvert)$; the chosen way to bound strength; not injective. & §2.2, §2.6 \\
 \textbf{Clock trap} & Mix on $(\mathtt{num},\mathtt{num})$: geometrically defined, type-refused. $7$ and $5$ Mix to hour $6$. & §6.2 \\
 \textbf{Collapse} $\oplus$ & Count-preserving combination of atoms of any sorts; keeps every core; not idempotent. & §3.3 \\
-\textbf{Companion paper} & \emph{Pattern Arithmetic: Inference from Bowls and Paths} — reference atoms, classification, abstention; where unmixing and path reduction are left. & §1, §3.2, §12.1 \\
+\textbf{Companion paper} & \emph{Pattern Arithmetic: Inference from Bowls and Paths} — reference atoms, classification, abstention; where unmixing and path reduction are left. & §1, §3.2, §11.1 \\
 \textbf{Composition} & How diverse units come together in one space: Bundle (presence, repetition dropped) and Collapse (every vector and count kept, any sorts); neither computes across the units; taken apart by Remove or UnCollapse; read as one unit through the derived pair. & §1.4 \\
 \textbf{Contact point} $\kappa_{AB}$ & $\hat n_A+\hat n_B$, unnormalized; $\mathbf0$ at antipodal. & §2.9, eq. 14 \\
 \textbf{Containment vector} & For each vector, the position of its core in the atom: the grouping itself, part of the atom's value; not a meta vector. & §2.10, §2.11 \\
 \textbf{Contract} (what the algebra promises) & Determinism given the reading time; results seatable again; no source consumed, every result a new atom naming its operands; no atom edited; no verb moves a vector between cores. A use supplies seats, reading time, comparison rules, grain, resolution and the named conventions. & §1.4 \\
 \textbf{Core} & A group of vectors held together in an atom; any number of vectors; each vector is held by exactly one core. Reserved word. & §2.10 \\
-\textbf{Costume} & An illustration of the $\uplus$-versus-$T$ split (storm, table and chair, forest, pathogen); not a model. & §1.4, §9 \\
+\textbf{Costume} & An illustration of the $\uplus$-versus-$T$ split (storm here; table and chair, forest, pathogen in Inference); not a model. & §1.4, §8; Inference §8.6 \\
 \textbf{Counting trap} & $A\uplus A\uplus A\uplus A\setminus A=\emptyset$: four gathers are one seat, one removal empties it. & §2.5, eq. 7 \\
 \textbf{Density} & Many identities can share the stage without overwrite. Not a metric and not infinite information. & §2.4 \\
 \textbf{Determinism} & Same printed starting units (read at the same time where any carries an expiry) give the same result, step for step. Printing makes a result replayable; it does not make it right. & §1.4 \\
-\textbf{Dictionary pin / doorbell} & A seated unit for a name (man, storm, calm, Night). The algebra does not mint it; a lexicon or learning rule seats it. & §9.1, §5.2, §6.6 \\
-\textbf{Direction} $\hat n$ & A pattern's semantic address, not its physical position. & §2.2, §10.1 \\
+\textbf{Dictionary pin / doorbell} & A seated unit for a name (man, storm, calm, Night). The algebra does not mint it; a lexicon or learning rule seats it. & §8.1, §5.2; Inference §8.2 \\
+\textbf{Direction} $\hat n$ & A pattern's semantic address, not its physical position. & §2.2, §9.1 \\
 \textbf{Effective vector count} $Q_{\text{eff}}$ & $\mathcal{I}_{\mathrm{str}}^2/\mathcal{I}_{\mathrm{en}}$; how many equally strong vectors carry the same energy. & §2.10 \\
 \textbf{Empty atom} & Black: $N=1$, $Q=0$. & §2.3, §2.10 \\
 \textbf{Empty bowl} $\emptyset$ & A bowl with no occupant; $\neq\mathbf0$. $T_{\mathbf0}$ is defined, $T_\emptyset$ is not. & §2.5, eq. 6 \\
-\textbf{Enclosure} & Seats, rest and camps: where Assembly's separation comes from. & §10 \\
+\textbf{Enclosure} & Seats, rest and camps: where Assembly's separation comes from. & §9 \\
 \textbf{Energy} (two senses) & The atom's information energy $\mathcal{I}_{\mathrm{en}}=\sum r_i^2$ (§2.10, eq. 15); the interaction energy $U_{AB}$ (§2.9, eq. 13). Not interchangeable. & §2.10, §2.9 \\
 \textbf{Equality} & Equal: the same vectors in the same grouping; meta vectors never enter. Exact. & §2.11 \\
 \textbf{Expiry} $V_{\text{expiry}}$ & When a core stops being valid; absence = none; an expired core reads as black and may be removed by UnCollapse. & §2.11 \\
-$F_i$ (\textbf{force}) & $-\nabla_{\vec P_i}\sum_{j\neq i}U_{ij}$. & §10.2, eq. 47 \\
-\textbf{Freeze} (at resolution $\eta$) & $\max_i\lvert F_i\rvert<\eta$. A freeze, not a stop. & §10.2, eq. 48 \\
+$F_i$ (\textbf{force}) & $-\nabla_{\vec P_i}\sum_{j\neq i}U_{ij}$. & §9.2, eq. 45 \\
+\textbf{Freeze} (at resolution $\eta$) & $\max_i\lvert F_i\rvert<\eta$. A freeze, not a stop. & §9.2, eq. 46 \\
 \textbf{Grain} & The partition of an atom's vectors into cores; UnCollapse acts along it; fixed at seating, coarsened by seating again, refined by no verb. & §3.3 \\
 \textbf{Identity key} & A core's name: the tuple of its sort, source link and timestamp, existing meta vectors; never enters equality. & §2.11, §3.4 \\
 \textbf{Individual} vs \textbf{value} & Under Collapse, Bundle, Mix the individual (with its meta vectors) persists; value is the vectors and their grouping. & §2.11 \\
 \textbf{Informational vector} & One of an atom's $Q$ arrows $v_i=(r_i,\hat n_i,\chi_i)$, $0<r_i\le1$. & §2.10 \\
 \textbf{Levels are closed} & A result may be seated again and Bundled, walked, read at the next level. & §3.1 \\
-$E_L$ (\textbf{lexicon}) & A map from one language's tokens onto states; case and language do not move the address. & §6.6, §7, eq. 42 \\
+$E_L$ (\textbf{lexicon}) & A map from one language's tokens onto states; case and language do not move the address. & §6.3, eq. 40; Inference §8.2, §8.5 \\
 \textbf{Link} $V_{\text{link}}$ & Backward provenance stored at birth; forward and bidirectional are views. & §2.11 \\
 \textbf{Local position} & A core's place in its atom's list of cores; the fallback when a key matches cores of different content. & §3.4 \\
 \textbf{Location} $V_{\text{location}}$ & A point on a sphere carried as a meta vector; not a sort. & §2.11 \\
@@ -389,22 +389,22 @@ $E_L$ (\textbf{lexicon}) & A map from one language's tokens onto states; case an
 \textbf{Offset} & Copies a walk; does not mint the landing's name. & §5 \\
 \textbf{Order gap} & $\lvert T_{w_2}T_{w_1}\hat n_x-T_{w_1}T_{w_2}\hat n_x\rvert$. & §4.4 \\
 \textbf{Path / walk / trajectory} & An ordered sequence of actors on an occupant; a poem is a $T$-walk. Order enters here and not in the bowl. & §3.1, §4.5 \\
-\textbf{Phase} $\chi$ & Internal phase / mood / hue: adds under $T$, sums as a phasor under Mix; reserved for mood, not language. & §2.2, §7 \\
+\textbf{Phase} $\chi$ & Internal phase / mood / hue: adds under $T$, sums as a phasor under Mix; reserved for mood, not language. & §2.2; Inference §8.5 \\
 \textbf{Polarity} & $\lvert r_A-r_B\rvert$. & §2.9 \\
 \textbf{Pratyāhāra; vipratiṣedha} & Pāṇini's sound-class shorthand and his conflict-resolution rule; offered as kinship, not identity. & §1 \\
 \textbf{Reading} & An operation that returns a state and leaves its inputs intact (Mix, a $T$-path, Collapse); also, expiry is a reading. & §2.6, §3.3, §2.11 \\
 \textbf{Remove} $\setminus$ & Takes one member out of a bowl. & §2.5 \\
-\textbf{Rest} & A freeze at a stated resolution, never exact stillness. & §10.2 \\
+\textbf{Rest} & A freeze at a stated resolution, never exact stillness. & §9.2 \\
 \textbf{Result} & Whatever the path makes of the bowl. & §3.1 \\
 \textbf{Rotation} & $\mathrm{SO}(3)$ turn of $\hat n$ only. & §2.8 \\
 \textbf{Same individual} & Equal, and the meta vectors agree too: the stricter test ($==$ against “is”). & §2.11 \\
-\textbf{Seat} $\vec P$ & External position vector; a meta vector; enters only $d_{AB}$. & §10.1, eq. 46 \\
+\textbf{Seat} $\vec P$ & External position vector; a meta vector; enters only $d_{AB}$. & §9.1, eq. 44 \\
 \textbf{Seated unit} & A unit loaded on the sphere, pinned by a lexicon or a learned map. & §1.4, §3.1 \\
-\textbf{Shell} & (a) a width-$w$ bin of strength in $\mathcal{I}_{\mathrm{scon}}$ (§2.10); (b) one phased identity at a direction in Mix (“two shells, not an angle”, §8.1). & §2.10, §8.1 \\
+\textbf{Shell} & (a) a width-$w$ bin of strength in $\mathcal{I}_{\mathrm{scon}}$ (§2.10); (b) one phased identity at a direction in Mix (“two shells, not an angle”, §7.1). & §2.10, §7.1 \\
 \textbf{Softening length} $\varepsilon_{AB}$ & $r_A+r_B$, a convention that reads $r$ as a radius. & §2.9 \\
 \textbf{Sort} $\tau$ & Says which operators may legally act on a unit; does not move the arrow. & §2.2, §6 \\
 \textbf{Stage} $\mathcal S$ & The unit sphere (or its higher analogue): the sphere is the stage, the unit is the vector. & §2.2 \\
-\textbf{Step} $\delta$ & Numerical sampling convention for the descent. & §10.2 \\
+\textbf{Step} $\delta$ & Numerical sampling convention for the descent. & §9.2 \\
 \textbf{Strength} $r$ & Normalized activation in $[0,1]$. & §2.2 \\
 \textbf{Tape} & An ordered sequence of tokens; a document. & §6.3 \\
 \textbf{Teaching atom} & One 4-tuple, $N=Q=1$. & §2.2 \\
@@ -414,14 +414,14 @@ $E_L$ (\textbf{lexicon}) & A map from one language's tokens onto states; case an
 \textbf{Transport} & Carries a tangent vector from seat $m$ to seat $w$ in Offset. & §5.1, eq. 33, 35 \\
 \textbf{Turn} (an atom) & Same rotation and phase shift on each vector; $V_{\text{derived}}$ turns, scalar meta vectors are carried. & §2.11 \\
 \textbf{UnCollapse} $\ominus$ & Takes out one core with its vectors, named by identity key or local position. & §3.4 \\
-\textbf{UnMix} $\boxminus$ & Impossible as an inverse of the reading: sources not determined by the result; where they were kept, Remove or UnCollapse. & §3.2, §8.2 \\
+\textbf{UnMix} $\boxminus$ & Impossible as an inverse of the reading: sources not determined by the result; where they were kept, Remove or UnCollapse. & §3.2, §7.2 \\
 \textbf{Valid} (core) & At $t$ iff $t$ is earlier than every expiry it carries. & §2.11 \\
 \textbf{Volume} $\mathcal{I}_{\mathrm{vol}}$ & $\sum r_i^3$, “atom volume”; descriptive only, deliberately excluded from motion. & §2.10 \\
 \textbf{White} & Saturation of the bowl, or a full-spectrum name; never $r=\infty$. & §2.4 \\
 $D$ & Distinct cores among the $N$. & §3.3 \\
 $N$ & Cores. & §2.10 \\
 $N_{\mathrm{dim}}$ & Dimension of the ambient space; $3$ is the standing assumption. & §4.4 \\
-$Q$ & Informational vectors; “the atom's info number”. & §2.10 \\
+$Q$ & Informational vectors. & §2.10 \\
 $U_{AB}$ & Assembly's interaction energy. & §2.9, eq. 13 \\
 $V_{\text{derived}}$ & Uncapped sum of the informational vectors. & §2.10 \\
 $z_B$ & Phasor sum of a bowl. & §2.6, eq. 9 \\
