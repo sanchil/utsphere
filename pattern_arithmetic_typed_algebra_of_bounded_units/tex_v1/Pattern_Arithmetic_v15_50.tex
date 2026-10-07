@@ -83,7 +83,7 @@ Offset & What walk is reused? & Copies a relation between two seats to a third; 
 Assembly $\bowtie$ & How do two units relate while both still sit? & Relates intact units by an interaction energy; never repels & none & Axiom~6 (\S\ref{subsec:axiom_assembly}) \\ \hline
 \end{tabular}
 \end{center}
-A bowl of units is read by a path to a result, and a result may be seated again. A unit does not know what it constitutes: a seated word does not know the poem, and the path knows it.
+A bowl of units is read by a path to a result, and a result may be seated again. A unit does not know what it constitutes: a seated word does not know the poem, and the path knows it. Each verb name is reserved, the way a keyword is reserved in a programming language: once given a meaning here, it is not reused elsewhere in this paper for an unrelated or informal sense.
 
 \paragraph{Background and motivation.}
 Ordinary arithmetic uses the integer $1$ as a unit of truth.
@@ -253,34 +253,7 @@ A\uplus A=A,
 T_a(T_b(x))\neq T_b(T_a(x)).
 \]
 These are not alternative tricks for the same plus sign. They answer
-different questions:
-
-\begin{table}[h]
-\centering
-\begin{tabular}{lp{7.2cm}}
-\hline
-Operation & Question \\
-\hline
-$+$ & How many? \\
-$\uplus$ / $\setminus$ (Bundle / Remove) & What is present? / what is removed? \\
-$\oplus$ / $\ominus$ (Collapse / UnCollapse) & What is combined, with nothing discarded? / what core is taken back? \\
-$\boxplus$ ($\mathrm{Mix}$) & What composite state results? \\
-$\boxminus$ ($\mathrm{UnMix}$) & Not possible: a Mixed result does not determine its sources (Section~\ref{subsec:process_principle_unmix}). \\
-$T$ (Transform) & What happens, and in what order? \\
-offset & What walk is reused? \\
-$\bowtie$ (Assembly) & How do two units relate while both still sit? \\
-\hline
-\end{tabular}
-\caption{The verb inventory of this paper. Each name is reserved,
-the way a keyword is reserved in a programming language: once given
-a meaning here, it is not reused elsewhere in this paper for an
-unrelated or informal sense. Three verbs --- Bundle, Collapse, and
-Mix --- have a named counterpart; only two of those, Remove and
-UnCollapse, actually take one member or core back. Mix's own
-counterpart, UnMix, is proven impossible rather than simply
-unbuilt.}
-\label{tab:verb_inventory}
-\end{table}
+different questions, as the table of the six verbs above sets out.
 
 Division as deconvolution or signal unmixing is not among these
 verbs; shown ill-posed for this algebra, not merely unbuilt
@@ -306,20 +279,14 @@ A discrete matrix grid is the wrong box for such a unit. Traditional matrix repr
 \end{itemize}
 
 \subsection{The Phase-Colored Unit Sphere Framework}
-To resolve these grid constraints, the sphere is offered as one bounded object that can carry overlapping identities by direction and phase, without enlarging a lattice.
-\begin{itemize}
-    \item \textbf{Spatial Orientation $\hat n \in S^2$, or $(\theta, \phi)$:} Defines continuous directional coordinates across the spherical surface.
-    \item \textbf{Magnitude ($0 \leq r \leq 1$):} Strength of that one unit, capped so the arrow remains a single unit of truth. An activation, not a density for the whole sphere.
-    \item \textbf{Internal Color Phase ($\chi \in [0, 2\pi)$):} Serves as an independent phase degree of freedom.
-    \item \textbf{Sort $\tau$:} A legality tag ($\mathtt{word}$, $\mathtt{num}$, $\mathtt{color}$, \ldots). It does not move the arrow.
-\end{itemize}
+To resolve these grid constraints, the sphere is offered as one bounded object that can carry overlapping identities by direction and phase, without enlarging a lattice. Its four coordinates, strength $r$, direction $\hat n$, phase $\chi$ and sort $\tau$, are those given above.
 
 \subsection{Principal Contributions \& High-Level Intuition}
 The principal contributions of Pattern Arithmetic are:
 \begin{itemize}
     \item \textbf{A typed unit:} one atom $x=(r,\hat n,\chi,\tau)$ on a bounded sphere, not a voxel cell and not a global probability field.
     \item \textbf{Admissibility of sorts (Axiom~0):} a sort earns a geometric $\chi$- or $T$-reading only where a stated map preserves its native combination; most domains do not.
-    \item \textbf{Verbs on that unit:} $\uplus$ collects identities ($A\uplus A=A$); $\oplus$ combines several into one, keeping every contribution ($A\oplus A\ne A$); $\boxplus$ reads a composite; $T$ walks an ordered path on one register occupant; offset copies a relation; $\bowtie$ assembles two units into a relation without fusing them. Each of $\uplus$ and $\oplus$ has a named counterpart, $\setminus$ and $\ominus$, that takes one member or core back; $\boxplus$'s own counterpart, $\boxminus$, is named but proven impossible, since a Mixed result does not determine its sources. Schoolbook $+$ is reserved for $\mathtt{num}$.
+    \item \textbf{Verbs on that unit:} six, set out in the table above, each with the counterpart that takes something back where one exists. Schoolbook $+$ is reserved for $\mathtt{num}$.
 \end{itemize}
 
 Later sections distinguish a numeric encoding from a lexical encoding on the same sphere, so that a report may carry words and numbers together without forcing them through $\uplus$.

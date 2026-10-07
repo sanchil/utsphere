@@ -83,7 +83,7 @@ Offset & What walk is reused? & Copies a relation between two seats to a third; 
 Assembly $\bowtie$ & How do two units relate while both still sit? & Relates intact units by an interaction energy; never repels & none & Axiom~6 (\S\ref{subsec:axiom_assembly}) \\ \hline
 \end{tabular}
 \end{center}
-A bowl of units is read by a path to a result, and a result may be seated again. A unit does not know what it constitutes: a seated word does not know the poem, and the path knows it.
+A bowl of units is read by a path to a result, and a result may be seated again. A unit does not know what it constitutes: a seated word does not know the poem, and the path knows it. Each verb name is reserved, the way a keyword is reserved in a programming language: once given a meaning here, it is not reused elsewhere in this paper for an unrelated or informal sense.
 
 \paragraph{Background and motivation.}
 Ordinary arithmetic uses the integer $1$ as a unit of truth.
@@ -253,34 +253,7 @@ A\uplus A=A,
 T_a(T_b(x))\neq T_b(T_a(x)).
 \]
 These are not alternative tricks for the same plus sign. They answer
-different questions:
-
-\begin{table}[h]
-\centering
-\begin{tabular}{lp{7.2cm}}
-\hline
-Operation & Question \\
-\hline
-$+$ & How many? \\
-$\uplus$ / $\setminus$ (Bundle / Remove) & What is present? / what is removed? \\
-$\oplus$ / $\ominus$ (Collapse / UnCollapse) & What is combined, with nothing discarded? / what core is taken back? \\
-$\boxplus$ ($\mathrm{Mix}$) & What composite state results? \\
-$\boxminus$ ($\mathrm{UnMix}$) & Not possible: a Mixed result does not determine its sources (Section~\ref{subsec:process_principle_unmix}). \\
-$T$ (Transform) & What happens, and in what order? \\
-offset & What walk is reused? \\
-$\bowtie$ (Assembly) & How do two units relate while both still sit? \\
-\hline
-\end{tabular}
-\caption{The verb inventory of this paper. Each name is reserved,
-the way a keyword is reserved in a programming language: once given
-a meaning here, it is not reused elsewhere in this paper for an
-unrelated or informal sense. Three verbs --- Bundle, Collapse, and
-Mix --- have a named counterpart; only two of those, Remove and
-UnCollapse, actually take one member or core back. Mix's own
-counterpart, UnMix, is proven impossible rather than simply
-unbuilt.}
-\label{tab:verb_inventory}
-\end{table}
+different questions, as the table of the six verbs above sets out.
 
 Division as deconvolution or signal unmixing is not among these
 verbs; shown ill-posed for this algebra, not merely unbuilt
@@ -306,20 +279,14 @@ A discrete matrix grid is the wrong box for such a unit. Traditional matrix repr
 \end{itemize}
 
 \subsection{The Phase-Colored Unit Sphere Framework}
-To resolve these grid constraints, the sphere is offered as one bounded object that can carry overlapping identities by direction and phase, without enlarging a lattice.
-\begin{itemize}
-    \item \textbf{Spatial Orientation $\hat n \in S^2$, or $(\theta, \phi)$:} Defines continuous directional coordinates across the spherical surface.
-    \item \textbf{Magnitude ($0 \leq r \leq 1$):} Strength of that one unit, capped so the arrow remains a single unit of truth. An activation, not a density for the whole sphere.
-    \item \textbf{Internal Color Phase ($\chi \in [0, 2\pi)$):} Serves as an independent phase degree of freedom.
-    \item \textbf{Sort $\tau$:} A legality tag ($\mathtt{word}$, $\mathtt{num}$, $\mathtt{color}$, \ldots). It does not move the arrow.
-\end{itemize}
+To resolve these grid constraints, the sphere is offered as one bounded object that can carry overlapping identities by direction and phase, without enlarging a lattice. Its four coordinates, strength $r$, direction $\hat n$, phase $\chi$ and sort $\tau$, are those given above.
 
 \subsection{Principal Contributions \& High-Level Intuition}
 The principal contributions of Pattern Arithmetic are:
 \begin{itemize}
     \item \textbf{A typed unit:} one atom $x=(r,\hat n,\chi,\tau)$ on a bounded sphere, not a voxel cell and not a global probability field.
     \item \textbf{Admissibility of sorts (Axiom~0):} a sort earns a geometric $\chi$- or $T$-reading only where a stated map preserves its native combination; most domains do not.
-    \item \textbf{Verbs on that unit:} $\uplus$ collects identities ($A\uplus A=A$); $\oplus$ combines several into one, keeping every contribution ($A\oplus A\ne A$); $\boxplus$ reads a composite; $T$ walks an ordered path on one register occupant; offset copies a relation; $\bowtie$ assembles two units into a relation without fusing them. Each of $\uplus$ and $\oplus$ has a named counterpart, $\setminus$ and $\ominus$, that takes one member or core back; $\boxplus$'s own counterpart, $\boxminus$, is named but proven impossible, since a Mixed result does not determine its sources. Schoolbook $+$ is reserved for $\mathtt{num}$.
+    \item \textbf{Verbs on that unit:} six, set out in the table above, each with the counterpart that takes something back where one exists. Schoolbook $+$ is reserved for $\mathtt{num}$.
 \end{itemize}
 
 Later sections distinguish a numeric encoding from a lexical encoding on the same sphere, so that a report may carry words and numbers together without forcing them through $\uplus$.
@@ -2467,12 +2434,6 @@ comparison against a witnessed reference is held to a stated
 confidence and may abstain --- a discipline this algebra's own Mix
 does not have available to it, and should not manufacture.
 
-\subsection{Spectral storage (optional, later)}
-Spherical-harmonic arrays of size $O(L^2)$ may later store a field of
-many atoms. They are not the working atom of
-\hyperref[subsec:axiom1]{Axiom~1}, and $O(N_{\mathrm{vox}}^3)\to O(L^2)$ is not a theorem of
-Pattern Arithmetic as it stands.
-
 \section{Higher-order systems as bowls and paths}
 \label{sec:higher_order}
 These examples illustrate the $\uplus$-versus-$T$ split with borrowed
@@ -2481,8 +2442,7 @@ vocabulary. They are costumes
 or disease.
 Higher-order truths are bowls of basic units read by a path.
 A storm, a forest, or a cancellation is such a reading.
-It is an example of the spine, not a model of the sky, the woods,
-or the clinic. The path defines the higher-order system: the bowl
+The path defines the higher-order system: the bowl
 only lists who is present.
 
 A vertical pinball table makes the same split visible. Each bumper
@@ -2500,9 +2460,7 @@ the mechanics of every $T$, and not a second axiom. A Mix reading ($\boxplus$), 
 
 \subsection{Atmospheric storm (costume): one pipeline with numbers}
 \label{subsec:storm_pipeline}
-This is a costume for the spine, not a model of the sky.
-These walks are not weather equations, and they are not forest
-equations. They are still computations: ordered readings of many
+These walks are ordered readings of many
 co-present units that can land near a higher-order name already
 seated in a dictionary.
 Four incoming
@@ -2843,10 +2801,6 @@ Under Equation~\eqref{eq:enclosure_motion} the separation never
 increases, falling from $3$ to $1.80$. Dividing each step by $r^3$ ---
 a $729$-fold weighting between the two --- makes the separation increase on more than a quarter of the $3000$ steps: between $830$ and $855$ of them, depending only on the order in which the arithmetic is carried out, because the oscillation amplifies rounding. The count is given as a range for that reason.
 
-A printed configuration makes a result replayable. It does not make
-the result right: a replay reproduces what the rule did from those seats, and whether that answer is the one a reader wanted is a
-separate question.
-
 \subsection{What the enclosure does not supply}
 \label{subsec:enclosure_open}
 Assembly never repels, so nothing in the enclosure pushes members
@@ -2868,9 +2822,7 @@ Each paragraph below states what is reused and what is added. None of
 these citations is a claim of identity. The list is a
 boundary-drawing exercise against formalisms that share a sphere, an
 angle, or a rotation
-(Section~\ref{subsec:claim_scope}). It is not a unification of those
-fields, and it is not a proposal to replace quantum mechanics,
-embeddings, or transformers. Empty headings are omitted.
+(Section~\ref{subsec:claim_scope}). Empty headings are omitted.
 
 \paragraph{Bloch sphere.}
 A pure qubit is a point on $S^2$; a mixed qubit lives in the ball.

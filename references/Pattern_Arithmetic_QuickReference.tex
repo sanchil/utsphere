@@ -66,7 +66,7 @@
 \textbf{Assembly} $\bowtie$ & How do two units relate while both still sit? & $A\bowtie B=(A,B,\kappa_{AB},U_{AB})$. Both operands survive unchanged; nothing is fused. $U_{AB}<0$ always: the bracket $3+\hat n_A\!\cdot\!\hat n_B$ stays in $[2,4]$. & — & §2.9, eq. 12–14 \\
 \bottomrule
 \end{longtable}}
-Schoolbook $+$ (“how many?”) lives only in \texttt{num} mode (decode, add in $\mathbb Z$, encode; §6.2). The paper reserves each verb name “the way a keyword is reserved in a programming language”: once given a meaning it is not reused elsewhere for an unrelated or informal sense (Table 1).
+Schoolbook $+$ (“how many?”) lives only in \texttt{num} mode (decode, add in $\mathbb Z$, encode; §6.2). The paper reserves each verb name “the way a keyword is reserved in a programming language”: once given a meaning it is not reused elsewhere for an unrelated or informal sense (§1).
 
 \section*{2 · The axioms}
 {\small\setlength{\tabcolsep}{4pt}\begin{longtable}{L{0.8cm}L{3.1cm}L{10.3cm}L{1.8cm}}
@@ -116,12 +116,12 @@ $Q$ & Number of informational \textbf{vectors}. $Q\ge N$ is usual, not a rule. R
 $D$ & Number of \textbf{distinct cores} among the $N$: two cores coincide exactly when $\uplus$ would seat them together (content only; empty cores coincide; meta vectors never enter). $D\le N$, equality iff every core is distinct. Stored count. \\
 $N-D$ & How many times some core repeated. \\
 $A^{\langle k\rangle}$ & $k$ identical copies of $A$; has $kN_A$ cores. $A\oplus A=A^{\langle2\rangle}$. \\
-\textbf{empty atom} & Black: $N=1$, $Q=0$. $\mathcal{I}_{\mathrm{str}},\mathcal{I}_{\mathrm{vol}},\mathcal{I}_{\mathrm{en}},V_{\text{derived}}=0$; $\mathcal{I}_{\mathrm{mean}}=0$, $\mathcal{I}_{\mathrm{vcon}}=0$ by convention; $\mathcal{I}_{\mathrm{agr}}$, $\mathcal{I}_{\mathrm{scon}}$, $Q_{\text{eff}}$ undefined. Collapse keeps a silent contribution: $A\oplus0$ has one more core, same vectors; $0\oplus0\neq0$. \\
+\textbf{empty atom} & Black: $N=1$, $Q=0$. $\mathcal{I}_{\mathrm{str}},\mathcal{I}_{\mathrm{vol}},\mathcal{I}_{\mathrm{en}},V_{\text{derived}}=0$; $\mathcal{I}_{\mathrm{mean}}=0$, $\mathcal{I}_{\mathrm{vcon}}=0$ by convention; $\mathcal{I}_{\mathrm{agr}}$, $\mathcal{I}_{\mathrm{scon}}$, $\mathcal{I}_{\mathrm{coh}}$, $Q_{\text{eff}}$ undefined. Collapse keeps a silent contribution: $A\oplus0$ has one more core, same vectors; $0\oplus0\neq0$. \\
 \textbf{mass number / atomic number} & $N$ reads like a nucleus's mass number (every core counted), $D$ like its atomic number (distinct cores). An analogy of shape only. \\
 \bottomrule
 \end{longtable}}
 \section*{4 · Metrics (Axiom 7, §2.10)}
-All seven metrics are written $\mathcal{I}$ (script I, the information atom) with a subscript: str, vol, mean, en, agr, vcon, scon. Named in the paper: \emph{atom strength}, \emph{atom volume}, \emph{mean vector volume}, \emph{atom coherence}, \emph{effective vector count}; $\mathcal{I}_{\mathrm{en}}$ is the atom's \emph{information energy}; $\mathcal{I}_{\mathrm{agr}}$, $\mathcal{I}_{\mathrm{vcon}}$, $\mathcal{I}_{\mathrm{scon}}$ are its fifth, sixth and seventh metrics: \emph{atom agreement}, \emph{volume concentration} and \emph{shell concentration}. All presuppose an atom of $Q$ informational vectors $v_i=r_i\hat n_i$. None is used by any verb; each is read over the cores valid at the reading time. Identity: $\lvert V_{\text{derived}}\rvert^2=\mathcal{I}_{\mathrm{en}}+2\sum_{i<j}r_ir_j(\hat n_i\!\cdot\!\hat n_j)$, the structure of a variance of a sum.
+All seven metrics are written $\mathcal{I}$ (script I, the information atom) with a subscript: str, vol, mean, en, agr, vcon, scon. Atom coherence is a named ratio of two of them, written $\mathcal{I}_{\mathrm{coh}}$ and not counted as an eighth metric, as with $Q_{\text{eff}}$. Named in the paper: \emph{atom strength}, \emph{atom volume}, \emph{mean vector volume}, \emph{atom coherence}, \emph{effective vector count}; $\mathcal{I}_{\mathrm{en}}$ is the atom's \emph{information energy}; $\mathcal{I}_{\mathrm{agr}}$, $\mathcal{I}_{\mathrm{vcon}}$, $\mathcal{I}_{\mathrm{scon}}$ are its fifth, sixth and seventh metrics: \emph{atom agreement}, \emph{volume concentration} and \emph{shell concentration}. All presuppose an atom of $Q$ informational vectors $v_i=r_i\hat n_i$. None is used by any verb; each is read over the cores valid at the reading time. Identity: $\lvert V_{\text{derived}}\rvert^2=\mathcal{I}_{\mathrm{en}}+2\sum_{i<j}r_ir_j(\hat n_i\!\cdot\!\hat n_j)$, the structure of a variance of a sum.
 
 {\small\setlength{\tabcolsep}{4pt}\begin{longtable}{L{1.8cm}L{4.0cm}L{8.1cm}L{2.1cm}}
 \toprule
@@ -129,7 +129,7 @@ All seven metrics are written $\mathcal{I}$ (script I, the information atom) wit
 \midrule
 \endhead
 $V_{\text{derived}}$ & $\displaystyle\sum_{i=1}^{Q}r_i\hat n_i$ ($\chi$ excluded) & The raw, \textbf{uncapped} vector sum; per core and per atom (the atom's is the sum of its cores'). Reads as an effective pair $r=\lvert V\rvert$, $\hat n=V/r$ for a weight or a direction; not itself a unit; may act as $T$'s actor as it is (uncapped, angle $\pi\lvert V\rvert$ mod $360^\circ$; it follows size, not content). & any $Q$ \\
-$\mathcal{I}_{\mathrm{str}}$ & $\displaystyle\sum_ir_i$ & \textbf{Atom strength.} Denominator of atom coherence. & any $Q$ \\
+$\mathcal{I}_{\mathrm{str}}$ & $\displaystyle\sum_ir_i$ & \textbf{Atom strength.} Denominator of $\mathcal{I}_{\mathrm{coh}}$. & any $Q$ \\
 $\mathcal{I}_{\mathrm{vol}}$ & $\displaystyle\sum_ir_i^3$ & \textbf{Atom volume.} Strictly $<\mathcal{I}_{\mathrm{str}}$ whenever any $r_i<1$ — forced by the cap. & any $Q$ \\
 $\mathcal{I}_{\mathrm{mean}}$ & $\mathcal{I}_{\mathrm{vol}}/Q$ & \textbf{Mean vector volume.} & $Q\ge1$ ($:=0$ at $Q=0$) \\
 $\mathcal{I}_{\mathrm{en}}$ & $\displaystyle\sum_ir_i^2$ (eq. 15) & \textbf{Information energy}. Stands on its own; the energy the vectors would carry if every pair were orthogonal. & any $Q$ \\
@@ -137,7 +137,7 @@ $\mathcal{I}_{\mathrm{agr}}$ & $\dfrac{\sum_{i<j}r_ir_j(\hat n_i\cdot\hat n_j)}{
 $\mathcal{I}_{\mathrm{vcon}}$ & $\dfrac{Q^2}{Q-1}\operatorname{Var}(s_1,\ldots,s_Q)$, $s_i=r_i^3/\mathcal{I}_{\mathrm{vol}}$ (eq. 17) & \emph{Volume concentration} (sixth metric). $0$ when even, $1$ when one vector holds all. Equals the normalized Herfindahl index of the cubed shares. & $Q\ge2$ ($:=0$ at $Q\le1$) \\
 $\mathcal{I}_{\mathrm{scon}}(w)$ & $1$ if $K=1$; else $\dfrac{K^2}{K-1}\operatorname{Var}(p_1,\ldots,p_K)$, $p_k=n_k/Q$, bins of width $w$ (default $0.1$) (eq. 18) & \emph{Shell concentration} (seventh metric; across shells). Catches what $\mathcal{I}_{\mathrm{vcon}}$ cannot: many vectors independently landing at the same magnitude. & $Q\ge1$ \\
 $Q_{\text{eff}}$ & $\mathcal{I}_{\mathrm{str}}^2/\mathcal{I}_{\mathrm{en}}$ & \textbf{Effective vector count} — not an eighth metric. $1\le Q_{\text{eff}}\le Q$; scale-free; the largest vector holds at least $1/Q_{\text{eff}}$ of the strength; a \emph{count}, with $Q_{\text{eff}}/Q$ the size-free form. & $\mathcal{I}_{\mathrm{str}}>0$ \\
-\textbf{atom coherence} & $\lvert V_{\text{derived}}\rvert/\mathcal{I}_{\mathrm{str}}$ & How much strength survives into one resultant; $1$ for aligned vectors, falling toward $0$. Also a normalization of $V_{\text{derived}}$ into $[0,1]$. & $\mathcal{I}_{\mathrm{str}}>0$ \\
+$\mathcal{I}_{\mathrm{coh}}$ & $\lvert V_{\text{derived}}\rvert/\mathcal{I}_{\mathrm{str}}$ & \textbf{Atom coherence.} How much strength survives into one resultant; $1$ for aligned vectors, falling toward $0$. Also a normalization of $V_{\text{derived}}$ into $[0,1]$. & $\mathcal{I}_{\mathrm{str}}>0$ \\
 \bottomrule
 \end{longtable}}
 \section*{5 · Meta vectors (§2.11)}
@@ -226,7 +226,7 @@ $\epsilon_{\text{allow}}$ & named, not derived & §9.3 & Checkpoints whose bodie
 any other pair & no & yes & yes & open & open & open \\
 \bottomrule
 \end{longtable}}
-§6.4 (Table 3). Every Mix entry is also subject to the place restriction (shared $\hat n$). $\uplus$ is \emph{yes} for every pair: a bowl records presence and makes no domain claim. $\oplus$: \emph{yes} for every pair, like $\uplus$, and it keeps the count. $^\dagger$Mix on two words is geometry, not a $\chi$-reading of language. \textbf{A document is a sequence, not a blend} (§6.3): words and numbers meet only by \emph{juxtaposition}, \emph{typed action} ($T$ across sorts needs an explicit output sort) or \emph{cast}; $\mathrm{dawn}\uplus37.4$ has no meaning until one side is cast.
+§6.4 (Table 2). Every Mix entry is also subject to the place restriction (shared $\hat n$). $\uplus$ is \emph{yes} for every pair: a bowl records presence and makes no domain claim. $\oplus$: \emph{yes} for every pair, like $\uplus$, and it keeps the count. $^\dagger$Mix on two words is geometry, not a $\chi$-reading of language. \textbf{A document is a sequence, not a blend} (§6.3): words and numbers meet only by \emph{juxtaposition}, \emph{typed action} ($T$ across sorts needs an explicit output sort) or \emph{cast}; $\mathrm{dawn}\uplus37.4$ has no meaning until one side is cast.
 
 \section*{8 · Dimensions: how an actor grows beyond three}
 {\small\setlength{\tabcolsep}{4pt}\begin{longtable}{L{2.6cm}L{2.4cm}L{5.0cm}L{2.6cm}}
@@ -335,14 +335,15 @@ Verdicts & Saying what a resting state \emph{means} is a later reading, not a ve
 \textbf{Arithmetic} (this paper's sense) & A unit, the operations on it, and the properties each operation is stated and checked to have. & §1.4 \\
 \textbf{Assembly} $\bowtie$ & Relates two intact units by $(\kappa_{AB},U_{AB})$ without fusing them. & §2.9 \\
 \textbf{Atom} & The typed unit. \emph{Teaching atom}: one arrow. \emph{Collapsed atom}: $N$ cores, $Q$ vectors, one closure. & §2.2, §2.10 \\
-\textbf{Atom coherence} & $\lvert V_{\text{derived}}\rvert/\mathcal{I}_{\mathrm{str}}$. With the direction of $V_{\text{derived}}$ it is a colour's locator: colour lives in $\hat n$, phase is kept for mixing, and $\lvert V_{\text{derived}}\rvert$ measures size, not colour. & §2.10 \\
+\textbf{Atom as a data unit} & A basic data unit beside the containers: set = bowl ($\uplus$); counted bag = Collapsed atom; list or tuple = the path or tape; dictionary = cores keyed by identity. Limits: no order of its own; found by key or comparison, not index; reading back a name is a comparison, not an exact inverse. & §2.11; Inference §8.9 \\
+\textbf{Atom coherence} $\mathcal{I}_{\mathrm{coh}}$ & $\lvert V_{\text{derived}}\rvert/\mathcal{I}_{\mathrm{str}}$. With the direction of $V_{\text{derived}}$ it is a colour's locator: colour lives in $\hat n$, phase is kept for mixing, and $\lvert V_{\text{derived}}\rvert$ measures size, not colour. & §2.10 \\
 \textbf{Axis} ($\hat n_w$, fixed part $F$) & The line (3-D) or subspace of dimension $N_{\mathrm{dim}}-2$ that $T$ leaves fixed. & §4.4 \\
 \textbf{Black} $\mathbf0$ & $r=0$: an empty seat; $N=1$, $Q=0$; $T_{\mathbf0}=\mathrm{id}$; the identity of nothing else. Distinct from the empty bowl $\emptyset$. & §2.3, §2.5 \\
 \textbf{Body} $\vec P_{c,k}$ & A frozen camp's strength-weighted centre, measured afterwards by an observer; a description, not a destination. & §9.3, eq. 47 \\
 \textbf{Bowl} & A finite set of seated units: who is present. No order, no reading, no representation of the reading to come. May carry meta vectors; $\uplus$ does not read them. & §2.2, §2.5, §3.1 \\
 \textbf{Bundle} $\uplus$ & Union on bowls; idempotent; sort-blind. & §2.5 \\
 \textbf{Camp} & A separated group frozen at resolution $\eta$; their number is whatever the law, the seats and $\eta$ produce. & §9.3 \\
-\textbf{Cast} (two uses) & (a) lexicon cast $E_L$: token to state (eq. 40); (b) sort cast, e.g. $E_{\mathtt{num}\to\mathtt{word}}$ (§6.3). Normalizing $V_{\text{derived}}$ into $[0,1]$, to seat it as a unit or read atom coherence, is a normalization, not a cast (§2.10). & §6.3, §2.10; Inference §8.2 \\
+\textbf{Cast} (two uses) & (a) lexicon cast $E_L$: token to state (eq. 40); (b) sort cast, e.g. $E_{\mathtt{num}\to\mathtt{word}}$ (§6.3). Normalizing $V_{\text{derived}}$ into $[0,1]$, to seat it as a unit or read $\mathcal{I}_{\mathrm{coh}}$, is a normalization, not a cast (§2.10). & §6.3, §2.10; Inference §8.2 \\
 \textbf{Census cut} & The stated separation (or chain of short links) used to count camps; a convention. & §9.3 \\
 \textbf{Chart} & An exact, invertible encoding (e.g. \texttt{num}); not a Mix or $T$ homomorphism. & §2.1, §6.2 \\
 \textbf{Checkpoint} & One freeze read at some $\eta$ after some time; not a destination. & §9.3 \\
