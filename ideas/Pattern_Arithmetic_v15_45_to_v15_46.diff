@@ -1,0 +1,12 @@
+--- /mnt/user-data/outputs/Pattern_Arithmetic_v15_45.tex	2026-10-07 15:48:20.730753000 +0000
++++ Pattern_Arithmetic_v15_46.tex	2026-10-07 16:06:05.764064796 +0000
+@@ -3000,6 +3000,9 @@
+ semantics, if pursued, live on a higher-dimensional sphere that
+ carries the same verbs.
+ 
++\paragraph{Cancellation planes.}
++Take a plane through the origin that a path names. The vectors of an atom on either side of it give two sums, and the vectors lying in the plane are left out. The heights about the plane's normal $a$ balance when $a\cdot V_{\text{derived}}=0$, which holds for every plane that contains the direction of $V_{\text{derived}}$; every atom has such planes, and the statement says little. The stronger condition, that the vectors off the plane sum to zero, is a real one: an atom has such a plane exactly when its vectors split into a part that sums to zero and a part that lies in one plane through the origin. Which atoms have one such plane, several, or none, and whether those that have them share useful properties, is left open. It is recorded as a direction, not claimed, and no result of this paper depends on it.
++
+ \paragraph{Dimensionality.}
+ \label{subsec:dimensionality_open}
+ Nothing stated
