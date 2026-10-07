@@ -4,7 +4,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 
-\title{Ideas Register --- Consolidated, v1 to v64}
+\title{Ideas Register --- Consolidated, v1 to v65}
 \author{One file for every parked idea, with its current status}
 \date{}
 
@@ -20,14 +20,14 @@ where it stands now.
 
 \textbf{How status was determined.} Not from memory of the
 discussions. Each status was checked by searching the current paper,
-\texttt{Pattern\_Arithmetic\_v15\_40.tex} (v15\_40 adds the meta-vector catalogue and the atom-level meta vectors, on v15\_39, which lets $V_{\text{derived}}$ act as it is, on v15\_38, which writes the seven metrics as one family, $\mathcal I$ with a subscript, on v15\_37, which names three metrics and $\mathcal E$, on v15\_36, which states Mix over a Collapsed atom, on v15\_35, which adds one clause to \S2.10, on v15\_34, which writes the bowl reading as $\mathrm{Mix}(B)$, prints the populations behind the reproducibility claims and prints the enclosure force, on v15\_33, which tightens one sentence of v15\_32, which adds three paragraphs to \S1.4 to v15\_31, which rewords the Mix refusal, UnMix and four other sentences of v15\_30, which adds the UnCollapse cluster to v15\_29, which is v15\_28 with cosmetic changes only; v15\_28 differs from v15\_22
+\texttt{Pattern\_Arithmetic\_v15\_41.tex} (v15\_41 states the structure sentence, on v15\_40, which adds the meta-vector catalogue and the atom-level meta vectors, on v15\_39, which lets $V_{\text{derived}}$ act as it is, on v15\_38, which writes the seven metrics as one family, $\mathcal I$ with a subscript, on v15\_37, which names three metrics and $\mathcal E$, on v15\_36, which states Mix over a Collapsed atom, on v15\_35, which adds one clause to \S2.10, on v15\_34, which writes the bowl reading as $\mathrm{Mix}(B)$, prints the populations behind the reproducibility claims and prints the enclosure force, on v15\_33, which tightens one sentence of v15\_32, which adds three paragraphs to \S1.4 to v15\_31, which rewords the Mix refusal, UnMix and four other sentences of v15\_30, which adds the UnCollapse cluster to v15\_29, which is v15\_28 with cosmetic changes only; v15\_28 differs from v15\_22
 only in the atom-structure passages and the meta-vector subsection, so
 earlier checks stand), and
 --- for items destined
 elsewhere --- the \texttt{Assembly\_v1.tex} and
 \texttt{Inference\_v1.tex} copies on hand (which may be older than
 your working copies; if so, the ``not filed'' marks below should be
-rechecked against yours). Entries from v19 onward are appended here; v19 to v64 are the first forty-six.
+rechecked against yours). Entries from v19 onward are appended here; v19 to v65 are the first forty-seven.
 
 \paragraph{Status vocabulary.}
 \textbf{CLOSED} --- resolved and merged into the paper.
@@ -2142,6 +2142,12 @@ The entries above this one keep the symbols they were written with; this table i
 
 \textbf{The fix} (\texttt{Pattern\_Arithmetic\_v15\_40}: three edits; $52$ pages; $49$ equations, the same ones; no label changed, and the table is unnumbered so no table is renumbered; the same two overfull boxes). The Quick Reference gained two rows, the location row and the Results rule were updated.
 \emph{Status: R46 and R48 closed; Paper~1's only open rows are R27, R28 and R61, all the split.}
+
+\subsection*{v65 --- v15\_41: an atom is its vectors and their grouping}
+\textbf{Ruling.} The containment vector is not a meta vector and not a count per core. It has one entry per vector, naming the position of that vector's core; it is a label (renumbering the cores changes nothing), so it records a partition of the vectors, not a measurement. It is stored with the atom's vectors, as part of the atom's value; the map from cores to their vectors \emph{is} the atom, and how it is laid out in storage (nested, or a pool of vectors plus the containment vector) is an implementation detail the paper does not prescribe. The primary key is the core's position, which always exists; the identity key is a label read from the meta vectors, and the position is the fallback when it is gone or two cores share one.
+
+\textbf{The fix} (\texttt{Pattern\_Arithmetic\_v15\_41}: three short edits in ``Identity and containment'' and the catalogue row for $V_{\text{container}}$; $52$ pages; $49$ equations, the same ones; no label changed; the same two overfull boxes). The Quick Reference followed.
+\emph{Status: no row opened or closed; Paper~1's open rows remain R27, R28 and R61, the split.}
 
 \section{Merged directly, without an ideas entry}
 

@@ -25,7 +25,7 @@
 \maketitle
 \vspace{-2.4em}
 \begin{center}
-\small\emph{Extracted from Pattern\_Arithmetic\_v15\_40 (v15\_30 carried the UnCollapse cluster; v15\_31 reworded the Mix refusal and UnMix; v15\_32 and v15\_33 added and tightened composition, structure and contract paragraphs in §1.4; v15\_40 writes the bowl reading as Mix(B), prints the populations behind the reproducibility claims, and prints the enclosure force): section and equation numbers are unchanged. Section numbers (§) and equation numbers (eq.) refer to that document. Every number in Part 9 was recomputed from the paper's printed inputs (reproduce\_v15\_40.py).}
+\small\emph{Extracted from Pattern\_Arithmetic\_v15\_41 (v15\_30 carried the UnCollapse cluster; v15\_31 reworded the Mix refusal and UnMix; v15\_32 and v15\_33 added and tightened composition, structure and contract paragraphs in §1.4; v15\_41 writes the bowl reading as Mix(B), prints the populations behind the reproducibility claims, and prints the enclosure force): section and equation numbers are unchanged. Section numbers (§) and equation numbers (eq.) refer to that document. Every number in Part 9 was recomputed from the paper's printed inputs (reproduce\_v15\_41.py).}
 \end{center}
 \vspace{0.4em}
 \section*{0 · The soul of the paper, on one page}
@@ -155,7 +155,7 @@ $V_{\text{expiry}}$ & per core & When the core stops being valid. \textbf{Absenc
 $V_{\text{location}}$ & per core, and per atom where a use supplies one & A point on a sphere (latitude as polar angle, longitude as azimuth). Not a sort: a place is a coordinate, not a claim with a strength. \\
 $V_{\text{link}}$ & per core & Names another atom by one of that atom's meta vectors, never by content (a word is never linked to a poem). Only \textbf{backward} links are stored, at birth; forward and bidirectional links are views (a search for atoms whose backward link names a given one). A Collapse result gets a backward link naming its sources. \\
 $V_{\text{identity}}$ & per core & The identity key: the tuple (sort, source link, timestamp) of meta vectors the core already carries; no axis of its own; compared by equality; never enters the equality of atoms. \\
-$V_{\text{container}}$ & per vector & The containment vector: the position of the vector's core in the atom's list of cores; $\mathbb R^1$, an index. Listed beside the meta vectors but \textbf{enters} the equality of atoms, being the grouping itself. \\
+$V_{\text{container}}$ & per vector & The containment vector: one entry per vector, naming the position of its core in the atom's list of cores; $\mathbb R^1$, an index, a label and not a measurement (renumbering the cores changes nothing). Listed beside the meta vectors but \textbf{enters} the equality of atoms, being the grouping itself. \\
 \bottomrule
 \end{longtable}}
 \subsection*{Rules that govern all of them}
@@ -168,7 +168,7 @@ $V_{\text{container}}$ & per vector & The containment vector: the position of th
 \textbf{Turning} & Turn an atom as a whole (same rotation and phase shift on each vector): $V_{\text{derived}}$ turns with it; scalar meta vectors are carried unchanged; angles, magnitudes and distances among the information vectors and $V_{\text{derived}}$ are preserved. \\
 \textbf{Atoms are not edited} & An atom is a value. Change is Collapse or UnCollapse, each returning a new atom; recorded meta vectors never change after birth. There is no “last modified”. \\
 \textbf{Equality} & Two tests. \emph{Equal}: the same vectors in the same grouping; meta vectors never enter (what $\uplus$, $D$ and UnCollapse use). \emph{The same individual}: equal, and the meta vectors agree too ($==$ against “is”). Equality is exact; measured readings are made comparable when they are seated. Were the timestamp part of the value, $N-D$ would always be $0$ and $A\uplus A=A$ would never apply. \\
-\textbf{Identity and containment} & Identity is read from meta vectors (the identity key) and never enters equality; it can be dropped and UnCollapse still works by position. Containment is \emph{not} a meta vector: it is the grouping, part of the atom's value. \\
+\textbf{Identity and containment} & An atom is its vectors together with their grouping into cores (its structure; layout in storage is not the paper's concern); meta vectors are the labels. Identity is read from meta vectors (the identity key) and never enters equality; it can be dropped and UnCollapse still works by position. Containment is \emph{not} a meta vector: it is the grouping, part of the atom's value. \\
 \textbf{Results} & Every result is a new atom with its own new timestamp and a backward link naming its operands; the cores that survive keep theirs. A result is also one new core on top of those: it carries its own $V_{\text{derived}}$ and may carry its own $V_{\text{location}}$ and $V_{\text{expiry}}$, supplied by a use; no verb computes them from the operands'. \\
 \textbf{Expiry is a reading} & Everything is read at a time $t$ (default now). An expired core contributes no vectors and reads as a black core; $N$, $D$ are stored counts and do not change with $t$; $Q$, $V_{\text{derived}}$, the metrics and every process read only valid cores. An atom's expiry applies to all its cores; a contribution's expiry is carried onto each of its cores at Collapse. An expired core is noise: it and its vectors may be removed, by UnCollapse selected by expiry (a new atom; $N$ and $D$ then fall). A backward link is lineage, not participation, and stays readable. \\
 \textbf{Nothing loses identity} & Under Collapse, Bundle and Mix the individual persists as meta vectors; this is persistence, not recovery. Mix leaves its sources unconsumed and names them by backward links; UnMix stays impossible. \\
@@ -269,7 +269,7 @@ Enclosure, six printed units, $\eta=10^{-5}$ & $628,\ 1261,\ 2526,\ 6320$ steps 
 Enclosure, pair $r=0.9$, $r=0.1$, $\delta=0.02$ & separation never increases, $3\to1.80$; dividing each step by $r^3$ (a $729$-fold weighting) makes it oscillate & §10.4 \\
 \bottomrule
 \end{longtable}}
-\textbf{What reproduces, and what is sensitive:} every printed number is recomputed by \texttt{reproduce\_v15\_40.py} from its printed inputs. One count, the number of steps on which the weighted pair's separation increases, depends on rounding and is printed as a range ($830$ to $855$ of $3000$). Shell bins are defined in exact arithmetic, because $\lfloor0.3/0.1\rfloor$ is $2$ in floating point.
+\textbf{What reproduces, and what is sensitive:} every printed number is recomputed by \texttt{reproduce\_v15\_41.py} from its printed inputs. One count, the number of steps on which the weighted pair's separation increases, depends on rounding and is printed as a range ($830$ to $855$ of $3000$). Shell bins are defined in exact arithmetic, because $\lfloor0.3/0.1\rfloor$ is $2$ in floating point.
 
 \section*{10 · Named conventions — choices, not truths}
 {\small\setlength{\tabcolsep}{4pt}\begin{longtable}{L{4.0cm}L{10.2cm}L{2.1cm}}
