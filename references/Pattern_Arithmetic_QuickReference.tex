@@ -25,7 +25,7 @@
 \maketitle
 \vspace{-2.4em}
 \begin{center}
-\small\emph{Extracted from Pattern\_Arithmetic\_v15\_38 (v15\_30 carried the UnCollapse cluster; v15\_31 reworded the Mix refusal and UnMix; v15\_32 and v15\_33 added and tightened composition, structure and contract paragraphs in §1.4; v15\_38 writes the bowl reading as Mix(B), prints the populations behind the reproducibility claims, and prints the enclosure force): section and equation numbers are unchanged. Section numbers (§) and equation numbers (eq.) refer to that document. Every number in Part 9 was recomputed from the paper's printed inputs (reproduce\_v15\_38.py).}
+\small\emph{Extracted from Pattern\_Arithmetic\_v15\_39 (v15\_30 carried the UnCollapse cluster; v15\_31 reworded the Mix refusal and UnMix; v15\_32 and v15\_33 added and tightened composition, structure and contract paragraphs in §1.4; v15\_39 writes the bowl reading as Mix(B), prints the populations behind the reproducibility claims, and prints the enclosure force): section and equation numbers are unchanged. Section numbers (§) and equation numbers (eq.) refer to that document. Every number in Part 9 was recomputed from the paper's printed inputs (reproduce\_v15\_39.py).}
 \end{center}
 \vspace{0.4em}
 \section*{0 · The soul of the paper, on one page}
@@ -128,7 +128,7 @@ All seven metrics are written $\mathcal{I}$ (script I, the information atom) wit
 \textbf{Symbol} & \textbf{Formula} & \textbf{What it measures} & \textbf{Requires} \\
 \midrule
 \endhead
-$V_{\text{derived}}$ & $\displaystyle\sum_{i=1}^{Q}r_i\hat n_i$ ($\chi$ excluded) & The raw, \textbf{uncapped} vector sum; per core and per atom (the atom's is the sum of its cores'). Reads as an effective pair $r=\lvert V\rvert$, $\hat n=V/r$ for a weight or a direction; not itself a unit; needs a cast into $[0,1]$ before acting as $T$'s actor. & any $Q$ \\
+$V_{\text{derived}}$ & $\displaystyle\sum_{i=1}^{Q}r_i\hat n_i$ ($\chi$ excluded) & The raw, \textbf{uncapped} vector sum; per core and per atom (the atom's is the sum of its cores'). Reads as an effective pair $r=\lvert V\rvert$, $\hat n=V/r$ for a weight or a direction; not itself a unit; may act as $T$'s actor as it is (uncapped, angle $\pi\lvert V\rvert$ mod $360^\circ$; it follows size, not content). & any $Q$ \\
 $\mathcal{I}_{\mathrm{str}}$ & $\displaystyle\sum_ir_i$ & \textbf{Atom strength.} Denominator of atom coherence. & any $Q$ \\
 $\mathcal{I}_{\mathrm{vol}}$ & $\displaystyle\sum_ir_i^3$ & \textbf{Atom volume.} Strictly $<\mathcal{I}_{\mathrm{str}}$ whenever any $r_i<1$ — forced by the cap. & any $Q$ \\
 $\mathcal{I}_{\mathrm{mean}}$ & $\mathcal{I}_{\mathrm{vol}}/Q$ & \textbf{Mean vector volume.} & $Q\ge1$ ($:=0$ at $Q=0$) \\
@@ -137,7 +137,7 @@ $\mathcal{I}_{\mathrm{agr}}$ & $\dfrac{\sum_{i<j}r_ir_j(\hat n_i\cdot\hat n_j)}{
 $\mathcal{I}_{\mathrm{vcon}}$ & $\dfrac{Q^2}{Q-1}\operatorname{Var}(s_1,\ldots,s_Q)$, $s_i=r_i^3/\mathcal{I}_{\mathrm{vol}}$ (eq. 17) & \emph{Volume concentration} (sixth metric). $0$ when even, $1$ when one vector holds all. Equals the normalized Herfindahl index of the cubed shares. & $Q\ge2$ ($:=0$ at $Q\le1$) \\
 $\mathcal{I}_{\mathrm{scon}}(w)$ & $1$ if $K=1$; else $\dfrac{K^2}{K-1}\operatorname{Var}(p_1,\ldots,p_K)$, $p_k=n_k/Q$, bins of width $w$ (default $0.1$) (eq. 18) & \emph{Shell concentration} (seventh metric; across shells). Catches what $\mathcal{I}_{\mathrm{vcon}}$ cannot: many vectors independently landing at the same magnitude. & $Q\ge1$ \\
 $Q_{\text{eff}}$ & $\mathcal{I}_{\mathrm{str}}^2/\mathcal{I}_{\mathrm{en}}$ & \textbf{Effective vector count} — not an eighth metric. $1\le Q_{\text{eff}}\le Q$; scale-free; the largest vector holds at least $1/Q_{\text{eff}}$ of the strength; a \emph{count}, with $Q_{\text{eff}}/Q$ the size-free form. & $\mathcal{I}_{\mathrm{str}}>0$ \\
-\textbf{atom coherence} & $\lvert V_{\text{derived}}\rvert/\mathcal{I}_{\mathrm{str}}$ & How much strength survives into one resultant; $1$ for aligned vectors, falling toward $0$. Also a cast of $V_{\text{derived}}$ into $[0,1]$. & $\mathcal{I}_{\mathrm{str}}>0$ \\
+\textbf{atom coherence} & $\lvert V_{\text{derived}}\rvert/\mathcal{I}_{\mathrm{str}}$ & How much strength survives into one resultant; $1$ for aligned vectors, falling toward $0$. Also a normalization of $V_{\text{derived}}$ into $[0,1]$. & $\mathcal{I}_{\mathrm{str}}>0$ \\
 \bottomrule
 \end{longtable}}
 \section*{5 · Meta vectors (§2.11)}
@@ -171,7 +171,7 @@ $V_{\text{link}}$ & per core & Names another atom by one of that atom's meta vec
 \textbf{Expiry is a reading} & Everything is read at a time $t$ (default now). An expired core contributes no vectors and reads as a black core; $N$, $D$ are stored counts and do not change with $t$; $Q$, $V_{\text{derived}}$, the metrics and every process read only valid cores. An atom's expiry applies to all its cores; a contribution's expiry is carried onto each of its cores at Collapse. An expired core is noise: it and its vectors may be removed, by UnCollapse selected by expiry (a new atom; $N$ and $D$ then fall). A backward link is lineage, not participation, and stays readable. \\
 \textbf{Nothing loses identity} & Under Collapse, Bundle and Mix the individual persists as meta vectors; this is persistence, not recovery. Mix leaves its sources unconsumed and names them by backward links; UnMix stays impossible. \\
 \textbf{Absence is not zero} & For any meta vector: an absent location is not $(0,0)$; “expiry $0$ means none” would read as already expired. \\
-\textbf{No verb changes one} & No verb changes a meta vector or takes one as an operand; a verb may read one (Assembly reads $V_{\text{derived}}$ and the seat). A meta vector never becomes an actor. \\
+\textbf{No verb changes one} & No verb changes a meta vector or takes one as an operand, except that $T$'s actor may be $V_{\text{derived}}$, read as it is; a verb may read one (Assembly reads $V_{\text{derived}}$ and the seat). \\
 \textbf{Uses} & Group atoms for a task (collect, order, assemble). Grouping needs a comparison stated with each kind (great-circle for a location, cyclic for a clock face, equality for an identifier); none is common to all. Direction is the cleaner assembly rule; magnitude enters as a weight. Links declare structure and Assembly's energy produces it from geometry and a seat; the two are separate. Links can carry an order past $\uplus$, which does not read them, so order still comes from outside and the path is where it is walked. At contact the best partner of an atom of strength $0.60$ has strength $0.30$; at separation $3$ it is the strongest available. \\
 \bottomrule
 \end{longtable}}
@@ -259,7 +259,7 @@ Storm: Deepen / Clear endpoints & $(0.7071,-0.6124,-0.3536)$, $(110.7^\circ,319.
 Offset on an equator ($0^\circ,30^\circ,90^\circ$) & lands at $(-\tfrac12,\tfrac{\sqrt3}2,0)$, $120^\circ$ — a protractor check, not the operator & §5.2 \\
 Unmixing: $0^\circ/120^\circ$ against $10^\circ/100^\circ$ & same phasor sum (weights $0.643$, $0.766$); residual at rounding level & §8.2 \\
 Alignment, $r=0.85$, pairs $5.7^\circ$ apart & $Q=2$: raw $0.72$, $\alpha=0.995$; $Q=5$ on a cone of half-angle $5.7^\circ$: $7.14$, $0.988$ & §2.10 \\
-Three aligned at $r=0.5$ & $\lvert V\rvert=1.5$, $\alpha(1.5)=270^\circ$ — not a rotation $T$ accepts uncast & §2.10 \\
+Three aligned at $r=0.5$ & $\lvert V\rvert=1.5$, a turn of $270^\circ$ as $T$'s actor, read as it is; $51.877\to337.9^\circ$, $5187.748\to314.6^\circ$ & §2.10 \\
 Dominant vector $0.95$ against three at $0.2$ & volume share $0.973$ & §2.10 \\
 Best partner for an atom of $r=0.60$ (Assembly energy) & at contact $r_B=0.30$; at separation $3$ the strongest available ($1.0$) & §2.11 \\
 $\mathcal{I}_{\mathrm{scon}}$: $10@0.98$, $3@0.3$, $400@0.65$ & $0.908$ at $w=0.1$ and $w=0.05$ & §2.10 \\
@@ -267,7 +267,7 @@ Enclosure, six printed units, $\eta=10^{-5}$ & $628,\ 1261,\ 2526,\ 6320$ steps 
 Enclosure, pair $r=0.9$, $r=0.1$, $\delta=0.02$ & separation never increases, $3\to1.80$; dividing each step by $r^3$ (a $729$-fold weighting) makes it oscillate & §10.4 \\
 \bottomrule
 \end{longtable}}
-\textbf{What reproduces, and what is sensitive:} every printed number is recomputed by \texttt{reproduce\_v15\_38.py} from its printed inputs. One count, the number of steps on which the weighted pair's separation increases, depends on rounding and is printed as a range ($830$ to $855$ of $3000$). Shell bins are defined in exact arithmetic, because $\lfloor0.3/0.1\rfloor$ is $2$ in floating point.
+\textbf{What reproduces, and what is sensitive:} every printed number is recomputed by \texttt{reproduce\_v15\_39.py} from its printed inputs. One count, the number of steps on which the weighted pair's separation increases, depends on rounding and is printed as a range ($830$ to $855$ of $3000$). Shell bins are defined in exact arithmetic, because $\lfloor0.3/0.1\rfloor$ is $2$ in floating point.
 
 \section*{10 · Named conventions — choices, not truths}
 {\small\setlength{\tabcolsep}{4pt}\begin{longtable}{L{4.0cm}L{10.2cm}L{2.1cm}}
@@ -292,7 +292,7 @@ standard dictionaries and the meta-vector catalogue & Recommendations, recorded 
 \textbf{Item} & \textbf{Status in the paper} & \textbf{Where} \\
 \midrule
 \endhead
-Collapsed atom as the actor of $T$ & An example is not claimed here; a cast is named at the call site. A bowl is not an actor: $T$ takes one unit. & §2.10 \\
+Collapsed atom as the actor of $T$ & $V_{\text{derived}}$ acts as it is (angle mod $360^\circ$); a worked example is not claimed here. A bowl is not an actor: $T$ takes one unit. & §2.10 \\
 Reducing a path by merging close actors & Sequential actors already compose into one rotation for free (closure). Replacing merely \emph{close} actors is a different operation, coarse-graining, whose shape only is stated: it yields an additional derived actor \emph{beside} its sources and removes none. Which merge rule, and what drift bound, belongs to Inference. & §12.1 \\
 Dimensionality & The sphere $S^2$ is where the idea is taught; embedding-scale dimensions are a later choice. & §6.8, §12.1 \\
 Offset on Tier-1 sorts; antipodal offset & Untested here; antipodal seats have no unique short geodesic and that convention is not used. & §5.1, §6.4 \\
@@ -340,7 +340,7 @@ Verdicts & Saying what a resting state \emph{means} is a later reading, not a ve
 \textbf{Bowl} & A finite set of seated units: who is present. No order, no reading, no representation of the reading to come. May carry meta vectors; $\uplus$ does not read them. & §2.2, §2.5, §3.1 \\
 \textbf{Bundle} $\uplus$ & Union on bowls; idempotent; sort-blind. & §2.5 \\
 \textbf{Camp} & A separated group frozen at resolution $\eta$; their number is whatever the law, the seats and $\eta$ produce. & §10.3 \\
-\textbf{Cast} (three uses) & (a) lexicon cast $E_L$: token to state (eq. 42); (b) sort cast, e.g. $E_{\mathtt{num}\to\mathtt{word}}$ (§6.3); (c) the cast of the uncapped $V_{\text{derived}}$ back into $[0,1]$ so it may act as $T$'s actor — the clip, or atom coherence (§2.10). & §6.6, §6.3, §2.10 \\
+\textbf{Cast} (two uses) & (a) lexicon cast $E_L$: token to state (eq. 42); (b) sort cast, e.g. $E_{\mathtt{num}\to\mathtt{word}}$ (§6.3). Normalizing $V_{\text{derived}}$ into $[0,1]$, to seat it as a unit or read atom coherence, is a normalization, not a cast (§2.10). & §6.6, §6.3, §2.10 \\
 \textbf{Census cut} & The stated separation (or chain of short links) used to count camps; a convention. & §10.3 \\
 \textbf{Chart} & An exact, invertible encoding (e.g. \texttt{num}); not a Mix or $T$ homomorphism. & §2.1, §6.2 \\
 \textbf{Checkpoint} & One freeze read at some $\eta$ after some time; not a destination. & §10.3 \\

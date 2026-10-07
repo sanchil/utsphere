@@ -1,0 +1,67 @@
+382c382
+< \paragraph{Composition.} Diverse units come together in one space by composition, not by combination. Bundle keeps their presence and drops repetition; Collapse keeps every vector and every count, whatever the sorts. Neither computes anything across the units, and either can be taken apart again, by Remove or by UnCollapse (Section~\ref{subsec:process_principle_uncollapse}). The whole is read as one unit through its derived pair, a reading that forgets while the atom is kept; cast into $[0,1]$, that pair may be seated as a unit of the next level (Section~\ref{subsec:process_principle}). Mix is different in kind: it combines, and only states that share a direction and a sort --- one domain, with one underlying law; across sorts the type table says no or open (Table~\ref{tab:type_table}). How differing realities might combine in a higher space is left to Assembly and Inference.
+---
+> \paragraph{Composition.} Diverse units come together in one space by composition, not by combination. Bundle keeps their presence and drops repetition; Collapse keeps every vector and every count, whatever the sorts. Neither computes anything across the units, and either can be taken apart again, by Remove or by UnCollapse (Section~\ref{subsec:process_principle_uncollapse}). The whole is read as one unit through its derived pair, a reading that forgets while the atom is kept; normalized into $[0,1]$, that pair may be seated as a unit of the next level (Section~\ref{subsec:process_principle}). Mix is different in kind: it combines, and only states that share a direction and a sort --- one domain, with one underlying law; across sorts the type table says no or open (Table~\ref{tab:type_table}). How differing realities might combine in a higher space is left to Assembly and Inference.
+536c536
+< The teaching atom is this 4-tuple: one arrow, $Q=1$. \hyperref[subsec:axiom_v1_metrics]{Axiom~7} allows an atom to hold $Q$ such arrows under one closure, each still capped at $r_i\le 1$, plus one uncapped derived sum that is not itself a unit. That Collapsed structure does not replace Equation~\eqref{eq:unit_truth}. Every informational arrow in the Collapsed atom is an instance of this axiom. Operators that need a single pair $(r,\hat n)$ read the derived sum as a weight or a direction; as the actor of $T$ in three dimensions, only after the cast of \hyperref[subsec:axiom_v1_metrics]{Axiom~7}, and beyond three dimensions not from the derived sum at all, but from $N_{\mathrm{dim}}-2$ of the Collapsed atom's own orthonormal arrows directly (\S\ref{subsec:transform_higher_dim}). They do not mint a second kind of unit.
+---
+> The teaching atom is this 4-tuple: one arrow, $Q=1$. \hyperref[subsec:axiom_v1_metrics]{Axiom~7} allows an atom to hold $Q$ such arrows under one closure, each still capped at $r_i\le 1$, plus one uncapped derived sum that is not itself a unit. That Collapsed structure does not replace Equation~\eqref{eq:unit_truth}. Every informational arrow in the Collapsed atom is an instance of this axiom. Operators that need a single pair $(r,\hat n)$ read the derived sum as a weight or a direction; as the actor of $T$ in three dimensions, as it is (\hyperref[subsec:axiom_v1_metrics]{Axiom~7}), and beyond three dimensions not from the derived sum at all, but from $N_{\mathrm{dim}}-2$ of the Collapsed atom's own orthonormal arrows directly (\S\ref{subsec:transform_higher_dim}). They do not mint a second kind of unit.
+1065,1077c1065,1078
+< as the actor $w$ of $T$ (\S\ref{subsec:transform_definition}, whose
+< domain is stated as $w\in\mathcal{S}$) only after an explicit cast
+< back into $[0,1]$ at the call site --- the clip already used for
+< Mix's own uncapped sum (\hyperref[subsec:axiom_interference]{Axiom~5}), or,
+< with no new machinery at all, atom coherence itself, $\lvert
+< V_{\text{derived}}\rvert/\mathcal{I}_{\mathrm{str}}$. Uncast, it is not a valid
+< $w$: three vectors at $r=0.5$, perfectly aligned, give $\lvert
+< V_{\text{derived}}\rvert=1.5$, outside $\mathcal{S}$ entirely, and
+< $\alpha(1.5)=270^\circ$ is not a rotation this axiom's $T$ takes ---
+< not because $\mathrm{SO}(3)$ forbids it, but because $w=1.5$ was
+< never $T$'s to accept. Until a cast is named at the call site, $T$
+< takes teaching atoms only; every worked $T$ path in this paper takes
+< one, and a Collapsed-atom-as-actor example is not claimed here. A bowl is not an actor either: it is a collection, and $T$ takes one unit as its actor. For $Q=1$,
+---
+> as the actor $w$ of $T$ (\S\ref{subsec:transform_definition}) as it is: a
+> meta vector read as the pair $(\lvert V_{\text{derived}}\rvert,\,
+> V_{\text{derived}}/\lvert V_{\text{derived}}\rvert)$, uncapped and not
+> normalized, since it is not an informational vector and is not treated as
+> one. A strength above $1$ is then an angle above $180^\circ$, taken modulo
+> $360^\circ$: three vectors at $r=0.5$, perfectly aligned, give $\lvert
+> V_{\text{derived}}\rvert=1.5$ and a turn of $270^\circ$. Because $\lvert
+> V_{\text{derived}}\rvert$ grows with the number of cores, the turn follows
+> size, not content: $\lvert V_{\text{derived}}\rvert=51.877$ and $5187.748$
+> turn by $337.9^\circ$ and $314.6^\circ$. A use that wants a turn that
+> follows content takes atom coherence, $\lvert
+> V_{\text{derived}}\rvert/\mathcal{I}_{\mathrm{str}}$, as the strength, a
+> choice at the call site. Every worked $T$ path in this paper takes a
+> teaching atom, and a Collapsed-atom-as-actor example is not claimed here. A bowl is not an actor either: it is a collection, and $T$ takes one unit as its actor. For $Q=1$,
+1224c1225
+< $w=0.1$ --- ten shells spanning $[0,1]$. Binning the $Q$ informational vectors by $\lfloor r_i/w\rfloor$, computed in exact arithmetic so that a strength of exactly $kw$ lies in shell $k$ (in floating point $\lfloor 0.3/0.1\rfloor$ is $2$, not $3$), into $K$ occupied shells with populations $n_1,\ldots,n_K$ and $p_k = n_k/Q$:
+---
+> $w=0.1$ --- ten shells spanning $[0,1]$. A shell here is a strength bin of width $w$, not a unit in a bowl. Binning the $Q$ informational vectors by $\lfloor r_i/w\rfloor$, computed in exact arithmetic so that a strength of exactly $kw$ lies in shell $k$ (in floating point $\lfloor 0.3/0.1\rfloor$ is $2$, not $3$), into $K$ occupied shells with populations $n_1,\ldots,n_K$ and $p_k = n_k/Q$:
+1284c1285,1286
+< it out; no verb changes one or takes one as an operand, though a verb may
+---
+> it out; no verb changes one, and none takes one as an operand except that $T$'s
+> actor may be $V_{\text{derived}}$, read as it is, though a verb may
+1400,1401c1402,1403
+< together. The role is read-only, and a meta vector never becomes an
+< actor. Grouping needs a comparison for each kind, stated with the kind:
+---
+> together. The role is read-only: no verb changes a meta vector, and of them only
+> $V_{\text{derived}}$ may act, as itself (Axiom~7). Grouping needs a comparison for each kind, stated with the kind:
+1701c1703,1706
+< rotates by the maximal $180^\circ$). Magnitude $r_x$ and sort $\tau_x$ are left invariant:
+---
+> rotates by the maximal $180^\circ$). The same formula serves an actor of
+> strength above $1$, which can only be the uncapped $V_{\text{derived}}$ of
+> Axiom~7 read as it is; the angle $\pi r_w$ is then taken modulo $360^\circ$,
+> and for $r_w\le1$ nothing changes. Magnitude $r_x$ and sort $\tau_x$ are left invariant:
+1721c1726
+< Then $T_{w^{*}}\!\big(T_w(x)\big) = x$ for all $x$. As rotations, only $\alpha=0$ ($r_w=0$) and $\alpha=180^\circ$ ($r_w=1$) equal their own reverse; the inverse state $w^{*}$ is still required so that phase is cancelled too. This undoes a transformation on a state that persists. It is distinct from $\{A\}\setminus A=\emptyset$ (last shell removed, leaving the empty bowl) and from Mix of equal anti-phase marks (a reading into black). Neither of those is an inverse of $T$.
+---
+> Then $T_{w^{*}}\!\big(T_w(x)\big) = x$ for all $x$. As rotations, only a multiple of $180^\circ$ equals its own reverse ($r_w=0$ and $r_w=1$ within $\mathcal{S}$, and every whole number above); the inverse state $w^{*}$ is still required so that phase is cancelled too. This undoes a transformation on a state that persists. It is distinct from $\{A\}\setminus A=\emptyset$ (last shell removed, leaving the empty bowl) and from Mix of equal anti-phase marks (a reading into black). Neither of those is an inverse of $T$.
+3283c3288
+< packing more arrows into one 3-D atom is a density choice, not a
+---
+> packing more arrows into one 3-D atom is a packing choice, not a
