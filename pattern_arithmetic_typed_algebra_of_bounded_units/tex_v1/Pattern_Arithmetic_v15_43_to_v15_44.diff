@@ -1,0 +1,79 @@
+--- /mnt/user-data/outputs/Pattern_Arithmetic_v15_43.tex	2026-10-07 12:29:54.335573000 +0000
++++ Pattern_Arithmetic_v15_44.tex	2026-10-07 12:43:07.589952908 +0000
+@@ -44,7 +44,7 @@
+ 
+ % ABSTRACT
+ \begin{abstract}
+-Ordinary arithmetic treats the integer 1 as a unit of truth: $1=1$ and $1+1=2$. Counting is only one algebra. Colors and musical notes are also units of truth; combining them yields a hue or a chord, not a larger integer. This paper treats a pattern as a higher-order unit and represents one pattern by one typed point
++Counting answers \emph{how many?}, but it is only one arithmetic. Colors and musical notes are also units of truth: combining them yields a hue or a chord, not a larger integer. This paper builds one such arithmetic. Its unit is the \emph{information atom}, a typed point
+ $x = (r,\,\hat n,\,\chi,\,\tau)$
+ on a unit sphere $\mathcal{S} \subset \mathbb{R}^3$\footnote{Three
+ dimensions is the standing assumption throughout --- every axiom,
+@@ -53,35 +53,19 @@
+ $T$ to $S^{N_{\mathrm{dim}}-1}$ for $N_{\mathrm{dim}}\ne3$; that is a
+ named exception, not a change to the default, as is the
+ general-dimension form of offset's transport in
+-\S\ref{subsec:offset_logexp}.}:
+-strength $r \in [0, 1]$,
+-direction $\hat n \in S^2$ (equivalently $(\theta,\phi)$),
+-internal phase-color $\chi \in [0, 2\pi)$,
+-and sort $\tau$.
+-Pattern Arithmetic is the algebra of such units. Six verbs answer
+-six questions. Bundle ($\uplus$) lists who is present and does not
+-double identical states ($A \uplus A = A$); a Bundled unit may be
+-removed ($\{A\} \setminus A = \emptyset$). Collapse ($\oplus$)
+-combines several already-seated units into one, keeping every
+-contribution rather than discarding it; one core may be
+-taken back by UnCollapse ($\ominus$). Mix ($\boxplus$) reads a
+-composite; anti-phase cancellation to black is that reading, not
+-what Bundle or Collapse would do; UnMix, the reverse of that reading, does not
+-exist, since a Mixed result no longer determines the sources that
+-produced it. Transform ($T$) walks an order so the same ingredients
+-may form different expressions. Offset reuses a walk. Assembly
+-($\bowtie$) relates two units without fusing them --- the first
+-operator here that needs anything outside the 4-tuple: an external
+-seat. Units left alone descend an energy until a stated threshold
+-freezes them, resting in one camp or several; left longer, all would
+-merge into one. Bundle~$\to$~$T$~$\to$~result is
+-one pipeline, Collapse its count-preserving alternative when every
+-contribution must survive intact; assemble~$\to$~rest is the other. Division as
+-unmixing is shown ill-posed for this algebra, not attempted here. Words and numbers occupy the same sphere under different encodings and meet in a document by order and typed action, not by blending. The aim is a single bounded register that carries overlapping identities, structural paths, and mixed prose without a discrete grid. The sphere and its operators are one proposed encoding of a narrower claim --- a combination rule should match the unit --- not a theory of language, physics, biology, or computation.
++\S\ref{subsec:offset_logexp}.}: strength $r \in [0, 1]$, direction $\hat n \in S^2$, internal phase-color $\chi \in [0, 2\pi)$, and sort $\tau$. An atom may also hold several such vectors, in groups called cores. Six verbs act on atoms. Bundle ($\uplus$) lists who is present and does not double identical states. Collapse ($\oplus$) joins atoms keeping every contribution, and UnCollapse ($\ominus$) takes one core back. Mix ($\boxplus$) reads a bowl as a phasor sum and has no inverse, since a Mixed result no longer determines its sources. Transform ($T$) walks an order, so the same ingredients may form different expressions. Offset reuses a walk. Assembly ($\bowtie$) relates two units without fusing them, through an external seat, and units left alone descend its energy until a stated threshold freezes them in one camp or several. Words and numbers share the sphere under different encodings and meet by order and typed action, not by blending. The claim is narrow: a combination rule should match the unit. It is not a theory of language, physics, biology, or computation.
+ \end{abstract}
+ 
+ \section{Introduction}
+ 
++\paragraph{Summary.}
++Counting answers the question \emph{how many?} Other kinds of information combine under other rules: red and green light make yellow, two notes make a chord, a tone and its opposite phase make silence. This paper takes that observation as a thesis. Wherever a domain supplies a unit of truth and a small set of rules by which such units combine, the unit and its rules together form an arithmetic of that domain.
++
++The paper builds one such arithmetic. Its unit is the \emph{information atom}, also called the unit: a strength, a direction on a sphere, a phase, and a sort that says which operations may act on it. An atom may hold several such vectors, in groups called cores. Six verbs act on atoms. Bundle collects them, Collapse joins them without losing any contribution, Mix reads a bowl as a phasor sum, Transform turns one atom by another, Offset copies a relation from one place to another, and Assembly pulls units together without fusing them. Each verb is stated as an axiom or a rule, with worked numbers. Meta vectors carry time, location, link and the like, outside the atom's content.
++
++The claim is narrow. A rule for combining should match the unit. The paper offers no theory of language, physics or biology, and it names its refusals as plainly as its results. The order of the paper is axioms, then verbs, then sorts, then examples. The sections that follow give the background and motivation in full.
++
++\paragraph{Background and motivation.}
+ Ordinary arithmetic uses the integer $1$ as a unit of truth.
+ The identity $1=1$ says that two tokens are of the same kind.
+ The rule $1+1=2$ says that combining two such tokens produces a
+@@ -190,21 +174,7 @@
+ conserved charge --- tested here on a narrow slice of the larger
+ question, not a claim to have already answered it.
+ 
+-Quantum mechanics and general relativity are the hardest-known case
+-of exactly this difficulty. Each governs its own domain with
+-extraordinary precision, and a century of serious effort --- string
+-theory, loop quantum gravity, causal set theory, asymptotic safety
+---- has not produced an agreed bridge between them, not for lack of
+-trying but because the two theories disagree on something as basic
+-as what spacetime is. If physics's own best attempts have not closed
+-a gap this well-specified, this paper's own gap, the refusal to Mix across differing directions, closed by refusal
+-rather than by a found rule
+-(\S\ref{subsec:mix_scattered_open}), is not a special failure; it is
+-the same difficulty, met honestly rather than talked around or
+-forced. Pattern Arithmetic does not propose to settle
+-it --- nothing here has been shown to apply to either theory --- but
+-the difficulty itself is evidence that starting at a narrower,
+-honestly-tested scale is the right place to begin.
++Physics shows the same difficulty at the largest scale. Quantum mechanics and general relativity each describe their own domain with great precision, and each speaks in its own terms, so joining them into one account remains an open question. Pattern Arithmetic does not address that question, and nothing here applies to either theory. The refusal to Mix across differing directions (\S\ref{subsec:mix_scattered_open}) is a small case of the same problem, settled by declining rather than by a found rule, and it is a reason to begin at a narrow scale and test it honestly.
+ 
+ When the object of interest is a structured whole rather than a
+ count, a hue, or a pitch, the natural unit is a \emph{pattern}.
