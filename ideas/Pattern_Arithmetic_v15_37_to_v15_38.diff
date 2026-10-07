@@ -1,0 +1,178 @@
+1070c1070
+< V_{\text{derived}}\rvert/S_{\text{atom}}$. Uncast, it is not a valid
+---
+> V_{\text{derived}}\rvert/\mathcal{I}_{\mathrm{str}}$. Uncast, it is not a valid
+1089c1089
+< V_{\text{derived}}\rvert/S_{\text{atom}}$.
+---
+> V_{\text{derived}}\rvert/\mathcal{I}_{\mathrm{str}}$.
+1095c1095
+< (Section~\ref{sec:enclosure}) unless named:
+---
+> (Section~\ref{sec:enclosure}) unless named. All seven are written $\mathcal{I}$, for the information atom, with a subscript that names the metric:
+1097,1099c1097,1099
+< S_{\text{atom}} = \sum_{i=1}^Q r_i, \qquad
+< \mathcal{V}_{\text{atom}} = \sum_{i=1}^Q r_i^3, \qquad
+< \gamma_{\text{atom}} = \frac{\mathcal{V}_{\text{atom}}}{Q}.
+---
+> \mathcal{I}_{\mathrm{str}} = \sum_{i=1}^Q r_i, \qquad
+> \mathcal{I}_{\mathrm{vol}} = \sum_{i=1}^Q r_i^3, \qquad
+> \mathcal{I}_{\mathrm{mean}} = \frac{\mathcal{I}_{\mathrm{vol}}}{Q}.
+1101c1101
+< $S_{\text{atom}}$, atom strength, is the correct denominator for
+---
+> $\mathcal{I}_{\mathrm{str}}$, atom strength, is the correct denominator for
+1103c1103
+< S_{\text{atom}}$, structurally identical to the companion paper's own
+---
+> \mathcal{I}_{\mathrm{str}}$, structurally identical to the companion paper's own
+1106,1107c1106,1107
+< scatter. $\mathcal{V}_{\text{atom}}$, atom volume, is strictly
+< smaller than $S_{\text{atom}}$ whenever any $r_i<1$, a forced
+---
+> scatter. $\mathcal{I}_{\mathrm{vol}}$, atom volume, is strictly
+> smaller than $\mathcal{I}_{\mathrm{str}}$ whenever any $r_i<1$, a forced
+1111c1111
+< $\gamma_{\text{atom}}$, mean vector volume, is the average per-vector
+---
+> $\mathcal{I}_{\mathrm{mean}}$, mean vector volume, is the average per-vector
+1116,1117c1116,1117
+< $\mathcal{V}_{\text{atom}}$, $\gamma_{\text{atom}}$, and
+< $S_{\text{atom}}$ respectively: the first two because neither
+---
+> $\mathcal{I}_{\mathrm{vol}}$, $\mathcal{I}_{\mathrm{mean}}$, and
+> $\mathcal{I}_{\mathrm{str}}$ respectively: the first two because neither
+1120c1120
+< notion of energy exists below and is not $S_{\text{atom}}$.
+---
+> notion of energy exists below and is not $\mathcal{I}_{\mathrm{str}}$.
+1126c1126
+<     \mathcal{E}_{\text{atom}} \;=\; \sum_{i=1}^Q r_i^2.
+---
+>     \mathcal{I}_{\mathrm{en}} \;=\; \sum_{i=1}^Q r_i^2.
+1129c1129
+< $\mathcal{E}_{\text{atom}}$, the atom's \emph{information energy}, is the combined squared magnitude the
+---
+> $\mathcal{I}_{\mathrm{en}}$, the atom's \emph{information energy}, is the combined squared magnitude the
+1132c1132
+< $\mathcal{E}_{\text{atom}}$ from a set of strengths matches $\lvert
+---
+> $\mathcal{I}_{\mathrm{en}}$ from a set of strengths matches $\lvert
+1135c1135
+< chosen: an exact identity places $\mathcal{E}_{\text{atom}}$ inside
+---
+> chosen: an exact identity places $\mathcal{I}_{\mathrm{en}}$ inside
+1138c1138
+< \lvert V_{\text{derived}}\rvert^2 \;=\; \mathcal{E}_{\text{atom}}
+---
+> \lvert V_{\text{derived}}\rvert^2 \;=\; \mathcal{I}_{\mathrm{en}}
+1147c1147
+< $\mathcal{E}_{\text{atom}}$ is the part that remains when every cross
+---
+> $\mathcal{I}_{\mathrm{en}}$ is the part that remains when every cross
+1151c1151
+< bowl energy sums across atoms, $\mathcal{E}_{\text{atom}}$ sums
+---
+> bowl energy sums across atoms, $\mathcal{I}_{\mathrm{en}}$ sums
+1161c1161
+<     \alpha_{\text{atom}} \;=\;
+---
+>     \mathcal{I}_{\mathrm{agr}} \;=\;
+1176,1177c1176,1177
+< $\alpha_{\text{atom}}$ correctly reports as $0.995$ and $0.988$,
+< nearly identical. $\alpha_{\text{atom}}=+1$ exactly when all
+---
+> $\mathcal{I}_{\mathrm{agr}}$ correctly reports as $0.995$ and $0.988$,
+> nearly identical. $\mathcal{I}_{\mathrm{agr}}=+1$ exactly when all
+1186c1186
+< $-\tfrac{1}{2}\mathcal{E}_{\text{atom}}$, growing only as $Q$, which
+---
+> $-\tfrac{1}{2}\mathcal{I}_{\mathrm{en}}$, growing only as $Q$, which
+1188c1188
+< \mathcal{E}_{\text{atom}} + 2\sum_{i<j} r_ir_j(\hat n_i\cdot\hat n_j)
+---
+> \mathcal{I}_{\mathrm{en}} + 2\sum_{i<j} r_ir_j(\hat n_i\cdot\hat n_j)
+1190c1190
+< Atom agreement, $\alpha_{\text{atom}}$, is read alongside atom coherence, not in place
+---
+> Atom agreement, $\mathcal{I}_{\mathrm{agr}}$, is read alongside atom coherence, not in place
+1194,1195c1194,1195
+< A sixth metric, \emph{volume concentration}, does for magnitude what $\alpha_{\text{atom}}$ does
+< for direction. $S_{\text{atom}}$ and $\mathcal{V}_{\text{atom}}$ both
+---
+> A sixth metric, \emph{volume concentration}, does for magnitude what $\mathcal{I}_{\mathrm{agr}}$ does
+> for direction. $\mathcal{I}_{\mathrm{str}}$ and $\mathcal{I}_{\mathrm{vol}}$ both
+1197c1197
+< \mathcal{V}_{\text{atom}}$ for the share of volume held by vector
+---
+> \mathcal{I}_{\mathrm{vol}}$ for the share of volume held by vector
+1200c1200
+<     \sigma_{\text{atom}} \;=\;
+---
+>     \mathcal{I}_{\mathrm{vcon}} \;=\;
+1205,1206c1205,1206
+< with $\sigma_{\text{atom}}=0$ by convention at $Q=1$.
+< $\sigma_{\text{atom}}=0$ exactly when volume is spread evenly and $1$
+---
+> with $\mathcal{I}_{\mathrm{vcon}}=0$ by convention at $Q=1$.
+> $\mathcal{I}_{\mathrm{vcon}}=0$ exactly when volume is spread evenly and $1$
+1213c1213
+< $\mathcal{V}_{\text{atom}}$ rather than $S_{\text{atom}}$ supplies
+---
+> $\mathcal{I}_{\mathrm{vol}}$ rather than $\mathcal{I}_{\mathrm{str}}$ supplies
+1222c1222
+< $\sigma_{\text{atom}}$ is blind to this by construction --- four hundred vectors at an identical $r=0.65$ each receive their own tiny individual share and read $\sigma_{\text{atom}}=0$, while four hundred spread evenly over $(0.2,1)$ read only $0.0021$. A clump is not seen: four hundred strengths spread evenly over $(0.66,0.69)$ read $\sigma_{\text{atom}}=0.000004$, \emph{more} even than the uniform spread, though every one of them sits in the same shell. Fixing this needs a shell width $w$, a named,
+---
+> $\mathcal{I}_{\mathrm{vcon}}$ is blind to this by construction --- four hundred vectors at an identical $r=0.65$ each receive their own tiny individual share and read $\mathcal{I}_{\mathrm{vcon}}=0$, while four hundred spread evenly over $(0.2,1)$ read only $0.0021$. A clump is not seen: four hundred strengths spread evenly over $(0.66,0.69)$ read $\mathcal{I}_{\mathrm{vcon}}=0.000004$, \emph{more} even than the uniform spread, though every one of them sits in the same shell. Fixing this needs a shell width $w$, a named,
+1226c1226
+<     \sigma_{\text{shell}}(w) \;=\;
+---
+>     \mathcal{I}_{\mathrm{scon}}(w) \;=\;
+1236c1236
+< return. $\sigma_{\text{shell}}=0$ when occupied shells are evenly populated, at every $K$; $\sigma_{\text{shell}}=1$ when every
+---
+> return. $\mathcal{I}_{\mathrm{scon}}=0$ when occupied shells are evenly populated, at every $K$; $\mathcal{I}_{\mathrm{scon}}=1$ when every
+1239c1239
+< $\sigma_{\text{shell}}=0.908$ at either width) are stable to the
+---
+> $\mathcal{I}_{\mathrm{scon}}=0.908$ at either width) are stable to the
+1241c1241
+< $\sigma_{\text{shell}}$ whenever it is used.
+---
+> $\mathcal{I}_{\mathrm{scon}}$ whenever it is used.
+1244c1244
+< re-expression of $S_{\text{atom}}$ and $\mathcal{E}_{\text{atom}}$.
+---
+> re-expression of $\mathcal{I}_{\mathrm{str}}$ and $\mathcal{I}_{\mathrm{en}}$.
+1247c1247
+<     Q_{\mathrm{eff}} \;=\; \frac{S_{\text{atom}}^{2}}{\mathcal{E}_{\text{atom}}},
+---
+>     Q_{\mathrm{eff}} \;=\; \frac{\mathcal{I}_{\mathrm{str}}^{2}}{\mathcal{I}_{\mathrm{en}}},
+1249c1249
+<     \mathcal{E}_{\text{atom}} \;=\; \frac{S_{\text{atom}}^{2}}{Q_{\mathrm{eff}}}.
+---
+>     \mathcal{I}_{\mathrm{en}} \;=\; \frac{\mathcal{I}_{\mathrm{str}}^{2}}{Q_{\mathrm{eff}}}.
+1253c1253
+< toward $1$ as a single vector dominates, so $1\le Q_{\mathrm{eff}}\le Q$ whenever $S_{\text{atom}}>0$.
+---
+> toward $1$ as a single vector dominates, so $1\le Q_{\mathrm{eff}}\le Q$ whenever $\mathcal{I}_{\mathrm{str}}>0$.
+1261,1262c1261,1262
+< $\sigma_{\text{atom}}$ is exact: with $H=\sum_i s_i^2$,
+< $\sigma_{\text{atom}}=(QH-1)/(Q-1)$, the Herfindahl index of the cubed
+---
+> $\mathcal{I}_{\mathrm{vcon}}$ is exact: with $H=\sum_i s_i^2$,
+> $\mathcal{I}_{\mathrm{vcon}}=(QH-1)/(Q-1)$, the Herfindahl index of the cubed
+1268c1268
+< $S_{\text{atom}}$, $\mathcal{V}_{\text{atom}}$, $\mathcal{E}_{\text{atom}}$
+---
+> $\mathcal{I}_{\mathrm{str}}$, $\mathcal{I}_{\mathrm{vol}}$, $\mathcal{I}_{\mathrm{en}}$
+1271,1274c1271,1274
+< convention at $Q=1$: $\gamma_{\text{atom}}=0$ and
+< $\sigma_{\text{atom}}=0$. Three are undefined for the empty atom:
+< $\alpha_{\text{atom}}$, which needs at least two vectors,
+< $\sigma_{\text{shell}}$, which needs at least one, and
+---
+> convention at $Q=1$: $\mathcal{I}_{\mathrm{mean}}=0$ and
+> $\mathcal{I}_{\mathrm{vcon}}=0$. Three are undefined for the empty atom:
+> $\mathcal{I}_{\mathrm{agr}}$, which needs at least two vectors,
+> $\mathcal{I}_{\mathrm{scon}}$, which needs at least one, and

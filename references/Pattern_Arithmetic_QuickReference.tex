@@ -25,7 +25,7 @@
 \maketitle
 \vspace{-2.4em}
 \begin{center}
-\small\emph{Extracted from Pattern\_Arithmetic\_v15\_36 (v15\_30 carried the UnCollapse cluster; v15\_31 reworded the Mix refusal and UnMix; v15\_32 and v15\_33 added and tightened composition, structure and contract paragraphs in §1.4; v15\_36 writes the bowl reading as Mix(B), prints the populations behind the reproducibility claims, and prints the enclosure force): section and equation numbers are unchanged. Section numbers (§) and equation numbers (eq.) refer to that document. Every number in Part 9 was recomputed from the paper's printed inputs (reproduce\_v15\_36.py).}
+\small\emph{Extracted from Pattern\_Arithmetic\_v15\_38 (v15\_30 carried the UnCollapse cluster; v15\_31 reworded the Mix refusal and UnMix; v15\_32 and v15\_33 added and tightened composition, structure and contract paragraphs in §1.4; v15\_38 writes the bowl reading as Mix(B), prints the populations behind the reproducibility claims, and prints the enclosure force): section and equation numbers are unchanged. Section numbers (§) and equation numbers (eq.) refer to that document. Every number in Part 9 was recomputed from the paper's printed inputs (reproduce\_v15\_38.py).}
 \end{center}
 \vspace{0.4em}
 \section*{0 · The soul of the paper, on one page}
@@ -116,12 +116,12 @@ $Q$ & Number of informational \textbf{vectors} — “the atom's info number”.
 $D$ & Number of \textbf{distinct cores} among the $N$: two cores coincide exactly when $\uplus$ would seat them together (content only; empty cores coincide; meta vectors never enter). $D\le N$, equality iff every core is distinct. Stored count. \\
 $N-D$ & How many times some core repeated. \\
 $A^{\langle k\rangle}$ & $k$ identical copies of $A$; has $kN_A$ cores. $A\oplus A=A^{\langle2\rangle}$. \\
-\textbf{empty atom} & Black: $N=1$, $Q=0$. $S,\mathcal V,\mathcal E,V_{\text{derived}}=0$; $\gamma_{\text{atom}}=0$, $\sigma_{\text{atom}}=0$ by convention; $\alpha_{\text{atom}}$, $\sigma_{\text{shell}}$, $Q_{\text{eff}}$ undefined. Collapse keeps a silent contribution: $A\oplus0$ has one more core, same vectors; $0\oplus0\neq0$. \\
+\textbf{empty atom} & Black: $N=1$, $Q=0$. $\mathcal{I}_{\mathrm{str}},\mathcal{I}_{\mathrm{vol}},\mathcal{I}_{\mathrm{en}},V_{\text{derived}}=0$; $\mathcal{I}_{\mathrm{mean}}=0$, $\mathcal{I}_{\mathrm{vcon}}=0$ by convention; $\mathcal{I}_{\mathrm{agr}}$, $\mathcal{I}_{\mathrm{scon}}$, $Q_{\text{eff}}$ undefined. Collapse keeps a silent contribution: $A\oplus0$ has one more core, same vectors; $0\oplus0\neq0$. \\
 \textbf{mass number / atomic number} & $N$ reads like a nucleus's mass number (every core counted), $D$ like its atomic number (distinct cores). An analogy of shape only. \\
 \bottomrule
 \end{longtable}}
 \section*{4 · Metrics (Axiom 7, §2.10)}
-Named in the paper: \emph{atom strength}, \emph{atom volume}, \emph{mean vector volume}, \emph{atom coherence}, \emph{effective vector count}; $\mathcal E_{\text{atom}}$ is “the atom's intrinsic energy”; $\alpha_{\text{atom}}$, $\sigma_{\text{atom}}$, $\sigma_{\text{shell}}$ are its fifth, sixth and seventh metrics, described but not named (descriptive labels below are marked). All presuppose an atom of $Q$ informational vectors $v_i=r_i\hat n_i$. None is used by any verb; each is read over the cores valid at the reading time. Identity: $\lvert V_{\text{derived}}\rvert^2=\mathcal E_{\text{atom}}+2\sum_{i<j}r_ir_j(\hat n_i\!\cdot\!\hat n_j)$, the structure of a variance of a sum.
+All seven metrics are written $\mathcal{I}$ (script I, the information atom) with a subscript: str, vol, mean, en, agr, vcon, scon. Named in the paper: \emph{atom strength}, \emph{atom volume}, \emph{mean vector volume}, \emph{atom coherence}, \emph{effective vector count}; $\mathcal{I}_{\mathrm{en}}$ is the atom's \emph{information energy}; $\mathcal{I}_{\mathrm{agr}}$, $\mathcal{I}_{\mathrm{vcon}}$, $\mathcal{I}_{\mathrm{scon}}$ are its fifth, sixth and seventh metrics: \emph{atom agreement}, \emph{volume concentration} and \emph{shell concentration}. All presuppose an atom of $Q$ informational vectors $v_i=r_i\hat n_i$. None is used by any verb; each is read over the cores valid at the reading time. Identity: $\lvert V_{\text{derived}}\rvert^2=\mathcal{I}_{\mathrm{en}}+2\sum_{i<j}r_ir_j(\hat n_i\!\cdot\!\hat n_j)$, the structure of a variance of a sum.
 
 {\small\setlength{\tabcolsep}{4pt}\begin{longtable}{L{1.8cm}L{4.0cm}L{8.1cm}L{2.1cm}}
 \toprule
@@ -129,15 +129,15 @@ Named in the paper: \emph{atom strength}, \emph{atom volume}, \emph{mean vector 
 \midrule
 \endhead
 $V_{\text{derived}}$ & $\displaystyle\sum_{i=1}^{Q}r_i\hat n_i$ ($\chi$ excluded) & The raw, \textbf{uncapped} vector sum; per core and per atom (the atom's is the sum of its cores'). Reads as an effective pair $r=\lvert V\rvert$, $\hat n=V/r$ for a weight or a direction; not itself a unit; needs a cast into $[0,1]$ before acting as $T$'s actor. & any $Q$ \\
-$S_{\text{atom}}$ & $\displaystyle\sum_ir_i$ & \textbf{Atom strength.} Denominator of atom coherence. & any $Q$ \\
-$\mathcal V_{\text{atom}}$ & $\displaystyle\sum_ir_i^3$ & \textbf{Atom volume.} Strictly $<S_{\text{atom}}$ whenever any $r_i<1$ — forced by the cap. & any $Q$ \\
-$\gamma_{\text{atom}}$ & $\mathcal V_{\text{atom}}/Q$ & \textbf{Mean vector volume.} & $Q\ge1$ ($:=0$ at $Q=0$) \\
-$\mathcal E_{\text{atom}}$ & $\displaystyle\sum_ir_i^2$ (eq. 15) & \textbf{Intrinsic energy} (the paper's phrase). Stands on its own; the energy the vectors would carry if every pair were orthogonal. & any $Q$ \\
-$\alpha_{\text{atom}}$ & $\dfrac{\sum_{i<j}r_ir_j(\hat n_i\cdot\hat n_j)}{\sum_{i<j}r_ir_j}$ (eq. 16) & \emph{Fifth metric; unnamed.} Strength-weighted mean cosine similarity across all internal pairs; separates active cancellation ($<0$) from mere non-reinforcement, which atom coherence cannot. & $Q\ge2$ \\
-$\sigma_{\text{atom}}$ & $\dfrac{Q^2}{Q-1}\operatorname{Var}(s_1,\ldots,s_Q)$, $s_i=r_i^3/\mathcal V_{\text{atom}}$ (eq. 17) & \emph{Sixth metric; unnamed} (concentration of volume). $0$ when even, $1$ when one vector holds all. Equals the normalized Herfindahl index of the cubed shares. & $Q\ge2$ ($:=0$ at $Q\le1$) \\
-$\sigma_{\text{shell}}(w)$ & $1$ if $K=1$; else $\dfrac{K^2}{K-1}\operatorname{Var}(p_1,\ldots,p_K)$, $p_k=n_k/Q$, bins of width $w$ (default $0.1$) (eq. 18) & \emph{Seventh metric; unnamed} (concentration across shells). Catches what $\sigma_{\text{atom}}$ cannot: many vectors independently landing at the same magnitude. & $Q\ge1$ \\
-$Q_{\text{eff}}$ & $S_{\text{atom}}^2/\mathcal E_{\text{atom}}$ & \textbf{Effective vector count} — not an eighth metric. $1\le Q_{\text{eff}}\le Q$; scale-free; the largest vector holds at least $1/Q_{\text{eff}}$ of the strength; a \emph{count}, with $Q_{\text{eff}}/Q$ the size-free form. & $S_{\text{atom}}>0$ \\
-\textbf{atom coherence} & $\lvert V_{\text{derived}}\rvert/S_{\text{atom}}$ & How much strength survives into one resultant; $1$ for aligned vectors, falling toward $0$. Also a cast of $V_{\text{derived}}$ into $[0,1]$. & $S_{\text{atom}}>0$ \\
+$\mathcal{I}_{\mathrm{str}}$ & $\displaystyle\sum_ir_i$ & \textbf{Atom strength.} Denominator of atom coherence. & any $Q$ \\
+$\mathcal{I}_{\mathrm{vol}}$ & $\displaystyle\sum_ir_i^3$ & \textbf{Atom volume.} Strictly $<\mathcal{I}_{\mathrm{str}}$ whenever any $r_i<1$ — forced by the cap. & any $Q$ \\
+$\mathcal{I}_{\mathrm{mean}}$ & $\mathcal{I}_{\mathrm{vol}}/Q$ & \textbf{Mean vector volume.} & $Q\ge1$ ($:=0$ at $Q=0$) \\
+$\mathcal{I}_{\mathrm{en}}$ & $\displaystyle\sum_ir_i^2$ (eq. 15) & \textbf{Information energy}. Stands on its own; the energy the vectors would carry if every pair were orthogonal. & any $Q$ \\
+$\mathcal{I}_{\mathrm{agr}}$ & $\dfrac{\sum_{i<j}r_ir_j(\hat n_i\cdot\hat n_j)}{\sum_{i<j}r_ir_j}$ (eq. 16) & \emph{Atom agreement} (fifth metric). Strength-weighted mean cosine similarity across all internal pairs; separates active cancellation ($<0$) from mere non-reinforcement, which atom coherence cannot. & $Q\ge2$ \\
+$\mathcal{I}_{\mathrm{vcon}}$ & $\dfrac{Q^2}{Q-1}\operatorname{Var}(s_1,\ldots,s_Q)$, $s_i=r_i^3/\mathcal{I}_{\mathrm{vol}}$ (eq. 17) & \emph{Volume concentration} (sixth metric). $0$ when even, $1$ when one vector holds all. Equals the normalized Herfindahl index of the cubed shares. & $Q\ge2$ ($:=0$ at $Q\le1$) \\
+$\mathcal{I}_{\mathrm{scon}}(w)$ & $1$ if $K=1$; else $\dfrac{K^2}{K-1}\operatorname{Var}(p_1,\ldots,p_K)$, $p_k=n_k/Q$, bins of width $w$ (default $0.1$) (eq. 18) & \emph{Shell concentration} (seventh metric; across shells). Catches what $\mathcal{I}_{\mathrm{vcon}}$ cannot: many vectors independently landing at the same magnitude. & $Q\ge1$ \\
+$Q_{\text{eff}}$ & $\mathcal{I}_{\mathrm{str}}^2/\mathcal{I}_{\mathrm{en}}$ & \textbf{Effective vector count} — not an eighth metric. $1\le Q_{\text{eff}}\le Q$; scale-free; the largest vector holds at least $1/Q_{\text{eff}}$ of the strength; a \emph{count}, with $Q_{\text{eff}}/Q$ the size-free form. & $\mathcal{I}_{\mathrm{str}}>0$ \\
+\textbf{atom coherence} & $\lvert V_{\text{derived}}\rvert/\mathcal{I}_{\mathrm{str}}$ & How much strength survives into one resultant; $1$ for aligned vectors, falling toward $0$. Also a cast of $V_{\text{derived}}$ into $[0,1]$. & $\mathcal{I}_{\mathrm{str}}>0$ \\
 \bottomrule
 \end{longtable}}
 \section*{5 · Meta vectors (§2.11)}
@@ -239,7 +239,7 @@ $\mathbb R^5$ & $S^4$ & a 3-D space, dim 3 & one plane \\
 $\mathbb R^{N_{\mathrm{dim}}}$ & $S^{N_{\mathrm{dim}}-1}$ & dim $N_{\mathrm{dim}}-2$ & one plane \\
 \bottomrule
 \end{longtable}}
-A teaching atom ($Q=1$) is a legal actor **only at $N_{\mathrm{dim}}=3$**; beyond that the actor's atom must supply $N_{\mathrm{dim}}-2$ mutually orthogonal arrows ($Q\ge N_{\mathrm{dim}}-2$ is necessary, not sufficient): $T_w(x)=(r_x,\ \hat n_x^F+\mathrm{Rot}_{\alpha(r_w)}\hat n_x^{P},\ \chi_x+\chi_w,\ \tau_x)$, eq. 23. Orientation of $F^\perp$ is a convention, stated once. Checked invertible at every angle tested and non-commutative at $N_{\mathrm{dim}}=4,5,8,12,20,50$; exact at $N_{\mathrm{dim}}=3$. Offset's transport generalizes without any Collapse. Mix, Bundle and $\alpha_{\text{atom}}$ are dimension-blind. The paper keeps $\mathbb R^3$ as its standing assumption (§4.4).
+A teaching atom ($Q=1$) is a legal actor **only at $N_{\mathrm{dim}}=3$**; beyond that the actor's atom must supply $N_{\mathrm{dim}}-2$ mutually orthogonal arrows ($Q\ge N_{\mathrm{dim}}-2$ is necessary, not sufficient): $T_w(x)=(r_x,\ \hat n_x^F+\mathrm{Rot}_{\alpha(r_w)}\hat n_x^{P},\ \chi_x+\chi_w,\ \tau_x)$, eq. 23. Orientation of $F^\perp$ is a convention, stated once. Checked invertible at every angle tested and non-commutative at $N_{\mathrm{dim}}=4,5,8,12,20,50$; exact at $N_{\mathrm{dim}}=3$. Offset's transport generalizes without any Collapse. Mix, Bundle and $\mathcal{I}_{\mathrm{agr}}$ are dimension-blind. The paper keeps $\mathbb R^3$ as its standing assumption (§4.4).
 
 \section*{9 · Numbers worth remembering (all recomputed from the printed inputs)}
 {\small\setlength{\tabcolsep}{4pt}\begin{longtable}{L{5.2cm}L{9.5cm}L{1.6cm}}
@@ -262,12 +262,12 @@ Alignment, $r=0.85$, pairs $5.7^\circ$ apart & $Q=2$: raw $0.72$, $\alpha=0.995$
 Three aligned at $r=0.5$ & $\lvert V\rvert=1.5$, $\alpha(1.5)=270^\circ$ — not a rotation $T$ accepts uncast & §2.10 \\
 Dominant vector $0.95$ against three at $0.2$ & volume share $0.973$ & §2.10 \\
 Best partner for an atom of $r=0.60$ (Assembly energy) & at contact $r_B=0.30$; at separation $3$ the strongest available ($1.0$) & §2.11 \\
-$\sigma_{\text{shell}}$: $10@0.98$, $3@0.3$, $400@0.65$ & $0.908$ at $w=0.1$ and $w=0.05$ & §2.10 \\
+$\mathcal{I}_{\mathrm{scon}}$: $10@0.98$, $3@0.3$, $400@0.65$ & $0.908$ at $w=0.1$ and $w=0.05$ & §2.10 \\
 Enclosure, six printed units, $\eta=10^{-5}$ & $628,\ 1261,\ 2526,\ 6320$ steps at $\delta=0.02,\ 0.01,\ 0.005,\ 0.002$; two camps $\{1,2,3\}$, $\{4,5,6\}$; bodies $(0.33336,0.33333,0)$, $(40.33330,0.33333,0)$; runs agree to $2\times10^{-7}$; $r$-weighted and plain bodies differ by $2.4\times10^{-8}$ & §10.4 \\
 Enclosure, pair $r=0.9$, $r=0.1$, $\delta=0.02$ & separation never increases, $3\to1.80$; dividing each step by $r^3$ (a $729$-fold weighting) makes it oscillate & §10.4 \\
 \bottomrule
 \end{longtable}}
-\textbf{What reproduces, and what is sensitive:} every printed number is recomputed by \texttt{reproduce\_v15\_36.py} from its printed inputs. One count, the number of steps on which the weighted pair's separation increases, depends on rounding and is printed as a range ($830$ to $855$ of $3000$). Shell bins are defined in exact arithmetic, because $\lfloor0.3/0.1\rfloor$ is $2$ in floating point.
+\textbf{What reproduces, and what is sensitive:} every printed number is recomputed by \texttt{reproduce\_v15\_38.py} from its printed inputs. One count, the number of steps on which the weighted pair's separation increases, depends on rounding and is printed as a range ($830$ to $855$ of $3000$). Shell bins are defined in exact arithmetic, because $\lfloor0.3/0.1\rfloor$ is $2$ in floating point.
 
 \section*{10 · Named conventions — choices, not truths}
 {\small\setlength{\tabcolsep}{4pt}\begin{longtable}{L{4.0cm}L{10.2cm}L{2.1cm}}
@@ -280,7 +280,7 @@ $\alpha(r)=\pi r$ & The simplest monotone map from strength to rotation angle. &
 orientation of $F^\perp$ & Which direction counts as $+\alpha$ beyond three dimensions; any consistent choice, stated once. & §4.4 \\
 toy colour chart & Phasor Mix on $0^\circ/120^\circ/60^\circ$; neither CIE nor linear RGB. & §2.1, §2.6 \\
 numeric chart & $\chi=2\pi k/M$, $M=24$, at a fixed direction with $r=1$. & §6.1–6.2 \\
-shell width $w$ & Default $0.1$ (ten shells on $[0,1]$); reported with $\sigma_{\text{shell}}$. & §2.10 \\
+shell width $w$ & Default $0.1$ (ten shells on $[0,1]$); reported with $\mathcal{I}_{\mathrm{scon}}$. & §2.10 \\
 $\eta$, $\delta$, census cut, $\epsilon_{\text{allow}}$ & Freeze threshold; step size; how camps are counted; when two checkpoints are the same freeze. The enclosure's four measurement conventions. & §10.2–10.3 \\
 reading time $t$ & Default now; fixing it keeps every law deterministic. “Now” is external context, as the lexicon is. & §1.4, §2.11 \\
 standard dictionaries and the meta-vector catalogue & Recommendations, recorded and left open; not axioms. & §6.7 \\
@@ -333,7 +333,7 @@ Verdicts & Saying what a resting state \emph{means} is a later reading, not a ve
 \textbf{Arithmetic} (this paper's sense) & A unit, the operations on it, and the properties each operation is stated and checked to have. & §1.4 \\
 \textbf{Assembly} $\bowtie$ & Relates two intact units by $(\kappa_{AB},U_{AB})$ without fusing them. & §2.9 \\
 \textbf{Atom} & The typed unit. \emph{Teaching atom}: one arrow. \emph{Collapsed atom}: $N$ cores, $Q$ vectors, one closure. & §2.2, §2.10 \\
-\textbf{Atom coherence} & $\lvert V_{\text{derived}}\rvert/S_{\text{atom}}$. With the direction of $V_{\text{derived}}$ it is a colour's locator: colour lives in $\hat n$, phase is kept for mixing, and $\lvert V_{\text{derived}}\rvert$ measures size, not colour. & §2.10 \\
+\textbf{Atom coherence} & $\lvert V_{\text{derived}}\rvert/\mathcal{I}_{\mathrm{str}}$. With the direction of $V_{\text{derived}}$ it is a colour's locator: colour lives in $\hat n$, phase is kept for mixing, and $\lvert V_{\text{derived}}\rvert$ measures size, not colour. & §2.10 \\
 \textbf{Axis} ($\hat n_w$, fixed part $F$) & The line (3-D) or subspace of dimension $N_{\mathrm{dim}}-2$ that $T$ leaves fixed. & §4.4 \\
 \textbf{Black} $\mathbf0$ & $r=0$: an empty seat; $N=1$, $Q=0$; $T_{\mathbf0}=\mathrm{id}$; the identity of nothing else. Distinct from the empty bowl $\emptyset$. & §2.3, §2.5 \\
 \textbf{Body} $\vec P_{c,k}$ & A frozen camp's strength-weighted centre, measured afterwards by an observer; a description, not a destination. & §10.3, eq. 49 \\
@@ -359,11 +359,11 @@ Verdicts & Saying what a resting state \emph{means} is a later reading, not a ve
 \textbf{Determinism} & Same printed starting units (read at the same time where any carries an expiry) give the same result, step for step. Printing makes a result replayable; it does not make it right. & §1.4 \\
 \textbf{Dictionary pin / doorbell} & A seated unit for a name (man, storm, calm, Night). The algebra does not mint it; a lexicon or learning rule seats it. & §9.1, §5.2, §6.6 \\
 \textbf{Direction} $\hat n$ & A pattern's semantic address, not its physical position. & §2.2, §10.1 \\
-\textbf{Effective vector count} $Q_{\text{eff}}$ & $S^2/\mathcal E$; how many equally strong vectors carry the same energy. & §2.10 \\
+\textbf{Effective vector count} $Q_{\text{eff}}$ & $\mathcal{I}_{\mathrm{str}}^2/\mathcal{I}_{\mathrm{en}}$; how many equally strong vectors carry the same energy. & §2.10 \\
 \textbf{Empty atom} & Black: $N=1$, $Q=0$. & §2.3, §2.10 \\
 \textbf{Empty bowl} $\emptyset$ & A bowl with no occupant; $\neq\mathbf0$. $T_{\mathbf0}$ is defined, $T_\emptyset$ is not. & §2.5, eq. 6 \\
 \textbf{Enclosure} & Seats, rest and camps: where Assembly's separation comes from. & §10 \\
-\textbf{Energy} (two senses) & The atom's intrinsic energy $\mathcal E_{\text{atom}}=\sum r_i^2$ (§2.10, eq. 15); the interaction energy $U_{AB}$ (§2.9, eq. 13). Not interchangeable. & §2.10, §2.9 \\
+\textbf{Energy} (two senses) & The atom's information energy $\mathcal{I}_{\mathrm{en}}=\sum r_i^2$ (§2.10, eq. 15); the interaction energy $U_{AB}$ (§2.9, eq. 13). Not interchangeable. & §2.10, §2.9 \\
 \textbf{Equality} & Equal: the same vectors in the same grouping; meta vectors never enter. Exact. & §2.11 \\
 \textbf{Expiry} $V_{\text{expiry}}$ & When a core stops being valid; absence = none; an expired core reads as black and may be removed by UnCollapse. & §2.11 \\
 $F_i$ (\textbf{force}) & $-\nabla_{\vec P_i}\sum_{j\neq i}U_{ij}$. & §10.2, eq. 47 \\
@@ -398,7 +398,7 @@ $E_L$ (\textbf{lexicon}) & A map from one language's tokens onto states; case an
 \textbf{Same individual} & Equal, and the meta vectors agree too: the stricter test ($==$ against “is”). & §2.11 \\
 \textbf{Seat} $\vec P$ & External position vector; a meta vector; enters only $d_{AB}$. & §10.1, eq. 46 \\
 \textbf{Seated unit} & A unit loaded on the sphere, pinned by a lexicon or a learned map. & §1.4, §3.1 \\
-\textbf{Shell} & (a) a width-$w$ bin of strength in $\sigma_{\text{shell}}$ (§2.10); (b) one phased identity at a direction in Mix (“two shells, not an angle”, §8.1). & §2.10, §8.1 \\
+\textbf{Shell} & (a) a width-$w$ bin of strength in $\mathcal{I}_{\mathrm{scon}}$ (§2.10); (b) one phased identity at a direction in Mix (“two shells, not an angle”, §8.1). & §2.10, §8.1 \\
 \textbf{Softening length} $\varepsilon_{AB}$ & $r_A+r_B$, a convention that reads $r$ as a radius. & §2.9 \\
 \textbf{Sort} $\tau$ & Says which operators may legally act on a unit; does not move the arrow. & §2.2, §6 \\
 \textbf{Stage} $\mathcal S$ & The unit sphere (or its higher analogue): the sphere is the stage, the unit is the vector. & §2.2 \\
@@ -414,7 +414,7 @@ $E_L$ (\textbf{lexicon}) & A map from one language's tokens onto states; case an
 \textbf{UnCollapse} $\ominus$ & Takes out one core with its vectors, named by identity key or local position. & §3.4 \\
 \textbf{UnMix} $\boxminus$ & Impossible as an inverse of the reading: sources not determined by the result; where they were kept, Remove or UnCollapse. & §3.2, §8.2 \\
 \textbf{Valid} (core) & At $t$ iff $t$ is earlier than every expiry it carries. & §2.11 \\
-\textbf{Volume} $\mathcal V_{\text{atom}}$ & $\sum r_i^3$, “atom volume”; descriptive only, deliberately excluded from motion. & §2.10 \\
+\textbf{Volume} $\mathcal{I}_{\mathrm{vol}}$ & $\sum r_i^3$, “atom volume”; descriptive only, deliberately excluded from motion. & §2.10 \\
 \textbf{White} & Saturation of the bowl, or a full-spectrum name; never $r=\infty$. & §2.4 \\
 $D$ & Distinct cores among the $N$. & §3.3 \\
 $N$ & Cores. & §2.10 \\

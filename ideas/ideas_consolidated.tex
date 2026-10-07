@@ -4,7 +4,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 
-\title{Ideas Register --- Consolidated, v1 to v60}
+\title{Ideas Register --- Consolidated, v1 to v62}
 \author{One file for every parked idea, with its current status}
 \date{}
 
@@ -20,14 +20,14 @@ where it stands now.
 
 \textbf{How status was determined.} Not from memory of the
 discussions. Each status was checked by searching the current paper,
-\texttt{Pattern\_Arithmetic\_v15\_36.tex} (v15\_36 states Mix over a Collapsed atom, on v15\_35, which adds one clause to \S2.10, on v15\_34, which writes the bowl reading as $\mathrm{Mix}(B)$, prints the populations behind the reproducibility claims and prints the enclosure force, on v15\_33, which tightens one sentence of v15\_32, which adds three paragraphs to \S1.4 to v15\_31, which rewords the Mix refusal, UnMix and four other sentences of v15\_30, which adds the UnCollapse cluster to v15\_29, which is v15\_28 with cosmetic changes only; v15\_28 differs from v15\_22
+\texttt{Pattern\_Arithmetic\_v15\_38.tex} (v15\_38 writes the seven metrics as one family, $\mathcal I$ with a subscript, on v15\_37, which names three metrics and $\mathcal E$, on v15\_36, which states Mix over a Collapsed atom, on v15\_35, which adds one clause to \S2.10, on v15\_34, which writes the bowl reading as $\mathrm{Mix}(B)$, prints the populations behind the reproducibility claims and prints the enclosure force, on v15\_33, which tightens one sentence of v15\_32, which adds three paragraphs to \S1.4 to v15\_31, which rewords the Mix refusal, UnMix and four other sentences of v15\_30, which adds the UnCollapse cluster to v15\_29, which is v15\_28 with cosmetic changes only; v15\_28 differs from v15\_22
 only in the atom-structure passages and the meta-vector subsection, so
 earlier checks stand), and
 --- for items destined
 elsewhere --- the \texttt{Assembly\_v1.tex} and
 \texttt{Inference\_v1.tex} copies on hand (which may be older than
 your working copies; if so, the ``not filed'' marks below should be
-rechecked against yours). Entries from v19 onward are appended here; v19 to v60 are the first forty-two.
+rechecked against yours). Entries from v19 onward are appended here; v19 to v62 are the first forty-four.
 
 \paragraph{Status vocabulary.}
 \textbf{CLOSED} --- resolved and merged into the paper.
@@ -119,7 +119,7 @@ R52 & Colour positioned by $V_{\text{derived}}$: colour must be addressed by dir
 R53 & Review of v15\_28, reproducibility exceptions: $\sigma_{\text{atom}}$ populations not printed; the 804-of-3000 count is rounding-sensitive; shell binning at floating-point edges; ``checked directly'' claims without inputs & v32 & Paper 1 & \textbf{CLOSED} --- merged in v15\_34 (v58); the script now passes 47 of 48 \\
 R54 & Review of v15\_28, mechanical consistency fixes: stale ``not a sixth verb''; Table~1 says ``contribution'' for UnCollapse; title banner overflows; a drafting-history sentence in Axiom~7; ``mass'' wording in the enclosure & v32 & Paper 1 & \textbf{CLOSED} --- v40: done in v15\_29 \\
 R55 & The bowl as a holder of $V_{\text{derived}}$, the metrics and meta vectors: one statement over a holder & v32 & Paper 1 & \textbf{CLOSED} --- one sentence in Axiom~7 (v15\_36, v60): a bowl holds these quantities by the same formulas; meta vectors stay with atoms \\
-R56 & Terminology: the fifth to seventh metrics are unnamed and $\mathcal{E}$ is named only in passing; multi-sense words (cast $\times3$, shell $\times2$, energy $\times2$, density); the name for the granularity of UnCollapse is decided: grain (v50) & v33, v49, v50 & Paper 1 & \textbf{OPEN} --- found while building the glossary \\
+R56 & Terminology: the fifth to seventh metrics are unnamed and $\mathcal{E}$ is named only in passing; multi-sense words (cast $\times3$, shell $\times2$, energy $\times2$, density); the name for the granularity of UnCollapse is decided: grain (v50) & v33, v49, v50 & Paper 1 & \textbf{OPEN} --- v61: the metric names are chosen and merged (v15\_37); still to decide: ``cast'' ($\times3$), ``shell'' ($\times2$), ``density'' \\
 R57 & A use-agnostic contract: what the algebra promises (determinism, closure, persistence of sources, non-interference of cores, immutable atoms) and what any use must supply (seats, a reading time, comparison rules, conventions) & v34 & Paper 1 & \textbf{CLOSED} --- merged in v15\_32 (v56): the contract paragraph in \S1.4 \\
 R58 & Placement is external: no rule lets an atom derive its own seat from meta vectors or $V_{\text{derived}}$; the assembly descent gathers at the plain mean of the seats and sorts by content only at a scale hidden from any census cut & v34 & Assembly paper (Paper 1 stays silent, v35) & \textbf{OPEN} \\
 R59 & Non-interference as a stated property: operations on one core never alter another; derived quantities per sort once mixed sorts are admitted (joins R36 and R50) & v34 & Paper 1 & \textbf{CLOSED} --- merged in v15\_30 (v52) \\
@@ -2094,6 +2094,34 @@ and the naive alternative of \S4.4 is defined (a plane taken from $x$) and check
 \textbf{The fix} (\texttt{Pattern\_Arithmetic\_v15\_36}). A short paragraph ``Reading a Collapsed atom'' in \S2.6; one sentence in Axiom~7 saying a bowl read as its members' vectors holds $V_{\text{derived}}$ and the metrics by the same formulas (counted once for a set, every time for a Collapsed atom) and that meta vectors stay with atoms; one paragraph in Axiom~7 for R52 (colour lives in $\hat n$ and phase stays for mixing; length grows with the count, $0.519$, $51.877$, $5187.748$ for $1$, $100$, $10000$ identical colours, so it measures size; fifty red with fifty green and a hundred uniform yellow share one direction and are told apart by coherence, $0.707$ against $1.000$; the locator is direction plus coherence); and one leftover $\boxplus(\{A,B,C\})$ from R64 changed to $\mathrm{Mix}$. $52$ pages (one more, from the colour paragraph); $49$ equations identical; no label changed; the same two overfull boxes. \texttt{Inference\_v4} changes one passage only: it now cites Paper~1's reading. The Quick Reference was updated.
 
 \emph{Status: R62, R39, R55 and R52 closed; the open Paper~1 count falls from $8$ to $4$ (R27, R28, R56, R61).}
+
+\subsection*{v61 --- v15\_37: names for the fifth to seventh metrics and for $\mathcal E$ (R56, partly)}
+\textbf{Accepted.} $\mathcal E_{\text{atom}}$ is the atom's \emph{information energy} (the equation label already said so; ``intrinsic energy'' is retired); $\alpha_{\text{atom}}$ is \emph{atom agreement}; $\sigma_{\text{atom}}$ is \emph{volume concentration}; $\sigma_{\text{shell}}$ is \emph{shell concentration}. One change to my proposal: I had suggested ``shell evenness'', but $\sigma_{\text{shell}}$ reads $1$ when every vector shares one shell and $0$ when occupied shells are even, so it measures concentration, as its equation label says; ``evenness'' would have run the wrong way.
+
+\textbf{The fix} (\texttt{Pattern\_Arithmetic\_v15\_37}; six short insertions in Axiom~7, no equation touched; the Quick Reference no longer marks the three as unnamed).
+
+\textbf{Still open under R56:} ``cast'' ($\times3$), ``shell'' ($\times2$) and ``density''; the proposals (rename the clip and coherence senses of cast; ``phased identity'' for the Mix sense of shell; drop the noun in the Axiom~3 sentence) are not yet decided. The energy sense of $U_{AB}$ goes with R61.
+\emph{Status: R56 narrowed to the three overloaded words; still open.}
+
+\subsection*{v62 --- v15\_38: one family of symbols for the seven metrics}
+\textbf{Ruling.} One base symbol, $\mathcal I$ (script capital I, for the information atom), with a mnemonic subscript. This removes three collisions: $\alpha_{\text{atom}}$ against the rotation angle $\alpha=\pi r_w$ of $T$; $\sigma_{\text{atom}}$ and $\sigma_{\text{shell}}$ against each other and against the $\sigma(12)$ sigmoid of the storm example; and $S_{\text{atom}}$ against the sphere $S^2$. $\mathcal I$ was unused in all three papers.
+
+\begin{center}
+\begin{tabular}{lll}
+metric & was & now \\ \hline
+atom strength & $S_{\text{atom}}$ & $\mathcal I_{\mathrm{str}}$ \\
+atom volume & $\mathcal V_{\text{atom}}$ & $\mathcal I_{\mathrm{vol}}$ \\
+mean vector volume & $\gamma_{\text{atom}}$ & $\mathcal I_{\mathrm{mean}}$ \\
+information energy & $\mathcal E_{\text{atom}}$ & $\mathcal I_{\mathrm{en}}$ \\
+atom agreement & $\alpha_{\text{atom}}$ & $\mathcal I_{\mathrm{agr}}$ \\
+volume concentration & $\sigma_{\text{atom}}$ & $\mathcal I_{\mathrm{vcon}}$ \\
+shell concentration & $\sigma_{\text{shell}}(w)$ & $\mathcal I_{\mathrm{scon}}(w)$ \\
+\end{tabular}
+\end{center}
+The entries above this one keep the symbols they were written with; this table is the key.
+
+\textbf{The fix} (\texttt{Pattern\_Arithmetic\_v15\_38}: $49$ occurrences replaced and one sentence added in Axiom~7 saying the seven are one family; $52$ pages; $49$ equations, the same ones; no label changed). \texttt{Assembly\_v3} ($2$ occurrences) and \texttt{Inference\_v5} ($1$) follow; the Quick Reference was updated, including its identity lines.
+\emph{Status: no row closed; R56 still open for ``cast,'' ``shell'' and ``density.''}
 
 \section{Merged directly, without an ideas entry}
 
