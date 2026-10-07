@@ -1,0 +1,23 @@
+--- /mnt/user-data/outputs/Pattern_Arithmetic_v15_44.tex	2026-10-07 12:43:23.860324000 +0000
++++ Pattern_Arithmetic_v15_45.tex	2026-10-07 15:47:48.778159308 +0000
+@@ -1331,6 +1331,20 @@
+ 
+ \paragraph{Identity and containment.} An atom is its vectors together with their grouping into cores; the grouping is part of its value, and how it is laid out in storage is not this paper's concern; the meta vectors are the labels. Two things in an atom are easy to mistake for each other, and only one is a meta vector. A core's \emph{identity} is read from meta vectors it already carries: the identity key, the tuple of its sort, its source link and its timestamp. It names the core, for UnCollapse and for any use that wishes to find it, no new kind of meta vector is needed, and it never enters equality. Its \emph{containment} is not a meta vector. The containment vector records which core holds which vector --- one entry per vector, naming the position of its core in the atom's list of cores (Axiom~7), a label that says only which vectors share a core, so that renumbering the cores changes nothing --- and so is the grouping itself, part of what the atom is: equality compares it, and a meta vector never enters equality. The identity can be dropped, and UnCollapse still works by position; the grouping cannot be dropped without making a different atom.
+ 
++\paragraph{The atom as a data unit.} Besides what the verbs read from it, an atom is a unit of stored data, and it can sit beside the familiar containers. It does not replace them. Each has a counterpart here:
++\begin{center}
++\small
++\begin{tabular}{@{}p{2.6cm}p{5.6cm}p{6.2cm}@{}}
++\hline
++Container & Counterpart & What it keeps \\ \hline
++set & a bowl, by Bundle (\hyperref[subsec:axiom_idempotence]{Axiom~4}) & which atoms are present; no repeats, no order \\
++counted bag (multiset) & a Collapsed atom (Section~\ref{subsec:process_principle_collapse}) & every vector, repeats counted; no order \\
++list, tuple & a path or tape (Sections~\ref{subsec:document_sequence} and~\ref{subsec:transform_trajectories}) & order \\
++dictionary & the cores of an atom, keyed by their identity keys & for each key, the vectors that core holds \\ \hline
++\end{tabular}
++\end{center}
++Three limits belong to the statement. An atom keeps no order of its own; order lives in the path. Its values are vectors, found by their identity key or by comparison and not by an index. And reading an atom back as a name, a token, say, is a comparison with a seated unit, not an exact inverse, which a use supplies (the companion paper on Inference takes this up).
++
+ \paragraph{Expiry is a reading.} Everything is read at a time $t$, by
+ default now, and fixing $t$ keeps every law deterministic. A core is
+ valid at $t$ exactly when $t$ is earlier than every expiry it carries. An
