@@ -1,0 +1,55 @@
+--- /mnt/user-data/outputs/Pattern_Arithmetic_v15_48.tex	2026-10-07 18:21:19.410422328 +0000
++++ Pattern_Arithmetic_v15_49.tex	2026-10-07 18:30:22.566392642 +0000
+@@ -1023,7 +1023,7 @@
+ core; $N$, $Q$, $D$ & Cores, vectors, distinct cores; each vector is in one core, and the grouping is part of the atom & $Q\ge0$, $D\le N$ \\
+ $V_{\text{derived}}=\sum r_i\hat n_i$ & The raw sum of the vectors; a meta vector, uncapped and not normalized & any length \\
+ $\mathcal{I}_{\mathrm{str}}$ & How much strength in total & $\ge0$ \\
+-atom coherence $\lvert V_{\text{derived}}\rvert/\mathcal{I}_{\mathrm{str}}$ & How far the vectors reinforce one another & $[0,1]$ \\
++atom coherence $\mathcal{I}_{\mathrm{coh}}=\lvert V_{\text{derived}}\rvert/\mathcal{I}_{\mathrm{str}}$ & How far the vectors reinforce one another & $[0,1]$ \\
+ $\mathcal{I}_{\mathrm{vol}}$, $\mathcal{I}_{\mathrm{mean}}$ & Total and per-vector volume ($r^3$) & $<\mathcal{I}_{\mathrm{str}}$ if some $r_i<1$ \\
+ $\mathcal{I}_{\mathrm{en}}$ & Squared magnitude if all vectors were orthogonal & $\ge0$ \\
+ $\mathcal{I}_{\mathrm{agr}}$ & Whether the directions agree or cancel (weighted mean cosine) & $[-1,1]$ \\
+@@ -1081,8 +1081,7 @@
+ V_{\text{derived}}\rvert$ grows with the number of vectors, the turn follows
+ size, not content: $\lvert V_{\text{derived}}\rvert=51.877$ and $5187.748$
+ turn by $337.9^\circ$ and $314.6^\circ$ (the sizes of a hundred and ten thousand identical colours, below). A use that wants a turn that
+-follows content takes atom coherence, $\lvert
+-V_{\text{derived}}\rvert/\mathcal{I}_{\mathrm{str}}$, as the strength, a
++follows content takes atom coherence, $\mathcal{I}_{\mathrm{coh}}=\lvert V_{\text{derived}}\rvert/\mathcal{I}_{\mathrm{str}}$ (defined below), as the strength, a
+ choice at the call site. Every worked $T$ path in this paper takes a
+ teaching atom, and a Collapsed-atom-as-actor example is not claimed here. A bowl is not an actor either: it is a collection, and $T$ takes one unit as its actor. For $Q=1$,
+ $V_{\text{derived}}$ coincides with the atom's own vector, already
+@@ -1095,8 +1094,7 @@
+ Direction alone is many-to-one: fifty red with fifty green, and one hundred
+ uniform yellow, share the direction $(0.707,0.707,0)$, and atom coherence
+ tells them apart, $0.707$ for the blend and $1.000$ for the yellow. A
+-colour's locator is therefore the direction together with $\lvert
+-V_{\text{derived}}\rvert/\mathcal{I}_{\mathrm{str}}$.
++colour's locator is therefore the direction together with $\mathcal{I}_{\mathrm{coh}}$.
+ 
+ A bowl read as its members' vectors holds these quantities by the same formulas, counting a repeated member once, and a Collapsed atom counts it every time; meta vectors stay with atoms.
+ Seven scalar metrics follow from the same $Q$ informational vectors, all of them, whichever core holds each, among the cores valid at the reading time (Section~\ref{subsec:meta_vectors}),
+@@ -1109,8 +1107,8 @@
+ \mathcal{I}_{\mathrm{mean}} = \frac{\mathcal{I}_{\mathrm{vol}}}{Q}.
+ \]
+ $\mathcal{I}_{\mathrm{str}}$, atom strength, is the correct denominator for
+-atom-level coherence, $\lvert V_{\text{derived}}\rvert /
+-\mathcal{I}_{\mathrm{str}}$, structurally identical to the companion paper's own
++atom-level coherence, $\mathcal{I}_{\mathrm{coh}}=\lvert V_{\text{derived}}\rvert /
++\mathcal{I}_{\mathrm{str}}$ (a named ratio of two quantities already defined, not an eighth metric, as with $Q_{\mathrm{eff}}$), structurally identical to the companion paper's own
+ mean resultant length one level down --- reading $1.0$ for perfectly
+ aligned informational vectors and falling smoothly toward $0$ as they
+ scatter. $\mathcal{I}_{\mathrm{vol}}$, atom volume, is strictly
+@@ -1279,10 +1277,10 @@
+ and $V_{\text{derived}}$ are empty sums and equal $0$. Two quantities
+ have no value to report and are set by convention, extending the stated
+ convention at $Q=1$: $\mathcal{I}_{\mathrm{mean}}=0$ and
+-$\mathcal{I}_{\mathrm{vcon}}=0$. Three are undefined for the empty atom:
++$\mathcal{I}_{\mathrm{vcon}}=0$. Four are undefined for the empty atom:
+ $\mathcal{I}_{\mathrm{agr}}$, which needs at least two vectors,
+ $\mathcal{I}_{\mathrm{scon}}$, which needs at least one, and
+-$Q_{\mathrm{eff}}$, which needs nonzero strength.
++$\mathcal{I}_{\mathrm{coh}}$ and $Q_{\mathrm{eff}}$, which need nonzero strength.
+ 
+ \subsection{Meta vectors: what an atom carries beside its content}
+ \label{subsec:meta_vectors}
