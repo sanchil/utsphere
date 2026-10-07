@@ -4,7 +4,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 
-\title{Ideas Register --- Consolidated, v1 to v63}
+\title{Ideas Register --- Consolidated, v1 to v64}
 \author{One file for every parked idea, with its current status}
 \date{}
 
@@ -20,14 +20,14 @@ where it stands now.
 
 \textbf{How status was determined.} Not from memory of the
 discussions. Each status was checked by searching the current paper,
-\texttt{Pattern\_Arithmetic\_v15\_39.tex} (v15\_39 lets $V_{\text{derived}}$ act as it is, on v15\_38, which writes the seven metrics as one family, $\mathcal I$ with a subscript, on v15\_37, which names three metrics and $\mathcal E$, on v15\_36, which states Mix over a Collapsed atom, on v15\_35, which adds one clause to \S2.10, on v15\_34, which writes the bowl reading as $\mathrm{Mix}(B)$, prints the populations behind the reproducibility claims and prints the enclosure force, on v15\_33, which tightens one sentence of v15\_32, which adds three paragraphs to \S1.4 to v15\_31, which rewords the Mix refusal, UnMix and four other sentences of v15\_30, which adds the UnCollapse cluster to v15\_29, which is v15\_28 with cosmetic changes only; v15\_28 differs from v15\_22
+\texttt{Pattern\_Arithmetic\_v15\_40.tex} (v15\_40 adds the meta-vector catalogue and the atom-level meta vectors, on v15\_39, which lets $V_{\text{derived}}$ act as it is, on v15\_38, which writes the seven metrics as one family, $\mathcal I$ with a subscript, on v15\_37, which names three metrics and $\mathcal E$, on v15\_36, which states Mix over a Collapsed atom, on v15\_35, which adds one clause to \S2.10, on v15\_34, which writes the bowl reading as $\mathrm{Mix}(B)$, prints the populations behind the reproducibility claims and prints the enclosure force, on v15\_33, which tightens one sentence of v15\_32, which adds three paragraphs to \S1.4 to v15\_31, which rewords the Mix refusal, UnMix and four other sentences of v15\_30, which adds the UnCollapse cluster to v15\_29, which is v15\_28 with cosmetic changes only; v15\_28 differs from v15\_22
 only in the atom-structure passages and the meta-vector subsection, so
 earlier checks stand), and
 --- for items destined
 elsewhere --- the \texttt{Assembly\_v1.tex} and
 \texttt{Inference\_v1.tex} copies on hand (which may be older than
 your working copies; if so, the ``not filed'' marks below should be
-rechecked against yours). Entries from v19 onward are appended here; v19 to v63 are the first forty-five.
+rechecked against yours). Entries from v19 onward are appended here; v19 to v64 are the first forty-six.
 
 \paragraph{Status vocabulary.}
 \textbf{CLOSED} --- resolved and merged into the paper.
@@ -109,9 +109,9 @@ R17 & Meta-vector grouping (promote a shared one) & v2 & Inference & \textbf{OPE
 R18 & Identity handle / Mix-provenance link & v5, v11 & Papers 1, 2, Inf. & \textbf{CLOSED} --- merged in v15\_30 (v52) \\
 R19 & Should Mix/Collapse skip expired contributions? & v17 & Paper 1; Inf. & \textbf{CLOSED} --- merged in v15\_30 (v52) \\
 R45 & Meta-vector design questions G1--G14 (v23, v24): label identity, the level rule, mutation and links, vocabulary, timestamp encoding, sentinels, granularity, comparison per kind, core multiplicity, guidance & v23, v24 & Paper 1 & \textbf{CLOSED} --- merged in v15\_25, with the closure-unit sentence, the identity wording and the granularity fixed in v15\_26; G11 and G14's merge default not merged \\
-R46 & Scalar meta vectors as vectors in planes; a registry of recommended planes (non-normative) & v27 & Paper 1 (Future Work catalogue) & \textbf{PARTLY MERGED} --- form (scalar on a designated axis, no other constraint) and the catalogue entry merged in v15\_27 and corrected in v15\_28; the catalogue itself not populated; v47: it now also carries the time standard and the axis and unit per scalar kind, moved from R50 \\
+R46 & Scalar meta vectors as vectors in planes; a registry of recommended planes (non-normative) & v27 & Paper 1 (Future Work catalogue) & \textbf{CLOSED} --- merged in v15\_40 (v64) \\
 R47 & Expiry as read-time exclusion: determinism, counts, hierarchy, links to expired atoms & v27 & Paper 1 & \textbf{CLOSED} --- merged in v15\_27 \\
-R48 & Two-level meta vectors: a result's own new timestamp beside its cores' & v27 & Paper 1 & \textbf{PARTLY MERGED} --- timestamp, link and expiry merged (v15\_26, v15\_27); atom-level location not \\
+R48 & Two-level meta vectors: a result's own new timestamp beside its cores' & v27 & Paper 1 & \textbf{CLOSED} --- merged in v15\_40 (v64) \\
 R49 & ``Never lose identity'': value, individual, handle; Mix and UnMix & v27 & Paper 1 & \textbf{CLOSED} --- merged in v15\_27; Bundle reading to confirm \\
 R50 & Meta-vector consistency obligations: labels of results of $T$, offset, Remove and Assembly; fixed conventions (time standard, axis and unit per scalar kind); per-sort $V_{\text{derived}}$ & v30 & Paper 1 & \textbf{CLOSED} --- merged in v15\_30 (v52) \\
 R51 & The Mona Lisa as the test case for mixed-sort cores (R36): one core per canvas point; a bowl of single-sort atoms aligned by position labels today; standards per sort; a planar position kind in the catalogue & v31 & Paper 1 & \textbf{CLOSED} --- merged in v15\_30 (v52) \\
@@ -2132,6 +2132,16 @@ The entries above this one keep the symbols they were written with; this table i
 
 \textbf{The fix} (\texttt{Pattern\_Arithmetic\_v15\_39}: nine edits; $52$ pages; $49$ equations, the same ones, with $\alpha(r_w)=\pi r_w$ unchanged; no label changed; the same two overfull boxes). R21 and R40 stand as closed, with this change: the phrase ``a cast is named at the call site'' is gone, and ``a Collapsed-atom-as-actor example is not claimed'' remains. The Quick Reference was updated (six rows).
 \emph{Status: R56 closed; the open Paper~1 count falls from $4$ to $3$ (R27, R28, R61, all the split).}
+
+\subsection*{v64 --- v15\_40: atom-level meta vectors and the meta-vector catalogue (R48 and R46 closed)}
+\textbf{R48, ruling.} Collapse destroys none of the cores' meta vectors. A result is, for these purposes, one new core on top of the cores it keeps: its own $V_{\text{timestamp}}$, its own $V_{\text{derived}}$ (the sum of everything it holds), its backward $V_{\text{link}}$, and, where a use supplies them, its own $V_{\text{location}}$ and $V_{\text{expiry}}$; absent means absent. One reading I took and the paper now says: no verb computes a location or an expiry for a result from its operands' (a centroid of places is a reading a use may make).
+
+\textbf{R46, ruling.} All meta vectors are uncapped; a scalar kind takes one axis, $\mathbb R^1$, a kind of two angles takes a plane, $\mathbb R^2$. The catalogue is an unnumbered table in the deferred-catalogues subsection, recommendations only: timestamp and expiry ($\mathbb R^1$, seconds since 1970-01-01 00:00 UTC, difference of values), clock face and location ($\mathbb R^2$, angle; cyclic and great-circle distance), $V_{\text{derived}}$, the seat, $V_{\text{link}}$, and the two additions $V_{\text{identity}}$ and $V_{\text{container}}$. The time standard was my default, since none was chosen; it is a recommendation and easy to change.
+
+\textbf{A point to know.} $V_{\text{identity}}$ is the tuple of meta vectors a core already carries and never enters atom equality. $V_{\text{container}}$ is the containment vector, which the paper has said since v15\_30 is \emph{not} a meta vector in the strict sense, because it is the grouping and enters equality; were it one, two atoms with the same vectors grouped differently would be equal, and $N$, $D$ and UnCollapse would break. The table therefore lists it beside the meta vectors and says so.
+
+\textbf{The fix} (\texttt{Pattern\_Arithmetic\_v15\_40}: three edits; $52$ pages; $49$ equations, the same ones; no label changed, and the table is unnumbered so no table is renumbered; the same two overfull boxes). The Quick Reference gained two rows, the location row and the Results rule were updated.
+\emph{Status: R46 and R48 closed; Paper~1's only open rows are R27, R28 and R61, all the split.}
 
 \section{Merged directly, without an ideas entry}
 

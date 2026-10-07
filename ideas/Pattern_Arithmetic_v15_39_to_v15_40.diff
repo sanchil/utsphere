@@ -1,0 +1,29 @@
+1338c1338
+< \item $V_{\text{location}}$, per core, is a point on a sphere, latitude as the polar
+---
+> \item $V_{\text{location}}$, per core and, where a use supplies one, per atom, is a point on a sphere, latitude as the polar
+1362c1362
+< sources --- beside the cores' own; so an atom's own birth and its cores' births are separate facts. The same holds for every result, not Collapse alone: a result is a new atom with its own new $V_{\text{timestamp}}$ and a backward $V_{\text{link}}$ naming its operands, and the cores that survive into it keep theirs. $V_{\text{derived}}$ is held per core and for the atom.
+---
+> sources --- beside the cores' own; so an atom's own birth and its cores' births are separate facts. The same holds for every result, not Collapse alone: a result is a new atom with its own new $V_{\text{timestamp}}$ and a backward $V_{\text{link}}$ naming its operands, and the cores that survive into it keep theirs. A result is, for these purposes, one new core on top of the cores it keeps: besides its timestamp and backward link it carries its own $V_{\text{derived}}$, the sum of everything it holds, and it may carry its own $V_{\text{location}}$ and $V_{\text{expiry}}$ where a use supplies them; absent means absent. Collapse destroys none of the cores' meta vectors, and no verb computes a location or an expiry for a result from those of its operands.
+2483c2483
+<           See also Section~\ref{sec:conclusion}.
+---
+>                     See also Section~\ref{sec:conclusion}.
+2484a2485,2500
+> \paragraph{The meta-vector catalogue.} All meta vectors are uncapped. A scalar kind takes one axis, $\mathbb{R}^1$; a kind of two angles takes a plane, $\mathbb{R}^2$; each lives in its own space or in axes disjoint from the content's. The entries are recommendations of the same standing as the dictionaries, so that meta vectors from different sources line up; a use may choose another unit if it states it.
+> \begin{center}
+> \small
+> \begin{tabular}{@{}p{2.5cm}p{3.3cm}p{3.6cm}p{3.7cm}@{}}
+> \hline
+> Kind & Space & Unit & Compared by \\ \hline
+> $V_{\text{timestamp}}$, $V_{\text{expiry}}$ & $\mathbb{R}^1$, one axis each & seconds since 1970-01-01 00:00 UTC & difference of values \\
+> clock face & $\mathbb{R}^2$: minute on $\phi$, hour on $\chi$, $\theta$ at the equator & angle & cyclic distance \\
+> $V_{\text{location}}$ & $\mathbb{R}^2$: polar angle, azimuth & angle & great-circle distance \\
+> $V_{\text{derived}}$ & $\mathbb{R}^{N_{\mathrm{dim}}}$ & strength & vector distance \\
+> seat $\vec P$ & $\mathbb{R}^3$ & a length the use chooses & Euclidean distance \\
+> $V_{\text{link}}$ & $\mathbb{R}^1$, an identifier & none & equality \\
+> $V_{\text{identity}}$ & the tuple (sort, link, timestamp) of meta vectors the core already carries; no axis of its own & none & equality; never enters the equality of atoms \\
+> $V_{\text{container}}$ & $\mathbb{R}^1$ per vector: the position of its core & an index & equality; \emph{enters} the equality of atoms, being the grouping itself, so it is listed here beside the meta vectors and is not one in the strict sense \\ \hline
+> \end{tabular}
+> \end{center}
