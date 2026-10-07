@@ -1,0 +1,341 @@
+--- /mnt/user-data/outputs/Pattern_Arithmetic_v15_42.tex	2026-10-07 12:08:16.078899271 +0000
++++ Pattern_Arithmetic_v15_43.tex	2026-10-07 12:29:27.675901156 +0000
+@@ -354,8 +354,7 @@
+ \emph{presence, phase, order, and rest}, not a substitute for a field
+ equation. The enclosure's energy is a bookkeeping rule for seats
+ $\vec P$; it is not a model of gravity or of matter.
+-Storms, forests, a table and chair, and a pathogen cancellation later in the paper
+-(Section~\ref{sec:higher_order}) are costumes for the
++The storm of Section~\ref{sec:higher_order}, and the table and chair, forest and pathogen cancellation of the companion paper on Inference, are costumes for the
+ $\uplus$-versus-$T$ split: presence versus path. Related-work
+ paragraphs (Section~\ref{sec:related}) draw boundaries against
+ existing formalisms. None of that is a demonstrated model of weather,
+@@ -1307,9 +1306,8 @@
+ carried unchanged. Angles, magnitudes, and distances among the
+ information vectors and $V_{\text{derived}}$ are preserved, so turning an
+ atom changes where it points and not what it says. Which axis suits which
+-kind is a recommendation, the business of a catalogue of the same
+-standing as the dictionaries of
+-Section~\ref{subsec:standard_dictionaries}, and not an axiom.
++kind is a recommendation, the business of the catalogue of
++Section~\ref{subsec:meta_catalogue}, and not an axiom.
+ 
+ \paragraph{Two are already in the paper.} $V_{\text{derived}}$
+ (\S\ref{subsec:axiom_v1_metrics}) is the sum of an atom's informational
+@@ -2293,7 +2291,12 @@
+ \paragraph{Cast.}
+ Rare and named. The map $E_{\mathtt{num}\to\mathtt{word}}(2)=\texttt{two}$
+ turns a digit into a spoken numeral; the inverse is parsing. Casts are
+-dictionary maps, not $\uplus$.
++dictionary maps, not $\uplus$. A lexicon is a cast of the same kind: it sends a surface token to a state,
++\begin{equation}
++    E_{L}(\texttt{token}) = x\in\mathcal{S},
++    \label{eq:lexicon_cast}
++\end{equation}
++one map for each language, and two lexicons may send different strings to the same state. The shared register that this makes possible is a design, taken up in the companion paper.
+ 
+ The illegal meeting is an untyped blend
+ \begin{equation}
+@@ -2380,108 +2383,11 @@
+ \label{tab:type_table}
+ \end{table}
+ 
+-\subsection{Worked mixed sentence}
+-\label{subsec:mixed_sentence}
+-Take the report line \emph{Wind of $12\,\mathrm{m/s}$ darkened the sun.}
+-The register is used as follows.
+-
+-\begin{enumerate}
+-    \item Load $\mathrm{wind}$, sort $\mathtt{word}$.
+-    \item Load $12$, sort $\mathtt{num}$. Juxtapose; do not form
+-          $\mathrm{wind}\uplus 12$.
+-    \item Load $\mathrm{m/s}$ as a unit-name (lexical qualifier of the
+-          number).
+-    \item Load $\mathrm{sun}$, sort $\mathtt{word}$.
+-    \item Let the number cap a strength,
+-          $\sigma(12)\in[0,1]$, and set
+-          $r_{\mathrm{wind}}=\sigma(12)$ so that
+-          $\alpha=\pi\sigma(12)$ in Equation~\eqref{eq:transform_def}.
+-    \item Apply $T_{\mathrm{wind}}(\mathrm{sun})$. Output sort:
+-          $\mathtt{word}$.
+-\end{enumerate}
+-The scalar never became a hue. It turned a dial of an action whose
+-actors remained words. That is the same division of labor a printed
+-paper already uses: digits set magnitudes; words name what the
+-magnitudes belong to.
+-
+-\subsection{Several lexicons, one concept sphere}
+-\label{subsec:shared_lexicons}
+-Surface tokens are not meanings. Two dictionaries may write the same
+-pair of concepts with unrelated strings:
+-\begin{equation}
+-    \begin{aligned}
+-        L_1&: \quad \texttt{xyz}\mapsto\mathrm{man},\quad
+-                    \texttt{qyz}\mapsto\mathrm{woman},\\
+-        L_2&: \quad \texttt{fgh}\mapsto\mathrm{man},\quad
+-                    \texttt{hgf}\mapsto\mathrm{woman}.
+-    \end{aligned}
+-    \label{eq:two_lexicons}
+-\end{equation}
+-In the usual pipeline each lexicon is tokenized, encoded, and
+-\emph{embedded separately}. The geometry that makes
+-$\mathrm{man}$ near $\mathrm{woman}$ is then learned twice, and a
+-further alignment step is required before $L_1$ and $L_2$ can share
+-an analogy. The token-to-embedding map is doing two jobs at once:
+-naming a string, and inventing a place for its meaning.
+-
+-The unit sphere is offered as a \emph{proposed common coordinate register}, not as a demonstrated universal semantic space and not as a replacement for a lexicon table.
+-A token is a surface form. A state on $\mathcal{S}$ is a meaning.
+-Each lexicon is only a cast
+-\begin{equation}
+-    E_{L}(\texttt{token}) = x\in\mathcal{S},
+-    \label{eq:lexicon_cast}
+-\end{equation}
+-the same kind of map as $E_{\mathtt{num}\to\mathtt{word}}$ above.
+-Under that discipline both $\texttt{xyz}$ and $\texttt{fgh}$ load the
+-\emph{same} state $\mathrm{man}$. The offset
+-$\mathrm{Sun}\to\mathrm{Day}$ of Section~\ref{sec:analogical_offset}
+-is then computed once, on the globe, and reused by every lexicon that
+-points at those two points.
+-
+-Embeddings therefore stay. They do not disappear.
+-What changes is that they are no longer private vector spaces, one
+-per lexicon. They are embeddings \emph{into the same unit}
+-$\mathcal{S}$. Once $E_{L_1}(\texttt{xyz})=E_{L_2}(\texttt{fgh})=\mathrm{man}$,
+-the two surface forms occupy one address, and every angle measured
+-from that address is the same angle:
+-\begin{equation}
+-    \angle(\mathrm{man},\mathrm{woman})
+-    \;=\;
+-    \angle\bigl(E_{L_1}(\texttt{xyz}),\,E_{L_1}(\texttt{qyz})\bigr)
+-    \;=\;
+-    \angle\bigl(E_{L_2}(\texttt{fgh}),\,E_{L_2}(\texttt{hgf})\bigr).
+-    \label{eq:uniform_angles}
+-\end{equation}
+-Under that proposal the embeddings would be uniform: same globe, same points for the same
+-concepts, same angles for the same relations. A raw string still
+-needs the lexicon map $E_L$. It would no longer need a new geometry.
+-The algebra does not mint a universal $\mathrm{man}$ point by itself. That is a dictionary programme, not an axiom.
+-
+-\subsection{Deferred programme: standardized concept dictionaries}
+-\label{subsec:standard_dictionaries}
+-The present section only \emph{names} the shared globe. It does not
+-build the dictionaries, and it does not treat them as part of the
+-algebra closed in Axioms~0--7. The later refinement, if the idea is
+-pursued, is a set of catalogues, with learnable paths beside them, rather than a new operator, and is
+-filed under Future Work (Section~\ref{sec:conclusion}):
+-\begin{itemize}
+-    \item one \emph{concept dictionary} --- a stipulated inventory of
+-          unit states on $\mathcal{S}$ (or a higher-dimensional
+-          analogue), so that $\mathrm{man}$ and $\mathrm{woman}$ have
+-          standard addresses and therefore standard angles;
+-    \item one \emph{language lexicon} $E_L$ per written or spoken
+-          system, sending that language's tokens onto those addresses;
+-    \item one \emph{meta-vector catalogue} --- a recommended axis, or plane,
+-          for each scalar kind, such as a time or an expiry, so that
+-          scalar meta vectors from different sources line up
+-          (Section~\ref{subsec:meta_vectors}); recommendations only;
+-    \item learnable paths --- the species of $T$ and the dials inside
+-          a given $T$ (angle map, phase map, paint-versus-poem gate)
+-          may be fitted from examples. Learning would adjust the path,
+-          not the rule that a bowl is collected before it is read.
+-                    See also Section~\ref{sec:conclusion}.
+-\end{itemize}
+-\paragraph{The meta-vector catalogue.} All meta vectors are uncapped. A scalar kind takes one axis, $\mathbb{R}^1$; a kind of two angles takes a plane, $\mathbb{R}^2$; each lives in its own space or in axes disjoint from the content's. The entries are recommendations of the same standing as the dictionaries, so that meta vectors from different sources line up; a use may choose another unit if it states it.
++\subsection{The meta-vector catalogue}
++\label{subsec:meta_catalogue}
++The concept dictionaries and per-language lexica that a shared register would need are not part of this paper; the companion paper \emph{Pattern Arithmetic: Inference from Bowls and Paths} carries them as a deferred programme. One catalogue belongs here, because the meta vectors of Section~\ref{subsec:meta_vectors} are defined here.
++
++All meta vectors are uncapped. A scalar kind takes one axis, $\mathbb{R}^1$; a kind of two angles takes a plane, $\mathbb{R}^2$; each lives in its own space or in axes disjoint from the content's. The entries are recommendations of the same standing as the dictionaries, so that meta vectors from different sources line up; a use may choose another unit if it states it.
+ \begin{center}
+ \small
+ \begin{tabular}{@{}p{2.5cm}p{3.3cm}p{3.6cm}p{3.7cm}@{}}
+@@ -2497,92 +2403,6 @@
+ $V_{\text{container}}$ & $\mathbb{R}^1$ per vector: the position of its core, a label and not a measurement & an index & equality, up to renumbering the cores; the grouping itself, so it enters the equality of atoms and is not a meta vector (Section~\ref{subsec:meta_vectors}) \\ \hline
+ \end{tabular}
+ \end{center}
+-Standardization of the first catalogue is what makes embeddings
+-uniform across English, a cipher, or a second natural language.
+-The second catalogue is still a tokenizer-plus-encoding: it is the
+-phone book, not the city. Tokens and encodings have already earned
+-their keep, so they stay. They only have to work \emph{lighter}:
+-look up a standard address instead of inventing one. They disappear as
+-\emph{inventors of geometry}. They do not disappear as \emph{names}.
+-A world in which every language pointed at the same concept
+-dictionary would still print letters on a page; It would no longer need each 
+-corpus to learn a private $\mathrm{man}$--$\mathrm{woman}$ angle. 
+-That programme is recorded here and left open. It is not an
+-axiom, and it is not implied by the existence of $\mathcal{S}$ alone.
+-
+-\subsection{Scope of the register model}
+-\label{subsec:register_scope_final}
+-This section claims only that one sphere can \emph{host} both alphabets
+-as a workspace, and that several lexicons can point at the same
+-workspace through different casts. It does not claim that the two-dimensional surface
+-$S^2$ is a realistic embedding space for a full natural-language
+-lexicon: a working word embedding typically needs tens or hundreds of
+-dimensions. The construction here is a typed register and a toy
+-dictionary on one globe. Scaling the lexical encoding is a later
+-choice --- a higher-dimensional sphere, a spherical-harmonic field, or
+-an external lookup table that writes states into the register. The
+-lookup tables $E_L$ may still be learned; the claim is only that they
+-should write into one geometry rather than each minting a private one.
+-The unit ball of radius $1$ in $\mathbb{R}^3$ is where the idea is
+-taught. The unit sphere in the embedding dimension is where close
+-semantics can live. The algebra --- Bundle, path, result --- is
+-meant to travel with the dimension. It is not meant to replace $768$
+-numbers with two angles and hope the library still sorts.
+-
+-\section{A Sketch of Conventions}
+-\label{sec:conventions_sketch}
+-These notes are a seed for later grammars, not a code to enforce.
+-They show one way a typed register \emph{might} be spoken. A later
+-grammar --- learned, cultural, or formal --- may replace every line.
+-This paper only needs the ground level enough that such a grammar has
+-somewhere to stand.
+-
+-\paragraph{Case does not move the address.}
+-The tokens $\texttt{man}$, $\texttt{Man}$, and $\texttt{MAN}$ load the
+-same direction $(\theta,\phi)$. Orthography is a doorbell, not a new
+-city block.
+-
+-\paragraph{Language does not move the address.}
+-English $\texttt{man}$ and a Polish token for the same concept load the
+-same point. Only the lexicon map $E_L$ changes. Language is a
+-phone-book tag $L$, not a second angle.
+-
+-\paragraph{Color is reserved for mood, not for language.}
+-Phase $\chi$ is already used as affect in the poem example
+-(Section~\ref{subsec:transform_example}). If language or case also
+-occupied $\chi$, that example would break. Emphasis may tint $\chi$
+-or raise $r$; it should not relocate $\mathrm{Sun}$ to $\mathrm{Moon}$.
+-
+-\paragraph{A bag is not a sentence.}
+-$\{\mathrm{sun},\mathrm{wind}\}$ is $\uplus$.
+-``Wind darkens the sun'' is $T$. Ingredients and order are different
+-verbs. How often a unit is used is not a second shell in the bag:
+-the path may visit $\texttt{twinkle}$ twice; $\mathtt{num}$ may
+-count $1+1+1+1=4$. $\uplus$ will not.
+-
+-\paragraph{A numeral is not a word until it is cast.}
+-The digit $2$ stays $\mathtt{num}$. The word $\texttt{two}$ is
+-$\mathtt{word}$. They may share a bowl --- Bundle is sort-blind ---
+-but $2\uplus\texttt{two}=\{2,\texttt{two}\}$ is two seats, not a cast
+-and not a sum. Becoming a word requires the explicit
+-$E_{\mathtt{num}\to\mathtt{word}}$ of
+-Section~\ref{sec:encodings_sorts}, which no Bundle performs.
+-
+-A toy row makes the first three conventions visible. Place
+-$\mathrm{man}$ at $(\theta,\phi)=(10^\circ,40^\circ)$:
+-
+-\begin{center}
+-\begin{tabular}{llcc}
+-Token & $L$ & $(\theta,\phi)$ & $\chi$ (mood only) \\
+-\hline
+-\texttt{man} & English & $(10^\circ,40^\circ)$ & $0^\circ$ (neutral) \\
+-\texttt{Man} & English & $(10^\circ,40^\circ)$ & $0^\circ$ \\
+-\texttt{MAN} & English & $(10^\circ,40^\circ)$ & $20^\circ$ (emphasis, optional) \\
+-\texttt{man} & Polish  & $(10^\circ,40^\circ)$ & $0^\circ$ \\
+-\end{tabular}
+-\end{center}
+-
+-Same block. Different doorbells. Nothing here is binding.
+ 
+ \section{Operational Algebra \& Numerical Demonstration}
+ 
+@@ -2771,56 +2591,7 @@
+ Same bowl, two weathers. The storm is the walk. It is not a fifth pin,
+ and it is not a claim about vorticity or shear.
+ 
+-\subsection{Table and chair (costume)}
+-\label{subsec:table_chair}
+-A table is one seated unit; a chair is another. $\{\mathrm{table},\,\mathrm{chair}\}$
+-is their bowl under $\uplus$ --- two names present, order-blind, no
+-claim about arrangement. A room is not read from that bowl. It is
+-read from a path: $T_{\mathrm{chair}}(\mathrm{table})$, the chair
+-acting on the table, is a placement --- pulled up to the table's edge.
+-$T_{\mathrm{table}}(\mathrm{chair})$, the same two shells with the
+-actor swapped, is a different placement --- the table built around
+-a fixed chair. $\uplus$ cannot tell these apart; it only knows both
+-are present. $T$ can, because $T$ is not symmetric in its two
+-arguments the way $\uplus$ is. As with the storm's pockets, a named
+-room --- ``dining nook,'' ``reading corner,'' ``cluttered storage''
+---- is a separate dictionary pin, not a sum of the furniture. An
+-endpoint may land near one pin or another; nearness is comparison
+-after the walk, exactly as in Section~\ref{subsec:storm_pipeline}.
+-This is a costume for the same split table and chair make familiar
+-without any physics: two objects merely being present is one
+-reality (grocery counting: one bag of grain plus one bag of grain is
+-two bags --- schoolbook $+$, not $\uplus$); two objects placed
+-in a specific relation is a different reality, and no amount of
+-$\uplus$ on the parts reaches it. It is not a model of furniture,
+-interior design, or how rooms are actually named.
+-
+-The furniture case is also where the motivating hypothesis behind
+-this whole paper is easiest to say plainly: a path $T_{\mathrm{chair}}$
+-that keeps ``chair acts on table'' as one typed, invertible step is a
+-shorter thing to learn than the same fact buried inside a flat
+-embedding, where the model must first discover, from undifferentiated
+-vectors, that arrangement is a different kind of fact than mere
+-co-occurrence. Keeping presence ($\uplus$) and path ($T$) as separate
+-primitives is a bet that higher-order truths become easier to learn
+-because the distinction is built in rather than re-derived from data.
+-That bet is stated here as a hypothesis, not a result: no example in
+-this paper demonstrates it, and one is deliberately not attempted.
+-Section~\ref{subsec:future_work} leaves it open.
+-
+-\subsection{Forest (costume)}
+-Flora, fauna, soil, moisture sit as units. $\uplus$ Bundles them into
+-one bowl --- four names present, order-blind
+-(\hyperref[subsec:axiom_idempotence]{Axiom~4}).
+-There is no $A+B=AB$. A path may read competition or succession.
+-The forest-as-system is that reading.
+-
+-\subsection{Pathogen cancellation (costume)}
+-A mark and an equal-strength anti-phase mark Bundle as two seats in
+-one bowl (\hyperref[subsec:axiom_idempotence]{Axiom~4}); $\uplus$ does not
+-cancel them. That bowl may then be \emph{read} by Mix into black
+-(\hyperref[subsec:axiom_interference]{Axiom~5}). That is geometry. It is not
+-medicine.
++Further costumes (table and chair, forest, pathogen cancellation) are carried by the companion paper on Inference.
+ 
+ \section{The Enclosure: Seats, Rest, and Camps}
+ \label{sec:enclosure}
+@@ -3191,14 +2962,13 @@
+ lexicon that points at it. That is a design, not a demonstrated
+ universal semantic space.
+ 
+-A few spoken conventions are sketched in
+-Section~\ref{sec:conventions_sketch} as seed, not statute.
++The spoken conventions, the mixed-document and shared-lexicon design, and the standardized dictionaries are carried by the companion paper on Inference, as seed and not as statute.
+ 
+ \subsection{Future work}
+ \label{subsec:future_work}
+-What remains to be built, and is only filed here, is a standardized
++What remains to be built is a standardized
+ concept dictionary together with per-language lexica $E_L$
+-(Section~\ref{subsec:standard_dictionaries}). Until those catalogues
++(companion paper, on Inference). Until those catalogues
+ exist, tokenization and encoding remain the handles by which a
+ paragraph finds its points. They may continue; they will only have to
+ work lighter. The open bet is that they need not also
+@@ -3216,8 +2986,7 @@
+ matrix. Weights may change how the shells are thrown. They should
+ not let the shells throw themselves.
+ 
+-Left fully open is the hypothesis raised in
+-Section~\ref{subsec:table_chair}: that separating presence
++Left fully open is the hypothesis raised in the table-and-chair costume of the companion paper: that separating presence
+ ($\uplus$) from path ($T$) as distinct primitives should make
+ higher-order truths cheaper to learn than recovering the same
+ distinction from undifferentiated vectors. Testing this would need a
+@@ -3243,8 +3012,7 @@
+ especially, since its own symbol is the one most easily mistaken for
+ the plus sign it is not. The embedding
+ lives in $\mathbb{R}^3$. The unit lives in the ball.
+-As already noted in Section~\ref{subsec:register_scope_final},
+-the three-dimensional ball teaches the algebra; close document
++The three-dimensional ball teaches the algebra; close document
+ semantics, if pursued, live on a higher-dimensional sphere that
+ carries the same verbs.
+ 
