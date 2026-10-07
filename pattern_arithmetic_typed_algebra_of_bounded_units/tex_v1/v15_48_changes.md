@@ -1,0 +1,6 @@
+# v15_47 -> v15_48: step 2, a map at the head of Axiom 7
+Investigated first. Moving the metric derivations to an appendix was NOT done: Axiom 7 is one continuous argument with no separable blocks, and moving it would renumber equations 15-18 and every later equation (the Quick Reference cites eq. 20, 22, 23, 29 and others) and put the Quick Reference's 23 citations of S2.10 at risk.
+Done instead (surgical): an unnumbered table at the head of Axiom 7 (vector, core with N/Q/D, V_derived, the seven metrics, atom coherence, Q_eff; what each answers; its range), with a one-paragraph lead-in. Order follows the text.
+Checks: no section, equation or table number changed (compared the two .aux files); no label lost; no undefined reference; 51 pages (from 50); the same two overfull boxes; the replay script is unaffected. The table keeps with its lead-in (needspace package added).
+
+Revised the same day (layout fix): the first build forced a page break and left a large blank before the table. The table is now a longtable (package added) with the table counter held back, so Table numbers are unchanged; the lead-in is one sentence and the table fits on one page with the Axiom 7 heading. Compared the two builds' label files again: no number changed, no label lost.

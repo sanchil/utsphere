@@ -1,0 +1,38 @@
+--- /mnt/user-data/outputs/Pattern_Arithmetic_v15_47.tex	2026-10-07 18:10:18.329294000 +0000
++++ Pattern_Arithmetic_v15_48.tex	2026-10-07 18:21:13.745163494 +0000
+@@ -4,6 +4,8 @@
+ % Import Packages
+ \usepackage[utf8]{inputenc}        % Encoding
+ \usepackage{array}
++\usepackage{needspace}
++\usepackage{longtable}
+ \usepackage{amsmath, amssymb}     % Advanced math formulas
+ \usepackage{mathtools}           % Math enhancements
+ \usepackage{graphicx}            % Image insertion
+@@ -1010,6 +1012,26 @@
+ 
+ \subsection{Axiom 7: Informational vectors and derived per-atom metrics}
+ \label{subsec:axiom_v1_metrics}
++\Needspace{7\baselineskip}
++\emph{A map of this axiom.} Each quantity below is defined in the text, in this order, and none enters a verb unless it is named.
++{\footnotesize
++\begin{longtable}[c]{@{}>{\raggedright\arraybackslash}p{4.4cm}>{\raggedright\arraybackslash}p{6.4cm}>{\raggedright\arraybackslash}p{3.4cm}@{}}
++\hline
++Quantity & What it answers & Range \\ \hline
++\endhead
++vector $v_i=(r_i,\hat n_i,\chi_i)$, sort $\tau_i$ & One informational reading, an instance of Axiom~1 & $0<r_i\le1$ \\
++core; $N$, $Q$, $D$ & Cores, vectors, distinct cores; each vector is in one core, and the grouping is part of the atom & $Q\ge0$, $D\le N$ \\
++$V_{\text{derived}}=\sum r_i\hat n_i$ & The raw sum of the vectors; a meta vector, uncapped and not normalized & any length \\
++$\mathcal{I}_{\mathrm{str}}$ & How much strength in total & $\ge0$ \\
++atom coherence $\lvert V_{\text{derived}}\rvert/\mathcal{I}_{\mathrm{str}}$ & How far the vectors reinforce one another & $[0,1]$ \\
++$\mathcal{I}_{\mathrm{vol}}$, $\mathcal{I}_{\mathrm{mean}}$ & Total and per-vector volume ($r^3$) & $<\mathcal{I}_{\mathrm{str}}$ if some $r_i<1$ \\
++$\mathcal{I}_{\mathrm{en}}$ & Squared magnitude if all vectors were orthogonal & $\ge0$ \\
++$\mathcal{I}_{\mathrm{agr}}$ & Whether the directions agree or cancel (weighted mean cosine) & $[-1,1]$ \\
++$\mathcal{I}_{\mathrm{vcon}}$ & How unevenly volume is shared among vectors & $[0,1]$ \\
++$\mathcal{I}_{\mathrm{scon}}(w)$ & Whether many vectors share one strength bin of width $w$ & $[0,1]$ \\
++$Q_{\mathrm{eff}}=\mathcal{I}_{\mathrm{str}}^2/\mathcal{I}_{\mathrm{en}}$ & Equally strong vectors that carry the same energy & $[1,Q]$ \\ \hline
++\end{longtable}}
++\addtocounter{table}{-1}
+ The teaching atom of \hyperref[subsec:axiom1]{Axiom~1} is one unit
+ ($N=Q=1$), one state among several. An atom may also be \emph{Collapsed}: $Q$ informational
+ vectors $v_i=(r_i,\hat n_i,\chi_i)$, each carrying its own phase-color $\chi_i\in[0,2\pi)$ alongside $(r_i,\hat n_i)$ and its own sort $\tau_i$ --- $v_i$ together with $\tau_i$ forming, per vector, the same unit \hyperref[subsec:axiom1]{Axiom~1} states, still capped at $r_i\le 1$, and positive: a vector of strength zero is black
