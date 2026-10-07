@@ -1,0 +1,39 @@
+--- /mnt/user-data/outputs/Pattern_Arithmetic_v15_46.tex	2026-10-07 16:06:16.510939000 +0000
++++ Pattern_Arithmetic_v15_47.tex	2026-10-07 18:10:05.234672249 +0000
+@@ -3,6 +3,7 @@
+ 
+ % Import Packages
+ \usepackage[utf8]{inputenc}        % Encoding
++\usepackage{array}
+ \usepackage{amsmath, amssymb}     % Advanced math formulas
+ \usepackage{mathtools}           % Math enhancements
+ \usepackage{graphicx}            % Image insertion
+@@ -61,10 +62,27 @@
+ \paragraph{Summary.}
+ Counting answers the question \emph{how many?} Other kinds of information combine under other rules: red and green light make yellow, two notes make a chord, a tone and its opposite phase make silence. This paper takes that observation as a thesis. Wherever a domain supplies a unit of truth and a small set of rules by which such units combine, the unit and its rules together form an arithmetic of that domain.
+ 
+-The paper builds one such arithmetic. Its unit is the \emph{information atom}, also called the unit: a strength, a direction on a sphere, a phase, and a sort that says which operations may act on it. An atom may hold several such vectors, in groups called cores. Six verbs act on atoms. Bundle collects them, Collapse joins them without losing any contribution, Mix reads a bowl as a phasor sum, Transform turns one atom by another, Offset copies a relation from one place to another, and Assembly pulls units together without fusing them. Each verb is stated as an axiom or a rule, with worked numbers. Meta vectors carry time, location, link and the like, outside the atom's content.
++The paper builds one such arithmetic. Its unit is the \emph{information atom}, also called the unit: a strength, a direction on a sphere, a phase, and a sort that says which operations may act on it. An atom may hold several such vectors, in groups called cores. Six verbs act on atoms, set side by side in the table below. Each is stated as an axiom or a rule, with worked numbers. Meta vectors carry time, location, link and the like, outside the atom's content.
+ 
+ The claim is narrow. A rule for combining should match the unit. The paper offers no theory of language, physics or biology, and it names its refusals as plainly as its results. The order of the paper is axioms, then verbs, then sorts, then examples. The sections that follow give the background and motivation in full.
+ 
++\paragraph{At a glance.}
++The unit is one typed point $x=(r,\hat n,\chi,\tau)$: strength $r\in[0,1]$, direction $\hat n\in S^2$, phase $\chi\in[0,2\pi)$, sort $\tau$. The six verbs, each answering one question:
++\begin{center}
++\footnotesize
++\begin{tabular}{@{}>{\raggedright\arraybackslash}p{1.9cm}>{\raggedright\arraybackslash}p{2.9cm}>{\raggedright\arraybackslash}p{4.6cm}>{\raggedright\arraybackslash}p{2.5cm}>{\raggedright\arraybackslash}p{2.1cm}@{}}
++\hline
++Verb & Question & What it does & Takes back & Where \\ \hline
++Bundle $\uplus$ & What is present? & Union of a bowl; sort-blind; drops order and count; $A\uplus A=A$ & Remove $\setminus$ & Axiom~4 (\S\ref{subsec:axiom_idempotence}) \\
++Collapse $\oplus$ & What is combined, with nothing discarded? & Keeps every core; any sorts; $A\oplus A\ne A$ & UnCollapse $\ominus$, one core & \S\ref{subsec:process_principle_collapse} \\
++Mix $\boxplus$ & What composite results? & Phasor sum at one shared direction; lossy; refused across differing directions & none: UnMix is impossible & Axiom~5 (\S\ref{subsec:axiom_interference}) \\
++Transform $T$ & What happens, in what order? & Turns $\hat n$ by $\pi r_w$ about the actor's axis and adds phase; $T_aT_b\ne T_bT_a$ & inverse actor $w^{*}$ & \S\ref{subsec:transform_definition} \\
++Offset & What walk is reused? & Copies a relation between two seats to a third; does not name the result & none stated & \S\ref{sec:analogical_offset} \\
++Assembly $\bowtie$ & How do two units relate while both still sit? & Relates intact units by an interaction energy; never repels & none & Axiom~6 (\S\ref{subsec:axiom_assembly}) \\ \hline
++\end{tabular}
++\end{center}
++A bowl of units is read by a path to a result, and a result may be seated again. A unit does not know what it constitutes: a seated word does not know the poem, and the path knows it.
++
+ \paragraph{Background and motivation.}
+ Ordinary arithmetic uses the integer $1$ as a unit of truth.
+ The identity $1=1$ says that two tokens are of the same kind.
