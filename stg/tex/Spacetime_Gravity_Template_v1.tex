@@ -1510,11 +1510,51 @@ that level.
 % show (or explicitly flag as future work, if not yet done):
 
 \subsection{Recovery of known limits}
-% Does the hypothesis reduce to Newtonian gravity in the weak-field,
-% low-velocity limit? Does it reduce to standard GR when [parameter]
-% -> [value]? This is usually the single hardest and most important
-% requirement for a new gravity-related proposal.
-[PLACEHOLDER]
+H1's scoped formal statement (\S\ref{subsec:h1}) reduces to Newtonian
+gravity, $g=GM/r^2$, by construction: $\Sigma_0$ plays $G$'s role
+exactly, with no new free parameter at this stage. That recovery is
+not merely formal -- it has been checked numerically against five
+independent bodies.
+
+\paragraph{Five-body check: Earth, Mars, Sun, Jupiter, Saturn.} Define
+$A := g/(H_0^2 R)$ for each body, using its measured surface gravity
+$g$, radius $R$, and today's Hubble parameter $H_0\approx
+2.18\times10^{-18}\,\mathrm{s^{-1}}$. If elasticity contributed
+anything beyond ordinary Newtonian gravity, $A$ would need an
+independent, per-body explanation. Instead:
+\begin{center}
+\small
+\begin{tabular}{@{}lccc@{}}
+\hline
+Body & $\rho$ (kg/m$^3$) & $g$ (m/s$^2$) & $A=g/(H_0^2R)$ \\ \hline
+Earth & 5514 & 9.81 & $3.24\times10^{29}$ \\
+Mars & 3933 & 3.71 & $2.30\times10^{29}$ \\
+Sun & 1408 & 274 & $8.29\times10^{28}$ \\
+Jupiter & 1326 & 24.79 & $7.46\times10^{28}$ \\
+Saturn & 687 & 10.44 & $3.77\times10^{28}$ \\ \hline
+\end{tabular}
+\end{center}
+$A$ is not constant -- it spans a factor of $\sim$8.6 across these
+five bodies -- but it is not independent new physics either: it
+tracks each body's density \emph{exactly}, since algebraically
+$A=(4\pi G/3H_0^2)\rho$, with $H_0^2$ cancelling completely once $A$
+is multiplied back through to recover $g$. The ratio $A/A_\oplus$
+matches $\rho/\rho_\oplus$ to within a few percent for every body in
+this table (the residual is measurement rounding and non-sphericity
+for the gas giants, not a missing term). \textbf{Conclusion:} $H_0$
+plays no role in local gravity at all, and every number here is
+exactly what $g=GM/r^2$ already predicts -- the recovery of the
+Newtonian limit is confirmed, with zero residual left for elasticity
+to explain beyond $G$'s own, already-measured value.
+
+\paragraph{Shell-theorem check.} H1's claim that bend depends on mass
+and distance, not density and radius independently
+(\S\ref{subsec:h1}, point 2), was checked directly: Earth's actual
+mass and radius give $g=2.454\,\mathrm{m/s^2}$ at $r=1.274\times10^7$
+m; a hypothetical body of the same mass but radius equal to that same
+$r$ (density $\approx689\,\mathrm{kg/m^3}$) gives the identical
+$g=2.454\,\mathrm{m/s^2}$ at its own surface. Density and radius carry
+no information beyond what $M$ and $r$ already fix.
 
 \paragraph{Birkhoff's theorem as a bound on $\Sigma$ and on fluidity.}
 Birkhoff's theorem (1923) shows that spherical symmetry plus the
@@ -1547,27 +1587,130 @@ to, not instead of, matching the measured value and constancy of
 $\Sigma_0$ itself.
 
 \subsection{Dimensional analysis and units}
-% Walk through units for every new quantity introduced; a hypothesis
-% that doesn't balance dimensionally is dead on arrival.
-[PLACEHOLDER]
+\textbf{$\Sigma$.} $\Sigma_0 = c^4/8\pi G$: $[c^4]=\mathrm{m^4/s^4}$,
+$[G]=\mathrm{m^3/(kg\,s^2)}$, so $[\Sigma_0] =
+\mathrm{(m^4/s^4)\cdot(kg\,s^2/m^3)} = \mathrm{kg\,m/s^2} =
+\mathrm{N}$ -- a force, exactly matching the already-standard
+``stiffness of spacetime'' reading of this constant
+(\S\ref{subsec:core_terms}) and consistent throughout H1/H1b.
+
+\textbf{$g=GM/r^2$.} $[GM]=\mathrm{m^3/s^2}$, divided by
+$[r^2]=\mathrm{m^2}$ gives $\mathrm{m/s^2}$, an acceleration -- checks
+out in every numeric table in this section.
+
+\textbf{$\mathcal{I}(x)$ -- an open item surfaced by this check, not
+resolved by it.} $\theta$, $\sigma_{\mu\nu}$, $\omega_{\mu\nu}$ each
+carry units of inverse time (an expansion/shear/rotation \emph{rate}),
+so $(\theta-\bar\theta)^2$ has units $\mathrm{s^{-2}}$. For
+$\mathcal{I}:=\ell^2\sqrt{(\theta-\bar\theta)^2+\cdots}$
+(\S\ref{subsec:core_terms}) to come out dimensionless as claimed,
+$\ell^2$ must carry units of $\mathrm{s^2}$ -- i.e.\ $\ell$ is a
+reference \emph{time}, or $c=1$ units are in force so that length and
+time are interchangeable. \S\ref{sec:notation}'s units convention is
+still an open placeholder, so this is flagged here explicitly: once
+units are fixed, $\ell$'s dimension must be stated to match, or
+$\mathcal{I}$ as currently written is not actually dimensionless.
+This is exactly the kind of check this subsection exists to catch,
+and it should be closed before $\mathcal{I}$ is used quantitatively
+in H1b or the taxonomy (\S\ref{subsec:taxonomy}).
 
 \subsection{Known observational constraints}
-% Check against, as relevant: equivalence-principle tests (Eotvos-type
-% experiments), Solar System tests (Mercury perihelion precession,
-% light bending, Shapiro delay), binary pulsar timing, gravitational-wave
-% observations (LIGO/Virgo: speed of gravity, waveform shape), and
-% cosmological constraints (CMB, large-scale structure) if the
-% hypothesis touches cosmological scales. State which constraints
-% apply, and whether the hypothesis is consistent with, silent on, or
-% in tension with each.
-[PLACEHOLDER]
+\textbf{Passed (positive recoveries, not just non-contradictions).}
+H1's scoped formal statement matches two independent, high-precision
+measurements exactly: the GPS gravitational time-dilation correction
+($\sim45.7\,\mu\mathrm{s}$/day, from $\Delta(GM_\oplus/rc^2)$ between
+ground and satellite altitude) and the solar gravitational redshift
+($\approx2.12\times10^{-6}$, from $GM_\odot/R_\odot c^2$). Neither
+required any adjustment to reproduce.
+
+\textbf{Constraints $\Sigma$ (constant) already satisfies.}
+Lunar-laser-ranging and pulsar-timing bounds on $\dot G/G$ (parts in
+$10^{11}$--$10^{12}$ per year) directly bound H1's constant-$\Sigma$
+claim (\S\ref{subsec:h1}, point 1) and are satisfied by construction,
+since H1 proposes no variation. The Cassini Shapiro-delay bound on
+the Brans--Dicke parameter ($\omega>40{,}000$; Bertotti, Iess \&
+Tortora, 2003) is the relevant constraint on H1b specifically
+(\S\ref{subsec:h1b}): any $\lambda\,h(\mathcal{I})$ term must stay
+within whatever this bound translates to in the solar-system regime,
+where $\mathcal{I}$ is small.
+
+\textbf{A constraint an earlier version of this framework failed, and
+was revised in response.} An amplification factor tying local gravity
+to $H_0$ directly was tested against Big Bang nucleosynthesis: the
+Hubble parameter at BBN ($\sim0.5\,\mathrm{s^{-1}}$) exceeds $H_0$ by
+a factor of $\sim2.3\times10^{17}$, so a gravity term scaling as
+$H^2$ would have been $\sim5\times10^{34}$ times stronger at BBN --
+grossly inconsistent with the observed light-element abundances, which
+match standard $G$ to within $\sim$10--20\%. This is why $H_0$ does
+not appear in H1's final formal statement: it cancels out of the
+recovered formula algebraically in any case
+(\S\ref{sec:consistency}.1), and taking it as a literal, real-time
+ingredient is independently ruled out by this bound. Recorded here as
+a constraint the hypothesis's earlier form failed and was corrected
+against, not one it currently needs to satisfy.
+
+\textbf{Constraints not yet checked.} Equivalence-principle
+(E\"otv\"os-type) tests, Mercury's perihelion precession, light
+bending, and gravitational-wave speed/waveform constraints all bear
+on H2's and H1b's claims specifically and have not yet been worked
+through numerically; flagged here as the next items for this
+subsection.
 
 \subsection{Internal consistency}
-% Conservation laws, causality (no superluminal signaling unless that
-% is itself the explicit, defended claim), symmetry requirements
-% (diffeomorphism invariance, Lorentz invariance or a stated and
-% motivated departure from it).
-[PLACEHOLDER]
+\textbf{Density is not an independent degree of freedom alongside
+elasticity.} The five-body table in \S\ref{sec:consistency}.1 shows
+$A=(4\pi G/3H_0^2)\rho$ exactly -- the quantity that seemed to vary
+body-to-body is density itself, relabeled, not an independent
+confirmation that ``elasticity'' is doing new explanatory work. This
+is logged here as a resolved internal-consistency question for H1:
+constant $\Sigma$ plus varying $\rho$ fully accounts for every number
+checked, with nothing left over.
+
+\textbf{``Bend'' is ambiguous between two quantities with different
+shapes, and H1's language should specify which.} Gravitational force/
+acceleration falls as $1/r^2$; gravitational time dilation (the
+potential) falls as $1/r$. These are not the same curve: at a 1\%
+threshold of surface value, the force well closes at $10\,R_\oplus$
+while the time well remains open out to $100\,R_\oplus$, and the gap
+between them grows linearly with $r$ (the ratio is $r/R_\oplus$
+itself). H1's informal statement (``the amount of bend'') should be
+read as the force/curvature sense by default, consistent with its
+formal statement, with the time-dilation sense flagged as a distinct
+quantity sourced by the same $M$ whenever both are discussed together
+(as in H2's thought experiment, \S\ref{subsec:h2}).
+
+\textbf{Absolute well depth and local gradient are different
+questions, and a hypothesis using ``influence'' needs to say which it
+means.} Earth's own time-dilation depth is smaller than the Sun's
+ambient depth at Earth's orbit by a factor of $\sim$14 -- by absolute
+depth, Earth's influence effectively ends within its own radius. Yet
+Earth's \emph{gradient} (the quantity GPS clocks and tidal forces
+actually respond to) dominates the Sun's gradient by a factor of
+$\sim$300 at satellite altitude, and remains dominant out to the Hill
+sphere ($\sim1.5\times10^6$ km, $\sim235\,R_\oplus$) -- the same
+boundary recovered independently from a tidal-balance argument
+($GM_\oplus/r^2 = 2GM_\odot r/a^3$). H2 and H8's ``sinking into
+space/time'' language should be read as a gradient claim, not an
+absolute-depth claim, given this result; stated here so later
+revisions of H2/H8 inherit the distinction rather than re-deriving it.
+
+\textbf{Compactness has a sharp internal-consistency boundary, already
+established, that connects H1 directly to H8.} Compressing a fixed
+mass $M$ into a smaller radius $R$ leaves the field unchanged for any
+$r>R_{\mathrm{old}}$ (shell theorem) but raises the surface value as
+$1/R^2$ and the surface time-dilation depth as $1/R$ -- a steeper,
+closer-in bend, with elasticity itself untouched throughout. This
+process has a hard stop: once $R\le R_s=2GM/c^2$ (for the Sun,
+$R_s\approx3$ km; worked Earth-mass example in \S\ref{subsec:h1}
+discussion gives $R_s\approx8.9$ mm), no pressure -- not thermal, not
+electron- or neutron-degeneracy -- can balance gravity any further,
+which is exactly the Chandrasekhar/TOV boundary already catalogued in
+\S\ref{sec:foundations}.1. This is the precise, checked link between
+H1's compaction result and H8's collapse narrative: H1 describes the
+approach to $R_s$ as a smooth tightening of the bend; H8 describes
+what happens once $R_s$ is reached. Logged here so H8's eventual
+revision can cite this derivation rather than re-deriving the
+threshold.
 
 % =====================================================================
 \section{Predictions}
