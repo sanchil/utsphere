@@ -1,0 +1,999 @@
+% 1. Preamble
+\documentclass[12pt, a4paper]{article}
+
+% Import Packages
+\usepackage[utf8]{inputenc}        % Encoding
+\usepackage{array}
+\usepackage{needspace}
+\usepackage{longtable}
+\usepackage{amsmath, amssymb}     % Advanced math formulas
+\usepackage{mathtools}           % Math enhancements
+\usepackage{graphicx}            % Image insertion
+\usepackage{hyperref}            % Interactive hyperlinks & PDF bookmarks
+\usepackage{color}               % Color text and backgrounds
+\usepackage{geometry}            % Page geometry
+\usepackage{comment}             % Multi-line comments
+\usepackage{titling}             % Custom title formatting
+
+\geometry{a4paper, margin=1in}
+
+% Custom Command Definitions
+\newcommand{\gmunu}{g_{\mu\nu}}
+\newcommand{\Tmunu}{T_{\mu\nu}}
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+% Hyperref Setup for Clean PDF Links
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={TITLE PLACEHOLDER: A Hypothesis on Space, Time and Gravity},
+    pdfauthor={Sandeep Lakshminarayan Chiluveru}
+}
+
+% Metadata & Custom Title Banner
+\pretitle{\begin{center}\hbox to\linewidth{\leaders\hbox{\normalfont\ttfamily\normalsize =}\hfill}\par\vspace{0.5em}\Huge}
+\posttitle{\par\vspace{0.5em}\hbox to\linewidth{\leaders\hbox{\normalfont\ttfamily\normalsize =}\hfill}\end{center}}
+
+% --- WORKING TITLE: replace once the hypotheses are fixed ---
+\title{On the Elasticity and Origin of Spacetime Curvature: \\ Two Working Hypotheses on Gravity}
+\author{Sandeep Lakshminarayan Chiluveru}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% =====================================================================
+% ABSTRACT
+% =====================================================================
+\begin{abstract}
+% DRAFT -- tighten once H1/H2 are formalized with equations.
+General relativity identifies gravity with spacetime curvature:
+mass-energy curves spacetime, and free bodies follow the resulting
+geodesics. This paper sets out two working hypotheses that revisit
+that identification from opposite directions. Hypothesis~1 proposes
+that space itself is an elastic medium, and that the amount of
+curvature a given mass produces is governed by that medium's
+elasticity, so that the strength of gravity is tied directly to the
+elastic response of space rather than treated as a bare coupling
+constant. Hypothesis~2 reverses the usual causal order: it proposes
+that curvature is not the source of gravity but a \emph{consequence}
+of it, and that the gravitational force itself originates either from
+a constant, universe-scale acceleration (cosmic expansion) or from a
+constant rotation (spin) of space, with mass ``sinking'' into space
+under that acceleration or spin and thereby bending it, in a manner
+licensed, by hypothesis, through the equivalence principle. Both
+hypotheses are stated here in their roughest form, as working ideas to
+be formalized, checked against known limits, and tested against
+observational constraints -- not as completed theories. This paper
+does not yet claim to reproduce the quantitative successes of general
+relativity (inverse-square attraction, perihelion precession, light
+bending, gravitational-wave speed); establishing that recovery is the
+first item of future work flagged throughout.
+\end{abstract}
+
+% =====================================================================
+\section{Introduction}
+% =====================================================================
+
+\paragraph{Summary.}
+% Plain-language statement of the question driving the paper and why
+% the standard picture (GR + QFT) leaves it open. 2-4 sentences.
+[PLACEHOLDER]
+
+\paragraph{At a glance.}
+% A short table naming each hypothesis, the question it answers, and
+% where in the paper it is formalized -- mirrors the "six verbs" table
+% convention. Fill in rows per hypothesis (H1, H2, H3, ...).
+\begin{center}
+\footnotesize
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{4.0cm}>{\raggedright\arraybackslash}p{5.2cm}>{\raggedright\arraybackslash}p{2.0cm}@{}}
+\hline
+Hypothesis & Question it answers & Claim, in one line & Where \\ \hline
+H1 & What sets the amount of curvature for a given mass? & Gravity's strength is tied to the elasticity of space; bend amount $\propto$ elasticity & \S\ref{subsec:h1} \\
+H2a & What causes curvature, and where does the force of gravity come from? & Curvature is a consequence, not the cause, of gravity; gravity is a constant acceleration from cosmic expansion, equivalent to a gravitational field by the equivalence principle & \S\ref{subsec:h2} \\
+H2b & (alternative to H2a) & Gravity instead comes from a constant spin of space about an axis; the resulting centrifugal effect is equivalent to a gravitational field & \S\ref{subsec:h2} \\
+H3 & Why do some black holes (supermassive) far exceed the mass stellar collapse can produce? & Space is not smooth; large tears/inconsistencies in its fabric, from uneven cosmic expansion and turbulence, form the largest black holes directly & \S\ref{subsec:h3} \\
+H4 & What seeds the accretion that forms stars, planets, and asteroids? & Small, widespread tears/inconsistencies in space trap matter and seed accretion; every body in space has a black hole at its center & \S\ref{subsec:h4} \\
+H5 & What, specifically, are supermassive black holes, if not grown stellar remnants? & Supermassive black holes are large vortices formed where oppositely-expanding regions of space collide; they are not, in general, of stellar-collapse origin & \S\ref{subsec:h5} \\
+H6 & Why do stars at a galaxy's edge orbit faster than visible mass alone predicts? & A galaxy is matter settled into the depression around a central vortex (the SMBH); the vortex's strength and reach set the rotation curve directly, so dark matter is not needed & \S\ref{subsec:h6} \\ \hline
+\end{tabular}
+\end{center}
+
+\paragraph{Background and motivation.}
+% Longer version of Summary: what GR gets right (equivalence principle,
+% geodesic motion, confirmed predictions -- lensing, perihelion precession,
+% gravitational waves, time dilation/GPS), what it leaves unexplained
+% (singularities, quantization of gravity, dark energy/matter as currently
+% framed, the measurement/arrow-of-time problem if relevant), and where
+% this paper's hypotheses are meant to sit relative to that frontier.
+% Be explicit about which open problem each hypothesis targets.
+[PLACEHOLDER]
+
+\begin{quote}
+\textbf{Thesis.}
+\emph{[One or two sentences stating the paper's organizing idea at the
+level of a thesis statement, the way a thesis is stated before the
+formal machinery arrives. State what kind of claim this is --
+a reinterpretation, a new mechanism, an extension, an analogy under
+test -- so the reader knows how much weight it is meant to carry.]}
+\end{quote}
+
+\paragraph{Scope and disclaimers.}
+% State plainly what this is NOT: not a replacement for GR unless and
+% until it reproduces GR's confirmed results in the appropriate limit;
+% not a claim of experimental confirmation; a hypothesis awaiting
+% derivation and test. Name the limit(s) in which it must reduce to
+% known physics (e.g. weak-field limit, low-velocity limit, Newtonian
+% limit) -- this is the single most important falsifiability anchor.
+[PLACEHOLDER]
+
+% =====================================================================
+\section{Foundational Basis and Prior Work}
+\label{sec:foundations}
+% =====================================================================
+% For EACH hypothesis, this section should eventually contain a short,
+% honest assessment of how strongly it rests on established physics.
+% Suggested sub-structure per hypothesis (duplicate as needed):
+
+\subsection{Established results this paper relies on}
+\begin{itemize}
+  \item \textbf{Equivalence principle} (Einstein, 1907/1911; tested to
+    high precision by E\"otv\"os-type and modern torsion-balance
+    experiments): locally and instantaneously, a uniformly accelerated
+    frame is indistinguishable from a uniform gravitational field. H2
+    uses this unchanged, but extends its scope from a local,
+    instantaneous statement to a claim about the global \emph{origin}
+    of gravity -- an extension, not a restatement.
+  \item \textbf{Einstein field equations}, $G_{\mu\nu} = 8\pi G\,T_{\mu\nu}$:
+    curvature is set by mass-energy through the fixed constant $G$. H1
+    keeps this structure but reinterprets $G$ (or the coupling it
+    plays) as a measurable elasticity rather than a bare constant --
+    a reinterpretation of an existing equation, not a new one, until
+    ``elasticity'' is given independent empirical content.
+  \item \textbf{Measured constancy of $G$}: Newton's constant is
+    measured to be constant across laboratory tests to good precision.
+    Any version of H1 in which elasticity varies must explain why that
+    variation has not already shown up in existing $G$ measurements.
+  \item \textbf{Cosmic expansion and its acceleration} (Hubble's law;
+    the accelerating expansion inferred from Type Ia supernovae,
+    Riess et al. 1998, Perlmutter et al. 1999): real, but measured to
+    be extremely small and essentially uniform on the relevant scales
+    -- not currently known to be locally concentrated around
+    individual masses the way H2a would need.
+  \item \textbf{Observed isotropy of the cosmic microwave background}:
+    used to place very tight upper bounds on any global rotation of
+    the universe, directly bearing on H2b.
+  \item \textbf{Smoothness (differentiability) of the spacetime
+    manifold}: a foundational assumption of classical GR; a literal
+    topology change (a ``tear'') is excluded by it. Bears directly on
+    H3/H4.
+  \item \textbf{Mass bound on stellar-collapse black holes}
+    (progenitor mass limits; the pair-instability mass gap, roughly
+    $50$--$150\,M_\odot$): well established, and correctly used as the
+    starting observation for H3.
+  \item \textbf{Observed supermassive black holes at high redshift}:
+    the ``seed problem'' -- a genuine, open question H3 correctly
+    identifies, already addressed in the literature by direct-collapse,
+    heavy-seed, and super-Eddington-accretion proposals.
+  \item \textbf{Helioseismology, terrestrial seismology, and
+    planetary geodesy}: direct observational probes of the interiors
+    of the Sun, Earth, and other bodies, bearing directly on H4's
+    claim that a black hole sits at the center of every body.
+  \item \textbf{Quantum foam} (Wheeler, 1955) and \textbf{primordial
+    black holes} (Zel'dovich \& Novikov, 1966; Hawking, 1971): existing,
+    legitimate research programs nearest in spirit to H3/H4's
+    ``inconsistencies in space,'' discussed below.
+  \item \textbf{Homogeneity and isotropy of cosmic expansion (the FLRW
+    model)}: supported by CMB isotropy and large-scale-structure
+    surveys; the expansion rate is a single scale factor, not a
+    directional flow field with distinct colliding regions. Bears
+    directly on H5.
+  \item \textbf{Black hole rotation, frame dragging, and
+    analogue-gravity vortex experiments} (Kerr metric; Lense--Thirring
+    effect, now measured via accretion-disk spin diagnostics; Unruh,
+    1981, and later draining-fluid-vortex demonstrations of
+    superradiance): the genuine, if indirect, point of contact for
+    H5's vortex picture.
+  \item \textbf{Galaxy rotation curves} (Rubin \& Ford, 1970s onward):
+    the original, and still central, dark-matter evidence H6 targets.
+  \item \textbf{Independent dark-matter evidence beyond rotation
+    curves}: the Bullet Cluster's lensing/gas offset; the relative
+    heights of the CMB acoustic peaks; the growth rate of large-scale
+    structure. Each is logically independent of rotation curves and
+    must be addressed by any replacement, not just the curves
+    themselves.
+  \item \textbf{Modified Newtonian Dynamics (MOND)} (Milgrom, 1983):
+    the existing, well-studied alternative to dark matter closest in
+    spirit to H6, with known successes (individual rotation curves)
+    and known difficulties (cluster scales, the Bullet Cluster, the
+    CMB).
+\end{itemize}
+
+\subsection{Where each hypothesis is standard, extrapolated, or speculative}
+\textbf{H1 (elasticity of space).} The claim that mass-energy curves
+space, and that the amount of curvature follows from a fixed coupling,
+is (a) standard GR. The claim that this coupling should be understood
+as a physical \emph{elasticity} is (b) an extrapolation: it has real
+precedent as an analogy (spacetime-as-elastic-medium pictures appear
+in induced-gravity and analogue-gravity literature, \S\ref{sec:foundations}.3
+below) but is not itself an established, independently measured
+quantity. As currently stated -- with no independent definition of
+elasticity and no claimed deviation from $G_{\mu\nu}=8\pi G T_{\mu\nu}$
+-- H1 is (c) not yet distinguishable from a relabeling of $G$, which
+makes it unfalsifiable in its present form. It becomes a genuine,
+moderate-strength hypothesis exactly to the extent that elasticity is
+defined as something that could, in principle, be measured
+\emph{independently} of $G$ and found to vary.
+
+\textbf{H2 (gravity sourced by expansion or spin).} The equivalence
+principle itself is (a) standard and extremely well tested. Using it
+to say that \emph{a} sustained acceleration feels like gravity is
+correct. Using it to say that cosmic expansion or cosmic rotation
+\emph{is the acceleration that constitutes all gravity, everywhere,
+including the mass-centered field around the Earth} is (c) a new
+postulate with no direct precedent and, as detailed in
+\S\ref{subsec:h2}, currently in tension with the measured size and
+uniformity of cosmic expansion, with CMB-isotropy bounds on cosmic
+rotation, and with the basic mass-centered, inverse-square shape of
+every gravitational field actually observed. This is the weakest part
+of either hypothesis in its current form, precisely because it is the
+most novel claim and the one most directly checked against existing,
+precise observations.
+
+\textbf{H3 (tears as the origin of supermassive black holes).} That
+stellar-collapse black holes are mass-limited, and that supermassive
+black holes pose an unsolved seed problem, is (a) standard and
+accurate. That the resolution is a literal tear in spacetime's fabric
+is (c) a new postulate: GR's manifold is smooth by construction, so
+this is not an extrapolation of an existing pattern but a proposed
+exception to a foundational assumption, and it currently has to
+compete with, rather than build on, the mainstream candidate answers
+(direct collapse, heavy seeds, super-Eddington growth) without yet
+stating what distinguishes it from them observationally.
+
+\textbf{H4 (small inconsistencies seeding all accretion; a black hole
+at the center of every body).} That accretion builds stars, planets,
+and asteroids, and that growing mass deepens a gravitational well, is
+(a) standard accretion physics, just stated in this paper's own
+vocabulary. That the \emph{trigger} for accretion is a small tear or
+hole in space, rather than ordinary gravitational instability in a
+gas or dust cloud, is (c) a new, currently unnecessary postulate --
+the mainstream mechanism already accounts for the observation without
+it. The claim that every body has a black hole at its center is also
+(c), and is the most strongly constrained part of either hypothesis:
+it is checked directly against existing interior-structure data
+(helioseismology, seismology, geodesy) and, as stated without
+qualification, does not currently match it.
+
+\textbf{H5 (supermassive black holes as colliding-space vortices).}
+The starting observation -- that a single star's collapse cannot
+directly produce a supermassive black hole -- is (a) standard and
+correctly stated. The vortex/rotation imagery has (b) a real,
+extrapolatable point of contact: real black holes do drag spacetime
+when they rotate, and that rotational mathematics is exactly what
+analogue-gravity vortex experiments exploit. But the specific sourcing
+mechanism -- large regions of space expanding in opposite directions
+and colliding -- is (c) a new postulate with no observational
+counterpart in the standard, homogeneous-and-isotropic picture of
+cosmic expansion, and it has to explain away, not just outpace, the
+mainstream seed-growth picture (stellar-mass seeds plus mergers and
+sustained accretion), which already accounts for supermassive black
+holes' observed mass and spin without requiring colliding expansion.
+
+\textbf{H6 (galaxies as vortex depressions, replacing dark matter).}
+The target observation -- flat rotation curves -- is (a) standard and
+correctly identified. Attributing it to the central vortex (the
+galaxy's supermassive black hole) is (c) a new postulate that, as it
+stands, faces a direct scale problem: the black hole's gravitational
+reach is three to four orders of magnitude smaller than the radii
+where flat rotation curves are actually measured, so the mechanism as
+stated does not yet reach the regime it is meant to explain. It is
+also (c) silent on the independent, non-rotation-curve evidence for
+dark matter (Bullet Cluster, CMB acoustic peaks, structure growth),
+each of which would need its own account. This is the most
+empirically consequential hypothesis in the set so far, precisely
+because dark matter is supported by several independent lines of
+evidence rather than one -- a replacement has to clear all of them,
+not just the one it was built to match.
+
+\subsection{Relation to existing programs}
+\textbf{H1} sits closest to \emph{induced gravity} (Sakharov, 1967),
+where $G$ itself is proposed to emerge from vacuum fluctuations rather
+than being fundamental, and to various \emph{analogue-gravity}
+treatments that model spacetime's response to mass with
+elastic-medium mathematics as a teaching or effective-theory device.
+Verlinde's entropic-gravity proposal (2011) is a different but related
+example of treating gravity as emergent from a coarser underlying
+layer rather than fundamental. None of these establish that spacetime
+literally possesses a material elastic modulus; they are precedents
+for the \emph{style} of H1's claim, not confirmations of it.
+
+\textbf{H2's} ``sinking into space'' picture has a rigorous existing
+counterpart worth knowing about: the \emph{river model of gravity}
+(Painlev\'e, 1921; Gullstrand, 1922; popularized by Hamilton \& Lisle,
+2008), in which space itself is pictured as flowing inward toward a
+mass -- mathematically just a coordinate choice (Painlev\'e--Gullstrand
+coordinates) fully equivalent to standard Schwarzschild/GR, not a
+modification of it. That model gives ``mass makes space flow/sink''
+a precise, already-solved form, but notably sources the flow from the
+\emph{local} mass, not from cosmic expansion or universal spin -- the
+opposite of what H2a/H2b propose. A genuine, non-trivial rotating
+universe is also an existing GR solution (G\"odel, 1949), but it is
+non-expanding, permits closed timelike curves, and is not considered a
+model of our universe; current observations bound our universe's
+actual rotation far below what H2b would require. Distinguishing
+H2 from the river model -- i.e. stating clearly whether the ``sinking''
+is sourced locally (as in the river model) or globally (as currently
+written) -- is the single most useful next step for sharpening H2.
+
+\textbf{H3 and H4} sit closest to two existing, separate programs that
+this paper's single notion of ``inconsistency'' currently blends
+together. \emph{Quantum foam} (Wheeler, 1955) proposes that spacetime
+is topologically non-trivial at the Planck scale due to quantum
+fluctuations -- a real precedent for ``space is not smooth,'' but at a
+scale enormously below anything relevant to black-hole formation, with
+no established bridge to that scale. \emph{Primordial black holes}
+(Zel'dovich \& Novikov, 1966; Hawking, 1971) propose that density
+fluctuations in the early universe collapse directly into black holes
+of a wide range of masses, independent of stellar collapse, and have
+been studied both as dark-matter candidates and as possible seeds for
+structure formation -- a real precedent for ``small holes seed
+accretion'' and even for ``some black holes are not stellar remnants,''
+but sourced by early-universe density fluctuations, not by tears from
+cosmic expansion or turbulence. Reframing H3/H4 explicitly in terms of
+one of these two existing programs -- rather than the new term
+``inconsistency,'' which currently has no agreed definition in either
+GR or quantum gravity -- would let the hypotheses inherit an existing,
+worked-out mathematical machinery instead of having to build one from
+scratch.
+
+\textbf{H5} sits closest to two existing, separate programs as well.
+\emph{Analogue gravity} (Unruh, 1981, and subsequent draining-vortex
+experiments) shows that a real fluid vortex can mathematically mimic
+a rotating black hole's horizon and ergosphere for waves travelling
+in that fluid -- a precedent for the mathematics of a ``vortex,'' but
+one built because sound waves in a draining fluid obey the same wave
+equation as fields near a Kerr horizon, not because spacetime itself
+is a fluid that forms vortices. \emph{Bubble-collision black-hole
+formation} during an early-universe phase transition (studied in
+certain inflationary and phase-transition cosmological models) is the
+closest precedent for ``a collision forms a black hole,'' but it is a
+mechanism specific to the very early universe and to a particular
+particle-physics scenario, not a general or ongoing process tied to
+cosmic expansion as such. As with H3/H4, stating which of these two
+programs H5 means to extend -- and on what grounds the collision
+mechanism applies well beyond the early-universe regime where its
+nearest precedent is actually set -- is the clearest way to sharpen it.
+
+\textbf{H6} sits closest to \emph{MOND} and its relativistic
+extensions (TeVeS and successors), which already pursue exactly H6's
+stated goal -- explaining rotation curves without a new matter
+species -- by modifying the force law or the field equations at low
+accelerations, rather than by invoking a vortex. MOND's real track
+record is informative either way: it fits individual galaxy rotation
+curves remarkably well, which is evidence that \emph{some}
+modification-of-gravity approach can work at that scale: but it
+has never comfortably accounted for the Bullet Cluster or the CMB
+acoustic-peak ratios without reintroducing some form of unseen mass.
+If H6 is pursued further, inheriting MOND's success on rotation
+curves is the easy part; it will need its own answer to the harder
+part MOND has not solved, rather than treating rotation curves as
+the whole problem.
+
+% =====================================================================
+\section{Notation and Primitive Objects}
+\label{sec:notation}
+% =====================================================================
+% Define, once and for all, the objects the rest of the paper uses:
+% the manifold, metric signature convention, coordinates, what counts
+% as an "event," "worldline," "observer," and any new object this
+% paper introduces (mirror the atom/core style of definition: state
+% the object, its components, and its domain, precisely).
+
+\begin{itemize}
+  \item Manifold / spacetime: [PLACEHOLDER, e.g. a 4-dimensional
+    Lorentzian manifold $(M, \gmunu)$ with signature $(-,+,+,+)$]
+  \item Units and conventions: [PLACEHOLDER, e.g. $c=1$ unless stated,
+    $G$ retained explicitly]
+\end{itemize}
+
+\subsection{Core Terms: Elasticity and Fluidity of Space}
+\label{subsec:core_terms}
+Hypotheses H1--H6 all lean on two intuitive properties of space --
+its \emph{elasticity} (how much it resists bending) and its
+\emph{fluidity} (how it flows, expands, spins, or shears locally).
+Rather than inventing new mathematics for these, each is defined here
+as a generalization of an object GR already has, so that ``standard
+GR'' is the special case where the generalization is held fixed, and
+each hypothesis's new content is exactly the claim that it isn't.
+
+\paragraph{Elasticity: the compliance field $\Sigma$.}
+Standard GR writes $G_{\mu\nu} = (8\pi G/c^4)\,T_{\mu\nu}$, a fixed
+coupling. The combination $c^4/(8\pi G) \approx 4.98\times10^{42}\,
+\mathrm{N}$ is already informally called the \emph{stiffness of
+spacetime} (Thorne and others) -- it is how much stress-energy it
+takes to produce a given amount of curvature, i.e. exactly the
+quantity H1 calls elasticity, already present in the theory as a
+constant. Define
+\begin{equation}
+\Sigma(x) \;:=\; \frac{c^4}{8\pi G(x)}, \qquad
+G_{\mu\nu} \;=\; \frac{1}{\Sigma(x)}\,T_{\mu\nu}.
+\end{equation}
+Standard GR is the case $\Sigma(x) = \Sigma_0$, constant everywhere.
+\textbf{H1's content is exactly, and only, the claim that $\Sigma$
+varies} -- with density, curvature, scale, or something else to be
+specified -- subject to reducing to the measured constant $\Sigma_0$
+everywhere $G$ has actually been tested (\S\ref{subsec:h1}). Writing
+$\Sigma(x)$ rather than ``elasticity'' turns H1 into a statement about
+one specific field, with one specific job: say what $\Sigma$ depends
+on, and by how much, and the hypothesis becomes checkable.
+
+\paragraph{Fluidity: the kinematic triplet $(\theta, \sigma_{\mu\nu},
+\omega_{\mu\nu})$.}
+GR already has a standard, rigorous way to describe a ``flow'' of
+space: take a congruence of worldlines (e.g. the worldlines of
+observers at rest with respect to local matter) and decompose how
+nearby worldlines move relative to one another into three pieces --
+\begin{itemize}
+  \item $\theta$, the \textbf{expansion scalar}: the local
+    rate at which a small volume of worldlines grows or shrinks.
+    This is precisely cosmic expansion, generalized to be local: in
+    the standard cosmological model $\theta = 3H$, three times the
+    Hubble parameter. \textbf{H2a's ``expanding space''} is a
+    statement about $\theta$.
+  \item $\omega_{\mu\nu}$, the \textbf{vorticity (rotation) tensor}:
+    the local rotation of nearby worldlines about each other.
+    \textbf{H2b's ``spin of space''} and the rotational character of
+    \textbf{H5's and H6's ``vortex''} are statements about
+    $\omega_{\mu\nu}$ (or its vector form $\omega^\mu$).
+  \item $\sigma_{\mu\nu}$, the \textbf{shear tensor}: local
+    stretching or squeezing without a change in volume or net
+    rotation -- distortion into an ellipsoid rather than a sphere.
+    This is the natural home for \textbf{H3/H4/H6's ``turbulence,''
+    ``tears,'' ``cracks,'' and ``channels''}: a shear-dominated region
+    stretches matter preferentially along one direction, which is
+    exactly the qualitative picture of a filament or a crack, as
+    opposed to $\theta$ (uniform swelling) or $\omega_{\mu\nu}$
+    (rotation).
+\end{itemize}
+These three are not independent of curvature or of matter: they are
+tied together by the \textbf{Raychaudhuri equation},
+\begin{equation}
+\frac{d\theta}{d\lambda} = -\frac{1}{3}\theta^2 -
+\sigma_{\mu\nu}\sigma^{\mu\nu} + \omega_{\mu\nu}\omega^{\mu\nu} -
+R_{\mu\nu}u^\mu u^\nu,
+\end{equation}
+where the last term is fixed, through the Einstein field equations,
+by the local mass-energy density. This is the precise, already-
+established sense in which ``fluidity'' cannot float free of a
+mass-energy source (the open requirement raised against H2, H4, H5,
+and H6 throughout \S\ref{sec:foundations} and \S\ref{sec:hypotheses}):
+$\theta$, $\sigma_{\mu\nu}$, and $\omega_{\mu\nu}$ are properties of
+how matter moves and curves spacetime, not properties spacetime can
+be assigned independently of matter. \textbf{Using this formalism
+does not rescue any hypothesis from that requirement} -- it hands you
+the exact equation that requirement is written in, so that ``what
+sources this'' becomes a specific term to compute rather than an open
+question to wave at.
+
+\paragraph{Inconsistency: the irregularity scalar $\mathcal{I}$.}
+H3--H6 all invoke a third core term -- that space is not smooth, that
+it is ``riddled with inconsistencies.'' This, too, already has a
+rigorous counterpart to generalize rather than a word to leave
+informal: standard cosmological \emph{perturbation theory} already
+describes the real universe as a smooth background (homogeneous,
+isotropic FLRW) plus deviations from it, and measures those
+deviations with a dimensionless quantity (conventionally $\delta$,
+the density contrast) relative to that background. Define, in the
+same spirit, an \textbf{irregularity scalar}
+\begin{equation}
+\mathcal{I}(x) \;:=\; \ell^2\sqrt{\,(\theta(x)-\bar\theta)^2 \;+\;
+2\,\sigma_{\mu\nu}(x)\sigma^{\mu\nu}(x) \;+\; 2\,\omega_{\mu\nu}(x)
+\omega^{\mu\nu}(x)\,}\,,
+\end{equation}
+where $\bar\theta$ is the smooth background expansion rate at that
+cosmic time and $\ell$ is a reference length scale fixed by
+convention (so $\mathcal{I}$ is dimensionless). $\mathcal{I}(x)=0$
+recovers perfectly smooth FLRW space; $\mathcal{I}(x)>0$ is a
+``spacetime inconsistency'' in H3--H6's sense, with its
+\emph{magnitude} setting how large a departure it is and its
+\emph{dominant term} ($\theta$, $\sigma_{\mu\nu}$, or
+$\omega_{\mu\nu}$) setting which taxonomy species it looks like
+(\S\ref{subsec:taxonomy}). This is deliberately \emph{not} how the
+Sphere species (an actual black hole) should be defined, however: GR
+already has an exact, independent, and far better-established
+criterion for that -- a \textbf{trapped surface} (Penrose, 1965),
+a closed surface from which even outward-directed light cannot
+escape -- and the formation of a horizon should be checked against
+that criterion, not against a large value of $\mathcal{I}$. Treating
+$\mathcal{I}$ as graded, continuous ``inconsistency'' for the
+Vortex/Depression/Crack species, while keeping the Sphere species
+tied to the trapped-surface criterion it already has, is what keeps
+the taxonomy from quietly promoting an ordinary density fluctuation
+into a black hole merely because some scalar got large.
+
+\textbf{What remains open:} the threshold value of $\mathcal{I}$ at
+which a region counts as a named species at all (as opposed to an
+ordinary, already-expected density fluctuation, which also has
+$\mathcal{I}>0$ in this definition), and the reference scale $\ell$,
+are not fixed by anything stated so far -- exactly like $\Sigma$'s
+dependence and the Raychaudhuri source term, this is a free choice
+the hypotheses need to make explicitly before $\mathcal{I}$ does
+predictive work rather than descriptive work.
+
+\paragraph{How this maps onto the taxonomy (\S\ref{subsec:taxonomy}).}
+A natural first pass: \emph{Sphere} = a trapped surface is present,
+regardless of $\mathcal{I}$; \emph{Vortex} = $\mathcal{I}>0$,
+$\omega_{\mu\nu}$-dominated, no trapped surface; \emph{Depression} =
+$\mathcal{I}>0$, small and localized, $\theta<0$-dominated, no
+trapped surface; \emph{Crack/channel} = $\mathcal{I}>0$,
+$\sigma_{\mu\nu}$-dominated, elongated, no trapped surface. This is
+offered as a starting point for filling in the taxonomy table's open
+columns, not as a settled result.
+
+% =====================================================================
+\section{Hypotheses}
+\label{sec:hypotheses}
+% =====================================================================
+% State each hypothesis as a single, precise, falsifiable sentence,
+% followed by its formal statement and its motivation. Keep hypotheses
+% independent of each other where possible, so a reader can accept one
+% and reject another.
+
+\subsection{Hypothesis 1: Gravity as Elasticity of Space}
+\label{subsec:h1}
+\textbf{Statement (rough form).} Space can bend, and space has
+elasticity. The amount of bend produced by a given mass is set by
+that elasticity. Gravity is therefore directly proportional to the
+elasticity of space.
+
+\textbf{Formal statement.}
+% PLACEHOLDER -- needs a precise definition of "elasticity" (a scalar?
+% a tensor field? a constant, or a field that varies with position,
+% density, or curvature itself?) before an equation can be written.
+% Sketch, to be replaced:
+\begin{equation}
+\text{(bend / curvature)} \;=\; f(\text{elasticity of space}) \times \text{(mass)}, \qquad f \text{ unspecified}
+\end{equation}
+Compare to the Einstein field equations, which already relate
+curvature to mass-energy through a fixed coupling:
+\begin{equation}
+G_{\mu\nu} \;=\; 8\pi G\, T_{\mu\nu}.
+\end{equation}
+
+\textbf{Motivation.} Gravity in general relativity already states
+that curvature is produced by mass-energy, through the constant $G$.
+H1's new content, if any, is the claim that $G$ -- or whatever plays
+its role -- is not a bare constant but the measurable elastic
+response of a medium, in the way a material's stiffness sets how much
+it deforms under a given load.
+
+\textbf{What would falsify it / what is still undefined.}
+(i) ``Elasticity'' is not yet defined as a measurable quantity --
+until it is, the hypothesis cannot be distinguished from simply
+renaming $G$. (ii) If elasticity is a global constant, H1 makes no
+prediction that differs from standard GR and is not yet falsifiable;
+it becomes a hypothesis with content only if elasticity is allowed to
+vary (with density, curvature, or scale) in a way GR's constant $G$
+does not. (iii) Any such variation must still reduce to Newtonian
+gravity with the measured value of $G$ in the weak-field, laboratory
+regime, where $G$ is measured to be constant to high precision.
+
+\subsection{Hypothesis 2: Curvature as a Consequence, not the Cause, of Gravity}
+\label{subsec:h2}
+\textbf{Statement (rough form).} Bent space is a consequence of
+gravity, not its cause. The force of gravity itself originates from
+either (2a) a constant, ongoing acceleration of an expanding universe,
+or (2b) a constant spin of space about an axis. By the equivalence
+principle, a sustained acceleration of $9.81\,\mathrm{m/s^2}$ (an
+elevator, a rocket) is indistinguishable from a gravitational field.
+Mass ``sinks into'' space under this acceleration or spin, and that
+sinking is what bends space; the amount of bend depends on the mass,
+the elasticity of space (H1), and the speed of the expansion (2a) or
+spin (2b).
+
+\textbf{Formal statement.}
+% PLACEHOLDER -- "sinking into space" needs a precise kinematic
+% definition before this can be written as an equation. Sketch:
+\begin{equation}
+\text{(2a)} \quad \vec a_{\text{gravity}} \;\overset{?}{=}\; \vec a_{\text{cosmic expansion}}(\text{mass, position}), \qquad
+\text{(2b)} \quad \vec a_{\text{gravity}} \;\overset{?}{=}\; \omega^2 r \,\hat\rho \ \text{(centrifugal form)}
+\end{equation}
+
+\textbf{Motivation.} The equivalence principle is real and
+well-tested: locally, uniform acceleration and a uniform gravitational
+field are experimentally indistinguishable. H2 extrapolates this local
+equivalence into a global claim about the \emph{origin} of every
+gravitational field.
+
+\textbf{What would falsify it / open problems.}
+(i) Known gravitational fields (Earth's, the Sun's) are centered on
+specific masses, static to high precision in the lab frame, and fall
+off as $1/r^2$ from that mass; the hypothesis as stated does not yet
+show how a universe-wide expansion rate or a universe-wide spin rate
+produces a field with exactly that mass-centered, inverse-square
+structure rather than a uniform or axis-centered one. (ii) The
+measured acceleration of cosmic expansion (from dark energy) is many
+orders of magnitude too small, and far too uniform/non-local, to
+supply $9.81\,\mathrm{m/s^2}$ at Earth's surface without an additional,
+yet-unstated amplification mechanism tied to local mass. (iii) A
+global rotation of the universe is tightly constrained by the observed
+isotropy of the cosmic microwave background to be far too small to
+source planetary-scale gravity; (2b) needs to say whether ``spin of
+space'' means this cosmic rotation or a different, as yet undefined,
+local spin. (iv) Both variants currently need the equivalence
+principle to do more work than it is usually read as doing: it
+licenses treating acceleration \emph{as} a gravitational field
+locally, but does not by itself explain why mass generates an
+inverse-square field centered on itself.
+
+\subsection{Hypothesis 3: Large-Scale Inconsistencies (Tears) in Space as the Origin of the Largest Black Holes}
+\label{subsec:h3}
+\textbf{Statement (rough form).} Space is not smooth; it is riddled
+with inconsistencies in its fabric. Black holes are one type of such
+inconsistency. Stellar-core-collapse black holes cannot grow very
+massive. The largest black holes instead arise directly from large
+tears or gaps in space, produced by uneven cosmic expansion and
+turbulence.
+
+\textbf{Formal statement.}
+% PLACEHOLDER -- "tear," "gap," and "inconsistency" are not yet
+% geometric objects. A tear/topology-change is a specific, unusual
+% claim in GR and needs to be defined before an equation is possible.
+[PLACEHOLDER: define ``inconsistency'' as a geometric object --
+a curvature singularity, a topological defect, a region where the
+manifold is non-differentiable -- before this can be written formally]
+
+\textbf{Motivation.} Correctly notes a real, open astrophysical
+puzzle: stellar-collapse black holes are bounded in mass (by
+progenitor mass and pair-instability effects, roughly tens to a few
+hundred solar masses), yet supermassive black holes
+($10^6$--$10^{10}\,M_\odot$) are observed already in place within the
+first billion years after the Big Bang -- the ``seed problem'' for
+supermassive black holes, a genuinely unsolved question in current
+astrophysics.
+
+\textbf{What would falsify it / open problems.}
+(i) In standard GR, spacetime is a smooth (differentiable) manifold
+by construction; a literal ``tear'' is a topology change, which is
+classically forbidden and, even in candidate quantum-gravity
+treatments, is a highly specialized, unresolved research question --
+not an established mechanism this hypothesis can yet borrow. (ii) The
+nearest legitimate existing idea -- that spacetime is not perfectly
+smooth at the Planck scale (``quantum foam,'' Wheeler 1955) -- operates
+at $\sim10^{-35}\,\mathrm{m}$, some 30+ orders of magnitude below
+anything that could seed a supermassive black hole; no established
+theory currently bridges that scale gap, so it is not yet available as
+support. (iii) Mainstream astrophysics already has several candidate
+answers to the seed problem this hypothesis is competing with --
+direct-collapse black holes from massive gas clouds, heavy seeds from
+dense early star clusters, and super-Eddington accretion -- and H3
+needs to say what it explains that these do not, or what observation
+would distinguish ``a tear in space'' from a direct-collapse seed.
+
+\subsection{Hypothesis 4: Widespread Small Inconsistencies as the Seed of All Accretion}
+\label{subsec:h4}
+\textbf{Statement (rough form).} Inconsistencies in space are common
+and widespread, not just the rare large ones behind H3. These smaller
+inconsistencies are small tears or holes that trap particles, seeding
+the accretion of matter into stars, planets, and asteroids. Accretion
+itself then bends space further, accelerating further collection.
+It would not be wrong to say a black hole lies at the center of every
+body in space.
+
+\textbf{Formal statement.}
+[PLACEHOLDER: as with H3, ``trap'' and ``hole'' need a precise
+geometric or field-theoretic definition before this is an equation
+rather than a picture]
+
+\textbf{Motivation.} Correctly identifies that accretion is how stars,
+planets, and asteroids form, and that growing mass deepens a
+gravitational well, which is consistent with standard accretion
+theory (gravitational instability and core-accretion models for star
+and planet formation). The closest existing idea to ``a small hole
+seeding accretion'' is the primordial black hole (PBH) hypothesis
+(Zel'dovich \& Novikov, 1966; Hawking, 1971), in which density
+fluctuations in the very early universe collapse directly into small
+black holes, which have since been proposed as possible seeds for
+structure formation and as a dark-matter candidate.
+
+\textbf{What would falsify it / open problems.}
+(i) Standard star and planet formation is already well modeled by
+gravitational self-collapse of gas and dust under ordinary Newtonian/
+GR gravity, with no need for an additional ``trapping'' mechanism; H4
+needs to say what observation it predicts that the standard
+core-accretion picture does not. (ii) The claim that \emph{every} body
+in space -- every planet, asteroid, and ordinary star -- has a black
+hole at its center is directly checked against existing evidence and,
+as stated, is in tension with it: the Sun's interior structure is
+measured via helioseismology, Earth's via seismology and its geodetic
+and magnetic-field behavior (which requires an ordinary convecting
+liquid-metal core), and none show the signatures a central black hole
+would produce (anomalous mass-radius relation, an accretion luminosity
+or steady mass growth, or the tidal/precision-tracking signatures a
+compact central mass would leave). This is the most directly
+falsifiable claim among all four hypotheses, and currently the one
+with the most existing evidence against it as stated; narrowing it --
+e.g., to large bodies only, or to the very early universe before
+ordinary structure formed, closer to how the actual PBH hypothesis is
+framed -- would bring it back into contact with open questions rather
+than settled observations.
+
+\subsection{Hypothesis 5: Supermassive Black Holes as Vortices from Colliding, Oppositely-Expanding Regions of Space}
+\label{subsec:h5}
+\textbf{Statement (rough form).} Ordinary (stellar-scale) black holes
+are minor turbulence, tears, or inconsistencies in space. Supermassive
+black holes are categorically different: they form where large
+regions of space, expanding in opposing directions, collide and
+create a large vortex. Supermassive black holes are not, in general,
+of stellar-collapse origin -- though that origin is not impossible in
+principle -- and share more in common with cyclones and hurricanes
+than with collapsed stars.
+
+\textbf{Formal statement.}
+[PLACEHOLDER: ``regions of space expanding in opposing directions''
+and ``collision'' need to be defined relative to the standard
+cosmological picture, in which the expansion rate (the Hubble
+parameter) is a single, roughly uniform, non-directional quantity at
+a given cosmic time -- not a vector flow field with distinct, opposing
+currents]
+
+\textbf{Motivation.} Correctly inherits the real seed problem from H3:
+a single star's collapse cannot directly produce a $10^6$--$10^{10}
+\,M_\odot$ object, so some categorically different formation channel
+for the largest black holes is a reasonable thing to look for. The
+vortex picture also has a genuine, if indirect, point of contact with
+real physics: real (rotating, Kerr) black holes drag spacetime around
+them (frame dragging / the Lense--Thirring effect, now measured via
+accretion-disk precession and X-ray spectroscopy), and this rotational
+behavior is precisely what motivates \emph{analogue-gravity}
+experiments, in which a real draining-fluid vortex is built in the lab
+because the mathematics of waves near its drain matches the
+mathematics of waves near a rotating black hole's horizon (Unruh,
+1981; demonstrated with real draining-bathtub vortices showing
+rotational superradiance). That match is at the level of the wave
+equations, however, not a claim that spacetime itself is a literal
+fluid.
+
+\textbf{What would falsify it / open problems.}
+(i) The standard cosmological model (the homogeneous, isotropic FLRW
+spacetime, supported by the measured isotropy of the cosmic microwave
+background and of large-scale structure) describes expansion as a
+single scale factor increasing over time, not as a flow field with
+distinct regions expanding in different directions that could
+collide; H5 needs to state what observation would reveal such
+oppositely-expanding regions, since none has been reported. (ii) Even
+granting a collision, converting the kinetic energy of ``colliding
+space'' into spacetime curvature strong enough to form a horizon
+requires an effective stress-energy content for the colliding regions
+--- the same open requirement flagged for H1 and H4, since GR curves
+in response to stress-energy, not motion of space considered as
+already-empty geometry. (iii) The nearest existing, if still
+speculative, research precedent for ``collision forms a black hole''
+is bubble-collision black-hole formation during an early-universe
+phase transition, studied in specific inflationary/phase-transition
+models -- but that mechanism is tied to the very early universe and a
+specific particle-physics scenario, not to expansion generally or to
+an ongoing, occasional process. (iv) Rotation (frame dragging) in
+real supermassive black holes is well explained as inherited angular
+momentum from the matter and smaller black holes that merged and
+accreted to form them -- the standard growth picture H5 sets out to
+replace -- so H5 would need to show what a vortex-of-colliding-space
+origin predicts that spin-from-accretion-and-mergers does not.
+
+\subsection{Hypothesis 6: Galaxies as Matter Settled into a Vortex's Depression, Replacing Dark Matter}
+\label{subsec:h6}
+\textbf{Statement (rough form).} A galaxy is matter tracing out the
+depression in space caused by a central vortex (a supermassive black
+hole, per H5). Matter settles into this depression. Stars orbit the
+central vortex at speeds set by the strength and reach of the
+depression it causes; faster-than-expected orbital speeds at a
+galaxy's edge come from the vortex's own strength and nature, and
+dark matter is not required to explain them. Different galaxy
+morphologies reflect different forms or strengths of the underlying
+spacetime turbulence.
+
+\textbf{Formal statement.}
+[PLACEHOLDER: needs an explicit $v(r)$ (orbital speed as a function of
+radius) predicted from ``vortex strength,'' to compare against the
+measured rotation curves this hypothesis is meant to explain]
+
+\textbf{Motivation.} Correctly identifies the real observation: galaxy
+rotation curves are measured to stay flat (roughly constant orbital
+speed) out to tens of kiloparsecs, far beyond where the visible
+(stellar and gas) mass alone, via ordinary $1/r^2$ gravity, predicts a
+declining (Keplerian) curve -- this is the original dark-matter
+evidence (Rubin \& Ford, 1970s) and a real target for any competing
+explanation.
+
+\textbf{What would falsify it / open problems.}
+(i) \emph{Scale mismatch.} A supermassive black hole's own
+gravitational reach (its ``sphere of influence'') extends only a few
+parsecs to a few tens of parsecs from the galactic center -- it
+dominates stellar orbits only there. Flat rotation curves are
+measured at tens of \emph{kilo}parsecs, roughly three to four orders
+of magnitude farther out, where the central black hole's own
+gravitational pull, by standard $1/r^2$ falloff, is already
+negligible. For H6 to work, ``the vortex'' has to mean something with
+far greater mass and reach than the black hole itself -- at which
+point it is doing the explanatory work dark matter currently does,
+under a new name, and needs its own mass profile stated and checked
+against the data the way a dark-matter halo profile is. (ii) \emph{
+Independent evidence beyond rotation curves.} Dark matter is inferred
+through several lines of evidence besides rotation curves, each of
+which a replacement needs to address: the Bullet Cluster, where
+gravitational lensing maps show the dominant mass concentration
+spatially separated from the hot, X-ray-emitting gas that holds most
+of the ordinary matter in the colliding clusters -- direct evidence
+for a gravitating component not tied to where the normal matter sits;
+the relative heights of the cosmic microwave background's acoustic
+peaks, which fix the ratio of ordinary to total matter in the very
+early universe, long before galaxies or their central black holes
+existed; and the growth rate of large-scale structure, which needs
+the extra gravitational pull of a non-baryonic component to form
+galaxies within the age of the universe at all. A vortex tied to a
+galaxy's own central black hole has no obvious bearing on any of
+these three, since two of them predate galaxy formation and one
+(Bullet Cluster) is at cluster, not single-galaxy, scale. (iii) H6's
+closest existing competitor is Modified Newtonian Dynamics (MOND;
+Milgrom, 1983), which changes the force law itself at low
+accelerations and reproduces many individual galaxies' rotation
+curves strikingly well without extra matter -- but is also known to
+struggle with exactly the cluster-scale and CMB evidence in (ii). If
+H6 is a vortex-flavored version of the same idea, it inherits MOND's
+real successes but should also expect, and address, MOND's known
+difficulties rather than treating rotation curves as the only test.
+(iv) \emph{Galaxy-to-galaxy diversity.} Galaxies of similar visible
+(and presumably similar central-black-hole) mass are observed to
+need very different amounts of inferred dark matter -- some
+ultra-diffuse galaxies need a large extra-mass fraction, while a few
+reported galaxies appear to need very little. A mechanism tied
+tightly to a single central vortex's mass needs to explain this
+spread; the standard dark-matter picture explains it as galaxies
+having assembled with different amounts of dark-matter halo relative
+to their visible mass, through different formation histories.
+
+\subsection{Taxonomy of Spacetime Inconsistencies}
+\label{subsec:taxonomy}
+H3 through H6 each reach for the same underlying idea -- that
+spacetime is not smooth, and that departures from smoothness come in
+different forms -- under different names (a tear, a depression, a
+vortex, a crack or channel). Treating these as named \emph{species} of
+one genus, ``spacetime inconsistency,'' is a workable move, but only
+if each species is given its own criteria up front. Otherwise the
+genus absorbs any new observation after the fact without having
+predicted it beforehand, which trades away falsifiability rather than
+gaining explanatory power. The table below is a first attempt at
+those criteria; every row currently has open entries that need a
+decision before the taxonomy does real work.
+
+\begin{center}
+\footnotesize
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{2.9cm}@{}}
+\hline
+Species & Used by & Horizon? & Mass-energy source? & Scale & What would test it \\ \hline
+Sphere (classical BH) & H3, H4, H5, H6 (galactic core) & Yes & Yes -- standard GR collapse or accretion & Stellar to $10^{10}\,M_\odot$ & Already tested: matches GR/Kerr predictions, event-horizon imaging (EHT) \\
+Vortex & H5 (SMBH origin), H6 (galaxy-scale reach) & [PLACEHOLDER: decide] & [PLACEHOLDER: what sources the rotation?] & Galactic ($\sim$kpc--Mpc) & Must reproduce flat rotation curves \emph{and} Bullet Cluster, CMB peaks (\S\ref{subsec:h6}) \\
+Depression (micro) & H4 & No (by H4's own revision, \S\ref{subsec:h4} discussion) & [PLACEHOLDER: ordinary local mass, or spontaneous?] & Sub-planetary to planetary & Must not exceed Hawking-evaporation or runaway-accretion bounds for its assumed mass (\S\ref{subsec:h4}) \\
+Crack / channel & H6 (cosmic web framing) & [PLACEHOLDER: decide] & [PLACEHOLDER: decide] & $\sim$10--100 Mpc (filaments) & Must reproduce filament/void statistics already matched by gravity + cold dark matter (Zel'dovich approximation; Millennium/IllustrisTNG simulations) \\ \hline
+\end{tabular}
+\end{center}
+
+The two columns most worth settling first are \emph{Horizon?} and
+\emph{Mass-energy source?}, since they are what let H3--H6 borrow (or
+not) from established black-hole physics without equivocating between
+species: a species with a horizon inherits Hawking radiation and
+accretion-growth constraints and must be checked against them, as the
+Sphere row already is; a species without one cannot claim to be
+``technically a black hole'' when that label is convenient elsewhere
+in the paper. The \emph{Mass-energy source} column is the same open
+question raised for H1 (\S\ref{subsec:h1}) and H2
+(\S\ref{subsec:h2}): under standard GR, curvature is sourced by
+stress-energy, so any species claimed to arise without a stated
+mass-energy source is proposing an amendment to the field equations
+themselves, not a new kind of black hole, and should be argued for at
+that level.
+
+% =====================================================================
+\section{Consistency Checks}
+\label{sec:consistency}
+% =====================================================================
+% The load-bearing section for scientific credibility. At minimum,
+% show (or explicitly flag as future work, if not yet done):
+
+\subsection{Recovery of known limits}
+% Does the hypothesis reduce to Newtonian gravity in the weak-field,
+% low-velocity limit? Does it reduce to standard GR when [parameter]
+% -> [value]? This is usually the single hardest and most important
+% requirement for a new gravity-related proposal.
+[PLACEHOLDER]
+
+\subsection{Dimensional analysis and units}
+% Walk through units for every new quantity introduced; a hypothesis
+% that doesn't balance dimensionally is dead on arrival.
+[PLACEHOLDER]
+
+\subsection{Known observational constraints}
+% Check against, as relevant: equivalence-principle tests (Eotvos-type
+% experiments), Solar System tests (Mercury perihelion precession,
+% light bending, Shapiro delay), binary pulsar timing, gravitational-wave
+% observations (LIGO/Virgo: speed of gravity, waveform shape), and
+% cosmological constraints (CMB, large-scale structure) if the
+% hypothesis touches cosmological scales. State which constraints
+% apply, and whether the hypothesis is consistent with, silent on, or
+% in tension with each.
+[PLACEHOLDER]
+
+\subsection{Internal consistency}
+% Conservation laws, causality (no superluminal signaling unless that
+% is itself the explicit, defended claim), symmetry requirements
+% (diffeomorphism invariance, Lorentz invariance or a stated and
+% motivated departure from it).
+[PLACEHOLDER]
+
+% =====================================================================
+\section{Predictions}
+\label{sec:predictions}
+% =====================================================================
+% The section that turns a hypothesis into science: at least one
+% prediction that differs, even slightly, from standard GR/QFT in a
+% way that is in principle measurable, naming the regime (lab-scale,
+% Solar-System-scale, astrophysical, cosmological) and roughly what
+% precision would be needed to see the difference.
+[PLACEHOLDER]
+
+% =====================================================================
+\section{Discussion}
+\label{sec:discussion}
+% =====================================================================
+\subsection{What this paper does and does not claim}
+[PLACEHOLDER -- restate scope narrowly, as in the Introduction]
+
+\subsection{Open problems and known weaknesses}
+% The honesty section. Name the strongest objection to each hypothesis
+% and whether it is answered, partially answered, or still open.
+[PLACEHOLDER]
+
+\subsection{Relation to Pattern Arithmetic (if applicable)}
+% If this paper reuses machinery, vocabulary, or structural moves from
+% the Pattern Arithmetic framework, state precisely which ones, and
+% whether the connection is load-bearing or merely a shared notational
+% habit (e.g. typed primitive objects, explicit verb/operation tables,
+% named refusals). Be as careful here as anywhere else about not
+% overclaiming a structural analogy as a physical identity.
+[PLACEHOLDER or: Not applicable.]
+
+% =====================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+% =====================================================================
+[PLACEHOLDER -- 3-5 sentences: what was proposed, how strongly grounded
+it currently is, and what the next paper or next section needs to show]
+
+% =====================================================================
+\appendix
+\section{Derivations}
+% Longer derivations that would interrupt the main text.
+[PLACEHOLDER or: None yet.]
+
+\section{Glossary of Notation}
+% One line per symbol introduced in this paper.
+[PLACEHOLDER]
+
+% =====================================================================
+% BIBLIOGRAPHY -- replace with \bibliography{} + .bib file, or inline
+% \bibitem entries, once sources are chosen. Suggested anchor sources
+% for a space/time/gravity paper: Einstein (1915/1916) field equations;
+% a standard GR textbook (Misner-Thorne-Wheeler, or Wald, or Carroll);
+% the specific observational papers for any constraint cited in
+% \S\ref{sec:consistency} (e.g. LIGO/Virgo detection papers, Shapiro
+% delay measurements, Eotvos-type equivalence-principle tests).
+% =====================================================================
+\begin{thebibliography}{9}
+\bibitem{PLACEHOLDER1} [PLACEHOLDER citation]
+\bibitem{PLACEHOLDER2} [PLACEHOLDER citation]
+\end{thebibliography}
+
+\end{document}
