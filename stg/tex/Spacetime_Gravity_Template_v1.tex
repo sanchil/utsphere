@@ -99,11 +99,14 @@ tested against observational constraints -- not as completed
 theories. Some of general relativity's quantitative successes are
 already recovered here, not merely promised: H1 reproduces
 inverse-square attraction, $g=GM/r^2$, by construction
-(\S\ref{subsec:h1}), and H2c's deflection split reproduces the full
-$4GM/(bc^2)$ light-bending result (\S\ref{subsec:h2}). Perihelion
-precession and gravitational-wave speed are not yet checked against
-this paper's framework; establishing those two specifically is the
-first item of future work flagged throughout.
+(\S\ref{subsec:h1}), and H2c's deflection split -- the standard GR
+formula, transcribed rather than independently derived from this
+paper's own machinery -- is evaluated numerically against the
+measured solar light-bending angle of $1.75''$ and matches it
+(\S\ref{subsec:h2}). Mercury's perihelion precession and
+gravitational-wave speed are not yet checked against this paper's
+framework; establishing those two specifically is the first item of
+future work flagged throughout.
 
 \textbf{A note on scope.} H1 and H2 remain this paper's founding pair,
 but the shared foundation they rest on (\S\ref{sec:notation}) turned
@@ -956,8 +959,12 @@ same spirit, an \textbf{irregularity scalar}
 \omega^{\mu\nu}(x)\,}\,,
 \end{equation}
 where $\bar\theta$ is the smooth background expansion rate at that
-cosmic time and $\ell$ is a reference length scale fixed by
-convention (so $\mathcal{I}$ is dimensionless). $\mathcal{I}(x)=0$
+cosmic time and $\ell$ is a reference \emph{time} scale fixed by
+convention -- not a length, despite the suggestive symbol: $\theta$,
+$\sigma_{\mu\nu}$, and $\omega_{\mu\nu}$ each carry units of inverse
+time, so it is $\ell^2$ with units of $\mathrm{s^2}$, not
+$\mathrm{m^2}$, that is needed to make $\mathcal{I}$ dimensionless
+(\S\ref{sec:consistency}'s units check). $\mathcal{I}(x)=0$
 recovers perfectly smooth FLRW space; $\mathcal{I}(x)>0$ is a
 ``spacetime inconsistency'' in H3--H6's sense, with its
 \emph{magnitude} setting how large a departure it is and its
@@ -1631,6 +1638,23 @@ term that holds a body on a circular path. This paper labels it
 ``centripetal'' elsewhere only as shorthand for ``radially inward,''
 and that shorthand is dropped here, in the one equation in this
 subsection, to keep the two senses from being conflated.
+
+\textbf{Numeric check against the measured solar deflection.} The
+total $\delta=4GM/(bc^2)$ is the standard GR light-bending formula,
+transcribed here, not independently derived from $\Sigma$ or from
+this paper's own machinery; evaluating it is a check that this
+paper's bookkeeping reproduces a known number, not a new prediction.
+For light grazing the Sun's limb, $GM_\odot\approx1.327\times10^{20}
+\,\mathrm{m^3/s^2}$ and $b\approx R_\odot\approx6.96\times10^8\,
+\mathrm{m}$, giving $\delta=4GM_\odot/(bc^2)\approx8.47\times10^{-6}
+\,\mathrm{rad}\approx1.75''$ -- matching the historically measured
+solar deflection (Eddington et al., 1919, and all subsequent
+measurements) to the precision quoted. This specific number was not
+checked in \S\ref{sec:consistency} before this revision, which still
+correctly lists Mercury's perihelion precession and
+gravitational-wave speed/waveform constraints as not yet worked
+through numerically; light bending is removed from that list here,
+having now been evaluated.
 
 \textbf{Motivation.} \S\ref{subsec:h1}'s own defensible-core point 3
 already notes that H1 computes gravity \emph{from} the bend without
@@ -2322,21 +2346,23 @@ $[G]=\mathrm{m^3/(kg\,s^2)}$, so $[\Sigma_0] =
 $[r^2]=\mathrm{m^2}$ gives $\mathrm{m/s^2}$, an acceleration -- checks
 out in every numeric table in this section.
 
-\textbf{$\mathcal{I}(x)$ -- an open item surfaced by this check, not
-resolved by it.} $\theta$, $\sigma_{\mu\nu}$, $\omega_{\mu\nu}$ each
-carry units of inverse time (an expansion/shear/rotation \emph{rate}),
-so $(\theta-\bar\theta)^2$ has units $\mathrm{s^{-2}}$. For
-$\mathcal{I}:=\ell^2\sqrt{(\theta-\bar\theta)^2+\cdots}$
-(\S\ref{subsec:core_terms}) to come out dimensionless as claimed,
-$\ell^2$ must carry units of $\mathrm{s^2}$ -- i.e.\ $\ell$ is a
-reference \emph{time}, or $c=1$ units are in force so that length and
-time are interchangeable. \S\ref{sec:notation}'s units convention is
-still an open placeholder, so this is flagged here explicitly: once
-units are fixed, $\ell$'s dimension must be stated to match, or
-$\mathcal{I}$ as currently written is not actually dimensionless.
-This is exactly the kind of check this subsection exists to catch,
-and it should be closed before $\mathcal{I}$ is used quantitatively
-in H1b or the taxonomy (\S\ref{subsec:taxonomy}).
+\textbf{$\mathcal{I}(x)$ -- an item this check surfaced and that has
+since been corrected at the definition.} $\theta$, $\sigma_{\mu\nu}$,
+$\omega_{\mu\nu}$ each carry units of inverse time (an
+expansion/shear/rotation \emph{rate}), so $(\theta-\bar\theta)^2$ has
+units $\mathrm{s^{-2}}$. For $\mathcal{I}:=\ell^2\sqrt{(\theta-
+\bar\theta)^2+\cdots}$ (\S\ref{subsec:core_terms}) to come out
+dimensionless as claimed, $\ell^2$ must carry units of
+$\mathrm{s^2}$ -- i.e.\ $\ell$ is a reference \emph{time}, not a
+length, despite the symbol -- and \S\ref{subsec:core_terms}'s
+definition now states this explicitly rather than calling $\ell$ a
+length scale. \S\ref{sec:notation}'s broader units convention is
+still an open placeholder, so $\ell$'s specific numerical value (what
+time scale, fixed by what physical consideration) remains open and
+should be settled before $\mathcal{I}$ is used quantitatively in H1b
+or the taxonomy (\S\ref{subsec:taxonomy}) -- but the dimensional
+inconsistency itself, between calling $\ell$ a length at its
+definition and needing it to be a time here, is resolved.
 
 \subsection{Known observational constraints}
 \textbf{Passed (positive recoveries, not just non-contradictions).}
@@ -2374,11 +2400,17 @@ a constraint the hypothesis's earlier form failed and was corrected
 against, not one it currently needs to satisfy.
 
 \textbf{Constraints not yet checked.} Equivalence-principle
-(E\"otv\"os-type) tests, Mercury's perihelion precession, light
-bending, and gravitational-wave speed/waveform constraints all bear
-on H2's and H1b's claims specifically and have not yet been worked
-through numerically; flagged here as the next items for this
-subsection.
+(E\"otv\"os-type) tests, Mercury's perihelion precession, and
+gravitational-wave speed/waveform constraints all bear on H2's and
+H1b's claims specifically and have not yet been worked through
+numerically; flagged here as the next items for this subsection.
+Light bending, which belonged on this list through the previous
+revision, has since been evaluated numerically and removed from it:
+H2c's deflection split, evaluated for the Sun, reproduces the
+measured $1.75''$ solar deflection (\S\ref{subsec:h2}'s numeric check,
+immediately following H2c's formal statement) -- the standard GR
+formula transcribed and evaluated, not an independent derivation from
+$\Sigma$.
 
 \subsection{Internal consistency}
 \textbf{Density is not an independent degree of freedom alongside
@@ -2628,8 +2660,29 @@ collected from \S\ref{sec:foundations} and \S\ref{sec:hypotheses}:
 \section{Conclusion}
 \label{sec:conclusion}
 % =====================================================================
-[PLACEHOLDER -- 3-5 sentences: what was proposed, how strongly grounded
-it currently is, and what the next paper or next section needs to show]
+This paper proposed treating space as a real, elastic, fluid medium
+(H1, H1b) and, from that single departure, reframed gravity as the
+felt consequence of spacetime curvature -- the widening gap between
+local clock rates at neighboring points as curvature deepens --
+rather than as an added force (H2a), with H2b and H2c each showing
+why a spatial bend alone and a flat-spacetime rotational analogy
+cannot do that job on their own. Pressed against a further cluster of
+open astrophysical questions (H3--H9), this departure survived some
+of its own numeric checks (H1's inverse-square recovery, H2c's match
+to the measured solar light-bending angle) and failed others outright
+(H2a's original cosmic-expansion engine, H4's literal claim, H6's
+scale claim), each resolved here in the direction its own numbers
+pointed rather than defended or argued around (\S\ref{sec:discussion}).
+What remains, after that filtering, is not offered as a replacement
+for general relativity -- H2a-revised is GR's own geodesic equation
+in its Newtonian limit, not content beyond it, and H3, H5, H7, H8, and
+H9 still owe the specific, falsifiable form \S\ref{sec:predictions}
+asks of them -- but as a disciplined set of working hypotheses, each
+stated plainly enough to be checked and, where checked, either kept,
+narrowed, or withdrawn on its own merits. Mercury's perihelion
+precession and gravitational-wave speed/waveform constraints are the
+next, specific numeric items this framework still owes
+(\S\ref{sec:consistency}).
 
 % =====================================================================
 \appendix
