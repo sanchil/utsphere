@@ -36,7 +36,7 @@
 \posttitle{\par\vspace{0.5em}\hbox to\linewidth{\leaders\hbox{\normalfont\ttfamily\normalsize =}\hfill}\end{center}}
 
 % --- WORKING TITLE: replace once the hypotheses are fixed ---
-\title{On the Elasticity and Origin of Spacetime Curvature: \\ A Set of Working Hypotheses on Gravity, Space, and Time}
+\title{On the Elasticity of Spacetime Curvature and Gravity as Its Felt Consequence: \\ A Set of Working Hypotheses on Gravity, Space, and Time}
 \author{Sandeep Lakshminarayan Chiluveru}
 \date{\today}
 
@@ -96,10 +96,13 @@ is between the research program and any one claim made under it.
 Both hypotheses are stated here in their roughest form, as
 working ideas to be formalized, checked against known limits, and
 tested against observational constraints -- not as completed
-theories. This paper
-does not yet claim to reproduce the quantitative successes of general
-relativity (inverse-square attraction, perihelion precession, light
-bending, gravitational-wave speed); establishing that recovery is the
+theories. Some of general relativity's quantitative successes are
+already recovered here, not merely promised: H1 reproduces
+inverse-square attraction, $g=GM/r^2$, by construction
+(\S\ref{subsec:h1}), and H2c's deflection split reproduces the full
+$4GM/(bc^2)$ light-bending result (\S\ref{subsec:h2}). Perihelion
+precession and gravitational-wave speed are not yet checked against
+this paper's framework; establishing those two specifically is the
 first item of future work flagged throughout.
 
 \textbf{A note on scope.} H1 and H2 remain this paper's founding pair,
@@ -140,25 +143,24 @@ stand on.
 % A short table naming each hypothesis, the question it answers, and
 % where in the paper it is formalized -- mirrors the "six verbs" table
 % convention. Fill in rows per hypothesis (H1, H2, H3, ...).
-\begin{center}
 \footnotesize
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{4.0cm}>{\raggedright\arraybackslash}p{5.2cm}>{\raggedright\arraybackslash}p{2.0cm}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{3.3cm}>{\raggedright\arraybackslash}p{4.0cm}>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}p{1.3cm}@{}}
 \hline
-Hypothesis & Question it answers & Claim, in one line & Where \\ \hline
-H1 & What sets the amount of curvature for a given mass? & Gravity's strength is tied to the elasticity of space; bend amount $\propto$ elasticity, with elasticity constant & \S\ref{subsec:h1} \\
-H1b & Does elasticity ever vary, and could that restore shape-sensitivity that a constant elasticity forbids? & Elasticity may depend on local field conditions (the irregularity scalar $\mathcal{I}$), not just differ between bodies -- speculative, and must vanish wherever constant elasticity is already confirmed & \S\ref{subsec:h1b} \\
-H2a & What causes gravity, and why does it have the direction and sign it does? & Gravity is the felt consequence of spacetime curvature itself: curvature connects neighboring points to slightly different local rates of clock flow, and the widening of that gap as curvature deepens \emph{is} the acceleration ($a=-\partial_r\Phi$, the Newtonian limit of the geodesic equation) -- this paper's defining statement of gravity, consistent with the GPS correction, independent clock data, and Earth's tidal gradient, all three of which fix the same single $\Phi=-GM/r$ rather than confirming it three separate ways & \S\ref{subsec:h2} \\
-H2b & (alternative driver, considered and set aside) & A constant spin of space about an axis was considered as a second route to the same felt sensation; it reproduces the sensation (via the equivalence principle) but carries zero true, frame-independent curvature (a rotating frame is flat spacetime in disguise), so it does not meet this paper's own definition of gravity above -- it demonstrates what gravity is \emph{not}, not a second way gravity can arise & \S\ref{subsec:h2} \\
-H2c & Is the spatial bend H1 computes itself a force, or only a geometric redirection? & Bend alone only redirects a moving body's direction, at constant speed; it cannot start motion from rest and is $\sim v^2/c^2$ too weak to source measured gravity at ordinary speeds -- the real accelerating mechanism is the radial, $g_{00}$-sourced term H2a relies on (loosely called ``centripetal'' in this paper; see \S\ref{subsec:h2} for why that word is imprecise here) & \S\ref{subsec:h2} \\
-H3 & Why do some black holes (supermassive) far exceed the mass stellar collapse can produce? & Space is not smooth; large tears/inconsistencies in its fabric, from uneven cosmic expansion and turbulence, form the largest black holes directly & \S\ref{subsec:h3} \\
-H4 & What seeds the accretion that forms stars, planets, and asteroids? & Small, widespread tears/inconsistencies in space trap matter and seed accretion; every body in space has a black hole at its center & \S\ref{subsec:h4} \\
-H5 & What, specifically, are supermassive black holes, if not grown stellar remnants? & Supermassive black holes are large vortices formed where oppositely-expanding regions of space collide; they are not, in general, of stellar-collapse origin & \S\ref{subsec:h5} \\
-H6 & Why do stars at a galaxy's edge orbit faster than visible mass alone predicts? & A galaxy is matter settled into the depression around a central vortex (the SMBH); the vortex's strength and reach set the rotation curve directly, so dark matter is not needed & \S\ref{subsec:h6} \\
-H7 & Where does energy come from (or go) when space expands or compresses? & Expansion/compression of space is itself a loss or gain of energy, carried in part by particle creation from the vacuum -- the known mechanisms involved (cosmological particle creation, the dynamical Casimir effect, Hawking radiation) are conversions, not net sources, so the claim here is unification of those mechanisms under $\theta$, not that this energy is extractable & \S\ref{subsec:h7} \\
-H8 & What actually happens, physically, as a collapsing core becomes a black hole? & The core sinks into space gradually (not instantly), becoming more a feature of time than of space as it goes, generating a vortex; it ends as a dense, finite core, not a literal point & \S\ref{subsec:h8} \\
-H9 & Why is gravity so much weaker than every other force? & Gravity's measured weakness (and the tiny strain of gravitational waves) is dilution: gravity's true strength lives in a hidden extra dimension, and what we measure is leakage into our own & \S\ref{subsec:h9} \\ \hline
-\end{tabular}
-\end{center}
+Hypothesis & Question it answers & Claim, in one line & Status & Where \\ \hline
+\endhead
+H1 & What sets the amount of curvature for a given mass? & Gravity's strength is tied to the elasticity of space; bend amount $\propto$ elasticity, with elasticity constant & \emph{Kept}, as a scoped recovery of GR, not independent content & \S\ref{subsec:h1} \\
+H1b & Does elasticity ever vary, and could that restore shape-sensitivity that a constant elasticity forbids? & Elasticity may depend on local field conditions (the irregularity scalar $\mathcal{I}$), not just differ between bodies -- speculative, and must vanish wherever constant elasticity is already confirmed & \emph{Open}, speculative; needs to be written as the field-equation amendment it requires & \S\ref{subsec:h1b} \\
+H2a & What causes gravity, and why does it have the direction and sign it does? & Gravity is the felt consequence of spacetime curvature itself: curvature connects neighboring points to slightly different local rates of clock flow, and the widening of that gap as curvature deepens \emph{is} the acceleration ($a=-\partial_r\Phi$, the Newtonian limit of the geodesic equation) -- this paper's defining statement of gravity, consistent with the GPS correction, independent clock data, and Earth's tidal gradient, all three of which fix the same single $\Phi=-GM/r$ rather than confirming it three separate ways & \emph{Kept}, as the defining recovery; not a result beyond GR & \S\ref{subsec:h2} \\
+H2b & (alternative driver, considered and set aside) & A constant spin of space about an axis was considered as a second route to the same felt sensation; it reproduces the sensation (via the equivalence principle) but carries zero true, frame-independent curvature (a rotating frame is flat spacetime in disguise), so it does not meet this paper's own definition of gravity above -- it demonstrates what gravity is \emph{not}, not a second way gravity can arise & \emph{Kept}, only as the flat-spacetime counterexample & \S\ref{subsec:h2} \\
+H2c & Is the spatial bend H1 computes itself a force, or only a geometric redirection? & Bend alone only redirects a moving body's direction, at constant speed; it cannot start motion from rest and is $\sim v^2/c^2$ too weak to source measured gravity at ordinary speeds -- the real accelerating mechanism is the radial, $g_{00}$-sourced term H2a relies on (loosely called ``centripetal'' in this paper; see \S\ref{subsec:h2} for why that word is imprecise here) & \emph{Kept}, standard geodesic-equation content & \S\ref{subsec:h2} \\
+H3 & Why do some black holes (supermassive) far exceed the mass stellar collapse can produce? & Space is not smooth; large tears/inconsistencies in its fabric, from uneven cosmic expansion and turbulence, form the largest black holes directly & \emph{Narrowed}: kept only as a restatement of the open seed problem, not as literal tears & \S\ref{subsec:h3} \\
+H4 & What seeds the accretion that forms stars, planets, and asteroids? & Small, widespread tears/inconsistencies in space trap matter and seed accretion; every body in space has a black hole at its center & \emph{Withdrawn}: literal claim contradicted by interior-structure data & \S\ref{subsec:h4} \\
+H5 & What, specifically, are supermassive black holes, if not grown stellar remnants? & Supermassive black holes are large vortices formed where oppositely-expanding regions of space collide; they are not, in general, of stellar-collapse origin & \emph{Narrowed}: kept only as a restatement of the open seed problem, not as literal collisions & \S\ref{subsec:h5} \\
+H6 & Why do stars at a galaxy's edge orbit faster than visible mass alone predicts? & A galaxy is matter settled into the depression around a central vortex (the SMBH); the vortex's strength and reach set the rotation curve directly, so dark matter is not needed & \emph{Withdrawn}: scale mismatch (3--4 orders) is decisive as stated; target question remains open & \S\ref{subsec:h6} \\
+H7 & Where does energy come from (or go) when space expands or compresses? & Expansion/compression of space is itself a loss or gain of energy, carried in part by particle creation from the vacuum -- the known mechanisms involved (cosmological particle creation, the dynamical Casimir effect, Hawking radiation) are conversions, not net sources, so the claim here is unification of those mechanisms under $\theta$, not that this energy is extractable & \emph{Kept}, with the extraction claim explicitly dropped & \S\ref{subsec:h7} \\
+H8 & What actually happens, physically, as a collapsing core becomes a black hole? & The core sinks into space gradually (not instantly), becoming more a feature of time than of space as it goes, generating a vortex; it ends as a dense, finite core, not a literal point & \emph{Kept}, as the strongest hypothesis here; two items (angular momentum, core scale) still open & \S\ref{subsec:h8} \\
+H9 & Why is gravity so much weaker than every other force? & Gravity's measured weakness (and the tiny strain of gravitational waves) is dilution: gravity's true strength lives in a hidden extra dimension, and what we measure is leakage into our own & \emph{Kept}, only as a citation of an existing, already-bounded program & \S\ref{subsec:h9} \\ \hline
+\end{longtable}
 
 \paragraph{Background and motivation.}
 % Longer version of Summary: what GR gets right (equivalence principle,
@@ -179,14 +181,25 @@ proposed here as a more fruitful place to locate the open problems
 this paper surveys than any single one of those problems taken alone.
 This is a reinterpretation under test, not yet an established
 mechanism: where the analogies used to develop it (an elastic medium,
-a flowing river, a honey-like fluid under load) break against what is
-already known -- as several demonstrably do -- those breaks are read
-here as marking where the medium's own properties (most centrally,
-whether its elasticity is a true constant or responds to local
-conditions, H1/H1b) are not yet pinned down by observation or
-experiment, rather than as grounds to discard the picture outright.
-Closing those gaps is accordingly treated throughout as this paper's
-outstanding work, not as a defect to be argued around.}
+a flowing river, a honey-like fluid under load) break only against
+other analogies, or against a limit no one has yet checked, those
+breaks are read here as marking where the medium's own properties
+(most centrally, whether its elasticity is a true constant or
+responds to local conditions, H1/H1b) are not yet pinned down by
+observation or experiment -- not as grounds to discard the picture
+outright. But where a specific claim built on the picture is checked
+against its own stated numerical prediction and fails by many orders
+of magnitude or is directly contradicted by existing data -- as with
+H2a's original cosmic-expansion engine, H4's literal claim, and H6's
+scale claim (\S\ref{sec:discussion}) -- that is not an analogy
+breaking; it is a claim being measured and found wrong, and this paper
+withdraws that specific claim outright rather than keeping it on the
+books as unfinished work. The distinction that matters throughout is
+between the research program (space as a real, elastic medium, kept)
+and any one claim made under it (kept, narrowed, or withdrawn on its
+own numerical merits). Closing the program's remaining gaps is
+accordingly treated as outstanding work; closing the gaps in a
+specific, already-failed claim is not.}
 \end{quote}
 
 \paragraph{Working postulates.}
@@ -352,11 +365,16 @@ a step this paragraph can shortcut.
   \item \textbf{Equivalence principle} (Einstein, 1907/1911; tested to
     high precision by E\"otv\"os-type and modern torsion-balance
     experiments): locally and instantaneously, a uniformly accelerated
-    frame is indistinguishable from a uniform gravitational field. H2
-    uses this unchanged, but extends its scope from a local,
-    instantaneous statement to a claim about the global \emph{origin}
-    of gravity -- an extension, not a restatement.
-  \item \textbf{Einstein field equations}, $G_{\mu\nu} = 8\pi G\,T_{\mu\nu}$:
+    frame is indistinguishable from a uniform gravitational field. H2's
+    original engine used this unchanged, but extended its scope from a
+    local, instantaneous statement to a claim about the global
+    \emph{origin} of gravity -- an extension that the magnitude checks
+    in \S\ref{subsec:h2} rule out, and that engine is retired for
+    exactly that reason. H2-revised, kept, does not make this
+    extension at all: it uses the equivalence principle only in its
+    ordinary, local scope, as the standard justification for treating
+    $g_{00}$'s gradient as the gravitational acceleration.
+  \item \textbf{Einstein field equations}, $G_{\mu\nu} = 8\pi G\,T_{\mu\nu}/c^4$:
     curvature is set by mass-energy through the fixed constant $G$. H1
     keeps this structure but reinterprets $G$ (or the coupling it
     plays) as a measurable elasticity rather than a bare constant --
@@ -1322,8 +1340,10 @@ frame-independent curvature behind it (\S\ref{subsec:h2}'s discussion
 of the tidal/Riemann distinction). By the equivalence principle, a
 sustained felt acceleration of $9.81\,\mathrm{m/s^2}$ (an elevator, a
 rocket) is indistinguishable, locally, from a gravitational field --
-but only the centripetal/curvature-sourced case is genuine gravity
-under this paper's definition; the centrifugal case merely mimics it.
+but only the radial, curvature-sourced case (labeled ``centripetal''
+here only as shorthand, not in the strict textbook sense; see the
+formal statement and its note just below) is genuine gravity under
+this paper's definition; the centrifugal case merely mimics it.
 
 \textbf{Formal statement, current.} Gravity, under this paper's
 defining statement, is
@@ -1341,10 +1361,10 @@ superseded form.
 % PLACEHOLDER, kept for the record only -- "sinking into space" needed
 % a precise kinematic definition before this could be written as an
 % equation, and neither candidate below survived the numeric check:
-\begin{equation}
-\text{(2a)-engine, withdrawn} \quad \vec a_{\text{gravity}} \;\overset{?}{=}\; \vec a_{\text{cosmic expansion}}(\text{mass, position}), \qquad
-\text{(2b), not true gravity} \quad \vec a_{\text{gravity}} \;\overset{?}{=}\; \omega^2 r \,\hat\rho \ \text{(centrifugal form)}
-\end{equation}
+\begin{align*}
+\text{(2a)-engine, withdrawn:} &\quad \vec a_{\text{gravity}} \;\overset{?}{=}\; \vec a_{\text{cosmic expansion}}(\text{mass, position}), \\
+\text{(2b), not true gravity:} &\quad \vec a_{\text{gravity}} \;\overset{?}{=}\; \omega^2 r \,\hat\rho \ \text{(centrifugal form)}
+\end{align*}
 
 \textbf{(2a), revised: gravity as the felt consequence of spacetime
 curvature itself.} (2a)'s original engine -- a literal, ongoing
