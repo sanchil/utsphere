@@ -1,0 +1,7 @@
+Theorem -> Nothing cannot bend. SpaceTime bends therefore it is a medium.
+
+Explanation: Spacetime curvature satisfies a dynamical field equation, propagates independently of its source, and carries energy ⟹ spacetime behaves as a physically real, dynamical entity (a “field” in the full physical sense — like the electromagnetic field — not merely descriptive geometry).
+
+Spacetime is not nothing — it is a physically real, dynamical field, established by the fact that its curvature evolves by its own equation, propagates independently of sources, and transports energy (gravitational waves).
+
+Medium/Field — spacetime treated as a physically real, dynamical entity, established by: (i) it obeys its own evolution equation (Einstein field equations), (ii) it propagates disturbances independently of their source (gravitational waves), (iii) it transports energy (GW energy loss, e.g. binary pulsar orbital decay, LIGO detections). This is the same ontological status as the electromagnetic field — real and dynamical, not merely descriptive bookkeeping — without importing classical-medium baggage (no required rest frame, no claimed particulate/phase structure, no violation of Lorentz invariance).
