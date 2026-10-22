@@ -1809,9 +1809,58 @@ term are the same object, not two. Varying with respect to $g^{\mu\nu}$
 and $\phi$ gives, schematically, a modified Einstein equation sourced
 by both ordinary matter and $\phi$'s own stress-energy, and a
 Klein--Gordon-type equation for $\phi$ with an extra source term from
-$f'(\phi)R$ (the standard scalar-tensor structure; full derivation and
-the precise $f'(\phi)R$ back-reaction term are open work, not carried
-out here).
+$f'(\phi)R$ (the standard scalar-tensor structure; the full field
+equations and the precise $f'(\phi)R$ back-reaction term remain open
+work, not carried out here -- but the weak-field PPN check below does
+not require them).
+
+\emph{The PPN check, carried out.} The $\omega>40{,}000$ bound already
+cited above can be read directly off this action, rather than imported
+by analogy. Define $\Phi\equiv\Sigma_0\,f(\phi)$ -- this field's own
+stand-in for $1/G$, in the same normalization Brans--Dicke theory
+itself uses -- and fix the background so $f(\phi_0)=1$, as H1's own
+point (1) already requires (\S\ref{subsec:h1}). Rewriting the action in
+terms of $\Phi$ turns the canonical kinetic term
+$-\tfrac12(\partial\phi)^2$ into
+$-\tfrac{1}{2\Sigma_0^2[f'(\phi_0)]^2}(\partial\Phi)^2$, which
+identifies this theory's effective Brans--Dicke parameter:
+\begin{equation}
+\omega_{\text{eff}} \;=\; \frac{1}{\Sigma_0\,[f'(\phi_0)]^2}.
+\end{equation}
+Applying the standard scalar-tensor result $\gamma-1=-1/(\omega_{\text{eff}}+2)$,
+and writing $\varepsilon\equiv\Sigma_0[f'(\phi_0)]^2$ (dimensionless) for
+the weak-coupling regime this theory is expected to sit in:
+\begin{equation}
+\gamma - 1 \;=\; -\frac{\varepsilon}{1+2\varepsilon}
+\;\;\xrightarrow{\varepsilon\ll1}\;\; -\varepsilon
+\;=\; -\Sigma_0\,[f'(\phi_0)]^2.
+\end{equation}
+This reproduces the already-cited $\omega>40{,}000$ bound exactly when
+run through the Cassini measurement $|\gamma-1|\lesssim2.3\times10^{-5}$
+(Bertotti, Iess \& Tortora 2003) -- confirming this is the same formula
+already underwriting that number, not a separately-introduced one --
+and turns it into a direct bound on H1b's own coupling:
+\begin{equation}
+|f'(\phi_0)| \;\lesssim\; 2.1\times10^{-24}\,\mathrm{N}^{-1/2},
+\end{equation}
+independent of what $h(\phi)$ and $\lambda$ individually turn out to
+be: it constrains their product's derivative at the solar system's own
+background value $\phi_0$ directly, without needing either factored
+out on its own. The companion PPN parameter $\beta$ stays exactly $1$
+for this class of theory whenever $V(\phi)$ contributes negligibly on
+solar-system scales (the standard, exact Brans--Dicke result, not an
+approximation specific to this action), so Mercury's perihelion
+precession imposes no further constraint beyond the $\gamma$ bound
+above. The remaining PPN parameters -- the preferred-frame parameters
+$\alpha_1,\alpha_2,\alpha_3$, the conservation-law parameters
+$\zeta_1$--$\zeta_4$, and the gravitomagnetic sector tested by Gravity
+Probe B -- are all untouched by a minimally-coupled scalar of this
+form: not satisfied in any informative sense, simply silent, since
+nothing in this action gives them anything to constrain. Of PPN's ten
+parameters, this theory as written predicts a deviation in exactly one
+($\gamma$, already bounded above) and is silent on the other nine --
+worth stating plainly rather than leaving as an implied, unchecked
+``scalar-tensor theories do fine'' assumption.
 
 \emph{The field's two roles.} Split $\phi=\bar\phi(t)+\delta\phi(x)$.
 \begin{itemize}
@@ -1839,10 +1888,13 @@ stop being three independent claims about a medium and become one
 concrete field content for that medium.
 
 \emph{What this does not yet buy, stated as plainly as every other
-open item in this paper.} (1) The Cassini bound, $\omega>40{,}000$,
-inherited already by H1b, now constrains $f'(\phi)$ directly wherever
-the solar system sits on $\phi$'s potential -- this must be checked
-once $V(\phi)$ and $f(\phi)$ are specified, not assumed satisfied. (2)
+open item in this paper.} (1) The Cassini/PPN check above constrains
+only the product $\lambda\,h'(\phi_0)$ -- it bounds how strongly $f$
+can respond to $\phi$ at the solar system's own background value, not
+$h(\phi)$'s functional form or $\lambda$ and $h'(\phi_0)$
+individually; satisfying this one bound is necessary, not sufficient,
+and the theory remains silent on nine of PPN's ten parameters, as
+stated above. (2)
 $\delta\phi$'s required energy density, as a function of galactic
 radius, still has to reproduce the same $M(r)\propto r$ profile dark
 matter currently supplies for flat rotation curves -- unifying the
