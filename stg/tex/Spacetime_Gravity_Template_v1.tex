@@ -186,7 +186,7 @@ alternative to general relativity.
 Hypothesis & Question it answers & Claim, in one line & Status & Where \\ \hline
 \endhead
 H1 & What sets the amount of curvature for a given mass? & Gravity's strength is tied to the elasticity of space; bend amount $\propto$ elasticity, with elasticity constant & \emph{Kept}, as a scoped recovery of GR, not independent content & \S\ref{subsec:h1} \\
-H1b & Does elasticity ever vary, and could that restore shape-sensitivity that a constant elasticity forbids? & Elasticity may depend on local field conditions (the irregularity scalar $\mathcal{I}$), not just differ between bodies -- speculative, and must vanish wherever constant elasticity is already confirmed & \emph{Open}, speculative; needs to be written as the field-equation amendment it requires & \S\ref{subsec:h1b} \\
+H1b & Does elasticity ever vary, and could that restore shape-sensitivity that a constant elasticity forbids? & Elasticity may depend on local field conditions (the irregularity scalar $\mathcal{I}$), not just differ between bodies -- speculative, and must vanish wherever constant elasticity is already confirmed & \emph{Open, narrowed}: the field-equation amendment is now written and its coupling bounded by a derived PPN check, but $h(\mathcal{I})$ and $\lambda$ themselves remain unspecified & \S\ref{subsec:h1b} \\
 H2a & What causes gravity, and why does it have the direction and sign it does? & Gravity is the felt consequence of spacetime curvature itself: curvature connects neighboring points to slightly different local rates of clock flow, and the widening of that gap as curvature deepens \emph{is} the acceleration ($a=-\partial_r\Phi$, the Newtonian limit of the geodesic equation) -- this paper's defining statement of gravity, consistent with the GPS correction, independent clock data, and Earth's tidal gradient, all three of which fix the same single $\Phi=-GM/r$ rather than confirming it three separate ways & \emph{Kept}, as the defining recovery; not a result beyond GR & \S\ref{subsec:h2} \\
 H2b & (alternative driver, considered and set aside) & A constant spin of space about an axis was considered as a second route to the same felt sensation; it reproduces the sensation (via the equivalence principle) but carries zero true, frame-independent curvature (a rotating frame is flat spacetime in disguise), so it does not meet this paper's own definition of gravity above -- it demonstrates what gravity is \emph{not}, not a second way gravity can arise & \emph{Kept}, only as the flat-spacetime counterexample & \S\ref{subsec:h2} \\
 H2c & Is the spatial bend H1 computes itself a force, or only a geometric redirection? & Bend alone only redirects a moving body's direction, at constant speed; it cannot start motion from rest and is $\sim v^2/c^2$ too weak to source measured gravity at ordinary speeds -- the real accelerating mechanism is the radial, $g_{00}$-sourced term H2a relies on (loosely called ``centripetal'' in this paper; see \S\ref{subsec:h2} for why that word is imprecise here) & \emph{Kept}, standard geodesic-equation content & \S\ref{subsec:h2} \\
@@ -823,13 +823,16 @@ a constant $\Sigma$ forbids is (b) a reasonable extrapolation of H1 --
 it is the one lever within this paper's own formalism that could do
 so without contradicting anything already confirmed about $\Sigma$
 not differing between bodies. As stated, with no function $h$ and no
-coupling $\lambda$ specified, it is (c) fully speculative and not yet
-falsifiable. It inherits a real, numerical constraint directly from
-its nearest precedent regardless: scalar-tensor gravity's existing
-solar-system bound ($\omega>40{,}000$) already tells us how small any
-such effect must be wherever $\mathcal{I}$ is small, which is a
-concrete, borrowed falsifiability anchor even before H1b specifies
-its own function.
+coupling $\lambda$ specified, it remains (c) speculative in that
+specific sense: no prediction beyond the one bound below yet follows
+from it. It is no longer unfalsifiable in the stronger sense, though
+-- the field equations are now written explicitly and varied
+(\S\ref{subsec:h1b}), and the resulting coupling is directly bounded,
+not merely borrowed by precedent: $|f'(\phi_0)|\lesssim
+2.1\times10^{-24}\,\mathrm{N}^{-1/2}$, derived from this action's own
+weak-field limit rather than imported from Brans--Dicke by analogy.
+What remains open is $h(\mathcal{I})$'s functional form, and a regime
+where it predicts something this bound does not already forbid.
 
 \textbf{H2 (gravity sourced by expansion or spin) -- original framing,
 since revised.} This assessment applies to H2's \emph{original}
@@ -3317,10 +3320,12 @@ $10^{11}$--$10^{12}$ per year) directly bound H1's constant-$\Sigma$
 claim (\S\ref{subsec:h1}, point 1) and are satisfied by construction,
 since H1 proposes no variation. The Cassini Shapiro-delay bound on
 the Brans--Dicke parameter ($\omega>40{,}000$; Bertotti, Iess \&
-Tortora, 2003) is the relevant constraint on H1b specifically
-(\S\ref{subsec:h1b}): any $\lambda\,h(\mathcal{I})$ term must stay
-within whatever this bound translates to in the solar-system regime,
-where $\mathcal{I}$ is small.
+Tortora, 2003) is the relevant constraint on H1b specifically, and
+\S\ref{subsec:h1b} now carries out that translation explicitly rather
+than leaving it implied: it maps to
+$|f'(\phi_0)|\lesssim2.1\times10^{-24}\,\mathrm{N}^{-1/2}$ on H1b's
+own coupling, derived directly from this paper's action rather than
+quoted by analogy.
 
 \textbf{A constraint an earlier version of this framework failed, and
 was revised in response.} An amplification factor tying local gravity
@@ -3577,10 +3582,15 @@ collected from \S\ref{sec:foundations} and \S\ref{sec:hypotheses}:
 \begin{itemize}
   \item \textbf{H1} -- not yet falsifiable on its own (constant
     $\Sigma$ makes no prediction beyond GR). \emph{Open}, pending H1b.
-  \item \textbf{H1b} -- $h$ and $\lambda$ unspecified; Birkhoff's
-    theorem means any resolution is an amendment to the field
-    equations, not a parameter. \emph{Open, and not yet written as
-    the amendment it would have to be.}
+  \item \textbf{H1b} -- the field-equation amendment Birkhoff's
+    theorem requires is now written and varied (\S\ref{subsec:h1b}),
+    and its coupling is bounded directly,
+    $|f'(\phi_0)|\lesssim2.1\times10^{-24}\,\mathrm{N}^{-1/2}$, by a
+    derived PPN check. \emph{Open, narrowed}: $h(\mathcal{I})$ and
+    $\lambda$ individually remain unspecified, and nine of PPN's ten
+    parameters are untested by this theory as written -- the
+    amendment exists, but not yet a regime where it predicts
+    something the bound above doesn't already forbid.
   \item \textbf{H2-engine} (the retired cosmic-expansion/spin driver)
     -- magnitude ($\sim10$ orders short for $cH_0$, $\sim30$ orders
     short for $H_0^2R$) and shape (uniform driver vs.\
