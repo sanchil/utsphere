@@ -1845,13 +1845,36 @@ $\Sigma(x)=\Sigma_0\big[1+\lambda h(\mathcal{I}(x))\big)]$ exactly, now
 with $\mathcal{I}(x)\equiv\phi(x)$ rather than a separately-defined
 kinematic scalar -- H1b's open coupling and this field's non-minimal
 term are the same object, not two. Varying with respect to $g^{\mu\nu}$
-and $\phi$ gives, schematically, a modified Einstein equation sourced
-by both ordinary matter and $\phi$'s own stress-energy, and a
-Klein--Gordon-type equation for $\phi$ with an extra source term from
-$f'(\phi)R$ (the standard scalar-tensor structure; the full field
-equations and the precise $f'(\phi)R$ back-reaction term remain open
-work, not carried out here -- but the weak-field PPN check below does
-not require them).
+and $\phi$ gives the full field equations explicitly. Varying
+$g^{\mu\nu}$:
+\begin{equation}
+f(\phi)\,G_{\mu\nu} \;=\; \frac{8\pi G}{c^4}\,T_{\mu\nu}^{(\text{matter})}
+\;+\; \nabla_\mu\nabla_\nu f(\phi) \;-\; g_{\mu\nu}\,\Box f(\phi)
+\;+\; \frac{8\pi G}{c^4}\,T_{\mu\nu}^{(\phi)},
+\end{equation}
+where $T_{\mu\nu}^{(\phi)} = \partial_\mu\phi\,\partial_\nu\phi -
+g_{\mu\nu}\big(\tfrac12(\partial\phi)^2+V(\phi)\big)$ is $\phi$'s own
+canonical stress-energy. Varying $\phi$ gives the modified
+Klein--Gordon equation, with curvature itself sourcing the field:
+\begin{equation}
+\Box\phi \;-\; V'(\phi) \;+\; \frac{c^4}{16\pi G}\,f'(\phi)\,R \;=\; 0.
+\end{equation}
+Setting $f\equiv1$ in both (H1's own limit) removes every extra term
+and returns exactly the field equations already varied in
+\S\ref{subsec:h1} -- consistent with that derivation, not a second,
+independent one. These equations make the Birkhoff objection, point
+(v) above, explicit rather than asserted: even where
+$T_{\mu\nu}^{(\text{matter})}=0$ (the vacuum exterior of a star), the
+$\nabla_\mu\nabla_\nu f(\phi)$ and $T_{\mu\nu}^{(\phi)}$ terms survive
+whenever $\phi$ has a nontrivial exterior profile, and a static
+vacuum exterior is no longer forced to be exactly Schwarzschild. That
+profile is not free, though: it has to be sourced by the body's own
+interior matter through the Klein--Gordon equation above, decaying
+outward the way the Newtonian potential does, and its allowed
+strength is exactly $f'(\phi_0)$ -- already bounded, not open, by the
+PPN check immediately below. Evading Birkhoff's theorem this way is
+real, in other words, but it is not a free extra parameter: this
+section's own weak-field result already prices it.
 
 \emph{The PPN check, carried out.} The $\omega>40{,}000$ bound already
 cited above can be read directly off this action, rather than imported
